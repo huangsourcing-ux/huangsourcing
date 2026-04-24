@@ -1,0 +1,71 @@
+---
+alwaysApply: true
+---
+
+# 项目背景与核心技术栈 (2026 最新架构)
+- **框架**: Next.js 16.2+ (严格使用 App Router)
+- **CMS / 后端**: Payload CMS 3.77+ (Next.js 原生集成版)
+- **数据库**: PostgreSQL 18.x (使用 Payload @payloadcms/db-postgres 适配器)
+- **UI 组件库**: shadcn/ui (基于 Radix UI)
+- **样式框架**: Tailwind CSS 4.x (V4 架构)
+- **语言**: TypeScript 5.x
+
+# 目录结构规范
+- `/src/app`: 存放 Next.js App Router 页面和 Payload 后台路由。
+- `/src/components/ui`: 仅存放通过命令下载的 shadcn/ui 基础组件。
+- `/src/components`: 存放你的业务级自定义组件。
+- `/src/payload`: 存放 `payload.config.ts` 以及所有的 Collections/Globals 定义。
+- `/src/app/globals.css`: Tailwind v4 的核心配置文件（使用 `@theme` 指令）。
+
+# 核心开发规范与 AI 行为准则
+
+## 1. Tailwind CSS v4 严禁事项
+- **重要警告**：本项目使用 Tailwind CSS v4，它**没有也不需要** `tailwind.config.js`！
+- 所有自定义颜色、字体和主题配置，必须通过 `@theme` 指令写在 CSS 文件（如 `globals.css`）中。请绝对不要为我生成旧版的 JS 配置文件。
+
+## 2. Next.js 16.x & React 规范
+- 默认优先生成 Server Components。只有在需要用到 `useState`、`useEffect` 或浏览器 API 时，才声明 `"use client"`。
+- 充分利用 Next.js 16 的最新特性，优先保持代码轻量。
+
+## 3. Payload CMS 3.x 规范
+- 在 Next.js Server Components 中，**必须**使用 Payload 的 Local API (`getPayload()`) 进行数据查询，绝对禁止对本地 endpoint 发起 fetch HTTP 请求。
+- 数据查询后，严格使用 Payload 自动生成的 TypeScript 类型进行断言，保证类型安全。
+
+## 4. UI 构建规则 (shadcn/ui)
+- 如果我要写新的常用 UI 元素，请先提示我运行 `npx shadcn@latest add [组件名]` 来获取官方组件。
+- 组装组件时，className 必须通过 `cn()` 工具函数进行包裹，确保样式合并无冲突。
+- 给出代码前简述思路。提供可以直接粘贴的完整代码，不要省略任何导入语句。
+
+
+# 核心开发规范与 AI 行为准则
+
+## 1. AI 思考逻辑与输出规范 (AI Meta-Rules)
+- **拒绝偷懒（No Laziness）**：必须输出完整、可运行的代码。严禁使用 `// ... 此处省略代码` 或 `// TODO: 实现逻辑` 等占位符，除非我明确要求只给思路。
+- **先思考，后编码**：在输出代码前，必须简要（1-3句话）说明你的技术设计和数据流向，特别是涉及 Server Actions 和 Payload 数据库交互时。
+- **精确导包（Imports）**：严格区分 Server 和 Client 的依赖。确保所有从 `lucide-react`、`@/components/ui`、`@payloadcms/ui` 等库导入的路径完全准确。
+- **防御性编程**：在处理数据库返回的数据时，必须考虑 `null`、`undefined` 或空数组的情况，并提供优雅的 fallback 或错误提示。
+
+## 2. Next.js 16 (App Router) 架构规范
+- **服务端优先 (RSC Default)**：默认所有组件都是 Server Components。尽量把数据获取逻辑放在服务端。
+- **客户端边界 (Client Boundary)**：只有在极少数需要交互（如 `onClick`）、浏览器 API（如 `window`）、或前端状态（`useState`）时，才将组件抽离并在顶部声明 `"use client"`。客户端组件应该尽可能保持在组件树的“叶子节点”上。
+- **数据突变 (Mutations)**：优先使用 **Server Actions** (`"use server"`) 处理表单提交和数据更新，而不是编写 `/api` 路由。
+- **流式渲染与 Suspense**：对于耗时的数据查询，使用 `<Suspense fallback={<Loading />}>` 进行包裹，提升初始加载体验。
+
+## 3. Payload CMS 3.x 后端与数据规范
+- **严禁 HTTP Fetch 查库**：在 Server Components 或 Server Actions 中，必须通过 `const payload = await getPayload({ config })` 实例化本地 API 进行数据操作。
+- **控制查询深度 (Depth Control)**：在调用 `payload.find()` 或 `payload.findByID()` 时，必须显式声明 `depth` 参数（通常设为 1 或 2），避免无意间拉取整站的级联数据导致性能崩溃。
+- **权限与钩子 (Access & Hooks)**：
+  - 不要在前端硬编码权限逻辑。业务逻辑（如默认值设置、密码加密、关联数据清理）应写在 Payload Collections 的 `hooks` 中。
+  - 数据读取控制必须写在 Collections 的 `access` 配置中。
+- **严禁旧版 Express 代码**：绝对禁止生成任何基于 `server.js`、`express` 或旧版 REST API 初始化的 Payload 代码。
+
+## 4. UI 构建与表单规范 (shadcn/ui & Tailwind v4)
+- **Tailwind v4 配置红线**：绝不生成 `tailwind.config.js` 文件。所有自定义主题、颜色、字体必须通过 `@theme` 指令写在全局 CSS 中（如 `app/globals.css`）。
+- **组件获取**：当需要基础 UI 组件时，请输出需要在终端执行的命令：`npx shadcn@latest add [组件名]`，然后再给我业务组合代码。
+- **样式合并合并**：所有的动态 `className` 必须使用项目中定义好的 `cn()` 函数（基于 `clsx` 和 `tailwind-merge`）进行包裹。
+- **表单处理**：必须使用 `react-hook-form` 管理表单状态，配合 `zod` 进行前端类型校验，然后再将数据提交给 Server Action。
+
+## 5. TypeScript 5.x 严格类型规范
+- **杜绝 Any**：严禁使用 `any` 类型。如果不确定类型，请使用 `unknown` 并进行类型收窄（Type Narrowing）。
+- **Payload 类型断言**：从 Payload 数据库取出的数据，必须使用 Payload 自动生成的 TypeScript 类型（如 `User`, `Post`）进行强类型约束。
+- **组件 Props 定义**：所有的 React 组件必须通过 `interface` 或 `type` 明确定义 props 类型，包含 `children` 和可选参数。

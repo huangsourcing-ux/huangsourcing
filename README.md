@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HFsourcing
 
-## Getting Started
+Modern sourcing platform built on Next.js 16 App Router, Payload CMS 3, and Tailwind CSS v4.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Layer            | Choice                                               |
+| ---------------- | ---------------------------------------------------- |
+| Framework        | Next.js 16.2 (App Router, React 19, Turbopack)       |
+| CMS / Backend    | Payload CMS 3.84 (native Next.js integration)        |
+| Database         | PostgreSQL 18.x via `@payloadcms/db-postgres`        |
+| UI Library       | shadcn/ui (Radix UI primitives, `default` style)     |
+| Styling          | Tailwind CSS v4 (CSS-first, `@theme` directive)      |
+| Language         | TypeScript 5.9 (strict)                              |
+| Forms            | react-hook-form + zod                                |
+
+## Directory Layout
+
+```
+src/
+├── app/
+│   ├── (frontend)/          Public-facing pages (own <html>)
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── (payload)/           Payload admin + REST/GraphQL (own <html>)
+│   │   ├── admin/[[...segments]]/
+│   │   ├── api/[...slug]/
+│   │   ├── api/graphql/
+│   │   ├── api/graphql-playground/
+│   │   ├── custom.scss
+│   │   └── layout.tsx
+│   └── globals.css          Tailwind v4 + @theme design tokens
+├── components/
+│   └── ui/                  shadcn/ui primitives (Button seeded)
+├── hooks/
+├── lib/
+│   └── utils.ts             cn() helper (clsx + tailwind-merge)
+├── payload/
+│   └── collections/         Users, Media
+└── payload.config.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js >= 22 (or 20.9+)
+- pnpm 10+
+- PostgreSQL 18 (local or Neon / Supabase / Vercel Postgres)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Quick Start
 
-## Learn More
+```bash
+pnpm install
+cp .env.example .env        # then fill in DATABASE_URI + PAYLOAD_SECRET
 
-To learn more about Next.js, take a look at the following resources:
+pnpm dev                    # http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+First visit to `/admin` triggers Payload to run migrations and prompts you to create the initial admin user.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Common Commands
 
-## Deploy on Vercel
+```bash
+pnpm dev                    # Next.js dev server (Turbopack)
+pnpm build                  # Production build
+pnpm start                  # Production server
+pnpm lint                   # ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+pnpm generate:types         # Regenerate src/payload/payload-types.ts
+pnpm generate:importmap     # Rebuild Payload admin importMap
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding shadcn/ui Components
+
+```bash
+pnpm dlx shadcn@latest add input card dialog form
+```
+
+Components land in `src/components/ui/`.
+
+## Environment Variables
+
+| Variable                   | Purpose                                     |
+| -------------------------- | ------------------------------------------- |
+| `PAYLOAD_SECRET`           | JWT / cookie signing secret (required)      |
+| `DATABASE_URI`             | Postgres connection string (required)       |
+| `PAYLOAD_PUBLIC_CORS_URLS` | Comma-separated allowed origins             |
+| `NEXT_PUBLIC_SERVER_URL`   | Canonical public URL of the app             |
+
+## Conventions
+
+- **Server Components by default.** Only mark `"use client"` at the leaf when interaction, browser APIs, or hooks require it.
+- **No HTTP calls to Payload from the server.** Always use the Local API: `const payload = await getPayload({ config })`.
+- **Always pass `depth`** on Payload queries (usually 1–2) to prevent cascading joins.
+- **Tailwind v4 only.** Never create a `tailwind.config.js`. Put theme tokens in `src/app/globals.css` via `@theme`.
+- **Style merging.** Every dynamic className must flow through `cn()`.
+- **Strict TypeScript.** No `any`; narrow with `unknown` + type guards. Use generated Payload types.

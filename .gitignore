@@ -32,10 +32,19 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
+# Cursor local state (keep shared rules if needed: see below)
+.cursor/*
+!.cursor/rules/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# payload
+/media
+src/payload/payload-types.ts
