@@ -28,8 +28,8 @@
       "searchPrefix": "I need",
       "searchExample": "a factory audit in Shenzhen before I wire 30% deposit — can you be there this week?",
       "searchNote": "That is a real first message. Free triage → paid onsite when you are ready.",
-      "ctaSample": "Get sample report",
-      "ctaBook": "Book QC from $299",
+      "heroCtaPrimary": "Ask Agent Huang (Free)",
+      "heroCtaSecondary": "Download sample report",
       "imageAlt": "Factory floor — on-site evidence for your report",
       "heroPanelBuyer": "Buyer satisfaction",
       "rating": "4.9 / 5",
@@ -149,7 +149,7 @@
         }
       ]
     },
-    "contactAgentCta": "Contact Agent Huang — form / WhatsApp / email",
+    "contactAgentCta": "Ask Agent Huang (Free)",
     "paidModules": [
       {
         "id": "sourcing-verification",

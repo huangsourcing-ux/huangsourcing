@@ -1,5 +1,4 @@
 import {
-  ArrowRight,
   BadgeCheck,
   BadgeDollarSign,
   Check,
@@ -14,10 +13,11 @@ import Image from 'next/image'
 import { en } from '@/content/en'
 
 import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
+import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import Link from 'next/link'
 import { comparisonIconByKey, paidModuleIconById, trustPillarIconByKey } from '@/lib/home-module-icons'
-import { bookingMailto, businessEmail, customQuoteMailto, reportHref } from '@/lib/site-links'
+import { businessEmail, customQuoteMailto, reportHref } from '@/lib/site-links'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -261,29 +261,10 @@ export function MarketingPage() {
                 {h.hero.searchNote}
               </p>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button
-                asChild
-                className="h-12 rounded-full bg-[#ff3d3d] px-8 text-base font-bold text-white shadow-lg shadow-red-500/25 hover:bg-[#e63535]"
-                size="lg"
-              >
-                <Link href={reportHref}>
-                  <FileDown className="size-4" />
-                  {h.hero.ctaSample}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                className="h-12 rounded-full border-2 border-slate-200 bg-white px-8 text-base font-bold text-slate-900 shadow-sm hover:bg-slate-50"
-                size="lg"
-                variant="outline"
-              >
-                <Link href={bookingMailto}>
-                  {h.hero.ctaBook}
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
-            </div>
+            <HomeHeroCtas
+              primaryLabel={h.hero.heroCtaPrimary}
+              secondaryLabel={h.hero.heroCtaSecondary}
+            />
             <div className="grid grid-cols-2 gap-2 pt-2 sm:grid-cols-4 sm:gap-3">
               {heroStats.map((s) => (
                 <div
