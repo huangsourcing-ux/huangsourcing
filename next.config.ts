@@ -1,9 +1,5 @@
 import type { NextConfig } from 'next'
 import { withPayload } from '@payloadcms/next/withPayload'
-import createNextIntlPlugin from 'next-intl/plugin'
-
-// [!code ++] next-intl: wires `i18n/request` into the Next build
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts')
 
 const nextConfig: NextConfig = {
   // [!code ++] Hero lifestyle image on the marketing homepage (Unsplash).
@@ -14,4 +10,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withNextIntl(withPayload(nextConfig, { devBundleServerPackages: false }))
+export default withPayload(nextConfig, { devBundleServerPackages: false })

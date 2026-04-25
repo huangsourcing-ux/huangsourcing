@@ -3,7 +3,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader2 } from 'lucide-react'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
 import { useState, useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -20,6 +19,8 @@ import {
 } from '@/components/ui/dialog'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { en } from '@/content/en'
+import { businessEmail, publicWhatsAppHref, reportHref } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
 
 const formSchema = z.object({
@@ -29,21 +30,16 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>
 
-const reportHref = '/sample-report.pdf'
-const defaultEmail = 'max@hfsourcing.com'
-const defaultWhatsAppHref = 'https://wa.me/8610000000000' // [!code ++] Set NEXT_PUBLIC_WHATSAPP_URL in .env to your number.
+const c = en.ContactAgent
 
-const whatsappHref = process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim() || defaultWhatsAppHref
-
-type AskMaxDialogProps = {
+type ContactAgentDialogProps = {
   className?: string
   size?: ButtonProps['size']
   variant?: ButtonProps['variant']
   children: React.ReactNode
 }
 
-const AskMaxDialog = ({ className, size, variant, children }: AskMaxDialogProps) => {
-  const t = useTranslations('AskMax')
+const ContactAgentDialog = ({ className, size, variant, children }: ContactAgentDialogProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [isPending, startTransition] = useTransition()
@@ -98,49 +94,49 @@ const AskMaxDialog = ({ className, size, variant, children }: AskMaxDialogProps)
         {isSuccess ? (
           <div className="space-y-4 pt-2">
             <DialogHeader>
-              <DialogTitle>{t('successTitle')}</DialogTitle>
-              <DialogDescription>{t('successDescription')}</DialogDescription>
+              <DialogTitle>{c.successTitle}</DialogTitle>
+              <DialogDescription>{c.successDescription}</DialogDescription>
             </DialogHeader>
             <Button
               asChild
               className="h-10 w-full rounded-md bg-foreground text-background hover:bg-foreground/90"
             >
               <Link href={reportHref} download>
-                {t('downloadReport')}
+                {c.downloadReport}
               </Link>
             </Button>
             <p className="text-sm text-muted-foreground">
-              {t('preferHuman')}{' '}
+              {c.preferHuman}{' '}
               <a
                 className="font-medium text-foreground underline-offset-4 hover:underline"
-                href={`mailto:${defaultEmail}`}
+                href={`mailto:${businessEmail}`}
               >
-                {t('email')}
+                {c.email}
               </a>
               {' · '}
               <a
                 className="font-medium text-foreground underline-offset-4 hover:underline"
-                href={whatsappHref}
+                href={publicWhatsAppHref}
                 rel="noreferrer"
                 target="_blank"
               >
-                {t('whatsapp')}
+                {c.whatsapp}
               </a>
             </p>
           </div>
         ) : (
           <form className="space-y-4 pt-1" onSubmit={handleSubmit(onSubmit)} noValidate>
             <DialogHeader>
-              <DialogTitle>{t('beforeCallTitle')}</DialogTitle>
-              <DialogDescription>{t('beforeCallDescription')}</DialogDescription>
+              <DialogTitle>{c.beforeCallTitle}</DialogTitle>
+              <DialogDescription>{c.beforeCallDescription}</DialogDescription>
             </DialogHeader>
             <div className="space-y-2">
-              <Label htmlFor="sourcing">{t('labelSourcing')}</Label>
+              <Label htmlFor="sourcing">{c.labelSourcing}</Label>
               <Textarea
                 id="sourcing"
                 className="min-h-[80px] resize-y"
                 autoComplete="off"
-                placeholder={t('placeholderSourcing')}
+                placeholder={c.placeholderSourcing}
                 {...register('sourcing')}
                 aria-invalid={Boolean(errors.sourcing)}
               />
@@ -149,11 +145,11 @@ const AskMaxDialog = ({ className, size, variant, children }: AskMaxDialogProps)
               ) : null}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="headache">{t('labelHeadache')}</Label>
+              <Label htmlFor="headache">{c.labelHeadache}</Label>
               <Textarea
                 id="headache"
                 className="min-h-[100px] resize-y"
-                placeholder={t('placeholderHeadache')}
+                placeholder={c.placeholderHeadache}
                 {...register('headache')}
                 aria-invalid={Boolean(errors.headache)}
               />
@@ -174,16 +170,16 @@ const AskMaxDialog = ({ className, size, variant, children }: AskMaxDialogProps)
               {isPending ? (
                 <>
                   <Loader2 className="size-4 animate-spin" />
-                  {t('sending')}
+                  {c.sending}
                 </>
               ) : (
-                t('submit')
+                c.submit
               )}
             </Button>
             <p className="text-center text-xs text-muted-foreground">
-              {t('reachWithoutForm')}{' '}
-              <a className="underline-offset-2 hover:underline" href={`mailto:${defaultEmail}`}>
-                {defaultEmail}
+              {c.reachWithoutForm}{' '}
+              <a className="underline-offset-2 hover:underline" href={`mailto:${businessEmail}`}>
+                {businessEmail}
               </a>
             </p>
           </form>
@@ -193,4 +189,4 @@ const AskMaxDialog = ({ className, size, variant, children }: AskMaxDialogProps)
   )
 }
 
-export { AskMaxDialog }
+export { ContactAgentDialog }

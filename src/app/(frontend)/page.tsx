@@ -1,7 +1,7 @@
 import { MarketingPage } from '@/components/home/MarketingPage'
 
-const Home = () => {
+const HomePage = () => {
   return <MarketingPage />
 }
 
-export default Home
+export default HomePage

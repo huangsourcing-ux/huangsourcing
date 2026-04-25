@@ -5,16 +5,14 @@
   },
   "Nav": {
     "brand": "HF Sourcing",
-    "tagline": "On-site in Greater Bay, China",
+    "tagline": "Based in Shanghai · Onsite across East China",
+    "about": "About",
     "roadmap": "Roadmap",
     "trust": "Trust",
     "services": "Services",
     "reviews": "Reviews",
     "sampleReport": "Sample report",
     "bookFrom299": "Book from $299"
-  },
-  "Language": {
-    "label": "Language"
   },
   "Home": {
     "announcement": "Buyer-side only · Flat-rate inspection · 24h reporting · No factory kickbacks",
@@ -151,7 +149,7 @@
         }
       ]
     },
-    "askMaxCta": "Ask Max — form / WhatsApp / email",
+    "contactAgentCta": "Contact Agent Huang — form / WhatsApp / email",
     "paidModules": [
       {
         "id": "sourcing-verification",
@@ -291,7 +289,7 @@
       },
       {
         "iconKey": "checkCircle2",
-        "label": "HF Sourcing — Max Huang",
+        "label": "HF Sourcing — Agent Huang",
         "text": "10 years in supply-chain systems. Paid only by you. I report what risks your money — not what makes the supplier happy.",
         "tone": "positive"
       }
@@ -320,13 +318,13 @@
       {
         "name": "David R.",
         "country": "United States",
-        "message": "Max found a welding defect our supplier never mentioned. The report gave us enough evidence to stop the balance payment.",
+        "message": "Agent Huang found a welding defect our supplier never mentioned. The report gave us enough evidence to stop the balance payment.",
         "result": "$18,400 shipment protected"
       },
       {
         "name": "Sophie M.",
         "country": "Germany",
-        "message": "The factory kept saying everything was ready. Max went onsite, counted cartons, and showed the order was only 62% finished.",
+        "message": "The factory kept saying everything was ready. Agent Huang went onsite, counted cartons, and showed the order was only 62% finished.",
         "result": "Production delay exposed"
       },
       {
@@ -361,9 +359,10 @@
     "servicesTitle": "Services",
     "trustTitle": "Trust",
     "contactTitle": "Contact",
-    "region": "Greater Bay Area, China",
+    "region": "Shanghai · East China",
     "copyright": "Inspired by market-style B2B clarity (e.g. G2). Not affiliated with G2, Inc.",
     "links": {
+      "aboutFounder": "About Agent Huang",
       "freePlan": "Free plan",
       "verification249": "Sourcing & verification $249",
       "samples": "Samples from $99 + freight",
@@ -374,7 +373,35 @@
       "sampleReport": "Sample report"
     }
   },
-  "AskMax": {
+  "About": {
+    "meta": {
+      "title": "About Agent Huang | HF Sourcing",
+      "description": "The founder of HF Sourcing: 10 years in supply chain systems, Shanghai-based, zero factory ties—why I left the desk for the factory floor."
+    },
+    "badge": "About the Founder: The Agent Huang Story",
+    "h1": "The Origin of Agent Huang: Why I Left the Desk for the Factory Floor.",
+    "h1Sub": "Agent Huang 的起源：为什么我离开办公桌，走向工厂车间",
+    "intro": "Based in Shanghai, China. 10 years of supply chain systems expertise. Zero factory ties. 100% independent.",
+    "s1Title": "1. The 10-Year Insider",
+    "s1Body": "For a decade, I worked deep inside the cross-border e-commerce supply chain systems. I saw the data behind millions of dollars in trade. But more importantly, I saw the dark side: the hidden pitfalls, the “unspoken rules” of Chinese manufacturing, and the hidden kickbacks that overseas buyers end up paying for without ever knowing it. I knew the system was broken, and I knew how to fix it.",
+    "s2Title": "2. The AI Wake-Up Call",
+    "s2Before": "Recently, AI disrupted my tech job. It forced me to rethink the future of global trade. AI is amazing—it can translate emails perfectly and build beautiful sourcing websites. But here is what AI cannot do: ",
+    "s2Highlight": "AI cannot walk onto a noisy factory floor.",
+    "s2After": " AI cannot feel the texture of a fabric, test the physical hinge of a box, or catch a factory manager quietly replacing premium materials with cheap alternatives. In an automated world, physical presence is the ultimate luxury.",
+    "s3Title": "3. The Honest Motive",
+    "s3Intro": "I founded HF Sourcing and became “Agent Huang” for two very honest reasons:",
+    "s3First": "First: I wanted to build a profitable, sustainable business for myself by providing genuine, transparent value that traditional agents refuse to give.",
+    "s3Second": "Second: I wanted to be the ultimate physical firewall for global buyers. I know exactly how factories play games, and I know exactly how to stop them.",
+    "s4Title": "4. The Promise",
+    "s4Body": "I don’t take factory commissions. I don’t participate in the “Yes Culture” (where agents say yes to everything just to keep the factory happy). I simply go to the facility, tell you the absolute truth, and protect your margins. I am your eyes, your ears, and your enforcer on the ground in China.",
+    "cta": "Based in Shanghai. Available for onsite audits across East China.",
+    "ctaWhatsapp": "Contact Agent Huang via WhatsApp",
+    "ctaReport": "Download my latest inspection report",
+    "shanghaiNote": "Strategically located in Shanghai—The heart of East China’s manufacturing hub.",
+    "portraitAlt": "Agent Huang — founder of HF Sourcing",
+    "shanghaiImageAlt": "Shanghai / East China trade and manufacturing context"
+  },
+  "ContactAgent": {
     "successTitle": "Thank you. I have your context.",
     "successDescription": "By the way, I just finished a similar case study last week. Here is the sample report. You might find it useful for your future quality control.",
     "downloadReport": "Download sample report (PDF)",
@@ -388,7 +415,7 @@
     "placeholderSourcing": "e.g. stainless steel cutlery, MOQ 2,000 sets — or paste a factory link or name",
     "placeholderHeadache": "Factory ghosting, wrong samples, AQL fail last shipment…",
     "sending": "Sending",
-    "submit": "Send to Max",
+    "submit": "Send to Agent Huang",
     "reachWithoutForm": "You can also reach out without the form:"
   }
 }
