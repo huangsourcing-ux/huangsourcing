@@ -5,7 +5,7 @@
   },
   "Nav": {
     "brand": "HF Sourcing",
-    "tagline": "Based in Shanghai · Onsite across East China",
+    "tagline": "Based in Shanghai · Onsite anywhere in China",
     "about": "About",
     "roadmap": "Roadmap",
     "trust": "Trust",
@@ -207,7 +207,7 @@
         "integrator": "Pre-shipment inspection + line monitoring + on-site dispute handling.",
         "focus": "Reject bad goods, reject silent delays — before the 70% balance.",
         "price": "$299",
-        "unit": "/ man-day · Greater Bay Area",
+        "unit": "/ man-day · China-wide",
         "whenToBook": "Before final payment and before goods leave your supplier — every serious PO should pass this gate.",
         "isEntry": false,
         "isFeatured": true,
@@ -355,11 +355,11 @@
     }
   },
   "Footer": {
-    "about": "Verification, sample hub, line QC, and FBA / export prep in South China. No factory funding — compare with confidence.",
+    "about": "Verification, sample hub, line QC, and FBA / export prep across China. No factory funding — compare with confidence.",
     "servicesTitle": "Services",
     "trustTitle": "Trust",
     "contactTitle": "Contact",
-    "region": "Shanghai · East China",
+    "region": "Shanghai base · Nationwide, China",
     "copyright": "Inspired by market-style B2B clarity (e.g. G2). Not affiliated with G2, Inc.",
     "links": {
       "aboutFounder": "About Agent Huang",
@@ -376,14 +376,13 @@
   "About": {
     "meta": {
       "title": "About Agent Huang | HF Sourcing",
-      "description": "The founder of HF Sourcing: 10 years in supply chain systems, Shanghai-based, zero factory ties—why I left the desk for the factory floor."
+      "description": "Ten years in China’s supply chain, Shanghai-based, zero factory kickbacks. Why Agent Huang built HF Sourcing: from insider reality to hands-on factory truth."
     },
-    "badge": "About the Founder: The Agent Huang Story",
-    "h1": "The Origin of Agent Huang: Why I Left the Desk for the Factory Floor.",
-    "h1Sub": "Agent Huang 的起源：为什么我离开办公桌，走向工厂车间",
-    "intro": "Based in Shanghai, China. 10 years of supply chain systems expertise. Zero factory ties. 100% independent.",
+    "badge": "About the Founder",
+    "h1": "The Agent Huang Story",
+    "tagline": "10 years inside the Chinese supply chain system. Zero ties to factories. 100% loyal to your bottom line.",
     "s1Title": "1. The 10-Year Insider",
-    "s1Body": "For a decade, I worked deep inside the cross-border e-commerce supply chain systems. I saw the data behind millions of dollars in trade. But more importantly, I saw the dark side: the hidden pitfalls, the “unspoken rules” of Chinese manufacturing, and the hidden kickbacks that overseas buyers end up paying for without ever knowing it. I knew the system was broken, and I knew how to fix it.",
+    "s1Body": "For a decade, I worked deep inside cross-border e-commerce and enterprise supply chain systems. I built and integrated that machinery for major companies—including across the Greater Bay Area—and I saw the data behind serious trade. But I kept seeing the same pain on the ground: the hidden “unspoken rules,” the kickbacks, overseas buyers scammed by “bedroom” traders on marketplaces, and premium prices for poor quality while “free” agents took the factory’s side. I knew how the game was played, I knew it was broken, and I knew how to stand on yours—not theirs.",
     "s2Title": "2. The AI Wake-Up Call",
     "s2Before": "Recently, AI disrupted my tech job. It forced me to rethink the future of global trade. AI is amazing—it can translate emails perfectly and build beautiful sourcing websites. But here is what AI cannot do: ",
     "s2Highlight": "AI cannot walk onto a noisy factory floor.",
@@ -391,15 +390,17 @@
     "s3Title": "3. The Honest Motive",
     "s3Intro": "I founded HF Sourcing and became “Agent Huang” for two very honest reasons:",
     "s3First": "First: I wanted to build a profitable, sustainable business for myself by providing genuine, transparent value that traditional agents refuse to give.",
-    "s3Second": "Second: I wanted to be the ultimate physical firewall for global buyers. I know exactly how factories play games, and I know exactly how to stop them.",
+    "s3Second": "Second: I wanted to be the ultimate physical firewall for global buyers. Overseas buyers do not need another middleman—they need someone who gets the local “business games,” speaks the language, and can walk the line and say, “This is unacceptable.” I know exactly how factories play games, and I know how to stop them.",
     "s4Title": "4. The Promise",
-    "s4Body": "I don’t take factory commissions. I don’t participate in the “Yes Culture” (where agents say yes to everything just to keep the factory happy). I simply go to the facility, tell you the absolute truth, and protect your margins. I am your eyes, your ears, and your enforcer on the ground in China.",
-    "cta": "Based in Shanghai. Available for onsite audits across East China.",
+    "s4Body": "I do not take factory commissions. I do not participate in the “Yes Culture,” where agents say yes to everything just to keep the factory happy. You pay a flat, transparent rate. I put on my boots, drive to the facility, open the cartons, and take macro photos of the real defects—not generic rows in a fancy office spreadsheet. I go where the problem is, tell you the absolute truth, and protect your margins. I am your eyes, your ears, and your enforcer in China.",
+    "signatureName": "Agent Huang",
+    "signatureRole": "Founder & Lead Inspector, HF Sourcing",
+    "cta": "I am based in Shanghai—at the center of a massive manufacturing and export hub—and I travel across China when your line or your audit needs me there.",
     "ctaWhatsapp": "Contact Agent Huang via WhatsApp",
     "ctaReport": "Download my latest inspection report",
-    "shanghaiNote": "Strategically located in Shanghai—The heart of East China’s manufacturing hub.",
+    "locationNote": "Strategically based in Shanghai—the heart of East China’s manufacturing and export engine. Nationwide travel for inspections and factory work.",
     "portraitAlt": "Agent Huang — founder of HF Sourcing",
-    "shanghaiImageAlt": "Shanghai / East China trade and manufacturing context"
+    "contextImageAlt": "Shanghai and China manufacturing context — local hub, national reach"
   },
   "ContactAgent": {
     "successTitle": "Thank you. I have your context.",
