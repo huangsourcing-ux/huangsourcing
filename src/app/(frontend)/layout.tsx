@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 import { en } from '@/content/en'
 
 import '../globals.css'
+
+const googleAnalyticsId = 'G-WCDP8RQ374'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://huangsourcing.com'),
@@ -50,7 +53,22 @@ type Props = {
 
 const RootFrontendLayout = ({ children }: Props) => (
   <html className="h-full antialiased" lang="en" suppressHydrationWarning>
-    <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
+    <body className="min-h-full flex flex-col bg-background text-foreground">
+      {children}
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${googleAnalyticsId}');
+        `}
+      </Script>
+    </body>
   </html>
 )
 
