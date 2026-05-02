@@ -25,7 +25,7 @@
     "hero": {
       "badge": "Sourcing · Supplier Verification · QC Inspection · Sample Consolidation · FBA Prep",
       "title": "Independent China sourcing, supplier checks, and QC inspection — aligned with you.",
-      "subtitle": "Huang Sourcing helps overseas buyers, small importers, and marketplace sellers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments in China.",
+      "subtitle": "Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.",
       "searchPrefix": "I need",
       "searchExample": "a factory audit in Shenzhen before I wire 30% deposit — can you be there this week?",
       "searchNote": "That is a real first message. Free triage → paid onsite when you are ready.",
@@ -122,8 +122,8 @@
         "sub": "Report SLA (standard runs)"
       },
       {
-        "value": "0%",
-        "sub": "Factory-side fees to me"
+        "value": "No supplier commission",
+        "sub": "We do not take supplier kickbacks for recommendations."
       },
       {
         "value": "100%",

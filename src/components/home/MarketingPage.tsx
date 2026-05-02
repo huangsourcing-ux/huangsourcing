@@ -44,7 +44,7 @@ const agentImage = '/images/agent-huang-onsite-placeholder.webp'
 const coreServices: ServiceCard[] = [
   {
     title: 'Start Free',
-    summary: 'A quick sourcing sanity check for small importers, marketplace sellers, and first-time buyers.',
+    summary: 'Quick sourcing risk check for a supplier link, quote, or first China order.',
     price: 'Free',
     deliverables: ['Supplier link review', 'Risk flags', 'Next-step recommendation'],
   },
@@ -55,10 +55,10 @@ const coreServices: ServiceCard[] = [
     deliverables: ['Factory vs trader check', 'Onsite or desk review', 'Clear go / caution / stop note'],
   },
   {
-    title: 'Inspect Before Payment',
-    summary: 'QC, sample, and pre-shipment inspection before goods leave China.',
+    title: 'Inspect & Prepare Shipment',
+    summary: 'QC inspection, samples, packaging, FBA, and logistics support before goods leave China.',
     price: 'From $299',
-    deliverables: ['Photo evidence', 'AQL-style findings', 'Rework negotiation support'],
+    deliverables: ['QC photo evidence', 'Packaging and label check', 'Shipment handoff support'],
   },
 ]
 
@@ -171,8 +171,8 @@ export function MarketingPage() {
               Independent China sourcing, supplier checks, and QC inspection — aligned with you.
             </h1>
             <p className="mt-5 max-w-[18rem] break-words text-[15px] leading-7 text-slate-600 sm:max-w-2xl sm:text-lg sm:leading-8">
-              Huang Sourcing helps overseas buyers, small importers, and marketplace sellers find suppliers,
-              verify factories, inspect products, consolidate samples, and prepare shipments in China.
+              Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products,
+              consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.
             </p>
             <div className="mt-8">
               <HomeHeroCtas
@@ -190,8 +190,10 @@ export function MarketingPage() {
                 <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Standard report target</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-950">0%</p>
-                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Factory-side commission</p>
+                <p className="text-xl font-bold leading-tight text-slate-950">No supplier commission</p>
+                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">
+                  We do not take supplier kickbacks for recommendations.
+                </p>
               </div>
             </div>
           </div>
@@ -246,7 +248,7 @@ export function MarketingPage() {
           </div>
 
           <div className="mt-8 rounded-lg border border-slate-200 bg-white">
-            <details className="group">
+            <details className="group" suppressHydrationWarning>
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-base font-bold text-slate-950">
                 View detailed service options and pricing
                 <span className="text-xl leading-none text-slate-400 transition group-open:rotate-45">+</span>
