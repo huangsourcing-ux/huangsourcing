@@ -1,7 +1,7 @@
 // [!code ++] Central contact URLs (mailto bodies address Agent Huang, not a former placeholder name)
-export const businessEmail = 'max@hfsourcing.com' as const
+export const businessEmail = 'agent@huangsourcing.com' as const
 
-export const reportHref = '/sample-report.pdf'
+export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
 
 const bookingBody = `Hi Agent Huang,
 

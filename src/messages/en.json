@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "title": "Huang Sourcing | China Sourcing, Supplier Checks & QC Inspection",
-    "description": "Buyer-side China sourcing, supplier verification, QC inspection, sample consolidation, and FBA prep with Agent Huang on the ground."
+    "title": "Huang Sourcing | China Sourcing, Supplier Verification & QC Inspection",
+    "description": "Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments in China before money is sent or goods leave the factory."
   },
   "Nav": {
     "brand": "Huang Sourcing",
@@ -16,14 +16,14 @@
     "contact": "Talk to Agent Huang"
   },
   "Home": {
-    "announcement": "China-side sourcing, supplier verification, QC inspection, sample consolidation, and FBA prep",
+    "announcement": "China-side sourcing, supplier checks, QC inspection, and shipment prep — aligned with the buyer.",
     "localTeamLine": "Agent Huang works for the buyer, not the factory.",
     "g2": {
       "jumpTo": "Jump to",
       "starsRated": "Rated 5 out of 5"
     },
     "hero": {
-      "badge": "Sourcing · Supplier Verification · QC Inspection · Sample Consolidation · FBA Prep",
+      "badge": "Sourcing · Supplier verification · QC inspection · Sample consolidation · FBA prep",
       "title": "Independent China sourcing, supplier checks, and QC inspection — aligned with you.",
       "subtitle": "Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.",
       "searchPrefix": "I need",
@@ -40,7 +40,7 @@
     },
     "services": {
       "title": "Everything you need before paying a Chinese supplier.",
-      "lead": "Start with a quick free check, then add verification, inspection, samples, or logistics only when the order risk justifies it.",
+      "lead": "Start with a quick free check, then add verification, inspection, samples, or logistics support only when the order risk justifies it.",
       "pricingNote": "Updated pricing · USD · + freight or custom where noted",
       "entry": {
         "heading": "The entry — free + verification",
@@ -115,15 +115,15 @@
     "heroStats": [
       {
         "value": "10+ yrs",
-        "sub": "Supply-chain systems"
+        "sub": "China supply-chain experience"
       },
       {
         "value": "24h",
-        "sub": "Report SLA (standard runs)"
+        "sub": "Standard reply target"
       },
       {
-        "value": "No supplier commission",
-        "sub": "We do not take supplier kickbacks for recommendations."
+        "value": "No supplier-paid recommendations",
+        "sub": "Recommendations stay buyer-aligned"
       },
       {
         "value": "100%",
@@ -208,7 +208,7 @@
         "integrator": "Pre-shipment inspection + line monitoring + on-site dispute handling.",
         "focus": "Reject bad goods, reject silent delays — before the 70% balance.",
         "price": "$299",
-        "unit": "/ man-day · China-wide",
+        "unit": "/ inspector day · China-wide",
         "whenToBook": "Before final payment and before goods leave your supplier — every serious PO should pass this gate.",
         "isEntry": false,
         "isFeatured": true,
@@ -298,7 +298,7 @@
     "integrity": {
       "badge": "Trust & integrity",
       "title": "Paid by the buyer. Not by the factory.",
-      "lead": "Many sourcing platforms monetize supplier exposure. Huang Sourcing is different: the service fee comes from the buyer, so recommendations stay aligned with your order."
+      "lead": "Some platforms earn money from supplier exposure. Huang Sourcing is different: our service fee comes from the buyer, so recommendations stay aligned with your order."
     },
     "compareStrip": {
       "title": "Buyer-aligned sourcing support",
@@ -319,20 +319,20 @@
       {
         "name": "David R.",
         "country": "United States",
-        "message": "Agent Huang found a welding defect our supplier never mentioned. The report gave us enough evidence to stop the balance payment.",
-        "result": "$18,400 shipment protected"
+        "message": "Agent Huang checked packaging and carton-label photos before we paid the balance. One carton label was wrong, so we asked the supplier to fix it before pickup.",
+        "result": "Balance payment protected"
       },
       {
         "name": "Sophie M.",
         "country": "Germany",
-        "message": "The factory kept saying everything was ready. Agent Huang went onsite, counted cartons, and showed the order was only 62% finished.",
-        "result": "Production delay exposed"
+        "message": "The factory said the order was ready for pickup. The onsite check showed missing cartons and mixed labels, so we delayed collection until the count matched the packing list.",
+        "result": "Delay caught before pickup"
       },
       {
         "name": "Marcus T.",
         "country": "Australia",
-        "message": "Not a checklist inspector. He explained why the defects happened and how to push the supplier into rework.",
-        "result": "Rework completed before loading"
+        "message": "We had four suppliers with similar quotes. Agent Huang compared samples, MOQ details, and factory risk notes, then showed why one supplier was safer for the first order.",
+        "result": "Supplier shortlist reduced from 4 to 1"
       }
     ],
     "reviewMeta": [
@@ -350,7 +350,7 @@
       }
     ],
     "reportCta": {
-      "title": "See the evidence before you book an inspection",
+      "title": "See what your report will look like before you book",
       "lead": "Photo evidence, defect notes, packaging checks, and practical decision points before paying a supplier.",
       "button": "Download sample report (PDF)"
     }
@@ -405,7 +405,7 @@
   },
   "ContactAgent": {
     "successTitle": "Thank you. I have your context.",
-    "successDescription": "By the way, I just finished a similar case study last week. Here is the sample report. You might find it useful for your future quality control.",
+    "successDescription": "Here is the Huang Sourcing sample report so you can see the type of evidence, packaging checks, and QC notes you should expect before booking.",
     "downloadReport": "Download sample report (PDF)",
     "preferHuman": "Prefer a human channel?",
     "email": "Email",

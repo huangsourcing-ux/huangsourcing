@@ -126,7 +126,7 @@ export function getDatabasePoolOptions(): PoolConfig {
     maxUses: 500,
     keepAlive: true,
     keepAliveInitialDelayMillis: 10_000,
-    application_name: 'hfsourcing-payload',
+    application_name: 'huang-sourcing-payload',
   }
 
   // [!code modify] `next build`: no IPv4 subprocess, no assumption that DB is reachable (Vercel build env).

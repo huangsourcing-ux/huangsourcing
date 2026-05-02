@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
 import { en } from '@/content/en'
@@ -26,10 +27,14 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
       ) : null}
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.04)] backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
-          <Link className="group flex min-w-0 items-center gap-2.5" href="/">
-            <span className="grid size-10 place-content-center rounded-md bg-slate-950 text-sm font-extrabold text-white shadow-sm">
-              HS
-            </span>
+          <Link aria-label="Huang Sourcing home" className="group flex min-w-0 items-center gap-2.5" href="/">
+            <Image
+              alt="Huang Sourcing logo"
+              className="size-10 rounded-md shadow-sm"
+              height={40}
+              src="/brand-mark.svg"
+              width={40}
+            />
             <div className="min-w-0 leading-tight">
               <span className="block truncate text-base font-extrabold tracking-tight text-slate-900">{nav.brand}</span>
               <span className="hidden text-xs font-medium text-slate-500 md:block">{nav.tagline}</span>

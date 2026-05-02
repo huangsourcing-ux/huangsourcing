@@ -14,6 +14,7 @@ import Link from 'next/link'
 
 import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
+import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import { businessEmail, reportHref } from '@/lib/site-links'
@@ -50,15 +51,20 @@ const coreServices: ServiceCard[] = [
   },
   {
     title: 'Verify Supplier',
-    summary: 'Factory check, background review, and quote comparison.',
+    summary: 'Factory check, company background review, and quote comparison.',
     price: 'From $249',
-    deliverables: ['Factory vs trader check', 'Onsite or desk review', 'Clear go / caution / stop note'],
+    deliverables: ['Factory vs trader check', 'Company background review', 'Clear go / caution / stop note'],
   },
   {
     title: 'Inspect & Prepare Shipment',
-    summary: 'QC inspection, samples, packaging, FBA, and logistics support before goods leave China.',
-    price: 'From $299',
-    deliverables: ['QC photo evidence', 'Packaging and label check', 'Shipment handoff support'],
+    summary: 'QC inspection, packaging, labels, samples, and shipment prep before goods leave China.',
+    price: 'QC from $299',
+    deliverables: [
+      'QC photo evidence',
+      'Samples from $99 + freight',
+      'Packaging and label check',
+      'FBA / logistics quoted separately',
+    ],
   },
 ]
 
@@ -66,7 +72,7 @@ const detailServices: DetailService[] = [
   {
     title: 'Supplier shortlist / quick sourcing check',
     summary: 'Use this when you have product requirements but are not sure which supplier is real.',
-    price: 'Free first pass',
+    price: 'Free first review',
     bestFor: 'First-time buyers, Amazon sellers, and small importers comparing early supplier options.',
     deliverables: ['Supplier risk review', 'Quote and MOQ sanity check', 'Recommended next action'],
   },
@@ -75,7 +81,7 @@ const detailServices: DetailService[] = [
     summary: 'A practical check before you wire a deposit or lock a new factory.',
     price: 'From $249',
     bestFor: 'New vendors, high deposit orders, or suppliers found through marketplaces.',
-    deliverables: ['Factory / trader review', 'Business and production signals', 'Buyer-side risk summary'],
+    deliverables: ['Factory / trader review', 'Company background review', 'Buyer-side risk summary'],
   },
   {
     title: 'Sample consolidation',
@@ -87,7 +93,7 @@ const detailServices: DetailService[] = [
   {
     title: 'QC inspection',
     summary: 'Onsite product, packaging, and quantity checks before final payment.',
-    price: 'From $299 / man-day',
+    price: 'From $299 / inspector day',
     bestFor: 'Pre-shipment inspections and orders where defects would hurt margin or reviews.',
     deliverables: ['Photo evidence', 'AQL-style defect list', 'Same-day issue escalation'],
   },
@@ -96,14 +102,14 @@ const detailServices: DetailService[] = [
     summary: 'China-side prep for ecommerce shipments that need labels, packaging, and coordination.',
     price: 'Custom quote',
     bestFor: 'Amazon, Walmart, DDP, private label, or multi-SKU shipments.',
-    deliverables: ['Label and packaging coordination', 'Carton / SKU checks', 'Export handoff support'],
+    deliverables: ['Label and packaging coordination', 'Carton / SKU checks', 'Pickup / shipment coordination'],
   },
 ]
 
 const trustPoints = [
   {
-    title: 'No supplier commission',
-    body: 'The service fee comes from the buyer, so recommendations stay aligned with your order.',
+    title: 'No supplier-paid recommendations',
+    body: 'The service fee comes from the buyer, so supplier suggestions stay aligned with your order.',
   },
   {
     title: 'No factory-paid ranking',
@@ -123,7 +129,7 @@ const reviews: Review[] = [
     country: 'United States',
     category: 'Home hardware',
     message:
-      'Agent Huang found a packaging and finish issue before we paid the balance. The photos made the supplier fix it without a long argument.',
+      'Agent Huang checked packaging and carton-label photos before we paid the balance. One carton label was wrong, so we asked the supplier to fix it before pickup.',
     result: 'Balance payment protected',
   },
   {
@@ -131,7 +137,7 @@ const reviews: Review[] = [
     country: 'Germany',
     category: 'Consumer electronics',
     message:
-      'The factory said the order was ready. The onsite check showed missing cartons and wrong labels, which saved us a bad shipment.',
+      'The factory said the order was ready for pickup. The onsite check showed missing cartons and mixed labels, so we delayed collection until the count matched the packing list.',
     result: 'Delay caught before pickup',
   },
   {
@@ -139,7 +145,7 @@ const reviews: Review[] = [
     country: 'Australia',
     category: 'Private-label goods',
     message:
-      'The sample comparison was practical. I could see which supplier was careful and which one only looked good in the quote.',
+      'We had four suppliers with similar quotes. Agent Huang compared samples, MOQ details, and factory risk notes, then showed why one supplier was safer for the first order.',
     result: 'Supplier shortlist reduced from 4 to 1',
   },
 ]
@@ -158,14 +164,18 @@ export function MarketingPage() {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
       <SiteHeader
         activePage="home"
-        topBanner="China-side sourcing, supplier verification, QC inspection, sample consolidation, and FBA prep"
+        topBanner="China-side sourcing, supplier checks, QC inspection, and shipment prep — aligned with the buyer."
       />
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
+        <div
+          className="pointer-events-none absolute right-0 top-0 h-full w-2/3 bg-[radial-gradient(circle_at_82%_14%,rgba(220,38,38,0.06),rgba(15,23,42,0.035)_34%,transparent_62%)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:py-20">
           <div className="min-w-0 lg:col-span-6">
             <p className="max-w-[18rem] break-words text-xs font-semibold leading-6 text-red-600 sm:max-w-full sm:text-sm">
-              Sourcing · Supplier checks · QC inspection · Samples · FBA prep
+              Sourcing · Supplier verification · QC inspection · Sample consolidation · FBA prep
             </p>
             <h1 className="mt-4 max-w-[18rem] break-words text-balance text-[2.12rem] font-bold leading-[1.1] tracking-tight text-slate-950 sm:max-w-full sm:text-5xl lg:text-[3.35rem]">
               Independent China sourcing, supplier checks, and QC inspection — aligned with you.
@@ -183,17 +193,15 @@ export function MarketingPage() {
             <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 border-y border-slate-200 py-5 sm:grid-cols-3">
               <div>
                 <p className="text-2xl font-bold text-slate-950">10+ yrs</p>
-                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">China supply-chain systems</p>
+                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">China supply-chain experience</p>
               </div>
               <div>
                 <p className="text-2xl font-bold text-slate-950">24h</p>
-                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Standard report target</p>
+                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Standard reply target</p>
               </div>
               <div>
-                <p className="text-xl font-bold leading-tight text-slate-950">No supplier commission</p>
-                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">
-                  We do not take supplier kickbacks for recommendations.
-                </p>
+                <p className="text-xl font-bold leading-tight text-slate-950">No supplier-paid recommendations</p>
+                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Recommendations stay buyer-aligned</p>
               </div>
             </div>
           </div>
@@ -222,7 +230,7 @@ export function MarketingPage() {
               Everything you need before paying a Chinese supplier.
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Start with a quick free check, then add verification, inspection, samples, or logistics only when the order risk justifies it.
+              Start with a quick free check, then add verification, inspection, samples, or logistics support only when the order risk justifies it.
             </p>
           </div>
 
@@ -247,45 +255,7 @@ export function MarketingPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg border border-slate-200 bg-white">
-            <details className="group" suppressHydrationWarning>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-left text-base font-bold text-slate-950">
-                View detailed service options and pricing
-                <span className="text-xl leading-none text-slate-400 transition group-open:rotate-45">+</span>
-              </summary>
-              <div className="border-t border-slate-200 px-5 py-5">
-                <div className="grid gap-4 lg:grid-cols-2">
-                  {detailServices.map((service) => (
-                    <article className="rounded-md border border-slate-200 bg-slate-50 p-4" key={service.title}>
-                      <div className="flex flex-col justify-between gap-3 sm:flex-row">
-                        <div>
-                          <h3 className="font-bold text-slate-950">{service.title}</h3>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">{service.summary}</p>
-                        </div>
-                        <p className="shrink-0 font-bold text-red-600">{service.price}</p>
-                      </div>
-                      <p className="mt-3 text-sm text-slate-700">
-                        <span className="font-semibold text-slate-950">Best for: </span>
-                        {service.bestFor}
-                      </p>
-                      <p className="mt-3 text-sm font-semibold text-slate-950">Includes:</p>
-                      <ul className="mt-2 grid gap-2 text-sm text-slate-700 sm:grid-cols-3">
-                        {service.deliverables.map((item) => (
-                          <li className="flex gap-2" key={item}>
-                            <Check className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="mt-3 text-sm font-semibold text-slate-950">
-                        Starting from: <span className="text-red-600">{service.price}</span>
-                      </p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </details>
-          </div>
+          <HomeServiceDetails services={detailServices} />
         </div>
       </section>
 
@@ -297,8 +267,8 @@ export function MarketingPage() {
               Paid by the buyer. Not by the factory.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Many sourcing platforms monetize supplier exposure. Huang Sourcing is different:
-              your service fee comes from you, so Agent Huang’s recommendations stay aligned with your order.
+              Some platforms earn money from supplier exposure. Huang Sourcing is different:
+              our service fee comes from the buyer, so recommendations stay aligned with your order.
             </p>
           </div>
           <div className="grid gap-3 lg:col-span-7">
@@ -322,7 +292,7 @@ export function MarketingPage() {
           <div className="lg:col-span-6">
             <p className="text-sm font-semibold text-red-300">Sample report</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              See the evidence before you book an inspection.
+              See what your report will look like before you book.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-300">
               The sample report shows the kind of photo evidence, defect notes, packaging checks,
@@ -439,7 +409,7 @@ export function MarketingPage() {
               <h2 className="text-3xl font-bold tracking-tight">Need someone to check a supplier this week?</h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
                 Send the supplier name, product, factory location, order value, and deadline.
-                Agent Huang will tell you the safest next step.
+                Agent Huang will suggest the safest next step.
               </p>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
@@ -482,7 +452,7 @@ export function MarketingPage() {
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Contact</p>
             <a className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-950 hover:text-red-600" href={`mailto:${businessEmail}`}>
               <Mail className="size-4" />
-              {businessEmail}
+              Email: {businessEmail}
             </a>
             <p className="mt-2 flex items-center gap-2 text-sm text-slate-600">
               <MapPin className="size-4" />
