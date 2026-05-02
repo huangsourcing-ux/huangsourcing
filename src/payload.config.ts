@@ -32,7 +32,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: '- HFsourcing',
+      titleSuffix: '- Huang Sourcing',
     },
   },
   collections: [Users, Media, ConsultationInquiries],

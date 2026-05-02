@@ -1,34 +1,34 @@
 {
   "Meta": {
-    "title": "HF Sourcing | Independent China Factory Audit & Inspection",
-    "description": "Independent factory audits, AQL inspections, and crisis negotiation in China. Flat rates, zero factory kickbacks, and a free first-line sanity check for serious buyers."
+    "title": "Huang Sourcing | China Sourcing, Supplier Checks & QC Inspection",
+    "description": "Buyer-side China sourcing, supplier verification, QC inspection, sample consolidation, and FBA prep with Agent Huang on the ground."
   },
   "Nav": {
-    "brand": "HF Sourcing",
-    "tagline": "Based in Shanghai · Onsite anywhere in China",
+    "brand": "Huang Sourcing",
+    "tagline": "Agent Huang · China-side sourcing partner",
     "about": "About",
-    "roadmap": "Roadmap",
+    "roadmap": "Process",
     "trust": "Trust",
     "services": "Services",
     "reviews": "Reviews",
     "sampleReport": "Sample report",
-    "bookFrom299": "Book from $299"
+    "bookFrom299": "Book free call"
   },
   "Home": {
-    "announcement": "Buyer-side only · Flat-rate inspection · 24h reporting · No factory kickbacks",
-    "localTeamLine": "I am your local team, not their partner.",
+    "announcement": "China-side sourcing, supplier verification, QC inspection, sample consolidation, and FBA prep",
+    "localTeamLine": "Agent Huang works for the buyer, not the factory.",
     "g2": {
       "jumpTo": "Jump to",
       "starsRated": "Rated 5 out of 5"
     },
     "hero": {
-      "badge": "Sourcing · Samples · AQL QC · FBA / DDP",
-      "title": "Find, verify, and ship from China without guessing who paid your inspector.",
-      "subtitle": "From sourcing & verification to sample hub, AQL on the line, and FBA / DDP out — one local team, flat or quoted prices, 24-hour reporting, and zero factory-side income to me. Compare the stack, not a generic inspection PDF.",
+      "badge": "Sourcing · Supplier Verification · QC Inspection · Sample Consolidation · FBA Prep",
+      "title": "Independent China sourcing, supplier checks, and QC inspection — aligned with you.",
+      "subtitle": "Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments before money is sent or goods leave China.",
       "searchPrefix": "I need",
       "searchExample": "a factory audit in Shenzhen before I wire 30% deposit — can you be there this week?",
       "searchNote": "That is a real first message. Free triage → paid onsite when you are ready.",
-      "heroCtaPrimary": "Ask Agent Huang (Free)",
+      "heroCtaPrimary": "Book a free sourcing call",
       "heroCtaSecondary": "Download sample report",
       "imageAlt": "Factory floor — on-site evidence for your report",
       "heroPanelBuyer": "Buyer satisfaction",
@@ -38,8 +38,8 @@
       "onTheFloorSub": "Real photos, AQL logic, fail/pass you can show your bank."
     },
     "services": {
-      "title": "The full China stack — compare like a G2 grid",
-      "lead": "No hidden \"factory marketing fees\" — what you see is what funds the work. Start with a free line in, then add paid modules as your PO and risk grow.",
+      "title": "Everything you need before paying a Chinese supplier.",
+      "lead": "Start with a quick free check, then add verification, inspection, samples, or logistics only when the order risk justifies it.",
       "pricingNote": "Updated pricing · USD · + freight or custom where noted",
       "entry": {
         "heading": "The entry — free + verification",
@@ -130,8 +130,8 @@
       }
     ],
     "freeInsider": {
-      "title": "The \"China Insider\" Friend (100% Free)",
-      "slogan": "Your First Real Connection on the Ground.",
+      "title": "Free first sourcing check",
+      "slogan": "A practical first read from Agent Huang on the China side.",
       "priceLine": "Free",
       "whyFree": "I've spent 10 years in the system, and I'm tired of seeing honest Western buyers getting scammed or frustrated. I want to build a relationship first. If I can save you from a bad deal with a 10-minute chat, I've done my job as a friend. If you need me for an on-site audit later, you know where to find me.",
       "included": [
@@ -149,7 +149,7 @@
         }
       ]
     },
-    "contactAgentCta": "Ask Agent Huang (Free)",
+    "contactAgentCta": "Talk to Agent Huang",
     "paidModules": [
       {
         "id": "sourcing-verification",
@@ -256,7 +256,7 @@
       {
         "iconKey": "shield",
         "title": "You pay. I work for you.",
-        "body": "No factory commissions. No referral kickbacks. The invoice is between you and HF Sourcing."
+        "body": "No factory commissions. No referral kickbacks. The invoice is between you and Huang Sourcing."
       },
       {
         "iconKey": "ban",
@@ -289,28 +289,28 @@
       },
       {
         "iconKey": "checkCircle2",
-        "label": "HF Sourcing — Agent Huang",
+        "label": "Huang Sourcing — Agent Huang",
         "text": "10 years in supply-chain systems. Paid only by you. I report what risks your money — not what makes the supplier happy.",
         "tone": "positive"
       }
     ],
     "integrity": {
       "badge": "Trust & integrity",
-      "title": "Why the incentive line matters",
-      "lead": "B2B marketplaces are built on transparent reviews. Your QC is no different: who funds the person in the WeChat group?"
+      "title": "Paid by the buyer. Not by the factory.",
+      "lead": "Many sourcing platforms monetize supplier exposure. Huang Sourcing is different: the service fee comes from the buyer, so recommendations stay aligned with your order."
     },
     "compareStrip": {
-      "title": "Same service — who gets paid twice?",
-      "lead": "G2 differentiates by crowd truth. I differentiate by economics: one payer, one loyalty."
+      "title": "Buyer-aligned sourcing support",
+      "lead": "The service fee comes from the buyer, so recommendations stay aligned with your order."
     },
     "people": {
-      "title": "People, not a logo, buy trust.",
-      "body": "Replace the stock image with a clear photo of you. On G2, people filter by product — here they choose who will walk into a factory and tell them the hard truth.",
+      "title": "Talk to Agent Huang before you send money.",
+      "body": "I work on the China side for overseas buyers who need someone to check suppliers, compare quotes, inspect products, and communicate with factories before they commit.",
       "imageAlt": "Your own photo: coffee, city street, Dongguan or Shenzhen"
     },
     "proof": {
-      "title": "Reviews from buyers",
-      "lead": "Structured like a marketplace review — with outcomes you can measure.",
+      "title": "Buyer feedback from practical cases.",
+      "lead": "Short, specific outcomes from buyers who needed supplier checks, sample comparison, or pre-shipment evidence.",
       "verified": "Verified",
       "channel": "WhatsApp / email"
     },
@@ -349,38 +349,38 @@
       }
     ],
     "reportCta": {
-      "title": "See a full report before you book",
-      "lead": "Photo evidence, AQL, defect list — the same document you can forward internally.",
+      "title": "See the evidence before you book an inspection",
+      "lead": "Photo evidence, defect notes, packaging checks, and practical decision points before paying a supplier.",
       "button": "Download sample report (PDF)"
     }
   },
   "Footer": {
-    "about": "Verification, sample hub, line QC, and FBA / export prep across China. No factory funding — compare with confidence.",
+    "about": "Buyer-side sourcing, supplier verification, QC inspection, sample consolidation, and China-side shipment support for overseas buyers.",
     "servicesTitle": "Services",
     "trustTitle": "Trust",
     "contactTitle": "Contact",
-    "region": "Shanghai base · Nationwide, China",
-    "copyright": "Inspired by market-style B2B clarity (e.g. G2). Not affiliated with G2, Inc.",
+    "region": "Shanghai base · Nationwide China · China business hours response",
+    "copyright": "Buyer-side support in China.",
     "links": {
       "aboutFounder": "About Agent Huang",
       "freePlan": "Free plan",
-      "verification249": "Sourcing & verification $249",
+      "verification249": "Supplier verification from $249",
       "samples": "Samples from $99 + freight",
-      "qc": "QC from $299 / day",
+      "qc": "QC inspection from $299 / day",
       "fba": "FBA & logistics (quote)",
-      "integrity": "Integrity & incentives",
+      "integrity": "Buyer-aligned trust",
       "reviews": "Reviews",
       "sampleReport": "Sample report"
     }
   },
   "About": {
     "meta": {
-      "title": "About Agent Huang | HF Sourcing",
-      "description": "Ten years in China’s supply chain, Shanghai-based, zero factory kickbacks. Why Agent Huang built HF Sourcing: from insider reality to hands-on factory truth."
+      "title": "About Agent Huang",
+      "description": "Ten years in China’s supply chain, Shanghai-based, zero factory commissions. Why Agent Huang built Huang Sourcing."
     },
     "badge": "About the Founder",
     "h1": "The Agent Huang Story",
-    "tagline": "10 years inside the Chinese supply chain system. Zero ties to factories. 100% loyal to your bottom line.",
+    "tagline": "10 years inside the Chinese supply chain system. Zero ties to factories. 100% loyal to your order.",
     "s1Title": "1. The 10-Year Insider",
     "s1Body": "For a decade, I worked deep inside cross-border e-commerce and enterprise supply chain systems. I built and integrated that machinery for major companies—including across the Greater Bay Area—and I saw the data behind serious trade. But I kept seeing the same pain on the ground: the hidden “unspoken rules,” the kickbacks, overseas buyers scammed by “bedroom” traders on marketplaces, and premium prices for poor quality while “free” agents took the factory’s side. I knew how the game was played, I knew it was broken, and I knew how to stand on yours—not theirs.",
     "s2Title": "2. The AI Wake-Up Call",
@@ -388,18 +388,18 @@
     "s2Highlight": "AI cannot walk onto a noisy factory floor.",
     "s2After": " AI cannot feel the texture of a fabric, test the physical hinge of a box, or catch a factory manager quietly replacing premium materials with cheap alternatives. In an automated world, physical presence is the ultimate luxury.",
     "s3Title": "3. The Honest Motive",
-    "s3Intro": "I founded HF Sourcing and became “Agent Huang” for two very honest reasons:",
+    "s3Intro": "I founded Huang Sourcing and became Agent Huang for two honest reasons:",
     "s3First": "First: I wanted to build a profitable, sustainable business for myself by providing genuine, transparent value that traditional agents refuse to give.",
     "s3Second": "Second: I wanted to be the ultimate physical firewall for global buyers. Overseas buyers do not need another middleman—they need someone who gets the local “business games,” speaks the language, and can walk the line and say, “This is unacceptable.” I know exactly how factories play games, and I know how to stop them.",
     "s4Title": "4. The Promise",
-    "s4Body": "I do not take factory commissions. I do not participate in the “Yes Culture,” where agents say yes to everything just to keep the factory happy. You pay a flat, transparent rate. I put on my boots, drive to the facility, open the cartons, and take macro photos of the real defects—not generic rows in a fancy office spreadsheet. I go where the problem is, tell you the absolute truth, and protect your margins. I am your eyes, your ears, and your enforcer in China.",
+    "s4Body": "I do not take factory commissions. I do not participate in the “Yes Culture,” where agents say yes to everything just to keep the factory happy. You pay a flat, transparent rate. I put on my boots, drive to the facility, open the cartons, and take macro photos of the real defects — not generic rows in a fancy office spreadsheet. I go where the problem is, tell you the truth, and protect your margins. I am your eyes, your ears, and your enforcer in China.",
     "signatureName": "Agent Huang",
-    "signatureRole": "Founder & Lead Inspector, HF Sourcing",
+    "signatureRole": "Founder & Lead Inspector, Huang Sourcing",
     "cta": "I am based in Shanghai—at the center of a massive manufacturing and export hub—and I travel across China when your line or your audit needs me there.",
     "ctaWhatsapp": "Contact Agent Huang via WhatsApp",
     "ctaReport": "Download my latest inspection report",
     "locationNote": "Strategically based in Shanghai—the heart of East China’s manufacturing and export engine. Nationwide travel for inspections and factory work.",
-    "portraitAlt": "Agent Huang — founder of HF Sourcing",
+    "portraitAlt": "Agent Huang — founder of Huang Sourcing",
     "contextImageAlt": "Shanghai and China manufacturing context — local hub, national reach"
   },
   "ContactAgent": {

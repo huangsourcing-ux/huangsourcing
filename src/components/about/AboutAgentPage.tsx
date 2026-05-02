@@ -8,20 +8,18 @@ import { Button } from '@/components/ui/button'
 import { publicWhatsAppHref, reportHref } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
 
-const portraitImage =
-  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=75'
-const contextImage =
-  'https://images.unsplash.com/photo-1539650116574-75c0c6d76927?auto=format&fit=crop&w=1200&q=75'
+const portraitImage = '/images/agent-huang-onsite-placeholder.webp'
+const contextImage = '/images/report-evidence.webp'
 
 const a = en.About
 const nav = en.Nav
 
 export function AboutAgentPage() {
   return (
-    <main className="min-h-screen bg-[#f6f7f8] text-[#1a1a2e] antialiased">
+    <main className="min-h-screen bg-slate-50 text-slate-950 antialiased">
       <SiteHeader activePage="about" topBanner={null} />
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-        <p className="text-center text-xs font-extrabold uppercase tracking-widest text-violet-700">
+        <p className="text-center text-xs font-extrabold uppercase tracking-widest text-red-600">
           {a.badge}
         </p>
         <h1 className="mt-3 text-balance text-center text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
@@ -36,7 +34,7 @@ export function AboutAgentPage() {
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-md">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-sm">
             <Image
               alt={a.portraitAlt}
               className="object-cover"
@@ -46,7 +44,7 @@ export function AboutAgentPage() {
               sizes="(max-width: 640px) 100vw, 50vw"
             />
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 shadow-md">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-sm">
             <Image
               alt={a.contextImageAlt}
               className="object-cover"
@@ -107,12 +105,12 @@ export function AboutAgentPage() {
           <p className="mt-1 text-sm font-semibold text-slate-600">{a.signatureRole}</p>
         </footer>
 
-        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8">
+        <div className="mt-10 rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <p className="text-center text-base font-medium leading-relaxed text-slate-800">{a.cta}</p>
           <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
             <Button
               asChild
-              className="h-12 rounded-full bg-[#ff3d3d] px-6 text-base font-extrabold text-white shadow-md hover:bg-[#e63535]"
+              className="h-12 rounded-md bg-red-600 px-6 text-base font-extrabold text-white shadow-sm hover:bg-red-700"
               size="lg"
             >
               <a
@@ -127,7 +125,7 @@ export function AboutAgentPage() {
             </Button>
             <Button
               asChild
-              className="h-12 rounded-full border-2 border-slate-200 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm"
+              className="h-12 rounded-md border border-slate-300 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm"
               size="lg"
               variant="outline"
             >
@@ -141,7 +139,7 @@ export function AboutAgentPage() {
 
         <p className="mt-10 text-center">
           <Link
-            className="text-sm font-extrabold text-violet-700 underline-offset-4 hover:underline"
+            className="text-sm font-extrabold text-red-600 underline-offset-4 hover:underline"
             href="/"
           >
             ← {nav.brand}

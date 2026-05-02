@@ -14,9 +14,9 @@ type HomeHeroCtasProps = {
 
 export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
+    <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
       <ContactAgentDialog
-        className="h-12 rounded-full bg-[#ff3d3d] px-8 text-base font-bold text-white shadow-lg shadow-red-500/25 hover:bg-[#e63535]"
+        className="h-12 w-full min-w-0 rounded-md bg-red-600 px-3 text-sm font-bold text-white shadow-sm hover:bg-red-700 sm:w-auto sm:px-8 sm:text-base"
         size="lg"
         variant="default"
       >
@@ -27,7 +27,7 @@ export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps
       </ContactAgentDialog>
       <Button
         asChild
-        className="h-12 rounded-full border-2 border-slate-200 bg-white px-8 text-base font-bold text-slate-900 shadow-sm hover:bg-slate-50"
+        className="h-12 w-full min-w-0 rounded-md border border-slate-300 bg-white px-3 text-sm font-bold text-slate-900 shadow-sm hover:bg-slate-50 sm:w-auto sm:px-8 sm:text-base"
         size="lg"
         variant="outline"
       >

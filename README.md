@@ -1,4 +1,4 @@
-# HFsourcing
+# Huang Sourcing
 
 Modern sourcing platform built on Next.js 16 App Router, Payload CMS 3, and Tailwind CSS v4.
 

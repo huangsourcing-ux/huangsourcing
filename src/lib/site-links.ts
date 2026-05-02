@@ -22,7 +22,7 @@ I need a quote for:
 - Destinations:
 - Label / insert needs:
 `
-export const bookingMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Book an Inspection - HF Sourcing')}&body=${encodeURIComponent(bookingBody)}`
+export const bookingMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Book a Free Sourcing Call - Huang Sourcing')}&body=${encodeURIComponent(bookingBody)}`
 export const customQuoteMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Custom Quote — FBA & Logistics')}&body=${encodeURIComponent(customQuoteBody)}`
 
 export const publicWhatsAppHref =

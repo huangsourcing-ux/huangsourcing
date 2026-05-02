@@ -7,7 +7,7 @@ import '../globals.css'
 export const metadata: Metadata = {
   title: {
     default: en.Meta.title,
-    template: '%s | HFsourcing',
+    template: '%s | Huang Sourcing',
   },
   description: en.Meta.description,
 }
