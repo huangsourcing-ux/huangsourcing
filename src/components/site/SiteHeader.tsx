@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
+import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
 import { en } from '@/content/en'
-import { bookingMailto, reportHref } from '@/lib/site-links'
+import { reportHref } from '@/lib/site-links'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -45,22 +46,10 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
               {nav.about}
             </Link>
             <a
-              className="hidden text-sm font-semibold text-slate-600 hover:text-red-600 lg:inline"
-              href={sectionHref(activePage, 'integrity')}
-            >
-              {nav.trust}
-            </a>
-            <a
               className="hidden text-sm font-semibold text-slate-600 hover:text-red-600 sm:inline"
               href={sectionHref(activePage, 'services')}
             >
               {nav.services}
-            </a>
-            <a
-              className="hidden text-sm font-semibold text-slate-600 hover:text-red-600 sm:inline"
-              href={sectionHref(activePage, 'proof')}
-            >
-              {nav.reviews}
             </a>
             <Button
               asChild
@@ -70,13 +59,13 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             >
               <a href={reportHref}>{nav.sampleReport}</a>
             </Button>
-            <Button
-              asChild
+            <ContactAgentDialog
               className="hidden h-9 rounded-md bg-red-600 px-4 text-sm font-bold text-white shadow-sm hover:bg-red-700 sm:inline-flex"
               size="sm"
+              variant="default"
             >
-              <a href={bookingMailto}>{nav.bookFrom299}</a>
-            </Button>
+              {nav.contact}
+            </ContactAgentDialog>
           </nav>
         </div>
       </header>

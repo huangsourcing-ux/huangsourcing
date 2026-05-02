@@ -7,7 +7,6 @@ import {
   PackageCheck,
   Search,
   ShieldCheck,
-  Star,
   Warehouse,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -17,7 +16,7 @@ import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
-import { businessEmail, customQuoteMailto, reportHref } from '@/lib/site-links'
+import { businessEmail, reportHref } from '@/lib/site-links'
 
 type ServiceCard = {
   title: string
@@ -45,7 +44,7 @@ const agentImage = '/images/agent-huang-onsite-placeholder.webp'
 const coreServices: ServiceCard[] = [
   {
     title: 'Start Free',
-    summary: 'A quick sourcing sanity check before you spend money.',
+    summary: 'A quick sourcing sanity check for small importers, marketplace sellers, and first-time buyers.',
     price: 'Free',
     deliverables: ['Supplier link review', 'Risk flags', 'Next-step recommendation'],
   },
@@ -145,16 +144,6 @@ const reviews: Review[] = [
   },
 ]
 
-function Stars() {
-  return (
-    <div className="flex items-center gap-0.5" aria-label="Rated 5 out of 5" role="img">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star className="size-4 fill-amber-400 text-amber-400" key={i} />
-      ))}
-    </div>
-  )
-}
-
 function ServiceIcon({ index }: { index: number }) {
   const icons = [
     <Search className="size-5" key="search" />,
@@ -182,12 +171,12 @@ export function MarketingPage() {
               Independent China sourcing, supplier checks, and QC inspection — aligned with you.
             </h1>
             <p className="mt-5 max-w-[18rem] break-words text-[15px] leading-7 text-slate-600 sm:max-w-2xl sm:text-lg sm:leading-8">
-              Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products,
-              consolidate samples, and prepare shipments before money is sent or goods leave China.
+              Huang Sourcing helps overseas buyers, small importers, and marketplace sellers find suppliers,
+              verify factories, inspect products, consolidate samples, and prepare shipments in China.
             </p>
             <div className="mt-8">
               <HomeHeroCtas
-                primaryLabel="Book a free sourcing call"
+                primaryLabel="Talk to Agent Huang"
                 secondaryLabel="Download sample report"
               />
             </div>
@@ -277,7 +266,8 @@ export function MarketingPage() {
                         <span className="font-semibold text-slate-950">Best for: </span>
                         {service.bestFor}
                       </p>
-                      <ul className="mt-3 grid gap-2 text-sm text-slate-700 sm:grid-cols-3">
+                      <p className="mt-3 text-sm font-semibold text-slate-950">Includes:</p>
+                      <ul className="mt-2 grid gap-2 text-sm text-slate-700 sm:grid-cols-3">
                         {service.deliverables.map((item) => (
                           <li className="flex gap-2" key={item}>
                             <Check className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
@@ -285,6 +275,9 @@ export function MarketingPage() {
                           </li>
                         ))}
                       </ul>
+                      <p className="mt-3 text-sm font-semibold text-slate-950">
+                        Starting from: <span className="text-red-600">{service.price}</span>
+                      </p>
                     </article>
                   ))}
                 </div>
@@ -333,6 +326,14 @@ export function MarketingPage() {
               The sample report shows the kind of photo evidence, defect notes, packaging checks,
               and practical decision points you should expect before paying a supplier.
             </p>
+            <ul className="mt-5 grid gap-2 text-sm text-slate-200 sm:grid-cols-2">
+              {['Factory details', 'On-site photos', 'QC findings', 'Packaging / label check'].map((item) => (
+                <li className="flex gap-2" key={item}>
+                  <Check className="mt-0.5 size-4 shrink-0 text-red-300" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
             <Button
               asChild
               className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
@@ -415,7 +416,9 @@ export function MarketingPage() {
                       {review.country} · {review.category}
                     </p>
                   </div>
-                  <Stars />
+                  <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">
+                    Buyer case
+                  </span>
                 </div>
                 <p className="mt-4 text-sm leading-6 text-slate-700">&ldquo;{review.message}&rdquo;</p>
                 <p className="mt-4 border-t border-slate-100 pt-4 text-sm font-bold text-red-600">
@@ -451,7 +454,10 @@ export function MarketingPage() {
                 className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 hover:bg-slate-100"
                 variant="outline"
               >
-                <a href={customQuoteMailto}>Get a custom quote</a>
+                <Link href={reportHref}>
+                  <FileDown className="size-4" />
+                  Download sample report
+                </Link>
               </Button>
             </div>
           </div>
@@ -465,6 +471,9 @@ export function MarketingPage() {
             <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
               Buyer-side sourcing, supplier verification, QC inspection, sample consolidation,
               and China-side shipment support for overseas buyers.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-slate-950">
+              Based in China · Replies within 24 hours on working days
             </p>
           </div>
           <div>
