@@ -377,31 +377,108 @@
   "About": {
     "meta": {
       "title": "About Agent Huang",
-      "description": "Ten years in China’s supply chain, Shanghai-based, zero factory commissions. Why Agent Huang built Huang Sourcing."
+      "description": "Meet Agent Huang, your China-side sourcing partner for supplier checks, QC inspection, sample consolidation, and shipment prep before payment or pickup."
     },
     "badge": "About Agent Huang",
-    "h1": "Your China-side sourcing partner",
-    "tagline": "Agent Huang helps overseas buyers verify suppliers, inspect products, compare quotes, and coordinate shipments before money is sent or goods leave China.",
-    "s1Title": "Who I help",
-    "s1Body": "I work with overseas buyers, small importers, marketplace sellers, and first-time China buyers who need someone on the ground to check suppliers, products, packaging, and shipment readiness. The goal is simple: make the risk visible before you pay the deposit, final balance, or freight bill.",
-    "s2Title": "What I do in China",
-    "s2Before": "I review supplier claims, compare quotes, check factory signals, visit warehouses or production sites when needed, inspect products, document packaging and labels, and communicate with factories in Chinese. The work is practical, physical, and evidence-based: ",
-    "s2Highlight": "real photos, real findings, clear next steps.",
-    "s2After": "",
-    "s3Title": "Why I built Huang Sourcing",
-    "s3Intro": "I have spent years inside China’s supply-chain and cross-border e-commerce systems. I saw how easily overseas buyers can be pushed toward the wrong supplier, unclear pricing, weak samples, or rushed shipments when nobody is physically checking the work for them.",
-    "s3First": "Huang Sourcing exists to give buyers a China-side partner who is paid by the buyer, not the factory.",
-    "s3Second": "That keeps the incentive simple: if something looks risky, I tell you before it becomes your shipment problem.",
-    "s4Title": "How communication works",
-    "s4Body": "Send the supplier name, product, factory location, target order value, and deadline. I will tell you whether a desk check is enough, whether an onsite visit makes sense, and what evidence you should ask for before the next payment. Standard inspection reports target a 24-hour turnaround after the onsite work is complete.",
-    "signatureName": "Agent Huang",
-    "signatureRole": "Founder & Lead Inspector, Huang Sourcing",
-    "cta": "Need a second pair of eyes before you pay a Chinese supplier? Send the context and Agent Huang will help you choose the safest next step.",
+    "h1": "Your China-side sourcing partner before you pay, ship, or scale.",
+    "tagline": "Agent Huang helps overseas buyers verify suppliers, inspect products, compare quotes, and coordinate shipment prep in China — before money is sent or goods leave the factory.",
+    "locationNote": "Based in China, supporting overseas buyers with supplier checks, QC inspection, packaging evidence, sample consolidation, and shipment prep.",
+    "trustPoints": [
+      {
+        "title": "Buyer-side by design",
+        "body": "Paid by the buyer, not by the factory."
+      },
+      {
+        "title": "Evidence-first reports",
+        "body": "Photos, findings, risk notes, and next steps."
+      },
+      {
+        "title": "China-side support",
+        "body": "Supplier checks, QC inspection, samples, and shipment prep."
+      }
+    ],
+    "s1Title": "Who I am",
+    "s1Body": [
+      "I’m Agent Huang, founder of Huang Sourcing.",
+      "I work on the China side for overseas buyers who need a real person to check suppliers, products, packaging, labels, and shipment readiness before they send money or release goods.",
+      "My work sits between sourcing, supplier verification, QC inspection, sample consolidation, and shipment prep. The goal is simple: turn unclear supplier claims into photos, findings, risks, and clear next steps."
+    ],
+    "s2Title": "Who I help",
+    "s2Body": [
+      "I mainly help overseas buyers who do not have a trusted team on the ground in China.",
+      "This includes small importers, marketplace sellers, e-commerce brands, and first-time China buyers.",
+      "Many clients come to me when they have already found a supplier, received a quote, or approved a sample — but still need someone in China to check whether the supplier, product, packaging, or shipment is actually ready."
+    ],
+    "s3Title": "What I do in China",
+    "s3Body": [
+      "In China, I help buyers review supplier claims, compare quotes, check factory signals, inspect products, document packaging and labels, consolidate samples, and coordinate shipment handoff when needed.",
+      "The work is practical and evidence-based: real photos, real findings, risk notes, and clear recommendations before the next payment or pickup decision."
+    ],
+    "workCards": [
+      {
+        "title": "Supplier checks",
+        "body": "Factory signals, company background, quote sanity check, and supplier risk notes."
+      },
+      {
+        "title": "Product inspection",
+        "body": "Appearance, simple function, packaging, labels, carton marks, and photo evidence."
+      },
+      {
+        "title": "Sample consolidation",
+        "body": "Collect samples from multiple suppliers before you commit to a larger order."
+      },
+      {
+        "title": "Shipment prep",
+        "body": "FBA labels, carton photos, pickup handoff, logistics coordination."
+      }
+    ],
+    "s4Title": "Why I built Huang Sourcing",
+    "s4Body": [
+      "I built Huang Sourcing because many overseas buyers are asked to make payment and shipment decisions with too little visibility.",
+      "A supplier may sound confident. A quote may look attractive. A sample may look good. But before the final balance is paid or the goods leave the factory, the buyer still needs someone to check the practical details: who the supplier is, what was packed, whether labels match, whether cartons are ready, and what risks are visible.",
+      "Huang Sourcing exists to give buyers a China-side partner who is paid by the buyer, not by the factory. If something looks risky, I say so before it becomes your shipment problem."
+    ],
+    "s5Title": "How I work",
+    "s5Body": [
+      "My work style is simple.",
+      "I do not try to make every supplier look bad. I also do not write reports just to make suppliers look good. I look for practical risks that matter to the buyer’s next decision.",
+      "Sometimes the right answer is a quick desk check. Sometimes it is a supplier verification. Sometimes it is a sample review, a packaging check, or a pre-shipment inspection. And sometimes the safest advice is to slow down before sending the next payment."
+    ],
+    "s6Title": "How communication works",
+    "s6ChecklistTitle": "What to send Agent Huang",
+    "s6Items": [
+      "Supplier name",
+      "Product details or photos",
+      "Factory location if available",
+      "Order stage",
+      "Target order value",
+      "Deadline or pickup date"
+    ],
+    "s6NextStep": "Agent Huang will suggest the safest next step: desk check, quote comparison, sample review, onsite visit, QC inspection, or shipment prep support.",
+    "s6Turnaround": "Standard inspection reports target a 24-hour turnaround after the onsite work is complete.",
+    "scopeTitle": "Scope note",
+    "scopeBody": [
+      "I help reduce sourcing and shipment risk, but no inspection can remove every risk.",
+      "Unless specifically scoped, Huang Sourcing does not replace laboratory testing, legal due diligence, customs compliance review, or full marketplace compliance approval. The purpose is to give the buyer practical evidence and a clearer decision before payment or shipment.",
+      "Client supplier details, order information, photos, documents, and reports are handled confidentially. Public sample files never include client-specific information."
+    ],
+    "personalNoteTitle": "A note from Agent Huang",
+    "personalNoteBody": [
+      "Most sourcing problems I see are not dramatic at first. They start small: a supplier name that does not match the factory, a carton label that is slightly wrong, a sample that looks better than bulk goods, or a shipment that is rushed before the buyer has real evidence.",
+      "My job is not to create fear. My job is to make the risk visible early enough for you to make a better decision.",
+      "If the supplier looks fine, I will say so. If something looks risky, I will say that too — before it becomes your shipment problem."
+    ],
+    "signatureName": "— Agent Huang",
+    "signatureRole": "Founder & China-side sourcing partner",
+    "signatureCompany": "Huang Sourcing",
+    "signatureLine": "Buyer-side supplier checks · QC inspection · sample consolidation · shipment prep in China",
+    "ctaTitle": "Need a second pair of eyes before paying a Chinese supplier?",
+    "cta": "Send the supplier name, product, order stage, and deadline. Agent Huang will suggest the safest next step.",
     "ctaWhatsapp": "Talk to Agent Huang",
     "ctaReport": "Download sample report",
-    "locationNote": "Strategically based in Shanghai—the heart of East China’s manufacturing and export engine. Nationwide travel for inspections and factory work.",
+    "backHome": "Back to Huang Sourcing",
     "portraitAlt": "Agent Huang — founder of Huang Sourcing",
-    "contextImageAlt": "Shanghai and China manufacturing context — local hub, national reach"
+    "contextImageAlt": "Inspection report evidence with packaging and label checks"
   },
   "ContactAgent": {
     "successTitle": "Thank you. I have your context.",
