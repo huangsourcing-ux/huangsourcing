@@ -3,7 +3,6 @@ import {
   FileDown,
   Mail,
   MapPin,
-  MessageCircle,
   PackageCheck,
   Search,
   ShieldCheck,
@@ -12,9 +11,10 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
+import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
+import { SocialLinks } from '@/components/site/SocialLinks'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import { businessEmail, reportHref } from '@/lib/site-links'
@@ -413,14 +413,13 @@ export function MarketingPage() {
               </p>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
-              <ContactAgentDialog
+              <ContactAgentButton
                 className="h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
                 size="default"
                 variant="default"
               >
-                <MessageCircle className="size-4" />
                 Talk to Agent Huang
-              </ContactAgentDialog>
+              </ContactAgentButton>
               <Button
                 asChild
                 className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 hover:bg-slate-100"
@@ -454,6 +453,7 @@ export function MarketingPage() {
               <Mail className="size-4" />
               Email: {businessEmail}
             </a>
+            <SocialLinks className="mt-4" showSupportingLabel />
             <p className="mt-2 flex items-center gap-2 text-sm text-slate-600">
               <MapPin className="size-4" />
               Shanghai base · Nationwide China

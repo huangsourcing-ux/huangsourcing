@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
+import { FreeRiskCheckPrompt } from '@/components/site/FreeRiskCheckPrompt'
 import { en } from '@/content/en'
 
 import '../globals.css'
@@ -55,6 +56,7 @@ const RootFrontendLayout = ({ children }: Props) => (
   <html className="h-full antialiased" lang="en" suppressHydrationWarning>
     <body className="min-h-full flex flex-col bg-background text-foreground">
       {children}
+      <FreeRiskCheckPrompt />
       <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}

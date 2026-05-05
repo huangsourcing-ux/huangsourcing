@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
+import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { en } from '@/content/en'
 import { reportHref } from '@/lib/site-links'
 import { Button } from '@/components/ui/button'
@@ -64,13 +64,13 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             >
               <a href={reportHref}>{nav.sampleReport}</a>
             </Button>
-            <ContactAgentDialog
+            <ContactAgentButton
               className="hidden h-9 rounded-md bg-red-600 px-4 text-sm font-bold text-white shadow-sm hover:bg-red-700 sm:inline-flex"
               size="sm"
               variant="default"
             >
               {nav.contact}
-            </ContactAgentDialog>
+            </ContactAgentButton>
           </nav>
         </div>
       </header>

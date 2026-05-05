@@ -4,16 +4,17 @@ import {
   FileDown,
   Mail,
   MapPinned,
-  MessageCircle,
   ShieldCheck,
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { SocialLinks } from '@/components/site/SocialLinks'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { en } from '@/content/en'
 import { Button } from '@/components/ui/button'
-import { businessEmail, publicWhatsAppHref, reportHref } from '@/lib/site-links'
+import { businessEmail, reportHref } from '@/lib/site-links'
 
 const portraitImage = '/images/agent-huang-onsite-placeholder.webp'
 const contextImage = '/images/report-evidence.webp'
@@ -220,6 +221,7 @@ export function AboutAgentPage() {
             <Mail className="size-4" />
             {businessEmail}
           </a>
+          <SocialLinks className="mt-4 justify-center" />
           <p className="mx-auto mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-600">
             {a.signatureLine}
           </p>
@@ -233,21 +235,13 @@ export function AboutAgentPage() {
             {a.cta}
           </p>
           <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
-            <Button
-              asChild
+            <ContactAgentButton
               className="h-12 rounded-md bg-red-600 px-6 text-base font-extrabold text-white shadow-sm hover:bg-red-700"
               size="lg"
+              variant="default"
             >
-              <a
-                className="inline-flex items-center justify-center gap-2"
-                href={publicWhatsAppHref}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <MessageCircle className="size-5" />
-                {a.ctaWhatsapp}
-              </a>
-            </Button>
+              {a.ctaWhatsapp}
+            </ContactAgentButton>
             <Button
               asChild
               className="h-12 rounded-md border border-slate-300 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm"
