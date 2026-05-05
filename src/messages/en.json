@@ -122,8 +122,8 @@
         "sub": "Standard reply target"
       },
       {
-        "value": "No supplier-paid recommendations",
-        "sub": "Recommendations stay buyer-aligned"
+        "value": "Buyer-aligned",
+        "sub": "No supplier-paid recommendations."
       },
       {
         "value": "100%",

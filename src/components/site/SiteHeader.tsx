@@ -21,7 +21,7 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
   return (
     <>
       {topBanner ? (
-        <div className="border-b border-slate-200 bg-slate-950 py-2 text-center text-xs font-medium text-white sm:text-sm">
+        <div className="border-b border-slate-200 bg-slate-950 px-4 py-2.5 text-center text-[13px] font-semibold leading-5 text-white sm:py-3 sm:text-sm">
           {topBanner}
         </div>
       ) : null}

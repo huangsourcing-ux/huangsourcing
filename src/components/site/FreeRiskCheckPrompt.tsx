@@ -33,7 +33,7 @@ function FreeRiskCheckPrompt() {
 
     const timeout = window.setTimeout(() => {
       setIsVisible(true)
-    }, 1400)
+    }, 3000)
 
     return () => window.clearTimeout(timeout)
   }, [])
