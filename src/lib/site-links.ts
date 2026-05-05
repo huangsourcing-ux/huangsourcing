@@ -2,6 +2,22 @@
 export const businessEmail = 'agent@huangsourcing.com' as const
 
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
+export const publicWhatsAppHref = 'https://wa.me/15035930974' as const
+export const publicLinkedInHref = 'https://www.linkedin.com/in/agenthuang/' as const
+export const whatsappPhoneDisplay = '+1 503 593 0974' as const
+
+const freeRiskCheckMessage = `Hi Agent Huang,
+
+I want to Start Free - quick sourcing risk check.
+
+Supplier link / quote:
+Product:
+Order stage:
+Deadline:
+`
+
+export const freeRiskCheckWhatsAppHref =
+  `${publicWhatsAppHref}?text=${encodeURIComponent(freeRiskCheckMessage)}` as const
 
 const bookingBody = `Hi Agent Huang,
 
@@ -24,6 +40,3 @@ I need a quote for:
 `
 export const bookingMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Book a Free Sourcing Call - Huang Sourcing')}&body=${encodeURIComponent(bookingBody)}`
 export const customQuoteMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Custom Quote — FBA & Logistics')}&body=${encodeURIComponent(customQuoteBody)}`
-
-export const publicWhatsAppHref =
-  process.env.NEXT_PUBLIC_WHATSAPP_URL?.trim() || 'https://wa.me/8610000000000'
