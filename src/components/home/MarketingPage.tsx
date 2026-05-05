@@ -200,8 +200,8 @@ export function MarketingPage() {
                 <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Standard reply target</p>
               </div>
               <div>
-                <p className="text-xl font-bold leading-tight text-slate-950">No supplier-paid recommendations</p>
-                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">Recommendations stay buyer-aligned</p>
+                <p className="text-2xl font-bold text-slate-950">Buyer-aligned</p>
+                <p className="mt-1 text-xs font-medium leading-tight text-slate-500">No supplier-paid recommendations.</p>
               </div>
             </div>
           </div>
