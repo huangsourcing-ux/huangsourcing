@@ -1,7 +1,6 @@
 'use client'
 
 import { FileDown, MessageCircle } from 'lucide-react'
-import Link from 'next/link'
 
 import { ContactAgentDialog } from '@/components/home/ContactAgentDialog'
 import { Button } from '@/components/ui/button'
@@ -31,10 +30,10 @@ export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps
         size="lg"
         variant="outline"
       >
-        <Link className="inline-flex items-center justify-center gap-2" href={reportHref}>
+        <a className="inline-flex items-center justify-center gap-2" href={reportHref}>
           {secondaryLabel}
           <FileDown className="size-4 shrink-0" aria-hidden />
-        </Link>
+        </a>
       </Button>
     </div>
   )

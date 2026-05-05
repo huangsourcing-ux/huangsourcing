@@ -310,10 +310,10 @@ export function MarketingPage() {
               asChild
               className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
             >
-              <Link href={reportHref}>
+              <a href={reportHref}>
                 <FileDown className="size-4" />
                 Download sample report
-              </Link>
+              </a>
             </Button>
           </div>
           <div className="lg:col-span-6">
@@ -426,10 +426,10 @@ export function MarketingPage() {
                 className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 hover:bg-slate-100"
                 variant="outline"
               >
-                <Link href={reportHref}>
+                <a href={reportHref}>
                   <FileDown className="size-4" />
                   Download sample report
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

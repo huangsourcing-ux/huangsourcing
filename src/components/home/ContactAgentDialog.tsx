@@ -2,7 +2,6 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader2 } from 'lucide-react'
-import Link from 'next/link'
 import { useState, useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -101,9 +100,9 @@ const ContactAgentDialog = ({ className, size, variant, children }: ContactAgent
               asChild
               className="h-10 w-full rounded-md bg-foreground text-background hover:bg-foreground/90"
             >
-              <Link href={reportHref} download>
+              <a href={reportHref} download>
                 {c.downloadReport}
-              </Link>
+              </a>
             </Button>
             <p className="text-sm text-muted-foreground">
               {c.preferHuman}{' '}

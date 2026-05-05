@@ -254,10 +254,10 @@ export function AboutAgentPage() {
               size="lg"
               variant="outline"
             >
-              <Link className="inline-flex items-center justify-center gap-2" href={reportHref}>
+              <a className="inline-flex items-center justify-center gap-2" href={reportHref}>
                 <FileDown className="size-5" />
                 {a.ctaReport}
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
