@@ -9,7 +9,9 @@ import '../globals.css'
 
 const googleAnalyticsId = 'G-WCDP8RQ374'
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+const defaultBingSiteVerification = 'B4928B9F48C70154184BEF6BE6BFCA43'
+const bingSiteVerification =
+  process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? defaultBingSiteVerification
 const webmasterVerification: Metadata['verification'] = {
   ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
   ...(bingSiteVerification
