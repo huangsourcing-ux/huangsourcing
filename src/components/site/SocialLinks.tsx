@@ -1,5 +1,8 @@
+'use client'
+
 import type { SVGProps } from 'react'
 
+import { trackWhatsAppClick } from '@/lib/analytics'
 import {
   publicLinkedInHref,
   publicWhatsAppHref,
@@ -70,6 +73,15 @@ function SocialLinks({ className, linkClassName, showSupportingLabel = false }: 
           )}
           href={href}
           key={label}
+          onClick={
+            label === 'WhatsApp'
+              ? () =>
+                  trackWhatsAppClick({
+                    ctaLabel: label,
+                    ctaLocation: 'social_links',
+                  })
+              : undefined
+          }
           rel="noreferrer"
           target="_blank"
         >

@@ -3,13 +3,22 @@ import Script from 'next/script'
 
 import { FreeRiskCheckPrompt } from '@/components/site/FreeRiskCheckPrompt'
 import { en } from '@/content/en'
+import { getSiteUrl } from '@/lib/site-url'
 
 import '../globals.css'
 
 const googleAnalyticsId = 'G-WCDP8RQ374'
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+const webmasterVerification: Metadata['verification'] = {
+  ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+  ...(bingSiteVerification
+    ? { other: { 'msvalidate.01': bingSiteVerification } }
+    : {}),
+}
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://huangsourcing.com'),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: en.Meta.title,
     template: '%s | Huang Sourcing',
@@ -18,6 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  verification: webmasterVerification,
   openGraph: {
     title: en.Meta.title,
     description: en.Meta.description,

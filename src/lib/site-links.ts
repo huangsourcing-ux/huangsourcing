@@ -6,6 +6,10 @@ export const publicWhatsAppHref = 'https://wa.me/15035930974' as const
 export const publicLinkedInHref = 'https://www.linkedin.com/in/agenthuang/' as const
 export const whatsappPhoneDisplay = '+1 503 593 0974' as const
 
+export function buildWhatsAppHref(message: string) {
+  return `${publicWhatsAppHref}?text=${encodeURIComponent(message)}` as const
+}
+
 const freeRiskCheckMessage = `Hi Agent Huang,
 
 I want to Start Free - quick sourcing risk check.
@@ -17,7 +21,7 @@ Deadline:
 `
 
 export const freeRiskCheckWhatsAppHref =
-  `${publicWhatsAppHref}?text=${encodeURIComponent(freeRiskCheckMessage)}` as const
+  buildWhatsAppHref(freeRiskCheckMessage)
 
 const bookingBody = `Hi Agent Huang,
 

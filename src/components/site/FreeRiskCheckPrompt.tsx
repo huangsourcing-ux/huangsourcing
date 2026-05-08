@@ -4,6 +4,7 @@ import { CheckCircle2, ShieldCheck, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { WhatsAppIcon } from '@/components/site/SocialLinks'
+import { trackWhatsAppClick } from '@/lib/analytics'
 import { freeRiskCheckWhatsAppHref } from '@/lib/site-links'
 
 const dismissKey = 'huang-sourcing-free-risk-check-dismissed-v1'
@@ -89,6 +90,12 @@ function FreeRiskCheckPrompt() {
             <a
               className="mt-3 inline-flex h-9 w-full items-center justify-center gap-2 rounded-md bg-red-600 px-3 text-sm font-extrabold text-white shadow-sm transition-colors hover:bg-red-700 sm:w-auto"
               href={freeRiskCheckWhatsAppHref}
+              onClick={() =>
+                trackWhatsAppClick({
+                  ctaLabel: 'Start Free on WhatsApp',
+                  ctaLocation: 'free_risk_check_prompt',
+                })
+              }
               rel="noreferrer"
               target="_blank"
             >

@@ -414,6 +414,8 @@ export function MarketingPage() {
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:mt-0">
               <ContactAgentButton
+                analyticsLabel="Talk to Agent Huang"
+                analyticsLocation="home_final_cta"
                 className="h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
                 size="default"
                 variant="default"

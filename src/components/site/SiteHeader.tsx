@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 
 type SiteHeaderProps = {
   topBanner: string | null
-  activePage: 'home' | 'about'
+  activePage: 'home' | 'about' | 'service'
 }
 
 const sectionHref = (activePage: SiteHeaderProps['activePage'], id: string) =>
@@ -65,6 +65,8 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
               <a href={reportHref}>{nav.sampleReport}</a>
             </Button>
             <ContactAgentButton
+              analyticsLabel={nav.contact}
+              analyticsLocation="site_header"
               className="hidden h-9 rounded-md bg-red-600 px-4 text-sm font-bold text-white shadow-sm hover:bg-red-700 sm:inline-flex"
               size="sm"
               variant="default"
