@@ -35,7 +35,10 @@ export type SeoServicePage = {
   bestFor: string[]
   whenToUse: string[]
   checks: string[]
+  commonRisks: string[]
+  whatToSend: string[]
   deliverables: string[]
+  scopeNote: string
   caseStudy: CaseStudy
   faqs: FaqItem[]
   ctaLabel: string
@@ -72,12 +75,26 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
       'Supplier quote, MOQ, lead time, and payment terms',
       'Risk flags that should be clarified before payment',
     ],
+    commonRisks: [
+      'Supplier name, address, or business details do not line up',
+      'A trading company presents itself as the actual factory',
+      'Quote terms look attractive but leave unclear payment or delivery risk',
+      'The buyer is pressured to send a deposit before basic checks are complete',
+    ],
+    whatToSend: [
+      'Supplier website, Alibaba link, or company name',
+      'Quote, payment terms, MOQ, and lead time',
+      'Product photos, specifications, and target order quantity',
+      'Any warning signs or questions you already noticed',
+    ],
     deliverables: [
       'Supplier verification summary',
       'Factory or trader risk notes',
       'Quote and payment-term review',
       'Go, caution, or stop recommendation',
     ],
+    scopeNote:
+      'Supplier verification is best used as an early decision filter. It helps you decide whether to continue, ask harder questions, or slow down before deposit payment. It does not replace legal due diligence, certification review, or a full factory audit when those are required.',
     caseStudy: {
       title: 'Case example: supplier looked strong, but the company details did not match',
       situation:
@@ -145,12 +162,26 @@ Main concern:
       'Packaging, labels, barcodes, carton marks, and basic shipment readiness',
       'Photo evidence for issues that need supplier rework or confirmation',
     ],
+    commonRisks: [
+      'Bulk goods do not match approved samples or order expectations',
+      'Carton labels, barcodes, or packaging are wrong before pickup',
+      'Visible defects are discovered only after international freight is paid',
+      'The supplier asks for final payment before the buyer has evidence',
+    ],
+    whatToSend: [
+      'Purchase order, product photos, and approved sample notes',
+      'Packing list, carton label requirements, and barcode files',
+      'Factory address, contact person, and target inspection date',
+      'Critical defects or product details that must be checked',
+    ],
     deliverables: [
       'QC inspection findings',
       'Photo evidence of checked goods',
       'Defect and packaging notes',
       'Same-day issue escalation when urgent',
     ],
+    scopeNote:
+      'QC inspection is a practical onsite check before payment or pickup. It can surface visible product, packaging, label, and quantity issues, but it should be paired with lab testing or compliance review when your product requires certification or regulated testing.',
     caseStudy: {
       title: 'Case example: wrong carton labels caught before pickup',
       situation:
@@ -218,12 +249,26 @@ Main checks needed:
       'Order details against supplier-provided packing information',
       'Issues that should be fixed before pickup or final payment',
     ],
+    commonRisks: [
+      'The supplier says goods are ready, but cartons or quantities are incomplete',
+      'Final packaging details are different from buyer instructions',
+      'Issues are found after the forwarder already collects the shipment',
+      'Final payment is released before shipment readiness is documented',
+    ],
+    whatToSend: [
+      'Final invoice, packing list, and order quantity',
+      'Product photos, approved sample notes, and packaging requirements',
+      'Pickup date, forwarder details, and factory contact information',
+      'Any final-payment conditions that must be verified',
+    ],
     deliverables: [
       'Pre-shipment inspection summary',
       'Photos of goods, cartons, labels, and findings',
       'Issue list for supplier correction',
       'Buyer-side recommendation before release',
     ],
+    scopeNote:
+      'Pre-shipment inspection should happen when goods are mostly finished and available to check. It supports the final release decision before payment or pickup, but it cannot guarantee hidden defects, future transit damage, or compliance issues outside the agreed scope.',
     caseStudy: {
       title: 'Case example: shipment was not as ready as claimed',
       situation:
@@ -289,12 +334,26 @@ Main risk:
       'Supplier readiness for forwarder pickup',
       'Photos that help the buyer confirm prep before release',
     ],
+    commonRisks: [
+      'FNSKU or carton labels are missing, misplaced, or mixed between SKUs',
+      'Packaging details do not match the seller central shipment plan',
+      'Multiple SKUs are packed in a way that creates receiving problems',
+      'Goods are handed to the forwarder before label evidence is checked',
+    ],
+    whatToSend: [
+      'FNSKU files, carton labels, and shipment plan requirements',
+      'SKU list, unit count, carton count, and product photos',
+      'Factory address, forwarder contact, and pickup window',
+      'Any inserts, suffocation labels, polybag, or bundle requirements',
+    ],
     deliverables: [
       'FBA prep coordination scope',
       'Label and carton photo evidence',
       'Packaging and SKU notes',
       'Pickup or logistics handoff support when included',
     ],
+    scopeNote:
+      'Amazon FBA prep support is scoped around China-side coordination and evidence before shipment. Marketplace compliance, listing approval, product safety testing, and final Amazon receiving decisions remain separate from this operational prep work.',
     caseStudy: {
       title: 'Case example: label confirmation before FBA pickup',
       situation:
@@ -362,12 +421,26 @@ Label or prep requirements:
       'Side-by-side sample notes when multiple suppliers are compared',
       'Outbound consolidation for international shipment',
     ],
+    commonRisks: [
+      'Sample freight costs multiply when each supplier ships separately',
+      'Bad samples are sent overseas before obvious issues are noticed',
+      'The buyer cannot compare supplier samples side by side',
+      'Sample labels or supplier origins become unclear during review',
+    ],
+    whatToSend: [
+      'Supplier names, tracking numbers, and sample descriptions',
+      'What you want compared across samples',
+      'Destination country and preferred outbound shipping method',
+      'Photos or specs of the sample version you expected',
+    ],
     deliverables: [
       'Sample receipt confirmation',
       'Unboxing photos or video',
       'Basic comparison notes',
       'Consolidated outbound shipment support',
     ],
+    scopeNote:
+      'Sample consolidation helps you compare early supplier options and reduce unnecessary freight. It is not a substitute for bulk production QC, since sample quality can differ from mass production unless the order is checked again before shipment.',
     caseStudy: {
       title: 'Case example: four samples compared before supplier selection',
       situation:
@@ -458,7 +531,11 @@ export function makeSeoServiceJsonLd(page: SeoServicePage) {
       }
     : {
         '@type': 'Offer',
-        priceSpecification: 'Custom quote',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'USD',
+          description: 'Custom quote',
+        },
         url: pageUrl,
       }
 
@@ -468,6 +545,8 @@ export function makeSeoServiceJsonLd(page: SeoServicePage) {
       '@type': 'Service',
       name: page.title,
       description: page.metaDescription,
+      serviceType: page.title,
+      inLanguage: 'en',
       provider: {
         '@type': 'Organization',
         name: 'Huang Sourcing',
@@ -483,6 +562,7 @@ export function makeSeoServiceJsonLd(page: SeoServicePage) {
     {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
+      inLanguage: 'en',
       mainEntity: page.faqs.map((faq) => ({
         '@type': 'Question',
         name: faq.question,

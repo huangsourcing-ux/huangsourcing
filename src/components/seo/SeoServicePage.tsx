@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import { buildWhatsAppHref, reportHref } from '@/lib/site-links'
@@ -39,10 +40,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
       <SiteHeader activePage="service" topBanner={null} />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:py-20">
@@ -122,6 +120,30 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
         </div>
       </section>
 
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-sm font-semibold text-red-600">Risk details</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+              Common problems this service is designed to catch.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              These checks focus on practical buyer risk, not a generic certificate or a supplier sales pitch.
+            </p>
+          </div>
+          <div className="grid gap-4 lg:col-span-8 md:grid-cols-2">
+            <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+              <h3 className="text-lg font-bold text-slate-950">Common risks</h3>
+              <BulletList items={page.commonRisks} />
+            </article>
+            <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+              <h3 className="text-lg font-bold text-slate-950">What to send first</h3>
+              <BulletList items={page.whatToSend} />
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -164,6 +186,16 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+          <p className="text-sm font-semibold text-red-600">Scope note</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+            How to use this service safely.
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">{page.scopeNote}</p>
         </div>
       </section>
 

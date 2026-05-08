@@ -1,4 +1,4 @@
-const fallbackSiteUrl = 'https://huangsourcing.com'
+const fallbackSiteUrl = 'https://www.huangsourcing.com'
 
 function normalizeSiteUrl(value: string | undefined) {
   if (!value) return fallbackSiteUrl

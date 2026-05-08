@@ -14,10 +14,13 @@ import Link from 'next/link'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { SocialLinks } from '@/components/site/SocialLinks'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import { seoServicePages, seoServiceSlugs } from '@/lib/seo-service-pages'
 import { businessEmail, reportHref } from '@/lib/site-links'
+import { makeHomeJsonLd } from '@/lib/structured-data'
 
 type ServiceCard = {
   title: string
@@ -160,12 +163,15 @@ function ServiceIcon({ index }: { index: number }) {
 }
 
 export function MarketingPage() {
+  const homeJsonLd = makeHomeJsonLd()
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
       <SiteHeader
         activePage="home"
         topBanner="China-side sourcing, supplier checks, QC inspection, and shipment prep — aligned with the buyer."
       />
+      <JsonLd data={homeJsonLd} />
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
         <div
@@ -468,6 +474,16 @@ export function MarketingPage() {
               <a className="hover:text-red-600" href="#services">Services</a>
               <a className="hover:text-red-600" href="#proof">Reviews</a>
               <a className="hover:text-red-600" href={reportHref}>Sample report</a>
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Service pages</p>
+            <div className="mt-3 grid gap-2 text-sm font-semibold text-slate-700">
+              {seoServiceSlugs.map((slug) => (
+                <Link className="hover:text-red-600" href={`/${slug}`} key={slug}>
+                  {seoServicePages[slug].title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
