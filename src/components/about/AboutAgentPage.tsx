@@ -2,7 +2,6 @@ import {
   Camera,
   CheckCircle2,
   FileDown,
-  Mail,
   MapPinned,
   ShieldCheck,
 } from 'lucide-react'
@@ -10,11 +9,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
-import { SocialLinks } from '@/components/site/SocialLinks'
+import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { en } from '@/content/en'
 import { Button } from '@/components/ui/button'
-import { businessEmail, reportHref } from '@/lib/site-links'
+import { reportHref } from '@/lib/site-links'
 
 const portraitImage = '/images/agent-huang-onsite-placeholder.webp'
 const contextImage = '/images/report-evidence.webp'
@@ -210,23 +209,6 @@ export function AboutAgentPage() {
           </section>
         </div>
 
-        <footer className="mx-auto mt-12 max-w-3xl border-t border-slate-200 pt-8 text-center">
-          <p className="text-lg font-extrabold text-slate-900">{a.signatureName}</p>
-          <p className="mt-1 text-sm font-semibold text-slate-600">{a.signatureRole}</p>
-          <p className="mt-1 text-sm font-semibold text-slate-600">{a.signatureCompany}</p>
-          <a
-            className="mt-3 inline-flex items-center justify-center gap-2 text-sm font-extrabold text-red-600 underline-offset-4 hover:underline"
-            href={`mailto:${businessEmail}`}
-          >
-            <Mail className="size-4" />
-            {businessEmail}
-          </a>
-          <SocialLinks className="mt-4 justify-center" />
-          <p className="mx-auto mt-4 max-w-xl text-sm font-medium leading-relaxed text-slate-600">
-            {a.signatureLine}
-          </p>
-        </footer>
-
         <div className="mx-auto mt-10 max-w-3xl rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <h2 className="text-center text-2xl font-extrabold leading-tight text-slate-950">
             {a.ctaTitle}
@@ -265,6 +247,7 @@ export function AboutAgentPage() {
           </Link>
         </p>
       </article>
+      <SiteFooter />
     </main>
   )
 }

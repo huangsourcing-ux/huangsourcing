@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import { buildWhatsAppHref, reportHref } from '@/lib/site-links'
@@ -301,6 +302,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
           </ContactAgentButton>
         </div>
       </section>
+      <SiteFooter />
     </main>
   )
 }

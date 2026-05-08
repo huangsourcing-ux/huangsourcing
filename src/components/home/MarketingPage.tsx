@@ -1,25 +1,21 @@
 import {
   Check,
   FileDown,
-  Mail,
-  MapPin,
   PackageCheck,
   Search,
   ShieldCheck,
   Warehouse,
 } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { SocialLinks } from '@/components/site/SocialLinks'
+import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
-import { seoServicePages, seoServiceSlugs } from '@/lib/seo-service-pages'
-import { businessEmail, reportHref } from '@/lib/site-links'
+import { reportHref } from '@/lib/site-links'
 import { makeHomeJsonLd } from '@/lib/structured-data'
 
 type ServiceCard = {
@@ -443,54 +439,7 @@ export function MarketingPage() {
         </div>
       </section>
 
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-4">
-          <div className="lg:col-span-2">
-            <p className="text-lg font-bold text-slate-950">Huang Sourcing</p>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
-              Buyer-side sourcing, supplier verification, QC inspection, sample consolidation,
-              and China-side shipment support for overseas buyers.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-slate-950">
-              Based in China · Replies within 24 hours on working days
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Contact</p>
-            <a className="mt-3 flex items-center gap-2 text-sm font-bold text-slate-950 hover:text-red-600" href={`mailto:${businessEmail}`}>
-              <Mail className="size-4" />
-              Email: {businessEmail}
-            </a>
-            <SocialLinks className="mt-4" showSupportingLabel />
-            <p className="mt-2 flex items-center gap-2 text-sm text-slate-600">
-              <MapPin className="size-4" />
-              Shanghai base · Nationwide China
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Quick links</p>
-            <div className="mt-3 grid gap-2 text-sm font-semibold text-slate-700">
-              <Link className="hover:text-red-600" href="/about">About Agent Huang</Link>
-              <a className="hover:text-red-600" href="#services">Services</a>
-              <a className="hover:text-red-600" href="#proof">Reviews</a>
-              <a className="hover:text-red-600" href={reportHref}>Sample report</a>
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Service pages</p>
-            <div className="mt-3 grid gap-2 text-sm font-semibold text-slate-700">
-              {seoServiceSlugs.map((slug) => (
-                <Link className="hover:text-red-600" href={`/${slug}`} key={slug}>
-                  {seoServicePages[slug].title}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} Huang Sourcing. Buyer-side support in China.
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   )
 }
