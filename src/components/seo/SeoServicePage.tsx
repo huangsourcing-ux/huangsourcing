@@ -96,7 +96,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
               </p>
               <p className="mt-2 text-2xl font-bold text-red-600">{page.startingPrice}</p>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Final scope depends on product, location, timeline, and required checks.
+                {page.pricingNote}
               </p>
             </div>
           </div>
@@ -146,6 +146,27 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
 
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-sm font-semibold text-red-600">Process</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+              How the work usually happens.
+            </h2>
+          </div>
+          <ol className="grid gap-3 lg:col-span-8 md:grid-cols-2">
+            {page.processSteps.map((step, index) => (
+              <li className="rounded-lg border border-slate-200 bg-white p-5" key={step}>
+                <p className="text-sm font-bold text-red-600">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-6 text-slate-800">{step}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-sm font-semibold text-red-600">Deliverables</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
@@ -162,6 +183,20 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
                 <p className="mt-3 text-sm font-bold leading-6 text-slate-800">{item}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="text-sm font-semibold text-red-600">Decision support</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+              What this helps you decide.
+            </h2>
+          </div>
+          <div className="lg:col-span-7">
+            <BulletList items={page.decisionSupport} />
           </div>
         </div>
       </section>

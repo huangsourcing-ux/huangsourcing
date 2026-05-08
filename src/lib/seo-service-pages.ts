@@ -30,11 +30,14 @@ export type SeoServicePage = {
   h1: string
   intro: string
   startingPrice: string
+  pricingNote: string
   priceValue?: string
   priceCurrency?: string
   bestFor: string[]
   whenToUse: string[]
   checks: string[]
+  processSteps: string[]
+  decisionSupport: string[]
   commonRisks: string[]
   whatToSend: string[]
   deliverables: string[]
@@ -55,25 +58,42 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
     eyebrow: 'Supplier verification in China',
     h1: 'Supplier verification in China before you send a deposit.',
     intro:
-      'Use this page when you have a supplier name, quote, Alibaba link, or factory contact, but you need a buyer-side check before money moves.',
+      'Use this page when you have a supplier name, quote, Alibaba link, company profile, or factory contact, but you need a buyer-side review before deposit payment. The goal is to separate credible supplier signals from unclear claims before you commit money or production time.',
     startingPrice: 'From $249',
+    pricingNote:
+      'The $249 starting scope covers a focused supplier verification review for one supplier. Onsite visits, multi-supplier comparisons, deeper document review, or urgent travel are quoted separately before work starts.',
     priceValue: '249',
     priceCurrency: 'USD',
     bestFor: [
-      'First-time China buyers checking a new supplier',
-      'Amazon or ecommerce sellers before a first production order',
-      'Importers comparing factory claims, company names, and quotes',
+      'Overseas buyers checking a new Chinese supplier before deposit payment',
+      'Amazon, ecommerce, and private-label sellers before a first production order',
+      'Importers comparing factory claims, company names, quotes, and payment terms',
+      'Small teams without a trusted China-side sourcing or audit contact',
     ],
     whenToUse: [
       'Before paying a 30% deposit',
       'Before choosing between two or more similar suppliers',
       'When the supplier profile, address, quote, or business license feels unclear',
+      'When a supplier found through a marketplace gives limited background information',
     ],
     checks: [
       'Factory vs trading company signals',
       'Company background and visible business details',
       'Supplier quote, MOQ, lead time, and payment terms',
       'Risk flags that should be clarified before payment',
+      'Basic consistency between supplier identity, address, products, and stated capabilities',
+    ],
+    processSteps: [
+      'Send the supplier link, quote, company name, and product context',
+      'Review visible supplier identity, factory signals, quote terms, and risk indicators',
+      'Summarize what looks consistent, what looks unclear, and what should be challenged',
+      'Decide whether to proceed, ask for more proof, request onsite verification, or stop',
+    ],
+    decisionSupport: [
+      'Whether the supplier is credible enough for a first deposit discussion',
+      'Which questions to ask before signing a PI or wiring money',
+      'Whether an onsite factory visit or QC inspection should be added before the next step',
+      'Whether the quote risk is supplier quality, payment terms, factory identity, or unclear capacity',
     ],
     commonRisks: [
       'Supplier name, address, or business details do not line up',
@@ -120,6 +140,16 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
         answer:
           'Book it before deposit payment, before final supplier selection, or whenever the supplier details do not feel clear enough.',
       },
+      {
+        question: 'Can you compare more than one supplier?',
+        answer:
+          'Yes. Send all supplier links, quotes, and product requirements. Multi-supplier comparison may need a custom scope if the review is deeper than one focused supplier check.',
+      },
+      {
+        question: 'Will this tell me if the supplier is safe to pay?',
+        answer:
+          'It gives a practical buyer-side risk view, not a legal guarantee. The purpose is to make visible supplier risks clear enough for a better payment decision.',
+      },
     ],
     ctaLabel: 'Verify a supplier on WhatsApp',
     ctaMessage: `Hi Agent Huang,
@@ -142,25 +172,42 @@ Main concern:
     eyebrow: 'QC inspection in China',
     h1: 'QC inspection in China before products leave the factory.',
     intro:
-      'Use this page when production is ready or nearly ready and you need independent photo evidence before final payment, pickup, or shipment.',
+      'Use this page when production is ready or nearly ready and you need buyer-side QC evidence before final payment, pickup, or shipment. The inspection focuses on visible product condition, quantity, packaging, labels, and shipment readiness so you can push corrections before goods leave China.',
     startingPrice: 'From $299 / inspector day',
+    pricingNote:
+      'The $299 starting price is for one standard inspector day in China. Complex products, multiple factories, travel-heavy locations, re-inspection, or special testing are scoped and quoted before confirmation.',
     priceValue: '299',
     priceCurrency: 'USD',
     bestFor: [
       'Importers who need product and packaging evidence before final payment',
       'Amazon, Walmart, or private-label sellers checking bulk goods',
       'Buyers whose margin or reviews would be hurt by avoidable defects',
+      'Teams that need photo evidence to discuss rework with a supplier',
     ],
     whenToUse: [
       'Before paying the balance',
       'Before goods are collected by a forwarder',
       'When the supplier says production is finished but you need proof',
+      'When product defects, packaging mistakes, or label errors would create costly returns',
     ],
     checks: [
       'Quantity and carton count against order details',
       'Product appearance, simple function, and visible defects',
       'Packaging, labels, barcodes, carton marks, and basic shipment readiness',
       'Photo evidence for issues that need supplier rework or confirmation',
+      'AQL-style sampling logic when the product and order scope support it',
+    ],
+    processSteps: [
+      'Confirm product details, factory location, inspection date, and critical checkpoints',
+      'Check sampled goods, packaging, labels, carton marks, and visible defects onsite',
+      'Escalate urgent findings with photos so the supplier can respond before release',
+      'Use the findings to approve shipment, request rework, or schedule re-inspection',
+    ],
+    decisionSupport: [
+      'Whether final payment should be released now or held until issues are corrected',
+      'Whether the shipment can be picked up by the forwarder',
+      'Which defects or packaging issues need written supplier confirmation',
+      'Whether the buyer needs rework, replacement, sorting, or a second inspection',
     ],
     commonRisks: [
       'Bulk goods do not match approved samples or order expectations',
@@ -207,6 +254,16 @@ Main concern:
         answer:
           'Standard QC inspection starts from $299 per inspector day. Travel, special tests, or complex scopes may be quoted separately.',
       },
+      {
+        question: 'Can you inspect packaging and labels as well as the product?',
+        answer:
+          'Yes. Packaging, barcode, carton label, shipping mark, and basic readiness checks can be included when you provide the requirements before inspection.',
+      },
+      {
+        question: 'Do I need to be in China for the inspection?',
+        answer:
+          'No. You can send the order details, product requirements, factory contact, and inspection priorities remotely. Findings are shared with photo evidence.',
+      },
     ],
     ctaLabel: 'Book QC inspection on WhatsApp',
     ctaMessage: `Hi Agent Huang,
@@ -229,25 +286,42 @@ Main checks needed:
     eyebrow: 'Pre-shipment inspection in China',
     h1: 'China pre-shipment inspection before final payment or pickup.',
     intro:
-      'Use this page when the goods are packed or close to completion and you need a final buyer-side check before the shipment leaves China.',
+      'Use this page when goods are packed or close to completion and you need a final buyer-side check before the shipment leaves China. A pre-shipment inspection helps confirm whether the order is ready for final payment, forwarder pickup, or supplier correction.',
     startingPrice: 'From $299 / inspector day',
+    pricingNote:
+      'Pre-shipment inspection starts from $299 per inspector day. Scope can change with factory location, SKU count, carton volume, urgency, and whether a follow-up inspection is needed.',
     priceValue: '299',
     priceCurrency: 'USD',
     bestFor: [
       'Buyers about to pay the final balance',
       'Importers shipping from a new factory',
       'Ecommerce sellers who need carton, label, and packaging confirmation',
+      'Orders where pickup timing is tight and shipment readiness needs proof',
     ],
     whenToUse: [
       'When production is 80-100% complete',
       'Before the supplier releases goods to a forwarder',
       'Before approving a shipment that has tight timing or high defect risk',
+      'Before final payment when the buyer has not seen packed-goods evidence',
     ],
     checks: [
       'Finished goods and visible workmanship',
       'Carton count, packing condition, labels, and shipping marks',
       'Order details against supplier-provided packing information',
       'Issues that should be fixed before pickup or final payment',
+      'Photos of packed cartons and visible shipment-readiness indicators',
+    ],
+    processSteps: [
+      'Confirm the final payment deadline, pickup plan, packing list, and inspection priorities',
+      'Check finished goods, cartons, packaging, labels, marks, and visible readiness onsite',
+      'Report blockers that should be corrected before final payment or forwarder pickup',
+      'Use the report to approve release, request correction, or delay collection',
+    ],
+    decisionSupport: [
+      'Whether the shipment is ready enough for pickup',
+      'Whether final payment should be released or delayed',
+      'Whether carton, label, packing, or quantity issues need supplier action',
+      'Whether the buyer should approve, hold, or re-check the shipment',
     ],
     commonRisks: [
       'The supplier says goods are ready, but cartons or quantities are incomplete',
@@ -294,6 +368,16 @@ Main checks needed:
         answer:
           'Yes, label and carton checks can be included when you provide the required label and shipment details.',
       },
+      {
+        question: 'Can inspection happen after goods are already with the forwarder?',
+        answer:
+          'It is better to inspect before pickup while goods are still with the supplier. After pickup, access and correction options are usually more limited.',
+      },
+      {
+        question: 'What if the order fails the pre-shipment inspection?',
+        answer:
+          'The findings can be used to request rework, replacement, sorting, or a follow-up inspection before final release.',
+      },
     ],
     ctaLabel: 'Book pre-shipment inspection',
     ctaMessage: `Hi Agent Huang,
@@ -316,23 +400,40 @@ Main risk:
     eyebrow: 'Amazon FBA prep in China',
     h1: 'Amazon FBA prep in China before goods ship to fulfillment.',
     intro:
-      'Use this page when your supplier has produced the goods, but you need China-side help with labels, cartons, packaging details, and shipment handoff.',
+      'Use this page when your supplier has produced the goods, but you need China-side help checking FNSKU labels, carton labels, SKU organization, packaging details, and forwarder handoff before the shipment goes to Amazon fulfillment.',
     startingPrice: 'Custom quote',
+    pricingNote:
+      'Amazon FBA prep is quoted by SKU count, carton count, label requirements, packaging work, supplier location, and logistics coordination. Send the shipment plan and prep requirements for a clear quote.',
     bestFor: [
       'Amazon sellers preparing shipments from China',
       'Private-label brands with carton, SKU, insert, or label requirements',
       'Buyers who need China-side coordination before freight pickup',
+      'Sellers managing multiple SKUs, suppliers, or shipment plans from outside China',
     ],
     whenToUse: [
       'Before cartons are sealed or handed to the forwarder',
       'When FNSKU, carton labels, or packaging requirements need confirmation',
       'When multiple SKUs or suppliers need coordination before shipment',
+      'When seller central requirements must be checked before international freight',
     ],
     checks: [
       'FNSKU, carton labels, and basic label placement',
       'Carton condition, SKU organization, and packing details',
       'Supplier readiness for forwarder pickup',
       'Photos that help the buyer confirm prep before release',
+      'Basic match between provided shipment plan details and visible carton/SKU evidence',
+    ],
+    processSteps: [
+      'Send FNSKU files, carton labels, SKU list, shipment plan, and supplier details',
+      'Confirm the prep scope: label checks, carton checks, inserts, packing, or handoff support',
+      'Check visible label placement, carton organization, SKU separation, and pickup readiness',
+      'Use photo evidence to approve forwarder pickup or request supplier correction',
+    ],
+    decisionSupport: [
+      'Whether cartons are ready for pickup under the provided FBA prep requirements',
+      'Whether SKU or carton labels need correction before shipping',
+      'Whether the supplier and forwarder handoff has enough visible evidence',
+      'Whether a custom prep or rework step is needed before export',
     ],
     commonRisks: [
       'FNSKU or carton labels are missing, misplaced, or mixed between SKUs',
@@ -379,6 +480,16 @@ Main risk:
         answer:
           'Yes. Provide the forwarder details, pickup window, shipment plan, and label requirements so the handoff can be scoped.',
       },
+      {
+        question: 'Can you apply labels or only check them?',
+        answer:
+          'Both may be possible depending on the location, volume, and scope. Send the SKU count, carton count, label files, and prep requirements for a quote.',
+      },
+      {
+        question: 'Do you guarantee Amazon receiving approval?',
+        answer:
+          'No. The service helps reduce visible China-side prep errors, but Amazon receiving, marketplace compliance, and listing approval remain separate from onsite prep support.',
+      },
     ],
     ctaLabel: 'Ask for FBA prep quote',
     ctaMessage: `Hi Agent Huang,
@@ -401,25 +512,42 @@ Label or prep requirements:
     eyebrow: 'Sample consolidation in China',
     h1: 'Sample consolidation in China before you choose a supplier.',
     intro:
-      'Use this page when several Chinese suppliers are sending samples and you want one China-side hub to receive, review, compare, and forward them together.',
+      'Use this page when several Chinese suppliers are sending samples and you want one China-side hub to receive, photograph, compare, and forward them together. Sample consolidation helps reduce freight waste and gives you early visibility before choosing a supplier.',
     startingPrice: 'From $99 + freight',
+    pricingNote:
+      'Sample consolidation starts from $99 plus freight. Larger batches, multiple rounds, detailed comparison notes, special handling, or repacking needs are quoted before work begins.',
     priceValue: '99',
     priceCurrency: 'USD',
     bestFor: [
       'Buyers comparing samples from two or more suppliers',
       'Amazon and ecommerce sellers trying to reduce sample freight cost',
       'Importers who want photos or notes before samples ship overseas',
+      'Product teams that need a simple China-side comparison before shortlisting factories',
     ],
     whenToUse: [
       'Before choosing the final supplier',
       'When sample freight from each factory is too expensive',
       'When you want obvious quality issues caught before international shipping',
+      'When several suppliers are sending samples at different times or from different cities',
     ],
     checks: [
       'Inbound sample receipt and basic condition',
       'Unboxing photos or video evidence',
       'Side-by-side sample notes when multiple suppliers are compared',
       'Outbound consolidation for international shipment',
+      'Basic organization by supplier so samples are not mixed or mislabeled',
+    ],
+    processSteps: [
+      'Send supplier names, tracking numbers, sample descriptions, and comparison priorities',
+      'Receive samples in China and confirm arrival by supplier and item',
+      'Capture unboxing photos or video and note obvious differences or concerns',
+      'Consolidate the samples for outbound shipment after buyer confirmation',
+    ],
+    decisionSupport: [
+      'Which supplier samples deserve deeper review or follow-up questions',
+      'Whether any sample should be rejected before paying international freight',
+      'Whether samples match the expected product, packaging, or finish',
+      'Whether a supplier should move to quote negotiation, verification, or bulk-order QC',
     ],
     commonRisks: [
       'Sample freight costs multiply when each supplier ships separately',
@@ -465,6 +593,16 @@ Label or prep requirements:
         question: 'How much does sample consolidation cost?',
         answer:
           'Sample consolidation starts from $99 plus freight. Larger batches, special handling, or detailed checks may be quoted separately.',
+      },
+      {
+        question: 'Can you compare samples before shipping them to me?',
+        answer:
+          'Yes. Basic side-by-side notes and photos can be included. More detailed product testing or technical evaluation should be scoped separately.',
+      },
+      {
+        question: 'Can you hold samples while more suppliers send theirs?',
+        answer:
+          'Usually yes. Share the expected arrival timeline, number of suppliers, and outbound shipping plan so storage and consolidation can be scoped properly.',
       },
     ],
     ctaLabel: 'Start sample consolidation',
