@@ -20,12 +20,13 @@ function SiteFooter() {
             Huang Sourcing
           </p>
           <p className="mt-3 text-sm leading-6 text-slate-600">
-            Buyer-side sourcing, supplier verification, QC inspection, sample
-            consolidation, and China-side shipment support for overseas buyers.
+            Independent China-side sourcing support for overseas buyers who need
+            supplier verification, QC inspection, sample consolidation, and
+            shipment preparation before payment or pickup.
           </p>
           <p className="mt-4 rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold leading-6 text-slate-800">
-            China-side support · Buyer-aligned service · No supplier-paid
-            recommendations.
+            Buyer-aligned service · Practical evidence · No supplier-paid
+            recommendations
           </p>
         </section>
 
@@ -36,14 +37,18 @@ function SiteFooter() {
           >
             Contact us
           </p>
-          <a
-            className="mt-4 flex items-center gap-2 text-sm font-bold text-slate-950 transition-colors hover:text-red-600"
-            href={`mailto:${businessEmail}`}
-          >
-            <Mail className="size-4 shrink-0" aria-hidden />
-            <span>Email: {businessEmail}</span>
-          </a>
-          <SocialLinks className="mt-4" showSupportingLabel />
+          <div className="mt-4 flex flex-wrap gap-2">
+            <a
+              aria-label={`Email: ${businessEmail}`}
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-bold text-slate-950 transition-colors hover:border-red-200 hover:text-red-600"
+              href={`mailto:${businessEmail}`}
+            >
+              <Mail className="size-4 shrink-0" aria-hidden />
+              <span>Email</span>
+              <span className="text-xs font-semibold text-slate-500">{businessEmail}</span>
+            </a>
+            <SocialLinks showSupportingLabel />
+          </div>
           <p className="mt-4 flex items-center gap-2 text-sm font-semibold leading-6 text-slate-600">
             <MapPin className="size-4 shrink-0 text-red-600" aria-hidden />
             <span>Shanghai base · Nationwide China</span>
@@ -88,7 +93,7 @@ function SiteFooter() {
       </div>
 
       <div className="border-t border-slate-200 bg-slate-50 px-4 py-4 text-center text-xs font-semibold leading-5 text-slate-500">
-        Copyright 2026 Huang Sourcing | All Rights Reserved powerby:openai
+        © 2026 Huang Sourcing. All rights reserved. Powered by OpenAI.
       </div>
     </footer>
   )
