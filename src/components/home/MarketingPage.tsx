@@ -176,13 +176,13 @@ export function MarketingPage() {
         />
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:py-20">
           <div className="min-w-0 lg:col-span-6">
-            <p className="max-w-[18rem] break-words text-xs font-semibold leading-6 text-red-600 sm:max-w-full sm:text-sm">
+            <p className="max-w-full break-words text-xs font-semibold leading-6 text-red-600 sm:text-sm">
               Sourcing · Supplier verification · QC inspection · Sample consolidation · FBA prep
             </p>
-            <h1 className="mt-4 max-w-[18rem] break-words text-balance text-[2.12rem] font-bold leading-[1.1] tracking-tight text-slate-950 sm:max-w-full sm:text-5xl lg:text-[3.35rem]">
+            <h1 className="mt-4 max-w-[22rem] break-words text-balance text-[2.05rem] font-bold leading-[1.1] tracking-tight text-slate-950 sm:max-w-full sm:text-5xl lg:text-[3.35rem]">
               Independent China sourcing, supplier checks, and QC inspection — aligned with you.
             </h1>
-            <p className="mt-5 max-w-[18rem] break-words text-[15px] leading-7 text-slate-600 sm:max-w-2xl sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-[22rem] break-words text-[15px] leading-7 text-slate-600 sm:max-w-2xl sm:text-lg sm:leading-8">
               Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products,
               consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.
             </p>
@@ -210,7 +210,7 @@ export function MarketingPage() {
 
           <div className="lg:col-span-6">
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
-              <div className="relative aspect-[4/3] min-h-[300px]">
+              <div className="relative aspect-[4/3] min-h-[220px] sm:min-h-[300px]">
                 <Image
                   alt="Agent Huang checking products and shipment labels in a warehouse"
                   className="object-cover"
@@ -310,7 +310,7 @@ export function MarketingPage() {
             </ul>
             <Button
               asChild
-              className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
+              className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
             >
               <a href={reportHref}>
                 <FileDown className="size-4" />
@@ -418,7 +418,7 @@ export function MarketingPage() {
               <ContactAgentButton
                 analyticsLabel="Talk to Agent Huang"
                 analyticsLocation="home_final_cta"
-                className="h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
+                className="h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
                 size="default"
                 variant="default"
               >
@@ -426,7 +426,7 @@ export function MarketingPage() {
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 hover:bg-slate-100"
+                className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 shadow-sm transition-all hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98]"
                 variant="outline"
               >
                 <a href={reportHref}>
