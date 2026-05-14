@@ -6,6 +6,7 @@ import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
+import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { Button } from '@/components/ui/button'
 import { buildWhatsAppHref, reportHref } from '@/lib/site-links'
 import {
@@ -42,9 +43,10 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
       <SiteHeader activePage="service" topBanner={null} />
 
       <JsonLd data={jsonLd} />
+      <SiteBreadcrumbs items={[{ label: page.title }]} />
 
       <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:py-20">
+        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-12 lg:py-16">
           <div className="min-w-0 lg:col-span-7">
             <p className="text-sm font-semibold text-red-600">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
@@ -57,7 +59,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
               <ContactAgentButton
                 analyticsLabel={page.ctaLabel}
                 analyticsLocation={`seo_page_${page.slug}_hero`}
-                className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700 sm:px-8"
+                className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:px-8"
                 href={whatsAppHref}
                 size="lg"
                 variant="default"
@@ -66,7 +68,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-12 rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 hover:bg-slate-50 sm:px-8"
+                className="h-12 rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:px-8"
                 size="lg"
                 variant="outline"
               >
@@ -293,7 +295,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
           <ContactAgentButton
             analyticsLabel={page.ctaLabel}
             analyticsLocation={`seo_page_${page.slug}_final`}
-            className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white hover:bg-red-700"
+            className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
             href={whatsAppHref}
             size="lg"
             variant="default"

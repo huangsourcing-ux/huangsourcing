@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { en } from '@/content/en'
@@ -25,7 +26,8 @@ export function AboutAgentPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950 antialiased">
       <SiteHeader activePage="about" topBanner={null} />
-      <article className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <SiteBreadcrumbs items={[{ label: 'About Agent Huang' }]} />
+      <article className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
         <section className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-widest text-red-600">
@@ -218,7 +220,7 @@ export function AboutAgentPage() {
           </p>
           <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
             <ContactAgentButton
-              className="h-12 rounded-md bg-red-600 px-6 text-base font-extrabold text-white shadow-sm hover:bg-red-700"
+              className="h-12 rounded-md bg-red-600 px-6 text-base font-extrabold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
               size="lg"
               variant="default"
             >
@@ -226,7 +228,7 @@ export function AboutAgentPage() {
             </ContactAgentButton>
             <Button
               asChild
-              className="h-12 rounded-md border border-slate-300 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm"
+              className="h-12 rounded-md border border-slate-300 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98]"
               size="lg"
               variant="outline"
             >

@@ -22,7 +22,7 @@ export function HomeServiceDetails({ services }: HomeServiceDetailsProps) {
     <div className="mt-8 rounded-lg border border-slate-200 bg-white">
       <button
         aria-expanded={open}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left text-base font-bold text-slate-950"
+        className="flex w-full cursor-pointer items-center justify-between gap-4 rounded-lg px-5 py-4 text-left text-base font-bold text-slate-950 transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
         onClick={() => setOpen((current) => !current)}
         type="button"
       >
