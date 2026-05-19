@@ -5,6 +5,17 @@ import { SocialLinks } from '@/components/site/SocialLinks'
 import { seoServicePages, seoServiceSlugs } from '@/lib/seo-service-pages'
 import { businessEmail } from '@/lib/site-links'
 
+const footerServices = [
+  {
+    href: '/free-china-sourcing-risk-check',
+    title: 'Free China Sourcing Risk Check',
+  },
+  ...seoServiceSlugs.map((slug) => ({
+    href: `/${slug}`,
+    title: seoServicePages[slug].title,
+  })),
+]
+
 function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white">
@@ -63,13 +74,13 @@ function SiteFooter() {
             services
           </p>
           <nav aria-label="Footer services" className="mt-4 grid gap-2">
-            {seoServiceSlugs.map((slug) => (
+            {footerServices.map((service) => (
               <Link
                 className="text-sm font-semibold leading-6 text-slate-700 transition-colors hover:text-red-600"
-                href={`/${slug}`}
-                key={slug}
+                href={service.href}
+                key={service.href}
               >
-                {seoServicePages[slug].title}
+                {service.title}
               </Link>
             ))}
           </nav>

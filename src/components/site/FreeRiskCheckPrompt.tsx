@@ -1,6 +1,7 @@
 'use client'
 
 import { CheckCircle2, ShieldCheck, X } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { WhatsAppIcon } from '@/components/site/SocialLinks'
@@ -29,9 +30,12 @@ function saveDismissedPrompt() {
 }
 
 function FreeRiskCheckPrompt() {
+  const pathname = usePathname()
+  const isSuppressedPage = pathname === '/free-china-sourcing-risk-check'
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    if (isSuppressedPage) return
     if (hasDismissedPrompt()) return
 
     const mediaQuery = window.matchMedia(mobileViewportQuery)
@@ -77,9 +81,9 @@ function FreeRiskCheckPrompt() {
       window.removeEventListener('scroll', handleMobileScroll)
       mediaQuery.removeEventListener('change', setupPromptTiming)
     }
-  }, [])
+  }, [isSuppressedPage])
 
-  if (!isVisible) return null
+  if (isSuppressedPage || !isVisible) return null
 
   const dismiss = () => {
     saveDismissedPrompt()
