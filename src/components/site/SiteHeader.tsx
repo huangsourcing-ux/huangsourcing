@@ -37,10 +37,11 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
           >
             <Image
               alt="Huang Sourcing logo"
-              className="size-10 rounded-md shadow-sm transition-transform group-hover:scale-[1.03]"
-              height={40}
-              src="/brand-mark.svg"
-              width={40}
+              className="h-11 w-auto shrink-0 transition-transform group-hover:scale-[1.03] sm:h-12"
+              height={1509}
+              src="/brand-mark.png"
+              unoptimized
+              width={1217}
             />
             <div className="min-w-0 leading-tight">
               <span className="block truncate text-base font-extrabold tracking-tight text-slate-900">{nav.brand}</span>
