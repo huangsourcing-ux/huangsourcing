@@ -10,6 +10,7 @@
     "roadmap": "Process",
     "trust": "Trust",
     "services": "Services",
+    "resources": "Resources",
     "reviews": "Reviews",
     "sampleReport": "Sample report",
     "bookFrom299": "Talk to Agent Huang",
@@ -24,13 +25,13 @@
     },
     "hero": {
       "badge": "Sourcing · Supplier verification · QC inspection · Sample consolidation · FBA prep",
-      "title": "Independent China sourcing, supplier checks, and QC inspection — aligned with you.",
-      "subtitle": "Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products, consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.",
+      "title": "Buyer-side China sourcing support before payment, pickup, or shipment.",
+      "subtitle": "Supplier verification, QC inspection, sample consolidation, Amazon FBA prep, and pre-shipment checks for overseas buyers sourcing from China.",
       "searchPrefix": "I need",
       "searchExample": "a factory audit in Shenzhen before I wire 30% deposit — can you be there this week?",
       "searchNote": "That is a real first message. Free triage → paid onsite when you are ready.",
-      "heroCtaPrimary": "Talk to Agent Huang",
-      "heroCtaSecondary": "Download sample report",
+      "heroCtaPrimary": "Get a Free Sourcing Risk Check",
+      "heroCtaSecondary": "Download Sample Report",
       "imageAlt": "Factory floor — on-site evidence for your report",
       "heroPanelBuyer": "Buyer satisfaction",
       "rating": "4.9 / 5",
@@ -39,8 +40,8 @@
       "onTheFloorSub": "Real photos, AQL logic, fail/pass you can show your bank."
     },
     "services": {
-      "title": "Everything you need before paying a Chinese supplier.",
-      "lead": "Start with a quick free check, then add verification, inspection, samples, or logistics support only when the order risk justifies it.",
+      "title": "Choose your current sourcing risk point.",
+      "lead": "You do not need to know the service category first. Pick the stage before your next deposit, supplier decision, balance payment, pickup, or FBA shipment.",
       "pricingNote": "Updated pricing · USD · + freight or custom where noted",
       "entry": {
         "heading": "The entry — free + verification",
@@ -54,6 +55,26 @@
         "heading": "Then: samples, QC & e-com / FBA",
         "lead": "When you are past the first supplier list, the real work is consolidation, in-line control, and getting shelf-ready without a second project manager. Again:"
       }
+    },
+    "scope": {
+      "badge": "Clear buyer-side boundaries",
+      "title": "What we help you check, and what we do not promise.",
+      "lead": "Huang Sourcing reduces sourcing uncertainty with practical China-side evidence, while keeping the limits of each check clear before you decide.",
+      "checksTitle": "What we help you check",
+      "checks": [
+        "Supplier identity and factory/trader signals",
+        "Product condition and visible defects",
+        "Packaging, labels, carton marks, FNSKU",
+        "Shipment readiness before balance payment or pickup",
+        "Practical next steps based on photo evidence"
+      ],
+      "limitsTitle": "What we do not promise",
+      "limits": [
+        "We do not promise zero risk",
+        "We do not replace lab testing",
+        "We do not replace legal due diligence",
+        "We do not make supplier-paid recommendations"
+      ]
     },
     "freeCard": {
       "badge": "Start here — free",

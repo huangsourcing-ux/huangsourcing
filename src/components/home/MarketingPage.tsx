@@ -1,12 +1,17 @@
+import type { LucideIcon } from 'lucide-react'
 import {
+  ArrowRight,
+  Barcode,
   Check,
   FileDown,
   PackageCheck,
   Search,
   ShieldCheck,
-  Warehouse,
+  Truck,
+  XCircle,
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
@@ -15,7 +20,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
-import { reportHref } from '@/lib/site-links'
+import { reportHref, sampleReportPageHref } from '@/lib/site-links'
 import { makeHomeJsonLd } from '@/lib/structured-data'
 
 type ServiceCard = {
@@ -23,6 +28,14 @@ type ServiceCard = {
   summary: string
   price: string
   deliverables: string[]
+}
+
+type RiskStageCard = {
+  phase: string
+  ctaLabel: string
+  service: string
+  href: string
+  Icon: LucideIcon
 }
 
 type DetailService = ServiceCard & {
@@ -41,29 +54,41 @@ const heroImage = '/images/hero-inspection.webp'
 const reportImage = '/images/report-evidence.webp'
 const agentImage = '/images/agent-huang-onsite-placeholder.webp'
 
-const coreServices: ServiceCard[] = [
+const riskStages: RiskStageCard[] = [
   {
-    title: 'Start Free',
-    summary: 'Quick sourcing risk check for a supplier link, quote, or first China order.',
-    price: 'Free',
-    deliverables: ['Supplier link review', 'Risk flags', 'Next-step recommendation'],
+    phase: 'Before Deposit',
+    ctaLabel: 'Check supplier before deposit',
+    service: 'Free Risk Check + Supplier Verification',
+    href: '/before-deposit-china-supplier-check',
+    Icon: ShieldCheck,
   },
   {
-    title: 'Verify Supplier',
-    summary: 'Factory check, company background review, and quote comparison.',
-    price: 'From $249',
-    deliverables: ['Factory vs trader check', 'Company background review', 'Clear go / caution / stop note'],
+    phase: 'Before Supplier Selection',
+    ctaLabel: 'Compare samples before choosing supplier',
+    service: 'Sample Consolidation',
+    href: '/compare-china-supplier-samples',
+    Icon: Search,
   },
   {
-    title: 'Inspect & Prepare Shipment',
-    summary: 'QC inspection, packaging, labels, samples, and shipment prep before goods leave China.',
-    price: 'QC from $299',
-    deliverables: [
-      'QC photo evidence',
-      'Samples from $99 + freight',
-      'Packaging and label check',
-      'FBA / logistics quoted separately',
-    ],
+    phase: 'Before Balance Payment',
+    ctaLabel: 'Inspect goods before paying balance',
+    service: 'QC Inspection',
+    href: '/before-balance-payment-qc-china',
+    Icon: PackageCheck,
+  },
+  {
+    phase: 'Before Pickup',
+    ctaLabel: 'Check cartons before forwarder pickup',
+    service: 'Pre-Shipment Inspection',
+    href: '/before-forwarder-pickup-inspection-china',
+    Icon: Truck,
+  },
+  {
+    phase: 'Before FBA Shipment',
+    ctaLabel: 'Check FNSKU and carton labels',
+    service: 'Amazon FBA Prep',
+    href: '/before-amazon-fba-shipment-china',
+    Icon: Barcode,
   },
 ]
 
@@ -120,6 +145,21 @@ const trustPoints = [
   },
 ]
 
+const scopeChecks = [
+  'Supplier identity and factory/trader signals',
+  'Product condition and visible defects',
+  'Packaging, labels, carton marks, FNSKU',
+  'Shipment readiness before balance payment or pickup',
+  'Practical next steps based on photo evidence',
+]
+
+const scopeLimits = [
+  'We do not promise zero risk',
+  'We do not replace lab testing',
+  'We do not replace legal due diligence',
+  'We do not make supplier-paid recommendations',
+]
+
 const process = ['Send supplier or order context', 'Agent Huang checks the risk', 'Go onsite if needed', 'You decide before payment or shipment']
 
 const reviews: Review[] = [
@@ -149,15 +189,6 @@ const reviews: Review[] = [
   },
 ]
 
-function ServiceIcon({ index }: { index: number }) {
-  const icons = [
-    <Search className="size-5" key="search" />,
-    <Warehouse className="size-5" key="warehouse" />,
-    <PackageCheck className="size-5" key="package" />,
-  ]
-  return icons[index] ?? icons[0]
-}
-
 export function MarketingPage() {
   const homeJsonLd = makeHomeJsonLd()
 
@@ -180,16 +211,16 @@ export function MarketingPage() {
               Sourcing · Supplier verification · QC inspection · Sample consolidation · FBA prep
             </p>
             <h1 className="mt-4 max-w-[22rem] break-words text-balance text-[2.05rem] font-bold leading-[1.1] tracking-tight text-slate-950 sm:max-w-full sm:text-5xl lg:text-[3.35rem]">
-              Independent China sourcing, supplier checks, and QC inspection — aligned with you.
+              Buyer-side China sourcing support before payment, pickup, or shipment.
             </h1>
             <p className="mt-5 max-w-[22rem] break-words text-[15px] leading-7 text-slate-600 sm:max-w-2xl sm:text-lg sm:leading-8">
-              Huang Sourcing helps overseas buyers find suppliers, verify factories, inspect products,
-              consolidate samples, and prepare shipments in China — before money is sent or goods leave the factory.
+              Supplier verification, QC inspection, sample consolidation, Amazon FBA prep,
+              and pre-shipment checks for overseas buyers sourcing from China.
             </p>
             <div className="mt-8">
               <HomeHeroCtas
-                primaryLabel="Talk to Agent Huang"
-                secondaryLabel="Download sample report"
+                primaryLabel="Get a Free Sourcing Risk Check"
+                secondaryLabel="Download Sample Report"
               />
             </div>
             <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 border-y border-slate-200 py-5 sm:grid-cols-3">
@@ -229,35 +260,88 @@ export function MarketingPage() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Everything you need before paying a Chinese supplier.
+              Choose your current sourcing risk point.
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Start with a quick free check, then add verification, inspection, samples, or logistics support only when the order risk justifies it.
+              You do not need to know the service category first. Pick the stage before
+              your next deposit, supplier decision, balance payment, pickup, or FBA shipment.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {coreServices.map((service, index) => (
-              <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" key={service.title}>
-                <div className="flex size-10 items-center justify-center rounded-md bg-slate-950 text-white">
-                  <ServiceIcon index={index} />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {riskStages.map((stage, index) => (
+              <article className="flex min-h-[260px] flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm" key={stage.phase}>
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex size-10 items-center justify-center rounded-md bg-slate-950 text-white">
+                    <stage.Icon className="size-5" aria-hidden />
+                  </div>
+                  <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-500">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-slate-950">{service.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{service.summary}</p>
-                <p className="mt-4 text-lg font-bold text-red-600">{service.price}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {service.deliverables.map((item) => (
-                    <li className="flex gap-2" key={item}>
-                      <Check className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-5 text-xs font-bold leading-5 text-red-600">Customer stage</p>
+                <h3 className="mt-1 text-xl font-bold leading-6 text-slate-950">{stage.phase}</h3>
+                <div className="mt-4 rounded-md border border-slate-200 bg-slate-50 p-3">
+                  <p className="text-xs font-bold text-slate-500">Corresponding service</p>
+                  <p className="mt-1 text-sm font-extrabold leading-5 text-slate-900">{stage.service}</p>
+                </div>
+                <Button
+                  asChild
+                  className="mt-auto h-auto min-h-11 w-full whitespace-normal rounded-md bg-red-600 px-3 py-2 text-sm font-bold leading-5 text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
+                  size="default"
+                  variant="default"
+                >
+                  <Link href={stage.href}>
+                    <span className="min-w-0 flex-1 text-left">{stage.ctaLabel}</span>
+                    <ArrowRight className="size-4 shrink-0" aria-hidden />
+                  </Link>
+                </Button>
               </article>
             ))}
           </div>
 
           <HomeServiceDetails services={detailServices} />
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white" id="scope">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-red-600">Clear buyer-side boundaries</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              What we help you check, and what we do not promise.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Huang Sourcing reduces sourcing uncertainty with practical China-side evidence,
+              while keeping the limits of each check clear before you decide.
+            </p>
+          </div>
+
+          <div className="mt-9 grid gap-8 lg:grid-cols-2">
+            <div className="border-t-2 border-red-600 pt-5">
+              <h3 className="text-xl font-bold text-slate-950">What we help you check</h3>
+              <ul className="mt-5 grid gap-3">
+                {scopeChecks.map((item) => (
+                  <li className="flex gap-3 border-b border-slate-100 pb-3 text-sm font-medium leading-6 text-slate-700" key={item}>
+                    <Check className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="border-t-2 border-slate-950 pt-5">
+              <h3 className="text-xl font-bold text-slate-950">What we do not promise</h3>
+              <ul className="mt-5 grid gap-3">
+                {scopeLimits.map((item) => (
+                  <li className="flex gap-3 border-b border-slate-100 pb-3 text-sm font-medium leading-6 text-slate-700" key={item}>
+                    <XCircle className="mt-0.5 size-4 shrink-0 text-slate-500" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -294,29 +378,41 @@ export function MarketingPage() {
           <div className="lg:col-span-6">
             <p className="text-sm font-semibold text-red-300">Sample report</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              See what your report will look like before you book.
+              See the report logic before you download the PDF.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-300">
-              The sample report shows the kind of photo evidence, defect notes, packaging checks,
-              and practical decision points you should expect before paying a supplier.
+              The sample report page shows the decision note, packaging and label evidence,
+              next-step recommendations, and the limits the report does not claim.
             </p>
             <ul className="mt-5 grid gap-2 text-sm text-slate-200 sm:grid-cols-2">
-              {['Factory details', 'On-site photos', 'QC findings', 'Packaging / label check'].map((item) => (
+              {['Recommended decision note', 'Packaging and label evidence', 'Next-step recommendations', 'Honest scope limits'].map((item) => (
                 <li className="flex gap-2" key={item}>
                   <Check className="mt-0.5 size-4 shrink-0 text-red-300" aria-hidden />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <Button
-              asChild
-              className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
-            >
-              <a href={reportHref}>
-                <FileDown className="size-4" />
-                Download sample report
-              </a>
-            </Button>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                className="h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
+              >
+                <Link href={sampleReportPageHref}>
+                  View sample report page
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                className="h-11 rounded-md border-white/20 bg-transparent px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-white hover:text-slate-950 hover:shadow-md active:scale-[0.98]"
+                variant="outline"
+              >
+                <a href={reportHref}>
+                  <FileDown className="size-4" aria-hidden />
+                  Download PDF
+                </a>
+              </Button>
+            </div>
           </div>
           <div className="lg:col-span-6">
             <div className="overflow-hidden rounded-lg border border-white/10 bg-white/5">

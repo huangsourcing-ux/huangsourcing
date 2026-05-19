@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useMemo, useRef, useState } from 'react'
 
 import {
@@ -138,6 +139,7 @@ function FieldError({ message }: { message?: string }) {
 }
 
 function TikTokRiskCheckLanding() {
+  const router = useRouter()
   const formRef = useRef<HTMLElement>(null)
   const [riskScenario, setRiskScenario] = useState<RiskScenario>('supplier_before_deposit')
   const [form, setForm] = useState<FormState>(initialForm)
@@ -191,11 +193,7 @@ Situation: ${form.message}
     setIsSubmitting(false)
 
     if (result.ok) {
-      setStatus({
-        type: 'success',
-        message:
-          'Thanks. We will review the visible risk points and suggest the next practical China-side check.',
-      })
+      router.push('/thank-you?source=free-risk-check')
       return
     }
 

@@ -14,7 +14,11 @@ import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { en } from '@/content/en'
 import { Button } from '@/components/ui/button'
-import { reportHref } from '@/lib/site-links'
+import {
+  privacyConfidentialityHref,
+  reportHref,
+  scopeLimitationsHref,
+} from '@/lib/site-links'
 
 const portraitImage = '/images/agent-huang-onsite-placeholder.webp'
 const contextImage = '/images/report-evidence.webp'
@@ -196,6 +200,17 @@ export function AboutAgentPage() {
                 {paragraph}
               </p>
             ))}
+            <p className="mt-4 text-sm font-bold leading-relaxed text-slate-800 sm:text-base">
+              Read the standard{' '}
+              <Link className="text-red-700 hover:underline" href={scopeLimitationsHref}>
+                Scope & Limitations
+              </Link>{' '}
+              and{' '}
+              <Link className="text-red-700 hover:underline" href={privacyConfidentialityHref}>
+                Privacy & Confidentiality
+              </Link>{' '}
+              pages for the full buyer-side trust policy.
+            </p>
           </section>
           <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-extrabold text-slate-900">{a.personalNoteTitle}</h2>
