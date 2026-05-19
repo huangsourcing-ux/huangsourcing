@@ -1,0 +1,133 @@
+import { businessEmail, resourceGuideHref } from '@/lib/site-links'
+import { getAbsoluteUrl } from '@/lib/site-url'
+
+export type ResourceGuideCategory = {
+  ctaHref: string
+  ctaLabel: string
+  id: string
+  links: {
+    href: string
+    label: string
+  }[]
+  summary: string
+  title: string
+}
+
+export const resourceGuideCategories: ResourceGuideCategory[] = [
+  {
+    id: 'supplier-verification',
+    title: 'Supplier Verification',
+    summary:
+      'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
+    links: [
+      { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
+      { href: '/supplier-verification-china', label: 'Supplier Verification China' },
+      { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
+    ],
+    ctaHref: '/before-deposit-china-supplier-check',
+    ctaLabel: 'Check supplier before deposit',
+  },
+  {
+    id: 'qc-inspection',
+    title: 'QC Inspection',
+    summary:
+      'Use these guides when production is finished or nearly finished and you need buyer-side evidence before releasing balance payment. This category connects practical QC inspection questions with visible product condition, defects, quantity signals, packaging, labels, carton marks, and the decision to approve, hold payment, request rework, or schedule a re-inspection while goods are still in China and supplier correction is still realistic.',
+    links: [
+      { href: '/before-balance-payment-qc-china', label: 'Inspection before balance payment' },
+      { href: '/qc-inspection-china', label: 'QC Inspection China' },
+      { href: '/sample-inspection-report-china', label: 'Sample inspection report' },
+    ],
+    ctaHref: '/before-balance-payment-qc-china',
+    ctaLabel: 'Inspect before balance payment',
+  },
+  {
+    id: 'pre-shipment-inspection',
+    title: 'Pre-Shipment Inspection',
+    summary:
+      'Use these guides when cartons are packed, the supplier says the shipment is ready, or the forwarder is about to collect. This category focuses on final shipment readiness before goods leave the supplier, including carton condition, shipping marks, labels, packing-list signals, pickup blockers, and whether release should proceed or wait for correction before freight moves and access becomes harder later.',
+    links: [
+      { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
+      { href: '/china-pre-shipment-inspection', label: 'China Pre-Shipment Inspection' },
+      { href: '/sample-inspection-report-china', label: 'Sample inspection report' },
+    ],
+    ctaHref: '/before-forwarder-pickup-inspection-china',
+    ctaLabel: 'Check before pickup',
+  },
+  {
+    id: 'amazon-fba-prep',
+    title: 'Amazon FBA Prep',
+    summary:
+      'Use these guides when Amazon-bound goods are still in China and visible prep evidence matters before shipment. This category covers FNSKU labels, carton labels, SKU separation, carton condition, packing details, forwarder pickup readiness, and the limits of China-side prep support compared with Amazon receiving approval or marketplace compliance after arrival at fulfillment centers or later warehouse processing by Amazon teams.',
+    links: [
+      { href: '/before-amazon-fba-shipment-china', label: 'Before Amazon FBA shipment' },
+      { href: '/amazon-fba-prep-china', label: 'Amazon FBA Prep China' },
+      { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
+    ],
+    ctaHref: '/before-amazon-fba-shipment-china',
+    ctaLabel: 'Check FBA prep before shipment',
+  },
+  {
+    id: 'sample-consolidation',
+    title: 'Sample Consolidation',
+    summary:
+      'Use these guides before choosing a supplier, especially when several Chinese factories or traders are sending samples. This category explains how a China-side hub can receive, photograph, organize, compare, and forward samples together, reducing freight waste and helping buyers spot obvious quality, finish, packaging, or supplier-origin differences before committing to production or deposit payment with one supplier in China later.',
+    links: [
+      { href: '/compare-china-supplier-samples', label: 'Compare supplier samples' },
+      { href: '/sample-consolidation-china', label: 'Sample Consolidation China' },
+      { href: '/supplier-verification-china', label: 'Supplier verification after samples' },
+    ],
+    ctaHref: '/compare-china-supplier-samples',
+    ctaLabel: 'Compare supplier samples',
+  },
+  {
+    id: 'china-sourcing-risk-notes',
+    title: 'China Sourcing Risk Notes',
+    summary:
+      'Use these notes when the exact service is not obvious yet, but the sourcing situation feels risky. This category points buyers toward practical triage: supplier pressure, vague quotes, missing evidence, unclear shipment readiness, and the honest limits of photo-backed checks before deposit, balance payment, pickup, or shipment release from China in real buyer conversations and urgent decisions under pressure today.',
+    links: [
+      { href: '/china-sourcing-services', label: 'China sourcing services overview' },
+      { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
+      { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
+      { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
+    ],
+    ctaHref: '/free-china-sourcing-risk-check',
+    ctaLabel: 'Start with Free Risk Check',
+  },
+  {
+    id: 'buyer-decision-checklists',
+    title: 'Buyer Decision Checklists',
+    summary:
+      'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
+    links: [
+      { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
+      { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
+      { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },
+      { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
+    ],
+    ctaHref: '/free-china-sourcing-risk-check',
+    ctaLabel: 'Start with Free Risk Check',
+  },
+]
+
+export function makeResourceGuideJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'China Sourcing Risk Guides',
+    description:
+      'China sourcing risk guide center for overseas buyers comparing supplier verification, QC inspection, pre-shipment inspection, Amazon FBA prep, sample consolidation, risk notes, and buyer decision checklists.',
+    url: getAbsoluteUrl(resourceGuideHref),
+    inLanguage: 'en',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Huang Sourcing',
+      url: getAbsoluteUrl('/'),
+      email: businessEmail,
+    },
+    hasPart: resourceGuideCategories.map((category) => ({
+      '@type': 'CreativeWork',
+      name: category.title,
+      url: getAbsoluteUrl(`${resourceGuideHref}#${category.id}`),
+    })),
+  }
+}

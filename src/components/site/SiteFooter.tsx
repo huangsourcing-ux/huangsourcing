@@ -2,19 +2,52 @@ import { Mail, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 import { SocialLinks } from '@/components/site/SocialLinks'
+import {
+  resourceGuideCategories,
+} from '@/lib/resource-guide-categories'
 import { seoServicePages, seoServiceSlugs } from '@/lib/seo-service-pages'
-import { businessEmail } from '@/lib/site-links'
+import {
+  businessEmail,
+  chinaSourcingServicesHref,
+  resourceGuideHref,
+  sampleReportPageHref,
+} from '@/lib/site-links'
+import { trustPolicyPages, trustPolicySlugs } from '@/lib/trust-policy-pages'
 
 const footerServices = [
   {
+    href: chinaSourcingServicesHref,
+    title: 'China sourcing services overview',
+  },
+  {
     href: '/free-china-sourcing-risk-check',
     title: 'Free China Sourcing Risk Check',
+  },
+  {
+    href: sampleReportPageHref,
+    title: 'Sample inspection report',
   },
   ...seoServiceSlugs.map((slug) => ({
     href: `/${slug}`,
     title: seoServicePages[slug].title,
   })),
 ]
+
+const footerResources = [
+  {
+    href: resourceGuideHref,
+    title: 'China sourcing risk guides',
+  },
+  ...resourceGuideCategories.map((category) => ({
+    href: `${resourceGuideHref}#${category.id}`,
+    title: category.title,
+  })),
+]
+
+const footerTrustPolicies = trustPolicySlugs.map((slug) => ({
+  href: trustPolicyPages[slug].href,
+  title: trustPolicyPages[slug].title,
+}))
 
 function SiteFooter() {
   return (
@@ -39,6 +72,20 @@ function SiteFooter() {
             Buyer-aligned service · Practical evidence · No supplier-paid
             recommendations
           </p>
+          <nav aria-label="Trust and policies" className="mt-4 grid gap-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+              Trust & policies
+            </p>
+            {footerTrustPolicies.map((policy) => (
+              <Link
+                className="text-sm font-semibold leading-6 text-slate-700 transition-colors hover:text-red-600"
+                href={policy.href}
+                key={policy.href}
+              >
+                {policy.title}
+              </Link>
+            ))}
+          </nav>
         </section>
 
         <section aria-labelledby="footer-contact">
@@ -86,20 +133,24 @@ function SiteFooter() {
           </nav>
         </section>
 
-        <section aria-labelledby="footer-blog">
+        <section aria-labelledby="footer-resources">
           <p
             className="text-xs font-bold uppercase tracking-wider text-slate-500"
-            id="footer-blog"
+            id="footer-resources"
           >
-            blog
+            resources
           </p>
-          <div className="mt-4 border-l-2 border-red-600 pl-4">
-            <p className="text-sm font-extrabold text-slate-950">Latest articles</p>
-            <p className="mt-2 text-sm leading-6 text-slate-600">
-              Coming soon. China sourcing notes, QC inspection guides, and FBA
-              prep articles are being prepared.
-            </p>
-          </div>
+          <nav aria-label="Footer resources" className="mt-4 grid gap-2">
+            {footerResources.map((resource) => (
+              <Link
+                className="text-sm font-semibold leading-6 text-slate-700 transition-colors hover:text-red-600"
+                href={resource.href}
+                key={resource.href}
+              >
+                {resource.title}
+              </Link>
+            ))}
+          </nav>
         </section>
       </div>
 

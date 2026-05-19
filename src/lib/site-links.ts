@@ -1,7 +1,13 @@
 // [!code ++] Central contact URLs (mailto bodies address Agent Huang, not a former placeholder name)
 export const businessEmail = 'agent@huangsourcing.com' as const
 
+export const chinaSourcingServicesHref = '/china-sourcing-services'
+export const privacyConfidentialityHref = '/privacy-confidentiality'
+export const resourceGuideHref = '/china-sourcing-risk-guides'
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
+export const sampleReportPageHref = '/sample-inspection-report-china'
+export const scopeLimitationsHref = '/scope-limitations'
+export const termsBookingPolicyHref = '/terms-booking-policy'
 export const publicWhatsAppHref = 'https://wa.me/15035930974' as const
 export const publicLinkedInHref = 'https://www.linkedin.com/in/agenthuang/' as const
 export const whatsappPhoneDisplay = '+1 503 593 0974' as const

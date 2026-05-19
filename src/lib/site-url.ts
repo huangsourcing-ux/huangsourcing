@@ -5,6 +5,18 @@ function normalizeSiteUrl(value: string | undefined) {
 
   try {
     const url = new URL(value)
+    const hostname = url.hostname.toLowerCase()
+
+    if (
+      hostname === 'huangsourcing.com' ||
+      hostname === 'www.huangsourcing.com' ||
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1'
+    ) {
+      return fallbackSiteUrl
+    }
+
+    url.protocol = 'https:'
     return url.origin
   } catch {
     return fallbackSiteUrl
@@ -12,9 +24,7 @@ function normalizeSiteUrl(value: string | undefined) {
 }
 
 export function getSiteUrl() {
-  return normalizeSiteUrl(
-    process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_PUBLIC_SERVER_URL,
-  )
+  return normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL)
 }
 
 export function getAbsoluteUrl(path: string) {
