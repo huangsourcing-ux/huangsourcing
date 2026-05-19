@@ -214,10 +214,11 @@ Situation: ${form.message}
           >
             <Image
               alt="Huang Sourcing logo"
-              className="size-10 rounded-md shadow-sm"
-              height={40}
-              src="/brand-mark.svg"
-              width={40}
+              className="h-10 w-auto shrink-0 sm:h-11"
+              height={1509}
+              src="/brand-mark.png"
+              unoptimized
+              width={1217}
             />
             <span className="truncate text-base font-extrabold tracking-tight text-slate-950">
               Huang Sourcing
