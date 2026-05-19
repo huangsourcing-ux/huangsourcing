@@ -12,6 +12,11 @@ type SitemapEntry = {
 const staticRoutes: SitemapEntry[] = [
   { path: '/', changeFrequency: 'weekly', priority: 1 },
   { path: '/about', changeFrequency: 'monthly', priority: 0.7 },
+  {
+    path: '/free-china-sourcing-risk-check',
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
