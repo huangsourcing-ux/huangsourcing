@@ -30,6 +30,7 @@ export type SourcingStagePage = {
   metaDescription: string
   eyebrow: string
   h1: string
+  imageAlt: string
   intro: string
   primaryService: string
   primaryServiceHref: string
@@ -51,13 +52,15 @@ export const sourcingStagePages: Record<SourcingStageSlug, SourcingStagePage> = 
   'before-deposit-china-supplier-check': {
     slug: 'before-deposit-china-supplier-check',
     stage: 'Before Deposit',
-    seoKeyword: 'verify Chinese supplier before deposit',
+    seoKeyword: 'verify Chinese supplier before payment, verify Chinese supplier before deposit',
     title: 'Before Deposit China Supplier Check',
-    metaTitle: 'Verify Chinese Supplier Before Deposit',
+    metaTitle: 'Verify Chinese Supplier Before Payment | Before Deposit Check',
     metaDescription:
-      'Verify a Chinese supplier before deposit payment with buyer-side checks for company identity, factory or trader signals, quote terms, and payment risk.',
+      'Verify a Chinese supplier before payment or deposit with buyer-side checks for company identity, factory or trader signals, quote terms, and payment risk.',
     eyebrow: 'Before deposit',
-    h1: 'Verify a Chinese supplier before deposit payment.',
+    h1: 'Verify a Chinese supplier before payment or deposit.',
+    imageAlt:
+      'Verify Chinese supplier before payment with buyer-side company and factory signal checks',
     intro:
       'Use this page when a Chinese supplier is asking for a deposit but the company identity, factory role, quote terms, or payment pressure still feels unclear. Huang Sourcing helps overseas buyers slow the decision down and check visible supplier risk before money leaves the account.',
     primaryService: 'Supplier Verification China',
@@ -94,6 +97,11 @@ export const sourcingStagePages: Record<SourcingStageSlug, SourcingStagePage> = 
         title: 'Supplier Verification China',
         href: '/supplier-verification-china',
         note: 'Use when you need a focused buyer-side check before sending deposit payment.',
+      },
+      {
+        title: 'Alibaba Supplier Verification China',
+        href: '/alibaba-supplier-verification-china',
+        note: 'Use when the supplier was found on Alibaba and the profile, invoice, or company signals need review.',
       },
     ],
     whatToSend: [
@@ -157,11 +165,13 @@ Main concern:
     stage: 'Before Balance Payment',
     seoKeyword: 'inspection before balance payment China',
     title: 'Before Balance Payment QC China',
-    metaTitle: 'Inspection Before Balance Payment China | QC Check',
+    metaTitle: 'Inspection Before Balance Payment China | QC & Label Check',
     metaDescription:
       'Arrange inspection before balance payment in China with buyer-side QC checks for visible defects, packaging, labels, cartons, and shipment readiness.',
     eyebrow: 'Before balance payment',
     h1: 'Inspection before balance payment in China.',
+    imageAlt:
+      'Inspection before balance payment in China checking product packaging labels and cartons',
     intro:
       'Use this page when production is finished or nearly finished and the supplier is asking for the final balance. Huang Sourcing checks goods, packaging, labels, cartons, and visible shipment readiness while the order is still in China and corrections are still possible.',
     primaryService: 'QC Inspection China',
@@ -271,6 +281,8 @@ Main checks needed:
       'Book a pre pickup inspection in China before forwarder collection, with checks for cartons, packing condition, labels, shipping marks, and shipment readiness.',
     eyebrow: 'Before forwarder pickup',
     h1: 'Pre-pickup inspection in China before your forwarder collects goods.',
+    imageAlt:
+      'Pre pickup inspection in China checking cartons labels and shipment readiness before forwarder collection',
     intro:
       'Use this page when your supplier says cartons are ready and the forwarder is about to collect. Huang Sourcing checks visible shipment readiness, carton condition, labels, shipping marks, and final release issues before the goods leave the supplier.',
     primaryService: 'China Pre-Shipment Inspection',
@@ -375,11 +387,13 @@ Main pickup risk:
     stage: 'Before FBA Shipment',
     seoKeyword: 'FBA prep China before shipment',
     title: 'Before Amazon FBA Shipment China',
-    metaTitle: 'FBA Prep China Before Shipment | Labels & Carton Checks',
+    metaTitle: 'FBA Prep China Before Shipment | FNSKU & Carton Label Check',
     metaDescription:
       'Get FBA prep in China before shipment with checks for FNSKU labels, carton labels, SKU separation, packaging, and forwarder pickup readiness.',
     eyebrow: 'Before FBA shipment',
     h1: 'FBA prep in China before shipment to Amazon.',
+    imageAlt:
+      'FBA prep China before shipment checking FNSKU labels carton labels and SKU separation',
     intro:
       'Use this page when Amazon-bound goods are still in China and you need evidence before cartons leave the supplier or forwarder. Huang Sourcing checks visible FNSKU, carton labels, SKU organization, packing details, and pickup readiness before shipment.',
     primaryService: 'Amazon FBA Prep China',
@@ -411,6 +425,11 @@ Main pickup risk:
         title: 'Amazon FBA Prep China',
         href: '/amazon-fba-prep-china',
         note: 'Use for label checks, carton evidence, SKU separation, and China-side prep coordination.',
+      },
+      {
+        title: 'FNSKU Label Check China',
+        href: '/fnsku-label-check-china',
+        note: 'Use when FNSKU labels, carton labels, or mixed-SKU risk is the main shipment concern.',
       },
       {
         title: 'China Pre-Shipment Inspection',
@@ -484,11 +503,13 @@ FBA prep concern:
     stage: 'Before Supplier Selection',
     seoKeyword: 'sample consolidation China',
     title: 'Compare China Supplier Samples',
-    metaTitle: 'Sample Consolidation China | Compare Supplier Samples',
+    metaTitle: 'Sample Consolidation China | Compare China Supplier Samples',
     metaDescription:
       'Use sample consolidation in China to receive, photograph, compare, and forward samples from multiple suppliers before choosing a factory.',
     eyebrow: 'Before supplier selection',
     h1: 'Compare China supplier samples before choosing a factory.',
+    imageAlt:
+      'Sample consolidation China comparing China supplier samples before supplier selection',
     intro:
       'Use this page when several Chinese suppliers are sending samples and you need one China-side hub to receive, photograph, organize, compare, and forward them together. Sample consolidation helps buyers see obvious differences before committing to a supplier or paying repeated international freight.',
     primaryService: 'Sample Consolidation China',

@@ -28,6 +28,7 @@ export type SeoServicePage = {
   metaDescription: string
   eyebrow: string
   h1: string
+  imageAlt: string
   intro: string
   startingPrice: string
   pricingNote: string
@@ -42,6 +43,7 @@ export type SeoServicePage = {
   whatToSend: string[]
   deliverables: string[]
   scopeNote: string
+  scopeLimits: string[]
   caseStudy: CaseStudy
   faqs: FaqItem[]
   ctaLabel: string
@@ -52,11 +54,13 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
   'supplier-verification-china': {
     slug: 'supplier-verification-china',
     title: 'Supplier Verification China',
-    metaTitle: 'Supplier Verification China | Buyer-Side Factory Checks',
+    metaTitle: 'Supplier Verification China Before Deposit | Buyer-Side Factory Check',
     metaDescription:
-      'Verify a Chinese supplier before deposit payment with buyer-side company checks, factory signals, quote review, risk notes, and practical next steps.',
+      'Verify a Chinese supplier before sending a deposit. Huang Sourcing checks factory signals, company details, quote terms, and visible risk notes from the China side.',
     eyebrow: 'Supplier verification in China',
     h1: 'Supplier verification in China before you send a deposit.',
+    imageAlt:
+      'China factory verification review checking supplier identity and quote details before deposit',
     intro:
       'Use this page when you have a supplier name, quote, Alibaba link, company profile, or factory contact, but you need a buyer-side review before deposit payment. The goal is to separate credible supplier signals from unclear claims before you commit money or production time.',
     startingPrice: 'From $249',
@@ -115,6 +119,12 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
     ],
     scopeNote:
       'Supplier verification is best used as an early decision filter. It helps you decide whether to continue, ask harder questions, or slow down before deposit payment. It does not replace legal due diligence, certification review, or a full factory audit when those are required.',
+    scopeLimits: [
+      'Legal due diligence, contract review, or dispute resolution',
+      'Laboratory testing, product certification, or regulated compliance checks',
+      'A full factory audit unless onsite audit scope is quoted separately',
+      'A promise that any supplier is risk-free or safe to pay',
+    ],
     caseStudy: {
       title: 'Case example: supplier looked strong, but the company details did not match',
       situation:
@@ -166,11 +176,13 @@ Main concern:
   'qc-inspection-china': {
     slug: 'qc-inspection-china',
     title: 'QC Inspection China',
-    metaTitle: 'QC Inspection China | Product & Packaging Checks',
+    metaTitle: 'QC Inspection China Before Balance Payment | Product & Packaging Check',
     metaDescription:
-      'Book buyer-side QC inspection in China for product appearance, quantity, packaging, labels, carton marks, defects, and photo evidence before shipment.',
+      'Book buyer-side QC inspection in China before paying the balance or releasing pickup. Get product, packaging, label, carton, and photo evidence.',
     eyebrow: 'QC inspection in China',
-    h1: 'QC inspection in China before products leave the factory.',
+    h1: 'QC inspection in China before balance payment or pickup.',
+    imageAlt:
+      'QC inspection in China checking product packaging and carton labels before pickup',
     intro:
       'Use this page when production is ready or nearly ready and you need buyer-side QC evidence before final payment, pickup, or shipment. The inspection focuses on visible product condition, quantity, packaging, labels, and shipment readiness so you can push corrections before goods leave China.',
     startingPrice: 'From $299 / inspector day',
@@ -229,6 +241,12 @@ Main concern:
     ],
     scopeNote:
       'QC inspection is a practical onsite check before payment or pickup. It can surface visible product, packaging, label, and quantity issues, but it should be paired with lab testing or compliance review when your product requires certification or regulated testing.',
+    scopeLimits: [
+      'Laboratory testing, certification review, or legal compliance approval',
+      'Hidden defects outside the agreed sampling and inspection scope',
+      'Supplier dispute resolution or compensation negotiation',
+      'A guarantee that every defect will be found before shipment',
+    ],
     caseStudy: {
       title: 'Case example: wrong carton labels caught before pickup',
       situation:
@@ -280,11 +298,13 @@ Main checks needed:
   'china-pre-shipment-inspection': {
     slug: 'china-pre-shipment-inspection',
     title: 'China Pre-Shipment Inspection',
-    metaTitle: 'China Pre-Shipment Inspection Before Final Payment',
+    metaTitle: 'Pre-Shipment Inspection China Before Pickup | Carton & Label Check',
     metaDescription:
-      'Arrange pre-shipment inspection in China before final payment or pickup, with buyer-side checks for goods, packaging, labels, cartons, and shipment readiness.',
+      'Arrange pre-shipment inspection in China before final payment or forwarder pickup. Check goods, cartons, labels, packing condition, and shipment readiness.',
     eyebrow: 'Pre-shipment inspection in China',
     h1: 'China pre-shipment inspection before final payment or pickup.',
+    imageAlt:
+      'Pre-shipment inspection in China checking cartons labels and shipment readiness before pickup',
     intro:
       'Use this page when goods are packed or close to completion and you need a final buyer-side check before the shipment leaves China. A pre-shipment inspection helps confirm whether the order is ready for final payment, forwarder pickup, or supplier correction.',
     startingPrice: 'From $299 / inspector day',
@@ -343,6 +363,12 @@ Main checks needed:
     ],
     scopeNote:
       'Pre-shipment inspection should happen when goods are mostly finished and available to check. It supports the final release decision before payment or pickup, but it cannot guarantee hidden defects, future transit damage, or compliance issues outside the agreed scope.',
+    scopeLimits: [
+      'Future transit damage after the shipment leaves the supplier',
+      'Hidden defects inside sealed cartons unless opening is scoped and allowed',
+      'Customs compliance, freight forwarder responsibility, or import clearance',
+      'A guarantee that all shipment risk is removed before pickup',
+    ],
     caseStudy: {
       title: 'Case example: shipment was not as ready as claimed',
       situation:
@@ -394,11 +420,13 @@ Main risk:
   'amazon-fba-prep-china': {
     slug: 'amazon-fba-prep-china',
     title: 'Amazon FBA Prep China',
-    metaTitle: 'Amazon FBA Prep China | Labels, Cartons & Shipment Prep',
+    metaTitle: 'Amazon FBA Prep China | FNSKU, Carton Labels & Shipment Check',
     metaDescription:
-      'Coordinate Amazon FBA prep in China with carton checks, labels, packaging details, SKU organization, shipment handoff, and buyer-side photo evidence.',
+      'Check FNSKU labels, carton labels, SKU separation, packaging, and forwarder handoff in China before your goods ship to Amazon FBA.',
     eyebrow: 'Amazon FBA prep in China',
     h1: 'Amazon FBA prep in China before goods ship to fulfillment.',
+    imageAlt:
+      'Amazon FBA prep in China checking FNSKU labels carton labels and SKU separation before shipment',
     intro:
       'Use this page when your supplier has produced the goods, but you need China-side help checking FNSKU labels, carton labels, SKU organization, packaging details, and forwarder handoff before the shipment goes to Amazon fulfillment.',
     startingPrice: 'Custom quote',
@@ -455,6 +483,12 @@ Main risk:
     ],
     scopeNote:
       'Amazon FBA prep support is scoped around China-side coordination and evidence before shipment. Marketplace compliance, listing approval, product safety testing, and final Amazon receiving decisions remain separate from this operational prep work.',
+    scopeLimits: [
+      'Amazon receiving approval, final FBA acceptance, or listing approval',
+      'Marketplace compliance review or product safety testing',
+      'Hidden carton contents unless opening and checking is scoped',
+      'Control over Amazon warehouse processing after shipment',
+    ],
     caseStudy: {
       title: 'Case example: label confirmation before FBA pickup',
       situation:
@@ -506,11 +540,13 @@ Label or prep requirements:
   'sample-consolidation-china': {
     slug: 'sample-consolidation-china',
     title: 'Sample Consolidation China',
-    metaTitle: 'Sample Consolidation China | Compare Supplier Samples',
+    metaTitle: 'Sample Consolidation China | Compare Supplier Samples Before Selection',
     metaDescription:
-      'Consolidate supplier samples in China before international shipping, with unboxing photos, side-by-side notes, sample checks, and outbound shipment support.',
+      'Use sample consolidation in China to receive, photograph, compare, and forward supplier samples before choosing a factory or paying repeated freight.',
     eyebrow: 'Sample consolidation in China',
     h1: 'Sample consolidation in China before you choose a supplier.',
+    imageAlt:
+      'Sample consolidation in China comparing supplier samples before choosing a factory',
     intro:
       'Use this page when several Chinese suppliers are sending samples and you want one China-side hub to receive, photograph, compare, and forward them together. Sample consolidation helps reduce freight waste and gives you early visibility before choosing a supplier.',
     startingPrice: 'From $99 + freight',
@@ -569,6 +605,12 @@ Label or prep requirements:
     ],
     scopeNote:
       'Sample consolidation helps you compare early supplier options and reduce unnecessary freight. It is not a substitute for bulk production QC, since sample quality can differ from mass production unless the order is checked again before shipment.',
+    scopeLimits: [
+      'Bulk production QC or proof that mass production will match the sample',
+      'Laboratory testing, certification review, or technical product approval',
+      'Supplier verification unless a separate supplier check is scoped',
+      'A guarantee that the chosen supplier will perform consistently in production',
+    ],
     caseStudy: {
       title: 'Case example: four samples compared before supplier selection',
       situation:
