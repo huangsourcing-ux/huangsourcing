@@ -1,6 +1,7 @@
 import {
   alibabaSupplierVerificationHref,
   businessEmail,
+  factoryVsTradingCompanyChinaHref,
   fnskuLabelCheckHref,
   resourceGuideHref,
   supplierDepositGuideHref,
@@ -29,6 +30,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
+      { href: factoryVsTradingCompanyChinaHref, label: 'Factory vs trading company in China' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
     ],

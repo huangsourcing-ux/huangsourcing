@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, FileText } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Download, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -14,10 +14,15 @@ import {
   alibabaSupplierVerificationHref,
   buildWhatsAppHref,
   chinaSourcingInspectionPricingHref,
+  factoryVsTradingCompanyChinaHref,
   fnskuLabelCheckHref,
   sampleReportPageHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
+import {
+  seoServiceEnhancements,
+  type SeoServiceEnhancement,
+} from '@/lib/seo-service-enhancements'
 import {
   makeSeoServiceJsonLd,
   seoServicePages,
@@ -46,6 +51,11 @@ const serviceRelatedLinks: Record<SeoServiceSlug, { href: string; label: string;
       href: alibabaSupplierVerificationHref,
       label: 'Alibaba supplier verification',
       note: 'Use when the supplier was found on Alibaba and profile details need a buyer-side check.',
+    },
+    {
+      href: factoryVsTradingCompanyChinaHref,
+      label: 'Factory vs trading company in China',
+      note: 'Use when the supplier role is unclear or the quote does not match the claimed factory identity.',
     },
     {
       href: sampleReportPageHref,
@@ -156,11 +166,210 @@ function BulletList({ items }: { items: string[] }) {
   )
 }
 
+function ComparisonTable({ comparison }: { comparison: NonNullable<SeoServiceEnhancement['comparison']> }) {
+  return (
+    <div className="mt-8">
+      <div className="grid gap-3 md:hidden">
+        {comparison.rows.map((row, index) => (
+          <Reveal as="article" className="hs-card bg-white p-4" key={row.topic} staggerIndex={index}>
+            <p className="text-sm font-extrabold text-[var(--hs-accent)]">{row.topic}</p>
+            <div className="mt-3 grid gap-3">
+              <div>
+                <p className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
+                  {comparison.columns[1]}
+                </p>
+                <p className="hs-muted mt-1 text-sm leading-6">{row.left}</p>
+              </div>
+              <div>
+                <p className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
+                  {comparison.columns[2]}
+                </p>
+                <p className="hs-muted mt-1 text-sm leading-6">{row.right}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      <Reveal className="hidden overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)] md:block">
+        <table className="w-full min-w-[820px] border-collapse text-left text-sm">
+          <thead className="bg-[var(--hs-bg-soft)] text-xs uppercase text-[var(--hs-muted-soft)]">
+            <tr>
+              {comparison.columns.map((column) => (
+                <th className="border-b border-[var(--hs-border)] px-4 py-3" key={column}>
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.rows.map((row) => (
+              <tr className="align-top transition-colors hover:bg-[var(--hs-bg-soft)]" key={row.topic}>
+                <td className="border-b border-[var(--hs-border)] px-4 py-4 font-extrabold text-[var(--hs-text)]">
+                  {row.topic}
+                </td>
+                <td className="border-b border-[var(--hs-border)] px-4 py-4 leading-6 text-[var(--hs-muted)]">
+                  {row.left}
+                </td>
+                <td className="border-b border-[var(--hs-border)] px-4 py-4 leading-6 text-[var(--hs-muted)]">
+                  {row.right}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Reveal>
+    </div>
+  )
+}
+
+function EnhancementCardGrid({ cards }: { cards: NonNullable<SeoServiceEnhancement['checklistSections']> }) {
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      {cards.map((card, index) => (
+        <Reveal
+          as="article"
+          className="hs-card hs-card-hover bg-[var(--hs-card-warm)] p-5"
+          key={card.title}
+          staggerIndex={index}
+        >
+          <h3 className="text-xl font-extrabold text-[var(--hs-text)]">{card.title}</h3>
+          {card.body ? <p className="hs-muted mt-3 text-sm leading-6">{card.body}</p> : null}
+          {card.items ? <BulletList items={card.items} /> : null}
+        </Reveal>
+      ))}
+    </div>
+  )
+}
+
+function EnhancementDownloadCard({ download }: { download: NonNullable<SeoServiceEnhancement['download']> }) {
+  return (
+    <Reveal className="hs-card bg-[var(--hs-navy)] p-5 text-white">
+      <div className="flex items-start gap-4">
+        <div className="flex size-11 shrink-0 items-center justify-center rounded-md bg-white/10 text-white">
+          <Download className="size-5" aria-hidden />
+        </div>
+        <div>
+          <p className="text-xs font-extrabold uppercase text-red-200">{download.fileType} download</p>
+          <h3 className="mt-2 text-xl font-extrabold tracking-tight">{download.title}</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-300">{download.body}</p>
+          <a
+            className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-md bg-[var(--hs-accent)] px-4 text-sm font-extrabold text-white transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)]"
+            href={download.href}
+          >
+            {download.ctaLabel}
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
+        </div>
+      </div>
+    </Reveal>
+  )
+}
+
+function ServiceEnhancementSections({ enhancement }: { enhancement?: SeoServiceEnhancement }) {
+  if (!enhancement) return null
+
+  return (
+    <>
+      <section className="hs-section-white">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">{enhancement.eyebrow}</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+              {enhancement.title}
+            </h2>
+            <p className="hs-muted mt-3 text-base leading-7">{enhancement.intro}</p>
+          </Reveal>
+
+          {enhancement.comparison ? (
+            <>
+              <Reveal className="mt-8 max-w-3xl">
+                <h3 className="text-2xl font-extrabold tracking-tight text-[var(--hs-text)]">
+                  {enhancement.comparison.title}
+                </h3>
+              </Reveal>
+              <ComparisonTable comparison={enhancement.comparison} />
+            </>
+          ) : null}
+        </div>
+      </section>
+
+      {enhancement.scopeCards?.length ? (
+        <section className="hs-section-soft">
+          <div className="hs-container hs-section">
+            <Reveal className="max-w-3xl">
+              <p className="hs-eyebrow">Scope clarity</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+                What can be checked from the right evidence.
+              </h2>
+            </Reveal>
+            <div className="mt-8">
+              <EnhancementCardGrid cards={enhancement.scopeCards} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {enhancement.checklistSections?.length ? (
+        <section className="hs-section-soft">
+          <div className="hs-container hs-section">
+            <Reveal className="max-w-3xl">
+              <p className="hs-eyebrow">Buyer preparation</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+                Practical details buyers should define before booking.
+              </h2>
+            </Reveal>
+            <div className="mt-8">
+              <EnhancementCardGrid cards={enhancement.checklistSections} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {enhancement.caseCards?.length || enhancement.download || enhancement.links?.length ? (
+        <section className="hs-section-white">
+          <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+            <Reveal className="lg:col-span-4">
+              <p className="hs-eyebrow">Next-step tools</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+                Use the extra checklist, case notes, or related guide.
+              </h2>
+            </Reveal>
+            <div className="grid gap-4 lg:col-span-8">
+              {enhancement.download ? <EnhancementDownloadCard download={enhancement.download} /> : null}
+              {enhancement.caseCards?.length ? <EnhancementCardGrid cards={enhancement.caseCards} /> : null}
+              {enhancement.links?.length ? (
+                <div className="grid gap-3 md:grid-cols-3">
+                  {enhancement.links.map((link, index) => (
+                    <Reveal key={link.href} staggerIndex={index}>
+                      <Link className="hs-link-card group block h-full p-5" href={link.href}>
+                        <h3 className="text-lg font-extrabold text-[var(--hs-text)] group-hover:text-[var(--hs-accent)]">
+                          {link.label}
+                        </h3>
+                        <p className="hs-muted mt-2 text-sm leading-6">{link.note}</p>
+                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
+                          Open guide
+                          <ArrowRight className="size-4" aria-hidden />
+                        </span>
+                      </Link>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </section>
+      ) : null}
+    </>
+  )
+}
+
 export function SeoServicePage({ page }: SeoServicePageProps) {
   const relatedServices = seoServiceSlugs.filter((slug) => slug !== page.slug)
   const relatedLinks = serviceRelatedLinks[page.slug]
   const whatsAppHref = buildWhatsAppHref(page.ctaMessage)
   const jsonLd = makeSeoServiceJsonLd(page)
+  const enhancement = seoServiceEnhancements[page.slug]
 
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
@@ -298,6 +507,8 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
           </div>
         </div>
       </section>
+
+      <ServiceEnhancementSections enhancement={enhancement} />
 
       <section className="hs-section-soft">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
