@@ -16,7 +16,10 @@ import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import { servicePricingBySlug } from '@/lib/service-pricing'
-import { chinaSourcingInspectionPricingHref } from '@/lib/site-links'
+import {
+  chinaSourcingInspectionPricingHref,
+  whatToSendBeforeChinaInspectionHref,
+} from '@/lib/site-links'
 
 type ServiceOverview = {
   title: string
@@ -235,6 +238,28 @@ export function ChinaSourcingServicesPage() {
             <p className="hs-muted mt-3 text-base leading-7">
               Use this overview to understand where each service fits in the sourcing process.
             </p>
+          </Reveal>
+
+          <Reveal className="hs-card mt-6 bg-[var(--hs-card-warm)] p-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
+            <div>
+              <p className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
+                Before asking for a quote
+              </p>
+              <p className="mt-2 text-base font-extrabold text-[var(--hs-text)]">
+                Prepare supplier, product, label, packing, and deadline details first.
+              </p>
+              <p className="hs-muted mt-2 text-sm leading-6">
+                Complete files help Huang Sourcing scope supplier verification, QC,
+                pre-shipment inspection, FBA prep, or sample consolidation faster.
+              </p>
+            </div>
+            <Link
+              className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-md bg-[var(--hs-navy)] px-4 text-sm font-extrabold text-white transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] sm:mt-0"
+              href={whatToSendBeforeChinaInspectionHref}
+            >
+              Prepare booking files
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
           </Reveal>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">

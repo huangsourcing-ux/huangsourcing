@@ -13,6 +13,7 @@ import {
   chinaSourcingServicesHref,
   resourceGuideHref,
   sampleReportPageHref,
+  whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import { trustPolicyPages, trustPolicySlugs } from '@/lib/trust-policy-pages'
 
@@ -24,6 +25,10 @@ const footerServices = [
   {
     href: chinaSourcingInspectionPricingHref,
     title: 'China sourcing inspection pricing',
+  },
+  {
+    href: whatToSendBeforeChinaInspectionHref,
+    title: 'What to send before booking',
   },
   {
     href: '/free-china-sourcing-risk-check',

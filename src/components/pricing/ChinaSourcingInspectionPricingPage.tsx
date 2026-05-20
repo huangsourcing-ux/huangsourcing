@@ -22,6 +22,7 @@ import {
 import {
   buildWhatsAppHref,
   chinaSourcingServicesHref,
+  whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 
 const freeRiskHref = '/free-china-sourcing-risk-check'
@@ -141,6 +142,13 @@ function ChinaSourcingInspectionPricingPage() {
                   </li>
                 ))}
               </ul>
+              <Link
+                className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)] transition-colors hover:text-[var(--hs-accent-strong)]"
+                href={whatToSendBeforeChinaInspectionHref}
+              >
+                What to send before booking
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </div>
           </Reveal>
         </div>

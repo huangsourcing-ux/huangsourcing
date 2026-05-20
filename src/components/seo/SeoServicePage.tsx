@@ -16,6 +16,7 @@ import {
   chinaSourcingInspectionPricingHref,
   fnskuLabelCheckHref,
   sampleReportPageHref,
+  whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import {
   makeSeoServiceJsonLd,
@@ -232,6 +233,13 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
                 View pricing guide
                 <ArrowRight className="size-4" aria-hidden />
               </Link>
+              <Link
+                className="mt-3 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)] transition-colors hover:text-[var(--hs-accent-strong)]"
+                href={whatToSendBeforeChinaInspectionHref}
+              >
+                What to send before booking
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -279,6 +287,13 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
             <Reveal as="article" className="hs-card hs-card-hover bg-[var(--hs-bg-soft)] p-5" staggerIndex={1}>
               <h3 className="text-lg font-extrabold text-[var(--hs-text)]">What to send first</h3>
               <BulletList items={page.whatToSend} />
+              <Link
+                className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)] transition-colors hover:text-[var(--hs-accent-strong)]"
+                href={whatToSendBeforeChinaInspectionHref}
+              >
+                View booking prep guide
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </Reveal>
           </div>
         </div>
