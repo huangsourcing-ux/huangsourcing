@@ -11,6 +11,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -122,10 +123,13 @@ export function SampleInspectionReportPage() {
                 size="lg"
                 variant="outline"
               >
-                <a download href={reportHref}>
+                <SampleReportDownloadLink
+                  ctaLocation="sample_report_page_hero"
+                  href={reportHref}
+                >
                   <FileDown className="size-4" aria-hidden />
                   Download PDF (520 KB)
-                </a>
+                </SampleReportDownloadLink>
               </Button>
             </div>
           </Reveal>
@@ -300,10 +304,13 @@ export function SampleInspectionReportPage() {
                 className="relative h-11 w-full min-w-0 shrink rounded-md border-white/20 bg-white px-6 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-all hover:bg-red-50 hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:w-auto"
                 variant="outline"
               >
-                <a download href={reportHref}>
+                <SampleReportDownloadLink
+                  ctaLocation="sample_report_page_final_cta"
+                  href={reportHref}
+                >
                   <FileDown className="size-4" aria-hidden />
                   Download PDF (520 KB)
-                </a>
+                </SampleReportDownloadLink>
               </Button>
             </div>
           </Reveal>

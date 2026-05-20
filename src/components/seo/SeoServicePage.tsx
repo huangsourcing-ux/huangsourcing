@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { ServiceViewTracker } from '@/components/analytics/ServiceViewTracker'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SiteFooter } from '@/components/site/SiteFooter'
@@ -161,6 +162,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
       <SiteHeader activePage="service" topBanner={null} />
+      <ServiceViewTracker serviceName={page.title} serviceSlug={page.slug} />
 
       <JsonLd data={jsonLd} />
       <SiteBreadcrumbs items={[{ label: page.title }]} />

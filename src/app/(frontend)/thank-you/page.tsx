@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, FileDown, Home } from 'lucide-react'
 import Link from 'next/link'
 
+import { ThankYouEventTracker } from '@/components/analytics/ThankYouEventTracker'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-white text-slate-950 antialiased">
+      <ThankYouEventTracker />
       <SiteHeader activePage="home" topBanner={null} />
 
       <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
