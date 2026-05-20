@@ -9,6 +9,7 @@ export const resourceGuideHref = '/china-sourcing-risk-guides'
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
 export const sampleReportPageHref = '/sample-inspection-report-china'
 export const scopeLimitationsHref = '/scope-limitations'
+export const supplierDepositGuideHref = '/how-to-verify-chinese-supplier-before-deposit'
 export const termsBookingPolicyHref = '/terms-booking-policy'
 export const publicWhatsAppHref = 'https://wa.me/15035930974' as const
 export const publicLinkedInHref = 'https://www.linkedin.com/in/agenthuang/' as const

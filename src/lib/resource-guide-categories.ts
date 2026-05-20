@@ -3,6 +3,7 @@ import {
   businessEmail,
   fnskuLabelCheckHref,
   resourceGuideHref,
+  supplierDepositGuideHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 
@@ -25,6 +26,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
     links: [
+      { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
