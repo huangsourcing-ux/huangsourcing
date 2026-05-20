@@ -1,7 +1,7 @@
 import {
   Camera,
   CheckCircle2,
-  FileDown,
+  FileText,
   MapPinned,
   ShieldCheck,
 } from 'lucide-react'
@@ -16,7 +16,7 @@ import { en } from '@/content/en'
 import { Button } from '@/components/ui/button'
 import {
   privacyConfidentialityHref,
-  reportHref,
+  sampleReportPageHref,
   scopeLimitationsHref,
 } from '@/lib/site-links'
 
@@ -247,10 +247,10 @@ export function AboutAgentPage() {
               size="lg"
               variant="outline"
             >
-              <a className="inline-flex items-center justify-center gap-2" href={reportHref}>
-                <FileDown className="size-5" />
+              <Link className="inline-flex items-center justify-center gap-2" href={sampleReportPageHref}>
+                <FileText className="size-5" />
                 {a.ctaReport}
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import { FileDown, ShieldCheck } from 'lucide-react'
+import { FileText, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
-import { reportHref } from '@/lib/site-links'
+import { sampleReportPageHref } from '@/lib/site-links'
 
 type HomeHeroCtasProps = {
   primaryLabel: string
@@ -29,10 +29,10 @@ export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps
         size="lg"
         variant="outline"
       >
-        <a className="inline-flex items-center justify-center gap-2" href={reportHref}>
+        <Link className="inline-flex items-center justify-center gap-2" href={sampleReportPageHref}>
           {secondaryLabel}
-          <FileDown className="size-4 shrink-0" aria-hidden />
-        </a>
+          <FileText className="size-4 shrink-0" aria-hidden />
+        </Link>
       </Button>
     </div>
   )

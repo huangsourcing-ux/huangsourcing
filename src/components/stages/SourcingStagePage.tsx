@@ -1,7 +1,7 @@
 import {
   ArrowRight,
   CheckCircle2,
-  FileDown,
+  FileText,
   HelpCircle,
   ShieldAlert,
 } from 'lucide-react'
@@ -22,7 +22,7 @@ import {
 import {
   buildWhatsAppHref,
   chinaSourcingServicesHref,
-  reportHref,
+  sampleReportPageHref,
 } from '@/lib/site-links'
 
 type SourcingStagePageProps = {
@@ -212,10 +212,10 @@ export function SourcingStagePage({ page }: SourcingStagePageProps) {
               size="default"
               variant="outline"
             >
-              <a href={reportHref}>
-                <FileDown className="size-4" aria-hidden />
-                Download sample report
-              </a>
+              <Link href={sampleReportPageHref}>
+                <FileText className="size-4" aria-hidden />
+                View sample report
+              </Link>
             </Button>
           </div>
           <div className="lg:col-span-7">

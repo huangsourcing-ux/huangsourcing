@@ -213,10 +213,11 @@ Situation: ${form.message}
             <Image
               alt="Huang Sourcing logo"
               className="h-10 w-auto shrink-0 sm:h-11"
-              height={1509}
-              src="/brand-mark.png"
-              unoptimized
-              width={1217}
+              height={238}
+              priority
+              sizes="44px"
+              src="/brand-mark-logo.webp"
+              width={192}
             />
             <span className="truncate text-base font-extrabold tracking-tight text-slate-950">
               Huang Sourcing
@@ -453,7 +454,7 @@ Situation: ${form.message}
                     <button
                       aria-pressed={isSelected}
                       className={cn(
-                        'flex min-h-[116px] flex-col items-start gap-3 rounded-md border p-4 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2',
+                        'flex min-h-[92px] flex-col items-start gap-2 rounded-md border p-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 sm:min-h-[116px] sm:gap-3 sm:p-4',
                         isSelected
                           ? 'border-red-600 bg-red-50 text-red-950 ring-1 ring-red-600'
                           : 'border-slate-200 bg-white text-slate-800 hover:border-red-200 hover:bg-red-50/60',
@@ -484,10 +485,10 @@ Situation: ${form.message}
                 </Label>
                 <Input
                   autoComplete="organization"
-                  className="mt-2 h-11 border-slate-300 text-sm focus-visible:ring-red-500"
+                  className="mt-2 h-12 border-slate-300 text-base focus-visible:ring-red-500 md:h-11 md:text-sm"
                   id="supplier"
                   onChange={(event) => updateField('supplier', event.target.value)}
-                  placeholder="e.g., Company name or website link"
+                  placeholder="Supplier name or link"
                   value={form.supplier}
                 />
                 <FieldError message={fieldErrors?.supplier} />
@@ -499,10 +500,10 @@ Situation: ${form.message}
                 </Label>
                 <Input
                   autoComplete="off"
-                  className="mt-2 h-11 border-slate-300 text-sm focus-visible:ring-red-500"
+                  className="mt-2 h-12 border-slate-300 text-base focus-visible:ring-red-500 md:h-11 md:text-sm"
                   id="product"
                   onChange={(event) => updateField('product', event.target.value)}
-                  placeholder="What is the product or item?"
+                  placeholder="Product or item"
                   value={form.product}
                 />
                 <FieldError message={fieldErrors?.product} />
@@ -513,7 +514,7 @@ Situation: ${form.message}
                   Payment status *
                 </Label>
                 <select
-                  className="mt-2 flex h-11 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                  className="mt-2 flex h-12 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-base font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:h-11 md:text-sm"
                   id="paymentStatus"
                   onChange={(event) => updateField('paymentStatus', event.target.value)}
                   value={form.paymentStatus}
@@ -533,7 +534,7 @@ Situation: ${form.message}
                   Shipment stage *
                 </Label>
                 <select
-                  className="mt-2 flex h-11 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                  className="mt-2 flex h-12 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-base font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:h-11 md:text-sm"
                   id="shipmentStage"
                   onChange={(event) => updateField('shipmentStage', event.target.value)}
                   value={form.shipmentStage}
@@ -554,10 +555,10 @@ Situation: ${form.message}
                 Your message
               </Label>
               <Textarea
-                className="mt-2 min-h-28 border-slate-300 text-sm focus-visible:ring-red-500"
+                className="mt-2 min-h-28 border-slate-300 text-base focus-visible:ring-red-500 md:text-sm"
                 id="message"
                 onChange={(event) => updateField('message', event.target.value)}
-                placeholder="Describe your situation or concerns..."
+                placeholder="Your concern or deadline"
                 value={form.message}
               />
               <FieldError message={fieldErrors?.message} />

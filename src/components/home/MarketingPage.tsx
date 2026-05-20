@@ -4,6 +4,7 @@ import {
   Barcode,
   Check,
   FileDown,
+  FileText,
   PackageCheck,
   Search,
   ShieldCheck,
@@ -220,7 +221,7 @@ export function MarketingPage() {
             <div className="mt-8">
               <HomeHeroCtas
                 primaryLabel="Get a Free Sourcing Risk Check"
-                secondaryLabel="Download Sample Report"
+                secondaryLabel="View Sample Report"
               />
             </div>
             <div className="mt-8 grid max-w-2xl grid-cols-1 gap-3 border-y border-slate-200 py-5 sm:grid-cols-3">
@@ -407,9 +408,9 @@ export function MarketingPage() {
                 className="h-11 rounded-md border-white/20 bg-transparent px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-white hover:text-slate-950 hover:shadow-md active:scale-[0.98]"
                 variant="outline"
               >
-                <a href={reportHref}>
+                <a download href={reportHref}>
                   <FileDown className="size-4" aria-hidden />
-                  Download PDF
+                  Download PDF (520 KB)
                 </a>
               </Button>
             </div>
@@ -525,10 +526,10 @@ export function MarketingPage() {
                 className="h-11 rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 shadow-sm transition-all hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98]"
                 variant="outline"
               >
-                <a href={reportHref}>
-                  <FileDown className="size-4" />
-                  Download sample report
-                </a>
+                <Link href={sampleReportPageHref}>
+                  <FileText className="size-4" />
+                  View sample report
+                </Link>
               </Button>
             </div>
           </div>

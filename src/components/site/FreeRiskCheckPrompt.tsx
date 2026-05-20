@@ -11,7 +11,8 @@ import { freeRiskCheckWhatsAppHref } from '@/lib/site-links'
 const dismissKey = 'huang-sourcing-free-risk-check-dismissed-v1'
 const offerItems = ['Supplier link review', 'Risk flags', 'Next-step recommendation'] as const
 const mobileViewportQuery = '(max-width: 639px)'
-const mobileScrollTrigger = 240
+const mobilePromptDelay = 900
+const desktopPromptDelay = 3000
 
 function hasDismissedPrompt() {
   try {
@@ -52,25 +53,16 @@ function FreeRiskCheckPrompt() {
       setIsVisible(true)
     }
 
-    const handleMobileScroll = () => {
-      if (window.scrollY >= mobileScrollTrigger) {
-        showPrompt()
-        window.removeEventListener('scroll', handleMobileScroll)
-      }
-    }
-
     const setupPromptTiming = () => {
       clearDesktopTimer()
       setIsVisible(false)
-      window.removeEventListener('scroll', handleMobileScroll)
 
       if (mediaQuery.matches) {
-        handleMobileScroll()
-        window.addEventListener('scroll', handleMobileScroll, { passive: true })
+        timeout = window.setTimeout(showPrompt, mobilePromptDelay)
         return
       }
 
-      timeout = window.setTimeout(showPrompt, 3000)
+      timeout = window.setTimeout(showPrompt, desktopPromptDelay)
     }
 
     setupPromptTiming()
@@ -78,7 +70,6 @@ function FreeRiskCheckPrompt() {
 
     return () => {
       clearDesktopTimer()
-      window.removeEventListener('scroll', handleMobileScroll)
       mediaQuery.removeEventListener('change', setupPromptTiming)
     }
   }, [isSuppressedPage])
