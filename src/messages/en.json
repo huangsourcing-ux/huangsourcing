@@ -31,7 +31,7 @@
       "searchExample": "a factory audit in Shenzhen before I wire 30% deposit — can you be there this week?",
       "searchNote": "That is a real first message. Free triage → paid onsite when you are ready.",
       "heroCtaPrimary": "Get a Free Sourcing Risk Check",
-      "heroCtaSecondary": "Download Sample Report",
+      "heroCtaSecondary": "View Sample Report",
       "imageAlt": "Factory floor — on-site evidence for your report",
       "heroPanelBuyer": "Buyer satisfaction",
       "rating": "4.9 / 5",
@@ -373,7 +373,7 @@
     "reportCta": {
       "title": "See what your report will look like before you book",
       "lead": "Photo evidence, defect notes, packaging checks, and practical decision points before paying a supplier.",
-      "button": "Download sample report (PDF)"
+      "button": "View sample report"
     }
   },
   "Footer": {
@@ -496,7 +496,7 @@
     "ctaTitle": "Need a second pair of eyes before paying a Chinese supplier?",
     "cta": "Send the supplier name, product, order stage, and deadline. Agent Huang will suggest the safest next step.",
     "ctaWhatsapp": "Talk to Agent Huang",
-    "ctaReport": "Download sample report",
+    "ctaReport": "View sample report",
     "backHome": "Back to Huang Sourcing",
     "portraitAlt": "Agent Huang — founder of Huang Sourcing",
     "contextImageAlt": "Inspection report evidence with packaging and label checks"
@@ -504,7 +504,7 @@
   "ContactAgent": {
     "successTitle": "Thank you. I have your context.",
     "successDescription": "Here is the Huang Sourcing sample report so you can see the type of evidence, packaging checks, and QC notes you should expect before booking.",
-    "downloadReport": "Download sample report (PDF)",
+    "downloadReport": "View sample report",
     "preferHuman": "Prefer a human channel?",
     "email": "Email",
     "whatsapp": "WhatsApp",
