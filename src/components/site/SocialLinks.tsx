@@ -68,7 +68,7 @@ function SocialLinks({ className, linkClassName, showSupportingLabel = false }: 
         <a
           aria-label={`${label}: ${supportingLabel}`}
           className={cn(
-            'inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-bold text-slate-950 transition-colors hover:border-red-200 hover:text-red-600',
+            'inline-flex h-10 items-center justify-center gap-2 rounded-md border border-[var(--hs-border)] bg-white px-3 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-colors hover:border-[var(--hs-accent)] hover:text-[var(--hs-accent)]',
             linkClassName,
           )}
           href={href}
@@ -88,7 +88,7 @@ function SocialLinks({ className, linkClassName, showSupportingLabel = false }: 
           <Icon className="size-4 shrink-0" />
           <span>{label}</span>
           {showSupportingLabel ? (
-            <span className="text-xs font-semibold text-slate-500">{supportingLabel}</span>
+            <span className="text-xs font-semibold text-[var(--hs-muted-soft)]">{supportingLabel}</span>
           ) : null}
         </a>
       ))}

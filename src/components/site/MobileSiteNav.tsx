@@ -110,7 +110,7 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
             </Link>
             <a
               aria-label="Talk to Agent Huang on WhatsApp"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-red-600 px-4 text-base font-extrabold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99]"
+              className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#1f7a4d] px-4 text-base font-extrabold text-white shadow-[0_10px_24px_rgba(31,122,77,0.22)] transition-all hover:bg-[#17643e] hover:shadow-[0_14px_30px_rgba(31,122,77,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1f7a4d] focus-visible:ring-offset-2 active:scale-[0.99]"
               href={publicWhatsAppHref}
               onClick={() => {
                 trackWhatsAppClick({
