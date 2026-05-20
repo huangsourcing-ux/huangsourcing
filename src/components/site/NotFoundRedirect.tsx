@@ -27,9 +27,9 @@ export function NotFoundRedirect() {
   }, [router])
 
   return (
-    <p className="mt-4 text-sm font-medium text-slate-500" aria-live="polite">
+    <p className="mt-4 text-sm font-medium text-[var(--hs-muted)]" aria-live="polite">
       Redirecting to the homepage in{' '}
-      <span className="font-semibold text-slate-800">{secondsRemaining}</span> seconds.
+      <span className="font-semibold text-[var(--hs-text)]">{secondsRemaining}</span> seconds.
     </p>
   )
 }

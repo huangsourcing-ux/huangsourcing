@@ -12,11 +12,11 @@ type SiteBreadcrumbsProps = {
 
 function SiteBreadcrumbs({ items }: SiteBreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 sm:pt-6">
-      <ol className="flex min-w-0 flex-wrap items-center gap-1.5 text-xs font-bold text-slate-500 sm:text-sm">
+    <nav aria-label="Breadcrumb" className="hs-container pt-5 sm:pt-6">
+      <ol className="flex min-w-0 flex-nowrap items-center gap-1.5 overflow-x-auto pb-1 text-xs font-extrabold text-[var(--hs-muted-soft)] [-webkit-overflow-scrolling:touch] sm:text-sm">
         <li>
           <Link
-            className="inline-flex min-h-9 items-center gap-1 rounded-md px-2 text-slate-600 transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+            className="inline-flex min-h-9 items-center gap-1 rounded-md px-2 text-[var(--hs-muted)] transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
             href="/"
           >
             <Home className="size-3.5" aria-hidden />
@@ -28,10 +28,10 @@ function SiteBreadcrumbs({ items }: SiteBreadcrumbsProps) {
 
           return (
             <li className="flex min-w-0 items-center gap-1.5" key={`${item.label}-${index}`}>
-              <ChevronRight className="size-3.5 shrink-0 text-slate-400" aria-hidden />
+              <ChevronRight className="size-3.5 shrink-0 text-[var(--hs-border-strong)]" aria-hidden />
               {item.href && !isLast ? (
                 <Link
-                  className="inline-flex min-h-9 min-w-0 items-center rounded-md px-2 text-slate-600 transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                  className="inline-flex min-h-9 min-w-0 items-center rounded-md px-2 text-[var(--hs-muted)] transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
                   href={item.href}
                 >
                   <span className="truncate">{item.label}</span>
@@ -39,7 +39,7 @@ function SiteBreadcrumbs({ items }: SiteBreadcrumbsProps) {
               ) : (
                 <span
                   aria-current="page"
-                  className="inline-flex min-h-9 min-w-0 items-center rounded-md px-2 text-slate-900"
+                  className="inline-flex min-h-9 min-w-0 items-center rounded-md px-2 text-[var(--hs-text)]"
                 >
                   <span className="truncate">{item.label}</span>
                 </span>

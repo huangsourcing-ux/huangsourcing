@@ -218,12 +218,12 @@ Situation: ${form.message}
   }
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
-      <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+      <header className="border-b border-[var(--hs-border)] bg-white/86 backdrop-blur-xl">
+        <div className="hs-container flex h-16 items-center justify-between gap-3">
           <Link
             aria-label="Huang Sourcing home"
-            className="flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+            className="flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
             href="/"
           >
             <Image
@@ -235,12 +235,12 @@ Situation: ${form.message}
               src="/brand-mark-logo.webp"
               width={192}
             />
-            <span className="truncate text-base font-extrabold tracking-tight text-slate-950">
+            <span className="truncate text-base font-extrabold tracking-tight text-[var(--hs-text)]">
               Huang Sourcing
             </span>
           </Link>
           <a
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-bold text-slate-950 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.98] sm:px-4"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-[var(--hs-border)] bg-white px-3 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-all hover:border-[var(--hs-accent)] hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.98] sm:px-4"
             href={whatsAppHref}
             onClick={() =>
               trackWhatsAppClick({
@@ -257,19 +257,19 @@ Situation: ${form.message}
         </div>
       </header>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-12">
+      <section className="hs-hero">
+        <div className="hs-container grid items-center gap-8 py-8 sm:py-10 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-6">
-            <h1 className="max-w-2xl text-balance text-[2.35rem] font-extrabold leading-[1.04] tracking-tight text-slate-950 sm:text-6xl lg:text-[3.9rem]">
+            <h1 className="max-w-2xl text-balance text-[2.35rem] font-extrabold leading-[1.04] tracking-tight text-[var(--hs-text)] sm:text-6xl lg:text-[3.9rem]">
               Free China Sourcing Risk Check
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="hs-muted mt-4 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8">
               Send us your supplier, product, payment status, and shipment stage. We
               will suggest the next practical China-side check before you pay, pickup,
               or ship.
             </p>
-            <p className="mt-5 flex items-start gap-3 text-base font-extrabold leading-7 text-slate-950 sm:text-lg">
-              <ShieldCheck className="mt-0.5 size-6 shrink-0 text-red-600" aria-hidden />
+            <p className="mt-5 flex items-start gap-3 text-base font-extrabold leading-7 text-[var(--hs-text)] sm:text-lg">
+              <ShieldCheck className="mt-0.5 size-6 shrink-0 text-[var(--hs-accent)]" aria-hidden />
               See the risk before you pay or ship.
             </p>
 
@@ -282,8 +282,8 @@ Situation: ${form.message}
                     className={cn(
                       'group flex min-h-12 w-full items-center justify-between gap-3 rounded-md border px-4 py-2.5 text-left text-sm font-extrabold leading-5 shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99] sm:text-base',
                       isSelected
-                        ? 'border-red-600 bg-red-600 text-white hover:bg-red-700'
-                        : 'border-red-200 bg-white text-red-700 hover:border-red-300 hover:bg-red-50',
+                        ? 'border-[var(--hs-accent)] bg-[var(--hs-accent)] text-white hover:bg-[var(--hs-accent-strong)]'
+                        : 'border-[var(--hs-border)] bg-white text-[var(--hs-accent-strong)] hover:border-[var(--hs-accent)] hover:bg-[var(--hs-accent-soft)]',
                     )}
                     key={id}
                     onClick={() => chooseScenario(id)}
@@ -310,7 +310,7 @@ Situation: ${form.message}
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
+            <div className="relative overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] shadow-[var(--hs-shadow-md)]">
               <div className="relative aspect-[16/11] min-h-[260px]">
                 <Image
                   alt="China-side warehouse inspection with cartons and shipment labels"
