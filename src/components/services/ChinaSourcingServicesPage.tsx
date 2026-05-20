@@ -15,6 +15,8 @@ import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import { servicePricingBySlug } from '@/lib/service-pricing'
+import { chinaSourcingInspectionPricingHref } from '@/lib/site-links'
 
 type ServiceOverview = {
   title: string
@@ -56,7 +58,7 @@ const serviceOverviews: ServiceOverview[] = [
     title: 'Supplier Verification China',
     href: '/supplier-verification-china',
     stage: 'Before deposit',
-    startingPoint: 'From $249',
+    startingPoint: servicePricingBySlug['supplier-verification-china'].startingPoint,
     buyerFit: 'Buyers checking a new factory, trader, quote, or company identity',
     Icon: Search,
     summary:
@@ -66,7 +68,7 @@ const serviceOverviews: ServiceOverview[] = [
     title: 'Sample Consolidation China',
     href: '/sample-consolidation-china',
     stage: 'Before supplier selection',
-    startingPoint: 'From $99 + freight',
+    startingPoint: servicePricingBySlug['sample-consolidation-china'].startingPoint,
     buyerFit: 'Buyers comparing samples from several suppliers',
     Icon: PackageCheck,
     summary:
@@ -76,7 +78,7 @@ const serviceOverviews: ServiceOverview[] = [
     title: 'QC Inspection China',
     href: '/qc-inspection-china',
     stage: 'Before balance payment',
-    startingPoint: 'From $299 / inspector day',
+    startingPoint: servicePricingBySlug['qc-inspection-china'].startingPoint,
     buyerFit: 'Importers and sellers checking finished or nearly finished goods',
     Icon: ClipboardCheck,
     summary:
@@ -86,7 +88,7 @@ const serviceOverviews: ServiceOverview[] = [
     title: 'China Pre-Shipment Inspection',
     href: '/china-pre-shipment-inspection',
     stage: 'Before pickup',
-    startingPoint: 'From $299 / inspector day',
+    startingPoint: servicePricingBySlug['china-pre-shipment-inspection'].startingPoint,
     buyerFit: 'Buyers releasing goods to a forwarder or paying the final balance',
     Icon: Truck,
     summary:
@@ -96,7 +98,7 @@ const serviceOverviews: ServiceOverview[] = [
     title: 'Amazon FBA Prep China',
     href: '/amazon-fba-prep-china',
     stage: 'Before FBA shipment',
-    startingPoint: 'Custom quote',
+    startingPoint: servicePricingBySlug['amazon-fba-prep-china'].startingPoint,
     buyerFit: 'Amazon sellers and private-label brands shipping from China',
     Icon: Barcode,
     summary:
@@ -207,6 +209,17 @@ export function ChinaSourcingServicesPage() {
                 variant="outline"
               >
                 <a href="#services-overview">Compare all services</a>
+              </Button>
+              <Button
+                asChild
+                className="h-12 rounded-md border-[var(--hs-border)] bg-white/80 px-6 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] backdrop-blur transition-all hover:border-[var(--hs-accent)] hover:bg-white hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:px-8"
+                size="lg"
+                variant="outline"
+              >
+                <Link href={chinaSourcingInspectionPricingHref}>
+                  View pricing guide
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
               </Button>
             </div>
           </Reveal>

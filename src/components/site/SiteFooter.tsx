@@ -9,6 +9,7 @@ import {
 import { seoServicePages, seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
   businessEmail,
+  chinaSourcingInspectionPricingHref,
   chinaSourcingServicesHref,
   resourceGuideHref,
   sampleReportPageHref,
@@ -19,6 +20,10 @@ const footerServices = [
   {
     href: chinaSourcingServicesHref,
     title: 'China sourcing services overview',
+  },
+  {
+    href: chinaSourcingInspectionPricingHref,
+    title: 'China sourcing inspection pricing',
   },
   {
     href: '/free-china-sourcing-risk-check',

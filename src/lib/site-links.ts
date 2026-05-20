@@ -1,6 +1,7 @@
 // [!code ++] Central contact URLs (mailto bodies address Agent Huang, not a former placeholder name)
 export const businessEmail = 'agent@huangsourcing.com' as const
 
+export const chinaSourcingInspectionPricingHref = '/china-sourcing-inspection-pricing'
 export const chinaSourcingServicesHref = '/china-sourcing-services'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'

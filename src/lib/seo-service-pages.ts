@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { servicePricingBySlug } from '@/lib/service-pricing'
 import { getAbsoluteUrl } from '@/lib/site-url'
 
 export type SeoServiceSlug =
@@ -65,11 +66,10 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
     imageSrc: '/images/service-supplier-verification.webp',
     intro:
       'Use this page when you have a supplier name, quote, Alibaba link, company profile, or factory contact, but you need a buyer-side review before deposit payment. The goal is to separate credible supplier signals from unclear claims before you commit money or production time.',
-    startingPrice: 'From $249',
-    pricingNote:
-      'The $249 starting scope covers a focused supplier verification review for one supplier. Onsite visits, multi-supplier comparisons, deeper document review, or urgent travel are quoted separately before work starts.',
-    priceValue: '249',
-    priceCurrency: 'USD',
+    startingPrice: servicePricingBySlug['supplier-verification-china'].startingPoint,
+    pricingNote: servicePricingBySlug['supplier-verification-china'].quoteNote,
+    priceValue: servicePricingBySlug['supplier-verification-china'].priceValue,
+    priceCurrency: servicePricingBySlug['supplier-verification-china'].priceCurrency,
     bestFor: [
       'Overseas buyers checking a new Chinese supplier before deposit payment',
       'Amazon, ecommerce, and private-label sellers before a first production order',
@@ -188,11 +188,10 @@ Main concern:
     imageSrc: '/images/service-qc-inspection.webp',
     intro:
       'Use this page when production is ready or nearly ready and you need buyer-side QC evidence before final payment, pickup, or shipment. The inspection focuses on visible product condition, quantity, packaging, labels, and shipment readiness so you can push corrections before goods leave China.',
-    startingPrice: 'From $299 / inspector day',
-    pricingNote:
-      'The $299 starting price is for one standard inspector day in China. Complex products, multiple factories, travel-heavy locations, re-inspection, or special testing are scoped and quoted before confirmation.',
-    priceValue: '299',
-    priceCurrency: 'USD',
+    startingPrice: servicePricingBySlug['qc-inspection-china'].startingPoint,
+    pricingNote: servicePricingBySlug['qc-inspection-china'].quoteNote,
+    priceValue: servicePricingBySlug['qc-inspection-china'].priceValue,
+    priceCurrency: servicePricingBySlug['qc-inspection-china'].priceCurrency,
     bestFor: [
       'Importers who need product and packaging evidence before final payment',
       'Amazon, Walmart, or private-label sellers checking bulk goods',
@@ -311,11 +310,10 @@ Main checks needed:
     imageSrc: '/images/service-pre-shipment.webp',
     intro:
       'Use this page when goods are packed or close to completion and you need a final buyer-side check before the shipment leaves China. A pre-shipment inspection helps confirm whether the order is ready for final payment, forwarder pickup, or supplier correction.',
-    startingPrice: 'From $299 / inspector day',
-    pricingNote:
-      'Pre-shipment inspection starts from $299 per inspector day. Scope can change with factory location, SKU count, carton volume, urgency, and whether a follow-up inspection is needed.',
-    priceValue: '299',
-    priceCurrency: 'USD',
+    startingPrice: servicePricingBySlug['china-pre-shipment-inspection'].startingPoint,
+    pricingNote: servicePricingBySlug['china-pre-shipment-inspection'].quoteNote,
+    priceValue: servicePricingBySlug['china-pre-shipment-inspection'].priceValue,
+    priceCurrency: servicePricingBySlug['china-pre-shipment-inspection'].priceCurrency,
     bestFor: [
       'Buyers about to pay the final balance',
       'Importers shipping from a new factory',
@@ -434,9 +432,8 @@ Main risk:
     imageSrc: '/images/service-fba-prep.webp',
     intro:
       'Use this page when your supplier has produced the goods, but you need China-side help checking FNSKU labels, carton labels, SKU organization, packaging details, and forwarder handoff before the shipment goes to Amazon fulfillment.',
-    startingPrice: 'Custom quote',
-    pricingNote:
-      'Amazon FBA prep is quoted by SKU count, carton count, label requirements, packaging work, supplier location, and logistics coordination. Send the shipment plan and prep requirements for a clear quote.',
+    startingPrice: servicePricingBySlug['amazon-fba-prep-china'].startingPoint,
+    pricingNote: servicePricingBySlug['amazon-fba-prep-china'].quoteNote,
     bestFor: [
       'Amazon sellers preparing shipments from China',
       'Private-label brands with carton, SKU, insert, or label requirements',
@@ -555,11 +552,10 @@ Label or prep requirements:
     imageSrc: '/images/service-sample-consolidation.webp',
     intro:
       'Use this page when several Chinese suppliers are sending samples and you want one China-side hub to receive, photograph, compare, and forward them together. Sample consolidation helps reduce freight waste and gives you early visibility before choosing a supplier.',
-    startingPrice: 'From $99 + freight',
-    pricingNote:
-      'Sample consolidation starts from $99 plus freight. Larger batches, multiple rounds, detailed comparison notes, special handling, or repacking needs are quoted before work begins.',
-    priceValue: '99',
-    priceCurrency: 'USD',
+    startingPrice: servicePricingBySlug['sample-consolidation-china'].startingPoint,
+    pricingNote: servicePricingBySlug['sample-consolidation-china'].quoteNote,
+    priceValue: servicePricingBySlug['sample-consolidation-china'].priceValue,
+    priceCurrency: servicePricingBySlug['sample-consolidation-china'].priceCurrency,
     bestFor: [
       'Buyers comparing samples from two or more suppliers',
       'Amazon and ecommerce sellers trying to reduce sample freight cost',

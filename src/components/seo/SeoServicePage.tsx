@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button'
 import {
   alibabaSupplierVerificationHref,
   buildWhatsAppHref,
+  chinaSourcingInspectionPricingHref,
   fnskuLabelCheckHref,
   sampleReportPageHref,
 } from '@/lib/site-links'
@@ -224,6 +225,13 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
               <p className="hs-muted mt-2 text-sm leading-6">
                 {page.pricingNote}
               </p>
+              <Link
+                className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)] transition-colors hover:text-[var(--hs-accent-strong)]"
+                href={chinaSourcingInspectionPricingHref}
+              >
+                View pricing guide
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </div>
           </Reveal>
         </div>

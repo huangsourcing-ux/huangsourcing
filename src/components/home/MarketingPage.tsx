@@ -24,6 +24,7 @@ import { Reveal } from '@/components/site/Reveal'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import { servicePricingBySlug } from '@/lib/service-pricing'
 import { reportHref, sampleReportPageHref } from '@/lib/site-links'
 import { makeHomeJsonLd } from '@/lib/structured-data'
 
@@ -139,28 +140,28 @@ const detailServices: DetailService[] = [
   {
     title: 'Supplier verification',
     summary: 'A practical check before you wire a deposit or lock a new factory.',
-    price: 'From $249',
+    price: servicePricingBySlug['supplier-verification-china'].startingPoint,
     bestFor: 'New vendors, high deposit orders, or suppliers found through marketplaces.',
     deliverables: ['Factory / trader review', 'Company background review', 'Buyer-side risk summary'],
   },
   {
     title: 'Sample consolidation',
     summary: 'Send samples to one China-side hub before paying international freight.',
-    price: 'From $99 + freight',
+    price: servicePricingBySlug['sample-consolidation-china'].startingPoint,
     bestFor: 'Buyers comparing samples from two or more suppliers.',
     deliverables: ['Unboxing photos or video', 'Side-by-side sample notes', 'Consolidated outbound shipment'],
   },
   {
     title: 'QC inspection',
     summary: 'Onsite product, packaging, and quantity checks before final payment.',
-    price: 'From $299 / inspector day',
+    price: servicePricingBySlug['qc-inspection-china'].startingPoint,
     bestFor: 'Pre-shipment inspections and orders where defects would hurt margin or reviews.',
     deliverables: ['Photo evidence', 'AQL-style defect list', 'Same-day issue escalation'],
   },
   {
     title: 'FBA prep and logistics',
     summary: 'China-side prep for ecommerce shipments that need labels, packaging, and coordination.',
-    price: 'Custom quote',
+    price: servicePricingBySlug['amazon-fba-prep-china'].startingPoint,
     bestFor: 'Amazon, Walmart, DDP, private label, or multi-SKU shipments.',
     deliverables: ['Label and packaging coordination', 'Carton / SKU checks', 'Pickup / shipment coordination'],
   },
