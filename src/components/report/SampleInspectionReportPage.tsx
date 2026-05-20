@@ -11,6 +11,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
@@ -121,10 +122,13 @@ export function SampleInspectionReportPage() {
                 size="lg"
                 variant="outline"
               >
-                <a download href={reportHref}>
+                <SampleReportDownloadLink
+                  ctaLocation="sample_report_page_hero"
+                  href={reportHref}
+                >
                   <FileDown className="size-4" aria-hidden />
                   Download PDF (520 KB)
-                </a>
+                </SampleReportDownloadLink>
               </Button>
             </div>
           </div>
@@ -278,10 +282,13 @@ export function SampleInspectionReportPage() {
                 className="h-11 w-full min-w-0 shrink rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 shadow-sm transition-all hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:w-auto"
                 variant="outline"
               >
-                <a download href={reportHref}>
+                <SampleReportDownloadLink
+                  ctaLocation="sample_report_page_final_cta"
+                  href={reportHref}
+                >
                   <FileDown className="size-4" aria-hidden />
                   Download PDF (520 KB)
-                </a>
+                </SampleReportDownloadLink>
               </Button>
             </div>
           </div>

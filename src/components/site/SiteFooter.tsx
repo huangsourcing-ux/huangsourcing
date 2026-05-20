@@ -1,6 +1,7 @@
 import { Mail, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
+import { TrackedEmailLink } from '@/components/analytics/TrackedEmailLink'
 import { SocialLinks } from '@/components/site/SocialLinks'
 import {
   resourceGuideCategories,
@@ -96,15 +97,16 @@ function SiteFooter() {
             Contact us
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <a
+            <TrackedEmailLink
               aria-label={`Email: ${businessEmail}`}
               className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-bold text-slate-950 transition-colors hover:border-red-200 hover:text-red-600"
-              href={`mailto:${businessEmail}`}
+              ctaLocation="site_footer"
+              email={businessEmail}
             >
               <Mail className="size-4 shrink-0" aria-hidden />
               <span>Email</span>
               <span className="text-xs font-semibold text-slate-500">{businessEmail}</span>
-            </a>
+            </TrackedEmailLink>
             <SocialLinks showSupportingLabel />
           </div>
           <p className="mt-4 flex items-center gap-2 text-sm font-semibold leading-6 text-slate-600">
