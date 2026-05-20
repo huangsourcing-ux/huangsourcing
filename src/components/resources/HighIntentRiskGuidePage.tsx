@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
@@ -20,10 +21,10 @@ type HighIntentRiskGuidePageProps = {
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
+    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[var(--hs-muted)]">
       {items.map((item) => (
         <li className="flex gap-2" key={item}>
-          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
+          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--hs-accent)]" aria-hidden />
           <span>{item}</span>
         </li>
       ))}
@@ -36,7 +37,7 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
   const jsonLd = makeRiskGuideJsonLd(page)
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={jsonLd} />
       <SiteBreadcrumbs
@@ -46,21 +47,21 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
         ]}
       />
 
-      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-12 lg:py-16">
-          <div className="min-w-0 lg:col-span-7">
-            <p className="text-sm font-semibold text-red-600">{page.eyebrow}</p>
-            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+      <section className="hs-hero">
+        <div className="hs-container grid gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">
+          <Reveal className="min-w-0 lg:col-span-7">
+            <p className="hs-eyebrow">{page.eyebrow}</p>
+            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-[var(--hs-text)] sm:text-5xl">
               {page.h1}
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {page.intro}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={page.primaryCtaLabel}
                 analyticsLocation={`risk_guide_${page.slug}_hero`}
-                className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:px-8"
+                className="hs-btn-primary h-12 px-6 text-sm sm:px-8"
                 href={whatsAppHref}
                 size="lg"
                 variant="default"
@@ -69,7 +70,7 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-12 rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:px-8"
+                className="hs-btn-secondary h-12 px-6 text-sm sm:px-8"
                 size="lg"
                 variant="outline"
               >
@@ -79,10 +80,10 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
                 </a>
               </Button>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5">
-            <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
+          <Reveal className="lg:col-span-5" delayMs={120}>
+            <div className="overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] shadow-[var(--hs-shadow-md)]">
               <div className="relative aspect-[4/3] min-h-[260px]">
                 <Image
                   alt={page.imageAlt}
@@ -94,82 +95,83 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
                 />
               </div>
             </div>
-            <div className="mt-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="hs-card mt-4 bg-white p-5">
               <div className="flex items-start gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-slate-950 text-white">
+                <div className="hs-icon-box size-10">
                   <ShieldAlert className="size-5" aria-hidden />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold tracking-tight text-slate-950">
+                  <h2 className="text-xl font-extrabold tracking-tight text-[var(--hs-text)]">
                     Start from the risk moment.
                   </h2>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="hs-muted mt-2 text-sm leading-6">
                     This guide is written for buyers who already have a supplier,
                     order stage, or shipment decision in front of them.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white" id="what-to-check">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-3">
-          <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">When does this check make sense?</h2>
+      <section className="hs-section-white" id="what-to-check">
+        <div className="hs-container hs-section grid gap-4 lg:grid-cols-3">
+          <Reveal as="article" className="hs-card hs-card-hover bg-[var(--hs-card-warm)] p-5">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">When does this check make sense?</h2>
             <BulletList items={page.whenToUse} />
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">What can go wrong if you skip it?</h2>
+          </Reveal>
+          <Reveal as="article" className="hs-card hs-card-hover bg-[var(--hs-card-warm)] p-5" staggerIndex={1}>
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">What can go wrong if you skip it?</h2>
             <BulletList items={page.riskSignals} />
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">What should be checked?</h2>
+          </Reveal>
+          <Reveal as="article" className="hs-card hs-card-hover bg-[var(--hs-card-warm)] p-5" staggerIndex={2}>
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">What should be checked?</h2>
             <BulletList items={page.checks} />
-          </article>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold text-red-600">What to send first</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="hs-section-soft">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-2">
+          <Reveal className="hs-card bg-white p-5">
+            <p className="hs-eyebrow">What to send first</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Send enough context to avoid a vague answer.
             </h2>
             <BulletList items={page.whatToSend} />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-red-600">What a buyer receives</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+          </Reveal>
+          <Reveal className="hs-card bg-white p-5" delayMs={100}>
+            <p className="hs-eyebrow">What a buyer receives</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Evidence for the next payment or shipment decision.
             </h2>
             <BulletList items={page.buyerReceives} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="text-sm font-semibold text-red-600">Related next steps</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="hs-section-white">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4">
+            <p className="hs-eyebrow">Related next steps</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Choose the live page that matches your decision.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid gap-3 lg:col-span-8 md:grid-cols-2">
-            {page.internalLinks.map((link) => (
+            {page.internalLinks.map((link, index) => (
               <Link
-                className="group rounded-lg border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-red-200 hover:bg-white"
+                className="hs-link-card group p-5"
                 href={link.href}
                 key={link.href}
+                style={{ transitionDelay: `${index * 35}ms` }}
               >
-                <h3 className="text-lg font-bold text-slate-950 group-hover:text-red-600">
+                <h3 className="text-lg font-extrabold text-[var(--hs-text)] group-hover:text-[var(--hs-accent)]">
                   {link.label}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{link.note}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-red-600">
+                <p className="hs-muted mt-2 text-sm leading-6">{link.note}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
                   Open page
                   <ArrowRight className="size-4" aria-hidden />
                 </span>
@@ -179,54 +181,58 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold text-red-600">Clear limits</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="hs-section-soft">
+        <Reveal className="hs-container hs-section max-w-4xl">
+          <p className="hs-eyebrow">Clear limits</p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
             What this guide and check do not promise.
           </h2>
           <BulletList items={page.scopeLimits} />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-950">
-            Frequently asked questions
-          </h2>
+      <section className="hs-section-white">
+        <div className="hs-container hs-section max-w-4xl">
+          <Reveal>
+            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+              Frequently asked questions
+            </h2>
+          </Reveal>
           <div className="mt-6 grid gap-3">
-            {page.faqs.map((faq) => (
-              <article className="rounded-lg border border-slate-200 bg-slate-50 p-5" key={faq.question}>
-                <h3 className="text-base font-bold text-slate-950">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</p>
-              </article>
+            {page.faqs.map((faq, index) => (
+              <Reveal as="article" className="hs-card bg-[var(--hs-bg-soft)] p-5" key={faq.question} staggerIndex={index}>
+                <h3 className="text-base font-extrabold text-[var(--hs-text)]">{faq.question}</h3>
+                <p className="hs-muted mt-2 text-sm leading-6">{faq.answer}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-950 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-red-300">{page.title}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">
-              Send the supplier, order stage, deadline, and main concern.
-            </h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-              Huang Sourcing will suggest the practical China-side check that fits
-              the risk node in front of you.
-            </p>
-          </div>
-          <ContactAgentButton
-            analyticsLabel={page.primaryCtaLabel}
-            analyticsLocation={`risk_guide_${page.slug}_final`}
-            className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
-            href={whatsAppHref}
-            size="lg"
-            variant="default"
-          >
-            {page.primaryCtaLabel}
-          </ContactAgentButton>
+      <section className="bg-white">
+        <div className="hs-container hs-section">
+          <Reveal className="hs-cta-band px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+            <div className="relative">
+              <p className="text-sm font-extrabold text-red-200">{page.title}</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
+                Send the supplier, order stage, deadline, and main concern.
+              </h2>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
+                Huang Sourcing will suggest the practical China-side check that fits
+                the risk node in front of you.
+              </p>
+            </div>
+            <ContactAgentButton
+              analyticsLabel={page.primaryCtaLabel}
+              analyticsLocation={`risk_guide_${page.slug}_final`}
+              className="relative mt-7 h-12 bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] lg:mt-0"
+              href={whatsAppHref}
+              size="lg"
+              variant="default"
+            >
+              {page.primaryCtaLabel}
+            </ContactAgentButton>
+          </Reveal>
         </div>
       </section>
 

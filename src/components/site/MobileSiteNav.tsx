@@ -35,7 +35,7 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
       <DialogPrimitive.Trigger asChild>
         <Button
           aria-label="Open site menu"
-          className="size-11 rounded-md border-slate-300 bg-white text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 active:scale-[0.98] md:hidden"
+          className="size-11 rounded-md border-[var(--hs-border)] bg-white text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-all hover:border-[var(--hs-accent)] hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] active:scale-[0.98] lg:hidden"
           size="icon"
           type="button"
           variant="outline"
@@ -45,21 +45,21 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
       </DialogPrimitive.Trigger>
 
       <DialogPrimitive.Portal>
-        <DialogPrimitive.Overlay className="fixed inset-0 z-[70] bg-slate-950/50 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
-        <DialogPrimitive.Content className="fixed inset-x-3 top-3 z-[80] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-top-2 md:hidden">
-          <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+        <DialogPrimitive.Overlay className="fixed inset-0 z-[70] bg-[var(--hs-navy)]/55 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+        <DialogPrimitive.Content className="fixed inset-x-3 top-3 z-[80] overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-lg)] outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-top-2 lg:hidden">
+          <div className="flex items-center justify-between border-b border-[var(--hs-border)] bg-[var(--hs-bg-soft)] px-4 py-3">
             <div className="min-w-0">
-              <DialogPrimitive.Title className="truncate text-base font-extrabold text-slate-950">
+              <DialogPrimitive.Title className="truncate text-base font-extrabold text-[var(--hs-text)]">
                 {nav.brand}
               </DialogPrimitive.Title>
-              <DialogPrimitive.Description className="mt-0.5 text-xs font-semibold text-slate-500">
+              <DialogPrimitive.Description className="mt-0.5 text-xs font-semibold text-[var(--hs-muted)]">
                 {nav.tagline}
               </DialogPrimitive.Description>
             </div>
             <DialogPrimitive.Close asChild>
               <Button
                 aria-label="Close site menu"
-                className="size-10 rounded-md text-slate-500 hover:bg-slate-100 hover:text-slate-900"
+                className="size-10 rounded-md text-[var(--hs-muted)] hover:bg-white hover:text-[var(--hs-text)]"
                 size="icon"
                 type="button"
                 variant="ghost"
@@ -72,8 +72,8 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
           <nav aria-label="Mobile site navigation" className="grid gap-2 p-3">
             <Link
               className={cn(
-                'flex min-h-12 items-center rounded-md px-3 text-base font-bold transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99]',
-                activePage === 'about' ? 'bg-red-50 text-red-700' : 'text-slate-800',
+                'flex min-h-12 items-center rounded-md px-3 text-base font-extrabold transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.99]',
+                activePage === 'about' ? 'bg-[var(--hs-accent-soft)] text-[var(--hs-accent-strong)]' : 'text-[var(--hs-text)]',
               )}
               href="/about"
               onClick={close}
@@ -82,8 +82,8 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
             </Link>
             <Link
               className={cn(
-                'flex min-h-12 items-center rounded-md px-3 text-base font-bold transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99]',
-                activePage === 'service' ? 'bg-red-50 text-red-700' : 'text-slate-800',
+                'flex min-h-12 items-center rounded-md px-3 text-base font-extrabold transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.99]',
+                activePage === 'service' ? 'bg-[var(--hs-accent-soft)] text-[var(--hs-accent-strong)]' : 'text-[var(--hs-text)]',
               )}
               href={chinaSourcingServicesHref}
               onClick={close}
@@ -92,8 +92,8 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
             </Link>
             <Link
               className={cn(
-                'flex min-h-12 items-center rounded-md px-3 text-base font-bold transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99]',
-                activePage === 'resources' ? 'bg-red-50 text-red-700' : 'text-slate-800',
+                'flex min-h-12 items-center rounded-md px-3 text-base font-extrabold transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.99]',
+                activePage === 'resources' ? 'bg-[var(--hs-accent-soft)] text-[var(--hs-accent-strong)]' : 'text-[var(--hs-text)]',
               )}
               href={resourceGuideHref}
               onClick={close}
@@ -101,7 +101,7 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
               {nav.resources}
             </Link>
             <Link
-              className="flex min-h-12 items-center justify-between gap-3 rounded-md border border-slate-200 bg-slate-50 px-3 text-base font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-white hover:text-red-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.99]"
+              className="flex min-h-12 items-center justify-between gap-3 rounded-md border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] px-3 text-base font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-all hover:border-[var(--hs-accent)] hover:bg-white hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.99]"
               href={sampleReportPageHref}
               onClick={close}
             >
@@ -127,8 +127,8 @@ function MobileSiteNav({ activePage }: MobileSiteNavProps) {
             </a>
           </nav>
 
-          <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold leading-5 text-slate-600">
-            <MessageCircle className="mr-1.5 inline size-3.5 text-red-600" aria-hidden />
+          <div className="border-t border-[var(--hs-border)] bg-[var(--hs-bg-soft)] px-4 py-3 text-xs font-semibold leading-5 text-[var(--hs-muted)]">
+            <MessageCircle className="mr-1.5 inline size-3.5 text-[var(--hs-accent)]" aria-hidden />
             China-side sourcing support before payment or pickup.
           </div>
         </DialogPrimitive.Content>

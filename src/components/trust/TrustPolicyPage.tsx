@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
@@ -15,10 +16,10 @@ type TrustPolicyPageProps = {
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
+    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[var(--hs-muted)]">
       {items.map((item) => (
         <li className="flex gap-2" key={item}>
-          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
+          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--hs-accent)]" aria-hidden />
           <span>{item}</span>
         </li>
       ))}
@@ -28,25 +29,25 @@ function BulletList({ items }: { items: string[] }) {
 
 export function TrustPolicyPage({ page }: TrustPolicyPageProps) {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="resources" topBanner={null} />
       <SiteBreadcrumbs items={[{ label: 'Trust & policies' }, { label: page.title }]} />
 
-      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
-        <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-12 lg:py-16">
-          <div className="lg:col-span-7">
-            <p className="text-sm font-semibold text-red-600">{page.eyebrow}</p>
-            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+      <section className="hs-hero">
+        <div className="hs-container grid items-start gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">
+          <Reveal className="lg:col-span-7">
+            <p className="hs-eyebrow">{page.eyebrow}</p>
+            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-[var(--hs-text)] sm:text-5xl">
               {page.h1}
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {page.intro}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={page.ctaLabel}
                 analyticsLocation={`trust_policy_${page.slug}_hero`}
-                className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:px-8"
+                className="hs-btn-primary h-12 px-6 text-sm sm:px-8"
                 href={page.ctaHref}
                 size="lg"
                 variant="default"
@@ -55,7 +56,7 @@ export function TrustPolicyPage({ page }: TrustPolicyPageProps) {
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-12 rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:px-8"
+                className="hs-btn-secondary h-12 px-6 text-sm sm:px-8"
                 size="lg"
                 variant="outline"
               >
@@ -65,88 +66,94 @@ export function TrustPolicyPage({ page }: TrustPolicyPageProps) {
                 </Link>
               </Button>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5">
-            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="flex size-12 items-center justify-center rounded-md bg-slate-950 text-white">
+          <Reveal className="lg:col-span-5" delayMs={120}>
+            <div className="hs-card bg-white p-6">
+              <div className="hs-icon-box size-12">
                 <ShieldCheck className="size-6" aria-hidden />
               </div>
-              <p className="mt-5 text-xs font-bold uppercase tracking-wider text-slate-500">
+              <p className="mt-5 text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
                 Standard trust statement
               </p>
-              <p className="mt-3 text-base font-semibold leading-7 text-slate-900">
+              <p className="mt-3 text-base font-semibold leading-7 text-[var(--hs-text)]">
                 {page.coreStatement}
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+      <section className="hs-section-white">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               What this means in practice.
             </h2>
-            <p className="mt-3 text-base leading-7 text-slate-600">
+            <p className="hs-muted mt-3 text-base leading-7">
               These points make the service boundary clear before you share supplier
               details, book onsite work, or rely on a report for a payment or shipment decision.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            {page.sections.map((section) => (
-              <article
-                className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm"
+            {page.sections.map((section, index) => (
+              <Reveal
+                as="article"
+                className="hs-card hs-card-hover bg-[var(--hs-bg-soft)] p-5"
                 key={section.title}
+                staggerIndex={index}
               >
-                <h3 className="text-xl font-bold text-slate-950">{section.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{section.body}</p>
+                <h3 className="text-xl font-extrabold text-[var(--hs-text)]">{section.title}</h3>
+                <p className="hs-muted mt-3 text-sm leading-6">{section.body}</p>
                 <BulletList items={section.items} />
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-950">
-            Frequently asked questions
-          </h2>
-          <div className="mt-6 grid gap-3">
-            {page.faqs.map((faq) => (
-              <article className="rounded-lg border border-slate-200 bg-white p-5" key={faq.question}>
-                <h3 className="text-base font-bold text-slate-950">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{faq.answer}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-950 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-red-300">{page.title}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">
-              Ask before you book if the scope is unclear.
+      <section className="hs-section-soft">
+        <div className="hs-container hs-section max-w-4xl">
+          <Reveal>
+            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
+              Frequently asked questions
             </h2>
-            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-              {page.ctaBody}
-            </p>
+          </Reveal>
+          <div className="mt-6 grid gap-3">
+            {page.faqs.map((faq, index) => (
+              <Reveal as="article" className="hs-card bg-white p-5" key={faq.question} staggerIndex={index}>
+                <h3 className="text-base font-extrabold text-[var(--hs-text)]">{faq.question}</h3>
+                <p className="hs-muted mt-2 text-sm leading-6">{faq.answer}</p>
+              </Reveal>
+            ))}
           </div>
-          <ContactAgentButton
-            analyticsLabel={page.ctaLabel}
-            analyticsLocation={`trust_policy_${page.slug}_final`}
-            className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
-            href={page.ctaHref}
-            size="lg"
-            variant="default"
-          >
-            {page.ctaLabel}
-          </ContactAgentButton>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="hs-container hs-section">
+          <Reveal className="hs-cta-band px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+            <div className="relative">
+              <p className="text-sm font-extrabold text-red-200">{page.title}</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
+                Ask before you book if the scope is unclear.
+              </h2>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
+                {page.ctaBody}
+              </p>
+            </div>
+            <ContactAgentButton
+              analyticsLabel={page.ctaLabel}
+              analyticsLocation={`trust_policy_${page.slug}_final`}
+              className="relative mt-7 h-12 bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] lg:mt-0"
+              href={page.ctaHref}
+              size="lg"
+              variant="default"
+            >
+              {page.ctaLabel}
+            </ContactAgentButton>
+          </Reveal>
         </div>
       </section>
 

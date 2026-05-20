@@ -22,7 +22,7 @@ type SiteHeaderProps = {
 
 const nav = en.Nav
 const navLinkClassName =
-  'inline-flex h-10 items-center rounded-md px-2 text-sm font-semibold transition-all hover:bg-red-50 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.98]'
+  'inline-flex h-10 items-center rounded-md px-2 text-sm font-semibold transition-all hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 active:scale-[0.98]'
 
 export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
   const [hasScrolled, setHasScrolled] = useState(false)
@@ -51,10 +51,10 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             : 'border-transparent shadow-none',
         )}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6">
+        <div className="hs-container flex h-16 items-center justify-between gap-3 sm:gap-4">
           <Link
             aria-label="Huang Sourcing home"
-            className="group flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+            className="group flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
             href="/"
           >
             <Image
@@ -67,15 +67,15 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
               width={192}
             />
             <div className="min-w-0 leading-tight">
-              <span className="block truncate text-base font-extrabold tracking-tight text-slate-900">{nav.brand}</span>
-              <span className="hidden text-xs font-medium text-slate-500 md:block">{nav.tagline}</span>
+              <span className="block truncate text-base font-extrabold tracking-tight text-[var(--hs-text)]">{nav.brand}</span>
+              <span className="hidden text-xs font-medium text-[var(--hs-muted)] md:block">{nav.tagline}</span>
             </div>
           </Link>
-          <nav className="hidden items-center gap-1 md:flex md:gap-2">
+          <nav className="hidden items-center gap-1 lg:flex lg:gap-2">
             <Link
               className={cn(
                 navLinkClassName,
-                activePage === 'about' ? 'text-red-700' : 'text-slate-600',
+                activePage === 'about' ? 'text-[var(--hs-accent-strong)]' : 'text-[var(--hs-muted)]',
               )}
               href="/about"
             >
@@ -84,7 +84,7 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             <Link
               className={cn(
                 navLinkClassName,
-                activePage === 'service' ? 'text-red-700' : 'text-slate-600',
+                activePage === 'service' ? 'text-[var(--hs-accent-strong)]' : 'text-[var(--hs-muted)]',
               )}
               href={chinaSourcingServicesHref}
             >
@@ -93,7 +93,7 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             <Link
               className={cn(
                 navLinkClassName,
-                activePage === 'resources' ? 'text-red-700' : 'text-slate-600',
+                activePage === 'resources' ? 'text-[var(--hs-accent-strong)]' : 'text-[var(--hs-muted)]',
               )}
               href={resourceGuideHref}
             >
@@ -101,7 +101,7 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             </Link>
             <Button
               asChild
-              className="h-10 border-slate-300 bg-white px-4 font-bold text-slate-900 shadow-sm hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98]"
+              className="h-10 border-[var(--hs-border)] bg-white px-4 font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] hover:border-[var(--hs-accent)] hover:bg-[var(--hs-accent-soft)] hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98]"
               size="sm"
               variant="outline"
             >

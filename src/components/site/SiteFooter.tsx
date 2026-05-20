@@ -53,7 +53,7 @@ const footerTrustPolicies = trustPolicySlugs.map((slug) => ({
 function SiteFooter() {
   return (
     <footer className="border-t border-[var(--hs-border)] bg-[var(--hs-bg-soft)]">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-8 lg:py-12">
+      <div className="hs-container grid gap-6 py-10 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-8 lg:py-12">
         <section
           aria-labelledby="footer-company"
           className="rounded-lg border border-[var(--hs-border)] bg-white p-5 shadow-[var(--hs-shadow-sm)]"

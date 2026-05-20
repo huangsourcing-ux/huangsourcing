@@ -93,10 +93,11 @@ function FreeRiskCheckPrompt() {
       aria-label="Start Free sourcing risk check"
       className="fixed inset-x-3 bottom-3 z-[60] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:w-[360px]"
     >
-      <div className="relative overflow-hidden rounded-lg border border-red-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.18)] ring-1 ring-red-100 sm:hidden">
+      <div className="relative overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-lg)] ring-1 ring-white/70 sm:hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[var(--hs-accent)]" aria-hidden />
         <button
           aria-label="Dismiss Start Free prompt"
-          className="absolute right-2 top-2 inline-flex size-8 items-center justify-center rounded-md text-slate-400 transition-all hover:bg-slate-100 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+          className="absolute right-2 top-2 inline-flex size-8 items-center justify-center rounded-md text-[var(--hs-muted-soft)] transition-all hover:bg-[var(--hs-bg-soft)] hover:text-[var(--hs-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
           onClick={dismiss}
           type="button"
         >
@@ -104,24 +105,24 @@ function FreeRiskCheckPrompt() {
         </button>
 
         <div className="flex items-center gap-3 p-3 pr-10">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-red-600 text-white shadow-sm">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[var(--hs-navy)] text-white shadow-[var(--hs-shadow-sm)]">
             <ShieldCheck className="size-5" />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-sm font-extrabold text-slate-950">Start Free</p>
+              <p className="text-sm font-extrabold text-[var(--hs-text)]">Start Free</p>
               <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-extrabold uppercase text-emerald-700">
                 Free
               </span>
             </div>
-            <p className="mt-0.5 text-xs font-semibold leading-5 text-slate-700">
+            <p className="mt-0.5 text-xs font-semibold leading-5 text-[var(--hs-muted)]">
               Quick supplier risk check before payment.
             </p>
           </div>
         </div>
 
         <a
-          className="mx-3 mb-3 inline-flex h-10 w-[calc(100%-1.5rem)] items-center justify-center gap-2 rounded-md bg-red-600 px-3 text-sm font-extrabold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.98]"
+          className="hs-btn-primary mx-3 mb-3 inline-flex h-10 w-[calc(100%-1.5rem)] items-center justify-center gap-2 px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
           href={freeRiskCheckWhatsAppHref}
           onClick={() =>
             trackWhatsAppClick({
@@ -137,10 +138,11 @@ function FreeRiskCheckPrompt() {
         </a>
       </div>
 
-      <div className="relative hidden overflow-hidden rounded-lg border border-red-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.18)] ring-1 ring-red-100 sm:block">
+      <div className="relative hidden overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-lg)] ring-1 ring-white/70 sm:block">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[var(--hs-accent)]" aria-hidden />
         <button
           aria-label="Dismiss Start Free prompt"
-          className="absolute right-2 top-2 inline-flex size-7 items-center justify-center rounded-md text-slate-400 transition-all hover:bg-slate-100 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+          className="absolute right-2 top-2 inline-flex size-7 items-center justify-center rounded-md text-[var(--hs-muted-soft)] transition-all hover:bg-[var(--hs-bg-soft)] hover:text-[var(--hs-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2"
           onClick={dismiss}
           type="button"
         >
@@ -148,33 +150,33 @@ function FreeRiskCheckPrompt() {
         </button>
 
         <div className="flex gap-3 p-3 pr-9 sm:p-4 sm:pr-10">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-red-600 text-white shadow-sm">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[var(--hs-navy)] text-white shadow-[var(--hs-shadow-sm)]">
             <ShieldCheck className="size-5" />
           </div>
 
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-sm font-extrabold text-slate-950">Start Free</p>
+              <p className="text-sm font-extrabold text-[var(--hs-text)]">Start Free</p>
               <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-extrabold uppercase text-emerald-700">
                 Free
               </span>
             </div>
 
-            <p className="mt-1 text-xs font-semibold leading-5 text-slate-700 sm:text-sm">
+            <p className="mt-1 text-xs font-semibold leading-5 text-[var(--hs-muted)] sm:text-sm">
               Quick sourcing risk check for a supplier link, quote, or first China order.
             </p>
 
-            <ul className="mt-2 grid gap-1 text-xs font-semibold text-slate-600">
+            <ul className="mt-2 grid gap-1 text-xs font-semibold text-[var(--hs-muted)]">
               {offerItems.map((item) => (
                 <li className="flex items-center gap-1.5" key={item}>
-                  <CheckCircle2 className="size-3.5 shrink-0 text-red-600" />
+                  <CheckCircle2 className="size-3.5 shrink-0 text-[var(--hs-accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
             <a
-              className="mt-3 inline-flex h-9 w-full items-center justify-center gap-2 rounded-md bg-red-600 px-3 text-sm font-extrabold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-[0.98] sm:w-auto"
+              className="hs-btn-primary mt-3 inline-flex h-9 w-full items-center justify-center gap-2 px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hs-accent)] focus-visible:ring-offset-2 sm:w-auto"
               href={freeRiskCheckWhatsAppHref}
               onClick={() =>
                 trackWhatsAppClick({

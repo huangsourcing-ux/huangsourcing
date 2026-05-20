@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
@@ -28,26 +29,27 @@ const trustIcons = [ShieldCheck, Camera, MapPinned]
 
 export function AboutAgentPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-950 antialiased">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="about" topBanner={null} />
       <SiteBreadcrumbs items={[{ label: 'About Agent Huang' }]} />
-      <article className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
-        <section className="grid items-center gap-10 lg:grid-cols-[1fr_0.95fr]">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-widest text-red-600">
+      <article>
+        <section className="hs-hero">
+          <div className="hs-container grid items-center gap-10 py-10 sm:py-14 lg:grid-cols-[1fr_0.95fr] lg:py-16">
+          <Reveal>
+            <p className="hs-eyebrow">
               {a.badge}
             </p>
-            <h1 className="mt-3 max-w-3xl text-balance text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl text-balance text-4xl font-extrabold leading-tight text-[var(--hs-text)] sm:text-5xl">
               {a.h1}
             </h1>
-            <p className="mt-6 max-w-2xl text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
+            <p className="hs-muted mt-6 max-w-2xl text-base font-semibold leading-relaxed sm:text-lg">
               {a.tagline}
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delayMs={120}>
             <div className="grid gap-4 sm:grid-cols-[1.05fr_0.95fr]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-sm">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] shadow-[var(--hs-shadow-md)]">
                 <Image
                   alt={a.portraitAlt}
                   className="object-cover"
@@ -57,7 +59,7 @@ export function AboutAgentPage() {
                   sizes="(max-width: 640px) 100vw, 28vw"
                 />
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-200 shadow-sm">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] shadow-[var(--hs-shadow-md)]">
                 <Image
                   alt={a.contextImageAlt}
                   className="object-cover"
@@ -67,61 +69,63 @@ export function AboutAgentPage() {
                 />
               </div>
             </div>
-            <p className="mt-3 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-medium leading-relaxed text-slate-700 shadow-sm">
+            <p className="hs-card mt-3 bg-white px-4 py-3 text-sm font-semibold leading-relaxed text-[var(--hs-muted)]">
               {a.locationNote}
             </p>
+          </Reveal>
           </div>
         </section>
 
-        <section className="mt-10 grid gap-4 md:grid-cols-3">
+        <section className="hs-container mt-10 grid gap-4 md:grid-cols-3">
           {a.trustPoints.map((point, index) => {
             const Icon = trustIcons[index] ?? ShieldCheck
 
             return (
-              <div
-                className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
+              <Reveal
+                className="hs-card hs-card-hover bg-white p-5"
                 key={point.title}
+                staggerIndex={index}
               >
-                <div className="flex size-10 items-center justify-center rounded-md bg-red-50 text-red-600">
+                <div className="flex size-10 items-center justify-center rounded-md bg-[var(--hs-accent-soft)] text-[var(--hs-accent)]">
                   <Icon className="size-5" />
                 </div>
-                <h2 className="mt-4 text-base font-extrabold text-slate-950">{point.title}</h2>
-                <p className="mt-2 text-sm font-medium leading-relaxed text-slate-600">
+                <h2 className="mt-4 text-base font-extrabold text-[var(--hs-text)]">{point.title}</h2>
+                <p className="hs-muted mt-2 text-sm font-medium leading-relaxed">
                   {point.body}
                 </p>
-              </div>
+              </Reveal>
             )
           })}
         </section>
 
-        <div className="mx-auto mt-14 max-w-3xl space-y-10">
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s1Title}</h2>
+        <div className="hs-container mt-14 max-w-3xl space-y-10">
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s1Title}</h2>
             {a.s1Body.map((paragraph) => (
               <p
-                className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-          </section>
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s2Title}</h2>
+          </Reveal>
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s2Title}</h2>
             {a.s2Body.map((paragraph) => (
               <p
-                className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-          </section>
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s3Title}</h2>
+          </Reveal>
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s3Title}</h2>
             {a.s3Body.map((paragraph) => (
               <p
-                className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
@@ -130,112 +134,112 @@ export function AboutAgentPage() {
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {a.workCards.map((card) => (
                 <div
-                  className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm"
+                  className="hs-card bg-white p-5"
                   key={card.title}
                 >
-                  <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-950">
+                  <h3 className="text-sm font-extrabold uppercase text-[var(--hs-text)]">
                     {card.title}
                   </h3>
-                  <p className="mt-2 text-sm font-medium leading-relaxed text-slate-600">
+                  <p className="hs-muted mt-2 text-sm font-medium leading-relaxed">
                     {card.body}
                   </p>
                 </div>
               ))}
             </div>
-          </section>
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s4Title}</h2>
+          </Reveal>
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s4Title}</h2>
             {a.s4Body.map((paragraph) => (
               <p
-                className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-          </section>
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s5Title}</h2>
+          </Reveal>
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s5Title}</h2>
             {a.s5Body.map((paragraph) => (
               <p
-                className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-          </section>
-          <section>
-            <h2 className="text-xl font-extrabold text-slate-900">{a.s6Title}</h2>
-            <div className="mt-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-extrabold uppercase tracking-wide text-slate-950">
+          </Reveal>
+          <Reveal as="section">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.s6Title}</h2>
+            <div className="hs-card mt-4 bg-white p-5">
+              <h3 className="text-sm font-extrabold uppercase text-[var(--hs-text)]">
                 {a.s6ChecklistTitle}
               </h3>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {a.s6Items.map((item) => (
                   <li
-                    className="flex items-start gap-2 text-sm font-semibold leading-relaxed text-slate-700"
+                    className="flex items-start gap-2 text-sm font-semibold leading-relaxed text-[var(--hs-muted)]"
                     key={item}
                   >
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-red-600" />
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--hs-accent)]" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <p className="mt-4 text-base font-medium leading-relaxed text-slate-700 sm:text-lg">
+            <p className="hs-muted mt-4 text-base font-medium leading-relaxed sm:text-lg">
               {a.s6NextStep}
             </p>
-            <p className="mt-3 text-base font-medium leading-relaxed text-slate-700 sm:text-lg">
+            <p className="hs-muted mt-3 text-base font-medium leading-relaxed sm:text-lg">
               {a.s6Turnaround}
             </p>
-          </section>
-          <section className="rounded-lg border border-slate-200 bg-slate-100 p-6">
-            <h2 className="text-base font-extrabold text-slate-900">{a.scopeTitle}</h2>
+          </Reveal>
+          <Reveal as="section" className="hs-card bg-[var(--hs-bg-soft)] p-6">
+            <h2 className="text-base font-extrabold text-[var(--hs-text)]">{a.scopeTitle}</h2>
             {a.scopeBody.map((paragraph) => (
               <p
-                className="mt-3 text-sm font-medium leading-relaxed text-slate-700 sm:text-base"
+                className="hs-muted mt-3 text-sm font-medium leading-relaxed sm:text-base"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-            <p className="mt-4 text-sm font-bold leading-relaxed text-slate-800 sm:text-base">
+            <p className="mt-4 text-sm font-extrabold leading-relaxed text-[var(--hs-text)] sm:text-base">
               Read the standard{' '}
-              <Link className="text-red-700 hover:underline" href={scopeLimitationsHref}>
+              <Link className="text-[var(--hs-accent-strong)] hover:underline" href={scopeLimitationsHref}>
                 Scope & Limitations
               </Link>{' '}
               and{' '}
-              <Link className="text-red-700 hover:underline" href={privacyConfidentialityHref}>
+              <Link className="text-[var(--hs-accent-strong)] hover:underline" href={privacyConfidentialityHref}>
                 Privacy & Confidentiality
               </Link>{' '}
               pages for the full buyer-side trust policy.
             </p>
-          </section>
-          <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-extrabold text-slate-900">{a.personalNoteTitle}</h2>
+          </Reveal>
+          <Reveal as="section" className="hs-card bg-white p-6">
+            <h2 className="text-xl font-extrabold text-[var(--hs-text)]">{a.personalNoteTitle}</h2>
             {a.personalNoteBody.map((paragraph) => (
               <p
-                className="mt-4 text-base font-medium leading-relaxed text-slate-700 sm:text-lg"
+                className="hs-muted mt-4 text-base font-medium leading-relaxed sm:text-lg"
                 key={paragraph}
               >
                 {paragraph}
               </p>
             ))}
-            <p className="mt-5 text-base font-extrabold text-slate-900">{a.signatureName}</p>
-          </section>
+            <p className="mt-5 text-base font-extrabold text-[var(--hs-text)]">{a.signatureName}</p>
+          </Reveal>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-center text-2xl font-extrabold leading-tight text-slate-950">
+        <Reveal className="hs-card mx-auto mt-10 max-w-3xl bg-white p-6 shadow-[var(--hs-shadow-md)] sm:p-8">
+          <h2 className="text-center text-2xl font-extrabold leading-tight text-[var(--hs-text)]">
             {a.ctaTitle}
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-base font-medium leading-relaxed text-slate-800">
+          <p className="hs-muted mx-auto mt-3 max-w-2xl text-center text-base font-medium leading-relaxed">
             {a.cta}
           </p>
           <div className="mt-5 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:justify-center">
             <ContactAgentButton
-              className="h-12 rounded-md bg-red-600 px-6 text-base font-extrabold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98]"
+              className="hs-btn-primary h-12 px-6 text-base"
               size="lg"
               variant="default"
             >
@@ -243,7 +247,7 @@ export function AboutAgentPage() {
             </ContactAgentButton>
             <Button
               asChild
-              className="h-12 rounded-md border border-slate-300 bg-white px-6 text-base font-extrabold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98]"
+              className="hs-btn-secondary h-12 px-6 text-base"
               size="lg"
               variant="outline"
             >
@@ -253,11 +257,11 @@ export function AboutAgentPage() {
               </Link>
             </Button>
           </div>
-        </div>
+        </Reveal>
 
         <p className="mt-10 text-center">
           <Link
-            className="text-sm font-extrabold text-red-600 underline-offset-4 hover:underline"
+            className="text-sm font-extrabold text-[var(--hs-accent)] underline-offset-4 hover:underline"
             href="/"
           >
             ← {a.backHome}
