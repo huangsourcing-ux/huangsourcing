@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
+import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
@@ -171,122 +172,129 @@ const buyerChoices: BuyerChoice[] = [
 
 export function ChinaSourcingServicesPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs items={[{ label: 'China sourcing services' }]} />
 
-      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
-          <p className="text-sm font-semibold text-red-600">China sourcing services</p>
-          <h1 className="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+      <section className="relative overflow-hidden border-b border-[var(--hs-border)] bg-[radial-gradient(circle_at_82%_6%,rgba(200,61,50,0.12),transparent_24rem),linear-gradient(180deg,#fffdf9_0%,#f4f0e8_100%)]">
+        <div className="hs-container relative py-10 sm:py-14 lg:py-16">
+          <Reveal>
+            <p className="hs-eyebrow">China sourcing services</p>
+            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight text-[var(--hs-text)] sm:text-5xl">
             Buyer-side China sourcing support by risk stage.
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            </h1>
+            <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
             Huang Sourcing helps overseas buyers choose the right China-side check
             before deposit, supplier selection, balance payment, pickup, or FBA shipment.
             Start with a free risk check, then add the service that matches the decision in front of you.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              asChild
-              className="h-12 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:px-8"
-              size="lg"
-              variant="default"
-            >
-              <Link href={freeRiskHref}>
-                Start with Free Sourcing Risk Check
-                <ArrowRight className="size-4" aria-hidden />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              className="h-12 rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:px-8"
-              size="lg"
-              variant="outline"
-            >
-              <a href="#services-overview">Compare all services</a>
-            </Button>
-          </div>
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button
+                asChild
+                className="h-12 rounded-md bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-md)] transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-lg)] active:scale-[0.98] sm:px-8"
+                size="lg"
+                variant="default"
+              >
+                <Link href={freeRiskHref}>
+                  Start with Free Sourcing Risk Check
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                className="h-12 rounded-md border-[var(--hs-border)] bg-white/80 px-6 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] backdrop-blur transition-all hover:border-[var(--hs-accent)] hover:bg-white hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:px-8"
+                size="lg"
+                variant="outline"
+              >
+                <a href="#services-overview">Compare all services</a>
+              </Button>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white" id="services-overview">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-white" id="services-overview">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Services overview
             </h2>
-            <p className="mt-3 text-base leading-7 text-slate-600">
+            <p className="hs-muted mt-3 text-base leading-7">
               Use this overview to understand where each service fits in the sourcing process.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="mt-7 grid gap-3 md:hidden">
-            {serviceOverviews.map((service) => (
-              <article
-                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm"
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {serviceOverviews.map((service, index) => (
+              <Reveal
+                as="article"
+                className="hs-card hs-card-hover flex min-h-[260px] flex-col bg-[var(--hs-card-warm)] p-5"
                 key={service.title}
+                staggerIndex={index}
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-red-600">
-                  {service.stage}
-                </p>
-                <h3 className="mt-2 text-lg font-bold leading-6 text-slate-950">
-                  {service.title}
-                </h3>
-                <dl className="mt-4 grid gap-3 border-t border-slate-100 pt-4">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex size-11 items-center justify-center rounded-md bg-[var(--hs-navy)] text-white shadow-[var(--hs-shadow-sm)]">
+                    <service.Icon className="size-5" aria-hidden />
+                  </div>
+                  <span className="rounded-full bg-[var(--hs-accent-soft)] px-3 py-1 text-xs font-extrabold text-[var(--hs-accent-strong)]">
+                    {service.stage}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-xl font-extrabold leading-6 text-[var(--hs-text)]">{service.title}</h3>
+                <dl className="mt-4 grid gap-3 border-t border-[var(--hs-border)] pt-4">
                   <div>
-                    <dt className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <dt className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
                       Starting point
                     </dt>
-                    <dd className="mt-1 text-sm font-extrabold text-red-600">
+                    <dd className="mt-1 text-sm font-extrabold text-[var(--hs-accent)]">
                       {service.startingPoint}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <dt className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
                       Buyer fit
                     </dt>
-                    <dd className="mt-1 text-sm font-medium leading-6 text-slate-600">
+                    <dd className="mt-1 text-sm font-semibold leading-6 text-[var(--hs-muted)]">
                       {service.buyerFit}
                     </dd>
                   </div>
                 </dl>
                 <Link
-                  className="mt-4 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-4 text-sm font-bold text-white transition-colors hover:bg-red-700"
+                  className="mt-auto inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-md bg-[var(--hs-navy)] px-4 text-sm font-extrabold text-white transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)]"
                   href={service.href}
                 >
                   Open service page
                   <ArrowRight className="size-4" aria-hidden />
                 </Link>
-              </article>
+              </Reveal>
             ))}
           </div>
 
-          <div className="mt-7 hidden overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm md:block">
-            <table className="min-w-[860px] w-full border-collapse text-left text-sm">
-              <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+          <div className="mt-8 hidden overflow-x-auto rounded-lg border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)] md:block">
+            <table className="w-full min-w-[860px] border-collapse text-left text-sm">
+              <thead className="bg-[var(--hs-bg-soft)] text-xs uppercase text-[var(--hs-muted-soft)]">
                 <tr>
-                  <th className="border-b border-slate-200 px-4 py-3">Service</th>
-                  <th className="border-b border-slate-200 px-4 py-3">Best stage</th>
-                  <th className="border-b border-slate-200 px-4 py-3">Starting point</th>
-                  <th className="border-b border-slate-200 px-4 py-3">Buyer fit</th>
+                  <th className="border-b border-[var(--hs-border)] px-4 py-3">Service</th>
+                  <th className="border-b border-[var(--hs-border)] px-4 py-3">Best stage</th>
+                  <th className="border-b border-[var(--hs-border)] px-4 py-3">Starting point</th>
+                  <th className="border-b border-[var(--hs-border)] px-4 py-3">Buyer fit</th>
                 </tr>
               </thead>
               <tbody>
                 {serviceOverviews.map((service) => (
-                  <tr className="align-top" key={service.title}>
-                    <td className="border-b border-slate-100 px-4 py-4">
-                      <Link className="font-bold text-slate-950 hover:text-red-600" href={service.href}>
+                  <tr className="align-top transition-colors hover:bg-[var(--hs-bg-soft)]" key={service.title}>
+                    <td className="border-b border-[var(--hs-border)] px-4 py-4">
+                      <Link className="font-extrabold text-[var(--hs-text)] hover:text-[var(--hs-accent)]" href={service.href}>
                         {service.title}
                       </Link>
                     </td>
-                    <td className="border-b border-slate-100 px-4 py-4 font-medium text-slate-700">
+                    <td className="border-b border-[var(--hs-border)] px-4 py-4 font-semibold text-[var(--hs-muted)]">
                       {service.stage}
                     </td>
-                    <td className="border-b border-slate-100 px-4 py-4 font-bold text-red-600">
+                    <td className="border-b border-[var(--hs-border)] px-4 py-4 font-extrabold text-[var(--hs-accent)]">
                       {service.startingPoint}
                     </td>
-                    <td className="border-b border-slate-100 px-4 py-4 leading-6 text-slate-600">
+                    <td className="border-b border-[var(--hs-border)] px-4 py-4 leading-6 text-[var(--hs-muted)]">
                       {service.buyerFit}
                     </td>
                   </tr>
@@ -297,106 +305,119 @@ export function ChinaSourcingServicesPage() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="text-sm font-semibold text-red-600">Choose by sourcing stage</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-[var(--hs-bg)]">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4">
+            <p className="hs-eyebrow">Choose by sourcing stage</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Match the service to the next decision you need to make.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid gap-3 lg:col-span-8">
             {stageChoices.map((choice, index) => (
-              <Link
-                className="group grid gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-red-200 hover:shadow-md sm:grid-cols-[auto_1fr_auto]"
-                href={choice.href}
+              <Reveal
                 key={choice.stage}
+                staggerIndex={index}
               >
-                <span className="flex size-9 items-center justify-center rounded-md bg-slate-950 text-sm font-bold text-white">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span>
-                  <span className="block text-base font-bold text-slate-950">{choice.stage}</span>
-                  <span className="mt-1 block text-sm leading-6 text-slate-600">{choice.risk}</span>
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm font-bold text-red-600">
-                  {choice.service}
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
-                </span>
-              </Link>
+                <Link
+                  className="group grid gap-3 rounded-lg border border-[var(--hs-border)] bg-white p-4 shadow-[var(--hs-shadow-sm)] transition-all hover:-translate-y-0.5 hover:border-[var(--hs-accent)] hover:shadow-[var(--hs-shadow-md)] sm:grid-cols-[auto_1fr_auto]"
+                  href={choice.href}
+                >
+                  <span className="flex size-9 items-center justify-center rounded-md bg-[var(--hs-navy)] text-sm font-extrabold text-white">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span>
+                    <span className="block text-base font-extrabold text-[var(--hs-text)]">{choice.stage}</span>
+                    <span className="mt-1 block text-sm leading-6 text-[var(--hs-muted)]">{choice.risk}</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)]">
+                    {choice.service}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-red-600">Choose by buyer type</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-white">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">Choose by buyer type</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Different buyers need different checkpoints.
             </h2>
-          </div>
+          </Reveal>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {buyerChoices.map((choice) => (
-              <Link
-                className="group rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm transition-all hover:border-red-200 hover:bg-white hover:shadow-md"
-                href={choice.href}
+            {buyerChoices.map((choice, index) => (
+              <Reveal
                 key={choice.type}
+                staggerIndex={index}
               >
-                <h3 className="text-lg font-bold text-slate-950">{choice.type}</h3>
-                <p className="mt-3 text-sm font-medium leading-6 text-slate-600">
-                  Recommended: {choice.services}
-                </p>
-                <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-red-600">
-                  View service path
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
-                </span>
-              </Link>
+                <Link
+                  className="group block rounded-lg border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] p-5 shadow-[var(--hs-shadow-sm)] transition-all hover:-translate-y-1 hover:border-[var(--hs-accent)] hover:bg-white hover:shadow-[var(--hs-shadow-md)]"
+                  href={choice.href}
+                >
+                  <h3 className="text-lg font-extrabold text-[var(--hs-text)]">{choice.type}</h3>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-[var(--hs-muted)]">
+                    Recommended: {choice.services}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)]">
+                    View service path
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  </span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-red-600">Service details</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-[var(--hs-bg-soft)]">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">Service details</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Six practical ways to reduce China sourcing risk.
             </h2>
-          </div>
+          </Reveal>
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {serviceOverviews.map((service) => (
-              <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm" key={service.title}>
+            {serviceOverviews.map((service, index) => (
+              <Reveal
+                as="article"
+                className="hs-card hs-card-hover bg-white p-6"
+                key={service.title}
+                staggerIndex={index}
+              >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex size-11 items-center justify-center rounded-md bg-slate-950 text-white">
+                  <div className="flex size-11 items-center justify-center rounded-md bg-[var(--hs-navy)] text-white">
                     <service.Icon className="size-5" aria-hidden />
                   </div>
-                  <span className="rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-700">
+                  <span className="rounded-full bg-[var(--hs-accent-soft)] px-3 py-1 text-xs font-extrabold text-[var(--hs-accent-strong)]">
                     {service.stage}
                   </span>
                 </div>
-                <h3 className="mt-5 text-2xl font-bold tracking-tight text-slate-950">{service.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{service.summary}</p>
+                <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-[var(--hs-text)]">{service.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--hs-muted)]">{service.summary}</p>
                 <Link
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-red-600 transition-colors hover:text-red-700"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[var(--hs-accent)] transition-colors hover:text-[var(--hs-accent-strong)]"
                   href={service.href}
                 >
                   Open service page
                   <ArrowRight className="size-4" aria-hidden />
                 </Link>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="rounded-lg border border-slate-200 bg-slate-950 px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">
+        <div className="hs-container hs-section">
+          <Reveal className="hs-cta-band px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+            <div className="relative">
+              <h2 className="text-3xl font-extrabold tracking-tight">
                 Not sure which service fits your order?
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
@@ -405,7 +426,7 @@ export function ChinaSourcingServicesPage() {
             </div>
             <Button
               asChild
-              className="mt-7 h-11 rounded-md bg-red-600 px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] lg:mt-0"
+              className="relative mt-7 h-11 rounded-md bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] lg:mt-0"
               variant="default"
             >
               <Link href={freeRiskHref}>
@@ -413,7 +434,7 @@ export function ChinaSourcingServicesPage() {
                 <ArrowRight className="size-4" aria-hidden />
               </Link>
             </Button>
-          </div>
+          </Reveal>
         </div>
       </section>
 

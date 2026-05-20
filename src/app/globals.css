@@ -7,25 +7,45 @@
   /* [!code modify] Use local/system font stacks to avoid next/font/google + Turbopack resolver issue. */
   --font-geist-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --radius: 0.5rem;
+  --hs-bg: #f7f5f1;
+  --hs-bg-soft: #fbfaf7;
+  --hs-card: #ffffff;
+  --hs-card-warm: #fffdfa;
+  --hs-border: #ded8cf;
+  --hs-border-strong: #cfc5b8;
+  --hs-text: #111827;
+  --hs-muted: #5f6673;
+  --hs-muted-soft: #7b8190;
+  --hs-accent: #c83d32;
+  --hs-accent-strong: #a72f28;
+  --hs-accent-soft: #fff0ec;
+  --hs-navy: #111827;
+  --hs-navy-2: #1f2937;
+  --hs-shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06), 0 1px 1px rgba(17, 24, 39, 0.04);
+  --hs-shadow-md: 0 14px 35px rgba(17, 24, 39, 0.1);
+  --hs-shadow-lg: 0 24px 70px rgba(17, 24, 39, 0.16);
+  --hs-radius: 0.5rem;
+  --hs-section-y: clamp(3.5rem, 6vw, 5.5rem);
+  --hs-section-y-sm: clamp(2.75rem, 5vw, 4rem);
+  --background: oklch(0.97 0.011 83.6);
+  --foreground: oklch(0.21 0.032 264.7);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.21 0.032 264.7);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.21 0.032 264.7);
+  --primary: oklch(0.54 0.18 29.2);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.95 0.016 83.6);
+  --secondary-foreground: oklch(0.21 0.032 264.7);
+  --muted: oklch(0.95 0.016 83.6);
+  --muted-foreground: oklch(0.46 0.027 261.7);
+  --accent: oklch(0.96 0.028 47.7);
+  --accent-foreground: oklch(0.28 0.05 29.2);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.88 0.014 83.6);
+  --input: oklch(0.88 0.014 83.6);
+  --ring: oklch(0.54 0.18 29.2);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -121,5 +141,167 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .hs-page {
+    background:
+      radial-gradient(circle at 12% -8%, rgba(200, 61, 50, 0.07), transparent 30rem),
+      linear-gradient(180deg, var(--hs-bg-soft) 0%, var(--hs-bg) 100%);
+    color: var(--hs-text);
+  }
+
+  .hs-container {
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1rem;
+  }
+
+  .hs-section {
+    padding-block: var(--hs-section-y-sm);
+  }
+
+  .hs-card {
+    border: 1px solid var(--hs-border);
+    border-radius: var(--hs-radius);
+    background: var(--hs-card);
+    box-shadow: var(--hs-shadow-sm);
+  }
+
+  .hs-card-hover {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hs-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--hs-accent) 34%, var(--hs-border));
+    box-shadow: var(--hs-shadow-md);
+  }
+
+  .hs-eyebrow {
+    color: var(--hs-accent);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+  }
+
+  .hs-muted {
+    color: var(--hs-muted);
+  }
+
+  .hs-chip {
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid color-mix(in srgb, var(--hs-border) 78%, white);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 0.35rem 0.75rem;
+    color: var(--hs-text);
+    font-size: 0.75rem;
+    font-weight: 800;
+    box-shadow: var(--hs-shadow-sm);
+    backdrop-filter: blur(14px);
+  }
+
+  .hs-cta-band {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--hs-radius);
+    background:
+      radial-gradient(circle at 84% 16%, rgba(200, 61, 50, 0.26), transparent 22rem),
+      linear-gradient(135deg, #101827 0%, #172235 52%, #111827 100%);
+    box-shadow: var(--hs-shadow-lg);
+  }
+
+  .hs-cta-band::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 38%);
+    content: "";
+  }
+
+  .hs-report-mockup {
+    transition:
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform-style: preserve-3d;
+  }
+
+  .hs-report-mockup:hover {
+    transform: rotate(1deg) translateY(-4px);
+    box-shadow: var(--hs-shadow-lg);
+  }
+
+  .hs-reveal {
+    transition:
+      opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  .hs-reveal[data-reveal-ready="true"]:not([data-reveal-visible="true"]) {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .hs-reveal[data-reveal-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 640px) {
+    .hs-container {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hs-section {
+      padding-block: var(--hs-section-y);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .hs-reveal,
+    .hs-reveal[data-reveal-ready="true"]:not([data-reveal-visible="true"]),
+    .hs-reveal[data-reveal-visible="true"] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition-delay: 0ms !important;
+    }
+  }
+}
+
+@keyframes hs-report-float {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.98;
+    transform: translateY(-8px);
   }
 }

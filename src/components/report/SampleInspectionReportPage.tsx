@@ -13,6 +13,7 @@ import Link from 'next/link'
 
 import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
@@ -66,8 +67,8 @@ function CheckList({ items }: { items: string[] }) {
   return (
     <ul className="mt-5 grid gap-3">
       {items.map((item) => (
-        <li className="flex gap-3 text-sm font-medium leading-6 text-slate-700" key={item}>
-          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-red-600" aria-hidden />
+        <li className="flex gap-3 text-sm font-semibold leading-6 text-[var(--hs-muted)]" key={item}>
+          <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[var(--hs-accent)]" aria-hidden />
           <span>{item}</span>
         </li>
       ))}
@@ -79,7 +80,7 @@ function LimitList({ items }: { items: string[] }) {
   return (
     <ul className="mt-5 grid gap-3">
       {items.map((item) => (
-        <li className="flex gap-3 text-sm font-medium leading-6 text-slate-700" key={item}>
+        <li className="flex gap-3 text-sm font-semibold leading-6 text-[var(--hs-muted)]" key={item}>
           <XCircle className="mt-0.5 size-4 shrink-0 text-slate-500" aria-hidden />
           <span>{item}</span>
         </li>
@@ -90,18 +91,18 @@ function LimitList({ items }: { items: string[] }) {
 
 export function SampleInspectionReportPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-slate-950 antialiased">
+    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs items={[{ label: 'Sample inspection report' }]} />
 
-      <section className="border-b border-slate-200 bg-[linear-gradient(180deg,#fbfcfd_0%,#f5f7f8_100%)]">
-        <div className="mx-auto grid w-full min-w-0 max-w-7xl items-center gap-10 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-12 lg:py-16">
-          <div className="min-w-0 lg:col-span-6">
-            <p className="text-sm font-semibold text-red-600">Sample inspection report</p>
-            <h1 className="mt-4 max-w-full break-words text-balance text-4xl font-bold tracking-tight text-slate-950 sm:max-w-4xl sm:text-5xl">
+      <section className="relative overflow-hidden border-b border-[var(--hs-border)] bg-[radial-gradient(circle_at_82%_12%,rgba(200,61,50,0.13),transparent_24rem),linear-gradient(180deg,#fffdf9_0%,#f4f0e8_100%)]">
+        <div className="hs-container relative grid w-full min-w-0 items-center gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">
+          <Reveal className="min-w-0 lg:col-span-6">
+            <p className="hs-eyebrow">Sample inspection report</p>
+            <h1 className="mt-4 max-w-full break-words text-balance text-4xl font-extrabold tracking-tight text-[var(--hs-text)] sm:max-w-4xl sm:text-5xl">
               Sample inspection report for China sourcing decisions.
             </h1>
-            <p className="mt-5 max-w-full break-words text-base leading-7 text-slate-600 sm:max-w-3xl sm:text-lg sm:leading-8">
+            <p className="hs-muted mt-5 max-w-full break-words text-base leading-7 sm:max-w-3xl sm:text-lg sm:leading-8">
               Review the kind of decision note, packaging evidence, label checks,
               and honest scope limits a buyer can expect before payment, pickup, or shipment.
             </p>
@@ -109,7 +110,7 @@ export function SampleInspectionReportPage() {
               <ContactAgentButton
                 analyticsLabel="Send supplier/order stage for a free risk check"
                 analyticsLocation="sample_report_page_hero"
-                className="h-auto min-h-12 w-full min-w-0 shrink whitespace-normal rounded-md bg-red-600 px-5 py-3 text-sm font-bold leading-5 text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:w-auto sm:px-8"
+                className="h-auto min-h-12 w-full min-w-0 shrink whitespace-normal rounded-md bg-[var(--hs-accent)] px-5 py-3 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-md)] transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-lg)] active:scale-[0.98] sm:w-auto sm:px-8"
                 href={freeRiskCheckWhatsAppHref}
                 size="lg"
                 variant="default"
@@ -118,7 +119,7 @@ export function SampleInspectionReportPage() {
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-12 w-full min-w-0 shrink rounded-md border-slate-300 bg-white px-6 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:w-auto sm:px-8"
+                className="h-12 w-full min-w-0 shrink rounded-md border-[var(--hs-border)] bg-white/80 px-6 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] backdrop-blur transition-all hover:border-[var(--hs-accent)] hover:bg-white hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:w-auto sm:px-8"
                 size="lg"
                 variant="outline"
               >
@@ -131,82 +132,103 @@ export function SampleInspectionReportPage() {
                 </SampleReportDownloadLink>
               </Button>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="min-w-0 lg:col-span-6">
-            <div className="max-w-full overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-              <div className="relative aspect-[16/10] min-h-[250px]">
-                <Image
-                  alt="Sample inspection report preview with product photos, packaging notes, barcode labels, and red pen"
-                  className="object-cover"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  src={reportPreviewImage}
-                />
-              </div>
-              <div className="border-t border-slate-200 bg-white p-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Example decision note
-                </p>
-                <p className="mt-2 text-xl font-bold text-slate-950">
-                  Wait before paying the balance.
-                </p>
+          <Reveal className="min-w-0 lg:col-span-6" delayMs={120}>
+            <div className="relative mx-auto max-w-xl">
+              <div className="absolute -right-3 top-5 h-full w-full rounded-lg border border-[var(--hs-border)] bg-white/70 shadow-[var(--hs-shadow-md)]" aria-hidden />
+              <div className="absolute -left-3 bottom-6 hidden h-24 w-48 rounded-lg border border-[var(--hs-border)] bg-[var(--hs-accent-soft)] shadow-[var(--hs-shadow-sm)] sm:block" aria-hidden />
+              <div className="hs-report-mockup relative max-w-full overflow-hidden rounded-lg border border-[var(--hs-border)] bg-white p-3 shadow-[var(--hs-shadow-lg)]">
+                <div className="relative aspect-[16/10] min-h-[250px] overflow-hidden rounded-md">
+                  <Image
+                    alt="Sample inspection report preview with product photos, packaging notes, barcode labels, and red pen"
+                    className="object-cover"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    src={reportPreviewImage}
+                  />
+                </div>
+                <div className="border-t border-[var(--hs-border)] bg-white p-5">
+                  <p className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
+                    Example decision note
+                  </p>
+                  <p className="mt-2 text-xl font-extrabold text-[var(--hs-text)]">
+                    Wait before paying the balance.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {['Packaging evidence', 'Carton label check', 'Buyer decision'].map((tag) => (
+                      <span className="rounded-full bg-[var(--hs-accent-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--hs-accent-strong)]" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="text-sm font-semibold text-red-600">What a buyer receives</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-white">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4">
+            <p className="hs-eyebrow">What a buyer receives</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Evidence that supports the next payment or shipment decision.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid gap-4 lg:col-span-8 sm:grid-cols-2">
             {buyerReceives.map((item, index) => {
               const icons = [ClipboardCheck, ShieldCheck, Tags, PackageCheck, ArrowRight]
               const Icon = icons[index] ?? CheckCircle2
 
               return (
-                <article className="rounded-lg border border-slate-200 bg-slate-50 p-5" key={item}>
-                  <div className="flex size-10 items-center justify-center rounded-md bg-white text-red-600 shadow-sm">
+                <Reveal
+                  as="article"
+                  className="hs-card hs-card-hover bg-[var(--hs-bg-soft)] p-5"
+                  key={item}
+                  staggerIndex={index}
+                >
+                  <div className="flex size-10 items-center justify-center rounded-md bg-white text-[var(--hs-accent)] shadow-[var(--hs-shadow-sm)]">
                     <Icon className="size-5" aria-hidden />
                   </div>
-                  <p className="mt-4 text-sm font-bold leading-6 text-slate-900">{item}</p>
-                </article>
+                  <p className="mt-4 text-sm font-extrabold leading-6 text-[var(--hs-text)]">{item}</p>
+                </Reveal>
               )
             })}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-950 text-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <p className="text-sm font-semibold text-red-300">Example decision note</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">
+      <section className="border-b border-[var(--hs-border)] bg-[var(--hs-navy)] text-white">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4">
+            <p className="text-sm font-extrabold text-red-200">Example decision note</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight">
               The report helps you slow down when evidence is not ready.
             </h2>
-          </div>
+          </Reveal>
           <div className="grid gap-4 lg:col-span-8 md:grid-cols-3">
-            {decisionNotes.map((note) => (
-              <article className="rounded-lg border border-white/10 bg-white/5 p-5" key={note.label}>
-                <p className="text-sm font-bold text-red-300">{note.label}</p>
+            {decisionNotes.map((note, index) => (
+              <Reveal
+                as="article"
+                className="rounded-lg border border-white/10 bg-white/5 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.16)]"
+                key={note.label}
+                staggerIndex={index}
+              >
+                <p className="text-sm font-extrabold text-red-200">{note.label}</p>
                 <p className="mt-3 text-base font-semibold leading-7 text-white">{note.body}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
+      <section className="border-b border-[var(--hs-border)] bg-white">
+        <div className="hs-container hs-section grid items-center gap-10 lg:grid-cols-12">
+          <Reveal className="lg:col-span-6">
+            <div className="hs-report-mockup overflow-hidden rounded-lg border border-[var(--hs-border)] bg-slate-100 shadow-[var(--hs-shadow-md)]">
               <div className="relative aspect-[16/10]">
                 <Image
                   alt="Packaging and label evidence from a sample inspection report"
@@ -217,48 +239,48 @@ export function SampleInspectionReportPage() {
                 />
               </div>
             </div>
-          </div>
-          <div className="lg:col-span-6">
-            <p className="text-sm font-semibold text-red-600">Example packaging and label evidence</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+          </Reveal>
+          <Reveal className="lg:col-span-6" delayMs={120}>
+            <p className="hs-eyebrow">Example packaging and label evidence</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               The report focuses on visible evidence a buyer can act on.
             </h2>
             <CheckList items={packagingEvidence} />
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="text-sm font-semibold text-red-600">What the report does not claim</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+      <section className="border-b border-[var(--hs-border)] bg-[var(--hs-bg)]">
+        <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
+          <Reveal className="lg:col-span-5">
+            <p className="hs-eyebrow">What the report does not claim</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)]">
               Clear limits make the report more useful, not less.
             </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
+            <p className="hs-muted mt-4 text-base leading-7">
               The report is designed to make visible sourcing risk easier to discuss
               before you release money or goods. It should be paired with specialist
               review when your product or channel requires it.
             </p>
-          </div>
-          <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm lg:col-span-7">
+          </Reveal>
+          <Reveal className="hs-card bg-white p-6 lg:col-span-7" delayMs={120}>
             <LimitList items={reportLimits} />
-            <p className="mt-5 border-t border-slate-200 pt-4 text-sm font-bold leading-6 text-slate-800">
+            <p className="mt-5 border-t border-[var(--hs-border)] pt-4 text-sm font-extrabold leading-6 text-[var(--hs-text)]">
               Read the full{' '}
-              <Link className="text-red-700 hover:underline" href={scopeLimitationsHref}>
+              <Link className="text-[var(--hs-accent-strong)] hover:underline" href={scopeLimitationsHref}>
                 Scope & Limitations
               </Link>{' '}
               page for the standard boundary statement used across Huang Sourcing.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="rounded-lg border border-slate-200 bg-slate-950 px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">
+        <div className="hs-container hs-section">
+          <Reveal className="hs-cta-band px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+            <div className="relative">
+              <h2 className="text-3xl font-extrabold tracking-tight">
                 Want this kind of risk read on your order?
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
@@ -270,7 +292,7 @@ export function SampleInspectionReportPage() {
               <ContactAgentButton
                 analyticsLabel="Send supplier/order stage for a free risk check"
                 analyticsLocation="sample_report_page_final_cta"
-                className="h-auto min-h-11 w-full min-w-0 shrink whitespace-normal rounded-md bg-red-600 px-5 py-2 text-sm font-bold leading-5 text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:w-auto sm:px-6"
+                className="relative h-auto min-h-11 w-full min-w-0 shrink whitespace-normal rounded-md bg-[var(--hs-accent)] px-5 py-2 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-sm)] transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:w-auto sm:px-6"
                 href={freeRiskCheckWhatsAppHref}
                 size="default"
                 variant="default"
@@ -279,7 +301,7 @@ export function SampleInspectionReportPage() {
               </ContactAgentButton>
               <Button
                 asChild
-                className="h-11 w-full min-w-0 shrink rounded-md border-white/20 bg-white px-6 text-sm font-bold text-slate-950 shadow-sm transition-all hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:w-auto"
+                className="relative h-11 w-full min-w-0 shrink rounded-md border-white/20 bg-white px-6 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-all hover:bg-red-50 hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:w-auto"
                 variant="outline"
               >
                 <SampleReportDownloadLink
@@ -291,7 +313,7 @@ export function SampleInspectionReportPage() {
                 </SampleReportDownloadLink>
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

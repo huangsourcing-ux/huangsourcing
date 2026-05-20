@@ -14,7 +14,7 @@ export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps
     <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
       <Button
         asChild
-        className="h-12 w-full min-w-0 rounded-md bg-red-600 px-4 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-lg active:scale-[0.98] sm:w-auto sm:px-8 sm:text-base"
+        className="h-12 w-full min-w-0 rounded-md bg-[var(--hs-accent)] px-4 text-sm font-extrabold text-white shadow-[var(--hs-shadow-md)] transition-all hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-lg)] active:scale-[0.98] sm:w-auto sm:px-8 sm:text-base"
         size="lg"
         variant="default"
       >
@@ -25,7 +25,7 @@ export function HomeHeroCtas({ primaryLabel, secondaryLabel }: HomeHeroCtasProps
       </Button>
       <Button
         asChild
-        className="h-12 w-full min-w-0 rounded-md border border-slate-300 bg-white px-4 text-sm font-bold text-slate-900 shadow-sm transition-all hover:border-red-200 hover:bg-red-50 hover:text-red-700 hover:shadow-md active:scale-[0.98] sm:w-auto sm:px-8 sm:text-base"
+        className="h-12 w-full min-w-0 rounded-md border border-[var(--hs-border)] bg-white/80 px-4 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] backdrop-blur transition-all hover:border-[var(--hs-accent)] hover:bg-white hover:text-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] sm:w-auto sm:px-8 sm:text-base"
         size="lg"
         variant="outline"
       >
