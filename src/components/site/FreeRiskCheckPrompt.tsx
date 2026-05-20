@@ -10,9 +10,8 @@ import { freeRiskCheckWhatsAppHref } from '@/lib/site-links'
 
 const dismissKey = 'huang-sourcing-free-risk-check-dismissed-v1'
 const offerItems = ['Supplier link review', 'Risk flags', 'Next-step recommendation'] as const
-const mobileViewportQuery = '(max-width: 639px)'
-const mobilePromptDelay = 900
-const desktopPromptDelay = 3000
+const promptDelay = 15000
+const scrollTriggerProgress = 0.4
 
 function hasDismissedPrompt() {
   try {
@@ -32,17 +31,20 @@ function saveDismissedPrompt() {
 
 function FreeRiskCheckPrompt() {
   const pathname = usePathname()
-  const isSuppressedPage = pathname === '/free-china-sourcing-risk-check'
+  const isSuppressedPage =
+    pathname === '/free-china-sourcing-risk-check' || pathname === '/thank-you'
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (isSuppressedPage) return
+    if (isSuppressedPage) {
+      return
+    }
+
     if (hasDismissedPrompt()) return
 
-    const mediaQuery = window.matchMedia(mobileViewportQuery)
     let timeout: number | undefined
 
-    const clearDesktopTimer = () => {
+    const clearTimer = () => {
       if (timeout) {
         window.clearTimeout(timeout)
         timeout = undefined
@@ -50,27 +52,32 @@ function FreeRiskCheckPrompt() {
     }
 
     const showPrompt = () => {
+      clearTimer()
+      window.removeEventListener('scroll', handleScroll)
       setIsVisible(true)
     }
 
-    const setupPromptTiming = () => {
-      clearDesktopTimer()
-      setIsVisible(false)
+    const handleScroll = () => {
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight
 
-      if (mediaQuery.matches) {
-        timeout = window.setTimeout(showPrompt, mobilePromptDelay)
+      if (scrollableHeight <= 0) {
         return
       }
 
-      timeout = window.setTimeout(showPrompt, desktopPromptDelay)
+      const progress = window.scrollY / scrollableHeight
+      if (progress >= scrollTriggerProgress) {
+        showPrompt()
+      }
     }
 
-    setupPromptTiming()
-    mediaQuery.addEventListener('change', setupPromptTiming)
+    timeout = window.setTimeout(showPrompt, promptDelay)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
 
     return () => {
-      clearDesktopTimer()
-      mediaQuery.removeEventListener('change', setupPromptTiming)
+      clearTimer()
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [isSuppressedPage])
 

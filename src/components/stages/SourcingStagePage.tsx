@@ -101,7 +101,7 @@ export function SourcingStagePage({ page }: SourcingStagePageProps) {
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  src="/images/hero-inspection.webp"
+                  src={page.imageSrc}
                 />
               </div>
             </div>

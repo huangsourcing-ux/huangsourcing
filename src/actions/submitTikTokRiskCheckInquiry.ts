@@ -1,32 +1,15 @@
 'use server'
 
 import { getPayload } from 'payload'
-import { z } from 'zod'
 
 import config from '@payload-config'
 import { isNextBuildPhase } from '@/lib/isNextBuildPhase'
-
-const riskScenarioLabels = {
-  supplier_before_deposit: 'Check my supplier before deposit',
-  goods_before_balance: 'Check my goods before balance payment',
-  fba_labels_before_shipment: 'Check my FBA labels before shipment',
-} as const
-
-const inquirySchema = z.object({
-  riskScenario: z.enum([
-    'supplier_before_deposit',
-    'goods_before_balance',
-    'fba_labels_before_shipment',
-  ]),
-  supplier: z.string().trim().min(2, 'Please add the supplier name or link.').max(500),
-  product: z.string().trim().min(2, 'Please add the product or item.').max(500),
-  paymentStatus: z.string().trim().min(2, 'Please select the payment status.').max(120),
-  shipmentStage: z.string().trim().min(2, 'Please select the shipment stage.').max(120),
-  message: z.string().trim().max(2000, 'Please keep the message under 2000 characters.').optional(),
-})
-
-type TikTokRiskCheckInput = z.infer<typeof inquirySchema>
-type TikTokRiskCheckFieldErrors = Partial<Record<keyof TikTokRiskCheckInput, string>>
+import {
+  getTikTokRiskCheckFieldErrors,
+  riskScenarioLabels,
+  tiktokRiskCheckInquirySchema,
+  type TikTokRiskCheckFieldErrors,
+} from '@/lib/tiktok-risk-check-schema'
 
 export type SubmitTikTokRiskCheckInquiryResult =
   | { ok: true }
@@ -43,29 +26,13 @@ export async function submitTikTokRiskCheckInquiry(
     return { ok: false, message: 'Unavailable during build.' }
   }
 
-  const parsed = inquirySchema.safeParse(input)
+  const parsed = tiktokRiskCheckInquirySchema.safeParse(input)
 
   if (!parsed.success) {
-    const fieldErrors: TikTokRiskCheckFieldErrors = {}
-
-    for (const issue of parsed.error.issues) {
-      const key = issue.path[0]
-      if (
-        key === 'riskScenario' ||
-        key === 'supplier' ||
-        key === 'product' ||
-        key === 'paymentStatus' ||
-        key === 'shipmentStage' ||
-        key === 'message'
-      ) {
-        fieldErrors[key] = issue.message
-      }
-    }
-
     return {
       ok: false,
       message: 'Check the fields below and try again.',
-      fieldErrors,
+      fieldErrors: getTikTokRiskCheckFieldErrors(parsed.error),
     }
   }
 
@@ -108,4 +75,3 @@ export async function submitTikTokRiskCheckInquiry(
     }
   }
 }
-

@@ -157,7 +157,7 @@ function SiteFooter() {
       </div>
 
       <div className="border-t border-slate-200 bg-slate-50 px-4 py-4 text-center text-xs font-semibold leading-5 text-slate-500">
-        © 2026 Huang Sourcing. All rights reserved. Powered by OpenAI.
+        © 2026 Huang Sourcing. All rights reserved.
       </div>
     </footer>
   )
