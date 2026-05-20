@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, FileDown } from 'lucide-react'
+import { ArrowRight, CheckCircle2, FileText } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,7 +8,7 @@ import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { Button } from '@/components/ui/button'
-import { buildWhatsAppHref, reportHref } from '@/lib/site-links'
+import { buildWhatsAppHref, sampleReportPageHref } from '@/lib/site-links'
 import {
   makeSeoServiceJsonLd,
   seoServicePages,
@@ -72,10 +72,10 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
                 size="lg"
                 variant="outline"
               >
-                <a href={reportHref}>
-                  <FileDown className="size-4" aria-hidden />
-                  Download sample report
-                </a>
+                <Link href={sampleReportPageHref}>
+                  <FileText className="size-4" aria-hidden />
+                  View sample report
+                </Link>
               </Button>
             </div>
           </div>
