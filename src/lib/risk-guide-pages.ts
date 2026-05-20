@@ -6,6 +6,7 @@ import { getAbsoluteUrl } from '@/lib/site-url'
 export type RiskGuideSlug =
   | 'fnsku-label-check-china'
   | 'alibaba-supplier-verification-china'
+  | 'factory-vs-trading-company-china'
 
 type FaqItem = {
   question: string
@@ -250,6 +251,112 @@ Main concern:
         question: 'Should I do this before samples or after samples?',
         answer:
           'If supplier identity or deposit pressure is unclear, check before deposit. If several suppliers are already sending samples, sample consolidation can help compare them before final selection.',
+      },
+    ],
+  },
+  'factory-vs-trading-company-china': {
+    slug: 'factory-vs-trading-company-china',
+    title: 'Factory vs Trading Company China',
+    metaTitle: 'Factory vs Trading Company in China | Supplier Verification Guide',
+    metaDescription:
+      'Understand factory vs trading company signals in China before deposit. Learn what buyers can check remotely, what may need onsite evidence, and when supplier verification helps.',
+    eyebrow: 'Factory vs trading company China',
+    h1: 'Factory vs trading company in China before deposit.',
+    imageAlt:
+      'Factory vs trading company in China supplier verification signals before deposit',
+    imageSrc: '/images/service-supplier-verification.webp',
+    intro:
+      'Use this guide when a Chinese supplier says they are a factory, but the company name, address, product range, quote, or Alibaba profile still feels unclear. The goal is not to punish trading companies. The goal is to understand who you are paying, who controls production, and what evidence you should request before deposit.',
+    primaryCtaLabel: 'Check supplier role before deposit',
+    ctaMessage: `Hi Agent Huang,
+
+I need help checking whether a China supplier looks like a factory or trading company.
+
+Supplier link / company name:
+Product:
+Quote / order value:
+Current stage:
+Main concern:
+`,
+    whenToUse: [
+      'Before sending a deposit to a supplier claiming factory status',
+      'When the company name, payment beneficiary, address, and profile do not line up cleanly',
+      'When the product range looks too broad for one factory',
+      'When you need practical questions before choosing supplier verification or onsite checking',
+    ],
+    riskSignals: [
+      'The supplier claims factory pricing but avoids sharing factory address or production evidence',
+      'The company sells many unrelated product categories without clear specialization',
+      'Invoice, Alibaba profile, website, and payment beneficiary use different names',
+      'The supplier cannot explain MOQ, lead time, tooling, or production constraints clearly',
+    ],
+    checks: [
+      'Company identity, address, profile, quote, and PI consistency',
+      'Factory vs trading company signals from available online and document evidence',
+      'Product range and claimed production capability signals',
+      'Questions to request before deposit or supplier selection',
+      'Whether remote verification is enough or onsite evidence should be scoped',
+    ],
+    whatToSend: [
+      'Supplier website, Alibaba link, company name, and contact details',
+      'Quote, PI, payment beneficiary, MOQ, lead time, and order value',
+      'Product photos, specifications, target quantity, and supplier claims',
+      'Any factory photos, videos, licenses, or documents the supplier already shared',
+    ],
+    buyerReceives: [
+      'Buyer-side notes on factory and trading company signals',
+      'Risk questions to ask before deposit payment',
+      'Practical recommendation on whether supplier verification or onsite checking fits',
+      'Clear limits on what remote evidence can and cannot prove',
+    ],
+    scopeLimits: [
+      'We do not make a legal guarantee about the supplier role',
+      'We do not promise a factory is always better than a trading company',
+      'We do not replace legal due diligence, certification review, or a formal factory audit',
+      'We do not promise zero supplier or payment risk',
+    ],
+    internalLinks: [
+      {
+        href: '/supplier-verification-china',
+        label: 'Supplier Verification China',
+        note: 'Use when the supplier role, company details, quote, and payment risk need a focused buyer-side check.',
+      },
+      {
+        href: '/how-to-verify-chinese-supplier-before-deposit',
+        label: 'How to verify a Chinese supplier before deposit',
+        note: 'Use when the payment decision is urgent and the buyer needs a broader deposit checklist.',
+      },
+      {
+        href: '/alibaba-supplier-verification-china',
+        label: 'Alibaba supplier verification',
+        note: 'Use when supplier role questions started from an Alibaba profile or quote.',
+      },
+      {
+        href: '/free-china-sourcing-risk-check',
+        label: 'Free Sourcing Risk Check',
+        note: 'Start here if you are unsure whether the visible risk needs paid verification.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is a factory always better than a trading company?',
+        answer:
+          'No. A good trading company can be useful for some buyers, and a weak factory can still create risk. The practical question is whether the supplier role, payment beneficiary, production control, and quote terms are clear enough before deposit.',
+      },
+      {
+        question: 'Can supplier verification prove the company is the real factory?',
+        answer:
+          'Supplier verification can review visible factory and trading company signals from available evidence. A stronger onsite scope may be needed when the buyer needs photos, location evidence, or deeper confirmation.',
+      },
+      {
+        question: 'What documents should I request before deposit?',
+        answer:
+          'Ask for company registration details, PI with matching beneficiary, factory address, product evidence, production photos when relevant, and clear quote terms including MOQ, lead time, tooling, and payment terms.',
+      },
+      {
+        question: 'Should I reject a supplier if they are a trading company?',
+        answer:
+          'Not automatically. The buyer should understand the supplier role, margin, accountability, production access, and whether the company can provide enough evidence before payment or production starts.',
       },
     ],
   },

@@ -5,6 +5,7 @@ export const chinaSourcingInspectionPricingHref = '/china-sourcing-inspection-pr
 export const chinaSourcingServicesHref = '/china-sourcing-services'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
+export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-china'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'
 export const privacyConfidentialityHref = '/privacy-confidentiality'
 export const resourceGuideHref = '/china-sourcing-risk-guides'
