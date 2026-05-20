@@ -7,6 +7,7 @@ import {
   chinaSourcingInspectionPricingHref,
   resourceGuideHref,
   supplierDepositGuideHref,
+  whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
 import { trustPolicyPages, trustPolicySlugs } from '@/lib/trust-policy-pages'
@@ -27,6 +28,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: chinaSourcingInspectionPricingHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: whatToSendBeforeChinaInspectionHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
