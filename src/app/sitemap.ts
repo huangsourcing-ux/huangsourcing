@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
-import { resourceGuideHref } from '@/lib/site-links'
+import { resourceGuideHref, supplierDepositGuideHref } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
 import { trustPolicyPages, trustPolicySlugs } from '@/lib/trust-policy-pages'
 
@@ -35,6 +35,11 @@ const staticRoutes: SitemapEntry[] = [
     path: resourceGuideHref,
     changeFrequency: 'monthly',
     priority: 0.82,
+  },
+  {
+    path: supplierDepositGuideHref,
+    changeFrequency: 'monthly',
+    priority: 0.76,
   },
 ]
 
