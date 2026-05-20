@@ -29,6 +29,7 @@ export type SeoServicePage = {
   eyebrow: string
   h1: string
   imageAlt: string
+  imageSrc: string
   intro: string
   startingPrice: string
   pricingNote: string
@@ -61,6 +62,7 @@ export const seoServicePages: Record<SeoServiceSlug, SeoServicePage> = {
     h1: 'Supplier verification in China before you send a deposit.',
     imageAlt:
       'China factory verification review checking supplier identity and quote details before deposit',
+    imageSrc: '/images/service-supplier-verification.webp',
     intro:
       'Use this page when you have a supplier name, quote, Alibaba link, company profile, or factory contact, but you need a buyer-side review before deposit payment. The goal is to separate credible supplier signals from unclear claims before you commit money or production time.',
     startingPrice: 'From $249',
@@ -183,6 +185,7 @@ Main concern:
     h1: 'QC inspection in China before balance payment or pickup.',
     imageAlt:
       'QC inspection in China checking product packaging and carton labels before pickup',
+    imageSrc: '/images/service-qc-inspection.webp',
     intro:
       'Use this page when production is ready or nearly ready and you need buyer-side QC evidence before final payment, pickup, or shipment. The inspection focuses on visible product condition, quantity, packaging, labels, and shipment readiness so you can push corrections before goods leave China.',
     startingPrice: 'From $299 / inspector day',
@@ -305,6 +308,7 @@ Main checks needed:
     h1: 'China pre-shipment inspection before final payment or pickup.',
     imageAlt:
       'Pre-shipment inspection in China checking cartons labels and shipment readiness before pickup',
+    imageSrc: '/images/service-pre-shipment.webp',
     intro:
       'Use this page when goods are packed or close to completion and you need a final buyer-side check before the shipment leaves China. A pre-shipment inspection helps confirm whether the order is ready for final payment, forwarder pickup, or supplier correction.',
     startingPrice: 'From $299 / inspector day',
@@ -427,6 +431,7 @@ Main risk:
     h1: 'Amazon FBA prep in China before goods ship to fulfillment.',
     imageAlt:
       'Amazon FBA prep in China checking FNSKU labels carton labels and SKU separation before shipment',
+    imageSrc: '/images/service-fba-prep.webp',
     intro:
       'Use this page when your supplier has produced the goods, but you need China-side help checking FNSKU labels, carton labels, SKU organization, packaging details, and forwarder handoff before the shipment goes to Amazon fulfillment.',
     startingPrice: 'Custom quote',
@@ -547,6 +552,7 @@ Label or prep requirements:
     h1: 'Sample consolidation in China before you choose a supplier.',
     imageAlt:
       'Sample consolidation in China comparing supplier samples before choosing a factory',
+    imageSrc: '/images/service-sample-consolidation.webp',
     intro:
       'Use this page when several Chinese suppliers are sending samples and you want one China-side hub to receive, photograph, compare, and forward them together. Sample consolidation helps reduce freight waste and gives you early visibility before choosing a supplier.',
     startingPrice: 'From $99 + freight',

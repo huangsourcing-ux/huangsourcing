@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2, ShieldAlert } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
@@ -81,18 +82,33 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex size-12 items-center justify-center rounded-md bg-slate-950 text-white">
-                <ShieldAlert className="size-6" aria-hidden />
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
+              <div className="relative aspect-[4/3] min-h-[260px]">
+                <Image
+                  alt={page.imageAlt}
+                  className="object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  src={page.imageSrc}
+                />
               </div>
-              <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-950">
-                Start from the risk moment.
-              </h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                This guide is written for buyers who already have a supplier, order stage,
-                or shipment decision in front of them and need practical China-side evidence
-                before money or goods move.
-              </p>
+            </div>
+            <div className="mt-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-md bg-slate-950 text-white">
+                  <ShieldAlert className="size-5" aria-hidden />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold tracking-tight text-slate-950">
+                    Start from the risk moment.
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    This guide is written for buyers who already have a supplier,
+                    order stage, or shipment decision in front of them.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

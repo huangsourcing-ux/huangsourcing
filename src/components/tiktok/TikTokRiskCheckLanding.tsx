@@ -24,7 +24,6 @@ import { useMemo, useRef, useState } from 'react'
 
 import {
   submitTikTokRiskCheckInquiry,
-  type SubmitTikTokRiskCheckInquiryResult,
 } from '@/actions/submitTikTokRiskCheckInquiry'
 import { WhatsAppIcon } from '@/components/site/SocialLinks'
 import { Button } from '@/components/ui/button'
@@ -33,17 +32,17 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { trackWhatsAppClick } from '@/lib/analytics'
 import { buildWhatsAppHref } from '@/lib/site-links'
+import {
+  getTikTokRiskCheckFieldErrors,
+  tiktokRiskCheckInquirySchema,
+  type TikTokRiskCheckFieldErrors,
+} from '@/lib/tiktok-risk-check-schema'
 import { cn } from '@/lib/utils'
 
 type RiskScenario =
   | 'supplier_before_deposit'
   | 'goods_before_balance'
   | 'fba_labels_before_shipment'
-
-type FieldErrors = Extract<
-  SubmitTikTokRiskCheckInquiryResult,
-  { ok: false }
->['fieldErrors']
 
 type FormState = {
   supplier: string
@@ -143,7 +142,7 @@ function TikTokRiskCheckLanding() {
   const formRef = useRef<HTMLElement>(null)
   const [riskScenario, setRiskScenario] = useState<RiskScenario>('supplier_before_deposit')
   const [form, setForm] = useState<FormState>(initialForm)
-  const [fieldErrors, setFieldErrors] = useState<FieldErrors>()
+  const [fieldErrors, setFieldErrors] = useState<TikTokRiskCheckFieldErrors>()
   const [status, setStatus] = useState<
     | { type: 'success'; message: string }
     | { type: 'error'; message: string }
@@ -181,14 +180,25 @@ Situation: ${form.message}
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setIsSubmitting(true)
     setStatus(null)
     setFieldErrors(undefined)
 
-    const result = await submitTikTokRiskCheckInquiry({
+    const input = {
       ...form,
       riskScenario,
-    })
+    }
+
+    const clientParsed = tiktokRiskCheckInquirySchema.safeParse(input)
+
+    if (!clientParsed.success) {
+      setFieldErrors(getTikTokRiskCheckFieldErrors(clientParsed.error))
+      setStatus({ type: 'error', message: 'Check the fields below and try again.' })
+      return
+    }
+
+    setIsSubmitting(true)
+
+    const result = await submitTikTokRiskCheckInquiry(input)
 
     setIsSubmitting(false)
 
@@ -440,6 +450,7 @@ Situation: ${form.message}
 
           <form
             className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6 lg:col-span-8"
+            noValidate
             onSubmit={handleSubmit}
           >
             <div>
@@ -484,11 +495,14 @@ Situation: ${form.message}
                   Supplier / factory name or link *
                 </Label>
                 <Input
+                  aria-invalid={Boolean(fieldErrors?.supplier)}
                   autoComplete="organization"
                   className="mt-2 h-12 border-slate-300 text-base focus-visible:ring-red-500 md:h-11 md:text-sm"
                   id="supplier"
+                  maxLength={500}
                   onChange={(event) => updateField('supplier', event.target.value)}
                   placeholder="Supplier name or link"
+                  required
                   value={form.supplier}
                 />
                 <FieldError message={fieldErrors?.supplier} />
@@ -499,11 +513,14 @@ Situation: ${form.message}
                   Product / item *
                 </Label>
                 <Input
+                  aria-invalid={Boolean(fieldErrors?.product)}
                   autoComplete="off"
                   className="mt-2 h-12 border-slate-300 text-base focus-visible:ring-red-500 md:h-11 md:text-sm"
                   id="product"
+                  maxLength={500}
                   onChange={(event) => updateField('product', event.target.value)}
                   placeholder="Product or item"
+                  required
                   value={form.product}
                 />
                 <FieldError message={fieldErrors?.product} />
@@ -514,9 +531,11 @@ Situation: ${form.message}
                   Payment status *
                 </Label>
                 <select
+                  aria-invalid={Boolean(fieldErrors?.paymentStatus)}
                   className="mt-2 flex h-12 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-base font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:h-11 md:text-sm"
                   id="paymentStatus"
                   onChange={(event) => updateField('paymentStatus', event.target.value)}
+                  required
                   value={form.paymentStatus}
                 >
                   <option value="">Select payment status</option>
@@ -534,9 +553,11 @@ Situation: ${form.message}
                   Shipment stage *
                 </Label>
                 <select
+                  aria-invalid={Boolean(fieldErrors?.shipmentStage)}
                   className="mt-2 flex h-12 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-base font-medium text-slate-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:h-11 md:text-sm"
                   id="shipmentStage"
                   onChange={(event) => updateField('shipmentStage', event.target.value)}
+                  required
                   value={form.shipmentStage}
                 >
                   <option value="">Select shipment stage</option>
@@ -555,8 +576,10 @@ Situation: ${form.message}
                 Your message
               </Label>
               <Textarea
+                aria-invalid={Boolean(fieldErrors?.message)}
                 className="mt-2 min-h-28 border-slate-300 text-base focus-visible:ring-red-500 md:text-sm"
                 id="message"
+                maxLength={2000}
                 onChange={(event) => updateField('message', event.target.value)}
                 placeholder="Your concern or deadline"
                 value={form.message}

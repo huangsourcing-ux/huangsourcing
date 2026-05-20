@@ -25,6 +25,8 @@ export type RiskGuidePage = {
   metaDescription: string
   eyebrow: string
   h1: string
+  imageAlt: string
+  imageSrc: string
   intro: string
   primaryCtaLabel: string
   ctaMessage: string
@@ -47,6 +49,9 @@ export const riskGuidePages: Record<RiskGuideSlug, RiskGuidePage> = {
       'Check FNSKU labels, carton labels, SKU separation, packaging, and shipment-plan evidence in China before your Amazon FBA goods leave the supplier.',
     eyebrow: 'FNSKU label check China',
     h1: 'FNSKU label check in China before FBA shipment.',
+    imageAlt:
+      'FNSKU label check in China reviewing cartons labels and SKU separation before FBA shipment',
+    imageSrc: '/images/service-fba-prep.webp',
     intro:
       'Use this guide when Amazon-bound goods are still in China and you need buyer-side evidence before cartons leave the supplier or forwarder. Huang Sourcing checks visible FNSKU labels, carton labels, SKU separation, packaging, and pickup readiness before the shipment moves.',
     primaryCtaLabel: 'Check FNSKU labels before shipment',
@@ -150,6 +155,9 @@ FNSKU or carton label concern:
       'Verify an Alibaba supplier before sending a deposit. Huang Sourcing checks company identity, factory or trader signals, quote terms, and payment risk from China.',
     eyebrow: 'Alibaba supplier verification',
     h1: 'Alibaba supplier verification before deposit payment.',
+    imageAlt:
+      'Alibaba supplier verification reviewing company details quote and supplier evidence before deposit',
+    imageSrc: '/images/service-supplier-verification.webp',
     intro:
       'Use this guide when an Alibaba supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still needs a buyer-side check. Huang Sourcing helps overseas buyers review visible supplier signals before money leaves the account.',
     primaryCtaLabel: 'Verify Alibaba supplier before deposit',

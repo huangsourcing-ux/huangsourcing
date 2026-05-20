@@ -31,6 +31,7 @@ export type SourcingStagePage = {
   eyebrow: string
   h1: string
   imageAlt: string
+  imageSrc: string
   intro: string
   primaryService: string
   primaryServiceHref: string
@@ -61,6 +62,7 @@ export const sourcingStagePages: Record<SourcingStageSlug, SourcingStagePage> = 
     h1: 'Verify a Chinese supplier before payment or deposit.',
     imageAlt:
       'Verify Chinese supplier before payment with buyer-side company and factory signal checks',
+    imageSrc: '/images/service-supplier-verification.webp',
     intro:
       'Use this page when a Chinese supplier is asking for a deposit but the company identity, factory role, quote terms, or payment pressure still feels unclear. Huang Sourcing helps overseas buyers slow the decision down and check visible supplier risk before money leaves the account.',
     primaryService: 'Supplier Verification China',
@@ -172,6 +174,7 @@ Main concern:
     h1: 'Inspection before balance payment in China.',
     imageAlt:
       'Inspection before balance payment in China checking product packaging labels and cartons',
+    imageSrc: '/images/service-qc-inspection.webp',
     intro:
       'Use this page when production is finished or nearly finished and the supplier is asking for the final balance. Huang Sourcing checks goods, packaging, labels, cartons, and visible shipment readiness while the order is still in China and corrections are still possible.',
     primaryService: 'QC Inspection China',
@@ -283,6 +286,7 @@ Main checks needed:
     h1: 'Pre-pickup inspection in China before your forwarder collects goods.',
     imageAlt:
       'Pre pickup inspection in China checking cartons labels and shipment readiness before forwarder collection',
+    imageSrc: '/images/service-pre-shipment.webp',
     intro:
       'Use this page when your supplier says cartons are ready and the forwarder is about to collect. Huang Sourcing checks visible shipment readiness, carton condition, labels, shipping marks, and final release issues before the goods leave the supplier.',
     primaryService: 'China Pre-Shipment Inspection',
@@ -394,6 +398,7 @@ Main pickup risk:
     h1: 'FBA prep in China before shipment to Amazon.',
     imageAlt:
       'FBA prep China before shipment checking FNSKU labels carton labels and SKU separation',
+    imageSrc: '/images/service-fba-prep.webp',
     intro:
       'Use this page when Amazon-bound goods are still in China and you need evidence before cartons leave the supplier or forwarder. Huang Sourcing checks visible FNSKU, carton labels, SKU organization, packing details, and pickup readiness before shipment.',
     primaryService: 'Amazon FBA Prep China',
@@ -510,6 +515,7 @@ FBA prep concern:
     h1: 'Compare China supplier samples before choosing a factory.',
     imageAlt:
       'Sample consolidation China comparing China supplier samples before supplier selection',
+    imageSrc: '/images/service-sample-consolidation.webp',
     intro:
       'Use this page when several Chinese suppliers are sending samples and you need one China-side hub to receive, photograph, organize, compare, and forward them together. Sample consolidation helps buyers see obvious differences before committing to a supplier or paying repeated international freight.',
     primaryService: 'Sample Consolidation China',

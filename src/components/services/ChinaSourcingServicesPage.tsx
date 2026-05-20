@@ -214,13 +214,55 @@ export function ChinaSourcingServicesPage() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold tracking-tight text-slate-950">
-              Services overview table
+              Services overview
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600">
-              Use this table to understand where each service fits in the sourcing process.
+              Use this overview to understand where each service fits in the sourcing process.
             </p>
           </div>
-          <div className="mt-7 overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm">
+
+          <div className="mt-7 grid gap-3 md:hidden">
+            {serviceOverviews.map((service) => (
+              <article
+                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm"
+                key={service.title}
+              >
+                <p className="text-xs font-bold uppercase tracking-wider text-red-600">
+                  {service.stage}
+                </p>
+                <h3 className="mt-2 text-lg font-bold leading-6 text-slate-950">
+                  {service.title}
+                </h3>
+                <dl className="mt-4 grid gap-3 border-t border-slate-100 pt-4">
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Starting point
+                    </dt>
+                    <dd className="mt-1 text-sm font-extrabold text-red-600">
+                      {service.startingPoint}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Buyer fit
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium leading-6 text-slate-600">
+                      {service.buyerFit}
+                    </dd>
+                  </div>
+                </dl>
+                <Link
+                  className="mt-4 inline-flex min-h-10 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-4 text-sm font-bold text-white transition-colors hover:bg-red-700"
+                  href={service.href}
+                >
+                  Open service page
+                  <ArrowRight className="size-4" aria-hidden />
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-7 hidden overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm md:block">
             <table className="min-w-[860px] w-full border-collapse text-left text-sm">
               <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
                 <tr>
