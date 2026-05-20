@@ -14,6 +14,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
@@ -408,10 +409,13 @@ export function MarketingPage() {
                 className="h-11 rounded-md border-white/20 bg-transparent px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-white hover:text-slate-950 hover:shadow-md active:scale-[0.98]"
                 variant="outline"
               >
-                <a download href={reportHref}>
+                <SampleReportDownloadLink
+                  ctaLocation="homepage_sample_report_section"
+                  href={reportHref}
+                >
                   <FileDown className="size-4" aria-hidden />
                   Download PDF (520 KB)
-                </a>
+                </SampleReportDownloadLink>
               </Button>
             </div>
           </div>

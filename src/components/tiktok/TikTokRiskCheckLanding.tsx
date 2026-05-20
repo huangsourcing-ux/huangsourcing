@@ -31,7 +31,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { trackWhatsAppClick } from '@/lib/analytics'
+import { trackFreeRiskCheckSubmit, trackWhatsAppClick } from '@/lib/analytics'
 import { buildWhatsAppHref } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
 
@@ -193,6 +193,12 @@ Situation: ${form.message}
     setIsSubmitting(false)
 
     if (result.ok) {
+      trackFreeRiskCheckSubmit({
+        paymentStatus: form.paymentStatus,
+        riskScenario,
+        shipmentStage: form.shipmentStage,
+        source: 'free_china_sourcing_risk_check_form',
+      })
       router.push('/thank-you?source=free-risk-check')
       return
     }
