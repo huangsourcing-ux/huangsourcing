@@ -1,4 +1,9 @@
-import { businessEmail, resourceGuideHref } from '@/lib/site-links'
+import {
+  alibabaSupplierVerificationHref,
+  businessEmail,
+  fnskuLabelCheckHref,
+  resourceGuideHref,
+} from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 
 export type ResourceGuideCategory = {
@@ -21,6 +26,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
     links: [
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
+      { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
     ],
@@ -60,6 +66,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when Amazon-bound goods are still in China and visible prep evidence matters before shipment. This category covers FNSKU labels, carton labels, SKU separation, carton condition, packing details, forwarder pickup readiness, and the limits of China-side prep support compared with Amazon receiving approval or marketplace compliance after arrival at fulfillment centers or later warehouse processing by Amazon teams.',
     links: [
       { href: '/before-amazon-fba-shipment-china', label: 'Before Amazon FBA shipment' },
+      { href: fnskuLabelCheckHref, label: 'FNSKU label check China' },
       { href: '/amazon-fba-prep-china', label: 'Amazon FBA Prep China' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
     ],

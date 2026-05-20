@@ -2,6 +2,8 @@
 export const businessEmail = 'agent@huangsourcing.com' as const
 
 export const chinaSourcingServicesHref = '/china-sourcing-services'
+export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
+export const fnskuLabelCheckHref = '/fnsku-label-check-china'
 export const privacyConfidentialityHref = '/privacy-confidentiality'
 export const resourceGuideHref = '/china-sourcing-risk-guides'
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'

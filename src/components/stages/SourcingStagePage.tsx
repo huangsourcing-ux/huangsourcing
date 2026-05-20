@@ -96,7 +96,7 @@ export function SourcingStagePage({ page }: SourcingStagePageProps) {
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
               <div className="relative aspect-[4/3] min-h-[260px]">
                 <Image
-                  alt={`${page.stage} China sourcing evidence review`}
+                  alt={page.imageAlt}
                   className="object-cover"
                   fill
                   priority

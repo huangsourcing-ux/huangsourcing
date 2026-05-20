@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 import { getAbsoluteUrl } from '@/lib/site-url'
+import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import { resourceGuideHref } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
@@ -54,8 +55,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'yearly',
     priority: 0.5,
   }))
+  const riskGuideRoutes: SitemapEntry[] = riskGuideSlugs.map((slug) => ({
+    path: `/${slug}`,
+    changeFrequency: 'monthly',
+    priority: 0.76,
+  }))
 
-  return [...staticRoutes, ...stageRoutes, ...serviceRoutes, ...trustPolicyRoutes].map((route) => ({
+  return [...staticRoutes, ...stageRoutes, ...serviceRoutes, ...riskGuideRoutes, ...trustPolicyRoutes].map((route) => ({
     url: getAbsoluteUrl(route.path),
     lastModified,
     changeFrequency: route.changeFrequency,

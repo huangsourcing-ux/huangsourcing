@@ -8,16 +8,135 @@ import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { Button } from '@/components/ui/button'
-import { buildWhatsAppHref, sampleReportPageHref } from '@/lib/site-links'
+import {
+  alibabaSupplierVerificationHref,
+  buildWhatsAppHref,
+  fnskuLabelCheckHref,
+  sampleReportPageHref,
+} from '@/lib/site-links'
 import {
   makeSeoServiceJsonLd,
   seoServicePages,
   seoServiceSlugs,
+  type SeoServiceSlug,
   type SeoServicePage as SeoServicePageData,
 } from '@/lib/seo-service-pages'
 
 type SeoServicePageProps = {
   page: SeoServicePageData
+}
+
+const serviceRelatedLinks: Record<SeoServiceSlug, { href: string; label: string; note: string }[]> = {
+  'supplier-verification-china': [
+    {
+      href: '/free-china-sourcing-risk-check',
+      label: 'Start with Free Sourcing Risk Check',
+      note: 'Use this first if you are unsure whether the supplier risk needs paid verification.',
+    },
+    {
+      href: '/before-deposit-china-supplier-check',
+      label: 'Verify Chinese supplier before payment',
+      note: 'Use when the immediate decision is whether to send deposit payment.',
+    },
+    {
+      href: alibabaSupplierVerificationHref,
+      label: 'Alibaba supplier verification',
+      note: 'Use when the supplier was found on Alibaba and profile details need a buyer-side check.',
+    },
+    {
+      href: sampleReportPageHref,
+      label: 'Sample inspection report',
+      note: 'Preview the evidence format and honest limitations before booking.',
+    },
+  ],
+  'qc-inspection-china': [
+    {
+      href: '/free-china-sourcing-risk-check',
+      label: 'Start with Free Sourcing Risk Check',
+      note: 'Use this first if you are unsure what QC scope fits the order stage.',
+    },
+    {
+      href: '/before-balance-payment-qc-china',
+      label: 'Inspection before balance payment China',
+      note: 'Use when final payment depends on product, packaging, label, and carton evidence.',
+    },
+    {
+      href: '/china-pre-shipment-inspection',
+      label: 'Pre-shipment inspection China',
+      note: 'Use when the decision is final release or pickup readiness.',
+    },
+    {
+      href: sampleReportPageHref,
+      label: 'Sample inspection report',
+      note: 'See how findings, photo evidence, and decision notes are structured.',
+    },
+  ],
+  'china-pre-shipment-inspection': [
+    {
+      href: '/free-china-sourcing-risk-check',
+      label: 'Start with Free Sourcing Risk Check',
+      note: 'Use this first if you are unsure whether pickup risk needs QC, FBA prep, or pre-shipment checks.',
+    },
+    {
+      href: '/before-forwarder-pickup-inspection-china',
+      label: 'Pre pickup inspection China',
+      note: 'Use when the forwarder is about to collect cartons from the supplier.',
+    },
+    {
+      href: '/before-balance-payment-qc-china',
+      label: 'Inspection before balance payment China',
+      note: 'Use earlier when final payment should wait for sampled product and packaging evidence.',
+    },
+    {
+      href: sampleReportPageHref,
+      label: 'Sample inspection report',
+      note: 'Preview the report evidence before final payment or pickup.',
+    },
+  ],
+  'amazon-fba-prep-china': [
+    {
+      href: '/free-china-sourcing-risk-check',
+      label: 'Start with Free Sourcing Risk Check',
+      note: 'Use this first if you are unsure whether the issue is FBA prep, QC, or pickup readiness.',
+    },
+    {
+      href: fnskuLabelCheckHref,
+      label: 'FNSKU label check China',
+      note: 'Use when FNSKU labels, carton labels, or SKU separation are the main risk.',
+    },
+    {
+      href: '/before-amazon-fba-shipment-china',
+      label: 'FBA prep China before shipment',
+      note: 'Use when the shipment is about to leave China for Amazon FBA.',
+    },
+    {
+      href: sampleReportPageHref,
+      label: 'Sample inspection report',
+      note: 'See how photo-backed label and carton evidence is presented.',
+    },
+  ],
+  'sample-consolidation-china': [
+    {
+      href: '/free-china-sourcing-risk-check',
+      label: 'Start with Free Sourcing Risk Check',
+      note: 'Use this first if you are unsure how to compare suppliers before selection.',
+    },
+    {
+      href: '/compare-china-supplier-samples',
+      label: 'Compare China supplier samples',
+      note: 'Use when the buyer decision is which supplier sample deserves the next step.',
+    },
+    {
+      href: '/supplier-verification-china',
+      label: 'Supplier Verification China',
+      note: 'Use after samples narrow the shortlist and payment risk needs a supplier check.',
+    },
+    {
+      href: sampleReportPageHref,
+      label: 'Sample inspection report',
+      note: 'Preview the type of buyer-side evidence used before bigger decisions.',
+    },
+  ],
 }
 
 function BulletList({ items }: { items: string[] }) {
@@ -35,6 +154,7 @@ function BulletList({ items }: { items: string[] }) {
 
 export function SeoServicePage({ page }: SeoServicePageProps) {
   const relatedServices = seoServiceSlugs.filter((slug) => slug !== page.slug)
+  const relatedLinks = serviceRelatedLinks[page.slug]
   const whatsAppHref = buildWhatsAppHref(page.ctaMessage)
   const jsonLd = makeSeoServiceJsonLd(page)
 
@@ -84,7 +204,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
               <div className="relative aspect-[4/3] min-h-[280px]">
                 <Image
-                  alt={`${page.title} evidence in a China warehouse`}
+                  alt={page.imageAlt}
                   className="object-cover"
                   fill
                   priority
@@ -109,15 +229,21 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-3">
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">Best for</h2>
+            <h2 className="text-xl font-bold text-slate-950">
+              Who should use this before paying or shipping?
+            </h2>
             <BulletList items={page.bestFor} />
           </article>
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">When to use it</h2>
+            <h2 className="text-xl font-bold text-slate-950">
+              When does this check make sense?
+            </h2>
             <BulletList items={page.whenToUse} />
           </article>
           <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-            <h2 className="text-xl font-bold text-slate-950">What gets checked</h2>
+            <h2 className="text-xl font-bold text-slate-950">
+              What should be checked before the next payment or pickup?
+            </h2>
             <BulletList items={page.checks} />
           </article>
         </div>
@@ -128,7 +254,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
           <div className="lg:col-span-4">
             <p className="text-sm font-semibold text-red-600">Risk details</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-              Common problems this service is designed to catch.
+              What can go wrong if you skip this?
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               These checks focus on practical buyer risk, not a generic certificate or a supplier sales pitch.
@@ -173,7 +299,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
           <div className="lg:col-span-5">
             <p className="text-sm font-semibold text-red-600">Deliverables</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-              What you receive before deciding the next step.
+              What do you receive before deciding?
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               The goal is practical evidence you can use before payment, pickup, supplier selection, or shipment release.
@@ -229,11 +355,41 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
 
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold text-red-600">Scope note</p>
+          <p className="text-sm font-semibold text-red-600">Scope limits</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
-            How to use this service safely.
+            What does this service not include?
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">{page.scopeNote}</p>
+          <BulletList items={page.scopeLimits} />
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-sm font-semibold text-red-600">Internal links</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">
+              Related risk pages buyers often need next.
+            </h2>
+          </div>
+          <div className="grid gap-3 lg:col-span-8 md:grid-cols-2">
+            {relatedLinks.map((link) => (
+              <Link
+                className="group rounded-lg border border-slate-200 bg-slate-50 p-5 transition-colors hover:border-red-200 hover:bg-white"
+                href={link.href}
+                key={link.href}
+              >
+                <h3 className="text-lg font-bold text-slate-950 group-hover:text-red-600">
+                  {link.label}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{link.note}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-red-600">
+                  Open page
+                  <ArrowRight className="size-4" aria-hidden />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
