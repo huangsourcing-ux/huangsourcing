@@ -3,6 +3,7 @@ import {
   businessEmail,
   factoryVsTradingCompanyChinaHref,
   fnskuLabelCheckHref,
+  preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
   supplierDepositGuideHref,
@@ -60,6 +61,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when cartons are packed, the supplier says the shipment is ready, or the forwarder is about to collect. This category focuses on final shipment readiness before goods leave the supplier, including carton condition, shipping marks, labels, packing-list signals, pickup blockers, and whether release should proceed or wait for correction before freight moves and access becomes harder later.',
     links: [
+      { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection before pickup' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
       { href: '/china-pre-shipment-inspection', label: 'China Pre-Shipment Inspection' },
       { href: '/sample-inspection-report-china', label: 'Sample inspection report' },
@@ -119,6 +121,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },
+      { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection checklist' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
     ],
     ctaHref: '/free-china-sourcing-risk-check',

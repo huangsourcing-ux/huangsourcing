@@ -5,6 +5,7 @@ import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
   chinaSourcingInspectionPricingHref,
+  preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
   supplierVerificationChecklistHref,
@@ -65,6 +66,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: qcBeforeBalanceArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: preShipmentBeforePickupArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
