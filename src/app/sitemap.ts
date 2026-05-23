@@ -4,6 +4,7 @@ import { getAbsoluteUrl } from '@/lib/site-url'
 import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
+  amazonFbaPrepArticleHref,
   chinaSourcingInspectionPricingHref,
   preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
@@ -71,6 +72,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: preShipmentBeforePickupArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: amazonFbaPrepArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },

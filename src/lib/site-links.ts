@@ -5,6 +5,7 @@ export const chinaSourcingInspectionPricingHref = '/china-sourcing-inspection-pr
 export const chinaSourcingServicesHref = '/china-sourcing-services'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
+export const amazonFbaPrepArticleHref = '/amazon-fba-prep-china-fnsku-carton-labels'
 export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-china'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'
 export const preShipmentBeforePickupArticleHref = '/pre-shipment-inspection-china-before-pickup'
