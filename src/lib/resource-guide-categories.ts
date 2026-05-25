@@ -8,6 +8,7 @@ import {
   preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
+  sampleConsolidationCompareSuppliersArticleHref,
   supplierDepositGuideHref,
   supplierVerificationChecklistHref,
 } from '@/lib/site-links'
@@ -95,6 +96,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides before choosing a supplier, especially when several Chinese factories or traders are sending samples. This category explains how a China-side hub can receive, photograph, organize, compare, and forward samples together, reducing freight waste and helping buyers spot obvious quality, finish, packaging, or supplier-origin differences before committing to production or deposit payment with one supplier in China later.',
     links: [
+      {
+        href: sampleConsolidationCompareSuppliersArticleHref,
+        label: 'Sample consolidation China supplier comparison',
+      },
       { href: '/compare-china-supplier-samples', label: 'Compare supplier samples' },
       { href: '/sample-consolidation-china', label: 'Sample Consolidation China' },
       { href: '/supplier-verification-china', label: 'Supplier verification after samples' },
@@ -125,6 +130,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
+      {
+        href: sampleConsolidationCompareSuppliersArticleHref,
+        label: 'Sample comparison before factory selection',
+      },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },

@@ -16,6 +16,8 @@ export const qcBeforeBalanceArticleHref = '/qc-inspection-china-before-balance-p
 export const resourceGuideHref = '/china-sourcing-risk-guides'
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
 export const sampleReportPageHref = '/sample-inspection-report-china'
+export const sampleConsolidationCompareSuppliersArticleHref =
+  '/sample-consolidation-china-compare-suppliers-before-choosing-factory'
 export const scopeLimitationsHref = '/scope-limitations'
 export const supplierVerificationChecklistHref = '/supplier-verification-china-checklist'
 export const supplierDepositGuideHref = '/how-to-verify-chinese-supplier-before-deposit'
