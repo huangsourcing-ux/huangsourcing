@@ -31,7 +31,7 @@ export function AboutAgentPage() {
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="about" topBanner={null} />
-      <SiteBreadcrumbs items={[{ label: 'About Agent Huang' }]} />
+      <SiteBreadcrumbs currentPath="/about" items={[{ label: 'About Agent Huang' }]} />
       <article>
         <section className="hs-hero">
           <div className="hs-container grid items-center gap-10 py-10 sm:py-14 lg:grid-cols-[1fr_0.95fr] lg:py-16">

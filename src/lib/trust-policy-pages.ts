@@ -1,13 +1,16 @@
 import type { Metadata } from 'next'
 
 import {
-  businessEmail,
   freeRiskCheckWhatsAppHref,
   privacyConfidentialityHref,
   scopeLimitationsHref,
   termsBookingPolicyHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 export type TrustPolicySlug =
   | 'privacy-confidentiality'
@@ -325,18 +328,16 @@ export function makeTrustPolicyMetadata(page: TrustPolicyPage): Metadata {
 }
 
 export function makeTrustPolicyJsonLd(page: TrustPolicyPage) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: page.metaTitle,
-    description: page.description,
-    url: getAbsoluteUrl(page.href),
-    inLanguage: 'en',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Huang Sourcing',
-      url: getAbsoluteUrl('/'),
-      email: businessEmail,
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: page.metaTitle,
+      description: page.description,
+      url: getAbsoluteUrl(page.href),
+      inLanguage: 'en',
+      publisher: makeOrganizationReference(),
     },
-  }
+    makeFaqPageJsonLd(page.faqs),
+  ]
 }

@@ -1,7 +1,6 @@
 import {
   alibabaSupplierVerificationHref,
   amazonFbaPrepArticleHref,
-  businessEmail,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -13,6 +12,7 @@ import {
   supplierVerificationChecklistHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import { makeOrganizationReference } from '@/lib/structured-data'
 
 export type ResourceGuideCategory = {
   ctaHref: string
@@ -147,12 +147,7 @@ export function makeResourceGuideJsonLd() {
       'China sourcing risk guide center for overseas buyers comparing supplier verification, QC inspection, pre-shipment inspection, Amazon FBA prep, sample consolidation, risk notes, and buyer decision checklists.',
     url: getAbsoluteUrl(resourceGuideHref),
     inLanguage: 'en',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Huang Sourcing',
-      url: getAbsoluteUrl('/'),
-      email: businessEmail,
-    },
+    publisher: makeOrganizationReference(),
     hasPart: resourceGuideCategories.map((category) => ({
       '@type': 'CreativeWork',
       name: category.title,

@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 
 import { SampleInspectionReportPage } from '@/components/report/SampleInspectionReportPage'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { businessEmail, sampleReportPageHref } from '@/lib/site-links'
+import { sampleReportPageHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import { makeOrganizationReference } from '@/lib/structured-data'
 
 const title = 'Sample Inspection Report China'
 const description =
@@ -45,12 +46,7 @@ const jsonLd = {
   description,
   url: getAbsoluteUrl(sampleReportPageHref),
   inLanguage: 'en',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Huang Sourcing',
-    url: getAbsoluteUrl('/'),
-    email: businessEmail,
-  },
+  publisher: makeOrganizationReference(),
   mainEntity: {
     '@type': 'CreativeWork',
     name: 'Huang Sourcing sample inspection report',

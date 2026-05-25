@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
-import {
-  businessEmail,
-  supplierVerificationChecklistHref,
-} from '@/lib/site-links'
+import { supplierVerificationChecklistHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 type ChecklistStage = {
   buyerDecision: string[]
@@ -341,12 +342,7 @@ export function makeSupplierVerificationChecklistJsonLd() {
         '@type': 'Person',
         name: 'Agent Huang',
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
+      publisher: makeOrganizationReference(),
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': pageUrl,
@@ -362,42 +358,6 @@ export function makeSupplierVerificationChecklistJsonLd() {
         name: item,
       })),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: supplierVerificationChecklist.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: getAbsoluteUrl('/'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'China sourcing risk guides',
-          item: getAbsoluteUrl('/china-sourcing-risk-guides'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: supplierVerificationChecklist.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    makeFaqPageJsonLd(supplierVerificationChecklist.faqs),
   ]
 }

@@ -52,6 +52,7 @@ export function SourcingStagePage({ page }: SourcingStagePageProps) {
       <SiteHeader activePage="service" topBanner={null} />
       <JsonLd data={jsonLd} />
       <SiteBreadcrumbs
+        currentPath={`/${page.slug}`}
         items={[
           { label: 'China sourcing services', href: chinaSourcingServicesHref },
           { label: page.stage },

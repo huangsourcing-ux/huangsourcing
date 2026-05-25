@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 
 import { servicePricingBySlug } from '@/lib/service-pricing'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeServiceJsonLd,
+} from '@/lib/structured-data'
 
 export type SeoServiceSlug =
   | 'supplier-verification-china'
@@ -722,55 +726,13 @@ export function makeSeoServiceJsonLd(page: SeoServicePage) {
       }
 
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
+    makeServiceJsonLd({
       name: page.title,
       description: page.metaDescription,
       serviceType: page.title,
-      inLanguage: 'en',
-      provider: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-      },
-      areaServed: {
-        '@type': 'Country',
-        name: 'China',
-      },
       offers,
       url: pageUrl,
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: page.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: getAbsoluteUrl('/'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: page.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    }),
+    makeFaqPageJsonLd(page.faqs),
   ]
 }

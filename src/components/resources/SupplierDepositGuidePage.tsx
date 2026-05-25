@@ -36,6 +36,7 @@ export function SupplierDepositGuidePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeSupplierDepositGuideJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={supplierDepositGuide.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: supplierDepositGuide.title },

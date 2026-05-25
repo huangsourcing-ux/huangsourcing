@@ -43,6 +43,7 @@ export function SupplierVerificationChecklistPage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeSupplierVerificationChecklistJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={supplierVerificationChecklist.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: supplierVerificationChecklist.title },

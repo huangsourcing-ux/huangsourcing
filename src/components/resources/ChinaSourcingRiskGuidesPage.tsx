@@ -31,7 +31,10 @@ export function ChinaSourcingRiskGuidesPage() {
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="resources" topBanner={null} />
-      <SiteBreadcrumbs items={[{ label: 'China sourcing risk guides' }]} />
+      <SiteBreadcrumbs
+        currentPath={resourceGuideHref}
+        items={[{ label: 'China sourcing risk guides' }]}
+      />
 
       <section className="hs-hero">
         <div className="hs-container grid gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">

@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 
-import { businessEmail } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 export type RiskGuideSlug =
   | 'fnsku-label-check-china'
@@ -412,49 +415,8 @@ export function makeRiskGuideJsonLd(page: RiskGuidePage) {
       description: page.metaDescription,
       url: pageUrl,
       inLanguage: 'en',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
+      publisher: makeOrganizationReference(),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: page.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: getAbsoluteUrl('/'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'China sourcing risk guides',
-          item: getAbsoluteUrl('/china-sourcing-risk-guides'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: page.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    makeFaqPageJsonLd(page.faqs),
   ]
 }

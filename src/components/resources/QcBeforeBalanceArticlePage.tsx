@@ -42,6 +42,7 @@ export function QcBeforeBalanceArticlePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeQcBeforeBalanceArticleJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={qcBeforeBalanceArticle.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: qcBeforeBalanceArticle.title },

@@ -42,6 +42,7 @@ export function PreShipmentBeforePickupArticlePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makePreShipmentBeforePickupArticleJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={preShipmentBeforePickupArticle.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: preShipmentBeforePickupArticle.title },

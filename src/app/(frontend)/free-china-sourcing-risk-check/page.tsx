@@ -3,8 +3,13 @@ import type { Metadata } from 'next'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { TikTokRiskCheckLanding } from '@/components/tiktok/TikTokRiskCheckLanding'
-import { businessEmail, publicWhatsAppHref } from '@/lib/site-links'
+import { publicWhatsAppHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeBreadcrumbJsonLd,
+  makeOrganizationReference,
+  makeServiceJsonLd,
+} from '@/lib/structured-data'
 
 const title = 'Free China Sourcing Risk Check'
 const description =
@@ -48,33 +53,28 @@ const jsonLd = [
     description,
     url: getAbsoluteUrl(path),
     inLanguage: 'en',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Huang Sourcing',
-      url: getAbsoluteUrl('/'),
-      email: businessEmail,
-    },
+    publisher: makeOrganizationReference(),
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  makeServiceJsonLd({
     name: title,
     description,
-    provider: {
-      '@type': 'Organization',
-      name: 'Huang Sourcing',
-      url: getAbsoluteUrl('/'),
-    },
-    areaServed: {
-      '@type': 'Country',
-      name: 'China',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      url: getAbsoluteUrl(path),
     },
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: publicWhatsAppHref,
       availableLanguage: ['English', 'Chinese'],
     },
-  },
+    url: getAbsoluteUrl(path),
+  }),
+  makeBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: title, path },
+  ]),
 ]
 
 export default function FreeChinaSourcingRiskCheckPage() {

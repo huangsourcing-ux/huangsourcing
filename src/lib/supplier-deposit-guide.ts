@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
-import {
-  businessEmail,
-  supplierDepositGuideHref,
-} from '@/lib/site-links'
+import { supplierDepositGuideHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 type ArticleSection = {
   body: string[]
@@ -292,49 +293,8 @@ export function makeSupplierDepositGuideJsonLd() {
         width: supplierDepositGuide.image.width,
         height: supplierDepositGuide.image.height,
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
+      publisher: makeOrganizationReference(),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: supplierDepositGuide.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: getAbsoluteUrl('/'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'China sourcing risk guides',
-          item: getAbsoluteUrl('/china-sourcing-risk-guides'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: supplierDepositGuide.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    makeFaqPageJsonLd(supplierDepositGuide.faqs),
   ]
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 
-import {
-  businessEmail,
-  preShipmentBeforePickupArticleHref,
-} from '@/lib/site-links'
+import { preShipmentBeforePickupArticleHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -290,12 +291,7 @@ export function makePreShipmentBeforePickupArticleJsonLd() {
         '@type': 'Person',
         name: 'Agent Huang',
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
+      publisher: makeOrganizationReference(),
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': pageUrl,
@@ -311,42 +307,6 @@ export function makePreShipmentBeforePickupArticleJsonLd() {
         name: item,
       })),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: preShipmentBeforePickupArticle.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: getAbsoluteUrl('/'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'China sourcing risk guides',
-          item: getAbsoluteUrl('/china-sourcing-risk-guides'),
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: preShipmentBeforePickupArticle.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    makeFaqPageJsonLd(preShipmentBeforePickupArticle.faqs),
   ]
 }
