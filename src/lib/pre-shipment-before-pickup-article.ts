@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { preShipmentBeforePickupArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { preShipmentBeforePickupArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const preShipmentBeforePickupArticle = {
   href: preShipmentBeforePickupArticleHref,
   title: 'Pre-Shipment Inspection China: What Buyers Should Confirm Before Pickup',
-  metaTitle: 'Pre-Shipment Inspection China: What Buyers Should Confirm Before Pickup',
+  metaTitle: 'Pre-Shipment Inspection China',
   metaDescription:
     'Use this pre-shipment inspection China checklist before pickup to confirm cartons, labels, packing list, shipping marks, carton condition, and shipment readiness.',
+  publishedDate: 'May 21, 2026',
+  publishedDateIso: '2026-05-21T22:16:02-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'Pre-Shipment Inspection China: What Buyers Should Confirm Before Pickup',
   eyebrow: 'Pre-shipment inspection China',
   image: {
@@ -45,6 +51,11 @@ export const preShipmentBeforePickupArticle = {
     src: '/images/pre-shipment-inspection-before-pickup.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/pre-shipment-inspection-before-pickup.webp', width: 1600 },
+    { height: 1200, src: '/images/pre-shipment-inspection-before-pickup-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/pre-shipment-inspection-before-pickup-1x1.webp', width: 1200 },
+  ],
   intro:
     'Pre-shipment inspection in China is most useful when it protects a real pickup decision. Once a forwarder collects the goods, carton problems, label mistakes, missing boxes, and document gaps become harder to fix. This guide explains what overseas buyers should confirm before pickup while the supplier can still correct visible issues.',
   answerSummary:
@@ -166,6 +177,12 @@ Main concern:
       buyerDecision: 'Hold shipment, request correction, re-check, or separate affected cartons',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Final carton count, packing list, commercial invoice, shipping marks, pickup address, supplier contact, and forwarder timing shared before release.',
+    'Carton, label, packing, quantity, and loading-readiness photo evidence captured while the supplier can still correct visible issues.',
+    'China-side pre-shipment and forwarder handover workflow judgment from checking whether cartons are actually ready to leave the supplier.',
+    'Buyer-stage decision context: release pickup, delay pickup, request correction, hold shipment, or re-check after supplier updates.',
+  ],
   whatToSend: [
     'Purchase order, invoice, and packing list',
     'Final carton count, unit count, gross weight, and volume if available',
@@ -258,12 +275,7 @@ export function makePreShipmentBeforePickupArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: preShipmentBeforePickupArticle.image.src,
-          width: preShipmentBeforePickupArticle.image.width,
-          height: preShipmentBeforePickupArticle.image.height,
-          alt: preShipmentBeforePickupArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(preShipmentBeforePickupArticle),
       ],
     },
     twitter: {
@@ -276,27 +288,8 @@ export function makePreShipmentBeforePickupArticleMetadata(): Metadata {
 }
 
 export function makePreShipmentBeforePickupArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(preShipmentBeforePickupArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: preShipmentBeforePickupArticle.title,
-      description: preShipmentBeforePickupArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(preShipmentBeforePickupArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(preShipmentBeforePickupArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

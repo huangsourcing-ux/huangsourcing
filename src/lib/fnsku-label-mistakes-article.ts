@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { fnskuLabelMistakesArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { fnskuLabelMistakesArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const fnskuLabelMistakesArticle = {
   href: fnskuLabelMistakesArticleHref,
   title: 'FNSKU Label Mistakes: What to Check Before Goods Leave China',
-  metaTitle: 'FNSKU Label Mistakes: What to Check Before Goods Leave China',
+  metaTitle: 'FNSKU Label Mistakes China',
   metaDescription:
     'Use this FNSKU label check China guide before shipment to confirm SKU match, barcode readability, label placement, old barcode coverage, and pickup decisions.',
+  publishedDate: 'May 24, 2026',
+  publishedDateIso: '2026-05-24T21:36:21-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'FNSKU Label Mistakes: What to Check Before Goods Leave China',
   eyebrow: 'FNSKU label check China',
   image: {
@@ -45,6 +51,11 @@ export const fnskuLabelMistakesArticle = {
     src: '/images/fnsku-label-mistakes-before-goods-leave-china.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/fnsku-label-mistakes-before-goods-leave-china.webp', width: 1600 },
+    { height: 1200, src: '/images/fnsku-label-mistakes-before-goods-leave-china-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/fnsku-label-mistakes-before-goods-leave-china-1x1.webp', width: 1200 },
+  ],
   intro:
     'An FNSKU label mistake is easy to miss when the supplier sends one clean close-up photo. It becomes expensive after goods leave China, when relabeling means prep fees, receiving delays, stranded inventory risk, or a shipment that has to be rerouted before Amazon can receive it.',
   answerSummary:
@@ -168,6 +179,12 @@ Main label concern:
       buyerDecision: 'Approve pickup, separate SKUs, create carton-level notes, repack, or route through FBA prep',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'FNSKU files, carton labels, SKU list, shipment-plan details, packing list, and pickup timing shared before goods leave China.',
+    'Unit-label and carton-level photo evidence showing SKU match, barcode readability, old barcode coverage, label placement, and separated cartons.',
+    'China-side FBA prep workflow judgment from checking label files against real packed goods, cartons, SKU groups, and correction photos.',
+    'Buyer-stage decision context: approve pickup, relabel, reopen cartons, route through prep support, or delay shipment before freight moves.',
+  ],
   whatToSend: [
     'Final FNSKU label files, SKU list, ASIN or listing reference, and product variant details',
     'Product photos, packaging photos, quantity per SKU, carton count, and units per carton',
@@ -260,12 +277,7 @@ export function makeFnskuLabelMistakesArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: fnskuLabelMistakesArticle.image.src,
-          width: fnskuLabelMistakesArticle.image.width,
-          height: fnskuLabelMistakesArticle.image.height,
-          alt: fnskuLabelMistakesArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(fnskuLabelMistakesArticle),
       ],
     },
     twitter: {
@@ -278,27 +290,8 @@ export function makeFnskuLabelMistakesArticleMetadata(): Metadata {
 }
 
 export function makeFnskuLabelMistakesArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(fnskuLabelMistakesArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: fnskuLabelMistakesArticle.title,
-      description: fnskuLabelMistakesArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(fnskuLabelMistakesArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(fnskuLabelMistakesArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

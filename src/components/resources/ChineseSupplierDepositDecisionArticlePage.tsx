@@ -10,6 +10,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -63,6 +67,10 @@ export function ChineseSupplierDepositDecisionArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {chineseSupplierDepositDecisionArticle.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={chineseSupplierDepositDecisionArticle.modifiedDate}
+              publishedDate={chineseSupplierDepositDecisionArticle.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={chineseSupplierDepositDecisionArticle.primaryCta.label}
@@ -218,6 +226,11 @@ export function ChineseSupplierDepositDecisionArticlePage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This deposit guidance is based on the supplier identity, payment path, PI scope, product evidence, and buyer-stage facts available before money moves."
+        items={chineseSupplierDepositDecisionArticle.evidenceBasis}
+      />
 
       <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

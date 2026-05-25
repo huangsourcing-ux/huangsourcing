@@ -3,6 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceDecisionMatrix,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -58,6 +62,10 @@ export function SupplierDepositGuidePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {supplierDepositGuide.summary}
             </p>
+            <ArticleByline
+              modifiedDate={supplierDepositGuide.modifiedDate}
+              publishedDate={supplierDepositGuide.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
@@ -144,6 +152,12 @@ export function SupplierDepositGuidePage() {
           </article>
         </div>
       </section>
+
+      <EvidenceDecisionMatrix
+        intro="Use the evidence to decide whether to pay the deposit, request stronger proof, reduce exposure, or stop before money moves."
+        rows={supplierDepositGuide.evidenceRows}
+        title="What evidence supports the deposit decision?"
+      />
 
       <section className="hs-section-soft">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

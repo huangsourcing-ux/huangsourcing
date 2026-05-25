@@ -9,6 +9,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -62,6 +66,10 @@ export function FactoryVsTradingCompanySignalsArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {factoryVsTradingCompanySignalsArticle.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={factoryVsTradingCompanySignalsArticle.modifiedDate}
+              publishedDate={factoryVsTradingCompanySignalsArticle.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={factoryVsTradingCompanySignalsArticle.primaryCta.label}
@@ -220,6 +228,11 @@ export function FactoryVsTradingCompanySignalsArticlePage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This supplier-role guidance is based on company identity, payment path, product range, production evidence, and buyer-stage facts checked before deposit or supplier selection."
+        items={factoryVsTradingCompanySignalsArticle.evidenceBasis}
+      />
 
       <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

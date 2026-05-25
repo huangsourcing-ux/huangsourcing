@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { sampleConsolidationCompareSuppliersArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { sampleConsolidationCompareSuppliersArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const sampleConsolidationCompareSuppliersArticle = {
   href: sampleConsolidationCompareSuppliersArticleHref,
   title: 'Sample Consolidation China: Compare Suppliers Before Choosing a Factory',
-  metaTitle: 'Sample Consolidation China: Compare Suppliers Before Choosing a Factory',
+  metaTitle: 'Sample Consolidation China Guide',
   metaDescription:
     'Use sample consolidation China support to receive, photograph, label, compare, and forward supplier samples before choosing a factory or paying deposit.',
+  publishedDate: 'May 24, 2026',
+  publishedDateIso: '2026-05-24T23:08:00-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'Sample Consolidation China: Compare Suppliers Before Choosing a Factory',
   eyebrow: 'sample consolidation China',
   image: {
@@ -45,6 +51,11 @@ export const sampleConsolidationCompareSuppliersArticle = {
     src: '/images/sample-consolidation-china-compare-suppliers-before-choosing-factory.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/sample-consolidation-china-compare-suppliers-before-choosing-factory.webp', width: 1600 },
+    { height: 1200, src: '/images/sample-consolidation-china-compare-suppliers-before-choosing-factory-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/sample-consolidation-china-compare-suppliers-before-choosing-factory-1x1.webp', width: 1200 },
+  ],
   intro:
     'Choosing a factory from scattered supplier photos is risky. Samples arrive at different times, some suppliers show their best angle, and international freight can become expensive before the buyer has even compared what matters. Sample consolidation in China gives buyers one place to receive, label, photograph, compare, and forward samples before supplier selection becomes a deposit decision.',
   answerSummary:
@@ -167,6 +178,12 @@ Decision needed:
       buyerDecision: 'Consolidate outbound shipment, reject weak samples in China, or ship only the shortlisted set',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Supplier sample labels, tracking numbers, arrival photos, supplier codes, product specs, and buyer comparison priorities provided before consolidation.',
+    'China-side warehouse evidence showing received samples, visible condition, packaging, labels, finish differences, and side-by-side comparison context.',
+    'Sample handling workflow judgment from receiving, labeling, photographing, grouping, holding, rejecting, or forwarding samples before supplier selection.',
+    'Buyer-stage decision context: shortlist a supplier, request clearer evidence, reject weak samples, verify the supplier, or pause before deposit.',
+  ],
   whatToSend: [
     'Supplier names, supplier codes, contact details, and product links or quote references',
     'Tracking numbers, courier names, expected arrival dates, and the city each supplier ships from',
@@ -260,12 +277,7 @@ export function makeSampleConsolidationCompareSuppliersArticleMetadata(): Metada
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: sampleConsolidationCompareSuppliersArticle.image.src,
-          width: sampleConsolidationCompareSuppliersArticle.image.width,
-          height: sampleConsolidationCompareSuppliersArticle.image.height,
-          alt: sampleConsolidationCompareSuppliersArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(sampleConsolidationCompareSuppliersArticle),
       ],
     },
     twitter: {
@@ -278,27 +290,8 @@ export function makeSampleConsolidationCompareSuppliersArticleMetadata(): Metada
 }
 
 export function makeSampleConsolidationCompareSuppliersArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(sampleConsolidationCompareSuppliersArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: sampleConsolidationCompareSuppliersArticle.title,
-      description: sampleConsolidationCompareSuppliersArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(sampleConsolidationCompareSuppliersArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(sampleConsolidationCompareSuppliersArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

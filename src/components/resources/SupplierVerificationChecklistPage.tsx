@@ -10,6 +10,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -63,6 +67,10 @@ export function SupplierVerificationChecklistPage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {supplierVerificationChecklist.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={supplierVerificationChecklist.modifiedDate}
+              publishedDate={supplierVerificationChecklist.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
@@ -267,6 +275,11 @@ export function SupplierVerificationChecklistPage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This checklist is based on supplier documents, payment-path signals, product and packing evidence, and the buyer decision stage before money or goods move."
+        items={supplierVerificationChecklist.evidenceBasis}
+      />
 
       <section className="hs-section-white">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

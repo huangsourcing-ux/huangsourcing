@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { supplierDepositGuideHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { supplierDepositGuideHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   body: string[]
@@ -19,6 +21,12 @@ type FaqItem = {
   question: string
 }
 
+type EvidenceDecisionRow = {
+  buyerDecision: string
+  evidence: string
+  riskNode: string
+}
+
 type RelatedLink = {
   href: string
   label: string
@@ -28,9 +36,13 @@ type RelatedLink = {
 export const supplierDepositGuide = {
   href: supplierDepositGuideHref,
   title: 'How to Verify a Chinese Supplier Before Sending a Deposit',
-  metaTitle: 'How to Verify a Chinese Supplier Before Deposit',
+  metaTitle: 'Verify Chinese Supplier Before Deposit',
   metaDescription:
     'Learn how to verify a Chinese supplier before sending a deposit, including company checks, factory or trader signals, quote risks, payment red flags, and buyer-side next steps.',
+  publishedDate: 'May 19, 2026',
+  publishedDateIso: '2026-05-19T22:31:35-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'How to Verify a Chinese Supplier Before Sending a Deposit',
   eyebrow: 'Supplier verification before deposit',
   image: {
@@ -39,6 +51,11 @@ export const supplierDepositGuide = {
     src: '/images/verify-chinese-supplier-before-deposit.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/verify-chinese-supplier-before-deposit.webp', width: 1600 },
+    { height: 1200, src: '/images/verify-chinese-supplier-before-deposit-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/verify-chinese-supplier-before-deposit-1x1.webp', width: 1200 },
+  ],
   intro:
     'A deposit changes the buyer position. Before money moves, the supplier still has a reason to answer questions, clarify company details, and show evidence. After payment, every correction becomes harder. This guide explains how overseas buyers can verify a Chinese supplier before deposit payment using practical, buyer-side checks.',
   summary:
@@ -187,6 +204,36 @@ Main concern:
       ],
     },
   ] satisfies ArticleSection[],
+  evidenceRows: [
+    {
+      riskNode: 'Company and payment identity',
+      evidence:
+        'Supplier profile, Chinese company name, business license, PI, bank beneficiary, email domain, and contact identity.',
+      buyerDecision:
+        'Pay only when the company and payment path are explained clearly enough for the order risk.',
+    },
+    {
+      riskNode: 'Factory or trader role',
+      evidence:
+        'Factory address, product range, workshop or warehouse photos, production responsibility, sample control, and correction access.',
+      buyerDecision:
+        'Continue, verify deeper, or pause when the supplier role is unclear before deposit.',
+    },
+    {
+      riskNode: 'Quote and PI scope',
+      evidence:
+        'MOQ, lead time, tooling, product specification, packaging, labels, inspection timing, and balance-payment terms.',
+      buyerDecision:
+        'Clarify or renegotiate before deposit if the PI cannot support later QC or correction decisions.',
+    },
+    {
+      riskNode: 'Deposit release',
+      evidence:
+        'Order value, deposit amount, supplier pressure, available proof, next inspection point, and buyer deadline.',
+      buyerDecision:
+        'Pay, reduce exposure, hold payment, request more evidence, or stop before money moves.',
+    },
+  ] satisfies EvidenceDecisionRow[],
   relatedLinks: [
     {
       href: '/supplier-verification-china',
@@ -257,14 +304,9 @@ export function makeSupplierDepositGuideMetadata(): Metadata {
       description: supplierDepositGuide.metaDescription,
       url: canonicalPath,
       siteName: 'Huang Sourcing',
-      type: 'website',
+      type: 'article',
       images: [
-        {
-          url: supplierDepositGuide.image.src,
-          width: supplierDepositGuide.image.width,
-          height: supplierDepositGuide.image.height,
-          alt: supplierDepositGuide.image.alt,
-        },
+        ...getArticleOpenGraphImages(supplierDepositGuide),
       ],
     },
     twitter: {
@@ -277,23 +319,18 @@ export function makeSupplierDepositGuideMetadata(): Metadata {
 }
 
 export function makeSupplierDepositGuideJsonLd() {
-  const pageUrl = getAbsoluteUrl(supplierDepositGuide.href)
-
   return [
+    makeArticleJsonLd(supplierDepositGuide),
     {
       '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: supplierDepositGuide.metaTitle,
-      description: supplierDepositGuide.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      primaryImageOfPage: {
-        '@type': 'ImageObject',
-        url: getAbsoluteUrl(supplierDepositGuide.image.src),
-        width: supplierDepositGuide.image.width,
-        height: supplierDepositGuide.image.height,
-      },
-      publisher: makeOrganizationReference(),
+      '@type': 'ItemList',
+      name: 'Chinese supplier before deposit evidence checklist',
+      itemListElement: supplierDepositGuide.evidenceRows.map((row, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: row.riskNode,
+        description: row.evidence,
+      })),
     },
     makeFaqPageJsonLd(supplierDepositGuide.faqs),
   ]

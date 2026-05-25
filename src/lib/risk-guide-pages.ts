@@ -1,10 +1,31 @@
 import type { Metadata } from 'next'
 
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
+
+type RiskGuideImage = {
+  height: number
+  src: string
+  width: number
+}
+
+type EvidenceDecisionRow = {
+  buyerDecision: string
+  evidence: string
+  riskNode: string
+}
+
+type RiskGuideArticleImageSet = {
+  image: RiskGuideImage & {
+    alt: string
+  }
+  imageVariants: RiskGuideImage[]
+}
 
 export type RiskGuideSlug =
   | 'fnsku-label-check-china'
@@ -30,7 +51,14 @@ export type RiskGuidePage = {
   eyebrow: string
   h1: string
   imageAlt: string
+  imageHeight: number
   imageSrc: string
+  imageVariants: RiskGuideImage[]
+  imageWidth: number
+  publishedDate: string
+  publishedDateIso: string
+  modifiedDate?: string
+  modifiedDateIso?: string
   intro: string
   primaryCtaLabel: string
   ctaMessage: string
@@ -39,6 +67,7 @@ export type RiskGuidePage = {
   checks: string[]
   whatToSend: string[]
   buyerReceives: string[]
+  evidenceRows: EvidenceDecisionRow[]
   scopeLimits: string[]
   internalLinks: RiskGuideLink[]
   faqs: FaqItem[]
@@ -48,14 +77,25 @@ export const riskGuidePages: Record<RiskGuideSlug, RiskGuidePage> = {
   'fnsku-label-check-china': {
     slug: 'fnsku-label-check-china',
     title: 'FNSKU Label Check China',
-    metaTitle: 'FNSKU Label Check China Before FBA Shipment',
+    metaTitle: 'FNSKU Label Check China',
     metaDescription:
       'Check FNSKU labels, carton labels, SKU separation, packaging, and shipment-plan evidence in China before your Amazon FBA goods leave the supplier.',
     eyebrow: 'FNSKU label check China',
     h1: 'FNSKU label check in China before FBA shipment.',
     imageAlt:
       'FNSKU label check in China reviewing cartons labels and SKU separation before FBA shipment',
+    imageHeight: 900,
     imageSrc: '/images/service-fba-prep.webp',
+    imageVariants: [
+      { height: 900, src: '/images/service-fba-prep.webp', width: 1600 },
+      { height: 1200, src: '/images/service-fba-prep-4x3.webp', width: 1600 },
+      { height: 1200, src: '/images/service-fba-prep-1x1.webp', width: 1200 },
+    ],
+    imageWidth: 1600,
+    publishedDate: 'May 19, 2026',
+    publishedDateIso: '2026-05-19T22:08:00-04:00',
+    modifiedDate: articleContentUpdateDate,
+    modifiedDateIso: articleContentUpdateDateIso,
     intro:
       'Use this guide when Amazon-bound goods are still in China and you need buyer-side evidence before cartons leave the supplier or forwarder. Huang Sourcing checks visible FNSKU labels, carton labels, SKU separation, packaging, and pickup readiness before the shipment moves.',
     primaryCtaLabel: 'Check FNSKU labels before shipment',
@@ -99,6 +139,29 @@ FNSKU or carton label concern:
       'Notes on visible mixed-label, missing-label, or SKU separation risk',
       'Practical recommendation before pickup or shipment release',
       'Next-step suggestions for supplier correction or broader FBA prep support',
+    ],
+    evidenceRows: [
+      {
+        riskNode: 'FNSKU and carton label files',
+        evidence:
+          'FNSKU files, carton label files, shipment plan, SKU list, carton count, and packing details provided before pickup.',
+        buyerDecision:
+          'Approve label evidence, request relabeling, or pause pickup until the file and carton evidence match.',
+      },
+      {
+        riskNode: 'SKU separation',
+        evidence:
+          'SKU groups, similar variants, carton-level photos, unit counts, and packing-list relationship checked while goods are still in China.',
+        buyerDecision:
+          'Ship direct, separate SKUs, reopen cartons, or route through prep support before FBA shipment.',
+      },
+      {
+        riskNode: 'Shipment release',
+        evidence:
+          'Pickup window, forwarder contact, carton condition, label placement, and correction photos reviewed before goods leave the supplier.',
+        buyerDecision:
+          'Release shipment, delay pickup, or request a re-check after supplier correction.',
+      },
     ],
     scopeLimits: [
       'We do not guarantee Amazon receiving approval or final FBA acceptance',
@@ -154,14 +217,25 @@ FNSKU or carton label concern:
   'alibaba-supplier-verification-china': {
     slug: 'alibaba-supplier-verification-china',
     title: 'Alibaba Supplier Verification China',
-    metaTitle: 'Alibaba Supplier Verification China Before Deposit | Buyer-Side Check',
+    metaTitle: 'Alibaba Supplier Verification China',
     metaDescription:
       'Verify an Alibaba supplier before sending a deposit. Huang Sourcing checks company identity, factory or trader signals, quote terms, and payment risk from China.',
     eyebrow: 'Alibaba supplier verification',
     h1: 'Alibaba supplier verification before deposit payment.',
     imageAlt:
       'Alibaba supplier verification reviewing company details quote and supplier evidence before deposit',
+    imageHeight: 900,
     imageSrc: '/images/service-supplier-verification.webp',
+    imageVariants: [
+      { height: 900, src: '/images/service-supplier-verification.webp', width: 1600 },
+      { height: 1200, src: '/images/service-supplier-verification-4x3.webp', width: 1600 },
+      { height: 1200, src: '/images/service-supplier-verification-1x1.webp', width: 1200 },
+    ],
+    imageWidth: 1600,
+    publishedDate: 'May 19, 2026',
+    publishedDateIso: '2026-05-19T22:08:00-04:00',
+    modifiedDate: articleContentUpdateDate,
+    modifiedDateIso: articleContentUpdateDateIso,
     intro:
       'Use this guide when an Alibaba supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still needs a buyer-side check. Huang Sourcing helps overseas buyers review visible supplier signals before money leaves the account.',
     primaryCtaLabel: 'Verify Alibaba supplier before deposit',
@@ -205,6 +279,29 @@ Main concern:
       'Factory or trader signal notes',
       'Quote and deposit-payment risk notes',
       'Practical next questions and a go, caution, or stop recommendation',
+    ],
+    evidenceRows: [
+      {
+        riskNode: 'Alibaba profile and company identity',
+        evidence:
+          'Alibaba supplier link, company name, profile details, contact identity, business evidence, and product category fit.',
+        buyerDecision:
+          'Continue supplier review, request stronger proof, or pause before deposit if identity signals do not line up.',
+      },
+      {
+        riskNode: 'Quote and payment path',
+        evidence:
+          'Quote, PI, payment beneficiary, MOQ, lead time, order value, and deposit pressure compared against supplier claims.',
+        buyerDecision:
+          'Pay only with clearer terms, renegotiate exposure, or stop before sending money.',
+      },
+      {
+        riskNode: 'Factory or trader role',
+        evidence:
+          'Factory address, product range, production photos, sample control, and supplier explanation of who handles correction.',
+        buyerDecision:
+          'Use remote verification, request onsite evidence, or switch supplier before commitment.',
+      },
     ],
     scopeLimits: [
       'We do not promise zero supplier risk',
@@ -260,14 +357,25 @@ Main concern:
   'factory-vs-trading-company-china': {
     slug: 'factory-vs-trading-company-china',
     title: 'Factory vs Trading Company China',
-    metaTitle: 'Factory vs Trading Company in China | Supplier Verification Guide',
+    metaTitle: 'Factory vs Trading Company China',
     metaDescription:
       'Understand factory vs trading company signals in China before deposit. Learn what buyers can check remotely, what may need onsite evidence, and when supplier verification helps.',
     eyebrow: 'Factory vs trading company China',
     h1: 'Factory vs trading company in China before deposit.',
     imageAlt:
       'Factory vs trading company in China supplier verification signals before deposit',
+    imageHeight: 900,
     imageSrc: '/images/service-supplier-verification.webp',
+    imageVariants: [
+      { height: 900, src: '/images/service-supplier-verification.webp', width: 1600 },
+      { height: 1200, src: '/images/service-supplier-verification-4x3.webp', width: 1600 },
+      { height: 1200, src: '/images/service-supplier-verification-1x1.webp', width: 1200 },
+    ],
+    imageWidth: 1600,
+    publishedDate: 'May 19, 2026',
+    publishedDateIso: '2026-05-19T22:08:00-04:00',
+    modifiedDate: articleContentUpdateDate,
+    modifiedDateIso: articleContentUpdateDateIso,
     intro:
       'Use this guide when a Chinese supplier says they are a factory, but the company name, address, product range, quote, or Alibaba profile still feels unclear. The goal is not to punish trading companies. The goal is to understand who you are paying, who controls production, and what evidence you should request before deposit.',
     primaryCtaLabel: 'Check supplier role before deposit',
@@ -311,6 +419,29 @@ Main concern:
       'Risk questions to ask before deposit payment',
       'Practical recommendation on whether supplier verification or onsite checking fits',
       'Clear limits on what remote evidence can and cannot prove',
+    ],
+    evidenceRows: [
+      {
+        riskNode: 'Supplier role signals',
+        evidence:
+          'Company name, address, Alibaba profile, website, product range, production photos, and claimed factory details.',
+        buyerDecision:
+          'Proceed, ask clearer role questions, verify deeper, or pause before deposit.',
+      },
+      {
+        riskNode: 'Payment and accountability',
+        evidence:
+          'PI, payment beneficiary, contact identity, sample responsibility, production control, and correction responsibility.',
+        buyerDecision:
+          'Accept the supplier structure, reduce exposure, or avoid paying until accountability is clear.',
+      },
+      {
+        riskNode: 'Remote versus onsite proof',
+        evidence:
+          'Available documents, factory photos, product evidence, and gaps that cannot be settled through profile review alone.',
+        buyerDecision:
+          'Use remote verification, request onsite checking, or choose another supplier before production starts.',
+      },
     ],
     scopeLimits: [
       'We do not make a legal guarantee about the supplier role',
@@ -371,6 +502,18 @@ export function getRiskGuidePage(slug: RiskGuideSlug) {
   return riskGuidePages[slug]
 }
 
+function getRiskGuideArticleImageSet(page: RiskGuidePage): RiskGuideArticleImageSet {
+  return {
+    image: {
+      alt: page.imageAlt,
+      height: page.imageHeight,
+      src: page.imageSrc,
+      width: page.imageWidth,
+    },
+    imageVariants: page.imageVariants,
+  }
+}
+
 export function makeRiskGuideMetadata(page: RiskGuidePage): Metadata {
   const canonicalPath = `/${page.slug}`
 
@@ -385,37 +528,38 @@ export function makeRiskGuideMetadata(page: RiskGuidePage): Metadata {
       description: page.metaDescription,
       url: canonicalPath,
       siteName: 'Huang Sourcing',
-      type: 'website',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: `${page.title} by Huang Sourcing`,
-        },
-      ],
+      type: 'article',
+      images: getArticleOpenGraphImages(getRiskGuideArticleImageSet(page)),
     },
     twitter: {
       card: 'summary_large_image',
       title: page.metaTitle,
       description: page.metaDescription,
-      images: ['/og-image.png'],
+      images: [page.imageSrc],
     },
   }
 }
 
 export function makeRiskGuideJsonLd(page: RiskGuidePage) {
-  const pageUrl = getAbsoluteUrl(`/${page.slug}`)
-
   return [
+    makeArticleJsonLd({
+      ...getRiskGuideArticleImageSet(page),
+      href: `/${page.slug}`,
+      metaDescription: page.metaDescription,
+      modifiedDateIso: page.modifiedDateIso,
+      publishedDateIso: page.publishedDateIso,
+      title: page.title,
+    }),
     {
       '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: page.metaTitle,
-      description: page.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      publisher: makeOrganizationReference(),
+      '@type': 'ItemList',
+      name: `${page.title} evidence checklist`,
+      itemListElement: page.evidenceRows.map((row, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: row.riskNode,
+        description: row.evidence,
+      })),
     },
     makeFaqPageJsonLd(page.faqs),
   ]

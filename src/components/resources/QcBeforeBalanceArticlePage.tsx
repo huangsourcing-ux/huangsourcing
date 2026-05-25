@@ -9,6 +9,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -62,6 +66,10 @@ export function QcBeforeBalanceArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {qcBeforeBalanceArticle.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={qcBeforeBalanceArticle.modifiedDate}
+              publishedDate={qcBeforeBalanceArticle.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={qcBeforeBalanceArticle.primaryCta.label}
@@ -221,6 +229,11 @@ export function QcBeforeBalanceArticlePage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This balance-payment guidance is based on product, packing, label, carton, defect, and document evidence that can still support a hold, rework, or release decision."
+        items={qcBeforeBalanceArticle.evidenceBasis}
+      />
 
       <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

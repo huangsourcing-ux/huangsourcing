@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { supplierVerificationChecklistHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { supplierVerificationChecklistHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ChecklistStage = {
   buyerDecision: string[]
@@ -36,9 +38,13 @@ type RelatedLink = {
 export const supplierVerificationChecklist = {
   href: supplierVerificationChecklistHref,
   title: 'China Supplier Verification Checklist for Overseas Buyers',
-  metaTitle: 'China Supplier Verification Checklist for Overseas Buyers',
+  metaTitle: 'China Supplier Verification Checklist',
   metaDescription:
     'Use this supplier verification China checklist before deposit, balance payment, pickup, or FBA shipment. Know what to check and when to stop.',
+  publishedDate: 'May 21, 2026',
+  publishedDateIso: '2026-05-21T21:58:27-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'China Supplier Verification Checklist for Overseas Buyers',
   eyebrow: 'Supplier verification China checklist',
   image: {
@@ -47,6 +53,11 @@ export const supplierVerificationChecklist = {
     src: '/images/service-supplier-verification.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/service-supplier-verification.webp', width: 1600 },
+    { height: 1200, src: '/images/service-supplier-verification-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/service-supplier-verification-1x1.webp', width: 1200 },
+  ],
   intro:
     'Finding a supplier in China is easy. Verifying whether that supplier is safe enough to receive your money is the harder part. This checklist is written for overseas buyers who need a practical decision before deposit, balance payment, pickup, or Amazon FBA shipment.',
   answerSummary:
@@ -208,6 +219,12 @@ Main concern:
       decision: 'Ship to FBA, correct prep issues, or route through a prep warehouse',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Chinese business license, supplier profile, quote, PI, payment path, product specification, sample notes, packing details, and FBA files when relevant.',
+    'Stage-specific evidence before deposit, balance payment, pickup, and FBA shipment instead of generic supplier claims.',
+    'Photo-backed or onsite signals when the scope includes factory, production, carton, label, warehouse, or shipment-readiness checks.',
+    'Scope limits separating visible supplier verification from legal due diligence, lab testing, customs advice, product compliance, and Amazon receiving approval.',
+  ],
   documents: [
     'Chinese business license',
     'Quotation with Chinese company name',
@@ -309,12 +326,7 @@ export function makeSupplierVerificationChecklistMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: supplierVerificationChecklist.image.src,
-          width: supplierVerificationChecklist.image.width,
-          height: supplierVerificationChecklist.image.height,
-          alt: supplierVerificationChecklist.image.alt,
-        },
+        ...getArticleOpenGraphImages(supplierVerificationChecklist),
       ],
     },
     twitter: {
@@ -327,27 +339,8 @@ export function makeSupplierVerificationChecklistMetadata(): Metadata {
 }
 
 export function makeSupplierVerificationChecklistJsonLd() {
-  const pageUrl = getAbsoluteUrl(supplierVerificationChecklist.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: supplierVerificationChecklist.title,
-      description: supplierVerificationChecklist.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(supplierVerificationChecklist.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(supplierVerificationChecklist),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

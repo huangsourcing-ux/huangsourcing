@@ -13,6 +13,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { ArticleByline } from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -66,21 +67,7 @@ export function BuyerSideInspectionReportArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {buyerSideInspectionReportArticle.answerSummary}
             </p>
-            <div className="mt-5 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-4 shadow-[var(--hs-shadow-sm)]">
-              <p className="text-sm font-extrabold text-[var(--hs-text)]">
-                Written by{' '}
-                <Link
-                  className="text-[var(--hs-accent)] underline-offset-4 hover:underline"
-                  href="/about#agent-huang"
-                >
-                  Agent Huang
-                </Link>
-              </p>
-              <p className="hs-muted mt-1 text-sm leading-6">
-                China-side sourcing partner helping overseas buyers verify suppliers,
-                inspect goods, and reduce payment or shipment risk before money or goods move.
-              </p>
-            </div>
+            <ArticleByline publishedDate={buyerSideInspectionReportArticle.publishedDate} />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={buyerSideInspectionReportArticle.primaryCta.label}

@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { qcBeforeBalanceArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { qcBeforeBalanceArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const qcBeforeBalanceArticle = {
   href: qcBeforeBalanceArticleHref,
   title: 'QC Inspection in China Before Balance Payment: What to Check',
-  metaTitle: 'QC Inspection in China Before Balance Payment: What to Check',
+  metaTitle: 'QC Inspection Before Balance Payment',
   metaDescription:
     'Use this QC inspection China before balance payment checklist to check finished goods, defects, packaging, labels, cartons, and shipment readiness before final payment.',
+  publishedDate: 'May 21, 2026',
+  publishedDateIso: '2026-05-21T21:58:27-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'QC Inspection in China Before Balance Payment: What to Check',
   eyebrow: 'QC inspection China before balance payment',
   image: {
@@ -45,6 +51,11 @@ export const qcBeforeBalanceArticle = {
     src: '/images/service-qc-inspection.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/service-qc-inspection.webp', width: 1600 },
+    { height: 1200, src: '/images/service-qc-inspection-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/service-qc-inspection-1x1.webp', width: 1200 },
+  ],
   intro:
     'Balance payment is the moment when many buyers still have leverage. Once final payment is released, wrong labels, visible defects, missing accessories, weak cartons, or unclear packing become harder to fix. This guide explains what overseas buyers should check before paying the balance while the goods are still in China.',
   answerSummary:
@@ -165,6 +176,12 @@ Critical checkpoints:
       buyerDecision: 'Release goods, delay pickup, or escalate before freight is booked',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Purchase order, product specification, approved sample notes, packing requirements, label files, carton details, and balance-payment timing.',
+    'Finished-goods, defect, quantity, packaging, label, carton, and document evidence checked while the buyer still controls the balance payment.',
+    'China-side QC workflow judgment from connecting onsite findings to supplier correction, rework, sorting, re-inspection, or payment hold decisions.',
+    'Scope limits that separate visible QC evidence from legal certainty, hidden defects, laboratory testing, certification, or future supplier behavior.',
+  ],
   whatToSend: [
     'Purchase order, pro forma invoice, and final product specification',
     'Approved sample notes, product photos, and critical defect list',
@@ -256,12 +273,7 @@ export function makeQcBeforeBalanceArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: qcBeforeBalanceArticle.image.src,
-          width: qcBeforeBalanceArticle.image.width,
-          height: qcBeforeBalanceArticle.image.height,
-          alt: qcBeforeBalanceArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(qcBeforeBalanceArticle),
       ],
     },
     twitter: {
@@ -274,27 +286,8 @@ export function makeQcBeforeBalanceArticleMetadata(): Metadata {
 }
 
 export function makeQcBeforeBalanceArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(qcBeforeBalanceArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: qcBeforeBalanceArticle.title,
-      description: qcBeforeBalanceArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(qcBeforeBalanceArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(qcBeforeBalanceArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

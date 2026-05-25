@@ -3,6 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceDecisionMatrix,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -58,6 +62,10 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {page.intro}
             </p>
+            <ArticleByline
+              modifiedDate={page.modifiedDate}
+              publishedDate={page.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={page.primaryCtaLabel}
@@ -151,6 +159,12 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
           </Reveal>
         </div>
       </section>
+
+      <EvidenceDecisionMatrix
+        intro="This matrix connects the visible supplier or shipment evidence to the buyer decision the guide is meant to support."
+        rows={page.evidenceRows}
+        title="What evidence supports the next buyer decision?"
+      />
 
       <section className="hs-section-white">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

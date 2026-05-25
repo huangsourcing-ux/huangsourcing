@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { amazonFbaPrepArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { amazonFbaPrepArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const amazonFbaPrepArticle = {
   href: amazonFbaPrepArticleHref,
   title: 'Amazon FBA Prep in China: FNSKU, Carton Labels, SKU Separation',
-  metaTitle: 'Amazon FBA Prep in China: FNSKU, Carton Labels, SKU Separation',
+  metaTitle: 'Amazon FBA Prep China Checklist',
   metaDescription:
     'Use this Amazon FBA prep China checklist before shipment to confirm FNSKU labels, carton labels, SKU separation, packing rules, and pickup readiness.',
+  publishedDate: 'May 23, 2026',
+  publishedDateIso: '2026-05-23T03:53:10-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'Amazon FBA Prep in China: FNSKU, Carton Labels, SKU Separation',
   eyebrow: 'Amazon FBA prep China',
   image: {
@@ -45,6 +51,11 @@ export const amazonFbaPrepArticle = {
     src: '/images/amazon-fba-prep-fnsku-carton-labels.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/amazon-fba-prep-fnsku-carton-labels.webp', width: 1600 },
+    { height: 1200, src: '/images/amazon-fba-prep-fnsku-carton-labels-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/amazon-fba-prep-fnsku-carton-labels-1x1.webp', width: 1200 },
+  ],
   intro:
     'Amazon FBA prep in China is most useful before cartons leave the supplier or forwarder warehouse. Once goods are moving, wrong FNSKU labels, missing carton labels, mixed SKUs, or unclear shipment-plan details can turn a simple shipment into relabeling fees, receiving delays, or stranded inventory.',
   answerSummary:
@@ -167,6 +178,12 @@ Main concern:
       buyerDecision: 'Ship direct to FBA, delay pickup, use prep warehouse, or re-check after correction',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Final FNSKU files, carton label files, shipment plan, SKU list, packing list, and pickup timing provided for the order.',
+    'Carton-level and SKU-level photo evidence showing labels, separated SKU groups, carton count, carton condition, and correction needs.',
+    'China-side FBA prep workflow judgment from checking labels, cartons, packing details, and forwarder release readiness before goods leave China.',
+    'Buyer-stage decision context: ship direct to FBA, relabel, repack, route through prep support, or delay pickup until evidence is clear.',
+  ],
   whatToSend: [
     'FNSKU label files, carton label files, shipment plan, and SKU list',
     'Product photos, unit count, carton count, units per carton, and packing method',
@@ -259,12 +276,7 @@ export function makeAmazonFbaPrepArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: amazonFbaPrepArticle.image.src,
-          width: amazonFbaPrepArticle.image.width,
-          height: amazonFbaPrepArticle.image.height,
-          alt: amazonFbaPrepArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(amazonFbaPrepArticle),
       ],
     },
     twitter: {
@@ -277,27 +289,8 @@ export function makeAmazonFbaPrepArticleMetadata(): Metadata {
 }
 
 export function makeAmazonFbaPrepArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(amazonFbaPrepArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: amazonFbaPrepArticle.title,
-      description: amazonFbaPrepArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(amazonFbaPrepArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(amazonFbaPrepArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

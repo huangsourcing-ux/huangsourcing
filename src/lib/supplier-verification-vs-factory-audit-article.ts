@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
-import { supplierVerificationVsFactoryAuditArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { supplierVerificationVsFactoryAuditArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -52,7 +52,7 @@ export const supplierVerificationVsFactoryAuditArticle = {
   h1: 'Is Supplier Verification the Same as a Factory Audit?',
   eyebrow: 'Supplier verification vs factory audit',
   publishedDate: 'May 25, 2026',
-  publishedDateIso: '2026-05-25T09:00:00-04:00',
+  publishedDateIso: '2026-05-25T01:29:03-04:00',
   image: {
     alt: 'Agent Huang comparing supplier verification documents with factory audit scope inside a China factory office',
     height: 900,
@@ -356,12 +356,7 @@ export function makeSupplierVerificationVsFactoryAuditArticleMetadata(): Metadat
       url: canonicalPath,
       siteName: 'Huang Sourcing',
       type: 'article',
-      images: supplierVerificationVsFactoryAuditArticle.image.variants.map((image) => ({
-        url: image.src,
-        width: image.width,
-        height: image.height,
-        alt: supplierVerificationVsFactoryAuditArticle.image.alt,
-      })),
+      images: getArticleOpenGraphImages(supplierVerificationVsFactoryAuditArticle),
     },
     twitter: {
       card: 'summary_large_image',
@@ -373,31 +368,8 @@ export function makeSupplierVerificationVsFactoryAuditArticleMetadata(): Metadat
 }
 
 export function makeSupplierVerificationVsFactoryAuditArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(supplierVerificationVsFactoryAuditArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: supplierVerificationVsFactoryAuditArticle.title,
-      description: supplierVerificationVsFactoryAuditArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: supplierVerificationVsFactoryAuditArticle.image.variants.map((image) =>
-        getAbsoluteUrl(image.src),
-      ),
-      datePublished: supplierVerificationVsFactoryAuditArticle.publishedDateIso,
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-        url: getAbsoluteUrl('/about#agent-huang'),
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(supplierVerificationVsFactoryAuditArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

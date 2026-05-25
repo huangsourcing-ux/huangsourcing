@@ -9,6 +9,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -62,6 +66,10 @@ export function FnskuLabelMistakesArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {fnskuLabelMistakesArticle.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={fnskuLabelMistakesArticle.modifiedDate}
+              publishedDate={fnskuLabelMistakesArticle.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={fnskuLabelMistakesArticle.primaryCta.label}
@@ -220,6 +228,11 @@ export function FnskuLabelMistakesArticlePage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This label-risk guidance is based on label files, carton-level photos, SKU grouping, packing evidence, and the pickup decision before goods leave China."
+        items={fnskuLabelMistakesArticle.evidenceBasis}
+      />
 
       <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

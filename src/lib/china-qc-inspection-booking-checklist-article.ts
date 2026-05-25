@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { chinaQcInspectionBookingChecklistArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { chinaQcInspectionBookingChecklistArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -37,6 +39,10 @@ export const chinaQcInspectionBookingChecklistArticle = {
   metaTitle: 'China QC Inspection Booking Checklist',
   metaDescription:
     'Before booking a China QC inspection, send product specs, PO details, factory address, packing list, label files, photos, deadlines, and the buyer decision you need.',
+  publishedDate: 'May 24, 2026',
+  publishedDateIso: '2026-05-24T23:36:32-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'What to Send Before Booking a China QC Inspection',
   eyebrow: 'China QC inspection booking checklist',
   image: {
@@ -45,6 +51,11 @@ export const chinaQcInspectionBookingChecklistArticle = {
     src: '/images/china-qc-inspection-booking-checklist.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/china-qc-inspection-booking-checklist.webp', width: 1600 },
+    { height: 1200, src: '/images/china-qc-inspection-booking-checklist-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/china-qc-inspection-booking-checklist-1x1.webp', width: 1200 },
+  ],
   intro:
     'A China QC inspection is easier to quote, schedule, and scope when the buyer sends the right files before booking. The goal is not to create paperwork for its own sake. The goal is to help Agent Huang understand what should be checked, where the goods are, when the decision is due, and what evidence the buyer needs before payment, pickup, or shipment.',
   answerSummary:
@@ -180,6 +191,12 @@ Main concern:
       buyerDecision: 'Confirm onsite checks, remove unsupported checks, or use lab testing or specialist review separately',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Inspection request details, product specifications, approved sample notes, packing requirements, label files, and supplier timing shared before booking.',
+    'Order-stage facts including production readiness, deposit or balance status, inspection date, shipment deadline, and the decision the buyer needs after inspection.',
+    'Document and photo signals used to scope what an inspector can reasonably verify onsite during the booked QC window.',
+    'Scope limits around missing files, unclear standards, late label changes, and evidence that cannot be confirmed before the inspection starts.',
+  ],
   whatToSend: [
     'Purchase order, pro forma invoice, order quantity, SKU list, model numbers, and color or size breakdown',
     'Product specification, approved sample notes, product photos, drawings, dimensions, material notes, and critical defect list',
@@ -271,12 +288,7 @@ export function makeChinaQcInspectionBookingChecklistArticleMetadata(): Metadata
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: chinaQcInspectionBookingChecklistArticle.image.src,
-          width: chinaQcInspectionBookingChecklistArticle.image.width,
-          height: chinaQcInspectionBookingChecklistArticle.image.height,
-          alt: chinaQcInspectionBookingChecklistArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(chinaQcInspectionBookingChecklistArticle),
       ],
     },
     twitter: {
@@ -289,27 +301,8 @@ export function makeChinaQcInspectionBookingChecklistArticleMetadata(): Metadata
 }
 
 export function makeChinaQcInspectionBookingChecklistArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(chinaQcInspectionBookingChecklistArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: chinaQcInspectionBookingChecklistArticle.title,
-      description: chinaQcInspectionBookingChecklistArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(chinaQcInspectionBookingChecklistArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(chinaQcInspectionBookingChecklistArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

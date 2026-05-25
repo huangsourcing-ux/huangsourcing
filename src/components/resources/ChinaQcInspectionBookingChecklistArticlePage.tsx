@@ -9,6 +9,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import {
+  ArticleByline,
+  EvidenceBasisSection,
+} from '@/components/resources/ArticleTrustSignals'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
@@ -62,6 +66,10 @@ export function ChinaQcInspectionBookingChecklistArticlePage() {
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {chinaQcInspectionBookingChecklistArticle.answerSummary}
             </p>
+            <ArticleByline
+              modifiedDate={chinaQcInspectionBookingChecklistArticle.modifiedDate}
+              publishedDate={chinaQcInspectionBookingChecklistArticle.publishedDate}
+            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={chinaQcInspectionBookingChecklistArticle.primaryCta.label}
@@ -217,6 +225,11 @@ export function ChinaQcInspectionBookingChecklistArticlePage() {
           </div>
         </div>
       </section>
+
+      <EvidenceBasisSection
+        intro="This booking guidance is based on the files, supplier timing, and buyer decision context needed to scope a QC inspection before the inspector goes onsite."
+        items={chinaQcInspectionBookingChecklistArticle.evidenceBasis}
+      />
 
       <section className="hs-section-white" id="what-to-send">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
-import { buyerSideInspectionReportArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { buyerSideInspectionReportArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -43,6 +43,8 @@ export const buyerSideInspectionReportArticle = {
   metaTitle: 'Buyer-Side Inspection Report Guide',
   metaDescription:
     'Learn what a buyer-side inspection report should include: product photos, defects, quantities, packing, labels, scope limits, and buyer decisions before payment or pickup.',
+  publishedDate: 'May 25, 2026',
+  publishedDateIso: '2026-05-25T00:34:58-04:00',
   h1: 'What Does a Buyer-Side Inspection Report Include?',
   eyebrow: 'Buyer-side inspection report',
   image: {
@@ -355,12 +357,7 @@ export function makeBuyerSideInspectionReportArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: buyerSideInspectionReportArticle.image.src,
-          width: buyerSideInspectionReportArticle.image.width,
-          height: buyerSideInspectionReportArticle.image.height,
-          alt: buyerSideInspectionReportArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(buyerSideInspectionReportArticle),
       ],
     },
     twitter: {
@@ -373,30 +370,8 @@ export function makeBuyerSideInspectionReportArticleMetadata(): Metadata {
 }
 
 export function makeBuyerSideInspectionReportArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(buyerSideInspectionReportArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: buyerSideInspectionReportArticle.title,
-      description: buyerSideInspectionReportArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: buyerSideInspectionReportArticle.imageVariants.map((image) =>
-        getAbsoluteUrl(image.src),
-      ),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-        url: getAbsoluteUrl('/about#agent-huang'),
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(buyerSideInspectionReportArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

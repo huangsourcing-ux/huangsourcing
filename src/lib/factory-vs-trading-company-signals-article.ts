@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { factoryVsTradingCompanySignalsArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { factoryVsTradingCompanySignalsArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -34,9 +36,13 @@ type RelatedLink = {
 export const factoryVsTradingCompanySignalsArticle = {
   href: factoryVsTradingCompanySignalsArticleHref,
   title: 'Factory vs Trading Company in China: Practical Signals Buyers Can Check',
-  metaTitle: 'Factory vs Trading Company in China: Practical Signals Buyers Can Check',
+  metaTitle: 'Factory vs Trading Company China',
   metaDescription:
     'Use this factory vs trading company China guide to check license, address, production evidence, sample origin, quote signals, and deposit decisions.',
+  publishedDate: 'May 24, 2026',
+  publishedDateIso: '2026-05-24T21:59:18-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'Factory vs Trading Company in China: Practical Signals Buyers Can Check',
   eyebrow: 'factory vs trading company China',
   image: {
@@ -45,6 +51,11 @@ export const factoryVsTradingCompanySignalsArticle = {
     src: '/images/factory-vs-trading-company-practical-signals.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/factory-vs-trading-company-practical-signals.webp', width: 1600 },
+    { height: 1200, src: '/images/factory-vs-trading-company-practical-signals-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/factory-vs-trading-company-practical-signals-1x1.webp', width: 1200 },
+  ],
   intro:
     'The factory vs trading company question matters most before a buyer pays a deposit or builds a production plan around one supplier. A trading company is not automatically a bad choice, and a factory is not automatically safe. The risk is not knowing who controls production, who receives payment, and who can fix problems when quality or timing changes.',
   answerSummary:
@@ -167,6 +178,12 @@ Main concern:
       buyerDecision: 'Pay deposit, change payment terms, request verification, or pause the order',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Supplier license, company name, address, website, platform profile, quote, PI, and payment beneficiary signals compared for consistency.',
+    'Product-range, sample-origin, workshop-photo, production-process, and contact-role evidence used to separate practical signals from sales claims.',
+    'Buyer-stage context before deposit, sample approval, or supplier selection, where the next decision is whether to verify deeper or pause.',
+    'China-side supplier verification workflow judgment, with limits around legal ownership proof and what remote documents alone can prove.',
+  ],
   whatToSend: [
     'Supplier website, marketplace profile, Alibaba page, or sales contact details',
     'Chinese business license, English company name, Chinese company name, and business card if available',
@@ -259,12 +276,7 @@ export function makeFactoryVsTradingCompanySignalsArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: factoryVsTradingCompanySignalsArticle.image.src,
-          width: factoryVsTradingCompanySignalsArticle.image.width,
-          height: factoryVsTradingCompanySignalsArticle.image.height,
-          alt: factoryVsTradingCompanySignalsArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(factoryVsTradingCompanySignalsArticle),
       ],
     },
     twitter: {
@@ -277,27 +289,8 @@ export function makeFactoryVsTradingCompanySignalsArticleMetadata(): Metadata {
 }
 
 export function makeFactoryVsTradingCompanySignalsArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(factoryVsTradingCompanySignalsArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: factoryVsTradingCompanySignalsArticle.title,
-      description: factoryVsTradingCompanySignalsArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(factoryVsTradingCompanySignalsArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(factoryVsTradingCompanySignalsArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',

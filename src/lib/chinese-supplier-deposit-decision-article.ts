@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 
-import { chineseSupplierDepositDecisionArticleHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeFaqPageJsonLd,
-  makeOrganizationReference,
-} from '@/lib/structured-data'
+  articleContentUpdateDate,
+  articleContentUpdateDateIso,
+  getArticleOpenGraphImages,
+  makeArticleJsonLd,
+} from '@/lib/article-seo'
+import { chineseSupplierDepositDecisionArticleHref } from '@/lib/site-links'
+import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -37,6 +39,10 @@ export const chineseSupplierDepositDecisionArticle = {
   metaTitle: 'Chinese Supplier Deposit Decision',
   metaDescription:
     'Decide whether to pay a 30% deposit to a Chinese supplier. Check supplier identity, PI terms, bank details, sample evidence, and payment red flags first.',
+  publishedDate: 'May 24, 2026',
+  publishedDateIso: '2026-05-24T23:21:10-04:00',
+  modifiedDate: articleContentUpdateDate,
+  modifiedDateIso: articleContentUpdateDateIso,
   h1: 'Should I Pay a 30% Deposit to a Chinese Supplier?',
   eyebrow: 'Chinese supplier deposit decision',
   image: {
@@ -45,6 +51,11 @@ export const chineseSupplierDepositDecisionArticle = {
     src: '/images/chinese-supplier-deposit-decision.webp',
     width: 1600,
   },
+  imageVariants: [
+    { height: 900, src: '/images/chinese-supplier-deposit-decision.webp', width: 1600 },
+    { height: 1200, src: '/images/chinese-supplier-deposit-decision-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/chinese-supplier-deposit-decision-1x1.webp', width: 1200 },
+  ],
   intro:
     'A 30% deposit is common in China sourcing, but common does not mean automatic. The buyer decision is not simply whether the supplier sounds professional. The decision is whether the supplier identity, payment path, PI terms, product evidence, and correction plan are clear enough before money leaves your account.',
   answerSummary:
@@ -181,6 +192,12 @@ Main concern:
       buyerDecision: 'Pay deposit with a written checkpoint, hold payment, or renegotiate the process',
     },
   ] satisfies DecisionRow[],
+  evidenceBasis: [
+    'Supplier profile, company name, PI, quote terms, bank beneficiary details, product scope, and deposit request shared before money moves.',
+    'Payment-path and company-identity consistency signals that affect whether the buyer should pay, hold, renegotiate, or stop.',
+    'Product, sample, packaging, label, and inspection-timing evidence used to decide whether the deposit secures a clear production scope.',
+    'China-side supplier verification workflow judgment, with limits around legal certainty, hidden defects, and future production behavior.',
+  ],
   whatToSend: [
     'Supplier profile, website, Alibaba page, or other supplier link',
     'Business license, company name in English and Chinese, and contact details',
@@ -278,12 +295,7 @@ export function makeChineseSupplierDepositDecisionArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       images: [
-        {
-          url: chineseSupplierDepositDecisionArticle.image.src,
-          width: chineseSupplierDepositDecisionArticle.image.width,
-          height: chineseSupplierDepositDecisionArticle.image.height,
-          alt: chineseSupplierDepositDecisionArticle.image.alt,
-        },
+        ...getArticleOpenGraphImages(chineseSupplierDepositDecisionArticle),
       ],
     },
     twitter: {
@@ -296,27 +308,8 @@ export function makeChineseSupplierDepositDecisionArticleMetadata(): Metadata {
 }
 
 export function makeChineseSupplierDepositDecisionArticleJsonLd() {
-  const pageUrl = getAbsoluteUrl(chineseSupplierDepositDecisionArticle.href)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: chineseSupplierDepositDecisionArticle.title,
-      description: chineseSupplierDepositDecisionArticle.metaDescription,
-      url: pageUrl,
-      inLanguage: 'en',
-      image: getAbsoluteUrl(chineseSupplierDepositDecisionArticle.image.src),
-      author: {
-        '@type': 'Person',
-        name: 'Agent Huang',
-      },
-      publisher: makeOrganizationReference(),
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': pageUrl,
-      },
-    },
+    makeArticleJsonLd(chineseSupplierDepositDecisionArticle),
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
