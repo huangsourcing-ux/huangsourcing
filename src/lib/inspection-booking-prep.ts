@@ -1,12 +1,14 @@
-import {
-  businessEmail,
-  whatToSendBeforeChinaInspectionHref,
-} from '@/lib/site-links'
+import { whatToSendBeforeChinaInspectionHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import {
   seoServicePages,
   type SeoServiceSlug,
 } from '@/lib/seo-service-pages'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+  makeServiceJsonLd,
+} from '@/lib/structured-data'
 
 export type BookingPrepServiceItem = {
   slug: SeoServiceSlug
@@ -130,35 +132,19 @@ export function makeBookingPrepJsonLd() {
         'Booking preparation guide for supplier verification, QC inspection, pre-shipment inspection, Amazon FBA prep, and sample consolidation in China.',
       url: pageUrl,
       inLanguage: 'en',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
-      hasPart: bookingPrepServiceItems.map((item) => ({
-        '@type': 'Service',
-        name: item.service,
-        url: getAbsoluteUrl(item.href),
-        provider: {
-          '@type': 'Organization',
-          name: 'Huang Sourcing',
-        },
-        description: `${item.stage}: ${item.whatToSend.join(', ')}.`,
-      })),
+      publisher: makeOrganizationReference(),
+      hasPart: bookingPrepServiceItems.map((item) =>
+        makeServiceJsonLd(
+          {
+            name: item.service,
+            description: `${item.stage}: ${item.whatToSend.join(', ')}.`,
+            serviceType: item.service,
+            url: getAbsoluteUrl(item.href),
+          },
+          { includeContext: false },
+        ),
+      ),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: bookingPrepFaqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
+    makeFaqPageJsonLd(bookingPrepFaqs),
   ]
 }

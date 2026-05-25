@@ -73,6 +73,7 @@ function ChinaSourcingInspectionPricingPage() {
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs
+        currentPath="/china-sourcing-inspection-pricing"
         items={[
           { label: 'China sourcing services', href: chinaSourcingServicesHref },
           { label: 'Pricing guide' },

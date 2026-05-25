@@ -41,6 +41,7 @@ export function HighIntentRiskGuidePage({ page }: HighIntentRiskGuidePageProps) 
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={jsonLd} />
       <SiteBreadcrumbs
+        currentPath={`/${page.slug}`}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: page.title },

@@ -42,6 +42,7 @@ export function FactoryVsTradingCompanySignalsArticlePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeFactoryVsTradingCompanySignalsArticleJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={factoryVsTradingCompanySignalsArticle.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: factoryVsTradingCompanySignalsArticle.title },

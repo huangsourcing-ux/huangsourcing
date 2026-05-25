@@ -179,7 +179,10 @@ export function ChinaSourcingServicesPage() {
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
-      <SiteBreadcrumbs items={[{ label: 'China sourcing services' }]} />
+      <SiteBreadcrumbs
+        currentPath="/china-sourcing-services"
+        items={[{ label: 'China sourcing services' }]}
+      />
 
       <section className="relative overflow-hidden border-b border-[var(--hs-border)] bg-[radial-gradient(circle_at_82%_6%,rgba(200,61,50,0.12),transparent_24rem),linear-gradient(180deg,#fffdf9_0%,#f4f0e8_100%)]">
         <div className="hs-container relative py-10 sm:py-14 lg:py-16">

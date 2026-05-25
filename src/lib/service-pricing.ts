@@ -1,8 +1,10 @@
-import {
-  businessEmail,
-  chinaSourcingInspectionPricingHref,
-} from '@/lib/site-links'
+import { chinaSourcingInspectionPricingHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+  makeServiceJsonLd,
+} from '@/lib/structured-data'
 
 export type PricedServiceSlug =
   | 'supplier-verification-china'
@@ -130,50 +132,35 @@ export function makePricingGuideJsonLd() {
         'Starting prices and quote factors for supplier verification, QC inspection, pre-shipment inspection, sample consolidation, and Amazon FBA prep in China.',
       url: pageUrl,
       inLanguage: 'en',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
-        url: getAbsoluteUrl('/'),
-        email: businessEmail,
-      },
-      hasPart: servicePricingGuideItems.map((item) => ({
-        '@type': 'Service',
-        name: item.service,
-        url: getAbsoluteUrl(item.href),
-        provider: {
-          '@type': 'Organization',
-          name: 'Huang Sourcing',
-        },
-        offers: item.priceValue
-          ? {
-              '@type': 'Offer',
-              price: item.priceValue,
-              priceCurrency: item.priceCurrency ?? 'USD',
-              url: getAbsoluteUrl(item.href),
-            }
-          : {
-              '@type': 'Offer',
-              priceSpecification: {
-                '@type': 'PriceSpecification',
-                priceCurrency: 'USD',
-                description: item.startingPoint,
-              },
-              url: getAbsoluteUrl(item.href),
-            },
-      })),
+      publisher: makeOrganizationReference(),
+      hasPart: servicePricingGuideItems.map((item) =>
+        makeServiceJsonLd(
+          {
+            name: item.service,
+            description: item.quoteNote,
+            serviceType: item.service,
+            url: getAbsoluteUrl(item.href),
+            offers: item.priceValue
+              ? {
+                  '@type': 'Offer',
+                  price: item.priceValue,
+                  priceCurrency: item.priceCurrency ?? 'USD',
+                  url: getAbsoluteUrl(item.href),
+                }
+              : {
+                  '@type': 'Offer',
+                  priceSpecification: {
+                    '@type': 'PriceSpecification',
+                    priceCurrency: 'USD',
+                    description: item.startingPoint,
+                  },
+                  url: getAbsoluteUrl(item.href),
+                },
+          },
+          { includeContext: false },
+        ),
+      ),
     },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      inLanguage: 'en',
-      mainEntity: pricingGuideFaqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
+    makeFaqPageJsonLd(pricingGuideFaqs),
   ]
 }

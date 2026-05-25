@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 
-import { businessEmail } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
+import {
+  chinaServiceAreas,
+  makeFaqPageJsonLd,
+  makeOrganizationReference,
+} from '@/lib/structured-data'
 
 export type SourcingStageSlug =
   | 'before-deposit-china-supplier-check'
@@ -657,40 +661,25 @@ export function makeSourcingStageMetadata(page: SourcingStagePage): Metadata {
 }
 
 export function makeSourcingStageJsonLd(page: SourcingStagePage) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: page.metaTitle,
-    description: page.metaDescription,
-    url: getAbsoluteUrl(`/${page.slug}`),
-    inLanguage: 'en',
-    keywords: page.seoKeyword,
-    publisher: {
-      '@type': 'Organization',
-      name: 'Huang Sourcing',
-      url: getAbsoluteUrl('/'),
-      email: businessEmail,
-    },
-    about: {
-      '@type': 'Service',
-      name: page.primaryService,
-      serviceType: page.primaryService,
-      provider: {
-        '@type': 'Organization',
-        name: 'Huang Sourcing',
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: page.metaTitle,
+      description: page.metaDescription,
+      url: getAbsoluteUrl(`/${page.slug}`),
+      inLanguage: 'en',
+      keywords: page.seoKeyword,
+      publisher: makeOrganizationReference(),
+      about: {
+        '@type': 'Service',
+        name: page.primaryService,
+        serviceType: page.primaryService,
+        url: getAbsoluteUrl(page.primaryServiceHref),
+        provider: makeOrganizationReference(),
+        areaServed: chinaServiceAreas,
       },
-      areaServed: 'China',
     },
-    mainEntity: {
-      '@type': 'FAQPage',
-      mainEntity: page.faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: faq.answer,
-        },
-      })),
-    },
-  }
+    makeFaqPageJsonLd(page.faqs),
+  ]
 }

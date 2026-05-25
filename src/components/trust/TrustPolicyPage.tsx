@@ -31,7 +31,10 @@ export function TrustPolicyPage({ page }: TrustPolicyPageProps) {
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="resources" topBanner={null} />
-      <SiteBreadcrumbs items={[{ label: 'Trust & policies' }, { label: page.title }]} />
+      <SiteBreadcrumbs
+        currentPath={page.href}
+        items={[{ label: 'Trust & policies' }, { label: page.title }]}
+      />
 
       <section className="hs-hero">
         <div className="hs-container grid items-start gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">

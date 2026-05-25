@@ -377,7 +377,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
       <ServiceViewTracker serviceName={page.title} serviceSlug={page.slug} />
 
       <JsonLd data={jsonLd} />
-      <SiteBreadcrumbs items={[{ label: page.title }]} />
+      <SiteBreadcrumbs currentPath={`/${page.slug}`} items={[{ label: page.title }]} />
 
       <section className="hs-hero">
         <div className="hs-container grid items-start gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">

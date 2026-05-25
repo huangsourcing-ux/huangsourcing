@@ -42,6 +42,7 @@ export function FnskuLabelMistakesArticlePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeFnskuLabelMistakesArticleJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={fnskuLabelMistakesArticle.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: fnskuLabelMistakesArticle.title },

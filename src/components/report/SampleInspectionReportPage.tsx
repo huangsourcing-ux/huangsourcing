@@ -93,7 +93,10 @@ export function SampleInspectionReportPage() {
   return (
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
-      <SiteBreadcrumbs items={[{ label: 'Sample inspection report' }]} />
+      <SiteBreadcrumbs
+        currentPath="/sample-inspection-report-china"
+        items={[{ label: 'Sample inspection report' }]}
+      />
 
       <section className="relative overflow-hidden border-b border-[var(--hs-border)] bg-[radial-gradient(circle_at_82%_12%,rgba(200,61,50,0.13),transparent_24rem),linear-gradient(180deg,#fffdf9_0%,#f4f0e8_100%)]">
         <div className="hs-container relative grid w-full min-w-0 items-center gap-10 py-10 sm:py-14 lg:grid-cols-12 lg:py-16">

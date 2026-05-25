@@ -42,6 +42,7 @@ export function AmazonFbaPrepArticlePage() {
       <SiteHeader activePage="resources" topBanner={null} />
       <JsonLd data={makeAmazonFbaPrepArticleJsonLd()} />
       <SiteBreadcrumbs
+        currentPath={amazonFbaPrepArticle.href}
         items={[
           { label: 'China sourcing risk guides', href: '/china-sourcing-risk-guides' },
           { label: amazonFbaPrepArticle.title },

@@ -33,6 +33,7 @@ import {
   buildWhatsAppHref,
   chinaSourcingInspectionPricingHref,
   chinaSourcingServicesHref,
+  whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 
 const freeRiskHref = '/free-china-sourcing-risk-check'
@@ -137,6 +138,7 @@ function WhatToSendBeforeChinaInspectionPage() {
     <main className="hs-page min-h-screen overflow-x-hidden antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs
+        currentPath={whatToSendBeforeChinaInspectionHref}
         items={[
           { label: 'China sourcing services', href: chinaSourcingServicesHref },
           { label: 'What to send before booking' },
