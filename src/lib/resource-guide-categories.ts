@@ -1,10 +1,16 @@
 import {
   alibabaSupplierVerificationHref,
+  amazonFbaPrepArticleHref,
   businessEmail,
   factoryVsTradingCompanyChinaHref,
+  factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
+  fnskuLabelMistakesArticleHref,
+  preShipmentBeforePickupArticleHref,
+  qcBeforeBalanceArticleHref,
   resourceGuideHref,
   supplierDepositGuideHref,
+  supplierVerificationChecklistHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 
@@ -27,10 +33,12 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
     links: [
+      { href: supplierVerificationChecklistHref, label: 'Supplier verification China checklist' },
       { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
       { href: factoryVsTradingCompanyChinaHref, label: 'Factory vs trading company in China' },
+      { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company practical signals' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
     ],
@@ -43,6 +51,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when production is finished or nearly finished and you need buyer-side evidence before releasing balance payment. This category connects practical QC inspection questions with visible product condition, defects, quantity signals, packaging, labels, carton marks, and the decision to approve, hold payment, request rework, or schedule a re-inspection while goods are still in China and supplier correction is still realistic.',
     links: [
+      { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: '/before-balance-payment-qc-china', label: 'Inspection before balance payment' },
       { href: '/qc-inspection-china', label: 'QC Inspection China' },
       { href: '/sample-inspection-report-china', label: 'Sample inspection report' },
@@ -56,6 +65,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when cartons are packed, the supplier says the shipment is ready, or the forwarder is about to collect. This category focuses on final shipment readiness before goods leave the supplier, including carton condition, shipping marks, labels, packing-list signals, pickup blockers, and whether release should proceed or wait for correction before freight moves and access becomes harder later.',
     links: [
+      { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection before pickup' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
       { href: '/china-pre-shipment-inspection', label: 'China Pre-Shipment Inspection' },
       { href: '/sample-inspection-report-china', label: 'Sample inspection report' },
@@ -69,6 +79,8 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when Amazon-bound goods are still in China and visible prep evidence matters before shipment. This category covers FNSKU labels, carton labels, SKU separation, carton condition, packing details, forwarder pickup readiness, and the limits of China-side prep support compared with Amazon receiving approval or marketplace compliance after arrival at fulfillment centers or later warehouse processing by Amazon teams.',
     links: [
+      { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep in China checklist' },
+      { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label mistakes before shipment' },
       { href: '/before-amazon-fba-shipment-china', label: 'Before Amazon FBA shipment' },
       { href: fnskuLabelCheckHref, label: 'FNSKU label check China' },
       { href: '/amazon-fba-prep-china', label: 'Amazon FBA Prep China' },
@@ -110,10 +122,16 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
     links: [
+      { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
+      { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },
+      { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection checklist' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
+      { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep checklist' },
+      { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label check before shipment' },
     ],
     ctaHref: '/free-china-sourcing-risk-check',
     ctaLabel: 'Start with Free Risk Check',

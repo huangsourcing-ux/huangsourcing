@@ -4,8 +4,14 @@ import { getAbsoluteUrl } from '@/lib/site-url'
 import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
+  amazonFbaPrepArticleHref,
   chinaSourcingInspectionPricingHref,
+  factoryVsTradingCompanySignalsArticleHref,
+  fnskuLabelMistakesArticleHref,
+  preShipmentBeforePickupArticleHref,
+  qcBeforeBalanceArticleHref,
   resourceGuideHref,
+  supplierVerificationChecklistHref,
   supplierDepositGuideHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -55,6 +61,36 @@ const staticRoutes: SitemapEntry[] = [
     path: supplierDepositGuideHref,
     changeFrequency: 'monthly',
     priority: 0.76,
+  },
+  {
+    path: supplierVerificationChecklistHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: qcBeforeBalanceArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: preShipmentBeforePickupArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: amazonFbaPrepArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: fnskuLabelMistakesArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: factoryVsTradingCompanySignalsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
   },
 ]
 
