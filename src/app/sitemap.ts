@@ -16,6 +16,7 @@ import {
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierVerificationChecklistHref,
+  supplierVerificationVsFactoryAuditArticleHref,
   supplierDepositGuideHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -73,6 +74,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: supplierVerificationChecklistHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: supplierVerificationVsFactoryAuditArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },

@@ -24,6 +24,8 @@ export const sampleConsolidationCompareSuppliersArticleHref =
   '/sample-consolidation-china-compare-suppliers-before-choosing-factory'
 export const scopeLimitationsHref = '/scope-limitations'
 export const supplierVerificationChecklistHref = '/supplier-verification-china-checklist'
+export const supplierVerificationVsFactoryAuditArticleHref =
+  '/supplier-verification-vs-factory-audit'
 export const supplierDepositGuideHref = '/how-to-verify-chinese-supplier-before-deposit'
 export const termsBookingPolicyHref = '/terms-booking-policy'
 export const publicWhatsAppHref = 'https://wa.me/15035930974' as const

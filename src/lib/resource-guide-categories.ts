@@ -14,6 +14,7 @@ import {
   sampleConsolidationCompareSuppliersArticleHref,
   supplierDepositGuideHref,
   supplierVerificationChecklistHref,
+  supplierVerificationVsFactoryAuditArticleHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import { makeOrganizationReference } from '@/lib/structured-data'
@@ -38,6 +39,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification China checklist' },
+      {
+        href: supplierVerificationVsFactoryAuditArticleHref,
+        label: 'Supplier verification vs factory audit',
+      },
       { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
       { href: chineseSupplierDepositDecisionArticleHref, label: 'Should I pay a 30% supplier deposit?' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
@@ -134,6 +139,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      {
+        href: supplierVerificationVsFactoryAuditArticleHref,
+        label: 'Supplier verification vs factory audit',
+      },
       { href: chineseSupplierDepositDecisionArticleHref, label: '30% supplier deposit decision checklist' },
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
