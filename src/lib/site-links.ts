@@ -3,6 +3,7 @@ export const businessEmail = 'agent@huangsourcing.com' as const
 
 export const chinaSourcingInspectionPricingHref = '/china-sourcing-inspection-pricing'
 export const chinaSourcingServicesHref = '/china-sourcing-services'
+export const buyerSideInspectionReportArticleHref = '/buyer-side-inspection-report'
 export const chinaQcInspectionBookingChecklistArticleHref =
   '/china-qc-inspection-booking-checklist'
 export const chineseSupplierDepositDecisionArticleHref = '/chinese-supplier-deposit-decision'
