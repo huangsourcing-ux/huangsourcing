@@ -1,6 +1,7 @@
 import {
   alibabaSupplierVerificationHref,
   amazonFbaPrepArticleHref,
+  chineseSupplierDepositDecisionArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -36,6 +37,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification China checklist' },
       { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
+      { href: chineseSupplierDepositDecisionArticleHref, label: 'Should I pay a 30% supplier deposit?' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
       { href: factoryVsTradingCompanyChinaHref, label: 'Factory vs trading company in China' },
@@ -128,6 +130,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      { href: chineseSupplierDepositDecisionArticleHref, label: '30% supplier deposit decision checklist' },
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
       {
