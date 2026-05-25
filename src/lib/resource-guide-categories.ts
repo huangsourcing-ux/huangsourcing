@@ -1,6 +1,7 @@
 import {
   alibabaSupplierVerificationHref,
   amazonFbaPrepArticleHref,
+  chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
@@ -54,6 +55,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when production is finished or nearly finished and you need buyer-side evidence before releasing balance payment. This category connects practical QC inspection questions with visible product condition, defects, quantity signals, packaging, labels, carton marks, and the decision to approve, hold payment, request rework, or schedule a re-inspection while goods are still in China and supplier correction is still realistic.',
     links: [
+      { href: chinaQcInspectionBookingChecklistArticleHref, label: 'China QC inspection booking checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: '/before-balance-payment-qc-china', label: 'Inspection before balance payment' },
       { href: '/qc-inspection-china', label: 'QC Inspection China' },
@@ -137,6 +139,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: sampleConsolidationCompareSuppliersArticleHref,
         label: 'Sample comparison before factory selection',
       },
+      { href: chinaQcInspectionBookingChecklistArticleHref, label: 'What to send before China QC inspection' },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },
