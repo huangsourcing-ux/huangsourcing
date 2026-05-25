@@ -3,6 +3,7 @@ import {
   amazonFbaPrepArticleHref,
   businessEmail,
   factoryVsTradingCompanyChinaHref,
+  factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
   fnskuLabelMistakesArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -37,6 +38,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
       { href: factoryVsTradingCompanyChinaHref, label: 'Factory vs trading company in China' },
+      { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company practical signals' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
     ],
@@ -121,6 +123,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
