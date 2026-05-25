@@ -8,6 +8,7 @@ export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-c
 export const amazonFbaPrepArticleHref = '/amazon-fba-prep-china-fnsku-carton-labels'
 export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-china'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'
+export const fnskuLabelMistakesArticleHref = '/fnsku-label-mistakes-before-goods-leave-china'
 export const preShipmentBeforePickupArticleHref = '/pre-shipment-inspection-china-before-pickup'
 export const privacyConfidentialityHref = '/privacy-confidentiality'
 export const qcBeforeBalanceArticleHref = '/qc-inspection-china-before-balance-payment'

@@ -4,6 +4,7 @@ import {
   businessEmail,
   factoryVsTradingCompanyChinaHref,
   fnskuLabelCheckHref,
+  fnskuLabelMistakesArticleHref,
   preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
@@ -77,6 +78,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when Amazon-bound goods are still in China and visible prep evidence matters before shipment. This category covers FNSKU labels, carton labels, SKU separation, carton condition, packing details, forwarder pickup readiness, and the limits of China-side prep support compared with Amazon receiving approval or marketplace compliance after arrival at fulfillment centers or later warehouse processing by Amazon teams.',
     links: [
       { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep in China checklist' },
+      { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label mistakes before shipment' },
       { href: '/before-amazon-fba-shipment-china', label: 'Before Amazon FBA shipment' },
       { href: fnskuLabelCheckHref, label: 'FNSKU label check China' },
       { href: '/amazon-fba-prep-china', label: 'Amazon FBA Prep China' },
@@ -126,6 +128,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection checklist' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
       { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep checklist' },
+      { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label check before shipment' },
     ],
     ctaHref: '/free-china-sourcing-risk-check',
     ctaLabel: 'Start with Free Risk Check',

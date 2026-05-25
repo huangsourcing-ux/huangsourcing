@@ -6,6 +6,7 @@ import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
   amazonFbaPrepArticleHref,
   chinaSourcingInspectionPricingHref,
+  fnskuLabelMistakesArticleHref,
   preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
@@ -77,6 +78,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: amazonFbaPrepArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: fnskuLabelMistakesArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
