@@ -11,6 +11,7 @@ import {
   preShipmentBeforePickupArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
+  sampleConsolidationCompareSuppliersArticleHref,
   supplierVerificationChecklistHref,
   supplierDepositGuideHref,
   whatToSendBeforeChinaInspectionHref,
@@ -89,6 +90,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: factoryVsTradingCompanySignalsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: sampleConsolidationCompareSuppliersArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
