@@ -9,6 +9,7 @@ import {
   fnskuLabelCheckHref,
   fnskuLabelMistakesArticleHref,
   preShipmentBeforePickupArticleHref,
+  productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
@@ -63,6 +64,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     links: [
       { href: buyerSideInspectionReportArticleHref, label: 'Buyer-side inspection report guide' },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'China QC inspection booking checklist' },
+      {
+        href: productionVsPreShipmentInspectionArticleHref,
+        label: 'Production vs pre-shipment inspection',
+      },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: '/before-balance-payment-qc-china', label: 'Inspection before balance payment' },
       { href: '/qc-inspection-china', label: 'QC Inspection China' },
@@ -77,6 +82,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when cartons are packed, the supplier says the shipment is ready, or the forwarder is about to collect. This category focuses on final shipment readiness before goods leave the supplier, including carton condition, shipping marks, labels, packing-list signals, pickup blockers, and whether release should proceed or wait for correction before freight moves and access becomes harder later.',
     links: [
+      {
+        href: productionVsPreShipmentInspectionArticleHref,
+        label: 'Production vs pre-shipment inspection',
+      },
       { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection before pickup' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
       { href: '/china-pre-shipment-inspection', label: 'China Pre-Shipment Inspection' },
@@ -152,6 +161,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'Sample comparison before factory selection',
       },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'What to send before China QC inspection' },
+      {
+        href: productionVsPreShipmentInspectionArticleHref,
+        label: 'Production vs pre-shipment inspection',
+      },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },

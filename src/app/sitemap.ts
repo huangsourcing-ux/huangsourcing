@@ -12,6 +12,7 @@ import {
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelMistakesArticleHref,
   preShipmentBeforePickupArticleHref,
+  productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
@@ -99,6 +100,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: preShipmentBeforePickupArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: productionVsPreShipmentInspectionArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
