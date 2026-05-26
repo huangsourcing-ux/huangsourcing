@@ -60,16 +60,16 @@ export function ChinaQcInspectionBookingChecklistArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {chinaQcInspectionBookingChecklistArticle.h1}
             </h1>
+            <ArticleByline
+              modifiedDate={chinaQcInspectionBookingChecklistArticle.modifiedDate}
+              publishedDate={chinaQcInspectionBookingChecklistArticle.publishedDate}
+            />
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {chinaQcInspectionBookingChecklistArticle.intro}
             </p>
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {chinaQcInspectionBookingChecklistArticle.answerSummary}
             </p>
-            <ArticleByline
-              modifiedDate={chinaQcInspectionBookingChecklistArticle.modifiedDate}
-              publishedDate={chinaQcInspectionBookingChecklistArticle.publishedDate}
-            />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={chinaQcInspectionBookingChecklistArticle.primaryCta.label}
