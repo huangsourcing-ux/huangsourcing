@@ -14,6 +14,7 @@ export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-chi
 export const factoryVsTradingCompanySignalsArticleHref = '/factory-vs-trading-company-china-practical-signals-buyers-can-check'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'
 export const fnskuLabelMistakesArticleHref = '/fnsku-label-mistakes-before-goods-leave-china'
+export const forwarderPickupChinaRisksArticleHref = '/forwarder-pickup-china-risks'
 export const preShipmentBeforePickupArticleHref = '/pre-shipment-inspection-china-before-pickup'
 export const productionVsPreShipmentInspectionArticleHref =
   '/production-vs-pre-shipment-inspection'
