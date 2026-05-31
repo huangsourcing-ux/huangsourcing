@@ -1,6 +1,7 @@
 import {
   alibabaSupplierVerificationHref,
   amazonFbaPrepArticleHref,
+  amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -102,6 +103,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides when Amazon-bound goods are still in China and visible prep evidence matters before shipment. This category covers FNSKU labels, carton labels, SKU separation, carton condition, packing details, forwarder pickup readiness, and the limits of China-side prep support compared with Amazon receiving approval or marketplace compliance after arrival at fulfillment centers or later warehouse processing by Amazon teams.',
     links: [
+      { href: amazonSellersFbaPrepChinaArticleHref, label: 'Do Amazon sellers need FBA prep?' },
       { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep in China checklist' },
       { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label mistakes before shipment' },
       { href: '/before-amazon-fba-shipment-china', label: 'Before Amazon FBA shipment' },
@@ -173,6 +175,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: forwarderPickupChinaRisksArticleHref, label: 'Forwarder pickup risk checklist' },
       { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection checklist' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
+      { href: amazonSellersFbaPrepChinaArticleHref, label: 'Amazon sellers FBA prep decision' },
       { href: amazonFbaPrepArticleHref, label: 'Amazon FBA prep checklist' },
       { href: fnskuLabelMistakesArticleHref, label: 'FNSKU label check before shipment' },
     ],

@@ -10,6 +10,7 @@ export const chineseSupplierDepositDecisionArticleHref = '/chinese-supplier-depo
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const amazonFbaPrepArticleHref = '/amazon-fba-prep-china-fnsku-carton-labels'
+export const amazonSellersFbaPrepChinaArticleHref = '/amazon-sellers-fba-prep-china'
 export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-china'
 export const factoryVsTradingCompanySignalsArticleHref = '/factory-vs-trading-company-china-practical-signals-buyers-can-check'
 export const fnskuLabelCheckHref = '/fnsku-label-check-china'
