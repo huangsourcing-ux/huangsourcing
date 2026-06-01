@@ -10,6 +10,7 @@ import {
   fnskuLabelCheckHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
+  huangSourcingCheckScopeArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -138,6 +139,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these notes when the exact service is not obvious yet, but the sourcing situation feels risky. This category points buyers toward practical triage: supplier pressure, vague quotes, missing evidence, unclear shipment readiness, and the honest limits of photo-backed checks before deposit, balance payment, pickup, or shipment release from China in real buyer conversations and urgent decisions under pressure today.',
     links: [
       { href: '/china-sourcing-services', label: 'China sourcing services overview' },
+      { href: huangSourcingCheckScopeArticleHref, label: 'What Huang Sourcing can check' },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
@@ -151,6 +153,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these checklists when you know the next decision but not the service name. Start from the buyer moment: before deposit, before supplier selection, before balance payment, before pickup, or before FBA shipment. Each guide explains the practical evidence to request and the likely China-side check that fits that decision point before money or goods move out of China safely.',
     links: [
+      { href: huangSourcingCheckScopeArticleHref, label: 'Huang Sourcing check scope' },
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
       {
         href: supplierVerificationVsFactoryAuditArticleHref,

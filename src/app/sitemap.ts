@@ -13,6 +13,7 @@ import {
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
+  huangSourcingCheckScopeArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -102,6 +103,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: forwarderPickupChinaRisksArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: huangSourcingCheckScopeArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
