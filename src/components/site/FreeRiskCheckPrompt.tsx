@@ -34,6 +34,7 @@ function FreeRiskCheckPrompt() {
   const isSuppressedPage =
     pathname === '/free-china-sourcing-risk-check' || pathname === '/thank-you'
   const [isVisible, setIsVisible] = useState(false)
+  const [isFooterVisible, setIsFooterVisible] = useState(false)
 
   useEffect(() => {
     if (isSuppressedPage) {
@@ -81,7 +82,34 @@ function FreeRiskCheckPrompt() {
     }
   }, [isSuppressedPage])
 
-  if (isSuppressedPage || !isVisible) return null
+  useEffect(() => {
+    if (isSuppressedPage) {
+      return
+    }
+
+    const footer = document.querySelector('footer')
+    if (!footer || !window.IntersectionObserver) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsFooterVisible(entry.isIntersecting)
+      },
+      {
+        rootMargin: '0px 0px -15% 0px',
+        threshold: 0.02,
+      },
+    )
+
+    observer.observe(footer)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [isSuppressedPage, pathname])
+
+  if (isSuppressedPage || !isVisible || isFooterVisible) return null
 
   const dismiss = () => {
     saveDismissedPrompt()

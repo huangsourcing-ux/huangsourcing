@@ -11,6 +11,7 @@ import {
   chinaQcInspectionBookingChecklistArticleHref,
   chinaSourcingInspectionPricingHref,
   chineseSupplierDepositDecisionArticleHref,
+  contactHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
@@ -51,6 +52,11 @@ const staticRoutes: SitemapEntry[] = [
     path: whatToSendBeforeChinaInspectionHref,
     changeFrequency: 'monthly',
     priority: 0.82,
+  },
+  {
+    path: contactHref,
+    changeFrequency: 'yearly',
+    priority: 0.6,
   },
   {
     path: '/free-china-sourcing-risk-check',

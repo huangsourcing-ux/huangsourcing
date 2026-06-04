@@ -125,7 +125,7 @@ Main concern:
       id: 'can-check',
       title: 'What Huang Sourcing can check from China',
       paragraphs: [
-        'Huang Sourcing can collect and interpret practical evidence that helps an overseas buyer slow down a risky payment, approve a shipment, request correction, or book a deeper onsite check. The check is buyer-side: it is not supplier-paid marketing, and it is not a promise that the supplier has no risk.',
+        'Huang Sourcing can collect and interpret practical evidence that helps an overseas buyer slow down a risky payment, approve a shipment, request correction, or book a deeper onsite check. The check is buyer-side: it is not supplier-side marketing, and it is not a promise that the supplier has no risk.',
         'The scope can be desk-based, onsite, sample-based, QC-based, or shipment-based depending on what is still accessible in China. The earlier the buyer asks, the more options exist for correction before money or goods move.',
       ],
       bullets: [

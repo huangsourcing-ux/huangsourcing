@@ -5,6 +5,7 @@ import {
   publicWhatsAppHref,
   whatsappPhoneDisplay,
 } from '@/lib/site-links'
+import { companyDetails } from '@/lib/company-details'
 import { getAbsoluteUrl } from '@/lib/site-url'
 
 export type BreadcrumbJsonLdItem = {
@@ -47,9 +48,15 @@ export const organization = {
   '@type': 'Organization',
   '@id': organizationId,
   name: 'Huang Sourcing',
+  legalName: companyDetails.displayName,
   url: getAbsoluteUrl('/'),
   logo: getAbsoluteUrl('/icon.png'),
   email: businessEmail,
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'Company No.',
+    value: companyDetails.companyNumber,
+  },
   sameAs: [publicLinkedInHref],
   areaServed: chinaServiceAreas,
   contactPoint: [
@@ -69,6 +76,7 @@ export function makeOrganizationReference() {
     '@type': 'Organization',
     '@id': organizationId,
     name: 'Huang Sourcing',
+    legalName: companyDetails.displayName,
     url: getAbsoluteUrl('/'),
     email: businessEmail,
   }

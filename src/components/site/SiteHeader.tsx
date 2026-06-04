@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 
 type SiteHeaderProps = {
   topBanner: string | null
-  activePage: 'home' | 'about' | 'service' | 'resources'
+  activePage: 'home' | 'about' | 'service' | 'resources' | 'contact'
 }
 
 const nav = en.Nav

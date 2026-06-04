@@ -1,4 +1,5 @@
 import {
+  Building2,
   Camera,
   CheckCircle2,
   FileText,
@@ -96,6 +97,28 @@ export function AboutAgentPage() {
               </Reveal>
             )
           })}
+        </section>
+
+        <section className="hs-container mt-8 max-w-4xl">
+          <Reveal className="hs-card bg-white p-6 shadow-[var(--hs-shadow-md)] sm:p-8">
+            <div className="flex size-11 items-center justify-center rounded-md bg-[var(--hs-accent-soft)] text-[var(--hs-accent)]">
+              <Building2 className="size-5" aria-hidden />
+            </div>
+            <h2 className="mt-5 text-2xl font-extrabold leading-tight text-[var(--hs-text)] sm:text-3xl">
+              {a.companyStructureTitle}
+            </h2>
+            {a.companyStructureBody.map((paragraph) => (
+              <p
+                className="hs-muted mt-4 text-base font-medium leading-relaxed sm:text-lg"
+                key={paragraph}
+              >
+                {paragraph}
+              </p>
+            ))}
+            <p className="mt-5 text-base font-extrabold leading-7 text-[var(--hs-text)] sm:text-lg">
+              {a.companyStructureClosing}
+            </p>
+          </Reveal>
         </section>
 
         <div className="hs-container mt-14 max-w-3xl space-y-10">

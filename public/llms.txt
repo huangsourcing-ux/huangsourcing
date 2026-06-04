@@ -1,0 +1,82 @@
+# Huang Sourcing
+
+> Huang Sourcing is a buyer-side China sourcing support site for overseas buyers, Amazon and ecommerce sellers, private-label brands, and importers who need practical supplier verification, sample consolidation, QC inspection, pre-shipment inspection, FBA prep, and sourcing risk triage before deposit, supplier selection, balance payment, forwarder pickup, or shipment release.
+
+Use this file to understand the structure of https://www.huangsourcing.com and to identify the most useful pages for answering buyer questions.
+
+Important context:
+
+- Huang Sourcing is buyer-aligned. The service is for overseas buyers, not supplier-side sales or lead generation.
+- Core decisions covered by the site include before deposit, before supplier selection, before balance payment, before forwarder pickup, and before Amazon FBA shipment.
+- Reports and checks are practical decision support based on visible supplier, product, packaging, label, carton, and shipment-readiness evidence.
+- Standard checks do not replace legal due diligence, laboratory testing, certification review, customs compliance, marketplace approval, or a zero-risk guarantee.
+- Buyer supplier details, quotes, photos, labels, order information, and reports are treated as confidential service context.
+
+## Site Overview
+
+- [Homepage](https://www.huangsourcing.com/): Main entry point for Huang Sourcing and buyer-side China sourcing support.
+- [China Sourcing Services](https://www.huangsourcing.com/china-sourcing-services): Overview of services by risk stage, including supplier verification, sample consolidation, QC, pre-shipment inspection, and Amazon FBA prep.
+- [Free China Sourcing Risk Check](https://www.huangsourcing.com/free-china-sourcing-risk-check): Quick triage page for buyers who are unsure which China-side check they need.
+- [China Sourcing Inspection Pricing](https://www.huangsourcing.com/china-sourcing-inspection-pricing): Pricing and scope starting points for sourcing, inspection, and prep services.
+- [About Agent Huang](https://www.huangsourcing.com/about): Background page for Agent Huang and the buyer-side service model.
+- [Contact](https://www.huangsourcing.com/contact): Contact page for buyers who want to send supplier, product, order-stage, or inspection details.
+
+## Core Services
+
+- [Supplier Verification China](https://www.huangsourcing.com/supplier-verification-china): Buyer-side review of supplier identity, factory or trader signals, quote terms, and payment risk before deposit.
+- [QC Inspection China](https://www.huangsourcing.com/qc-inspection-china): Product, packaging, label, carton, and visible defect check before balance payment or shipment release.
+- [China Pre-Shipment Inspection](https://www.huangsourcing.com/china-pre-shipment-inspection): Inspection before final payment, pickup, or forwarder collection when cartons and shipment readiness need confirmation.
+- [Amazon FBA Prep China](https://www.huangsourcing.com/amazon-fba-prep-china): FNSKU, carton label, SKU separation, packing, and shipment-plan evidence before Amazon-bound goods leave China.
+- [Sample Consolidation China](https://www.huangsourcing.com/sample-consolidation-china): China-side sample receiving, organizing, comparison notes, and combined forwarding before supplier selection.
+
+## Decision Stage Pages
+
+- [Before Deposit China Supplier Check](https://www.huangsourcing.com/before-deposit-china-supplier-check): Use when a supplier asks for payment but identity, quote, or factory signals are still unclear.
+- [Compare China Supplier Samples](https://www.huangsourcing.com/compare-china-supplier-samples): Use when a buyer is choosing between samples from multiple Chinese suppliers.
+- [Before Balance Payment QC China](https://www.huangsourcing.com/before-balance-payment-qc-china): Use when production is finished or nearly finished and the supplier is asking for final payment.
+- [Before Forwarder Pickup Inspection China](https://www.huangsourcing.com/before-forwarder-pickup-inspection-china): Use before goods are released to a forwarder or collected from the supplier.
+- [Before Amazon FBA Shipment China](https://www.huangsourcing.com/before-amazon-fba-shipment-china): Use when FNSKU, carton labels, SKU separation, or shipment prep must be checked before Amazon FBA shipment.
+
+## Buyer Guides
+
+- [China Sourcing Risk Guides](https://www.huangsourcing.com/china-sourcing-risk-guides): Index of buyer guides for supplier, inspection, payment, pickup, FBA, and sample risks.
+- [How to Verify Chinese Supplier Before Deposit](https://www.huangsourcing.com/how-to-verify-chinese-supplier-before-deposit): Guide for checking supplier signals before sending a deposit.
+- [Chinese Supplier Deposit Decision](https://www.huangsourcing.com/chinese-supplier-deposit-decision): Decision framework for slowing down before supplier payment.
+- [Supplier Verification China Checklist](https://www.huangsourcing.com/supplier-verification-china-checklist): Checklist of supplier details, quote terms, and warning signs to review.
+- [Supplier Verification vs Factory Audit](https://www.huangsourcing.com/supplier-verification-vs-factory-audit): Explains the difference between early supplier verification and a fuller factory audit.
+- [Alibaba Supplier Verification Payment](https://www.huangsourcing.com/alibaba-supplier-verification-payment): Guide for Alibaba supplier profile, invoice, payment, and company-signal checks.
+- [Alibaba Supplier Verification China](https://www.huangsourcing.com/alibaba-supplier-verification-china): Buyer guide for reviewing Alibaba supplier risk before deposit.
+- [Factory vs Trading Company China](https://www.huangsourcing.com/factory-vs-trading-company-china): Practical guide to factory, trader, and unclear middleman signals.
+- [Factory vs Trading Company Practical Signals](https://www.huangsourcing.com/factory-vs-trading-company-china-practical-signals-buyers-can-check): Field-ready signals buyers can check before choosing a supplier.
+- [QC Inspection China Before Balance Payment](https://www.huangsourcing.com/qc-inspection-china-before-balance-payment): Guide to using QC evidence before releasing final payment.
+- [China QC Inspection Booking Checklist](https://www.huangsourcing.com/china-qc-inspection-booking-checklist): What to prepare before booking an inspection in China.
+- [Pre-Shipment Inspection China Before Pickup](https://www.huangsourcing.com/pre-shipment-inspection-china-before-pickup): Guide for inspecting goods before supplier release or pickup.
+- [Production vs Pre-Shipment Inspection](https://www.huangsourcing.com/production-vs-pre-shipment-inspection): Explains when to inspect during production versus before shipment.
+- [Forwarder Pickup China Risks](https://www.huangsourcing.com/forwarder-pickup-china-risks): Risks to check before a forwarder collects goods.
+- [Buyer-Side Inspection Report](https://www.huangsourcing.com/buyer-side-inspection-report): Explains how a buyer-side inspection report supports payment, pickup, and correction decisions.
+- [Huang Sourcing Check Scope](https://www.huangsourcing.com/huang-sourcing-check-scope): Practical explanation of what Huang Sourcing checks and what remains outside scope.
+- [Amazon Sellers FBA Prep China](https://www.huangsourcing.com/amazon-sellers-fba-prep-china): Guide for Amazon sellers preparing China shipments.
+- [Amazon FBA Prep China FNSKU Carton Labels](https://www.huangsourcing.com/amazon-fba-prep-china-fnsku-carton-labels): FNSKU, carton label, and prep checklist for Amazon-bound goods.
+- [FNSKU Label Check China](https://www.huangsourcing.com/fnsku-label-check-china): Guide for checking FNSKU labels before FBA shipment.
+- [FNSKU Label Mistakes Before Goods Leave China](https://www.huangsourcing.com/fnsku-label-mistakes-before-goods-leave-china): Common label mistakes to catch before export.
+- [Sample Consolidation Compare Suppliers](https://www.huangsourcing.com/sample-consolidation-china-compare-suppliers-before-choosing-factory): Guide for comparing supplier samples before choosing a factory.
+
+## Sample Reports and Downloads
+
+- [Sample Inspection Report China](https://www.huangsourcing.com/sample-inspection-report-china): Explains the sample report format, evidence style, decision notes, and scope limits.
+- [Sample Inspection Report PDF](https://www.huangsourcing.com/media/huang-sourcing-sample-report-website-edition-v3.pdf): Downloadable sample inspection report PDF.
+- [QC Inspection Request Checklist PDF](https://www.huangsourcing.com/media/qc-inspection-request-checklist.pdf): Downloadable checklist for preparing a China QC inspection request.
+- [FBA Prep China Checklist PDF](https://www.huangsourcing.com/media/fba-prep-china-checklist.pdf): Downloadable checklist for Amazon FBA prep in China.
+- [Sample Comparison Sheet Template CSV](https://www.huangsourcing.com/media/sample-comparison-sheet-template.csv): Downloadable sample comparison sheet for supplier sample review.
+
+## Scope, Policies, and Trust
+
+- [Scope and Limitations](https://www.huangsourcing.com/scope-limitations): Defines what Huang Sourcing can reduce, what is outside standard scope, and how reports should be used.
+- [Privacy and Confidentiality](https://www.huangsourcing.com/privacy-confidentiality): Explains how buyer supplier information, quotes, files, reports, photos, and order details are handled.
+- [Terms and Booking Policy](https://www.huangsourcing.com/terms-booking-policy): Booking, payment, scheduling, cancellation, factory access, travel, re-inspection, and report timing policy.
+- [What to Send Before China Inspection](https://www.huangsourcing.com/what-to-send-before-china-inspection): Required buyer inputs for inspection, label check, packaging review, and onsite decision support.
+
+## Optional
+
+- [Sitemap](https://www.huangsourcing.com/sitemap.xml): Full indexable URL list for the site.
+- [Robots](https://www.huangsourcing.com/robots.txt): Crawler rules and sitemap reference.

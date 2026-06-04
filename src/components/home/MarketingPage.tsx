@@ -2,10 +2,12 @@ import type { LucideIcon } from 'lucide-react'
 import {
   ArrowRight,
   Barcode,
+  Building2,
   Check,
   ClipboardCheck,
   FileDown,
   FileText,
+  Handshake,
   PackageCheck,
   Search,
   ShieldCheck,
@@ -107,7 +109,25 @@ const trustChips = [
   'Buyer-aligned',
   'Evidence-first',
   'China-side',
-  'No supplier-paid recommendations',
+  'Paid by buyers, not suppliers',
+]
+
+const companyStructureCards = [
+  {
+    title: 'UK-registered business structure',
+    body: 'A clear company entity for international buyers, contracts, and client communication.',
+    Icon: Building2,
+  },
+  {
+    title: 'China-side execution',
+    body: 'Supplier checks, factory communication, sample handling, QC, and shipment preparation are handled close to the source.',
+    Icon: ClipboardCheck,
+  },
+  {
+    title: 'Buyer-side alignment',
+    body: 'We are paid by the buyer, not suppliers. Our work focuses on evidence, risk flags, and practical next steps before payment, pickup, or shipment.',
+    Icon: Handshake,
+  },
 ]
 
 const reportRows = [
@@ -169,12 +189,12 @@ const detailServices: DetailService[] = [
 
 const trustPoints = [
   {
-    title: 'No supplier-paid recommendations',
-    body: 'The service fee comes from the buyer, so supplier suggestions stay aligned with your order.',
+    title: 'Paid by buyers, not suppliers',
+    body: 'The service fee comes from the buyer, so sourcing and inspection notes stay aligned with your order.',
   },
   {
-    title: 'No factory-paid ranking',
-    body: 'Suppliers do not pay to appear better. If a risk shows up, it goes into the report.',
+    title: 'Evidence before decisions',
+    body: 'If a visible risk shows up before payment, pickup, or shipment, it goes into the buyer-side notes.',
   },
   {
     title: 'Reports you can actually use',
@@ -194,7 +214,7 @@ const scopeLimits = [
   'We do not promise zero risk',
   'We do not replace lab testing',
   'We do not replace legal due diligence',
-  'We do not make supplier-paid recommendations',
+  'We do not work as a supplier-side sales agent',
 ]
 
 const process = ['Send supplier or order context', 'Agent Huang checks the risk', 'Go onsite if needed', 'You decide before payment or shipment']
@@ -279,7 +299,7 @@ export function MarketingPage() {
               </div>
               <div className="rounded-md bg-white/45 p-3 ring-1 ring-black/[0.03]">
                 <p className="text-2xl font-extrabold text-[var(--hs-text)]">Buyer-aligned</p>
-                <p className="mt-1 text-xs font-semibold leading-tight text-[var(--hs-muted)]">No supplier-paid recommendations.</p>
+                <p className="mt-1 text-xs font-semibold leading-tight text-[var(--hs-muted)]">Paid by buyers, not suppliers.</p>
               </div>
             </div>
           </Reveal>
@@ -342,6 +362,47 @@ export function MarketingPage() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--hs-border)] bg-white" id="company-structure">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-4xl">
+            <p className="hs-eyebrow">Trust / Company Structure</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--hs-text)] sm:text-4xl">
+              UK-registered. China-side operated. Buyer-side aligned.
+            </h2>
+            <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
+              Huang Sourcing is operated by Huang Sourcing Ltd, a company
+              registered in England and Wales. Our structure gives international
+              buyers a clear legal business entity for communication, contracts,
+              and accountability, while our sourcing, supplier verification, QC
+              inspection, sample coordination, and shipment-prep work is carried
+              out on the China side where the supply-chain activity actually
+              happens.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {companyStructureCards.map(({ title, body, Icon }, index) => (
+              <Reveal
+                as="article"
+                className="hs-card hs-card-hover bg-[var(--hs-bg-soft)] p-5"
+                key={title}
+                staggerIndex={index}
+              >
+                <div className="flex size-10 items-center justify-center rounded-md bg-white text-[var(--hs-accent)] shadow-[var(--hs-shadow-sm)]">
+                  <Icon className="size-5" aria-hidden />
+                </div>
+                <h3 className="mt-4 text-lg font-extrabold leading-6 text-[var(--hs-text)]">
+                  {title}
+                </h3>
+                <p className="hs-muted mt-2 text-sm font-medium leading-6">
+                  {body}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

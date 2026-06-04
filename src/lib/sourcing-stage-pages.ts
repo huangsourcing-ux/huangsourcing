@@ -126,7 +126,7 @@ export const sourcingStagePages: Record<SourcingStageSlug, SourcingStagePage> = 
       'We do not promise zero supplier risk',
       'We do not replace legal due diligence or contract review',
       'We do not replace certification, lab testing, or regulated compliance checks',
-      'We do not make supplier-paid recommendations',
+      'We do not work as supplier-side sales support',
     ],
     faqs: [
       {
@@ -579,7 +579,7 @@ FBA prep concern:
       'We do not replace bulk production QC with sample review',
       'We do not promise mass production will match samples unless later QC is scoped',
       'We do not perform lab testing or technical certification unless separately arranged',
-      'We do not hide supplier origin or make supplier-paid recommendations',
+      'We do not hide supplier origin or work as supplier-side sales support',
     ],
     faqs: [
       {
