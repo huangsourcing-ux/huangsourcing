@@ -17,7 +17,7 @@ import {
 } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
 
-type ActivePage = 'home' | 'about' | 'service' | 'resources'
+type ActivePage = 'home' | 'about' | 'service' | 'resources' | 'contact'
 
 type MobileSiteNavProps = {
   activePage: ActivePage

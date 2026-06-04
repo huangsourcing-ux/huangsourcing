@@ -307,7 +307,7 @@ Main concern:
       'We do not promise zero supplier risk',
       'We do not replace legal due diligence, contract review, or dispute resolution',
       'We do not replace certification, lab testing, or regulated compliance checks',
-      'We do not make supplier-paid recommendations',
+      'We do not work as supplier-side sales support',
     ],
     internalLinks: [
       {

@@ -179,7 +179,7 @@ Main concern:
       id: 'what-verification-checks',
       title: 'What Supplier Verification can help check',
       body: [
-        'Supplier Verification is a buyer-side decision support service. It is useful when you need a practical risk summary before deposit, not a supplier-paid recommendation or a guarantee that every hidden issue has been removed.',
+        'Supplier Verification is a buyer-side decision support service. It is useful when you need a practical risk summary before deposit, not supplier-side sales support or a guarantee that every hidden issue has been removed.',
       ],
       bullets: [
         'Supplier identity and visible company consistency',
@@ -200,7 +200,7 @@ Main concern:
         'It does not provide a legal guarantee or contract review',
         'It does not replace product certification or laboratory testing',
         'It does not guarantee future production quality without QC inspection',
-        'It does not make supplier-paid recommendations',
+        'It does not work as supplier-side sales support',
       ],
     },
   ] satisfies ArticleSection[],

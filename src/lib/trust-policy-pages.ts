@@ -58,7 +58,7 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
     intro:
       'Buyers often share supplier names, quotes, product details, photos, labels, and order timelines before payment or shipment. Huang Sourcing treats that information as client-specific service context, not public marketing material.',
     coreStatement:
-      'Client supplier information is not published. Reports, photos, order details, and supplier documents are used to deliver the agreed service, and sample reports are examples or anonymized materials. Huang Sourcing does not pass buyer information to suppliers for supplier-paid marketing.',
+      'Client supplier information is not published. Reports, photos, order details, and supplier documents are used to deliver the agreed service, and sample reports are examples or anonymized materials. Huang Sourcing does not pass buyer information to suppliers for supplier marketing or lead generation.',
     sections: [
       {
         title: 'Supplier information stays private',
@@ -88,10 +88,10 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
         ],
       },
       {
-        title: 'No supplier-paid recommendation handoff',
+        title: 'No supplier marketing handoff',
         body: 'Huang Sourcing is buyer-aligned. The buyer pays for the service; supplier information is not transferred to factories, traders, or platforms for marketing follow-up.',
         items: [
-          'No supplier-paid recommendations',
+          'Paid by buyers, not suppliers',
           'No selling buyer inquiry details to factories',
           'No public posting of buyer supplier lists or order documents',
         ],
@@ -111,7 +111,7 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
       {
         question: 'Do you share my information with suppliers for marketing?',
         answer:
-          'No. Huang Sourcing does not transfer buyer inquiry details to suppliers for supplier-paid marketing or lead generation.',
+          'No. Huang Sourcing does not transfer buyer inquiry details to suppliers for supplier marketing or lead generation.',
       },
     ],
     ctaLabel: 'Send a confidential risk check',

@@ -7,6 +7,7 @@ import { SiteBreadcrumbs } from '@/components/site/SiteBreadcrumbs'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import { companyDetails } from '@/lib/company-details'
 import { chinaSourcingServicesHref } from '@/lib/site-links'
 import type { TrustPolicyPage as TrustPolicyPageData } from '@/lib/trust-policy-pages'
 
@@ -82,6 +83,14 @@ export function TrustPolicyPage({ page }: TrustPolicyPageProps) {
               <p className="mt-3 text-base font-semibold leading-7 text-[var(--hs-text)]">
                 {page.coreStatement}
               </p>
+              <div className="mt-5 border-t border-[var(--hs-border)] pt-4">
+                <p className="text-xs font-extrabold uppercase text-[var(--hs-muted-soft)]">
+                  Legal entity
+                </p>
+                <p className="mt-2 text-sm font-semibold leading-6 text-[var(--hs-muted)]">
+                  {companyDetails.legalEntityLine}
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>

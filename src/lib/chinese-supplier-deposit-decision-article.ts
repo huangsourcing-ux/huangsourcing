@@ -221,7 +221,7 @@ Main concern:
     'It does not replace laboratory testing, certification review, customs compliance, or regulated product checks',
     'It does not prove every hidden production issue before goods are made',
     'It does not guarantee future production quality without QC inspection before balance payment or pickup',
-    'It does not make supplier-paid recommendations; the output supports the buyer decision',
+    'It is paid by the buyer and supports the buyer decision',
   ],
   relatedLinks: [
     {

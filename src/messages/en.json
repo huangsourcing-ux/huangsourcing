@@ -73,7 +73,7 @@
         "We do not promise zero risk",
         "We do not replace lab testing",
         "We do not replace legal due diligence",
-        "We do not make supplier-paid recommendations"
+        "We do not work as a supplier-side sales agent"
       ]
     },
     "freeCard": {
@@ -144,7 +144,7 @@
       },
       {
         "value": "Buyer-aligned",
-        "sub": "No supplier-paid recommendations."
+        "sub": "Paid by buyers, not suppliers."
       },
       {
         "value": "100%",
@@ -278,12 +278,12 @@
       {
         "iconKey": "shield",
         "title": "You pay. I work for you.",
-        "body": "No factory commissions. No referral kickbacks. The invoice is between you and Huang Sourcing."
+        "body": "Paid by buyers, not suppliers. The invoice is between you and Huang Sourcing."
       },
       {
         "iconKey": "ban",
-        "title": "Zero conflict of interest",
-        "body": "If the supplier offers me a cut, you will know — and I walk away from that relationship."
+        "title": "Buyer-side alignment",
+        "body": "Supplier incentives do not decide the recommendation. Evidence, risk flags, and buyer next steps do."
       },
       {
         "iconKey": "fileDown",
@@ -306,7 +306,7 @@
       {
         "iconKey": "triangleAlert",
         "label": "\"Free\" sourcing agents",
-        "text": "Paid under the table by factories. They will not surface defects that hurt their commission.",
+        "text": "Supplier-side intermediaries may avoid surfacing defects that hurt supplier interests.",
         "tone": "negative"
       },
       {
@@ -418,6 +418,13 @@
         "body": "Supplier checks, QC inspection, samples, and shipment prep."
       }
     ],
+    "companyStructureTitle": "Built for international buyers. Operated where the work happens.",
+    "companyStructureBody": [
+      "Huang Sourcing is operated by Huang Sourcing Ltd, a company registered in England and Wales.",
+      "Our business structure is designed to give overseas buyers the benefits of both worlds: a UK-registered company for formal communication, contracts, and client accountability, combined with China-side sourcing and inspection execution for supplier verification, factory communication, sample coordination, quality control, and shipment preparation.",
+      "We are not a supplier-side sales agent. Our role is to support buyers before payment, pickup, or shipment with evidence-based sourcing checks and practical risk notes."
+    ],
+    "companyStructureClosing": "UK company structure. China-side execution. Buyer-side alignment.",
     "s1Title": "Who I am",
     "s1Body": [
       "I’m Agent Huang, founder of Huang Sourcing.",
