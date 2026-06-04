@@ -9,6 +9,8 @@ export const chinaQcInspectionBookingChecklistArticleHref =
 export const chineseSupplierDepositDecisionArticleHref = '/chinese-supplier-deposit-decision'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
+export const alibabaSupplierVerificationPaymentArticleHref =
+  '/alibaba-supplier-verification-payment'
 export const amazonFbaPrepArticleHref = '/amazon-fba-prep-china-fnsku-carton-labels'
 export const amazonSellersFbaPrepChinaArticleHref = '/amazon-sellers-fba-prep-china'
 export const factoryVsTradingCompanyChinaHref = '/factory-vs-trading-company-china'

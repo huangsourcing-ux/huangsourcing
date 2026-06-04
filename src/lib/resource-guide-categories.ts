@@ -1,5 +1,6 @@
 import {
   alibabaSupplierVerificationHref,
+  alibabaSupplierVerificationPaymentArticleHref,
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
@@ -51,6 +52,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: chineseSupplierDepositDecisionArticleHref, label: 'Should I pay a 30% supplier deposit?' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit supplier check' },
       { href: alibabaSupplierVerificationHref, label: 'Alibaba supplier verification' },
+      {
+        href: alibabaSupplierVerificationPaymentArticleHref,
+        label: 'Alibaba supplier verification before payment',
+      },
       { href: factoryVsTradingCompanyChinaHref, label: 'Factory vs trading company in China' },
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company practical signals' },
       { href: '/supplier-verification-china', label: 'Supplier Verification China' },
@@ -155,6 +160,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     links: [
       { href: huangSourcingCheckScopeArticleHref, label: 'Huang Sourcing check scope' },
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      {
+        href: alibabaSupplierVerificationPaymentArticleHref,
+        label: 'Alibaba supplier payment verification checklist',
+      },
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',

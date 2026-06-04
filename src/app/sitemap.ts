@@ -4,6 +4,7 @@ import { getAbsoluteUrl } from '@/lib/site-url'
 import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
+  alibabaSupplierVerificationPaymentArticleHref,
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
@@ -83,6 +84,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: supplierVerificationVsFactoryAuditArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: alibabaSupplierVerificationPaymentArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },

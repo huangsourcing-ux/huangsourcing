@@ -31,16 +31,28 @@ type EvidenceDecisionMatrixProps = {
 export function ArticleByline({ modifiedDate, publishedDate }: ArticleBylineProps) {
   return (
     <div className="mt-5 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-4 shadow-[var(--hs-shadow-sm)]">
-      <p className="text-sm font-extrabold text-[var(--hs-text)]">
-        Written by{' '}
-        <Link
-          className="text-[var(--hs-accent)] underline-offset-4 hover:underline"
-          href="/about#agent-huang"
-        >
-          Agent Huang
-        </Link>{' '}
-        | Published on {publishedDate}
-        {modifiedDate ? <> | Updated on {modifiedDate}</> : null}
+      <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm font-extrabold leading-6 text-[var(--hs-text)]">
+        <span>
+          Written by{' '}
+          <Link
+            className="text-[var(--hs-accent)] underline-offset-4 hover:underline"
+            href="/about#agent-huang"
+          >
+            Agent Huang
+          </Link>
+        </span>
+        <span className="hidden sm:inline" aria-hidden>
+          |
+        </span>
+        <span className="basis-full sm:basis-auto">Published on {publishedDate}</span>
+        {modifiedDate ? (
+          <>
+            <span className="hidden sm:inline" aria-hidden>
+              |
+            </span>
+            <span className="basis-full sm:basis-auto">Updated on {modifiedDate}</span>
+          </>
+        ) : null}
       </p>
       <p className="hs-muted mt-1 text-sm leading-6">
         China-side sourcing partner helping overseas buyers verify suppliers,
