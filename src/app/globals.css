@@ -8,15 +8,18 @@
   --font-geist-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0.5rem;
-  --hs-bg: #f7f5f1;
+  --hs-bg: #f8f5ef;
   --hs-bg-soft: #fbfaf7;
+  --hs-bg-cool: #f8fafc;
   --hs-card: #ffffff;
   --hs-card-warm: #fffdfa;
   --hs-border: #ded8cf;
   --hs-border-strong: #cfc5b8;
   --hs-text: #111827;
-  --hs-muted: #5f6673;
-  --hs-muted-soft: #7b8190;
+  --hs-muted: #4b5563;
+  --hs-muted-soft: #6b7280;
+  --hs-blue-gray: #64748b;
+  --hs-blue-gray-soft: #eef2f6;
   --hs-accent: #c83d32;
   --hs-accent-strong: #a72f28;
   --hs-accent-soft: #fff0ec;
@@ -180,7 +183,7 @@
 
   .hs-card-hover:hover {
     transform: translateY(-4px);
-    border-color: color-mix(in srgb, var(--hs-accent) 34%, var(--hs-border));
+    border-color: var(--hs-border-strong);
     box-shadow: var(--hs-shadow-md);
   }
 
@@ -201,7 +204,7 @@
 
   .hs-section-soft {
     border-bottom: 1px solid var(--hs-border);
-    background: var(--hs-bg-soft);
+    background: var(--hs-bg-cool);
   }
 
   .hs-section-warm {
@@ -236,7 +239,7 @@
 
   .hs-link-card:hover {
     transform: translateY(-3px);
-    border-color: color-mix(in srgb, var(--hs-accent) 34%, var(--hs-border));
+    border-color: var(--hs-border-strong);
     background: #ffffff;
     box-shadow: var(--hs-shadow-md);
   }
@@ -275,9 +278,9 @@
   }
 
   .hs-btn-secondary:hover {
-    border-color: color-mix(in srgb, var(--hs-accent) 45%, var(--hs-border));
+    border-color: var(--hs-border-strong);
     background: #ffffff;
-    color: var(--hs-accent-strong);
+    color: var(--hs-navy);
     box-shadow: var(--hs-shadow-md);
   }
 
@@ -288,7 +291,7 @@
   }
 
   .hs-btn-dark:hover {
-    background: var(--hs-accent-strong);
+    background: var(--hs-navy-2);
     box-shadow: var(--hs-shadow-md);
   }
 
@@ -299,11 +302,25 @@
   }
 
   .hs-eyebrow {
-    color: var(--hs-accent);
-    font-size: 0.8125rem;
+    display: inline-block;
+    max-width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    background: var(--hs-blue-gray-soft);
+    padding: 0.25rem 0.5rem;
+    color: var(--hs-blue-gray);
+    font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0;
-    line-height: 1.5rem;
+    letter-spacing: 0.08em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .hs-eyebrow-on-dark {
+    border-color: rgba(226, 232, 240, 0.16);
+    background: rgba(248, 250, 252, 0.1);
+    color: #cbd5e1;
   }
 
   .hs-muted {
