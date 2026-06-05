@@ -21,6 +21,7 @@ import {
   qcBeforeBalanceArticleHref,
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
+  supplierVerificationChinaLimitsArticleHref,
   supplierVerificationChecklistHref,
   supplierVerificationVsFactoryAuditArticleHref,
   supplierDepositGuideHref,
@@ -85,6 +86,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: supplierVerificationChecklistHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: supplierVerificationChinaLimitsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
