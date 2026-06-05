@@ -18,6 +18,7 @@ import {
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierDepositGuideHref,
+  supplierVerificationChinaLimitsArticleHref,
   supplierVerificationChecklistHref,
   supplierVerificationVsFactoryAuditArticleHref,
 } from '@/lib/site-links'
@@ -44,6 +45,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when the supplier profile looks convincing but the company identity, factory role, quote terms, or deposit request still feels unclear. This category helps overseas buyers slow down before payment, compare visible supplier signals, and understand when a free risk check is enough versus when focused supplier verification should happen before the first transfer or signed production invoice.',
     links: [
       { href: supplierVerificationChecklistHref, label: 'Supplier verification China checklist' },
+      {
+        href: supplierVerificationChinaLimitsArticleHref,
+        label: 'Supplier verification China limits',
+      },
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
@@ -160,6 +165,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     links: [
       { href: huangSourcingCheckScopeArticleHref, label: 'Huang Sourcing check scope' },
       { href: supplierVerificationChecklistHref, label: 'Supplier verification checklist' },
+      {
+        href: supplierVerificationChinaLimitsArticleHref,
+        label: 'Supplier verification proof limits',
+      },
       {
         href: alibabaSupplierVerificationPaymentArticleHref,
         label: 'Alibaba supplier payment verification checklist',

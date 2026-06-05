@@ -33,6 +33,8 @@ export const sampleConsolidationCompareSuppliersArticleHref =
   '/sample-consolidation-china-compare-suppliers-before-choosing-factory'
 export const scopeLimitationsHref = '/scope-limitations'
 export const supplierVerificationChecklistHref = '/supplier-verification-china-checklist'
+export const supplierVerificationChinaLimitsArticleHref =
+  '/supplier-verification-china-limits'
 export const supplierVerificationVsFactoryAuditArticleHref =
   '/supplier-verification-vs-factory-audit'
 export const supplierDepositGuideHref = '/how-to-verify-chinese-supplier-before-deposit'
