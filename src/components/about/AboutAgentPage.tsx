@@ -234,7 +234,7 @@ export function AboutAgentPage() {
               </Link>{' '}
               and{' '}
               <Link className="text-[var(--hs-accent-strong)] hover:underline" href={privacyConfidentialityHref}>
-                Privacy & Confidentiality
+                Privacy Policy
               </Link>{' '}
               pages for the full buyer-side trust policy.
             </p>

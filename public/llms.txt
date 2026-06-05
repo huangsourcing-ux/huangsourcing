@@ -72,8 +72,9 @@ Important context:
 ## Scope, Policies, and Trust
 
 - [Scope and Limitations](https://www.huangsourcing.com/scope-limitations): Defines what Huang Sourcing can reduce, what is outside standard scope, and how reports should be used.
-- [Privacy and Confidentiality](https://www.huangsourcing.com/privacy-confidentiality): Explains how buyer supplier information, quotes, files, reports, photos, and order details are handled.
-- [Terms and Booking Policy](https://www.huangsourcing.com/terms-booking-policy): Booking, payment, scheduling, cancellation, factory access, travel, re-inspection, and report timing policy.
+- [Privacy Policy](https://www.huangsourcing.com/privacy-confidentiality): Explains how buyer supplier information, quotes, files, reports, photos, and order details are handled.
+- [Terms](https://www.huangsourcing.com/terms-booking-policy): Booking, payment, scheduling, cancellation, factory access, travel, re-inspection, and report timing policy.
+- [Refund Policy](https://www.huangsourcing.com/refund-policy): Service-fee refund policy covering unstarted work, committed coordination or travel costs, blocked access, and supplier refund limits.
 - [What to Send Before China Inspection](https://www.huangsourcing.com/what-to-send-before-china-inspection): Required buyer inputs for inspection, label check, packaging review, and onsite decision support.
 
 ## Optional
