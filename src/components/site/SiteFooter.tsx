@@ -2,17 +2,20 @@ import { Mail } from 'lucide-react'
 import Link from 'next/link'
 
 import { TrackedEmailLink } from '@/components/analytics/TrackedEmailLink'
+import { CopyContactValue } from '@/components/site/CopyContactValue'
 import { SocialLinks } from '@/components/site/SocialLinks'
 import { companyDetails } from '@/lib/company-details'
 import {
   businessEmail,
   chinaSourcingInspectionPricingHref,
+  linkedInProfileDisplay,
   privacyConfidentialityHref,
   refundPolicyHref,
   resourceGuideHref,
   sampleReportPageHref,
   scopeLimitationsHref,
   termsBookingPolicyHref,
+  whatsappPhoneDisplay,
 } from '@/lib/site-links'
 
 type FooterLink = {
@@ -65,6 +68,24 @@ function FooterLinkList({ links }: { links: FooterLink[] }) {
   )
 }
 
+function FooterContactDetail({
+  label,
+  value,
+}: {
+  label: string
+  value: string
+}) {
+  return (
+    <p className="flex max-w-full items-start gap-1.5">
+      <span className="shrink-0 text-[#7A818C]">{label}:</span>
+      <span className="min-w-0 break-all font-semibold text-[#1F2933]">
+        {value}
+      </span>
+      <CopyContactValue label={label} value={value} />
+    </p>
+  )
+}
+
 function SiteFooter() {
   return (
     <footer className="border-t border-[rgba(31,41,51,0.08)] bg-[var(--hs-bg)] text-[#5F6673]">
@@ -87,7 +108,6 @@ function SiteFooter() {
             </p>
             <div className="mt-2 space-y-0.5 text-xs font-medium leading-5 text-[#7A818C]">
               <p>UK registered company. China-side execution.</p>
-              <p>Company No. 17241958.</p>
             </div>
           </section>
 
@@ -107,6 +127,11 @@ function SiteFooter() {
                 className="flex flex-wrap gap-2"
                 linkClassName="h-9 w-fit max-w-[220px] justify-start border-[#E3D8CB] bg-white text-sm font-semibold text-[#1F2933] shadow-none hover:border-[#D5C5B3] hover:bg-[#FFFCF8] hover:text-[#1F2933]"
               />
+              <div className="mt-1.5 grid gap-1.5 text-xs font-medium leading-5 text-[#7A818C]">
+                <FooterContactDetail label="Email" value={businessEmail} />
+                <FooterContactDetail label="WhatsApp" value={whatsappPhoneDisplay} />
+                <FooterContactDetail label="LinkedIn" value={linkedInProfileDisplay} />
+              </div>
             </div>
           </section>
 
