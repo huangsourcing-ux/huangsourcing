@@ -25,6 +25,7 @@ export const productionVsPreShipmentInspectionArticleHref =
   '/production-vs-pre-shipment-inspection'
 export const privacyConfidentialityHref = '/privacy-confidentiality'
 export const qcBeforeBalanceArticleHref = '/qc-inspection-china-before-balance-payment'
+export const refundPolicyHref = '/refund-policy'
 export const resourceGuideHref = '/china-sourcing-risk-guides'
 export const reportHref = '/media/huang-sourcing-sample-report-website-edition-v3.pdf'
 export const sampleReportPageHref = '/sample-inspection-report-china'

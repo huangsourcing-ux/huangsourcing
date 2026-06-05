@@ -8,6 +8,7 @@ import {
   businessEmail,
   chinaSourcingInspectionPricingHref,
   privacyConfidentialityHref,
+  refundPolicyHref,
   resourceGuideHref,
   sampleReportPageHref,
   scopeLimitationsHref,
@@ -31,9 +32,10 @@ const footerServices: FooterLink[] = [
 const footerResources: FooterLink[] = [
   { href: resourceGuideHref, title: 'China Sourcing Risk Guides' },
   { href: sampleReportPageHref, title: 'Sample Inspection Report' },
-  { href: privacyConfidentialityHref, title: 'Privacy & Confidentiality' },
+  { href: privacyConfidentialityHref, title: 'Privacy Policy' },
+  { href: termsBookingPolicyHref, title: 'Terms' },
+  { href: refundPolicyHref, title: 'Refund Policy' },
   { href: scopeLimitationsHref, title: 'Scope & Limitations' },
-  { href: termsBookingPolicyHref, title: 'Terms / Booking Policy' },
 ]
 
 function FooterHeading({ children, id }: { children: string; id: string }) {

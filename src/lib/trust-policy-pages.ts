@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import {
   freeRiskCheckWhatsAppHref,
   privacyConfidentialityHref,
+  refundPolicyHref,
   scopeLimitationsHref,
   termsBookingPolicyHref,
 } from '@/lib/site-links'
@@ -14,6 +15,7 @@ import {
 
 export type TrustPolicySlug =
   | 'privacy-confidentiality'
+  | 'refund-policy'
   | 'scope-limitations'
   | 'terms-booking-policy'
 
@@ -49,8 +51,8 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
   'privacy-confidentiality': {
     slug: 'privacy-confidentiality',
     href: privacyConfidentialityHref,
-    title: 'Privacy & Confidentiality',
-    metaTitle: 'Privacy & Confidentiality',
+    title: 'Privacy Policy',
+    metaTitle: 'Privacy Policy',
     description:
       'How Huang Sourcing handles buyer supplier information, reports, photos, order details, and sample report examples confidentially.',
     eyebrow: 'Trust & policies',
@@ -195,8 +197,8 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
   'terms-booking-policy': {
     slug: 'terms-booking-policy',
     href: termsBookingPolicyHref,
-    title: 'Terms / Booking Policy',
-    metaTitle: 'Terms / Booking Policy',
+    title: 'Terms',
+    metaTitle: 'Terms',
     description:
       'Booking policy for Huang Sourcing services, including confirmation after payment, cancellation, factory access, travel fees, re-inspection, report timing, and inspection limits.',
     eyebrow: 'Trust & policies',
@@ -287,6 +289,102 @@ export const trustPolicyPages: Record<TrustPolicySlug, TrustPolicyPage> = {
     ctaHref: freeRiskCheckWhatsAppHref,
     ctaBody:
       'Send the product, supplier location, timing, and decision point so Huang Sourcing can suggest the right scope before you book.',
+  },
+  'refund-policy': {
+    slug: 'refund-policy',
+    href: refundPolicyHref,
+    title: 'Refund Policy',
+    metaTitle: 'Refund Policy',
+    description:
+      'Refund policy for Huang Sourcing services, including refunds before work starts, partial refunds after committed costs, blocked factory access, and limits around supplier refunds.',
+    eyebrow: 'Trust & policies',
+    h1: 'Refund policy for China-side sourcing checks.',
+    intro:
+      'This page explains how refunds are handled when a buyer books supplier verification, QC inspection, sample consolidation, shipment-prep support, or another practical China-side service with Huang Sourcing.',
+    coreStatement:
+      'Refunds depend on whether work has started and whether inspector time, coordination, travel, onsite arrangements, or supplier communication costs have already been committed. Huang Sourcing handles service refunds fairly, but does not guarantee supplier refunds, product refunds, dispute recovery, or compensation from factories.',
+    sections: [
+      {
+        title: 'Before work starts or costs are committed',
+        body: 'If the buyer cancels before Huang Sourcing has started coordination or committed inspector time, travel, supplier communication, or other service costs, the paid amount may be refunded or applied to a revised booking.',
+        items: [
+          'Notify cancellation or change requests as early as possible',
+          'Unstarted work with no committed cost can usually be refunded or rescheduled',
+          'Bank, payment platform, or transfer fees may be deducted when they apply',
+        ],
+      },
+      {
+        title: 'After coordination or onsite costs are committed',
+        body: 'Once work has started, refunds are reviewed based on the remaining unused service value after committed time, coordination, travel, and onsite arrangements are deducted.',
+        items: [
+          'Inspector scheduling, supplier coordination, and file review may count as started work',
+          'Travel, standby, accommodation, and same-day arrangements may be deducted',
+          'A partial refund may apply only to the unused portion of the agreed service',
+        ],
+      },
+      {
+        title: 'Late cancellation, blocked access, or wrong details',
+        body: 'If the buyer, supplier, or factory causes late cancellation, blocked access, wrong address details, missing contacts, or unavailable goods, Huang Sourcing will document the issue and explain what cost has already been used.',
+        items: [
+          'Factory access must be arranged by the buyer, supplier, or factory contact',
+          'Blocked access may still consume inspector time, travel, and standby cost',
+          'A replacement visit or changed location is quoted separately unless agreed otherwise',
+        ],
+      },
+      {
+        title: 'If Huang Sourcing cannot perform the confirmed service',
+        body: 'If Huang Sourcing cannot provide the confirmed service for reasons within its control, the buyer may receive a refund for the unavailable service portion or choose a practical reschedule where possible.',
+        items: [
+          'The buyer will be informed if a confirmed service cannot be performed as agreed',
+          'Refunds are limited to the affected Huang Sourcing service fee portion',
+          'Rescheduling may be offered when the buyer’s decision timeline still allows it',
+        ],
+      },
+      {
+        title: 'Supplier refunds and product disputes are outside this policy',
+        body: 'This policy covers Huang Sourcing service fees only. It does not guarantee supplier refunds, order cancellation success, product replacement, factory compensation, marketplace reimbursement, or dispute recovery.',
+        items: [
+          'Supplier payment disputes remain between the buyer and supplier unless separately scoped',
+          'Reports and photos are decision evidence, not a promise of supplier compensation',
+          'Legal, customs, marketplace, and payment-platform outcomes are outside standard scope',
+        ],
+      },
+      {
+        title: 'Re-inspection and follow-up work',
+        body: 'Re-inspection, follow-up correction checks, new supplier locations, or added product requirements are usually treated as new service work because they require new time, access, and coordination.',
+        items: [
+          'A narrower follow-up scope can be quoted when only corrected issues need review',
+          'New defects, new files, or new product requirements may require added review',
+          'Refunds for one service do not automatically cover a separate follow-up service',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Can I get a refund if I cancel before work starts?',
+        answer:
+          'Usually yes, if Huang Sourcing has not started coordination and no inspector time, travel, onsite arrangement, or other service cost has been committed. Payment or bank fees may still be deducted.',
+      },
+      {
+        question: 'What if the factory blocks access or changes the date?',
+        answer:
+          'Huang Sourcing will document the access or schedule issue. Inspector time, travel, standby, or coordination costs may still be deducted, and a new visit may need a separate quote.',
+      },
+      {
+        question: 'Do you refund supplier payments or product costs?',
+        answer:
+          'No. This policy applies to Huang Sourcing service fees only. Supplier refunds, product refunds, factory compensation, and dispute recovery are outside the standard service promise.',
+      },
+      {
+        question: 'What if Huang Sourcing cannot perform the confirmed service?',
+        answer:
+          'If the confirmed service cannot be performed for reasons within Huang Sourcing’s control, the unavailable service portion may be refunded or rescheduled where practical.',
+      },
+    ],
+    ctaLabel: 'Ask about refund scope',
+    ctaHref: freeRiskCheckWhatsAppHref,
+    ctaBody:
+      'If your order timing, factory access, or payment decision may change, send the details before booking so Huang Sourcing can explain the practical refund and reschedule scope.',
   },
 }
 
