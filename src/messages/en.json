@@ -338,20 +338,29 @@
     },
     "proofCards": [
       {
-        "name": "David R.",
+        "name": "U.S. Amazon seller",
         "country": "United States",
+        "flag": "🇺🇸",
+        "category": "Home hardware",
+        "orderScope": "~3,200 units · <$20k balance",
         "message": "Agent Huang checked packaging and carton-label photos before we paid the balance. One carton label was wrong, so we asked the supplier to fix it before pickup.",
         "result": "Balance payment protected"
       },
       {
-        "name": "Sophie M.",
+        "name": "EU ecommerce importer",
         "country": "Germany",
+        "flag": "🇩🇪",
+        "category": "Consumer electronics accessories",
+        "orderScope": "38 cartons · 1,450 pcs",
         "message": "The factory said the order was ready for pickup. The onsite check showed missing cartons and mixed labels, so we delayed collection until the count matched the packing list.",
         "result": "Delay caught before pickup"
       },
       {
-        "name": "Marcus T.",
+        "name": "Australian private-label buyer",
         "country": "Australia",
+        "flag": "🇦🇺",
+        "category": "Private-label home goods",
+        "orderScope": "4 suppliers · first order under $12k",
         "message": "We had four suppliers with similar quotes. Agent Huang compared samples, MOQ details, and factory risk notes, then showed why one supplier was safer for the first order.",
         "result": "Supplier shortlist reduced from 4 to 1"
       }
