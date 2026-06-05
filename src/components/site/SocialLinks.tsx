@@ -51,7 +51,7 @@ const socialLinks = [
     href: publicLinkedInHref,
     Icon: LinkedInIcon,
     label: 'LinkedIn',
-    supportingLabel: 'Agent Huang',
+    supportingLabel: 'Huang Sourcing',
   },
 ] as const
 

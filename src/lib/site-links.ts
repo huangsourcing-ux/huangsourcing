@@ -38,8 +38,9 @@ export const supplierVerificationVsFactoryAuditArticleHref =
 export const supplierDepositGuideHref = '/how-to-verify-chinese-supplier-before-deposit'
 export const termsBookingPolicyHref = '/terms-booking-policy'
 export const publicWhatsAppHref = 'https://wa.me/15035930974' as const
-export const publicLinkedInHref = 'https://www.linkedin.com/in/agenthuang/' as const
-export const whatsappPhoneDisplay = '+1 503 593 0974' as const
+export const publicLinkedInHref = 'https://www.linkedin.com/in/huangsourcing/' as const
+export const linkedInProfileDisplay = 'HuangSourcing' as const
+export const whatsappPhoneDisplay = '+1 503-593-0974' as const
 
 export function buildWhatsAppHref(message: string) {
   return `${publicWhatsAppHref}?text=${encodeURIComponent(message)}` as const
