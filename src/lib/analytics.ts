@@ -10,6 +10,17 @@ type FreeRiskCheckSubmitEvent = {
   source: string
 }
 
+type RiskCheckFormOpenEvent = {
+  sourcePagePath: string
+  triggerName: string
+}
+
+type RiskCheckSubmitEvent = {
+  currentStage: string
+  sourcePagePath: string
+  triggerName: string
+}
+
 type SampleReportDownloadEvent = {
   ctaLabel: string
   ctaLocation: string
@@ -57,6 +68,8 @@ export const analyticsEvents = {
   clickWhatsApp: 'click_whatsapp',
   downloadSampleReport: 'download_sample_report',
   quoteSent: 'quote_sent',
+  riskCheckFormOpen: 'risk_check_form_open',
+  riskCheckSubmit: 'risk_check_submit',
   submitFreeRiskCheck: 'submit_free_risk_check',
   viewServiceFba: 'view_service_fba',
   viewServiceQc: 'view_service_qc',
@@ -107,6 +120,28 @@ export function trackFreeRiskCheckSubmit({
     risk_scenario: riskScenario,
     shipment_stage: shipmentStage,
     source,
+  })
+}
+
+export function trackRiskCheckFormOpen({
+  sourcePagePath,
+  triggerName,
+}: RiskCheckFormOpenEvent) {
+  trackEvent(analyticsEvents.riskCheckFormOpen, {
+    source_page_path: sourcePagePath,
+    trigger_name: triggerName,
+  })
+}
+
+export function trackRiskCheckSubmit({
+  currentStage,
+  sourcePagePath,
+  triggerName,
+}: RiskCheckSubmitEvent) {
+  trackEvent(analyticsEvents.riskCheckSubmit, {
+    current_stage: currentStage,
+    source_page_path: sourcePagePath,
+    trigger_name: triggerName,
   })
 }
 

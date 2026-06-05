@@ -19,11 +19,13 @@ import Link from 'next/link'
 import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
+import { RiskCheckLeadCapture } from '@/components/risk-check/RiskCheckLeadCapture'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import type { RiskCheckStage } from '@/lib/risk-check-lead'
 import { servicePricingBySlug } from '@/lib/service-pricing'
 import { reportHref, sampleReportPageHref } from '@/lib/site-links'
 import { makeHomeJsonLd } from '@/lib/structured-data'
@@ -38,9 +40,9 @@ type ServiceCard = {
 type RiskStageCard = {
   phase: string
   ctaLabel: string
+  formStage: RiskCheckStage
   risk: string
   service: string
-  href: string
   Icon: LucideIcon
   recommended?: boolean
 }
@@ -50,9 +52,11 @@ type DetailService = ServiceCard & {
 }
 
 type Review = {
-  name: string
+  buyerProfile: string
   country: string
+  flag: string
   category: string
+  orderScope: string
   message: string
   result: string
 }
@@ -65,42 +69,42 @@ const riskStages: RiskStageCard[] = [
   {
     phase: 'Before Deposit',
     ctaLabel: 'Check supplier before deposit',
+    formStage: 'Before deposit',
     risk: 'Check supplier identity and pressure signs before money leaves your account.',
     service: 'Free Risk Check + Supplier Verification',
-    href: '/before-deposit-china-supplier-check',
     Icon: ShieldCheck,
   },
   {
     phase: 'Before Supplier Selection',
     ctaLabel: 'Compare samples before choosing supplier',
+    formStage: 'Before supplier selection',
     risk: 'Compare samples and supplier signals before you choose a factory.',
     service: 'Sample Consolidation',
-    href: '/compare-china-supplier-samples',
     Icon: Search,
   },
   {
     phase: 'Before Balance Payment',
     ctaLabel: 'Inspect goods before paying balance',
+    formStage: 'Before balance payment',
     risk: 'Confirm finished goods, labels, cartons, and packing before final payment.',
     service: 'QC Inspection',
-    href: '/before-balance-payment-qc-china',
     Icon: PackageCheck,
     recommended: true,
   },
   {
     phase: 'Before Pickup',
     ctaLabel: 'Check cartons before forwarder pickup',
+    formStage: 'Before pickup',
     risk: 'Verify carton count, shipping marks, and pickup readiness before collection.',
     service: 'Pre-Shipment Inspection',
-    href: '/before-forwarder-pickup-inspection-china',
     Icon: Truck,
   },
   {
     phase: 'Before FBA Shipment',
     ctaLabel: 'Check FNSKU and carton labels',
+    formStage: 'Before FBA shipment',
     risk: 'Check FNSKU, carton labels, and SKU separation before shipment.',
     service: 'Amazon FBA Prep',
-    href: '/before-amazon-fba-shipment-china',
     Icon: Barcode,
   },
 ]
@@ -221,25 +225,31 @@ const process = ['Send supplier or order context', 'Agent Huang checks the risk'
 
 const reviews: Review[] = [
   {
-    name: 'David R.',
+    buyerProfile: 'U.S. Amazon seller',
     country: 'United States',
+    flag: '🇺🇸',
     category: 'Home hardware',
+    orderScope: '~3,200 units · <$20k balance',
     message:
       'Agent Huang checked packaging and carton-label photos before we paid the balance. One carton label was wrong, so we asked the supplier to fix it before pickup.',
     result: 'Balance payment protected',
   },
   {
-    name: 'Sophie M.',
+    buyerProfile: 'EU ecommerce importer',
     country: 'Germany',
-    category: 'Consumer electronics',
+    flag: '🇩🇪',
+    category: 'Consumer electronics accessories',
+    orderScope: '38 cartons · 1,450 pcs',
     message:
       'The factory said the order was ready for pickup. The onsite check showed missing cartons and mixed labels, so we delayed collection until the count matched the packing list.',
     result: 'Delay caught before pickup',
   },
   {
-    name: 'Marcus T.',
+    buyerProfile: 'Australian private-label buyer',
     country: 'Australia',
-    category: 'Private-label goods',
+    flag: '🇦🇺',
+    category: 'Private-label home goods',
+    orderScope: '4 suppliers · first order under $12k',
     message:
       'We had four suppliers with similar quotes. Agent Huang compared samples, MOQ details, and factory risk notes, then showed why one supplier was safer for the first order.',
     result: 'Supplier shortlist reduced from 4 to 1',
@@ -419,21 +429,19 @@ export function MarketingPage() {
                     <p className="text-xs font-extrabold text-[var(--hs-muted-soft)]">Corresponding service</p>
                     <p className="mt-1 text-sm font-extrabold leading-5 text-[var(--hs-text)]">{stage.service}</p>
                   </div>
-                  <Button
-                    asChild
-                    className={`mt-auto h-auto min-h-11 w-full whitespace-normal rounded-md px-3 py-2 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-sm)] transition-all hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] ${
+                  <RiskCheckLeadCapture
+                    buttonClassName={`mt-auto h-auto min-h-11 w-full whitespace-normal rounded-md px-3 py-2 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-sm)] transition-all hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] ${
                       isRecommended
                         ? 'bg-[var(--hs-accent)] hover:bg-[var(--hs-accent-strong)]'
                         : 'bg-[var(--hs-navy)] hover:bg-[var(--hs-navy-2)]'
                     }`}
-                    size="default"
-                    variant="default"
+                    buttonSize="default"
+                    defaultStage={stage.formStage}
+                    triggerName={`${stage.phase} card`}
                   >
-                    <Link href={stage.href}>
-                      <span className="min-w-0 flex-1 text-left">{stage.ctaLabel}</span>
-                      <ArrowRight className="size-4 shrink-0" aria-hidden />
-                    </Link>
-                  </Button>
+                    <span className="min-w-0 flex-1 text-left">{stage.ctaLabel}</span>
+                    <ArrowRight className="size-4 shrink-0" aria-hidden />
+                  </RiskCheckLeadCapture>
                 </Reveal>
               )
             })}
@@ -652,22 +660,41 @@ export function MarketingPage() {
               <Reveal
                 as="article"
                 className="hs-card hs-card-hover bg-white p-5"
-                key={review.name}
+                key={review.buyerProfile}
                 staggerIndex={index}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="font-extrabold text-[var(--hs-text)]">{review.name}</p>
-                    <p className="text-sm text-[var(--hs-muted-soft)]">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span
+                        aria-label={review.country}
+                        className="text-lg leading-none"
+                        role="img"
+                      >
+                        {review.flag}
+                      </span>
+                      <p className="font-extrabold text-[var(--hs-text)]">
+                        {review.buyerProfile}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-sm font-semibold leading-5 text-[var(--hs-muted-soft)]">
                       {review.country} · {review.category}
                     </p>
                   </div>
                   <span className="rounded-full border border-[#E5E7EB] bg-[#F9FAFB] px-2 py-1 text-xs font-bold text-[#6B7280]">
-                    Buyer case
+                    Anonymized
                   </span>
                 </div>
+                <div className="mt-4 rounded-md border border-[#E5E7EB] bg-[#F8FAFC] px-3 py-2">
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-[#6B7280]">
+                    Order context
+                  </p>
+                  <p className="mt-1 text-sm font-extrabold leading-5 text-[var(--hs-text)]">
+                    {review.orderScope}
+                  </p>
+                </div>
                 <p className="mt-4 text-sm leading-[1.7] text-[#374151]">&ldquo;{review.message}&rdquo;</p>
-                <p className="mt-4 rounded-md border border-[#E5E7EB] bg-[#F8FAFC] px-3 py-2 text-sm font-extrabold text-[var(--hs-text)]">
+                <p className="mt-4 rounded-md border border-[#E5E7EB] bg-white px-3 py-2 text-sm font-extrabold text-[var(--hs-text)]">
                   {review.result}
                 </p>
               </Reveal>
