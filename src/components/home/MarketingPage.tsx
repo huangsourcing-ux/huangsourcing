@@ -19,11 +19,13 @@ import Link from 'next/link'
 import { SampleReportDownloadLink } from '@/components/analytics/SampleReportDownloadLink'
 import { HomeHeroCtas } from '@/components/home/HomeHeroCtas'
 import { HomeServiceDetails } from '@/components/home/HomeServiceDetails'
+import { RiskCheckLeadCapture } from '@/components/risk-check/RiskCheckLeadCapture'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Reveal } from '@/components/site/Reveal'
 import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
+import type { RiskCheckStage } from '@/lib/risk-check-lead'
 import { servicePricingBySlug } from '@/lib/service-pricing'
 import { reportHref, sampleReportPageHref } from '@/lib/site-links'
 import { makeHomeJsonLd } from '@/lib/structured-data'
@@ -38,9 +40,9 @@ type ServiceCard = {
 type RiskStageCard = {
   phase: string
   ctaLabel: string
+  formStage: RiskCheckStage
   risk: string
   service: string
-  href: string
   Icon: LucideIcon
   recommended?: boolean
 }
@@ -67,42 +69,42 @@ const riskStages: RiskStageCard[] = [
   {
     phase: 'Before Deposit',
     ctaLabel: 'Check supplier before deposit',
+    formStage: 'Before deposit',
     risk: 'Check supplier identity and pressure signs before money leaves your account.',
     service: 'Free Risk Check + Supplier Verification',
-    href: '/before-deposit-china-supplier-check',
     Icon: ShieldCheck,
   },
   {
     phase: 'Before Supplier Selection',
     ctaLabel: 'Compare samples before choosing supplier',
+    formStage: 'Before supplier selection',
     risk: 'Compare samples and supplier signals before you choose a factory.',
     service: 'Sample Consolidation',
-    href: '/compare-china-supplier-samples',
     Icon: Search,
   },
   {
     phase: 'Before Balance Payment',
     ctaLabel: 'Inspect goods before paying balance',
+    formStage: 'Before balance payment',
     risk: 'Confirm finished goods, labels, cartons, and packing before final payment.',
     service: 'QC Inspection',
-    href: '/before-balance-payment-qc-china',
     Icon: PackageCheck,
     recommended: true,
   },
   {
     phase: 'Before Pickup',
     ctaLabel: 'Check cartons before forwarder pickup',
+    formStage: 'Before pickup',
     risk: 'Verify carton count, shipping marks, and pickup readiness before collection.',
     service: 'Pre-Shipment Inspection',
-    href: '/before-forwarder-pickup-inspection-china',
     Icon: Truck,
   },
   {
     phase: 'Before FBA Shipment',
     ctaLabel: 'Check FNSKU and carton labels',
+    formStage: 'Before FBA shipment',
     risk: 'Check FNSKU, carton labels, and SKU separation before shipment.',
     service: 'Amazon FBA Prep',
-    href: '/before-amazon-fba-shipment-china',
     Icon: Barcode,
   },
 ]
@@ -427,21 +429,19 @@ export function MarketingPage() {
                     <p className="text-xs font-extrabold text-[var(--hs-muted-soft)]">Corresponding service</p>
                     <p className="mt-1 text-sm font-extrabold leading-5 text-[var(--hs-text)]">{stage.service}</p>
                   </div>
-                  <Button
-                    asChild
-                    className={`mt-auto h-auto min-h-11 w-full whitespace-normal rounded-md px-3 py-2 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-sm)] transition-all hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] ${
+                  <RiskCheckLeadCapture
+                    buttonClassName={`mt-auto h-auto min-h-11 w-full whitespace-normal rounded-md px-3 py-2 text-sm font-extrabold leading-5 text-white shadow-[var(--hs-shadow-sm)] transition-all hover:shadow-[var(--hs-shadow-md)] active:scale-[0.98] ${
                       isRecommended
                         ? 'bg-[var(--hs-accent)] hover:bg-[var(--hs-accent-strong)]'
                         : 'bg-[var(--hs-navy)] hover:bg-[var(--hs-navy-2)]'
                     }`}
-                    size="default"
-                    variant="default"
+                    buttonSize="default"
+                    defaultStage={stage.formStage}
+                    triggerName={`${stage.phase} card`}
                   >
-                    <Link href={stage.href}>
-                      <span className="min-w-0 flex-1 text-left">{stage.ctaLabel}</span>
-                      <ArrowRight className="size-4 shrink-0" aria-hidden />
-                    </Link>
-                  </Button>
+                    <span className="min-w-0 flex-1 text-left">{stage.ctaLabel}</span>
+                    <ArrowRight className="size-4 shrink-0" aria-hidden />
+                  </RiskCheckLeadCapture>
                 </Reveal>
               )
             })}
