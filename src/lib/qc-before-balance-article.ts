@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 
 import {
-  articleContentUpdateDate,
-  articleContentUpdateDateIso,
   getArticleOpenGraphImages,
   makeArticleJsonLd,
 } from '@/lib/article-seo'
@@ -27,6 +25,11 @@ type FaqItem = {
   question: string
 }
 
+type CheckGroup = {
+  checks: string[]
+  title: string
+}
+
 type RelatedLink = {
   href: string
   label: string
@@ -41,20 +44,20 @@ export const qcBeforeBalanceArticle = {
     'Use this QC inspection China before balance payment checklist to check finished goods, defects, packaging, labels, cartons, and shipment readiness before final payment.',
   publishedDate: 'May 21, 2026',
   publishedDateIso: '2026-05-21T21:58:27-04:00',
-  modifiedDate: articleContentUpdateDate,
-  modifiedDateIso: articleContentUpdateDateIso,
+  modifiedDate: 'June 6, 2026',
+  modifiedDateIso: '2026-06-06T06:07:39-04:00',
   h1: 'QC Inspection in China Before Balance Payment: What to Check',
   eyebrow: 'QC inspection China before balance payment',
   image: {
-    alt: 'Agent Huang checking finished goods packaging and cartons before balance payment in China',
+    alt: 'China-side QC inspector checking finished goods packaging and carton labels before balance payment',
     height: 900,
-    src: '/images/service-qc-inspection.webp',
+    src: '/images/qc-inspection-china-before-balance-payment.webp',
     width: 1600,
   },
   imageVariants: [
-    { height: 900, src: '/images/service-qc-inspection.webp', width: 1600 },
-    { height: 1200, src: '/images/service-qc-inspection-4x3.webp', width: 1600 },
-    { height: 1200, src: '/images/service-qc-inspection-1x1.webp', width: 1200 },
+    { height: 900, src: '/images/qc-inspection-china-before-balance-payment.webp', width: 1600 },
+    { height: 1200, src: '/images/qc-inspection-china-before-balance-payment-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/qc-inspection-china-before-balance-payment-1x1.webp', width: 1200 },
   ],
   intro:
     'Balance payment is the moment when many buyers still have leverage. Once final payment is released, wrong labels, visible defects, missing accessories, weak cartons, or unclear packing become harder to fix. This guide explains what overseas buyers should check before paying the balance while the goods are still in China.',
@@ -98,13 +101,39 @@ Critical checkpoints:
     'Packing list, commercial invoice, and shipment-readiness signals',
     'Defect photos and decision notes for payment, rework, sorting, or re-inspection',
   ],
+  checkGroups: [
+    {
+      title: 'Finished goods evidence',
+      checks: [
+        'Bulk units compared with the purchase order, approved sample notes, and product photos',
+        'Visible defects photographed with enough context to support repair, sorting, or replacement',
+        'Simple function or fit checks only when they are safe and agreed before inspection',
+      ],
+    },
+    {
+      title: 'Packing and carton evidence',
+      checks: [
+        'Retail packaging, accessories, manuals, inserts, and set completeness before carton sealing',
+        'Carton count, carton condition, packing method, shipping marks, and carton label placement',
+        'SKU separation, barcode, FNSKU, warning label, or carton-label checks when shipment rules require them',
+      ],
+    },
+    {
+      title: 'Payment-release evidence',
+      checks: [
+        'Packing list, commercial invoice, balance deadline, pickup timing, and supplier correction window',
+        'Clear report notes separating accepted points, failed points, scope limits, and recommended next action',
+        'Decision support for pay, hold, rework, sort, relabel, re-inspect, or delay pickup',
+      ],
+    },
+  ] satisfies CheckGroup[],
   sections: [
     {
       id: 'why-before-balance',
-      title: 'Why QC inspection before balance payment matters',
+      title: 'Should I pay the balance after supplier photos only?',
       paragraphs: [
-        'Before balance payment, the supplier still has a reason to correct issues. After payment, the buyer often has less leverage, and every correction may compete with pickup schedules, warehouse space, and freight deadlines.',
-        'The inspection should not be a generic photo collection. It should focus on the defects, packaging issues, label mistakes, and shipment blockers that affect the buyer decision in front of you.',
+        'Before balance payment, run QC if the goods are finished enough to check product condition, cartons, labels, and packing evidence. Hold the balance when the report shows unresolved defects, missing accessories, weak cartons, wrong labels, or documents that do not match the shipment. Pay only when evidence supports release and the limits are clear.',
+        'Supplier photos are useful pre-check signals, but they are not a buyer-side inspection. A balance-payment QC report should connect sampled goods, carton rows, label close-ups, packaging details, and defect examples to the practical decision in front of you.',
       ],
       bullets: [
         'Release the balance only when evidence supports shipment approval',
@@ -115,9 +144,9 @@ Critical checkpoints:
     },
     {
       id: 'what-to-check',
-      title: 'What to check during QC inspection in China before balance payment',
+      title: 'What should a China QC inspection check before balance payment?',
       paragraphs: [
-        'The exact checklist depends on your product, but the structure should stay practical: check what the supplier promised, what the buyer approved, what the shipment needs, and what would be expensive to fix after pickup.',
+        'A China QC inspection before balance payment should check finished quantity, visible defects, specification match, accessories, retail packaging, carton strength, carton labels, shipping marks, and document consistency. The checklist should be tied to the buyer decision, because a beautiful sample does not prove the bulk goods are ready for final payment.',
         'For Agent Huang, the useful question is not whether one perfect sample looks good. The useful question is whether the bulk goods, cartons, labels, packing, and documents are consistent enough for the buyer to release the final payment.',
       ],
       bullets: [
@@ -131,10 +160,10 @@ Critical checkpoints:
     },
     {
       id: 'field-notes',
-      title: 'Agent Huang field notes from the balance-payment stage',
+      title: 'What does Agent Huang see at the balance-payment stage?',
       paragraphs: [
-        'The most common problem is not a dramatic factory failure. It is a small mismatch that becomes expensive because nobody checked it before payment: a wrong barcode, an accessory missing from every box, cartons weaker than expected, or a logo printed in the wrong position.',
-        'Supplier photos often show the best-looking units. A buyer-side inspection needs wider context: sampled goods, carton rows, packaging details, label close-ups, defect examples, and a clear note about what was not checked.',
+        'A recurring balance-payment pattern is that supplier photos show neat finished units, but carton-level checks reveal a packing issue that would be costly after pickup. Common signals include an accessory missing from packed sets, a carton label placed on the wrong side, or mixed-SKU cartons that do not match the packing list. The practical decision is to hold payment until the supplier sorts, relabels, or repacks the affected goods and provides evidence that the correction was done.',
+        'The most useful field note is not dramatic. It is a small mismatch caught while the buyer still has leverage: wrong barcode evidence, incomplete set packing, carton weakness, logo placement, or shipping marks that do not match the order.',
       ],
       bullets: [
         'Do not approve balance payment from close-up beauty photos only',

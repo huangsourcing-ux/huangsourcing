@@ -160,9 +160,10 @@ export function QcBeforeBalanceArticlePage() {
                 What should be checked before balance payment?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check finished goods, defects, quantities, packaging, labels, cartons,
-                documents, and shipment readiness before releasing the final payment.
-                The point is to protect the buyer decision while supplier correction is still realistic.
+                Before releasing balance payment, check finished goods, visible defects,
+                quantities, packaging, labels, cartons, documents, and shipment readiness
+                while the supplier can still correct issues. The inspection should support
+                a clear decision: pay, hold, rework, sort, relabel, re-inspect, or delay pickup.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {qcBeforeBalanceArticle.quickChecks.map((item, index) => (
@@ -175,6 +176,29 @@ export function QcBeforeBalanceArticlePage() {
                     </span>
                     <span>{item}</span>
                   </div>
+                ))}
+              </div>
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {qcBeforeBalanceArticle.checkGroups.map((group) => (
+                  <section
+                    className="rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-5 shadow-[var(--hs-shadow-sm)]"
+                    key={group.title}
+                  >
+                    <h3 className="text-base font-extrabold text-[var(--hs-text)]">
+                      {group.title}
+                    </h3>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-[var(--hs-muted)]">
+                      {group.checks.map((check) => (
+                        <li className="flex gap-2" key={check}>
+                          <CheckCircle2
+                            className="mt-0.5 size-4 shrink-0 text-[var(--hs-accent)]"
+                            aria-hidden
+                          />
+                          <span>{check}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 ))}
               </div>
             </Reveal>
@@ -204,8 +228,10 @@ export function QcBeforeBalanceArticlePage() {
               What was checked and what the buyer can decide.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              The inspection report should make the next action clearer. These are the
-              common decision points before a supplier receives the final balance.
+              A balance-payment QC report should translate evidence into a next action.
+              Use the table to decide whether to release payment, hold the balance,
+              request rework, sort affected goods, relabel cartons, re-inspect, or delay
+              pickup before the supplier receives the final balance.
             </p>
           </Reveal>
           <div className="mt-8 overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
@@ -231,7 +257,7 @@ export function QcBeforeBalanceArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        intro="This balance-payment guidance is based on product, packing, label, carton, defect, and document evidence that can still support a hold, rework, or release decision."
+        intro="This balance-payment guidance is based on evidence a buyer can still use before final payment: product condition, sampled defects, packing details, label files, carton evidence, document consistency, and supplier correction timing. The advice supports a payment or hold decision, but it does not claim hidden-defect certainty."
         items={qcBeforeBalanceArticle.evidenceBasis}
       />
 
@@ -245,8 +271,10 @@ export function QcBeforeBalanceArticlePage() {
               What to send before QC inspection.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Better inputs create a better inspection. Send the requirements before
-              the inspector arrives so the report can compare goods against your order.
+              Send the purchase order, approved sample notes, defect priorities,
+              packing requirements, label files, carton counts, and balance deadline
+              before the inspector arrives. Clear inputs let the report compare the
+              goods against your order instead of becoming a generic photo visit.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -265,8 +293,10 @@ export function QcBeforeBalanceArticlePage() {
               Red flags before releasing balance payment.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              One warning sign may have an explanation. Several warning signs together
-              usually mean the buyer should slow payment and ask for evidence.
+              Hold balance payment when the supplier avoids bulk evidence, pushes
+              shipment before inspection, changes carton or label details near pickup,
+              or says visible packing mistakes can be fixed later. One warning sign may
+              have an explanation; several together mean the buyer should slow down.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -283,8 +313,10 @@ export function QcBeforeBalanceArticlePage() {
               What QC inspection before balance payment cannot guarantee.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Honest scope limits make the report more useful. QC gives buyer-side
-              evidence for a payment decision, not unlimited certainty.
+              QC inspection before balance payment gives buyer-side evidence for a
+              payment decision, not unlimited certainty. It cannot prove every hidden
+              defect, replace lab testing or legal compliance review, guarantee platform
+              receiving approval, or fix vague specifications after production is finished.
             </p>
             <BulletList items={qcBeforeBalanceArticle.scopeLimits} />
           </Reveal>
