@@ -29,7 +29,7 @@ Main concern:
 
 export function ChinaSourcingRiskGuidesPage() {
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader activePage="resources" topBanner={null} />
       <SiteBreadcrumbs
         currentPath={resourceGuideHref}

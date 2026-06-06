@@ -260,7 +260,7 @@ export function MarketingPage() {
   const homeJsonLd = makeHomeJsonLd()
 
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader
         activePage="home"
         topBanner="China-side sourcing, supplier checks, QC inspection, and shipment prep — aligned with the buyer."

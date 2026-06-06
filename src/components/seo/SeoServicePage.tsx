@@ -372,7 +372,7 @@ export function SeoServicePage({ page }: SeoServicePageProps) {
   const enhancement = seoServiceEnhancements[page.slug]
 
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <ServiceViewTracker serviceName={page.title} serviceSlug={page.slug} />
 
