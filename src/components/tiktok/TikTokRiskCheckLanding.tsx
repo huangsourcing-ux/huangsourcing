@@ -218,7 +218,7 @@ Situation: ${form.message}
   }
 
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <header className="border-b border-[var(--hs-border)] bg-white/86 backdrop-blur-xl">
         <div className="hs-container flex h-16 items-center justify-between gap-3">
           <Link

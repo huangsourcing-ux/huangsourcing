@@ -177,7 +177,7 @@ const buyerChoices: BuyerChoice[] = [
 
 export function ChinaSourcingServicesPage() {
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs
         currentPath="/china-sourcing-services"

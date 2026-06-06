@@ -48,7 +48,7 @@ export function SourcingStagePage({ page }: SourcingStagePageProps) {
   const jsonLd = makeSourcingStageJsonLd(page)
 
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <JsonLd data={jsonLd} />
       <SiteBreadcrumbs

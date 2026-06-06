@@ -135,7 +135,7 @@ function ServicePrepCard({ item, index }: { item: BookingPrepServiceItem; index:
 
 function WhatToSendBeforeChinaInspectionPage() {
   return (
-    <main className="hs-page min-h-screen overflow-x-hidden antialiased">
+    <main className="hs-page min-h-screen overflow-x-clip antialiased">
       <SiteHeader activePage="service" topBanner={null} />
       <SiteBreadcrumbs
         currentPath={whatToSendBeforeChinaInspectionHref}
