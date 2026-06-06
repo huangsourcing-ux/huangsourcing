@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { ContactAgentButton } from '@/components/home/ContactAgentButton'
+import { RiskCheckLeadCapture } from '@/components/risk-check/RiskCheckLeadCapture'
 import { MobileSiteNav } from '@/components/site/MobileSiteNav'
 import { en } from '@/content/en'
 import {
@@ -107,15 +107,14 @@ export function SiteHeader({ topBanner, activePage }: SiteHeaderProps) {
             >
               <Link href={sampleReportPageHref}>{nav.sampleReport}</Link>
             </Button>
-            <ContactAgentButton
-              analyticsLabel={nav.contact}
-              analyticsLocation="site_header"
-              className="h-10 rounded-md bg-[#1f7a4d] px-4 text-sm font-extrabold text-white shadow-[0_10px_24px_rgba(31,122,77,0.22)] transition-all hover:bg-[#17643e] hover:shadow-[0_14px_30px_rgba(31,122,77,0.28)] active:scale-[0.98]"
-              size="sm"
-              variant="default"
+            <RiskCheckLeadCapture
+              buttonClassName="h-10 rounded-md bg-[#1f7a4d] px-4 text-sm font-extrabold text-white shadow-[0_10px_24px_rgba(31,122,77,0.22)] transition-all hover:bg-[#17643e] hover:shadow-[0_14px_30px_rgba(31,122,77,0.28)] active:scale-[0.98]"
+              buttonSize="sm"
+              buttonVariant="default"
+              triggerName="site_header"
             >
-              {nav.contact}
-            </ContactAgentButton>
+              {nav.riskCheckCta}
+            </RiskCheckLeadCapture>
           </nav>
           <MobileSiteNav activePage={activePage} />
         </div>
