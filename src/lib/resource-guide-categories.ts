@@ -15,6 +15,7 @@ import {
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
+  qcVsPreShipmentInspectionArticleHref,
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierDepositGuideHref,
@@ -81,6 +82,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: productionVsPreShipmentInspectionArticleHref,
         label: 'Production vs pre-shipment inspection',
       },
+      {
+        href: qcVsPreShipmentInspectionArticleHref,
+        label: 'QC inspection vs pre-shipment inspection',
+      },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: '/before-balance-payment-qc-china', label: 'Inspection before balance payment' },
       { href: '/qc-inspection-china', label: 'QC Inspection China' },
@@ -99,6 +104,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: productionVsPreShipmentInspectionArticleHref,
         label: 'Production vs pre-shipment inspection',
+      },
+      {
+        href: qcVsPreShipmentInspectionArticleHref,
+        label: 'QC inspection vs pre-shipment inspection',
       },
       { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection before pickup' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before forwarder pickup' },
@@ -189,6 +198,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: productionVsPreShipmentInspectionArticleHref,
         label: 'Production vs pre-shipment inspection',
+      },
+      {
+        href: qcVsPreShipmentInspectionArticleHref,
+        label: 'QC vs pre-shipment inspection decision',
       },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },

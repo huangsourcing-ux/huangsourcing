@@ -23,6 +23,8 @@ export const huangSourcingCheckScopeArticleHref = '/huang-sourcing-check-scope'
 export const preShipmentBeforePickupArticleHref = '/pre-shipment-inspection-china-before-pickup'
 export const productionVsPreShipmentInspectionArticleHref =
   '/production-vs-pre-shipment-inspection'
+export const qcVsPreShipmentInspectionArticleHref =
+  '/qc-vs-pre-shipment-inspection'
 export const privacyConfidentialityHref = '/privacy-confidentiality'
 export const qcBeforeBalanceArticleHref = '/qc-inspection-china-before-balance-payment'
 export const refundPolicyHref = '/refund-policy'
