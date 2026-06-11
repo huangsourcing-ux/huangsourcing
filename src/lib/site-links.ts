@@ -5,6 +5,7 @@ export const chinaSourcingInspectionPricingHref = '/china-sourcing-inspection-pr
 export const chinaSourcingServicesHref = '/china-sourcing-services'
 export const contactHref = '/contact'
 export const buyerSideInspectionReportArticleHref = '/buyer-side-inspection-report'
+export const chinaQcInspectionFailsArticleHref = '/china-qc-inspection-fails'
 export const chinaQcInspectionBookingChecklistArticleHref =
   '/china-qc-inspection-booking-checklist'
 export const chineseSupplierDepositDecisionArticleHref = '/chinese-supplier-deposit-decision'
