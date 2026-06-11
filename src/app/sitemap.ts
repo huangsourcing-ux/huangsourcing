@@ -8,6 +8,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
+  chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chinaSourcingInspectionPricingHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -107,6 +108,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: qcBeforeBalanceArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.78,
+  },
+  {
+    path: chinaQcInspectionFailsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
   },
