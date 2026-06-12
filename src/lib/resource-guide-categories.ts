@@ -13,6 +13,7 @@ import {
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   huangSourcingCheckScopeArticleHref,
+  packagingLabelCheckBeforePaymentArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -86,6 +87,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: qcVsPreShipmentInspectionArticleHref,
         label: 'QC inspection vs pre-shipment inspection',
+      },
+      {
+        href: packagingLabelCheckBeforePaymentArticleHref,
+        label: 'Packaging and label checks before final payment',
       },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: chinaQcInspectionFailsArticleHref, label: 'What happens when China QC fails' },
@@ -204,6 +209,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: qcVsPreShipmentInspectionArticleHref,
         label: 'QC vs pre-shipment inspection decision',
+      },
+      {
+        href: packagingLabelCheckBeforePaymentArticleHref,
+        label: 'Packaging and label release checklist',
       },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },

@@ -21,6 +21,8 @@ export const fnskuLabelCheckHref = '/fnsku-label-check-china'
 export const fnskuLabelMistakesArticleHref = '/fnsku-label-mistakes-before-goods-leave-china'
 export const forwarderPickupChinaRisksArticleHref = '/forwarder-pickup-china-risks'
 export const huangSourcingCheckScopeArticleHref = '/huang-sourcing-check-scope'
+export const packagingLabelCheckBeforePaymentArticleHref =
+  '/packaging-label-check-before-payment'
 export const preShipmentBeforePickupArticleHref = '/pre-shipment-inspection-china-before-pickup'
 export const productionVsPreShipmentInspectionArticleHref =
   '/production-vs-pre-shipment-inspection'
