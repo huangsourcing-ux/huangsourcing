@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 
 import {
-  articleContentUpdateDate,
-  articleContentUpdateDateIso,
   getArticleOpenGraphImages,
   makeArticleJsonLd,
 } from '@/lib/article-seo'
@@ -35,31 +33,31 @@ type RelatedLink = {
 
 export const preShipmentBeforePickupArticle = {
   href: preShipmentBeforePickupArticleHref,
-  title: 'Pre-Shipment Inspection China: What Buyers Should Confirm Before Pickup',
+  title: 'Pre-Shipment Inspection China Before Forwarder Pickup',
   metaTitle: 'Pre-Shipment Inspection China',
   metaDescription:
-    'Use this pre-shipment inspection China checklist before pickup to confirm cartons, labels, packing list, shipping marks, carton condition, and shipment readiness.',
+    'Use this pre-shipment inspection China before forwarder pickup guide to decide whether to release pickup, delay pickup, relabel, repack, or re-check cartons.',
   publishedDate: 'May 21, 2026',
   publishedDateIso: '2026-05-21T22:16:02-04:00',
-  modifiedDate: articleContentUpdateDate,
-  modifiedDateIso: articleContentUpdateDateIso,
-  h1: 'Pre-Shipment Inspection China: What Buyers Should Confirm Before Pickup',
+  modifiedDate: 'June 16, 2026',
+  modifiedDateIso: '2026-06-16T09:00:00-04:00',
+  h1: 'Pre-Shipment Inspection China Before Forwarder Pickup',
   eyebrow: 'Pre-shipment inspection China',
   image: {
-    alt: 'Agent Huang checking packed export cartons before forwarder pickup in China',
+    alt: 'Agent Huang checking staged export cartons and pickup documents before forwarder pickup in China',
     height: 900,
-    src: '/images/pre-shipment-inspection-before-pickup.webp',
+    src: '/images/pre-shipment-inspection-china-before-pickup.webp',
     width: 1600,
   },
   imageVariants: [
-    { height: 900, src: '/images/pre-shipment-inspection-before-pickup.webp', width: 1600 },
-    { height: 1200, src: '/images/pre-shipment-inspection-before-pickup-4x3.webp', width: 1600 },
-    { height: 1200, src: '/images/pre-shipment-inspection-before-pickup-1x1.webp', width: 1200 },
+    { height: 900, src: '/images/pre-shipment-inspection-china-before-pickup.webp', width: 1600 },
+    { height: 1200, src: '/images/pre-shipment-inspection-china-before-pickup-4x3.webp', width: 1600 },
+    { height: 1200, src: '/images/pre-shipment-inspection-china-before-pickup-1x1.webp', width: 1200 },
   ],
   intro:
-    'Pre-shipment inspection in China is most useful when it protects a real pickup decision. Once a forwarder collects the goods, carton problems, label mistakes, missing boxes, and document gaps become harder to fix. This guide explains what overseas buyers should confirm before pickup while the supplier can still correct visible issues.',
+    'Pre-shipment inspection in China is most useful when it protects a real forwarder pickup decision. Once the forwarder collects the goods, carton problems, label mistakes, missing boxes, and document gaps become harder to fix. This guide explains what overseas buyers should confirm before pickup while the supplier can still correct visible issues.',
   answerSummary:
-    'A practical PSI before pickup should answer one buyer decision: release pickup, delay pickup, request correction, hold shipment, or re-check. The inspection should show what was checked, what evidence was captured, and what limits remain.',
+    'A practical PSI before forwarder pickup should answer one buyer decision: release pickup, delay pickup, relabel, repack, hold shipment, or re-check. The inspection should show what was checked, what evidence was captured, what the supplier must fix, and what limits remain.',
   primaryCta: {
     href: '/china-pre-shipment-inspection',
     label: 'Book PSI',
@@ -102,9 +100,9 @@ Main concern:
   sections: [
     {
       id: 'why-before-pickup',
-      title: 'Why pre-shipment inspection should happen before pickup',
+      title: 'Should I release forwarder pickup after PSI?',
       paragraphs: [
-        'The pickup stage is a risk point, not just a logistics step. Goods may be produced and packed, but still not ready for a forwarder if carton labels, packing lists, shipping marks, or loading details are wrong.',
+        'Buyers should release forwarder pickup only when the PSI confirms cartons, labels, documents, and pickup details against the order evidence. If carton count, shipping marks, pickup address, or carton condition is still unclear, the practical decision is to delay pickup while the supplier can still correct visible shipment blockers.',
         'Before pickup, the buyer still has a chance to stop the handover, ask the supplier to correct labels, replace damaged cartons, update documents, or confirm missing quantities. After pickup, every correction may involve warehouse fees, relabeling fees, freight delays, and arguments about who caused the problem.',
       ],
       bullets: [
@@ -118,7 +116,7 @@ Main concern:
       id: 'what-to-confirm',
       title: 'What buyers should confirm during pre-shipment inspection in China',
       paragraphs: [
-        'Pre-shipment inspection should confirm whether the shipment is ready to leave the supplier or warehouse. It is not only about checking a few products. At the pickup stage, carton-level evidence matters because the forwarder will receive cartons, not promises.',
+        'Pre-shipment inspection in China should compare the packed shipment against the packing list, purchase order, label files, shipping marks, pickup address, and forwarder plan. The inspection should produce carton-level photos and notes that support a release, relabel, repack, hold, or re-check decision before goods leave supplier control.',
         'Agent Huang looks for consistency between the packing list, actual cartons, labels, shipping marks, warehouse contact, and pickup plan. A clean product inspection can still become a bad shipment if the wrong cartons are handed to the forwarder.',
       ],
       bullets: [
@@ -132,9 +130,10 @@ Main concern:
     },
     {
       id: 'field-notes',
-      title: 'Agent Huang field notes from before-pickup checks',
+      title: 'What does Agent Huang see in before-pickup checks?',
       paragraphs: [
-        'Many pickup problems are boring on paper and expensive in practice. A carton label placed on the wrong side, a missing carton from the packing list, or a changed pickup address can delay a shipment even when the goods themselves are acceptable.',
+        'Agent Huang treats before-pickup PSI as a handover-risk check, not a warehouse photo request. The useful evidence is whether the cartons staged for pickup match the buyer documents, labels, and forwarder plan. When the evidence does not reconcile, the pickup decision should slow down before goods leave the supplier.',
+        'A recurring before-pickup pattern Agent Huang sees is a supplier saying the shipment is ready while the packing list has just changed and only a few clean carton photos are shared. The buyer-side check is to compare the final carton count, shipping marks, carton labels, and staged-goods photos against the pickup plan. When the numbers or labels do not reconcile, the practical decision is to hold pickup or re-check after correction.',
         'Supplier photos often show the cartons that look easiest to photograph. Buyer-side PSI should show the broader handover situation: carton rows, labels, damage examples, packing-list comparison, and whether goods are physically ready for pickup.',
       ],
       bullets: [
@@ -234,7 +233,7 @@ Main concern:
     {
       question: 'What is pre-shipment inspection in China?',
       answer:
-        'Pre-shipment inspection in China is a buyer-side check before goods leave the supplier or warehouse. It can confirm visible product condition, cartons, labels, packing list, shipping marks, and pickup readiness depending on the agreed scope.',
+        'Pre-shipment inspection in China is a buyer-side check before goods leave the supplier or warehouse. Before forwarder pickup, it can confirm visible product condition, cartons, labels, packing list, shipping marks, pickup address, and handover readiness depending on the agreed scope.',
     },
     {
       question: 'When should I book pre-shipment inspection before pickup?',
@@ -244,7 +243,7 @@ Main concern:
     {
       question: 'What should buyers confirm before forwarder pickup?',
       answer:
-        'Confirm final carton count, packing list, commercial invoice, carton condition, labels, shipping marks, pickup address, supplier contact, forwarder contact, and loading readiness.',
+        'Confirm final carton count, packing list, commercial invoice, carton condition, labels, shipping marks, pickup address, supplier contact, forwarder contact, loading window, and whether the cartons are physically staged for pickup.',
     },
     {
       question: 'Can PSI check Amazon FBA labels?',
@@ -293,7 +292,7 @@ export function makePreShipmentBeforePickupArticleJsonLd() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Pre-shipment inspection China before pickup checklist',
+      name: 'Pre-shipment inspection China before forwarder pickup checklist',
       itemListElement: preShipmentBeforePickupArticle.quickChecks.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,

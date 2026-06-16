@@ -160,9 +160,11 @@ export function PreShipmentBeforePickupArticlePage() {
                 What should buyers confirm before pickup?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Confirm cartons, labels, packing list, shipping marks, pickup address,
-                loading window, and visible shipment-readiness evidence before the
-                forwarder collects the goods.
+                Before forwarder pickup, buyers should confirm cartons, labels,
+                packing list, shipping marks, pickup address, loading window, and
+                visible shipment-readiness evidence. If those signals do not match,
+                delay pickup, request correction, or re-check before the goods leave
+                the supplier or warehouse.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {preShipmentBeforePickupArticle.quickChecks.map((item, index) => (
@@ -204,8 +206,10 @@ export function PreShipmentBeforePickupArticlePage() {
               What was checked and what the buyer can decide.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Pre-shipment inspection should make the handover decision clearer before
-              goods leave the supplier or warehouse.
+              Use the decision table when the forwarder pickup date is close and the
+              buyer needs a clear action. Each row connects visible PSI evidence to
+              the practical choice: release pickup, delay pickup, relabel, repack,
+              separate affected cartons, or re-check after supplier correction.
             </p>
           </Reveal>
           <div className="mt-8 overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
@@ -231,7 +235,7 @@ export function PreShipmentBeforePickupArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        intro="This before-pickup guidance is based on carton, label, packing-list, pickup, and handover evidence that can still be corrected before freight moves."
+        intro="This before-pickup guidance is based on evidence that can still change the handover decision: carton count, label files, shipping marks, packing-list details, pickup address, staged-goods photos, and forwarder timing. Huang Sourcing uses those signals to decide whether pickup should proceed, pause, or be re-checked."
         items={preShipmentBeforePickupArticle.evidenceBasis}
       />
 
@@ -245,8 +249,11 @@ export function PreShipmentBeforePickupArticlePage() {
               What to send before PSI.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Send shipment documents and label requirements before the inspection
-              so the onsite check can compare cartons against the pickup plan.
+              Send the order, shipment documents, label files, and pickup details
+              before PSI so the onsite check can compare physical cartons against the
+              buyer&apos;s actual release decision. Missing files make the inspection less
+              useful because the inspector can photograph cartons but cannot verify
+              whether the handover matches the plan.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -265,8 +272,11 @@ export function PreShipmentBeforePickupArticlePage() {
               Red flags before pickup.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              If these signals appear before the forwarder arrives, slow the pickup
-              decision and ask for evidence or correction.
+              Red flags before pickup should slow the handover decision while the
+              supplier can still correct visible shipment blockers. Do not treat a
+              clean product photo as pickup approval if carton count, labels,
+              packing list, pickup address, or staged-goods evidence is still
+              incomplete.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -283,8 +293,11 @@ export function PreShipmentBeforePickupArticlePage() {
               What pre-shipment inspection cannot guarantee.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Clear limits matter. PSI gives buyer-side evidence for pickup release,
-              not unlimited certainty about every hidden or future shipment issue.
+              Pre-shipment inspection before forwarder pickup reduces visible
+              handover risk, but it cannot guarantee every hidden product issue,
+              customs result, forwarder performance, port schedule, or Amazon
+              receiving outcome. Treat PSI as buyer-side evidence for release,
+              correction, delay, or re-check, not unlimited certainty.
             </p>
             <BulletList items={preShipmentBeforePickupArticle.scopeLimits} />
           </Reveal>
