@@ -60,7 +60,10 @@ export function ForwarderPickupChinaRisksArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {forwarderPickupChinaRisksArticle.h1}
             </h1>
-            <ArticleByline publishedDate={forwarderPickupChinaRisksArticle.publishedDate} />
+            <ArticleByline
+              modifiedDate={forwarderPickupChinaRisksArticle.modifiedDate}
+              publishedDate={forwarderPickupChinaRisksArticle.publishedDate}
+            />
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {forwarderPickupChinaRisksArticle.intro}
             </p>
@@ -149,13 +152,14 @@ export function ForwarderPickupChinaRisksArticlePage() {
             <Reveal>
               <p className="hs-eyebrow">Quick answer</p>
               <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-                What should buyers check before the forwarder arrives?
+                What should buyers check before the forwarder collects goods?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check whether the actual cartons, labels, packing list, pickup
-                address, warehouse readiness, and forwarder timing match before
-                approving collection. If they do not match, delay pickup while the
-                supplier can still correct the issue.
+                Before the forwarder collects goods in China, check whether actual
+                cartons, labels, packing documents, pickup address, warehouse readiness,
+                and forwarder timing match. If the evidence does not match, delay
+                pickup, request correction, or re-check while the supplier can still
+                fix visible shipment problems.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {forwarderPickupChinaRisksArticle.quickChecks.map((item, index) => (
@@ -205,8 +209,10 @@ export function ForwarderPickupChinaRisksArticlePage() {
               What was checked and what the buyer can decide.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              A before-pickup check should turn visible shipment evidence into a
-              clear release, delay, correction, or re-check decision before goods move.
+              A before-pickup decision table helps the buyer connect each visible
+              shipment risk to a practical action: release, delay, correct, relabel,
+              repack, or re-check. The point is to approve forwarder collection only
+              when carton, label, document, and handover evidence support the pickup.
             </p>
           </Reveal>
           <div className="mt-8 overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
@@ -232,7 +238,7 @@ export function ForwarderPickupChinaRisksArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        intro="This guidance is based on pickup-window facts, packing documents, carton and label evidence, onsite warehouse readiness signals, and China-side handover workflow judgment."
+        intro="This before-pickup guidance is based on pickup-window facts, packing documents, carton and label evidence, onsite warehouse readiness signals, and China-side handover workflow judgment. The evidence basis supports a release, delay, correction, or re-check decision before goods leave the supplier."
         items={forwarderPickupChinaRisksArticle.evidenceBasis}
       />
 
@@ -246,8 +252,10 @@ export function ForwarderPickupChinaRisksArticlePage() {
               What to send before the pickup check.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Send the files that let the onsite check compare actual cartons against
-              the pickup plan while correction is still possible.
+              Send the files that let Agent Huang compare actual cartons against the
+              pickup plan while correction is still possible. The useful package is
+              not only product photos; it includes order documents, label files,
+              carton totals, warehouse contacts, and the exact buyer decision needed.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -266,8 +274,11 @@ export function ForwarderPickupChinaRisksArticlePage() {
               Red flags before forwarder pickup.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              These signals should slow the pickup decision until the supplier provides
-              evidence, correction, or a clear explanation.
+              Red flags before forwarder pickup should slow the buyer decision until
+              the supplier provides evidence, correction, or a written explanation.
+              The highest-risk signals are late document changes, unclear carton
+              totals, weak pickup address proof, and supplier pressure to collect
+              before visible evidence is available.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -284,9 +295,11 @@ export function ForwarderPickupChinaRisksArticlePage() {
               What a before-pickup check cannot guarantee.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              This check supports a practical pickup decision. It does not create
-              certainty about every hidden product issue or every freight event after
-              goods leave the supplier.
+              A before-pickup check supports a practical collection decision, but it
+              cannot guarantee every hidden product condition or every freight event
+              after goods leave the supplier. Use the check to reduce visible
+              shipment-readiness risk, not as legal, customs, marketplace, or
+              forwarder-performance certainty.
             </p>
             <BulletList items={forwarderPickupChinaRisksArticle.scopeLimits} />
           </Reveal>
@@ -354,7 +367,7 @@ export function ForwarderPickupChinaRisksArticlePage() {
             <div className="relative">
               <p className="text-sm font-extrabold text-red-200">Before forwarder pickup</p>
               <h2 className="mt-3 text-3xl font-extrabold">
-                Check pickup blockers before cartons leave the supplier.
+                Check the shipment before your forwarder collects the goods.
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
                 Send the product, carton count, warehouse address, pickup date,

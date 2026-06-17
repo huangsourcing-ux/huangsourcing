@@ -33,16 +33,18 @@ type RelatedLink = {
 
 export const forwarderPickupChinaRisksArticle = {
   href: forwarderPickupChinaRisksArticleHref,
-  title: 'What Can Go Wrong Before Forwarder Pickup in China?',
-  metaTitle: 'Forwarder Pickup China Risks',
+  title: 'What to Check Before Your Forwarder Collects Goods in China',
+  metaTitle: 'Forwarder Pickup China Checklist',
   metaDescription:
-    'See what can go wrong before forwarder pickup in China: carton count gaps, wrong labels, damaged cartons, pickup address changes, and shipment blockers.',
+    'Check cartons, labels, packing documents, pickup address, and warehouse readiness before your forwarder collects goods in China.',
   publishedDate: 'May 29, 2026',
   publishedDateIso: '2026-05-29T09:00:00-04:00',
-  h1: 'What Can Go Wrong Before Forwarder Pickup in China?',
-  eyebrow: 'Forwarder pickup China risks',
+  modifiedDate: 'June 16, 2026',
+  modifiedDateIso: '2026-06-16T22:15:00-04:00',
+  h1: 'What to Check Before Your Forwarder Collects Goods in China',
+  eyebrow: 'Forwarder pickup China checklist',
   image: {
-    alt: 'Agent Huang checking damaged export cartons and pickup paperwork before forwarder pickup in China',
+    alt: 'Agent Huang checking export cartons, labels, and pickup paperwork before a forwarder collects goods in China',
     height: 900,
     src: '/images/forwarder-pickup-china-risks.webp',
     width: 1600,
@@ -53,9 +55,9 @@ export const forwarderPickupChinaRisksArticle = {
     { height: 1200, src: '/images/forwarder-pickup-china-risks-1x1.webp', width: 1200 },
   ],
   intro:
-    'Before forwarder pickup in China, the goods may look finished but still not be ready to leave the supplier. Carton count gaps, wrong labels, damaged boxes, address changes, unfinished packing, or inconsistent documents can turn a simple pickup into a shipment delay.',
+    'Before your forwarder collects goods in China, the shipment may look finished but still not be ready to leave the supplier. Carton count gaps, wrong labels, damaged boxes, address changes, unfinished packing, or inconsistent documents can turn a simple pickup into a shipment delay.',
   answerSummary:
-    'The buyer decision is practical: release pickup, delay pickup, ask the supplier to correct, hold shipment, or re-check. A before-pickup check should compare carton evidence, label files, packing documents, warehouse readiness, and forwarder timing while the supplier can still fix visible problems.',
+    'The buyer decision is practical: release pickup, delay pickup, ask the supplier to correct, hold shipment, or re-check. A before-pickup check should compare carton evidence, label files, packing documents, warehouse readiness, pickup address, and forwarder timing while the supplier can still fix visible problems.',
   primaryCta: {
     href: '/before-forwarder-pickup-inspection-china',
     label: 'Check Before Pickup',
@@ -77,7 +79,7 @@ Main concern:
 `,
   tableOfContents: [
     { href: '#quick-answer', label: 'Quick answer' },
-    { href: '#what-can-go-wrong', label: 'What can go wrong' },
+    { href: '#what-to-check', label: 'What to check' },
     { href: '#cartons-labels', label: 'Cartons and labels' },
     { href: '#handover-documents', label: 'Handover documents' },
     { href: '#decision-table', label: 'Pickup decisions' },
@@ -89,20 +91,21 @@ Main concern:
     { href: '#faq', label: 'FAQ' },
   ],
   quickChecks: [
-    'Carton count does not match the packing list, purchase order, or supplier message',
-    'Cartons are crushed, wet, weakly sealed, poorly strapped, or not fit for pickup',
-    'Shipping marks, carton labels, barcodes, FNSKU labels, or SKU labels are missing or wrong',
-    'Mixed SKUs, loose accessories, or unclear carton separation could confuse warehouse receiving',
-    'Pickup address, warehouse contact, loading time, or local delivery responsibility changed late',
-    'Goods are not staged, packing is unfinished, or warehouse access is not ready for the driver',
-    'Packing list, commercial invoice, gross weight, volume, or carton count information conflicts',
-    'Supplier pushes pickup before buyer-side photos, correction evidence, or a re-check are available',
+    'Final carton count matches the purchase order, packing list, and staged shipment evidence',
+    'Cartons are dry, sealed, strapped, undamaged, and fit for forwarder collection',
+    'Shipping marks, carton labels, barcodes, FNSKU labels, or SKU labels match the buyer files',
+    'SKUs, colors, bundles, accessories, and mixed cartons are separated clearly enough for receiving',
+    'Pickup address, warehouse contact, loading time, and local delivery responsibility are confirmed',
+    'Goods are staged, packing is finished, and warehouse access is ready for the driver',
+    'Packing list, commercial invoice, gross weight, volume, and carton count tell the same story',
+    'Supplier correction evidence is received before the buyer approves pickup or releases balance',
   ],
   sections: [
     {
-      id: 'what-can-go-wrong',
-      title: 'Why the pickup window is a buyer risk point',
+      id: 'what-to-check',
+      title: 'What should I check before my forwarder collects goods in China?',
       paragraphs: [
+        'Before a forwarder collects goods in China, check carton count, carton condition, labels, packing documents, pickup address, warehouse readiness, and supplier correction evidence. If those signals do not match, the safer buyer decision is to delay pickup or re-check while the supplier can still fix visible problems.',
         'Forwarder pickup is the handover moment when goods start moving away from the supplier. Before that moment, the buyer still has a realistic chance to ask for carton replacement, relabeling, packing-list correction, SKU separation, or a short re-check.',
         'After pickup, the same problem may become a warehouse fee, a delayed shipment, a relabeling job, a dispute about damage, or a missing-carton argument. That is why the before-pickup check should focus on shipment readiness, not just whether the product was manufactured.',
       ],
@@ -115,8 +118,9 @@ Main concern:
     },
     {
       id: 'cartons-labels',
-      title: 'Carton and label problems that can block pickup',
+      title: 'How do cartons and labels affect pickup approval?',
       paragraphs: [
+        'Carton and label evidence should decide whether pickup can proceed, not a supplier message saying goods are ready. Approve collection only when cartons are counted, sealed, dry, labeled correctly, separated by SKU where needed, and physically staged for the driver or warehouse handover.',
         'Carton-level issues often look small until the forwarder receives the shipment. Wrong shipping marks, missing barcodes, damaged cartons, weak sealing, mixed SKUs, or unclear FBA labels can create downstream warehouse and receiving problems.',
         'A useful pickup check compares actual cartons against the packing list and label files. It should show broad carton rows, examples of labels, any damage, SKU separation, and whether cartons are physically ready to be handed over.',
       ],
@@ -130,9 +134,10 @@ Main concern:
     },
     {
       id: 'handover-documents',
-      title: 'Documents, address, and timing issues before handover',
+      title: 'Which documents and handover details should match before pickup?',
       paragraphs: [
-        'A shipment can be physically packed and still fail the pickup decision if the documents or handover details do not line up. Packing list, commercial invoice, carton count, gross weight, volume, pickup address, warehouse contact, and loading window all affect the forwarder handover.',
+        'Before pickup, the packing list, commercial invoice, carton count, gross weight, volume, pickup address, warehouse contact, and loading window should all match the shipment evidence. If a document or address changes late, pause collection until the supplier explains the change in writing.',
+        'A shipment can be physically packed and still fail the pickup decision if the documents or handover details do not line up. The forwarder is collecting cartons from a real location at a real time, so paperwork gaps quickly become driver waiting time, missed loading windows, or receiving confusion.',
         'Late changes deserve attention. If the pickup address changes, the carton count changes, or the supplier asks the driver to collect before evidence is shared, the buyer should slow down and ask what changed before approving movement.',
       ],
       bullets: [
@@ -147,8 +152,9 @@ Main concern:
       id: 'field-notes',
       title: 'Agent Huang field notes before forwarder pickup',
       paragraphs: [
-        'The most common pickup risk pattern is approving movement from a few clean photos. A buyer needs enough evidence to know whether the full shipment, not one easy carton, is actually ready for handover.',
-        'From the China-side workflow view, pickup approval should be tied to a visible decision record: what was checked, what did not match, what the supplier corrected, and whether a re-check is needed before the driver arrives.',
+        'A recurring before-pickup pattern is that the supplier shares close-up photos of clean cartons, but the broader staged-shipment view shows mixed SKU rows, missing carton labels, or cartons still waiting for sealing. The buyer-side check is to compare wide warehouse photos, label examples, packing-list totals, and pickup timing before approving collection.',
+        'The practical decision is not whether the supplier seems cooperative. The decision is whether the forwarder should collect now, whether the supplier must correct cartons or labels first, and whether a short re-check is needed before the driver arrives.',
+        'From the China-side workflow view, pickup approval should be tied to a visible decision record: what was checked, what did not match, what the supplier corrected, and whether a re-check is needed before the goods leave the supplier.',
       ],
       bullets: [
         'Treat changed pickup addresses as a risk signal until explained',
@@ -261,9 +267,9 @@ Main concern:
   ] satisfies RelatedLink[],
   faqs: [
     {
-      question: 'What can go wrong before forwarder pickup in China?',
+      question: 'What should I check before my forwarder collects goods in China?',
       answer:
-        'Common problems include carton count mismatches, damaged cartons, wrong labels, missing shipping marks, mixed SKUs, unfinished packing, changed pickup addresses, inconsistent documents, and supplier pressure to release goods before evidence is available.',
+        'Check final carton count, carton condition, labels, shipping marks, SKU separation, packing list, commercial invoice, pickup address, warehouse contact, loading window, and whether correction evidence is available before approving collection.',
     },
     {
       question: 'Should I inspect before forwarder pickup?',
@@ -327,7 +333,7 @@ export function makeForwarderPickupChinaRisksArticleJsonLd() {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Forwarder pickup China risk checklist',
+      name: 'Forwarder pickup China checklist',
       itemListElement: forwarderPickupChinaRisksArticle.quickChecks.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
