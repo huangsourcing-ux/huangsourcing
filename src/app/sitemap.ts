@@ -17,6 +17,7 @@ import {
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
+  goldenSampleChinaManufacturingArticleHref,
   huangSourcingCheckScopeArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -115,6 +116,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: aqlInspectionChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: goldenSampleChinaManufacturingArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
