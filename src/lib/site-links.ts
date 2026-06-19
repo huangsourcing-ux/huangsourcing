@@ -11,6 +11,8 @@ export const chinaQcInspectionFailsArticleHref = '/china-qc-inspection-fails'
 export const chinaQcInspectionBookingChecklistArticleHref =
   '/china-qc-inspection-booking-checklist'
 export const chineseSupplierDepositDecisionArticleHref = '/chinese-supplier-deposit-decision'
+export const defectiveProductsChinaSupplierDisputeArticleHref =
+  '/defective-products-china-supplier-dispute'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const alibabaSupplierVerificationPaymentArticleHref =
