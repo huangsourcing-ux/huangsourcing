@@ -5,6 +5,7 @@ import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
   alibabaSupplierVerificationPaymentArticleHref,
+  aqlInspectionChinaArticleHref,
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
@@ -111,6 +112,11 @@ const staticRoutes: SitemapEntry[] = [
     path: qcBeforeBalanceArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
+  },
+  {
+    path: aqlInspectionChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
   },
   {
     path: chinaQcInspectionFailsArticleHref,

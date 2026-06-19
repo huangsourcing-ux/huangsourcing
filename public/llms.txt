@@ -48,6 +48,7 @@ Important context:
 - [Alibaba Supplier Verification China](https://www.huangsourcing.com/alibaba-supplier-verification-china): Buyer guide for reviewing Alibaba supplier risk before deposit.
 - [Factory vs Trading Company China](https://www.huangsourcing.com/factory-vs-trading-company-china): Practical guide to factory, trader, and unclear middleman signals.
 - [Factory vs Trading Company Practical Signals](https://www.huangsourcing.com/factory-vs-trading-company-china-practical-signals-buyers-can-check): Field-ready signals buyers can check before choosing a supplier.
+- [AQL Inspection China: Sample Size and Defect Limits](https://www.huangsourcing.com/aql-inspection-china-sample-size-defect-limits): Buyer guide to inspection lots, sample size, critical, major, and minor defects, Ac/Re limits, and release decisions.
 - [QC Inspection China Before Balance Payment](https://www.huangsourcing.com/qc-inspection-china-before-balance-payment): Guide to using QC evidence before releasing final payment.
 - [China QC Inspection Booking Checklist](https://www.huangsourcing.com/china-qc-inspection-booking-checklist): What to prepare before booking an inspection in China.
 - [Pre-Shipment Inspection China Before Pickup](https://www.huangsourcing.com/pre-shipment-inspection-china-before-pickup): Guide for inspecting goods before supplier release or pickup.
