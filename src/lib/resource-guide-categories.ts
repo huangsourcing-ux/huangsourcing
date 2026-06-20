@@ -5,6 +5,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
+  chinaFactoryProductionDelaysArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -179,6 +180,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: defectiveProductsChinaSupplierDisputeArticleHref,
         label: 'How to handle defective products from a China supplier',
+      },
+      {
+        href: chinaFactoryProductionDelaysArticleHref,
+        label: 'China factory production delay timeline guide',
       },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },

@@ -49,7 +49,7 @@ export const chinaFactoryProductionDelaysArticle = {
   h1: 'China Factory Production Delays: Timeline Management for Importers',
   eyebrow: 'Production monitoring · delay response · timeline planning',
   image: {
-    alt: 'Production timeline monitoring and milestone review inside a China factory',
+    alt: 'Illustrative production timeline and milestone review inside a China factory',
     height: 900,
     src: '/images/china-factory-production-delays-timeline-management.webp',
     width: 1600,
