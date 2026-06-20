@@ -8,6 +8,7 @@ import {
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
+  defectiveProductsChinaSupplierDisputeArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -83,6 +84,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample manufacturing QC guide' },
       { href: aqlInspectionChinaArticleHref, label: 'AQL inspection sample size and defect limits' },
       { href: buyerSideInspectionReportArticleHref, label: 'Buyer-side inspection report guide' },
+      {
+        href: defectiveProductsChinaSupplierDisputeArticleHref,
+        label: 'Defective products from a China supplier: dispute guide',
+      },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'China QC inspection booking checklist' },
       {
         href: productionVsPreShipmentInspectionArticleHref,
@@ -171,6 +176,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     links: [
       { href: '/china-sourcing-services', label: 'China sourcing services overview' },
       { href: huangSourcingCheckScopeArticleHref, label: 'What Huang Sourcing can check' },
+      {
+        href: defectiveProductsChinaSupplierDisputeArticleHref,
+        label: 'How to handle defective products from a China supplier',
+      },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
@@ -202,6 +211,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit checklist' },
       { href: buyerSideInspectionReportArticleHref, label: 'Buyer-side inspection report checklist' },
+      {
+        href: defectiveProductsChinaSupplierDisputeArticleHref,
+        label: 'Defective shipment evidence and remedy checklist',
+      },
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample approval checklist' },
       { href: aqlInspectionChinaArticleHref, label: 'AQL sample size and defect limits' },
       {
