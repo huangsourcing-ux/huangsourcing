@@ -7,6 +7,8 @@ export const contactHref = '/contact'
 export const aqlInspectionChinaArticleHref =
   '/aql-inspection-china-sample-size-defect-limits'
 export const buyerSideInspectionReportArticleHref = '/buyer-side-inspection-report'
+export const chinaFactoryProductionDelaysArticleHref =
+  '/china-factory-production-delays-timeline-management'
 export const chinaQcInspectionFailsArticleHref = '/china-qc-inspection-fails'
 export const chinaQcInspectionBookingChecklistArticleHref =
   '/china-qc-inspection-booking-checklist'
