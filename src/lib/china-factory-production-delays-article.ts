@@ -6,6 +6,7 @@ import {
 } from '@/lib/article-seo'
 import {
   chinaFactoryProductionDelaysArticleHref,
+  chinaFactorySubcontractingRiskArticleHref,
   chinaQcInspectionFailsArticleHref,
   goldenSampleChinaManufacturingArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -243,6 +244,11 @@ Main delay concern:
     'Timeline guidance does not replace product testing, regulatory compliance, final inspection, freight planning, or inventory forecasting',
   ],
   relatedLinks: [
+    {
+      href: chinaFactorySubcontractingRiskArticleHref,
+      label: 'China factory subcontracting risk',
+      note: 'Check whether an undisclosed site transfer or capacity subcontractor sits behind the delay.',
+    },
     {
       href: productionVsPreShipmentInspectionArticleHref,
       label: 'During-production vs pre-shipment inspection',

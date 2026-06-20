@@ -6,6 +6,7 @@ import {
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   chinaFactoryProductionDelaysArticleHref,
+  chinaFactorySubcontractingRiskArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -59,6 +60,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
+      },
+      {
+        href: chinaFactorySubcontractingRiskArticleHref,
+        label: 'China factory subcontracting risk checklist',
       },
       { href: supplierDepositGuideHref, label: 'How to verify a Chinese supplier before deposit' },
       { href: chineseSupplierDepositDecisionArticleHref, label: 'Should I pay a 30% supplier deposit?' },
@@ -185,6 +190,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: chinaFactoryProductionDelaysArticleHref,
         label: 'China factory production delay timeline guide',
       },
+      {
+        href: chinaFactorySubcontractingRiskArticleHref,
+        label: 'Who is actually making the order?',
+      },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
@@ -211,6 +220,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
+      },
+      {
+        href: chinaFactorySubcontractingRiskArticleHref,
+        label: 'Factory subcontracting and production-site checklist',
       },
       { href: chineseSupplierDepositDecisionArticleHref, label: '30% supplier deposit decision checklist' },
       { href: factoryVsTradingCompanySignalsArticleHref, label: 'Factory vs trading company checklist' },

@@ -4,7 +4,10 @@ import {
   getArticleOpenGraphImages,
   makeArticleJsonLd,
 } from '@/lib/article-seo'
-import { supplierVerificationVsFactoryAuditArticleHref } from '@/lib/site-links'
+import {
+  chinaFactorySubcontractingRiskArticleHref,
+  supplierVerificationVsFactoryAuditArticleHref,
+} from '@/lib/site-links'
 import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
@@ -281,6 +284,11 @@ Main concern:
     'The right scope depends on the buyer decision, order value, product risk, documents available, factory access, and payment stage',
   ],
   relatedLinks: [
+    {
+      href: chinaFactorySubcontractingRiskArticleHref,
+      label: 'China factory subcontracting risk',
+      note: 'Use when the seller, approved factory, actual production site, or outside process may not match.',
+    },
     {
       href: '/supplier-verification-china',
       label: 'Supplier Verification China',
