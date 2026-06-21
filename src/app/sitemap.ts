@@ -18,6 +18,7 @@ import {
   chineseSupplierDepositDecisionArticleHref,
   contactHref,
   factoryVsTradingCompanySignalsArticleHref,
+  euGpsrLabelCheckChinaArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
@@ -137,6 +138,11 @@ const staticRoutes: SitemapEntry[] = [
     path: packagingLabelCheckBeforePaymentArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
+  },
+  {
+    path: euGpsrLabelCheckChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
   },
   {
     path: chinaQcInspectionBookingChecklistArticleHref,
