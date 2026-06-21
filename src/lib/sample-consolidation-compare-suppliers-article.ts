@@ -6,7 +6,10 @@ import {
   getArticleOpenGraphImages,
   makeArticleJsonLd,
 } from '@/lib/article-seo'
-import { sampleConsolidationCompareSuppliersArticleHref } from '@/lib/site-links'
+import {
+  chinaSamplesUsCustomsArticleHref,
+  sampleConsolidationCompareSuppliersArticleHref,
+} from '@/lib/site-links'
 import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
@@ -211,6 +214,11 @@ Decision needed:
     'Storage time, special handling, fragile goods, batteries, liquids, branded goods, or regulated products may require separate scope',
   ],
   relatedLinks: [
+    {
+      href: chinaSamplesUsCustomsArticleHref,
+      label: 'Ship China samples to the U.S. in 2026',
+      note: 'Plan declared value, invoice data, current entry treatment, regulated contents, and consolidation before dispatch.',
+    },
     {
       href: '/sample-consolidation-china',
       label: 'Sample Consolidation China',

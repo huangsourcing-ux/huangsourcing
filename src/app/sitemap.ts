@@ -11,6 +11,7 @@ import {
   buyerSideInspectionReportArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
+  chinaSamplesUsCustomsArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chinaSourcingInspectionPricingHref,
@@ -153,6 +154,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: chinaFactorySubcontractingRiskArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: chinaSamplesUsCustomsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

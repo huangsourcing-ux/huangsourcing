@@ -7,6 +7,7 @@ import {
   buyerSideInspectionReportArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
+  chinaSamplesUsCustomsArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -162,6 +163,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
     summary:
       'Use these guides before choosing a supplier, especially when several Chinese factories or traders are sending samples. This category explains how a China-side hub can receive, photograph, organize, compare, and forward samples together, reducing freight waste and helping buyers spot obvious quality, finish, packaging, or supplier-origin differences before committing to production or deposit payment with one supplier in China later.',
     links: [
+      {
+        href: chinaSamplesUsCustomsArticleHref,
+        label: 'Shipping China samples to the U.S.: 2026 customs guide',
+      },
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample approval and QC' },
       {
         href: sampleConsolidationCompareSuppliersArticleHref,
@@ -193,6 +198,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: chinaFactorySubcontractingRiskArticleHref,
         label: 'Who is actually making the order?',
+      },
+      {
+        href: chinaSamplesUsCustomsArticleHref,
+        label: 'U.S. customs plan for China sample shipments',
       },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
@@ -238,6 +247,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: sampleConsolidationCompareSuppliersArticleHref,
         label: 'Sample comparison before factory selection',
+      },
+      {
+        href: chinaSamplesUsCustomsArticleHref,
+        label: 'China sample shipping and U.S. customs checklist',
       },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'What to send before China QC inspection' },
       {
