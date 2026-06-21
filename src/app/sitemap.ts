@@ -27,6 +27,7 @@ import {
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
   qcVsPreShipmentInspectionArticleHref,
+  qualityControlChinaManufacturingPlanArticleHref,
   resourceGuideHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierVerificationChinaLimitsArticleHref,
@@ -161,6 +162,11 @@ const staticRoutes: SitemapEntry[] = [
     path: chinaSamplesUsCustomsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
+  },
+  {
+    path: qualityControlChinaManufacturingPlanArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
   },
   {
     path: forwarderPickupChinaRisksArticleHref,
