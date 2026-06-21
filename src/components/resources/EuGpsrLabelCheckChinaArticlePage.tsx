@@ -28,7 +28,7 @@ import { Button } from '@/components/ui/button'
 import {
   euGpsrLabelCheckChinaArticle,
   makeEuGpsrLabelCheckChinaArticleJsonLd,
-} from '@/lib/eu-gpsr-label-check-china-article'
+} from '@/lib/eu-gpsr-label-check-china-sourcing-2026-article'
 import { buildWhatsAppHref } from '@/lib/site-links'
 
 function BulletList({ items }: { items: readonly string[] }) {
