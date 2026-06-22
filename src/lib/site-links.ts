@@ -11,6 +11,8 @@ export const chinaFactoryProductionDelaysArticleHref =
   '/china-factory-production-delays-timeline-management'
 export const chinaFactorySubcontractingRiskArticleHref =
   '/china-factory-subcontracting-risk'
+export const cpscEfilingChinaImportsArticleHref =
+  '/cpsc-efiling-china-imports-2026'
 export const chinaSamplesUsCustomsArticleHref =
   '/shipping-samples-from-china-to-usa-customs-2026'
 export const chinaQcInspectionFailsArticleHref = '/china-qc-inspection-fails'
