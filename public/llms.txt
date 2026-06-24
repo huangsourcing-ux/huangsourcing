@@ -57,6 +57,7 @@ Important context:
 - [Buyer-Side Inspection Report](https://www.huangsourcing.com/buyer-side-inspection-report): Explains how a buyer-side inspection report supports payment, pickup, and correction decisions.
 - [Huang Sourcing Check Scope](https://www.huangsourcing.com/huang-sourcing-check-scope): Practical explanation of what Huang Sourcing checks and what remains outside scope.
 - [EU GPSR Label Check for China Sourcing in 2026](https://www.huangsourcing.com/eu-gpsr-label-check-china-sourcing-2026): Guide for checking EU GPSR label, responsible-person, warning, language, and packaging evidence before China-sourced products ship.
+- [EU PPWR Packaging Check for China Sourcing in 2026](https://www.huangsourcing.com/eu-ppwr-packaging-check-china-sourcing-2026): Guide for checking PPWR packaging materials, labels, supplier files, PFAS risk, and importer handoff before EU-bound goods ship from China.
 - [CPSC eFiling for China Imports in 2026](https://www.huangsourcing.com/cpsc-efiling-china-imports-2026): Guide for checking product ID, certificate data, test reports, supplier files, and broker handoff evidence before CPSC-regulated goods ship from China to the United States.
 - [Amazon Sellers FBA Prep China](https://www.huangsourcing.com/amazon-sellers-fba-prep-china): Guide for Amazon sellers preparing China shipments.
 - [Amazon FBA Prep China FNSKU Carton Labels](https://www.huangsourcing.com/amazon-fba-prep-china-fnsku-carton-labels): FNSKU, carton label, and prep checklist for Amazon-bound goods.

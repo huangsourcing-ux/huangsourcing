@@ -14,6 +14,7 @@ import {
   cpscEfilingChinaImportsArticleHref,
   defectiveProductsChinaSupplierDisputeArticleHref,
   euGpsrLabelCheckChinaArticleHref,
+  euPpwrPackagingCheckChinaArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -120,6 +121,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU GPSR label check for China sourcing',
       },
       {
+        href: euPpwrPackagingCheckChinaArticleHref,
+        label: 'EU PPWR packaging check for China sourcing',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling China imports 2026 checklist',
       },
@@ -223,6 +228,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU GPSR label checks before China shipment',
       },
       {
+        href: euPpwrPackagingCheckChinaArticleHref,
+        label: 'EU PPWR packaging readiness before China shipment',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling readiness before U.S. shipment',
       },
@@ -293,6 +302,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'Packaging and label release checklist',
       },
       { href: euGpsrLabelCheckChinaArticleHref, label: 'EU GPSR label release checklist' },
+      { href: euPpwrPackagingCheckChinaArticleHref, label: 'EU PPWR packaging release checklist' },
       {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling certificate-data checklist',

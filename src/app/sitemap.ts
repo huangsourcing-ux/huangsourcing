@@ -20,6 +20,7 @@ import {
   cpscEfilingChinaImportsArticleHref,
   factoryVsTradingCompanySignalsArticleHref,
   euGpsrLabelCheckChinaArticleHref,
+  euPpwrPackagingCheckChinaArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
@@ -142,6 +143,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euGpsrLabelCheckChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euPpwrPackagingCheckChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

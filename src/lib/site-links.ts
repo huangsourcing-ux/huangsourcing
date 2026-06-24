@@ -23,6 +23,8 @@ export const defectiveProductsChinaSupplierDisputeArticleHref =
   '/defective-products-china-supplier-dispute'
 export const euGpsrLabelCheckChinaArticleHref =
   '/eu-gpsr-label-check-china-sourcing-2026'
+export const euPpwrPackagingCheckChinaArticleHref =
+  '/eu-ppwr-packaging-check-china-sourcing-2026'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const alibabaSupplierVerificationPaymentArticleHref =
