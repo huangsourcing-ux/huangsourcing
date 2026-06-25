@@ -18,6 +18,7 @@ import {
   chineseSupplierDepositDecisionArticleHref,
   contactHref,
   cpscEfilingChinaImportsArticleHref,
+  euBatteryRegulationChinaArticleHref,
   factoryVsTradingCompanySignalsArticleHref,
   euGpsrLabelCheckChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
@@ -148,6 +149,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euPpwrPackagingCheckChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euBatteryRegulationChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
