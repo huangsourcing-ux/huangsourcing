@@ -27,6 +27,8 @@ export const euPpwrPackagingCheckChinaArticleHref =
   '/eu-ppwr-packaging-check-china-sourcing-2026'
 export const euBatteryRegulationChinaArticleHref =
   '/eu-battery-regulation-china-sourcing-2026'
+export const uflpaChinaSupplierCheckArticleHref =
+  '/uflpa-china-supplier-check-2026'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const alibabaSupplierVerificationPaymentArticleHref =

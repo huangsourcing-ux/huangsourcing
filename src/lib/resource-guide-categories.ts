@@ -35,6 +35,7 @@ import {
   supplierVerificationChinaLimitsArticleHref,
   supplierVerificationChecklistHref,
   supplierVerificationVsFactoryAuditArticleHref,
+  uflpaChinaSupplierCheckArticleHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import { makeOrganizationReference } from '@/lib/structured-data'
@@ -66,6 +67,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
+      },
+      {
+        href: uflpaChinaSupplierCheckArticleHref,
+        label: 'UFLPA China supplier check',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,
@@ -225,6 +230,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'Who is actually making the order?',
       },
       {
+        href: uflpaChinaSupplierCheckArticleHref,
+        label: 'UFLPA supplier-chain evidence before U.S. shipment',
+      },
+      {
         href: chinaSamplesUsCustomsArticleHref,
         label: 'U.S. customs plan for China sample shipments',
       },
@@ -270,6 +279,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
+      },
+      {
+        href: uflpaChinaSupplierCheckArticleHref,
+        label: 'UFLPA supplier-chain evidence checklist',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,

@@ -44,6 +44,7 @@ Important context:
 - [Chinese Supplier Deposit Decision](https://www.huangsourcing.com/chinese-supplier-deposit-decision): Decision framework for slowing down before supplier payment.
 - [Supplier Verification China Checklist](https://www.huangsourcing.com/supplier-verification-china-checklist): Checklist of supplier details, quote terms, and warning signs to review.
 - [Supplier Verification vs Factory Audit](https://www.huangsourcing.com/supplier-verification-vs-factory-audit): Explains the difference between early supplier verification and a fuller factory audit.
+- [UFLPA China Supplier Check](https://www.huangsourcing.com/uflpa-china-supplier-check-2026): Guide for checking supplier identity, production site, material origin, Entity List screening, and importer handoff evidence before U.S.-bound goods ship.
 - [Alibaba Supplier Verification Payment](https://www.huangsourcing.com/alibaba-supplier-verification-payment): Guide for Alibaba supplier profile, invoice, payment, and company-signal checks.
 - [Alibaba Supplier Verification China](https://www.huangsourcing.com/alibaba-supplier-verification-china): Buyer guide for reviewing Alibaba supplier risk before deposit.
 - [Factory vs Trading Company China](https://www.huangsourcing.com/factory-vs-trading-company-china): Practical guide to factory, trader, and unclear middleman signals.
