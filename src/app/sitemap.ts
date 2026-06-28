@@ -12,6 +12,7 @@ import {
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
   chinaSamplesUsCustomsArticleHref,
+  chinaSection301TariffCheckArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chinaSourcingInspectionPricingHref,
@@ -115,6 +116,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: uflpaChinaSupplierCheckArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: chinaSection301TariffCheckArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

@@ -8,6 +8,7 @@ import {
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
   chinaSamplesUsCustomsArticleHref,
+  chinaSection301TariffCheckArticleHref,
   chinaQcInspectionFailsArticleHref,
   chinaQcInspectionBookingChecklistArticleHref,
   chineseSupplierDepositDecisionArticleHref,
@@ -71,6 +72,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: uflpaChinaSupplierCheckArticleHref,
         label: 'UFLPA China supplier check',
+      },
+      {
+        href: chinaSection301TariffCheckArticleHref,
+        label: 'China Section 301 tariff evidence check',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,
@@ -234,6 +239,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'UFLPA supplier-chain evidence before U.S. shipment',
       },
       {
+        href: chinaSection301TariffCheckArticleHref,
+        label: 'Section 301 tariff evidence before China shipment',
+      },
+      {
         href: chinaSamplesUsCustomsArticleHref,
         label: 'U.S. customs plan for China sample shipments',
       },
@@ -283,6 +292,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: uflpaChinaSupplierCheckArticleHref,
         label: 'UFLPA supplier-chain evidence checklist',
+      },
+      {
+        href: chinaSection301TariffCheckArticleHref,
+        label: 'Section 301 tariff evidence checklist',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,
