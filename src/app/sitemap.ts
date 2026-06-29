@@ -20,6 +20,7 @@ import {
   contactHref,
   cpscEfilingChinaImportsArticleHref,
   euBatteryRegulationChinaArticleHref,
+  euDeforestationRegulationChinaArticleHref,
   factoryVsTradingCompanySignalsArticleHref,
   euGpsrLabelCheckChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
@@ -166,6 +167,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euBatteryRegulationChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euDeforestationRegulationChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
