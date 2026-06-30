@@ -15,6 +15,7 @@ import {
   cpscEfilingChinaImportsArticleHref,
   defectiveProductsChinaSupplierDisputeArticleHref,
   euBatteryRegulationChinaArticleHref,
+  euCbamChinaSourcingArticleHref,
   euDeforestationRegulationChinaArticleHref,
   euGpsrLabelCheckChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
@@ -77,6 +78,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU Deforestation Regulation supplier evidence check',
+      },
+      {
+        href: euCbamChinaSourcingArticleHref,
+        label: 'EU CBAM supplier data check',
       },
       {
         href: chinaSection301TariffCheckArticleHref,
@@ -147,6 +152,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU Deforestation Regulation evidence check for China sourcing',
+      },
+      {
+        href: euCbamChinaSourcingArticleHref,
+        label: 'EU CBAM supplier data check for China sourcing',
       },
       {
         href: cpscEfilingChinaImportsArticleHref,
@@ -272,6 +281,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU Deforestation Regulation readiness before China shipment',
       },
       {
+        href: euCbamChinaSourcingArticleHref,
+        label: 'EU CBAM supplier data before China shipment',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling readiness before U.S. shipment',
       },
@@ -362,6 +375,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU deforestation supplier evidence checklist',
+      },
+      {
+        href: euCbamChinaSourcingArticleHref,
+        label: 'EU CBAM supplier data checklist',
       },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },
