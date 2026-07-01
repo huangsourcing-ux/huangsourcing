@@ -24,6 +24,7 @@ import {
   euDeforestationRegulationChinaArticleHref,
   factoryVsTradingCompanySignalsArticleHref,
   euGpsrLabelCheckChinaArticleHref,
+  euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
@@ -178,6 +179,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euCbamChinaSourcingArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euLowValueParcelDutyChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

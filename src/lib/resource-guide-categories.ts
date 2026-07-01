@@ -18,6 +18,7 @@ import {
   euCbamChinaSourcingArticleHref,
   euDeforestationRegulationChinaArticleHref,
   euGpsrLabelCheckChinaArticleHref,
+  euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
@@ -158,6 +159,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU CBAM supplier data check for China sourcing',
       },
       {
+        href: euLowValueParcelDutyChinaArticleHref,
+        label: 'EU EUR 3 customs duty China parcel checklist',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling China imports 2026 checklist',
       },
@@ -285,6 +290,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU CBAM supplier data before China shipment',
       },
       {
+        href: euLowValueParcelDutyChinaArticleHref,
+        label: 'EU EUR 3 customs duty on China parcels',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling readiness before U.S. shipment',
       },
@@ -379,6 +388,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euCbamChinaSourcingArticleHref,
         label: 'EU CBAM supplier data checklist',
+      },
+      {
+        href: euLowValueParcelDutyChinaArticleHref,
+        label: 'EU low-value parcel duty checklist',
       },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },

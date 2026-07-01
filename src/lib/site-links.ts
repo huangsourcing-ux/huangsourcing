@@ -33,6 +33,8 @@ export const euDeforestationRegulationChinaArticleHref =
   '/eu-deforestation-regulation-china-sourcing-2026'
 export const euCbamChinaSourcingArticleHref =
   '/eu-cbam-china-sourcing-2026'
+export const euLowValueParcelDutyChinaArticleHref =
+  '/eu-3-euro-customs-duty-china-parcels-2026'
 export const uflpaChinaSupplierCheckArticleHref =
   '/uflpa-china-supplier-check-2026'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
