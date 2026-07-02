@@ -43,6 +43,7 @@ import {
   supplierVerificationVsFactoryAuditArticleHref,
   supplierDepositGuideHref,
   uflpaChinaSupplierCheckArticleHref,
+  usDeMinimisSuspensionChinaArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
@@ -214,6 +215,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: chinaSamplesUsCustomsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: usDeMinimisSuspensionChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

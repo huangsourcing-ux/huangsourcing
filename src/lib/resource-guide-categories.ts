@@ -40,6 +40,7 @@ import {
   supplierVerificationChecklistHref,
   supplierVerificationVsFactoryAuditArticleHref,
   uflpaChinaSupplierCheckArticleHref,
+  usDeMinimisSuspensionChinaArticleHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import { makeOrganizationReference } from '@/lib/structured-data'
@@ -163,6 +164,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU EUR 3 customs duty China parcel checklist',
       },
       {
+        href: usDeMinimisSuspensionChinaArticleHref,
+        label: 'U.S. de minimis suspension China shipment checklist',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling China imports 2026 checklist',
       },
@@ -225,6 +230,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: chinaSamplesUsCustomsArticleHref,
         label: 'Shipping China samples to the U.S.: 2026 customs guide',
       },
+      {
+        href: usDeMinimisSuspensionChinaArticleHref,
+        label: 'U.S. de minimis suspension for China shipments',
+      },
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample approval and QC' },
       {
         href: sampleConsolidationCompareSuppliersArticleHref,
@@ -268,6 +277,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: chinaSamplesUsCustomsArticleHref,
         label: 'U.S. customs plan for China sample shipments',
+      },
+      {
+        href: usDeMinimisSuspensionChinaArticleHref,
+        label: 'U.S. de minimis suspension before China shipment',
       },
       {
         href: euGpsrLabelCheckChinaArticleHref,
@@ -357,6 +370,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: chinaSamplesUsCustomsArticleHref,
         label: 'China sample shipping and U.S. customs checklist',
+      },
+      {
+        href: usDeMinimisSuspensionChinaArticleHref,
+        label: 'U.S. de minimis suspension checklist',
       },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'What to send before China QC inspection' },
       {
