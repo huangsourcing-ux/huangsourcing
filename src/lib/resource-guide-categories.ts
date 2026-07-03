@@ -17,6 +17,7 @@ import {
   euBatteryRegulationChinaArticleHref,
   euCbamChinaSourcingArticleHref,
   euDeforestationRegulationChinaArticleHref,
+  euForcedLabourRegulationChinaArticleHref,
   euGpsrLabelCheckChinaArticleHref,
   euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
@@ -80,6 +81,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU Deforestation Regulation supplier evidence check',
+      },
+      {
+        href: euForcedLabourRegulationChinaArticleHref,
+        label: 'EU Forced Labour Regulation supplier evidence check',
       },
       {
         href: euCbamChinaSourcingArticleHref,
@@ -154,6 +159,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU Deforestation Regulation evidence check for China sourcing',
+      },
+      {
+        href: euForcedLabourRegulationChinaArticleHref,
+        label: 'EU Forced Labour Regulation supplier evidence check',
       },
       {
         href: euCbamChinaSourcingArticleHref,
@@ -299,6 +308,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU Deforestation Regulation readiness before China shipment',
       },
       {
+        href: euForcedLabourRegulationChinaArticleHref,
+        label: 'EU Forced Labour Regulation readiness before China shipment',
+      },
+      {
         href: euCbamChinaSourcingArticleHref,
         label: 'EU CBAM supplier data before China shipment',
       },
@@ -401,6 +414,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU deforestation supplier evidence checklist',
+      },
+      {
+        href: euForcedLabourRegulationChinaArticleHref,
+        label: 'EU forced labour supplier evidence checklist',
       },
       {
         href: euCbamChinaSourcingArticleHref,
