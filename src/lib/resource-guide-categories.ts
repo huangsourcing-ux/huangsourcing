@@ -41,6 +41,7 @@ import {
   supplierVerificationChecklistHref,
   supplierVerificationVsFactoryAuditArticleHref,
   uflpaChinaSupplierCheckArticleHref,
+  ustrForcedLaborSection301ChinaArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
@@ -77,6 +78,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: uflpaChinaSupplierCheckArticleHref,
         label: 'UFLPA China supplier check',
+      },
+      {
+        href: ustrForcedLaborSection301ChinaArticleHref,
+        label: 'USTR forced labor Section 301 proposal checklist',
       },
       {
         href: euDeforestationRegulationChinaArticleHref,

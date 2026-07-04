@@ -44,6 +44,7 @@ import {
   supplierVerificationVsFactoryAuditArticleHref,
   supplierDepositGuideHref,
   uflpaChinaSupplierCheckArticleHref,
+  ustrForcedLaborSection301ChinaArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -121,6 +122,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: uflpaChinaSupplierCheckArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: ustrForcedLaborSection301ChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
