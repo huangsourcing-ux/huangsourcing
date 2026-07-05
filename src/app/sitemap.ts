@@ -27,6 +27,7 @@ import {
   euGpsrLabelCheckChinaArticleHref,
   euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
+  euTextileDigitalProductPassportChinaArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
@@ -172,6 +173,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euPpwrPackagingCheckChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euTextileDigitalProductPassportChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

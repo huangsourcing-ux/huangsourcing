@@ -29,6 +29,8 @@ export const euGpsrLabelCheckChinaArticleHref =
   '/eu-gpsr-label-check-china-sourcing-2026'
 export const euPpwrPackagingCheckChinaArticleHref =
   '/eu-ppwr-packaging-check-china-sourcing-2026'
+export const euTextileDigitalProductPassportChinaArticleHref =
+  '/eu-textile-digital-product-passport-china-sourcing-2026'
 export const euBatteryRegulationChinaArticleHref =
   '/eu-battery-regulation-china-sourcing-2026'
 export const euDeforestationRegulationChinaArticleHref =

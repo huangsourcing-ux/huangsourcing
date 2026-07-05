@@ -21,6 +21,7 @@ import {
   euGpsrLabelCheckChinaArticleHref,
   euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
+  euTextileDigitalProductPassportChinaArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -156,6 +157,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euPpwrPackagingCheckChinaArticleHref,
         label: 'EU PPWR packaging check for China sourcing',
+      },
+      {
+        href: euTextileDigitalProductPassportChinaArticleHref,
+        label: 'EU textile Digital Product Passport supplier data check',
       },
       {
         href: euBatteryRegulationChinaArticleHref,
@@ -303,6 +308,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euPpwrPackagingCheckChinaArticleHref,
         label: 'EU PPWR packaging readiness before China shipment',
+      },
+      {
+        href: euTextileDigitalProductPassportChinaArticleHref,
+        label: 'EU textile Digital Product Passport readiness before China shipment',
       },
       {
         href: euBatteryRegulationChinaArticleHref,
