@@ -19,6 +19,8 @@ export const chinaSamplesUsCustomsArticleHref =
   '/shipping-samples-from-china-to-usa-customs-2026'
 export const usDeMinimisSuspensionChinaArticleHref =
   '/us-de-minimis-suspension-china-shipments-2026'
+export const usPostalInformalEntryChinaMailShipmentsArticleHref =
+  '/us-postal-informal-entry-china-mail-shipments-2026'
 export const chinaQcInspectionFailsArticleHref = '/china-qc-inspection-fails'
 export const chinaQcInspectionBookingChecklistArticleHref =
   '/china-qc-inspection-booking-checklist'

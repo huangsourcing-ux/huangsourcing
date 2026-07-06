@@ -44,6 +44,7 @@ import {
   uflpaChinaSupplierCheckArticleHref,
   ustrForcedLaborSection301ChinaArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
+  usPostalInformalEntryChinaMailShipmentsArticleHref,
 } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import { makeOrganizationReference } from '@/lib/structured-data'
@@ -187,6 +188,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'U.S. de minimis suspension China shipment checklist',
       },
       {
+        href: usPostalInformalEntryChinaMailShipmentsArticleHref,
+        label: 'U.S. postal informal entry China mail checklist',
+      },
+      {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling China imports 2026 checklist',
       },
@@ -253,6 +258,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: usDeMinimisSuspensionChinaArticleHref,
         label: 'U.S. de minimis suspension for China shipments',
       },
+      {
+        href: usPostalInformalEntryChinaMailShipmentsArticleHref,
+        label: 'U.S. postal informal entry for China mail shipments',
+      },
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample approval and QC' },
       {
         href: sampleConsolidationCompareSuppliersArticleHref,
@@ -300,6 +309,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: usDeMinimisSuspensionChinaArticleHref,
         label: 'U.S. de minimis suspension before China shipment',
+      },
+      {
+        href: usPostalInformalEntryChinaMailShipmentsArticleHref,
+        label: 'U.S. postal informal entry before China mail dispatch',
       },
       {
         href: euGpsrLabelCheckChinaArticleHref,
@@ -401,6 +414,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: usDeMinimisSuspensionChinaArticleHref,
         label: 'U.S. de minimis suspension checklist',
+      },
+      {
+        href: usPostalInformalEntryChinaMailShipmentsArticleHref,
+        label: 'U.S. postal informal entry dispatch checklist',
       },
       { href: chinaQcInspectionBookingChecklistArticleHref, label: 'What to send before China QC inspection' },
       {

@@ -47,6 +47,7 @@ import {
   uflpaChinaSupplierCheckArticleHref,
   ustrForcedLaborSection301ChinaArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
+  usPostalInformalEntryChinaMailShipmentsArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
@@ -238,6 +239,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: usDeMinimisSuspensionChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: usPostalInformalEntryChinaMailShipmentsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
