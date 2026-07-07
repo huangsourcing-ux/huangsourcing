@@ -4,7 +4,9 @@ import { servicePricingBySlug } from '@/lib/service-pricing'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import {
   makeFaqPageJsonLd,
+  makeServiceId,
   makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 export type SeoServiceSlug =
@@ -707,7 +709,8 @@ export function makeSeoServiceMetadata(page: SeoServicePage): Metadata {
 }
 
 export function makeSeoServiceJsonLd(page: SeoServicePage) {
-  const pageUrl = getAbsoluteUrl(`/${page.slug}`)
+  const pagePath = `/${page.slug}`
+  const pageUrl = getAbsoluteUrl(pagePath)
   const offers = page.priceValue
     ? {
         '@type': 'Offer',
@@ -726,12 +729,20 @@ export function makeSeoServiceJsonLd(page: SeoServicePage) {
       }
 
   return [
+    makeWebPageJsonLd({
+      name: page.metaTitle,
+      description: page.metaDescription,
+      path: pagePath,
+      mainEntity: {
+        '@id': makeServiceId(pagePath),
+      },
+    }),
     makeServiceJsonLd({
       name: page.title,
       description: page.metaDescription,
       serviceType: page.title,
       offers,
-      url: pageUrl,
+      url: pagePath,
     }),
     makeFaqPageJsonLd(page.faqs),
   ]

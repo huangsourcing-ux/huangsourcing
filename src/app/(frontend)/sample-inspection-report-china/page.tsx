@@ -3,8 +3,7 @@ import type { Metadata } from 'next'
 import { SampleInspectionReportPage } from '@/components/report/SampleInspectionReportPage'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { sampleReportPageHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
-import { makeOrganizationReference } from '@/lib/structured-data'
+import { makeWebPageJsonLd } from '@/lib/structured-data'
 
 const title = 'Sample Inspection Report China'
 const description =
@@ -39,14 +38,10 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
+const jsonLd = makeWebPageJsonLd({
   name: title,
   description,
-  url: getAbsoluteUrl(sampleReportPageHref),
-  inLanguage: 'en',
-  publisher: makeOrganizationReference(),
+  path: sampleReportPageHref,
   mainEntity: {
     '@type': 'CreativeWork',
     name: 'Huang Sourcing sample inspection report',
@@ -56,7 +51,7 @@ const jsonLd = {
       'Buyer-side risk check',
     ],
   },
-}
+})
 
 export default function SampleInspectionReportChina() {
   return (

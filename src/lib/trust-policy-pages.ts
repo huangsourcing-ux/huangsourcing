@@ -7,10 +7,9 @@ import {
   scopeLimitationsHref,
   termsBookingPolicyHref,
 } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
   makeFaqPageJsonLd,
-  makeOrganizationReference,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 export type TrustPolicySlug =
@@ -427,15 +426,11 @@ export function makeTrustPolicyMetadata(page: TrustPolicyPage): Metadata {
 
 export function makeTrustPolicyJsonLd(page: TrustPolicyPage) {
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
+    makeWebPageJsonLd({
       name: page.metaTitle,
       description: page.description,
-      url: getAbsoluteUrl(page.href),
-      inLanguage: 'en',
-      publisher: makeOrganizationReference(),
-    },
+      path: page.href,
+    }),
     makeFaqPageJsonLd(page.faqs),
   ]
 }

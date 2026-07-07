@@ -46,8 +46,10 @@ import {
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
 } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
-import { makeOrganizationReference } from '@/lib/structured-data'
+import {
+  getJsonLdUrl,
+  makeWebPageJsonLd,
+} from '@/lib/structured-data'
 
 export type ResourceGuideCategory = {
   ctaHref: string
@@ -475,19 +477,16 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
 ]
 
 export function makeResourceGuideJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
+  return makeWebPageJsonLd({
+    type: 'CollectionPage',
     name: 'China Sourcing Risk Guides',
     description:
       'China sourcing risk guide center for overseas buyers comparing supplier verification, QC inspection, pre-shipment inspection, Amazon FBA prep, sample consolidation, risk notes, and buyer decision checklists.',
-    url: getAbsoluteUrl(resourceGuideHref),
-    inLanguage: 'en',
-    publisher: makeOrganizationReference(),
+    path: resourceGuideHref,
     hasPart: resourceGuideCategories.map((category) => ({
       '@type': 'CreativeWork',
       name: category.title,
-      url: getAbsoluteUrl(`${resourceGuideHref}#${category.id}`),
+      url: getJsonLdUrl(`${resourceGuideHref}#${category.id}`),
     })),
-  }
+  })
 }

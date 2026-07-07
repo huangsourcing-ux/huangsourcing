@@ -1,5 +1,11 @@
 import { getAbsoluteUrl } from '@/lib/site-url'
-import { makeOrganizationReference } from '@/lib/structured-data'
+import {
+  makeAgentHuangReference,
+  makeArticleId,
+  makeOrganizationReference,
+  makeWebPageId,
+  websiteJsonLdId,
+} from '@/lib/structured-data'
 
 type ArticleImage = {
   height: number
@@ -27,11 +33,7 @@ export const articleContentUpdateDate = 'May 25, 2026'
 export const articleContentUpdateDateIso = '2026-05-25T09:00:00-04:00'
 
 export function makeAgentHuangAuthorReference() {
-  return {
-    '@type': 'Person',
-    name: 'Agent Huang',
-    url: getAbsoluteUrl('/about#agent-huang'),
-  }
+  return makeAgentHuangReference()
 }
 
 export function getArticleImages(article: ArticleImageSet) {
@@ -57,6 +59,7 @@ export function makeArticleJsonLd(article: ArticleJsonLdInput) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    '@id': makeArticleId(article.href),
     headline: article.title,
     description: article.metaDescription,
     url: pageUrl,
@@ -68,9 +71,12 @@ export function makeArticleJsonLd(article: ArticleJsonLdInput) {
       : {}),
     author: makeAgentHuangAuthorReference(),
     publisher: makeOrganizationReference(),
+    isPartOf: {
+      '@id': websiteJsonLdId,
+    },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': pageUrl,
+      '@id': makeWebPageId(article.href),
     },
   }
 }

@@ -6,8 +6,8 @@ import {
 } from '@/lib/seo-service-pages'
 import {
   makeFaqPageJsonLd,
-  makeOrganizationReference,
   makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 export type BookingPrepServiceItem = {
@@ -121,18 +121,13 @@ export const bookingPrepFaqs: BookingPrepFaq[] = [
 ]
 
 export function makeBookingPrepJsonLd() {
-  const pageUrl = getAbsoluteUrl(bookingPrepHref)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
+    makeWebPageJsonLd({
+      type: 'CollectionPage',
       name: 'What to send before booking a China inspection or supplier check',
       description:
         'Booking preparation guide for supplier verification, QC inspection, pre-shipment inspection, Amazon FBA prep, and sample consolidation in China.',
-      url: pageUrl,
-      inLanguage: 'en',
-      publisher: makeOrganizationReference(),
+      path: bookingPrepHref,
       hasPart: bookingPrepServiceItems.map((item) =>
         makeServiceJsonLd(
           {
@@ -144,7 +139,7 @@ export function makeBookingPrepJsonLd() {
           { includeContext: false },
         ),
       ),
-    },
+    }),
     makeFaqPageJsonLd(bookingPrepFaqs),
   ]
 }

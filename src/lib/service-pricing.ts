@@ -2,8 +2,8 @@ import { chinaSourcingInspectionPricingHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import {
   makeFaqPageJsonLd,
-  makeOrganizationReference,
   makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 export type PricedServiceSlug =
@@ -121,18 +121,13 @@ export const pricingGuideFaqs: PricingGuideFaq[] = [
 ]
 
 export function makePricingGuideJsonLd() {
-  const pageUrl = getAbsoluteUrl(pricingGuideHref)
-
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
+    makeWebPageJsonLd({
+      type: 'CollectionPage',
       name: 'China sourcing inspection pricing and quote guide',
       description:
         'Starting prices and quote factors for supplier verification, QC inspection, pre-shipment inspection, sample consolidation, and Amazon FBA prep in China.',
-      url: pageUrl,
-      inLanguage: 'en',
-      publisher: makeOrganizationReference(),
+      path: pricingGuideHref,
       hasPart: servicePricingGuideItems.map((item) =>
         makeServiceJsonLd(
           {
@@ -160,7 +155,7 @@ export function makePricingGuideJsonLd() {
           { includeContext: false },
         ),
       ),
-    },
+    }),
     makeFaqPageJsonLd(pricingGuideFaqs),
   ]
 }
