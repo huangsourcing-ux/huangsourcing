@@ -46,6 +46,7 @@ import {
   supplierDepositGuideHref,
   uflpaChinaSupplierCheckArticleHref,
   ustrForcedLaborSection301ChinaArticleHref,
+  usCustomsEnforcementChinaImportsArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
   whatToSendBeforeChinaInspectionHref,
@@ -246,6 +247,11 @@ const staticRoutes: SitemapEntry[] = [
     path: usPostalInformalEntryChinaMailShipmentsArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
+  },
+  {
+    path: usCustomsEnforcementChinaImportsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
   },
   {
     path: qualityControlChinaManufacturingPlanArticleHref,

@@ -43,6 +43,7 @@ import {
   supplierVerificationVsFactoryAuditArticleHref,
   uflpaChinaSupplierCheckArticleHref,
   ustrForcedLaborSection301ChinaArticleHref,
+  usCustomsEnforcementChinaImportsArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
 } from '@/lib/site-links'
@@ -102,6 +103,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: chinaSection301TariffCheckArticleHref,
         label: 'China Section 301 tariff evidence check',
+      },
+      {
+        href: usCustomsEnforcementChinaImportsArticleHref,
+        label: 'U.S. customs enforcement China import checklist',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,
@@ -196,6 +201,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling China imports 2026 checklist',
+      },
+      {
+        href: usCustomsEnforcementChinaImportsArticleHref,
+        label: 'U.S. customs enforcement China import checklist',
       },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: chinaQcInspectionFailsArticleHref, label: 'What happens when China QC fails' },
@@ -352,6 +361,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling readiness before U.S. shipment',
       },
+      {
+        href: usCustomsEnforcementChinaImportsArticleHref,
+        label: 'U.S. customs enforcement evidence before China shipment',
+      },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
@@ -439,6 +452,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: cpscEfilingChinaImportsArticleHref,
         label: 'CPSC eFiling certificate-data checklist',
+      },
+      {
+        href: usCustomsEnforcementChinaImportsArticleHref,
+        label: 'U.S. customs enforcement evidence checklist',
       },
       {
         href: euBatteryRegulationChinaArticleHref,
