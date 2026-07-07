@@ -3,8 +3,7 @@ import type { Metadata } from 'next'
 import { ContactPage } from '@/components/contact/ContactPage'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { contactHref } from '@/lib/site-links'
-import { getAbsoluteUrl } from '@/lib/site-url'
-import { makeOrganizationReference } from '@/lib/structured-data'
+import { makeWebPageJsonLd } from '@/lib/structured-data'
 
 const title = 'Contact Huang Sourcing'
 const description =
@@ -39,15 +38,12 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ContactPage',
+const jsonLd = makeWebPageJsonLd({
+  type: 'ContactPage',
   name: title,
   description,
-  url: getAbsoluteUrl(contactHref),
-  inLanguage: 'en',
-  publisher: makeOrganizationReference(),
-}
+  path: contactHref,
+})
 
 export default function ContactRoutePage() {
   return (

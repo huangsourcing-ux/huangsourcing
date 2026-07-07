@@ -7,8 +7,9 @@ import { publicWhatsAppHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import {
   makeBreadcrumbJsonLd,
-  makeOrganizationReference,
+  makeServiceId,
   makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 const title = 'Free China Sourcing Risk Check'
@@ -46,15 +47,14 @@ export const metadata: Metadata = {
 }
 
 const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
+  makeWebPageJsonLd({
     name: title,
     description,
-    url: getAbsoluteUrl(path),
-    inLanguage: 'en',
-    publisher: makeOrganizationReference(),
-  },
+    path,
+    mainEntity: {
+      '@id': makeServiceId(path),
+    },
+  }),
   makeServiceJsonLd({
     name: title,
     description,
@@ -69,7 +69,7 @@ const jsonLd = [
       serviceUrl: publicWhatsAppHref,
       availableLanguage: ['English', 'Chinese'],
     },
-    url: getAbsoluteUrl(path),
+    url: path,
   }),
   makeBreadcrumbJsonLd([
     { name: 'Home', path: '/' },

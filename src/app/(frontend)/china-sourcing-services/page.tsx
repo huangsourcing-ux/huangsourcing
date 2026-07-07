@@ -6,8 +6,8 @@ import { servicePricingBySlug } from '@/lib/service-pricing'
 import { chinaSourcingServicesHref } from '@/lib/site-links'
 import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  makeOrganizationReference,
   makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 const title = 'China Sourcing Services'
@@ -95,21 +95,18 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
+const jsonLd = makeWebPageJsonLd({
+  type: 'CollectionPage',
   name: title,
   description,
-  url: getAbsoluteUrl(chinaSourcingServicesHref),
-  inLanguage: 'en',
-  publisher: makeOrganizationReference(),
+  path: chinaSourcingServicesHref,
   hasPart: serviceOverviewJsonLdItems.map((item) =>
     makeServiceJsonLd(
       {
         name: item.name,
         description: item.description,
         serviceType: item.name,
-        url: getAbsoluteUrl(item.href),
+        url: item.href,
         offers:
           item.offers ??
           (item.priceValue
@@ -132,7 +129,7 @@ const jsonLd = {
       { includeContext: false },
     ),
   ),
-}
+})
 
 export default function ChinaSourcingServices() {
   return (

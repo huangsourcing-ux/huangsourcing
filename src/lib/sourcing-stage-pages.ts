@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 
-import { getAbsoluteUrl } from '@/lib/site-url'
 import {
-  chinaServiceAreas,
   makeFaqPageJsonLd,
-  makeOrganizationReference,
+  makeServiceJsonLd,
+  makeWebPageJsonLd,
 } from '@/lib/structured-data'
 
 export type SourcingStageSlug =
@@ -662,24 +661,20 @@ export function makeSourcingStageMetadata(page: SourcingStagePage): Metadata {
 
 export function makeSourcingStageJsonLd(page: SourcingStagePage) {
   return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
+    makeWebPageJsonLd({
       name: page.metaTitle,
       description: page.metaDescription,
-      url: getAbsoluteUrl(`/${page.slug}`),
-      inLanguage: 'en',
+      path: `/${page.slug}`,
       keywords: page.seoKeyword,
-      publisher: makeOrganizationReference(),
-      about: {
-        '@type': 'Service',
-        name: page.primaryService,
-        serviceType: page.primaryService,
-        url: getAbsoluteUrl(page.primaryServiceHref),
-        provider: makeOrganizationReference(),
-        areaServed: chinaServiceAreas,
-      },
-    },
+      about: makeServiceJsonLd(
+        {
+          name: page.primaryService,
+          serviceType: page.primaryService,
+          url: page.primaryServiceHref,
+        },
+        { includeContext: false },
+      ),
+    }),
     makeFaqPageJsonLd(page.faqs),
   ]
 }
