@@ -16,6 +16,7 @@ import {
   defectiveProductsChinaSupplierDisputeArticleHref,
   euBatteryRegulationChinaArticleHref,
   euCbamChinaSourcingArticleHref,
+  euCyberResilienceActChinaArticleHref,
   euDeforestationRegulationChinaArticleHref,
   euForcedLabourRegulationChinaArticleHref,
   euGpsrLabelCheckChinaArticleHref,
@@ -173,6 +174,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euBatteryRegulationChinaArticleHref,
         label: 'EU Battery Regulation check for China sourcing',
+      },
+      {
+        href: euCyberResilienceActChinaArticleHref,
+        label: 'EU Cyber Resilience Act connected-product check',
       },
       {
         href: euDeforestationRegulationChinaArticleHref,
@@ -342,6 +347,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'EU Battery Regulation readiness before China shipment',
       },
       {
+        href: euCyberResilienceActChinaArticleHref,
+        label: 'EU Cyber Resilience Act readiness before China shipment',
+      },
+      {
         href: euDeforestationRegulationChinaArticleHref,
         label: 'EU Deforestation Regulation readiness before China shipment',
       },
@@ -460,6 +469,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: euBatteryRegulationChinaArticleHref,
         label: 'EU battery label and QR evidence checklist',
+      },
+      {
+        href: euCyberResilienceActChinaArticleHref,
+        label: 'EU Cyber Resilience Act connected-product checklist',
       },
       {
         href: euDeforestationRegulationChinaArticleHref,

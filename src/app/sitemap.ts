@@ -21,6 +21,7 @@ import {
   cpscEfilingChinaImportsArticleHref,
   euBatteryRegulationChinaArticleHref,
   euCbamChinaSourcingArticleHref,
+  euCyberResilienceActChinaArticleHref,
   euDeforestationRegulationChinaArticleHref,
   euForcedLabourRegulationChinaArticleHref,
   factoryVsTradingCompanySignalsArticleHref,
@@ -185,6 +186,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euBatteryRegulationChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euCyberResilienceActChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

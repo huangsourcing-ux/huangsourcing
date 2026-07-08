@@ -37,6 +37,8 @@ export const euTextileDigitalProductPassportChinaArticleHref =
   '/eu-textile-digital-product-passport-china-sourcing-2026'
 export const euBatteryRegulationChinaArticleHref =
   '/eu-battery-regulation-china-sourcing-2026'
+export const euCyberResilienceActChinaArticleHref =
+  '/eu-cyber-resilience-act-china-sourcing-2026'
 export const euDeforestationRegulationChinaArticleHref =
   '/eu-deforestation-regulation-china-sourcing-2026'
 export const euCbamChinaSourcingArticleHref =
