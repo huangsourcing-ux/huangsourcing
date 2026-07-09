@@ -50,6 +50,7 @@ import {
   usCustomsEnforcementChinaImportsArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
+  usSection232MetalTariffsChinaSourcingArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
 import { sourcingStageSlugs } from '@/lib/sourcing-stage-pages'
@@ -256,6 +257,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: usCustomsEnforcementChinaImportsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: usSection232MetalTariffsChinaSourcingArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

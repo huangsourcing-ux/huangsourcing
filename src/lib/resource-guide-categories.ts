@@ -47,6 +47,7 @@ import {
   usCustomsEnforcementChinaImportsArticleHref,
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
+  usSection232MetalTariffsChinaSourcingArticleHref,
 } from '@/lib/site-links'
 import {
   getJsonLdUrl,
@@ -108,6 +109,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: usCustomsEnforcementChinaImportsArticleHref,
         label: 'U.S. customs enforcement China import checklist',
+      },
+      {
+        href: usSection232MetalTariffsChinaSourcingArticleHref,
+        label: 'U.S. Section 232 metal tariff evidence checklist',
       },
       {
         href: chinaFactorySubcontractingRiskArticleHref,
@@ -210,6 +215,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: usCustomsEnforcementChinaImportsArticleHref,
         label: 'U.S. customs enforcement China import checklist',
+      },
+      {
+        href: usSection232MetalTariffsChinaSourcingArticleHref,
+        label: 'U.S. Section 232 metal tariff China sourcing checklist',
       },
       { href: qcBeforeBalanceArticleHref, label: 'QC inspection before balance payment' },
       { href: chinaQcInspectionFailsArticleHref, label: 'What happens when China QC fails' },
@@ -374,6 +383,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         href: usCustomsEnforcementChinaImportsArticleHref,
         label: 'U.S. customs enforcement evidence before China shipment',
       },
+      {
+        href: usSection232MetalTariffsChinaSourcingArticleHref,
+        label: 'U.S. Section 232 metal tariff evidence before China shipment',
+      },
       { href: '/free-china-sourcing-risk-check', label: 'Free Sourcing Risk Check' },
       { href: '/sample-inspection-report-china', label: 'Sample report evidence' },
       { href: '/before-deposit-china-supplier-check', label: 'Before deposit risk' },
@@ -465,6 +478,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: usCustomsEnforcementChinaImportsArticleHref,
         label: 'U.S. customs enforcement evidence checklist',
+      },
+      {
+        href: usSection232MetalTariffsChinaSourcingArticleHref,
+        label: 'U.S. Section 232 metals evidence checklist',
       },
       {
         href: euBatteryRegulationChinaArticleHref,
