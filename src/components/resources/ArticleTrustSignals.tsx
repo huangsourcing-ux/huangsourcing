@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Reveal } from '@/components/site/Reveal'
 
 type ArticleBylineProps = {
+  author?: 'agent-huang' | 'editorial-team'
   modifiedDate?: string
   publishedDate: string
 }
@@ -28,7 +29,11 @@ type EvidenceDecisionMatrixProps = {
   title: string
 }
 
-export function ArticleByline({ modifiedDate, publishedDate }: ArticleBylineProps) {
+export function ArticleByline({
+  author = 'agent-huang',
+  modifiedDate,
+  publishedDate,
+}: ArticleBylineProps) {
   return (
     <div className="mt-5 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-4 shadow-[var(--hs-shadow-sm)]">
       <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm font-extrabold leading-6 text-[var(--hs-text)]">
@@ -36,9 +41,11 @@ export function ArticleByline({ modifiedDate, publishedDate }: ArticleBylineProp
           Written by{' '}
           <Link
             className="text-[var(--hs-accent)] underline-offset-4 hover:underline"
-            href="/about#agent-huang"
+            href={author === 'editorial-team' ? '/about' : '/about#agent-huang'}
           >
-            Agent Huang
+            {author === 'editorial-team'
+              ? 'Huang Sourcing Editorial Team'
+              : 'Agent Huang'}
           </Link>
         </span>
         <span className="hidden sm:inline" aria-hidden>
@@ -55,8 +62,9 @@ export function ArticleByline({ modifiedDate, publishedDate }: ArticleBylineProp
         ) : null}
       </p>
       <p className="hs-muted mt-1 text-sm leading-6">
-        China-side sourcing partner helping overseas buyers verify suppliers,
-        inspect goods, and reduce payment or shipment risk before money or goods move.
+        {author === 'editorial-team'
+          ? 'Based on cited public records and buyer-side sourcing analysis; limits and specialist responsibilities are stated below.'
+          : 'China-side sourcing partner helping overseas buyers verify suppliers, inspect goods, and reduce payment or shipment risk before money or goods move.'}
       </p>
     </div>
   )

@@ -50,6 +50,7 @@ type SourceNote = {
 }
 
 export const cpscEfilingChinaImportsArticle = {
+  author: 'editorial-team' as const,
   href: cpscEfilingChinaImportsArticleHref,
   title: 'CPSC eFiling for China Imports in 2026',
   metaTitle: 'CPSC eFiling China Imports 2026: Buyer Checklist',
@@ -57,6 +58,8 @@ export const cpscEfilingChinaImportsArticle = {
     'CPSC eFiling for China imports in 2026: what U.S. buyers should collect before shipment, including product IDs, test data, certificate records, HTS signals, and broker handoff.',
   publishedDate: 'June 22, 2026',
   publishedDateIso: '2026-06-22T09:00:00-04:00',
+  modifiedDate: 'July 13, 2026',
+  modifiedDateIso: '2026-07-13T09:00:00+08:00',
   h1: 'CPSC eFiling for China Imports in 2026: What Buyers Should Check Before Shipment',
   eyebrow: 'CPSC eFiling - China imports - pre-shipment evidence',
   image: {
@@ -83,7 +86,7 @@ export const cpscEfilingChinaImportsArticle = {
     },
   ],
   intro:
-    'CPSC eFiling becomes a practical import problem for U.S.-bound regulated consumer products in 2026. For most covered imported products, the key applicability date is July 8, 2026, with a later January 8, 2027 date for products entered from a Foreign Trade Zone. Buyers sourcing from China should not wait until the shipment is at the port to organize certificate data.',
+    'CPSC eFiling is now an active import requirement for most covered U.S.-bound regulated consumer products. The main applicability date was July 8, 2026, with a later January 8, 2027 date for products entered from a Foreign Trade Zone. Buyers sourcing from China should organize certificate data before final payment or pickup, not after the shipment reaches the port.',
   answerSummary:
     'Before final payment or pickup, connect the product, SKU, model, manufacturing place and date, test report, CPSC citation, certificate point of contact, and broker handoff plan. Huang Sourcing can help check whether supplier files and visible product evidence match the order context in China, but the importer, broker, testing lab, compliance adviser, or counsel must decide filing, certification, and legal compliance.',
   primaryCta: {
@@ -112,6 +115,7 @@ Payment or pickup deadline:
     { href: '#data-elements', label: 'Data elements' },
     { href: '#product-identity', label: 'Product identity' },
     { href: '#broker-handoff', label: 'Broker handoff' },
+    { href: '#public-case', label: 'Public case example' },
     { href: '#decision-table', label: 'Buyer decisions' },
     { href: '#documents', label: 'What to send' },
     { href: '#scope-limits', label: 'Scope limits' },
@@ -162,7 +166,7 @@ Payment or pickup deadline:
       id: 'why-current',
       title: 'Why CPSC eFiling is a 2026 China sourcing issue',
       paragraphs: [
-        'CPSC approved a final rule updating certificate requirements under 16 CFR part 1110 and implementing electronic filing of certificate data for imported, regulated consumer products. The Federal Register rule is applicable July 8, 2026 for most covered imports and January 8, 2027 for covered products entered from a Foreign Trade Zone.',
+        'CPSC approved a final rule updating certificate requirements under 16 CFR part 1110 and implementing electronic filing of certificate data for imported, regulated consumer products. The July 8, 2026 applicability date has now passed for most covered imports; January 8, 2027 remains the date for covered products entered from a Foreign Trade Zone.',
         'For buyers sourcing from China, the operational risk is not only the customs filing. The filing depends on product identity, certificate data, test report coverage, manufacturing details, lab details, and broker instructions that are often scattered across supplier chats, PDFs, invoices, labels, and packing records.',
       ],
       bullets: [
@@ -247,12 +251,17 @@ Payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official CPSC eFiling, certificate, importer, FAQ, document-library, and Federal Register source context current to June 2026.',
+    'Official CPSC eFiling, certificate, importer, FAQ, recall, document-library, and Federal Register source context checked July 13, 2026 (Beijing time).',
     'Buyer-provided product list, SKU records, invoices, packing list, label files, warnings, manuals, test reports, certificate files, and broker instructions.',
     'Physical product, retail packaging, carton marks, opened-carton photos, sampled SKU records, and supplier correction evidence observed in China.',
     'Specialist guidance from the importer, broker, testing laboratory, CPSC compliance adviser, customs adviser, marketplace team, or legal counsel when filing or certification decisions exceed visual evidence.',
   ],
   sourceNotes: [
+    {
+      href: 'https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards',
+      label: 'CPSC - BUILT LUUM light-up tumbler recall',
+      note: 'Official March 19, 2026 recall describing a China-made product whose LED compartment could separate and release button-cell batteries; used as a bounded product-identity and evidence lesson, not proof that eFiling prevents recalls.',
+    },
     {
       href: 'https://www.federalregister.gov/documents/2025/01/08/2024-30826/certificates-of-compliance',
       label: 'Federal Register - Certificates of Compliance final rule',
@@ -340,7 +349,7 @@ Payment or pickup deadline:
     {
       question: 'When does CPSC eFiling become mandatory for China imports?',
       answer:
-        'For most imported consumer products subject to the CPSC certificate final rule, the applicability date is July 8, 2026. For covered products entered from a Foreign Trade Zone for consumption or warehousing, the applicability date is January 8, 2027.',
+        'For most imported consumer products subject to the CPSC certificate final rule, mandatory eFiling has applied since July 8, 2026. For covered products entered from a Foreign Trade Zone for consumption or warehousing, the applicability date is January 8, 2027.',
     },
     {
       question: 'Does CPSC eFiling apply to every product sourced from China?',
@@ -384,6 +393,7 @@ export function makeCpscEfilingChinaImportsArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

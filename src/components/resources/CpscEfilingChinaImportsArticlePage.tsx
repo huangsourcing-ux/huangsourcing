@@ -70,7 +70,11 @@ export function CpscEfilingChinaImportsArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline
+              author={article.author}
+              modifiedDate={article.modifiedDate}
+              publishedDate={article.publishedDate}
+            />
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
@@ -303,6 +307,43 @@ export function CpscEfilingChinaImportsArticlePage() {
         intro="This guide is based on official CPSC and Federal Register source context, then narrowed to the visible product, label, carton, supplier, document, and broker-handoff evidence that can be checked before goods leave China."
         items={article.evidenceBasis}
       />
+
+      <section className="hs-section-white" id="public-case">
+        <div className="hs-container hs-section max-w-4xl">
+          <Reveal>
+            <p className="hs-eyebrow">Public case example</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              BUILT LUUM light-up tumbler recall: match records to the actual construction.
+            </h2>
+            <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
+              <p>
+                On March 19, 2026, CPSC announced a recall of China-made BUILT LUUM
+                light-up tumblers. The agency said the LED compartment could separate
+                and release button-cell batteries, creating choking and ingestion
+                hazards. The public evidence is the official recall notice; Huang
+                Sourcing was not involved in the product, recall, testing, or remedy.
+              </p>
+              <p>
+                The buyer lesson is bounded: certificate data and test files should be
+                tied to the exact SKU, model, components, production version, labels,
+                and packed goods before release. The recall does not show that eFiling
+                would have prevented the issue, and it does not prove that other
+                suppliers or battery products have the same defect. It shows why a
+                document set that cannot be traced to actual construction is weak
+                release evidence.
+              </p>
+              <p>
+                Read the{' '}
+                <a className="hs-text-link" href="https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards" rel="noreferrer" target="_blank">
+                  official CPSC BUILT LUUM recall notice
+                </a>
+                . Product-specific certification and testing decisions remain with the
+                importer, qualified laboratory, compliance adviser, broker, or counsel.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="hs-section-soft" id="source-notes">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">

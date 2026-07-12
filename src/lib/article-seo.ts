@@ -22,6 +22,7 @@ type ArticleImageSet = {
 }
 
 type ArticleJsonLdInput = ArticleImageSet & {
+  author?: 'editorial-team'
   href: string
   metaDescription: string
   modifiedDateIso?: string
@@ -69,7 +70,14 @@ export function makeArticleJsonLd(article: ArticleJsonLdInput) {
     ...(article.modifiedDateIso
       ? { dateModified: article.modifiedDateIso }
       : {}),
-    author: makeAgentHuangAuthorReference(),
+    author:
+      article.author === 'editorial-team'
+        ? {
+            '@type': 'Organization',
+            name: 'Huang Sourcing Editorial Team',
+            url: getAbsoluteUrl('/about'),
+          }
+        : makeAgentHuangAuthorReference(),
     publisher: makeOrganizationReference(),
     isPartOf: {
       '@id': websiteJsonLdId,
