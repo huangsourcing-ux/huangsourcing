@@ -5,6 +5,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
+  buttonBatteryPackagingChinaArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
   chinaSamplesUsCustomsArticleHref,
@@ -163,6 +164,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: packagingLabelCheckBeforePaymentArticleHref,
         label: 'Packaging and label checks before final payment',
+      },
+      {
+        href: buttonBatteryPackagingChinaArticleHref,
+        label: 'Button battery packaging checks before shipment',
       },
       {
         href: euGpsrLabelCheckChinaArticleHref,

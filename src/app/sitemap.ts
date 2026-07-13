@@ -9,6 +9,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
+  buttonBatteryPackagingChinaArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
   chinaSamplesUsCustomsArticleHref,
@@ -217,6 +218,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: cpscEfilingChinaImportsArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: buttonBatteryPackagingChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },
