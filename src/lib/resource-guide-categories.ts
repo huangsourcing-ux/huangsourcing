@@ -6,6 +6,7 @@ import {
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   buttonBatteryPackagingChinaArticleHref,
+  lithiumBatteryAirShippingChinaArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
   chinaSamplesUsCustomsArticleHref,
@@ -170,6 +171,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
         label: 'Button battery packaging checks before shipment',
       },
       {
+        href: lithiumBatteryAirShippingChinaArticleHref,
+        label: 'Lithium battery air-shipment checklist for 2026',
+      },
+      {
         href: euGpsrLabelCheckChinaArticleHref,
         label: 'EU GPSR label check for China sourcing',
       },
@@ -241,6 +246,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       'Use these guides when cartons are packed, the supplier says the shipment is ready, or the forwarder is about to collect. This category focuses on final shipment readiness before goods leave the supplier, including carton condition, shipping marks, labels, packing-list signals, pickup blockers, and whether release should proceed or wait for correction before freight moves and access becomes harder later.',
     links: [
       { href: forwarderPickupChinaRisksArticleHref, label: 'Forwarder pickup China checklist' },
+      {
+        href: lithiumBatteryAirShippingChinaArticleHref,
+        label: 'Lithium battery air-shipment release checklist',
+      },
       {
         href: productionVsPreShipmentInspectionArticleHref,
         label: 'Production vs pre-shipment inspection',
@@ -517,6 +526,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       { href: chinaQcInspectionFailsArticleHref, label: 'Failed QC next-step decision' },
       { href: '/before-balance-payment-qc-china', label: 'Before balance payment checklist' },
       { href: forwarderPickupChinaRisksArticleHref, label: 'Forwarder pickup China checklist' },
+      {
+        href: lithiumBatteryAirShippingChinaArticleHref,
+        label: 'Lithium battery air-shipment release checklist',
+      },
       { href: preShipmentBeforePickupArticleHref, label: 'Pre-shipment inspection checklist' },
       { href: '/before-forwarder-pickup-inspection-china', label: 'Before pickup checklist' },
       { href: amazonSellersFbaPrepChinaArticleHref, label: 'Amazon sellers FBA prep decision' },

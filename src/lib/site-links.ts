@@ -9,6 +9,8 @@ export const aqlInspectionChinaArticleHref =
 export const buyerSideInspectionReportArticleHref = '/buyer-side-inspection-report'
 export const buttonBatteryPackagingChinaArticleHref =
   '/button-battery-packaging-check-china'
+export const lithiumBatteryAirShippingChinaArticleHref =
+  '/lithium-battery-air-shipping-china-2026'
 export const chinaFactoryProductionDelaysArticleHref =
   '/china-factory-production-delays-timeline-management'
 export const chinaFactorySubcontractingRiskArticleHref =
