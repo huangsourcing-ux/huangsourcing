@@ -50,6 +50,7 @@ import {
   usDeMinimisSuspensionChinaArticleHref,
   usPostalInformalEntryChinaMailShipmentsArticleHref,
   usSection232MetalTariffsChinaSourcingArticleHref,
+  waterBeadToyCpscChecklistArticleHref,
 } from '@/lib/site-links'
 import {
   getJsonLdUrl,
@@ -169,6 +170,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: buttonBatteryPackagingChinaArticleHref,
         label: 'Button battery packaging checks before shipment',
+      },
+      {
+        href: waterBeadToyCpscChecklistArticleHref,
+        label: 'Water bead toy CPSC release checklist',
       },
       {
         href: lithiumBatteryAirShippingChinaArticleHref,
