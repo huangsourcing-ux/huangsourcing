@@ -54,6 +54,7 @@ import {
   usPostalInformalEntryChinaMailShipmentsArticleHref,
   usSection232MetalTariffsChinaSourcingArticleHref,
   ukPlugCheckChinaSourcingArticleHref,
+  sturdyDresserChecksChinaArticleHref,
   waterBeadToyCpscChecklistArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -236,6 +237,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: ukPlugCheckChinaSourcingArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: sturdyDresserChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

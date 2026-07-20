@@ -51,6 +51,7 @@ import {
   usPostalInformalEntryChinaMailShipmentsArticleHref,
   usSection232MetalTariffsChinaSourcingArticleHref,
   ukPlugCheckChinaSourcingArticleHref,
+  sturdyDresserChecksChinaArticleHref,
   waterBeadToyCpscChecklistArticleHref,
 } from '@/lib/site-links'
 import {
@@ -179,6 +180,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: ukPlugCheckChinaSourcingArticleHref,
         label: 'UK plug and electrical-goods release checklist',
+      },
+      {
+        href: sturdyDresserChecksChinaArticleHref,
+        label: 'STURDY dresser evidence and shipment checklist',
       },
       {
         href: lithiumBatteryAirShippingChinaArticleHref,

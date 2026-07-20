@@ -13,6 +13,8 @@ export const waterBeadToyCpscChecklistArticleHref =
   '/water-bead-toy-cpsc-checklist'
 export const ukPlugCheckChinaSourcingArticleHref =
   '/uk-plug-check-china-sourcing'
+export const sturdyDresserChecksChinaArticleHref =
+  '/sturdy-dresser-checks-china'
 export const lithiumBatteryAirShippingChinaArticleHref =
   '/lithium-battery-air-shipping-china-2026'
 export const chinaFactoryProductionDelaysArticleHref =
