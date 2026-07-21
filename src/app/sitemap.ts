@@ -31,6 +31,7 @@ import {
   euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
   euTextileDigitalProductPassportChinaArticleHref,
+  euToySafetyRegulationChinaArticleHref,
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
@@ -187,6 +188,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euTextileDigitalProductPassportChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+  {
+    path: euToySafetyRegulationChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.8,
   },

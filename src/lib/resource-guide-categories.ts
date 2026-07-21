@@ -25,6 +25,7 @@ import {
   euLowValueParcelDutyChinaArticleHref,
   euPpwrPackagingCheckChinaArticleHref,
   euTextileDigitalProductPassportChinaArticleHref,
+  euToySafetyRegulationChinaArticleHref,
   factoryVsTradingCompanyChinaHref,
   factoryVsTradingCompanySignalsArticleHref,
   fnskuLabelCheckHref,
@@ -176,6 +177,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: waterBeadToyCpscChecklistArticleHref,
         label: 'Water bead toy CPSC release checklist',
+      },
+      {
+        href: euToySafetyRegulationChinaArticleHref,
+        label: 'EU Toy Safety Regulation supplier evidence checklist',
       },
       {
         href: ukPlugCheckChinaSourcingArticleHref,

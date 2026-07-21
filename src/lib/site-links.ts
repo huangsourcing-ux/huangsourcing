@@ -15,6 +15,8 @@ export const ukPlugCheckChinaSourcingArticleHref =
   '/uk-plug-check-china-sourcing'
 export const sturdyDresserChecksChinaArticleHref =
   '/sturdy-dresser-checks-china'
+export const euToySafetyRegulationChinaArticleHref =
+  '/eu-toy-safety-regulation-china'
 export const lithiumBatteryAirShippingChinaArticleHref =
   '/lithium-battery-air-shipping-china-2026'
 export const chinaFactoryProductionDelaysArticleHref =
