@@ -53,6 +53,7 @@ import {
   usSection232MetalTariffsChinaSourcingArticleHref,
   ukPlugCheckChinaSourcingArticleHref,
   sturdyDresserChecksChinaArticleHref,
+  toddlerTowerChecksChinaArticleHref,
   waterBeadToyCpscChecklistArticleHref,
 } from '@/lib/site-links'
 import {
@@ -189,6 +190,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: sturdyDresserChecksChinaArticleHref,
         label: 'STURDY dresser evidence and shipment checklist',
+      },
+      {
+        href: toddlerTowerChecksChinaArticleHref,
+        label: 'Toddler tower evidence and shipment checklist',
       },
       {
         href: lithiumBatteryAirShippingChinaArticleHref,
