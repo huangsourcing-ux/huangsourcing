@@ -57,6 +57,7 @@ import {
   ukPlugCheckChinaSourcingArticleHref,
   sturdyDresserChecksChinaArticleHref,
   toddlerTowerChecksChinaArticleHref,
+  verifyChinaLabTestReportArticleHref,
   waterBeadToyCpscChecklistArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -131,6 +132,11 @@ const staticRoutes: SitemapEntry[] = [
     path: supplierVerificationVsFactoryAuditArticleHref,
     changeFrequency: 'monthly',
     priority: 0.78,
+  },
+  {
+    path: verifyChinaLabTestReportArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.8,
   },
   {
     path: uflpaChinaSupplierCheckArticleHref,

@@ -54,6 +54,7 @@ import {
   ukPlugCheckChinaSourcingArticleHref,
   sturdyDresserChecksChinaArticleHref,
   toddlerTowerChecksChinaArticleHref,
+  verifyChinaLabTestReportArticleHref,
   waterBeadToyCpscChecklistArticleHref,
 } from '@/lib/site-links'
 import {
@@ -88,6 +89,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: supplierVerificationVsFactoryAuditArticleHref,
         label: 'Supplier verification vs factory audit',
+      },
+      {
+        href: verifyChinaLabTestReportArticleHref,
+        label: 'How to verify a China laboratory test report',
       },
       {
         href: uflpaChinaSupplierCheckArticleHref,
