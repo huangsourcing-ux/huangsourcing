@@ -1,13 +1,10 @@
 import type { Metadata } from 'next'
 
 import {
-  articleContentUpdateDate,
-  articleContentUpdateDateIso,
   getArticleOpenGraphImages,
   makeArticleJsonLd,
 } from '@/lib/article-seo'
 import { amazonFbaPrepArticleHref } from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -22,31 +19,33 @@ type DecisionRow = {
   whatWasChecked: string
 }
 
-type FaqItem = {
-  answer: string
-  question: string
-}
-
 type RelatedLink = {
   href: string
   label: string
   note: string
 }
 
+type SourceNote = {
+  href: string
+  label: string
+  note: string
+}
+
 export const amazonFbaPrepArticle = {
+  author: 'editorial-team' as const,
   href: amazonFbaPrepArticleHref,
-  title: 'Amazon FBA Prep in China: FNSKU, Carton Labels, SKU Separation',
-  metaTitle: 'Amazon FBA Prep China Checklist',
+  title: 'Amazon FBA Prep in China After Amazon Ended Prep Services',
+  metaTitle: 'Amazon FBA Prep China After 2026 Changes',
   metaDescription:
-    'Use this Amazon FBA prep China checklist before shipment to confirm FNSKU labels, carton labels, SKU separation, packing rules, and pickup readiness.',
+    'Amazon ended US FBA prep and item-labeling services in 2026. Check barcodes, labels, packaging, cartons, and release evidence before goods leave China.',
   publishedDate: 'May 23, 2026',
   publishedDateIso: '2026-05-23T03:53:10-04:00',
-  modifiedDate: articleContentUpdateDate,
-  modifiedDateIso: articleContentUpdateDateIso,
-  h1: 'Amazon FBA Prep in China: FNSKU, Carton Labels, SKU Separation',
-  eyebrow: 'Amazon FBA prep China',
+  modifiedDate: 'July 25, 2026',
+  modifiedDateIso: '2026-07-25T03:45:00+08:00',
+  h1: 'Amazon FBA Prep in China After Amazon Ended Prep Services',
+  eyebrow: 'Barcode - packaging - carton evidence - release decision',
   image: {
-    alt: 'Agent Huang checking FNSKU labels carton labels and SKU separation for Amazon FBA prep in China',
+    alt: 'Illustration of China-side FBA barcode labeling, SKU separation, and carton preparation before shipment',
     height: 900,
     src: '/images/amazon-fba-prep-fnsku-carton-labels.webp',
     width: 1600,
@@ -57,9 +56,9 @@ export const amazonFbaPrepArticle = {
     { height: 1200, src: '/images/amazon-fba-prep-fnsku-carton-labels-1x1.webp', width: 1200 },
   ],
   intro:
-    'Amazon FBA prep in China is most useful before cartons leave the supplier or forwarder warehouse. Once goods are moving, wrong FNSKU labels, missing carton labels, mixed SKUs, or unclear shipment-plan details can turn a simple shipment into relabeling fees, receiving delays, or stranded inventory.',
+    'Amazon ended prep and item-labeling services for US FBA shipments on January 1, 2026. Sellers now need the supplier, a China prep partner, or another qualified provider to finish the required barcodes, packaging, labels, and shipment-box work before inventory reaches Amazon. Check the actual goods while correction is still possible, not after the forwarder collects them.',
   answerSummary:
-    'A practical FBA prep check should answer one buyer decision: ship direct to FBA, correct labels, separate SKUs, route through a prep warehouse, or delay pickup. The useful evidence is carton-level and SKU-level, not just a few close-up label photos.',
+    'Release only when the current marketplace instructions, shipment plan, SKU files, unit-level preparation, box labels, quantities, and photo evidence agree. Otherwise correct the affected units or cartons, move them through a prep partner, or hold pickup. China-side checking cannot guarantee Amazon acceptance or decide product compliance.',
   primaryCta: {
     href: '/amazon-fba-prep-china',
     label: 'Ask FBA quote',
@@ -82,71 +81,77 @@ Main concern:
 `,
   tableOfContents: [
     { href: '#quick-answer', label: 'Quick answer' },
-    { href: '#what-to-check', label: 'What to check' },
+    { href: '#amazon-2026-change', label: '2026 service change' },
+    { href: '#what-to-check', label: 'Prep checklist' },
+    { href: '#public-case', label: 'Public case' },
     { href: '#decision-table', label: 'Buyer decisions' },
-    { href: '#field-notes', label: 'Field notes' },
+    { href: '#sources', label: 'Sources' },
     { href: '#documents', label: 'What to send' },
     { href: '#red-flags', label: 'Red flags' },
     { href: '#limits', label: 'Scope limits' },
-    { href: '#faq', label: 'FAQ' },
   ],
   quickChecks: [
-    'FNSKU files, unit labels, barcode readability, and label placement',
-    'Carton labels, shipping marks, shipment ID labels, and label placement',
-    'SKU separation by carton, product version, color, size, bundle, or set',
-    'Poly bag warnings, suffocation warnings, set labels, expiration dates, and lot labels when relevant',
-    'Carton count, units per carton, gross weight, carton dimensions, and carton condition',
-    'Shipment plan, SKU list, carton-level packing details, and pickup readiness',
-    'Photo evidence of unit labels, carton labels, separated SKUs, and correction needs',
-    'Decision notes for direct FBA shipment, relabeling, repacking, prep warehouse routing, or delay',
+    'Confirm the seller or named provider—not Amazon—is assigned the current prep and label work',
+    'Match the barcode type and final label file to every SKU, variation, condition, bundle, and unit',
+    'Check barcode readability, flat placement, and whether conflicting barcodes must be covered',
+    'Confirm current product-specific bagging, bubble-wrap, set, loose-product, and warning requirements',
+    'Match shipment-box labels, carton count, units per carton, weights, dimensions, and packing list',
+    'Show each checked SKU and carton in context, including exceptions and correction evidence',
+    'Reconcile the current shipment plan, marketplace, destination, pickup window, and handoff owner',
+    'Approve direct shipment, correct, repack, use a prep partner, or hold pickup',
   ],
   sections: [
     {
-      id: 'why-before-shipment',
-      title: 'Why Amazon FBA prep in China should be checked before shipment',
+      id: 'amazon-2026-change',
+      title: 'What changed for Amazon FBA prep in 2026?',
       paragraphs: [
-        'FBA prep mistakes are usually small, visible, and expensive later. A wrong FNSKU, mixed SKU carton, missing carton label, or unlabeled bundle can create Amazon receiving problems after the goods are already overseas.',
-        'Checking in China gives the buyer a chance to correct labels, separate SKUs, repack cartons, or route goods through a prep warehouse before freight and receiving delays begin.',
+        'Amazon’s official announcement says US FBA prep and item-labeling services stopped on January 1, 2026. The change covers inventory sent directly to FBA and inventory passing through Amazon Warehousing and Distribution, Amazon Global Logistics, Amazon SEND, or the Supply Chain Portal. Amazon also removed AMAZON as an accepted prepOwner or labelOwner value in US Fulfillment Inbound API operations.',
+        'Amazon’s July 7, 2026 seller guide places preparation before inbound delivery: choose the right barcode, apply readable labels, package each product securely, follow product-specific instructions, and remove or cover unintended shipping-box barcodes. The guide says inadequate preparation may lead to refusal, return, or repackaging at the seller’s expense.',
       ],
       bullets: [
-        'Ship direct to FBA only when labels, cartons, and shipment plan line up',
-        'Delay pickup if FNSKU labels or carton labels are not confirmed',
-        'Separate SKUs before shipment when mixed cartons create receiving risk',
-        'Use a prep warehouse when supplier-side prep is unclear or incomplete',
+        'Name the party responsible for unit preparation, item labeling, shipment-box work, and corrections',
+        'Do not use an old workflow that assumes an Amazon fulfillment center will complete missing prep',
+        'Pull current instructions from the destination marketplace and active shipment plan for this order',
+        'Hold pickup when responsibility, files, or correction capacity remains unclear',
       ],
     },
     {
       id: 'what-to-check',
-      title: 'What to check: FNSKU, carton labels, and SKU separation',
+      title: 'What should buyers check before cartons leave China?',
       paragraphs: [
-        'A useful Amazon FBA prep China check should not stop at asking whether labels were printed. The question is whether the correct labels are placed on the correct units and cartons, and whether the shipment matches the plan that Amazon or the seller created.',
-        'Agent Huang looks for SKU-level and carton-level evidence: unit labels, carton labels, packing method, carton count, SKU separation, and whether the supplier or warehouse understands the prep rule for this exact order.',
+        'Start with the active Seller Central shipment plan and final seller files. Amazon can use manufacturer barcodes, Amazon barcodes, or Transparency codes in different circumstances, so “add an FNSKU” is not a universal instruction. The seller should identify the barcode route and provide the exact files and current product-specific preparation requirements.',
+        'Then connect each file to physical evidence. Show the label on the correct product and outer preparation, show SKU or variation groups, count cartons and units, record shipment-box labels, and document corrections. A close-up barcode photo without product, carton, and shipment context is not enough for a release decision.',
       ],
       bullets: [
-        'FNSKU labels: correct file, correct SKU, readable barcode, stable placement, and no conflicting retail barcode when it should be covered',
-        'Carton labels: correct carton label files, shipment labels, shipping marks, visible placement, and no missing or duplicate labels',
-        'SKU separation: one SKU per carton when required, clear separation for color or size variants, and no mixed units without carton-level notes',
-        'Prep rules: poly bag warning, set label, bundle label, fragile protection, expiration date, lot number, country of origin, and insert requirements when relevant',
-        'Carton details: carton count, unit count, gross weight, carton dimensions, carton condition, and whether cartons are ready for pickup',
-        'Shipment-plan fit: whether the packing list and carton labels match the shipment plan, SKU list, and forwarder pickup plan',
+        'Unit identity: ASIN, FNSKU or other approved barcode, seller SKU, variation, condition, and product title',
+        'Label execution: correct file, legibility, placement, adhesion, outside visibility, and conflicting-barcode treatment',
+        'Product preparation: secure packaging, loose-product control, bagging, bubble wrap, sets, sharp or fragile protection, and category instructions',
+        'Shipment boxes: correct labels, no unintended scannable barcodes, box count, units, weight, dimensions, condition, and destination match',
+        'Exception control: affected quantity, segregated stock, correction owner, correction photos, recount, and re-check result',
       ],
     },
     {
-      id: 'field-notes',
-      title: 'Agent Huang field notes from FBA prep checks',
+      id: 'evidence-workflow',
+      title: 'How should China-side evidence support the release decision?',
       paragraphs: [
-        'The riskiest FBA prep problems are often not dramatic. They are quiet mismatches: one SKU label printed from an old file, a shipment label applied to the wrong carton, similar color variants packed together, or a bundle missing a set label.',
-        'Supplier photos can look convincing because they show labels close up. Buyer-side evidence should show the label in context: product, SKU group, carton, carton count, and shipment plan relationship.',
+        'Set the evidence plan before the visit or warehouse check. Define which SKUs and cartons will be opened, what files are final, how barcode readability will be checked, what product-specific prep applies, and which defects require correction or a hold. Preserve photos with SKU and carton context rather than accepting unlabeled image batches.',
+        'If the order changes after checking—new label files, a different product version, repacking, a revised shipment plan, or mixed replacement stock—the earlier evidence may no longer support release. Reconcile the changed scope and re-check the affected units or cartons before pickup.',
       ],
       bullets: [
-        'Do not approve FBA shipment from one close-up FNSKU photo',
-        'Ask for SKU-group photos when color, size, bundle, or multi-pack variants are similar',
-        'Check carton labels before cartons are sealed or handed to the forwarder',
-        'Treat unclear shipment-plan files as a buyer-side risk, not only a supplier task',
+        'Use a SKU-and-carton sampling or full-check plan appropriate to the order and decision',
+        'Record both conforming evidence and exceptions; do not photograph only the best examples',
+        'Separate corrected stock from unchecked or rejected stock and preserve the corrected count',
+        'Release only against the current shipment plan and the responsible seller’s written instructions',
       ],
     },
   ] satisfies ArticleSection[],
   decisionRows: [
+    {
+      riskNode: 'Prep and label owner',
+      whatWasChecked:
+        'Named seller, factory, China prep partner, or other provider; current marketplace; shipment plan; work instructions; and correction capacity',
+      buyerDecision: 'Confirm responsibility, assign a qualified prep owner, or hold pickup',
+    },
     {
       riskNode: 'FNSKU labels',
       whatWasChecked:
@@ -179,11 +184,28 @@ Main concern:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Final FNSKU files, carton label files, shipment plan, SKU list, packing list, and pickup timing provided for the order.',
-    'Carton-level and SKU-level photo evidence showing labels, separated SKU groups, carton count, carton condition, and correction needs.',
-    'China-side FBA prep workflow judgment from checking labels, cartons, packing details, and forwarder release readiness before goods leave China.',
-    'Buyer-stage decision context: ship direct to FBA, relabel, repack, route through prep support, or delay pickup until evidence is clear.',
+    'Amazon’s official service-change announcement for US FBA shipments and its July 7, 2026 public prep, packaging, and labeling guide.',
+    'Independent supply-chain reporting used to distinguish Amazon’s announcement from Huang Sourcing’s buyer-side interpretation.',
+    'Buyer-provided active shipment plan, barcode and box-label files, SKU list, product-specific instructions, packing list, and pickup deadline.',
+    'SKU-level, unit-level, and carton-level evidence showing checked examples, exceptions, corrected quantities, and release limits.',
   ],
+  sourceNotes: [
+    {
+      href: 'https://developer-docs.amazon.com/sp-api/lang-en_US/changelog/us-fba-prep-and-labeling-services-to-end-january-1-2026',
+      label: 'Amazon - US FBA prep and labeling services ended January 1, 2026',
+      note: 'Primary Amazon announcement covering the service end, affected inbound routes, and Fulfillment Inbound API owner changes.',
+    },
+    {
+      href: 'https://sell.amazon.com/blog/fba-packaging-prep-labeling',
+      label: 'Amazon - FBA prep, packaging, and labeling guide',
+      note: 'Current July 7, 2026 public guidance on barcode types, label application, packaging, product-specific prep, shipping boxes, and possible consequences of inadequate preparation.',
+    },
+    {
+      href: 'https://www.supplychaindive.com/news/amazon-fba-prep-item-labeling-services-end/756289/',
+      label: 'Supply Chain Dive - Amazon ends US FBA prep and labeling services',
+      note: 'Independent August 1, 2025 report summarizing Amazon’s operational change and the shift to seller, manufacturing-partner, or third-party preparation.',
+    },
+  ] satisfies SourceNote[],
   whatToSend: [
     'FNSKU label files, carton label files, shipment plan, and SKU list',
     'Product photos, unit count, carton count, units per carton, and packing method',
@@ -193,6 +215,7 @@ Main concern:
     'The decision you need after the check: direct FBA shipment, prep warehouse, relabeling, or pickup release',
   ],
   redFlags: [
+    'The shipment workflow still identifies Amazon as the party that will complete missing prep or item labeling',
     'Supplier photos show one label close-up but not the SKU group or cartons',
     'FNSKU files, carton labels, or shipment plan changed after packing started',
     'Similar color, size, or bundle variants are stored together without clear SKU separation',
@@ -203,6 +226,7 @@ Main concern:
   ],
   scopeLimits: [
     'Amazon FBA prep in China reduces visible prep and shipment-readiness risk, but it does not guarantee Amazon receiving approval',
+    'Amazon rules, program availability, barcode eligibility, product-specific prep, fees, and shipment workflows can change by marketplace, product, account, and date',
     'It does not replace marketplace compliance, product safety testing, listing approval, or legal review',
     'It does not guarantee hidden carton contents unless opening and checking are included in the scope',
     'It does not guarantee every barcode will scan in every Amazon warehouse system',
@@ -231,33 +255,6 @@ Main concern:
       note: 'Use when carton handover, pickup address, and logistics readiness also need checking.',
     },
   ] satisfies RelatedLink[],
-  faqs: [
-    {
-      question: 'What is Amazon FBA prep in China?',
-      answer:
-        'Amazon FBA prep in China means preparing goods before shipment to Amazon, including FNSKU labels, carton labels, SKU separation, packing rules, poly bag warnings, bundle labels, and shipment-plan alignment when relevant.',
-    },
-    {
-      question: 'Should FNSKU labels be checked before shipment?',
-      answer:
-        'Yes. FNSKU labels should be checked before pickup or shipment release because wrong, missing, duplicated, or poorly placed labels can create Amazon receiving delays and relabeling costs later.',
-    },
-    {
-      question: 'Can Huang Sourcing check carton labels and SKU separation?',
-      answer:
-        'Yes. Send FNSKU files, carton labels, shipment plan, SKU list, packing details, and pickup deadline so carton labels and SKU separation can be checked in China.',
-    },
-    {
-      question: 'Can goods ship directly from China to Amazon FBA?',
-      answer:
-        'Yes, but direct shipment is safest when unit labels, carton labels, SKU separation, carton count, and shipment-plan details are confirmed before pickup.',
-    },
-    {
-      question: 'Does FBA prep in China guarantee Amazon will receive the shipment?',
-      answer:
-        'No. China-side prep reduces visible label and packing risk, but Amazon receiving approval, marketplace compliance, warehouse processing, and listing status are separate from the prep check.',
-    },
-  ] satisfies FaqItem[],
 }
 
 export function makeAmazonFbaPrepArticleMetadata(): Metadata {
@@ -301,6 +298,5 @@ export function makeAmazonFbaPrepArticleJsonLd() {
         name: item,
       })),
     },
-    makeFaqPageJsonLd(amazonFbaPrepArticle.faqs),
   ]
 }

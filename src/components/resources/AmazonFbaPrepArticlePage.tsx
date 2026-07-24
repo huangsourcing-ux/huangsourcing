@@ -3,6 +3,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
+  ExternalLink,
   FileText,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -67,6 +68,7 @@ export function AmazonFbaPrepArticlePage() {
               {amazonFbaPrepArticle.answerSummary}
             </p>
             <ArticleByline
+              author={amazonFbaPrepArticle.author}
               modifiedDate={amazonFbaPrepArticle.modifiedDate}
               publishedDate={amazonFbaPrepArticle.publishedDate}
             />
@@ -160,8 +162,9 @@ export function AmazonFbaPrepArticlePage() {
                 What should be checked before FBA shipment?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check FNSKU labels, carton labels, SKU separation, packing rules,
-                carton count, shipment plan, and pickup readiness before goods leave China.
+                Confirm who owns prep, then match current barcode and packaging
+                instructions to the units, cartons, shipment plan, and correction evidence
+                before goods leave China.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {amazonFbaPrepArticle.quickChecks.map((item, index) => (
@@ -188,10 +191,94 @@ export function AmazonFbaPrepArticlePage() {
                     ))}
                   </div>
                   {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.id === 'amazon-2026-change' ? (
+                    <p className="hs-muted mt-5 text-sm leading-6">
+                      Verify the service change in Amazon&apos;s{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://developer-docs.amazon.com/sp-api/lang-en_US/changelog/us-fba-prep-and-labeling-services-to-end-january-1-2026"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        official FBA prep and labeling announcement
+                      </a>{' '}
+                      and check current execution details in Amazon&apos;s{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://sell.amazon.com/blog/fba-packaging-prep-labeling"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        July 2026 prep, packaging, and labeling guide
+                      </a>
+                      .
+                    </p>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="hs-section-soft scroll-mt-24" id="public-case">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">Public case example</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Amazon ended US FBA prep and item-labeling services.
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            <Reveal className="hs-card bg-white p-6">
+              <h3 className="text-xl font-extrabold text-[var(--hs-text)]">
+                What happened and what was public
+              </h3>
+              <p className="hs-muted mt-4 text-sm leading-7">
+                Amazon announced that prep and item-labeling services for US FBA
+                shipments would no longer be available from January 1, 2026. The
+                announcement covers inventory sent directly to FBA and inventory
+                passing through AWD, AGL, Amazon SEND, or the Supply Chain Portal. It
+                also says AMAZON would no longer be accepted as prepOwner or
+                labelOwner in US Fulfillment Inbound API operations.
+              </p>
+              <a
+                className="hs-text-link mt-5 inline-flex items-center gap-2 text-sm font-extrabold"
+                href="https://developer-docs.amazon.com/sp-api/lang-en_US/changelog/us-fba-prep-and-labeling-services-to-end-january-1-2026"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Read Amazon&apos;s primary announcement
+                <ExternalLink aria-hidden className="size-4" />
+              </a>
+            </Reveal>
+            <Reveal className="hs-card bg-[var(--hs-card-warm)] p-6" delayMs={80}>
+              <h3 className="text-xl font-extrabold text-[var(--hs-text)]">
+                Buyer lesson and limits
+              </h3>
+              <p className="hs-muted mt-4 text-sm leading-7">
+                The release question has moved upstream: identify the responsible prep
+                party and verify the actual units and cartons before pickup. Do not
+                assume a destination fulfillment center will complete missing work.
+              </p>
+              <p className="hs-muted mt-4 text-sm leading-7">
+                This case does not prove that every supplier or shipment has a prep
+                defect. It does not establish which barcode or product-specific rule
+                applies to a particular ASIN, marketplace, account, or shipment plan.
+                The seller remains responsible for current Amazon instructions and the
+                final release decision.
+              </p>
+              <a
+                className="hs-text-link mt-5 inline-flex items-center gap-2 text-sm font-extrabold"
+                href="https://www.supplychaindive.com/news/amazon-fba-prep-item-labeling-services-end/756289/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Read independent supply-chain coverage
+                <ExternalLink aria-hidden className="size-4" />
+              </a>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -230,11 +317,43 @@ export function AmazonFbaPrepArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        intro="This advice is based on the files, cartons, label evidence, and shipment-stage facts that make an FBA pickup decision safer before goods leave China."
+        className="hs-section-white"
+        intro="This guide combines Amazon’s current public instructions, independent coverage of the service change, and buyer-provided SKU, label, carton, and shipment evidence that can be compared before pickup."
         items={amazonFbaPrepArticle.evidenceBasis}
       />
 
-      <section className="hs-section-white" id="documents">
+      <section className="hs-section-soft scroll-mt-24" id="sources">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">Sources</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Public records used for this update
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {amazonFbaPrepArticle.sourceNotes.map((source, index) => (
+              <Reveal
+                className="hs-card bg-white p-5"
+                key={source.href}
+                staggerIndex={index}
+              >
+                <a
+                  className="hs-text-link inline-flex items-start gap-2 font-extrabold"
+                  href={source.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span>{source.label}</span>
+                  <ExternalLink aria-hidden className="mt-0.5 size-4 shrink-0" />
+                </a>
+                <p className="hs-muted mt-3 text-sm leading-6">{source.note}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="hs-section-white scroll-mt-24" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <div className="hs-icon-box size-12">
@@ -320,29 +439,6 @@ export function AmazonFbaPrepArticlePage() {
         </div>
       </section>
 
-      <section className="hs-section-white" id="faq">
-        <div className="hs-container hs-section max-w-4xl">
-          <Reveal>
-            <h2 className="text-3xl font-extrabold text-[var(--hs-text)]">
-              Frequently asked questions
-            </h2>
-          </Reveal>
-          <div className="mt-6 grid gap-3">
-            {amazonFbaPrepArticle.faqs.map((faq, index) => (
-              <Reveal
-                as="article"
-                className="hs-card bg-[var(--hs-bg-soft)] p-5"
-                key={faq.question}
-                staggerIndex={index}
-              >
-                <h3 className="text-base font-extrabold text-[var(--hs-text)]">{faq.question}</h3>
-                <p className="hs-muted mt-2 text-sm leading-6">{faq.answer}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white">
         <div className="hs-container hs-section">
           <Reveal className="hs-cta-band px-6 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
@@ -352,8 +448,9 @@ export function AmazonFbaPrepArticlePage() {
                 Ask for an FBA prep quote before cartons leave China.
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-                Send FNSKU files, carton labels, SKU list, carton count, pickup date,
-                and the label or SKU separation issue you are worried about.
+                Send the active shipment plan, barcode and box-label files, SKU list,
+                carton count, product-specific prep instructions, pickup date, and the
+                correction decision you need.
               </p>
             </div>
             <ContactAgentButton
