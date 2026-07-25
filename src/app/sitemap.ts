@@ -36,6 +36,7 @@ import {
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
   huangSourcingCheckScopeArticleHref,
+  infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
@@ -245,6 +246,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: waterBeadToyCpscChecklistArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: infantNeckFloatChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

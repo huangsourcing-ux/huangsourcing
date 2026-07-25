@@ -33,6 +33,7 @@ import {
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
   huangSourcingCheckScopeArticleHref,
+  infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
@@ -183,6 +184,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: waterBeadToyCpscChecklistArticleHref,
         label: 'Water bead toy CPSC release checklist',
+      },
+      {
+        href: infantNeckFloatChecksChinaArticleHref,
+        label: 'Infant neck float CPSC release checklist',
       },
       {
         href: euToySafetyRegulationChinaArticleHref,
