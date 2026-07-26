@@ -38,6 +38,7 @@ import {
   huangSourcingCheckScopeArticleHref,
   infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
+  powerBankChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -251,6 +252,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: infantNeckFloatChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: powerBankChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

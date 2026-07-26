@@ -35,6 +35,7 @@ import {
   huangSourcingCheckScopeArticleHref,
   infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
+  powerBankChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -188,6 +189,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: infantNeckFloatChecksChinaArticleHref,
         label: 'Infant neck float CPSC release checklist',
+      },
+      {
+        href: powerBankChecksChinaArticleHref,
+        label: 'Power bank quality and release checklist',
       },
       {
         href: euToySafetyRegulationChinaArticleHref,
