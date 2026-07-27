@@ -1,4 +1,5 @@
 import {
+  adultBedRailChecksChinaArticleHref,
   alibabaSupplierVerificationHref,
   alibabaSupplierVerificationPaymentArticleHref,
   aqlInspectionChinaArticleHref,
@@ -193,6 +194,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: powerBankChecksChinaArticleHref,
         label: 'Power bank quality and release checklist',
+      },
+      {
+        href: adultBedRailChecksChinaArticleHref,
+        label: 'Adult portable bed rail evidence and shipment checklist',
       },
       {
         href: euToySafetyRegulationChinaArticleHref,

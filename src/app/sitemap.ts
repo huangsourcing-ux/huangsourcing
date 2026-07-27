@@ -4,6 +4,7 @@ import { getAbsoluteUrl } from '@/lib/site-url'
 import { riskGuideSlugs } from '@/lib/risk-guide-pages'
 import { seoServiceSlugs } from '@/lib/seo-service-pages'
 import {
+  adultBedRailChecksChinaArticleHref,
   alibabaSupplierVerificationPaymentArticleHref,
   aqlInspectionChinaArticleHref,
   amazonFbaPrepArticleHref,
@@ -257,6 +258,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: powerBankChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: adultBedRailChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
