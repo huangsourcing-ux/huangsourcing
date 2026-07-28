@@ -34,6 +34,7 @@ import {
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
   huangSourcingCheckScopeArticleHref,
+  immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   powerBankChecksChinaArticleHref,
@@ -198,6 +199,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: adultBedRailChecksChinaArticleHref,
         label: 'Adult portable bed rail evidence and shipment checklist',
+      },
+      {
+        href: immersionWaterHeaterChecksChinaArticleHref,
+        label: 'Immersion water heater evidence and shipment checklist',
       },
       {
         href: euToySafetyRegulationChinaArticleHref,
