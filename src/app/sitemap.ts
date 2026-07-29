@@ -47,6 +47,7 @@ import {
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
   resourceGuideHref,
+  sandFilledToyAsbestosChecksChinaArticleHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierVerificationChinaLimitsArticleHref,
   supplierVerificationChecklistHref,
@@ -269,6 +270,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: immersionWaterHeaterChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: sandFilledToyAsbestosChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

@@ -44,6 +44,7 @@ import {
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
   resourceGuideHref,
+  sandFilledToyAsbestosChecksChinaArticleHref,
   sampleConsolidationCompareSuppliersArticleHref,
   supplierDepositGuideHref,
   supplierVerificationChinaLimitsArticleHref,
@@ -203,6 +204,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: immersionWaterHeaterChecksChinaArticleHref,
         label: 'Immersion water heater evidence and shipment checklist',
+      },
+      {
+        href: sandFilledToyAsbestosChecksChinaArticleHref,
+        label: 'Sand-filled toy asbestos evidence and shipment checklist',
       },
       {
         href: euToySafetyRegulationChinaArticleHref,
