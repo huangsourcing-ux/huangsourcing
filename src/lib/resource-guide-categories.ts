@@ -37,6 +37,7 @@ import {
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
+  poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
@@ -204,6 +205,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: immersionWaterHeaterChecksChinaArticleHref,
         label: 'Immersion water heater evidence and shipment checklist',
+      },
+      {
+        href: poolDrainCoverChecksChinaArticleHref,
+        label: 'Pool drain cover evidence and shipment checklist',
       },
       {
         href: sandFilledToyAsbestosChecksChinaArticleHref,

@@ -40,6 +40,7 @@ import {
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
+  poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
@@ -270,6 +271,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: immersionWaterHeaterChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: poolDrainCoverChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
