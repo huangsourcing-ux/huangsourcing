@@ -36,6 +36,7 @@ import {
   huangSourcingCheckScopeArticleHref,
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
+  magneticToyChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
@@ -209,6 +210,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: poolDrainCoverChecksChinaArticleHref,
         label: 'Pool drain cover evidence and shipment checklist',
+      },
+      {
+        href: magneticToyChecksChinaArticleHref,
+        label: 'Magnetic toy evidence and shipment checklist',
       },
       {
         href: sandFilledToyAsbestosChecksChinaArticleHref,

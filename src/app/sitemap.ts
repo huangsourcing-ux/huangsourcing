@@ -39,6 +39,7 @@ import {
   huangSourcingCheckScopeArticleHref,
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
+  magneticToyChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
@@ -276,6 +277,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: poolDrainCoverChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: magneticToyChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

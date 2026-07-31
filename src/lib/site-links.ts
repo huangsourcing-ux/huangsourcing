@@ -12,6 +12,8 @@ export const immersionWaterHeaterChecksChinaArticleHref =
   '/immersion-water-heater-checks-china'
 export const poolDrainCoverChecksChinaArticleHref =
   '/pool-drain-cover-checks-china'
+export const magneticToyChecksChinaArticleHref =
+  '/magnetic-toy-checks-china'
 export const sandFilledToyAsbestosChecksChinaArticleHref =
   '/sand-filled-toy-asbestos-checks-china'
 export const buyerSideInspectionReportArticleHref = '/buyer-side-inspection-report'
