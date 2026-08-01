@@ -62,6 +62,7 @@ import {
   sturdyDresserChecksChinaArticleHref,
   toddlerTowerChecksChinaArticleHref,
   verifyChinaLabTestReportArticleHref,
+  verifyUlCertificationChinaArticleHref,
   waterBeadToyCpscChecklistArticleHref,
 } from '@/lib/site-links'
 import {
@@ -100,6 +101,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: verifyChinaLabTestReportArticleHref,
         label: 'How to verify a China laboratory test report',
+      },
+      {
+        href: verifyUlCertificationChinaArticleHref,
+        label: 'How to verify UL certification from a China supplier',
       },
       {
         href: uflpaChinaSupplierCheckArticleHref,

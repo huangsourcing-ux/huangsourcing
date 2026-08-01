@@ -65,6 +65,7 @@ import {
   sturdyDresserChecksChinaArticleHref,
   toddlerTowerChecksChinaArticleHref,
   verifyChinaLabTestReportArticleHref,
+  verifyUlCertificationChinaArticleHref,
   waterBeadToyCpscChecklistArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
@@ -282,6 +283,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: magneticToyChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: verifyUlCertificationChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

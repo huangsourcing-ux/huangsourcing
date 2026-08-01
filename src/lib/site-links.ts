@@ -83,6 +83,8 @@ export const ustrForcedLaborSection301ChinaArticleHref =
   '/ustr-forced-labor-section-301-china-2026'
 export const verifyChinaLabTestReportArticleHref =
   '/verify-china-lab-test-report'
+export const verifyUlCertificationChinaArticleHref =
+  '/verify-ul-certification-china'
 export const whatToSendBeforeChinaInspectionHref = '/what-to-send-before-china-inspection'
 export const alibabaSupplierVerificationHref = '/alibaba-supplier-verification-china'
 export const alibabaSupplierVerificationPaymentArticleHref =
