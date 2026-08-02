@@ -7,6 +7,7 @@ import {
   amazonSellersFbaPrepChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   buttonBatteryPackagingChinaArticleHref,
+  childrensSleepwearChecksChinaArticleHref,
   lithiumBatteryAirShippingChinaArticleHref,
   chinaFactoryProductionDelaysArticleHref,
   chinaFactorySubcontractingRiskArticleHref,
@@ -219,6 +220,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: magneticToyChecksChinaArticleHref,
         label: 'Magnetic toy evidence and shipment checklist',
+      },
+      {
+        href: childrensSleepwearChecksChinaArticleHref,
+        label: "Children's sleepwear evidence and shipment checklist",
       },
       {
         href: sandFilledToyAsbestosChecksChinaArticleHref,
