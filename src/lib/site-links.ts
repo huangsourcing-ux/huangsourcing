@@ -8,6 +8,8 @@ export const aqlInspectionChinaArticleHref =
   '/aql-inspection-china-sample-size-defect-limits'
 export const adultBedRailChecksChinaArticleHref =
   '/adult-bed-rail-checks-china'
+export const babyLoungerChecksChinaArticleHref =
+  '/baby-lounger-checks-china'
 export const immersionWaterHeaterChecksChinaArticleHref =
   '/immersion-water-heater-checks-china'
 export const poolDrainCoverChecksChinaArticleHref =

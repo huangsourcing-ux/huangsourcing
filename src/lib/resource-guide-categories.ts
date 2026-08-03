@@ -5,6 +5,7 @@ import {
   aqlInspectionChinaArticleHref,
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
+  babyLoungerChecksChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   buttonBatteryPackagingChinaArticleHref,
   childrensSleepwearChecksChinaArticleHref,
@@ -200,6 +201,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: infantNeckFloatChecksChinaArticleHref,
         label: 'Infant neck float CPSC release checklist',
+      },
+      {
+        href: babyLoungerChecksChinaArticleHref,
+        label: 'Baby lounger evidence and shipment checklist',
       },
       {
         href: powerBankChecksChinaArticleHref,

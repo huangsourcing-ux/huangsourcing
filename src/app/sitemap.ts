@@ -9,6 +9,7 @@ import {
   aqlInspectionChinaArticleHref,
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
+  babyLoungerChecksChinaArticleHref,
   buyerSideInspectionReportArticleHref,
   buttonBatteryPackagingChinaArticleHref,
   childrensSleepwearChecksChinaArticleHref,
@@ -259,6 +260,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: infantNeckFloatChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: babyLoungerChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
