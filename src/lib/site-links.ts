@@ -14,6 +14,8 @@ export const tabletopFirePitChecksChinaArticleHref =
   '/tabletop-fire-pit-checks-china'
 export const ziplineKitChecksChinaArticleHref =
   '/zipline-kit-checks-china'
+export const electricKettleChecksChinaArticleHref =
+  '/electric-kettle-checks-china'
 export const immersionWaterHeaterChecksChinaArticleHref =
   '/immersion-water-heater-checks-china'
 export const poolDrainCoverChecksChinaArticleHref =
