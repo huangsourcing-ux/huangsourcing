@@ -47,6 +47,7 @@ import {
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
+  rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -234,6 +235,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: powerBankChecksChinaArticleHref,
         label: 'Power bank quality and release checklist',
+      },
+      {
+        href: rechargeableHandWarmerChecksChinaArticleHref,
+        label: 'Rechargeable hand warmer evidence and shipment checklist',
       },
       {
         href: adultBedRailChecksChinaArticleHref,

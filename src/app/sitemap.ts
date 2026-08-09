@@ -50,6 +50,7 @@ import {
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
+  rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
   productionVsPreShipmentInspectionArticleHref,
   qcBeforeBalanceArticleHref,
@@ -300,6 +301,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: powerBankChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: rechargeableHandWarmerChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
