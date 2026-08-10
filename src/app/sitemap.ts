@@ -13,6 +13,7 @@ import {
   electricKettleChecksChinaArticleHref,
   hairDryerBrushChecksChinaArticleHref,
   pullStringTeethingToyChecksChinaArticleHref,
+  squishyToyChecksChinaArticleHref,
   tabletopFirePitChecksChinaArticleHref,
   ziplineKitChecksChinaArticleHref,
   buyerSideInspectionReportArticleHref,
@@ -296,6 +297,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: pullStringTeethingToyChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: squishyToyChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

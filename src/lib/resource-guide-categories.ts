@@ -9,6 +9,7 @@ import {
   electricKettleChecksChinaArticleHref,
   hairDryerBrushChecksChinaArticleHref,
   pullStringTeethingToyChecksChinaArticleHref,
+  squishyToyChecksChinaArticleHref,
   tabletopFirePitChecksChinaArticleHref,
   ziplineKitChecksChinaArticleHref,
   buyerSideInspectionReportArticleHref,
@@ -231,6 +232,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: pullStringTeethingToyChecksChinaArticleHref,
         label: 'Pull-string teething toy evidence and shipment checklist',
+      },
+      {
+        href: squishyToyChecksChinaArticleHref,
+        label: 'Liquid-filled squishy toy evidence and shipment checklist',
       },
       {
         href: powerBankChecksChinaArticleHref,

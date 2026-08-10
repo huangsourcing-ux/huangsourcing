@@ -20,6 +20,8 @@ export const hairDryerBrushChecksChinaArticleHref =
   '/hair-dryer-brush-checks-china'
 export const pullStringTeethingToyChecksChinaArticleHref =
   '/pull-string-teething-toy-checks-china'
+export const squishyToyChecksChinaArticleHref =
+  '/squishy-toy-checks-china'
 export const immersionWaterHeaterChecksChinaArticleHref =
   '/immersion-water-heater-checks-china'
 export const poolDrainCoverChecksChinaArticleHref =
