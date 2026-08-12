@@ -6,6 +6,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   babyLoungerChecksChinaArticleHref,
+  babyWalkerChecksChinaArticleHref,
   electricKettleChecksChinaArticleHref,
   hairDryerBrushChecksChinaArticleHref,
   pullStringTeethingToyChecksChinaArticleHref,
@@ -212,6 +213,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: babyLoungerChecksChinaArticleHref,
         label: 'Baby lounger evidence and shipment checklist',
+      },
+      {
+        href: babyWalkerChecksChinaArticleHref,
+        label: 'Baby walker evidence and shipment checklist',
       },
       {
         href: tabletopFirePitChecksChinaArticleHref,
