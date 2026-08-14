@@ -10,6 +10,7 @@ import {
   mattressFlammabilityChecksChinaArticleHref,
   smokeCoAlarmChecksChinaArticleHref,
   electricKettleChecksChinaArticleHref,
+  miniFridgeChecksChinaArticleHref,
   hairDryerBrushChecksChinaArticleHref,
   pullStringTeethingToyChecksChinaArticleHref,
   squishyToyChecksChinaArticleHref,
@@ -239,6 +240,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: electricKettleChecksChinaArticleHref,
         label: 'Electric kettle evidence and shipment checklist',
+      },
+      {
+        href: miniFridgeChecksChinaArticleHref,
+        label: 'Mini fridge evidence and shipment checklist',
       },
       {
         href: hairDryerBrushChecksChinaArticleHref,

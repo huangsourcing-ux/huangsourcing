@@ -14,6 +14,7 @@ import {
   mattressFlammabilityChecksChinaArticleHref,
   smokeCoAlarmChecksChinaArticleHref,
   electricKettleChecksChinaArticleHref,
+  miniFridgeChecksChinaArticleHref,
   hairDryerBrushChecksChinaArticleHref,
   pullStringTeethingToyChecksChinaArticleHref,
   squishyToyChecksChinaArticleHref,
@@ -305,6 +306,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: electricKettleChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: miniFridgeChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

@@ -22,6 +22,8 @@ export const ziplineKitChecksChinaArticleHref =
   '/zipline-kit-checks-china'
 export const electricKettleChecksChinaArticleHref =
   '/electric-kettle-checks-china'
+export const miniFridgeChecksChinaArticleHref =
+  '/mini-fridge-checks-china'
 export const hairDryerBrushChecksChinaArticleHref =
   '/hair-dryer-brush-checks-china'
 export const pullStringTeethingToyChecksChinaArticleHref =
