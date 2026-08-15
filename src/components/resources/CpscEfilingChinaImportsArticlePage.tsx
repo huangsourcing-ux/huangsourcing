@@ -226,6 +226,42 @@ export function CpscEfilingChinaImportsArticlePage() {
               </div>
             </Reveal>
 
+            <Reveal
+              as="section"
+              className="mt-12 scroll-mt-24"
+              id="post-launch-status"
+            >
+              <p className="hs-eyebrow">Post-launch status</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+                What changed after CPSC eFiling went live?
+              </h2>
+              <p className="hs-muted mt-4 text-base leading-7">
+                The July 8 launch moved certificate-data transmission into the live
+                entry workflow. It did not turn a supplier PDF into proof that the
+                finished goods are covered. Before release, buyers still need a clear
+                applicability decision, a product-specific certificate record, and a
+                broker-ready handoff tied to the actual shipment.
+              </p>
+              <div className="mt-6 grid gap-3">
+                {article.postLaunchFacts.map((fact) => (
+                  <article
+                    className="rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] p-5 shadow-[var(--hs-shadow-sm)]"
+                    key={fact.href}
+                  >
+                    <p className="hs-muted text-sm leading-6">{fact.claim}</p>
+                    <a
+                      className="hs-text-link mt-3 inline-flex items-center gap-1 text-sm font-extrabold"
+                      href={fact.href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {fact.label} <ExternalLink aria-hidden className="size-4" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </Reveal>
+
             <div className="mt-12 grid gap-12">
               {article.sections.map((section, index) => (
                 <Reveal
@@ -304,7 +340,7 @@ export function CpscEfilingChinaImportsArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide is based on official CPSC and Federal Register source context, then narrowed to the visible product, label, carton, supplier, document, and broker-handoff evidence that can be checked before goods leave China."
+        intro="This guide is based on current CPSC and Federal Register records plus independent carrier guidance, then narrowed to the visible product, label, carton, supplier, document, and broker-handoff evidence that can be checked before goods leave China."
         items={article.evidenceBasis}
       />
 
@@ -351,7 +387,7 @@ export function CpscEfilingChinaImportsArticlePage() {
             <div className="hs-icon-box size-12">
               <ShieldCheck aria-hidden className="size-6" />
             </div>
-            <p className="hs-eyebrow mt-5">Official source context</p>
+            <p className="hs-eyebrow mt-5">Source context</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
               Verify the filing rule, then check the shipment evidence.
             </h2>
@@ -376,7 +412,7 @@ export function CpscEfilingChinaImportsArticlePage() {
                 </h3>
                 <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
-                  Open official source <ExternalLink aria-hidden className="size-4" />
+                  Open source <ExternalLink aria-hidden className="size-4" />
                 </span>
               </a>
             ))}

@@ -12,7 +12,6 @@ import {
   qualityControlChinaManufacturingPlanArticleHref,
   whatToSendBeforeChinaInspectionHref,
 } from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -37,6 +36,12 @@ type FaqItem = {
   question: string
 }
 
+type PostLaunchFact = {
+  claim: string
+  href: string
+  label: string
+}
+
 type RelatedLink = {
   href: string
   label: string
@@ -52,16 +57,16 @@ type SourceNote = {
 export const cpscEfilingChinaImportsArticle = {
   author: 'editorial-team' as const,
   href: cpscEfilingChinaImportsArticleHref,
-  title: 'CPSC eFiling for China Imports in 2026',
-  metaTitle: 'CPSC eFiling China Imports 2026: Buyer Checklist',
+  title: 'CPSC eFiling for China Imports: Post-Launch Buyer Checks',
+  metaTitle: 'CPSC eFiling for China Imports: Post-Launch Checks',
   metaDescription:
-    'CPSC eFiling for China imports in 2026: what U.S. buyers should collect before shipment, including product IDs, test data, certificate records, HTS signals, and broker handoff.',
+    'CPSC eFiling is live. Check China-side product IDs, testing, certificate data, exclusions, and broker handoff before payment or shipment release.',
   publishedDate: 'June 22, 2026',
   publishedDateIso: '2026-06-22T09:00:00-04:00',
-  modifiedDate: 'July 13, 2026',
-  modifiedDateIso: '2026-07-13T09:00:00+08:00',
-  h1: 'CPSC eFiling for China Imports in 2026: What Buyers Should Check Before Shipment',
-  eyebrow: 'CPSC eFiling - China imports - pre-shipment evidence',
+  modifiedDate: 'August 16, 2026',
+  modifiedDateIso: '2026-08-16T09:00:00+08:00',
+  h1: 'CPSC eFiling for China Imports: Post-Launch Buyer Checks',
+  eyebrow: 'CPSC eFiling - now in effect - China import evidence',
   image: {
     alt: 'China-side document and product evidence review before CPSC-regulated consumer goods ship to the United States',
     height: 900,
@@ -86,9 +91,9 @@ export const cpscEfilingChinaImportsArticle = {
     },
   ],
   intro:
-    'CPSC eFiling is now an active import requirement for most covered U.S.-bound regulated consumer products. The main applicability date was July 8, 2026, with a later January 8, 2027 date for products entered from a Foreign Trade Zone. Buyers sourcing from China should organize certificate data before final payment or pickup, not after the shipment reaches the port.',
+    'CPSC eFiling is now in effect for most covered U.S.-bound regulated consumer products. CPSC announced full implementation on July 8, 2026; the later January 8, 2027 date applies to covered products entered from a Foreign Trade Zone. Buyers sourcing from China should organize the product-to-certificate evidence and broker handoff before final payment or pickup, not after the shipment reaches the port.',
   answerSummary:
-    'Before final payment or pickup, connect the product, SKU, model, manufacturing place and date, test report, CPSC citation, certificate point of contact, and broker handoff plan. Huang Sourcing can help check whether supplier files and visible product evidence match the order context in China, but the importer, broker, testing lab, compliance adviser, or counsel must decide filing, certification, and legal compliance.',
+    'Before final payment or pickup, connect each finished product, SKU, model, manufacturing place and date, supporting test data, CPSC citations or testing exclusions, certificate point of contact, and broker handoff plan. Huang Sourcing can compare supplier files with visible order evidence in China, but the importer, broker, laboratory, compliance adviser, or counsel must decide filing, certification, and legal compliance.',
   primaryCta: {
     label: 'Check CPSC Evidence Before Shipment',
   },
@@ -111,6 +116,7 @@ Payment or pickup deadline:
   tableOfContents: [
     { href: '#quick-answer', label: 'Quick answer' },
     { href: '#efiling-checklist', label: 'eFiling checklist' },
+    { href: '#post-launch-status', label: 'Post-launch status' },
     { href: '#why-current', label: 'Why current' },
     { href: '#data-elements', label: 'Data elements' },
     { href: '#product-identity', label: 'Product identity' },
@@ -125,6 +131,7 @@ Payment or pickup deadline:
     'Confirm whether the product is a finished consumer product subject to a CPSC rule, ban, standard, or regulation that requires certification',
     'Match the imported SKU, model, version, batch, and carton records to the exact product covered by the test report and certificate file',
     'Collect the Product ID, applicable citation codes, manufacture date, manufacture place, product test date, testing laboratory, and point of contact',
+    'Identify every testing exclusion relied on in the finished-product certificate record; CPSC says the revised part 1110 requires this from July 8, 2026',
     'Confirm whether the importer will file a Full PGA Message Set or use Product Registry certificate identifiers for a Reference PGA Message Set',
     'Check whether HTS codes are likely to be flagged while remembering that CPSC guidance says the HTS list is not all-encompassing',
     'Keep manufacturer, lab, certificate, and point-of-contact details consistent across supplier files, product labels, packing records, and broker instructions',
@@ -142,7 +149,7 @@ Payment or pickup deadline:
     {
       title: 'Certificate data readiness',
       items: [
-        'Product ID, citation codes, manufacture date, manufacture place, product test date, testing laboratory, and point of contact',
+        'Product ID, citation codes or testing exclusion codes, manufacture date, manufacture place, product test date, testing laboratory, and point of contact',
         'Clear owner of the certificate record, plus whether Product Registry identifiers or a full certificate data set will be sent to the broker',
       ],
     },
@@ -161,12 +168,32 @@ Payment or pickup deadline:
       ],
     },
   ] satisfies CheckGroup[],
+  postLaunchFacts: [
+    {
+      claim:
+        'CPSC announced that mandatory eFiling is now in effect for most imported regulated consumer products. The agency also said the system changes how existing certificate data is transmitted; it does not create new testing, certification, or compliance obligations.',
+      href: 'https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports',
+      label: 'CPSC mandatory eFiling implementation announcement',
+    },
+    {
+      claim:
+        'CPSC\'s current FAQ says a finished-product certificate must identify all testing used to support certification and, from July 8, 2026, any testing exclusions relied on. It also says Disclaim PGA Message Sets are encouraged but not required.',
+      href: 'https://www.cpsc.gov/FAQ/eFiling-Frequently-Asked-Questions-FAQ',
+      label: 'CPSC eFiling FAQ',
+    },
+    {
+      claim:
+        'FedEx\'s current carrier guidance tells customers importing CPSC-regulated products to provide certificate data with shipping documentation so it can be transmitted through the CPSC PGA message set in ACE at entry.',
+      href: 'https://www.fedex.com/en-ca/shipping-services/international/regulatory/mandatory-electronic-filing-requirements.html',
+      label: 'FedEx CPSC eFiling regulatory alert',
+    },
+  ] satisfies PostLaunchFact[],
   sections: [
     {
       id: 'why-current',
       title: 'Why CPSC eFiling is a 2026 China sourcing issue',
       paragraphs: [
-        'CPSC approved a final rule updating certificate requirements under 16 CFR part 1110 and implementing electronic filing of certificate data for imported, regulated consumer products. The July 8, 2026 applicability date has now passed for most covered imports; January 8, 2027 remains the date for covered products entered from a Foreign Trade Zone.',
+        'CPSC approved a final rule updating certificate requirements under 16 CFR part 1110 and implementing electronic filing of certificate data for imported, regulated consumer products. On July 8, 2026, CPSC announced that the program was in effect for most covered imports; January 8, 2027 remains the applicability date for covered products entered from a Foreign Trade Zone.',
         'For buyers sourcing from China, the operational risk is not only the customs filing. The filing depends on product identity, certificate data, test report coverage, manufacturing details, lab details, and broker instructions that are often scattered across supplier chats, PDFs, invoices, labels, and packing records.',
       ],
       bullets: [
@@ -181,11 +208,11 @@ Payment or pickup deadline:
       title: 'What certificate data should buyers organize before shipment?',
       paragraphs: [
         'CPSC describes two practical filing paths once participants are ready to transmit message sets into ACE. A Full PGA Message Set sends required product certificate data through the broker. A Reference PGA Message Set points to certificate data already entered in the CPSC Product Registry by using Certificate Identifiers.',
-        'Either path depends on clean data. The buyer should know which product identifier is being used, which CPSC citations apply, when and where the product was manufactured, when it was tested, which lab performed testing, and who serves as the certificate point of contact.',
+        'Either path depends on clean data. The buyer should know which product identifier is being used, which CPSC citations and testing exclusions apply, when and where the product was manufactured, when it was tested, which labs performed the supporting testing, and who serves as the certificate point of contact.',
       ],
       bullets: [
         'Product ID used consistently across certificate records, SKU lists, labels, invoices, and packing records',
-        'Applicable CPSC citation codes or testing exclusion codes confirmed by qualified compliance resources',
+        'Applicable CPSC citation codes and any testing exclusion codes confirmed by qualified compliance resources',
         'Manufacture date and manufacture place tied to the actual factory and production run',
         'Product test date and testing laboratory details taken from the matching test report',
         'Point of contact and certifying party data approved before the broker files entry',
@@ -251,7 +278,8 @@ Payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official CPSC eFiling, certificate, importer, FAQ, recall, document-library, and Federal Register source context checked July 13, 2026 (Beijing time).',
+    'Official CPSC eFiling implementation, certificate, importer, FAQ, recall, document-library, and Federal Register source context checked August 16, 2026 (Beijing time).',
+    'Independent FedEx carrier guidance checked August 16, 2026 to confirm the operational shipping-document handoff signal after the July 8 launch.',
     'Buyer-provided product list, SKU records, invoices, packing list, label files, warnings, manuals, test reports, certificate files, and broker instructions.',
     'Physical product, retail packaging, carton marks, opened-carton photos, sampled SKU records, and supplier correction evidence observed in China.',
     'Specialist guidance from the importer, broker, testing laboratory, CPSC compliance adviser, customs adviser, marketplace team, or legal counsel when filing or certification decisions exceed visual evidence.',
@@ -261,6 +289,11 @@ Payment or pickup deadline:
       href: 'https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards',
       label: 'CPSC - BUILT LUUM light-up tumbler recall',
       note: 'Official March 19, 2026 recall describing a China-made product whose LED compartment could separate and release button-cell batteries; used as a bounded product-identity and evidence lesson, not proof that eFiling prevents recalls.',
+    },
+    {
+      href: 'https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Implements-Mandatory-eFiling-for-Certificates-of-Compliance-Targeting-Dangerous-Foreign-Imports',
+      label: 'CPSC - mandatory eFiling implementation announcement',
+      note: 'Official July 8, 2026 announcement that eFiling is in effect for most imported regulated consumer products and changes transmission rather than adding new testing or certification duties.',
     },
     {
       href: 'https://www.federalregister.gov/documents/2025/01/08/2024-30826/certificates-of-compliance',
@@ -280,7 +313,12 @@ Payment or pickup deadline:
     {
       href: 'https://www.cpsc.gov/FAQ/eFiling-Frequently-Asked-Questions-FAQ',
       label: 'CPSC - eFiling FAQ',
-      note: 'CPSC FAQ covering Full PGA Message Sets, Reference PGA Message Sets, Product Registry identifiers, implementation dates, and Section 321 treatment.',
+      note: 'CPSC FAQ covering Full and Reference PGA paths, Product Registry identifiers, testing exclusions, Disclaim message sets, implementation dates, and Section 321 treatment.',
+    },
+    {
+      href: 'https://www.fedex.com/en-ca/shipping-services/international/regulatory/mandatory-electronic-filing-requirements.html',
+      label: 'FedEx - CPSC eFiling regulatory alert',
+      note: 'Independent carrier guidance explaining that customers importing covered products should provide certificate data with shipping documentation for transmission in ACE.',
     },
     {
       href: 'https://www.cpsc.gov/eFiling-Document-Library',
@@ -364,7 +402,7 @@ Payment or pickup deadline:
     {
       question: 'What are the Product Registry identifiers for a Reference PGA Message Set?',
       answer:
-        'CPSC describes three Certificate Identifiers for the Reference PGA path: Certifier ID, Product ID, and Version ID. The importer should give those identifiers to the broker when using Product Registry records.',
+        'CPSC describes three Certificate Identifiers for the Reference PGA path: Certifier ID, Product ID, and Version ID. The importer should give those identifiers to the broker when using Product Registry records and confirm that the referenced version matches the finished product being entered.',
     },
     {
       question: 'Does Section 321 or low shipment value avoid eFiling?',
@@ -420,6 +458,5 @@ export function makeCpscEfilingChinaImportsArticleJsonLd() {
         }),
       ),
     },
-    makeFaqPageJsonLd(cpscEfilingChinaImportsArticle.faqs),
   ]
 }
