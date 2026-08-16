@@ -10,6 +10,7 @@ import {
   amazonFbaPrepArticleHref,
   amazonSellersFbaPrepChinaArticleHref,
   babyLoungerChecksChinaArticleHref,
+  babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
   mattressFlammabilityChecksChinaArticleHref,
   smokeCoAlarmChecksChinaArticleHref,
@@ -281,6 +282,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: babyWalkerChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: babySwingChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
