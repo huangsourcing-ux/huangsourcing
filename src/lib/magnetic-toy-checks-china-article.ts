@@ -50,8 +50,8 @@ export const magneticToyChecksChinaArticle = {
     'Check magnetic toys before China shipment: exact model, age grade, magnet retention, lab evidence, CPC data, tracking labels, packaging, lots, and release.',
   publishedDate: 'August 1, 2026',
   publishedDateIso: '2026-08-01T03:29:11+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'August 18, 2026',
+  modifiedDateIso: '2026-08-18T03:24:59+08:00',
   h1: 'Magnetic Toy Checks Before Shipping from China',
   eyebrow: 'Exact model - magnet retention - payment and shipment release',
   image: {
@@ -160,9 +160,10 @@ Balance payment or pickup deadline:
       id: 'why-current',
       title: 'Why magnetic toy shipment evidence matters now',
       paragraphs: [
-        'On May 28, 2026, the U.S. Consumer Product Safety Commission announced a recall of about 1,000 China-made Zen Fidget Magnetic Ball Sets distributed as promotional items. The notice says the products were loose high-powered magnets that violated the mandatory toy standard. No incidents or injuries were reported in that recall.',
+        'On August 13, 2026, the U.S. Consumer Product Safety Commission announced a recall of about 213,500 Goody King magnetic building cube and block sets made in China. CPSC says the cubes can break or open and release small, powerful magnets. The importer reported at least 27 breakage or opening incidents and two children who required surgery after ingesting magnets. The affected models were sold on Amazon from January 2024 through July 2026.',
+        'Associated Press separately reported the recall and the two surgeries on the day of the CPSC announcement. Earlier 2026 CPSC actions involving loose or liberated high-powered magnets, including the Daoen Zen Fidget Magnetic Ball Sets recall, show that the current Goody King case is not an isolated product-evidence question.',
         'On June 2, 2026, the Australian Competition and Consumer Commission said it had sent takedown requests to Amazon, eBay, Kogan, and Fruugo for listings involving banned or non-compliant magnetic toys and games. The ACCC also opened a limited review of its mandatory toys-containing-magnets standard, with submissions due July 31, 2026.',
-        'The U.S. and Australian records do not prove that every China-made magnetic toy, seller, or factory has the same problem, and their legal requirements are not interchangeable. Together they show a current cross-market reason to verify product classification, exact-model evidence, magnet construction, labels, and shipment identity before goods move.',
+        'The U.S. and Australian records do not prove that every China-made magnetic toy, seller, or factory has the same problem, and their legal requirements are not interchangeable. Together they show a current cross-market reason to verify product classification, exact-model evidence, enclosure and retention construction, labels, lot traceability, and shipment identity before goods move.',
       ],
       bullets: [
         'An age label, online category, promotional use, or supplier assurance does not settle product classification',
@@ -285,17 +286,28 @@ Balance payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'The May 28, 2026 CPSC Daoen recall for China-made loose high-powered magnetic ball toys',
+    'The August 13, 2026 CPSC Goody King recall for about 213,500 China-made magnetic building sets, including the reported breakage or opening incidents and two ingestion surgeries',
+    'Independent Associated Press reporting used to confirm current public attention and distinguish reporting from the primary regulator record',
     'Current CPSC toy-safety guidance for ASTM F963, magnet provisions, use-and-abuse context, tracking marks, testing, and CPC responsibilities',
-    'The June 2, 2026 ACCC cross-marketplace takedown action and July 2026 mandatory-standard review',
+    'The May 28, 2026 CPSC Daoen recall plus the June 2, 2026 ACCC cross-marketplace takedown action and July 2026 mandatory-standard review as broader incident and enforcement context',
     'Buyer-side exact-model, document, construction, marking, packaging, lot, correction, and release evidence that can be compared before goods leave China',
     'Explicit separation between visible shipment inspection and qualified classification, testing, certification, regulatory, importer, marketplace, and legal responsibilities',
   ],
   sourceNotes: [
     {
+      href: 'https://www.cpsc.gov/Recalls/2026/Goody-King-Magnetic-Building-Cubes-and-Blocks-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnetic-Ingestion-Hazard-Imported-by-Yi-Suen-Commerce',
+      label: 'CPSC - Goody King magnetic building toys recall',
+      note: 'Primary August 13, 2026 public case identifying about 213,500 China-made magnetic building sets, affected model numbers, Amazon sales period, breakage or opening reports, two ingestion surgeries, and the refund remedy.',
+    },
+    {
+      href: 'https://apnews.com/article/b22a06f9394392e0da55e96b074e976a',
+      label: 'Associated Press - Goody King recall report',
+      note: 'Independent August 13, 2026 reporting on the CPSC action, affected unit count, magnet-release mechanism, incidents, injuries, models, sales channel, and remedy.',
+    },
+    {
       href: 'https://www.cpsc.gov/Recalls/2026/Daoen-Recalls-Zen-Magnetic-Promotional-Ball-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys',
       label: 'CPSC - Daoen Zen magnetic ball sets recall',
-      note: 'Primary May 28, 2026 public case identifying about 1,000 China-made loose high-powered magnetic ball sets, the mandatory-toy-standard violation, distribution period, no reported incidents or injuries, and disposal remedy.',
+      note: 'Earlier May 28, 2026 primary record identifying about 1,000 China-made loose high-powered magnetic ball sets, the mandatory-toy-standard violation, distribution period, no reported incidents or injuries, and disposal remedy.',
     },
     {
       href: 'https://www.cpsc.gov/Business--Manufacturing/Business-Education/Toy-Safety',
@@ -409,6 +421,7 @@ export function makeMagneticToyChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

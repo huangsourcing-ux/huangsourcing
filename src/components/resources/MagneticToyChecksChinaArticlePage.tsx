@@ -252,7 +252,25 @@ export function MagneticToyChecksChinaArticlePage() {
 
                   {section.id === 'why-current' ? (
                     <p className="hs-muted mt-5 text-sm leading-6">
-                      Current primary records:{' '}
+                      Current public records and reporting:{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://www.cpsc.gov/Recalls/2026/Goody-King-Magnetic-Building-Cubes-and-Blocks-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnetic-Ingestion-Hazard-Imported-by-Yi-Suen-Commerce"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        CPSC Goody King recall
+                      </a>
+                      ,{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://apnews.com/article/b22a06f9394392e0da55e96b074e976a"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Associated Press report
+                      </a>
+                      ,{' '}
                       <a
                         className="hs-text-link"
                         href="https://www.cpsc.gov/Recalls/2026/Daoen-Recalls-Zen-Magnetic-Promotional-Ball-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys"
@@ -370,7 +388,7 @@ export function MagneticToyChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines current U.S. and Australian regulator records with the classification, exact-model, laboratory, construction, marking, packaging, correction, and release evidence a buyer can organize before magnetic toys leave China."
+        intro="This guide combines current U.S. and Australian regulator records, independent reporting, and the classification, exact-model, laboratory, construction, marking, packaging, correction, and release evidence a buyer can organize before magnetic toys leave China."
         items={article.evidenceBasis}
       />
 
@@ -379,14 +397,16 @@ export function MagneticToyChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Daoen recall: promotional distribution did not remove toy-magnet risk.
+              Goody King recall: intact-looking cubes still required retention evidence.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                May 28, 2026, CPSC announced the recall of about 1,000 Zen Fidget
-                Magnetic Ball Sets made in China and distributed as promotional items
-                from December 2025 through February 2026.
+                August 13, 2026, CPSC announced the recall of about 213,500 Goody King
+                Magnetic Building Cubes and Blocks made in China and sold on Amazon
+                from January 2024 through July 2026. The importer reported at least 27
+                instances of cubes breaking or opening and two children who required
+                surgery after ingesting magnets.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -395,33 +415,43 @@ export function MagneticToyChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Daoen-Recalls-Zen-Magnetic-Promotional-Ball-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys"
+                  href="https://www.cpsc.gov/Recalls/2026/Goody-King-Magnetic-Building-Cubes-and-Blocks-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnetic-Ingestion-Hazard-Imported-by-Yi-Suen-Commerce"
                   rel="noreferrer"
                   target="_blank"
                 >
                   CPSC recall notice
                 </a>{' '}
-                describes four textured silicone magnetic balls, identifies them as
-                loose high-powered magnets that violated the mandatory toy standard,
-                names China as the country of manufacture, reports no incidents or
-                injuries, and directs disposal.
+                identifies the affected themes and model numbers, describes the magnet
+                release mechanism, names China as the country of manufacture, records
+                the incidents and injuries, and gives the refund route. The{' '}
+                <a
+                  className="hs-text-link"
+                  href="https://apnews.com/article/b22a06f9394392e0da55e96b074e976a"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Associated Press report
+                </a>{' '}
+                independently covered the recall, surgeries, Amazon sales channel, and
+                affected set sizes on the announcement date.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">Buyer lesson:</strong>{' '}
-                Distribution channel, product size, appearance, and supplier wording do
-                not replace a documented classification and exact-model evidence chain.
-                Freeze the intended use and magnet construction, match qualified testing
-                to mass production, and keep shipment release conditional on traceable
-                physical and document checks.
+                A finished cube that looks intact during ordinary handling still needs a
+                controlled enclosure design and qualified use-and-abuse evidence for the
+                exact model. Freeze seams, plugs, molding, fasteners, adhesives, magnet
+                count and location, factory, lot, and every change; then keep shipment
+                release conditional on production identity, traceable physical checks,
+                and qualified test coverage.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
                   Limits of comparison:
                 </strong>{' '}
-                The recall does not prove every magnetic toy, supplier, factory, or
-                promotional item has the same defect. Huang Sourcing had no role in the
-                case, and a pre-shipment inspection cannot reproduce laboratory magnet,
-                small-parts, or use-and-abuse testing.
+                The recall does not prove every magnetic cube, toy, supplier, factory, or
+                order has the same defect. Huang Sourcing had no role in the case, and a
+                pre-shipment inspection cannot reproduce laboratory magnet, small-parts,
+                retention, or use-and-abuse testing or predict long-term breakage.
               </p>
             </div>
           </Reveal>
