@@ -8,6 +8,7 @@ import {
   babyLoungerChecksChinaArticleHref,
   babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
+  ceilingFanChecksChinaArticleHref,
   mattressFlammabilityChecksChinaArticleHref,
   smokeCoAlarmChecksChinaArticleHref,
   electricKettleChecksChinaArticleHref,
@@ -225,6 +226,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: babySwingChecksChinaArticleHref,
         label: 'Baby swing evidence and shipment checklist',
+      },
+      {
+        href: ceilingFanChecksChinaArticleHref,
+        label: 'Ceiling fan blade attachment and shipment checklist',
       },
       {
         href: mattressFlammabilityChecksChinaArticleHref,
