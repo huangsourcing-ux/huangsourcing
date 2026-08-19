@@ -53,6 +53,7 @@ import {
   magneticToyChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
+  portableFuelContainerChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -230,6 +231,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: ceilingFanChecksChinaArticleHref,
         label: 'Ceiling fan blade attachment and shipment checklist',
+      },
+      {
+        href: portableFuelContainerChecksChinaArticleHref,
+        label: 'Portable fuel container evidence and shipment checklist',
       },
       {
         href: mattressFlammabilityChecksChinaArticleHref,

@@ -56,6 +56,7 @@ import {
   magneticToyChecksChinaArticleHref,
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
+  portableFuelContainerChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -293,6 +294,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: ceilingFanChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: portableFuelContainerChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
