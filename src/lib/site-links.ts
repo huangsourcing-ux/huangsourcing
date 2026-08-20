@@ -18,6 +18,8 @@ export const ceilingFanChecksChinaArticleHref =
   '/ceiling-fan-checks-china'
 export const portableFuelContainerChecksChinaArticleHref =
   '/portable-fuel-container-checks-china'
+export const pressureWasherChecksChinaArticleHref =
+  '/pressure-washer-checks-china'
 export const mattressFlammabilityChecksChinaArticleHref =
   '/mattress-flammability-checks-china'
 export const smokeCoAlarmChecksChinaArticleHref =

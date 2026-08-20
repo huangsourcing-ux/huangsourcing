@@ -54,6 +54,7 @@ import {
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   portableFuelContainerChecksChinaArticleHref,
+  pressureWasherChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -235,6 +236,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: portableFuelContainerChecksChinaArticleHref,
         label: 'Portable fuel container evidence and shipment checklist',
+      },
+      {
+        href: pressureWasherChecksChinaArticleHref,
+        label: 'Pressure washer GFCI and shipment checklist',
       },
       {
         href: mattressFlammabilityChecksChinaArticleHref,
