@@ -55,6 +55,7 @@ import {
   poolDrainCoverChecksChinaArticleHref,
   portableFuelContainerChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
+  slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
   preShipmentBeforePickupArticleHref,
@@ -240,6 +241,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: pressureWasherChecksChinaArticleHref,
         label: 'Pressure washer GFCI and shipment checklist',
+      },
+      {
+        href: slidePlaysetChecksChinaArticleHref,
+        label: 'Slide playset entrapment and shipment checklist',
       },
       {
         href: mattressFlammabilityChecksChinaArticleHref,
