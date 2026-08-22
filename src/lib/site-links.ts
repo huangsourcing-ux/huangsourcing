@@ -20,6 +20,8 @@ export const portableFuelContainerChecksChinaArticleHref =
   '/portable-fuel-container-checks-china'
 export const pressureWasherChecksChinaArticleHref =
   '/pressure-washer-checks-china'
+export const treadmillChecksChinaArticleHref =
+  '/treadmill-checks-china'
 export const slidePlaysetChecksChinaArticleHref =
   '/slide-playset-checks-china'
 export const mattressFlammabilityChecksChinaArticleHref =
