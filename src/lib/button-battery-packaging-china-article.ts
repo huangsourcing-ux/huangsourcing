@@ -25,8 +25,8 @@ export const buttonBatteryPackagingChinaArticle = {
     'Check button and coin battery packaging, warnings, compartments, test files, and carton evidence before paying or shipping China-sourced products to the U.S.',
   publishedDate: 'July 14, 2026',
   publishedDateIso: '2026-07-14T09:00:00+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'August 25, 2026',
+  modifiedDateIso: '2026-08-25T03:25:00+08:00',
   h1: 'Button Battery Packaging Checks Before Shipping from China',
   eyebrow: 'Reese’s Law - packaging evidence - pre-shipment release',
   image: {
@@ -45,7 +45,7 @@ export const buttonBatteryPackagingChinaArticle = {
   answerSummary:
     'Use a two-part release gate: qualified specialists confirm which Reese’s Law, 16 CFR part 1263, packaging, labeling, and testing requirements apply; a China-side check then compares those approved references with the physical product, retail pack, loose or included batteries, manuals, cartons, and correction evidence. Hold release when either the legal reference or the shipment match is unclear.',
   primaryCta: { label: 'Check Battery Packaging Before Shipment' },
-  secondaryCta: { href: '#efiling-checklist', label: 'See Release Checklist' },
+  secondaryCta: { href: '#release-checklist', label: 'See Release Checklist' },
   whatsappMessage: `Hi Agent Huang,
 
 I need a China-side button or coin battery packaging check before shipment.
@@ -60,7 +60,7 @@ Payment or pickup deadline:
 `,
   tableOfContents: [
     { href: '#quick-answer', label: 'Quick answer' },
-    { href: '#efiling-checklist', label: 'Release checklist' },
+    { href: '#release-checklist', label: 'Release checklist' },
     { href: '#why-current', label: 'Why this matters now' },
     { href: '#data-elements', label: 'Scope map' },
     { href: '#product-identity', label: 'Physical evidence' },
@@ -116,7 +116,7 @@ Payment or pickup deadline:
       id: 'why-current',
       title: 'Why button-battery evidence is a current China sourcing issue',
       paragraphs: [
-        'CPSC’s 2026 recall record continues to show button and coin battery risks involving packaging, warnings, and product construction. On May 14, 2026, CPSC recalled China-made LiCB CR2032 batteries because the agency said they were not in child-resistant packaging and lacked required warning labels. Other 2026 notices concern products whose battery compartments or warnings did not meet applicable requirements.',
+        'CPSC’s 2026 recall record continues to show button and coin battery risks involving packaging, warnings, and product construction. On August 20, 2026, CPSC recalled about 2,798 China-made JINHEZO mini waterproof LED tea lights because children could access the coin cells and the product and packaging lacked warnings required under Reese’s Law. On August 6, the agency also recalled EEMB coin-battery chargers over accessible cells, non-child-resistant battery packaging, and missing warnings.',
         'The sourcing decision happens before goods leave China. Importers need legal and laboratory decisions from qualified partners, but they also need evidence that the approved product, packaging, warnings, and files are the versions actually packed for shipment.',
       ],
       bullets: [
@@ -192,16 +192,21 @@ Payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official CPSC Reese’s Law FAQ, business guidance, Federal Register labeling rule, and 2026 recall records checked July 14, 2026 Beijing time.',
+    'The August 20, 2026 CPSC JINHEZO LED tea-light recall, August 6 EEMB charger recall, independent current coverage, Reese’s Law FAQ, and current CPSC business guidance were checked August 25, 2026 Beijing time.',
     'Buyer-approved product specifications, battery details, packaging and warning artwork, manuals, test reports, certificates, and specialist instructions.',
     'Physical product, battery package, retail packaging, warning placement, battery compartment, cartons, packing records, and correction evidence observed in China.',
     'Scope is limited to evidence comparison; legal applicability, testing sufficiency, certification, and compliance decisions stay with qualified parties.',
   ],
   sourceNotes: [
     {
-      href: 'https://www.cpsc.gov/Recalls/2026/Lithium-Coin-Batteries-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violates-Federal-Statute-for-Child-Resistant-Packaging-of-Coin-Batteries-Imported-and-Sold-on-Amazon-by-LiCB',
-      label: 'CPSC - LiCB CR2032 coin battery recall',
-      note: 'Official May 14, 2026 recall stating that about 94,000 China-made batteries lacked required child-resistant packaging and warning labels; the public case used below.',
+      href: 'https://www.cpsc.gov/Recalls/2026/JINHEZO-Mini-Waterproof-LED-Tea-Lights-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Consumer-Products-with-Button-Cell-Batteries-Imported-by-Mystic-ZO',
+      label: 'CPSC - JINHEZO LED tea-light recall 26-713',
+      note: 'Primary August 20, 2026 public case identifying China manufacture, about 2,798 tea lights, accessible coin cells, missing product and packaging warnings, sales timing, incident status, and the refund remedy.',
+    },
+    {
+      href: 'https://www.cpsc.gov/Recalls/2026/A2batt-Recalls-EEMB-Lithium-Coin-Battery-Chargers-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Consumer-Products-with-Coin-Batteries',
+      label: 'CPSC - EEMB coin-battery charger recall 26-670',
+      note: 'Separate August 6, 2026 primary record documenting accessible rechargeable coin cells, non-child-resistant included-battery packaging, missing warnings, and China manufacture.',
     },
     {
       href: 'https://www.cpsc.gov/FAQ/Button-Cell-and-Coin-Battery-FAQs',
@@ -214,14 +219,9 @@ Payment or pickup deadline:
       note: 'Official business guidance for consumer products and packages containing or designed to use button cell or coin batteries.',
     },
     {
-      href: 'https://www.federalregister.gov/documents/2023/09/21/2023-20334/safety-standard-for-button-cell-or-coin-batteries-and-consumer-products-containing-such-batteries',
-      label: 'Federal Register - Button or coin battery safety standard',
-      note: 'Official final rule source for 16 CFR part 1263, including performance and labeling requirements; product-specific interpretation requires qualified review.',
-    },
-    {
-      href: 'https://chinawto.mofcom.gov.cn/article/jsbl/alzs/202605/20260503629133.shtml',
-      label: 'China MOFCOM trade alert - U.S. recall of China-made coin batteries',
-      note: 'Independent public cross-border coverage of the May 2026 recall, used as a current attention signal rather than a substitute for the CPSC record.',
+      href: 'https://morningoverview.com/led-tea-lights-were-pulled-from-shelves-after-button-batteries-put-small-children-at-risk/',
+      label: 'Morning Overview - JINHEZO LED tea-light recall coverage',
+      note: 'Independent August 21, 2026 coverage of the tea-light recall and the wider recurring risk from accessible coin cells in small online-marketplace products; the official CPSC record controls the case facts.',
     },
   ] satisfies SourceNote[],
   whatToSend: [

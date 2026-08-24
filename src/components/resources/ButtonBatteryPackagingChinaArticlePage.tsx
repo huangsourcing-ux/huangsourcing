@@ -120,7 +120,7 @@ export function ButtonBatteryPackagingChinaArticlePage() {
               {['Packaging', 'Warnings', 'Battery door', 'Release'].map((item) => (
                 <a
                   className="min-h-24 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-3 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-colors hover:border-[var(--hs-accent)] hover:text-[var(--hs-accent-strong)]"
-                  href="#efiling-checklist"
+                  href="#release-checklist"
                   key={item}
                 >
                   <span className="block text-xs uppercase text-[var(--hs-accent)]">
@@ -169,11 +169,11 @@ export function ButtonBatteryPackagingChinaArticlePage() {
                 What should a buyer check before button-battery goods ship from China?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check whether the imported product needs CPSC certification, then make
-                sure the certificate data connects to the actual goods in cartons.
-                Product ID, citation codes, manufacturing details, test data, lab
-                details, point of contact, importer role, and broker filing path should
-                be clear before final payment or pickup.
+                First have qualified parties confirm the applicable product,
+                packaging, warning, testing, and certification requirements. Then
+                compare those approved references with the exact battery, compartment,
+                retail pack, manual, SKU, and cartons before final payment or pickup.
+                Hold release when the rule scope or shipment match is unclear.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {article.quickChecks.map((item, index) => (
@@ -190,7 +190,7 @@ export function ButtonBatteryPackagingChinaArticlePage() {
               </div>
             </Reveal>
 
-            <Reveal as="section" className="mt-12 scroll-mt-24" id="efiling-checklist">
+            <Reveal as="section" className="mt-12 scroll-mt-24" id="release-checklist">
               <div className="flex items-center gap-3">
                 <div className="hs-icon-box size-12">
                   <PackageCheck aria-hidden className="size-6" />
@@ -204,9 +204,9 @@ export function ButtonBatteryPackagingChinaArticlePage() {
               </div>
               <p className="hs-muted mt-4 text-base leading-7">
                 The check connects importer-approved compliance references to the
-                physical order. A certificate file matters only when the same product,
-                model, production run, test report, and broker handoff can be traced
-                before goods leave China.
+                physical order. A warning file or test report is weak release evidence
+                unless the same battery, compartment, model, artwork revision,
+                production run, and packed goods can be traced before goods leave China.
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {article.checkGroups.map((group) => (
@@ -244,6 +244,38 @@ export function ButtonBatteryPackagingChinaArticlePage() {
                     ))}
                   </div>
                   {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.id === 'why-current' ? (
+                    <p className="hs-muted mt-5 text-sm leading-6">
+                      Current records:{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://www.cpsc.gov/Recalls/2026/JINHEZO-Mini-Waterproof-LED-Tea-Lights-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Consumer-Products-with-Button-Cell-Batteries-Imported-by-Mystic-ZO"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        CPSC JINHEZO recall 26-713
+                      </a>
+                      ,{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://www.cpsc.gov/Recalls/2026/A2batt-Recalls-EEMB-Lithium-Coin-Battery-Chargers-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Consumer-Products-with-Coin-Batteries"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        CPSC EEMB recall 26-670
+                      </a>
+                      , and independent{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://morningoverview.com/led-tea-lights-were-pulled-from-shelves-after-button-batteries-put-small-children-at-risk/"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        LED tea-light recall coverage
+                      </a>
+                      .
+                    </p>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
@@ -313,32 +345,40 @@ export function ButtonBatteryPackagingChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              LiCB CR2032 recall: packaging and warnings must match the rule.
+              JINHEZO LED tea lights: the compartment and warnings both matter.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
-                On March 19, 2026, CPSC announced a recall of China-made BUILT LUUM
-                light-up tumblers. The agency said the LED compartment could separate
-                and release button-cell batteries, creating choking and ingestion
-                hazards. The public evidence is the official recall notice; Huang
-                Sourcing was not involved in the product, recall, testing, or remedy.
+                On August 20, 2026, CPSC recalled about 2,798 JINHEZO mini waterproof
+                LED tea lights imported and manufactured in China. The agency said
+                children could access the coin cells and that the product and packaging
+                lacked warnings required under Reese’s Law. The notice said the 24-pack
+                products, with two cells per light, were sold on Amazon from March 2024
+                through July 2026; no incidents or injuries were reported.
               </p>
               <p>
-                The buyer lesson is bounded: certificate data and test files should be
-                tied to the exact SKU, model, components, production version, labels,
-                and packed goods before release. The recall does not show that eFiling
-                would have prevented the issue, and it does not prove that other
-                suppliers or battery products have the same defect. It shows why a
-                document set that cannot be traced to actual construction is weak
-                release evidence.
+                The public evidence is CPSC recall 26-713. The buyer lesson is to treat
+                battery-compartment construction, product warnings, retail-pack
+                warnings, included batteries, approved artwork, test references, and
+                final cartons as one release file. A detached label sample cannot show
+                that every packaged SKU uses the approved compartment and warning
+                revision.
               </p>
               <p>
                 Read the{' '}
-                <a className="hs-text-link" href="https://www.cpsc.gov/Recalls/2026/Lithium-Coin-Batteries-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violates-Federal-Statute-for-Child-Resistant-Packaging-of-Coin-Batteries-Imported-and-Sold-on-Amazon-by-LiCB" rel="noreferrer" target="_blank">
-                  official CPSC LiCB recall notice
+                <a
+                  className="hs-text-link"
+                  href="https://www.cpsc.gov/Recalls/2026/JINHEZO-Mini-Waterproof-LED-Tea-Lights-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Consumer-Products-with-Button-Cell-Batteries-Imported-by-Mystic-ZO"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  official CPSC JINHEZO recall notice
                 </a>
-                . Product-specific certification and testing decisions remain with the
-                importer, qualified laboratory, compliance adviser, broker, or counsel.
+                . This case does not prove that every tea light, China supplier, or
+                button-battery product has the same defect, and a visual check cannot
+                prove mandatory performance. Huang Sourcing was not involved in the
+                product, recall, testing, or remedy. Product-specific decisions remain
+                with the importer, qualified laboratory, compliance adviser, or counsel.
               </p>
             </div>
           </Reveal>
@@ -353,7 +393,7 @@ export function ButtonBatteryPackagingChinaArticlePage() {
             </div>
             <p className="hs-eyebrow mt-5">Official source context</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Verify the battery rule, then check shipment evidence.
+              Verify the current rule and case, then check shipment evidence.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
               These sources explain the rule, filing resources, importer context, and
@@ -376,7 +416,7 @@ export function ButtonBatteryPackagingChinaArticlePage() {
                 </h3>
                 <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
-                  Open official source <ExternalLink aria-hidden className="size-4" />
+                  Open source <ExternalLink aria-hidden className="size-4" />
                 </span>
               </a>
             ))}
@@ -395,8 +435,8 @@ export function ButtonBatteryPackagingChinaArticlePage() {
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
               Send final references, not draft chat screenshots, so the evidence can
-              be judged against the product and certificate data the importer expects
-              to use.
+              be judged against the product, packaging, warnings, tests, and shipment
+              version the importer expects to use.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -415,8 +455,9 @@ export function ButtonBatteryPackagingChinaArticlePage() {
               Button-battery red flags before shipment.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Pause payment or pickup when the product, certificate, test report, and
-              broker handoff cannot be connected to the actual shipment.
+              Pause payment or pickup when the product, battery, compartment, warnings,
+              test references, and final cartons cannot be connected to one approved
+              shipment version.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -516,14 +557,14 @@ export function ButtonBatteryPackagingChinaArticlePage() {
                 still practical.
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-                Send the product list, test reports, certificate files, label files,
-                packing records, broker notes, and release deadline before final
-                shipment approval.
+                Send the product list, battery details, approved warnings, test and
+                certificate files, packing records, correction rules, and release
+                deadline before final shipment approval.
               </p>
             </div>
             <ContactAgentButton
               analyticsLabel={article.primaryCta.label}
-              analyticsLocation="cpsc_efiling_china_imports_article_final"
+              analyticsLocation="button_battery_packaging_china_article_final"
               className="relative mt-7 h-12 bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] lg:mt-0"
               href={whatsappHref}
               size="lg"
