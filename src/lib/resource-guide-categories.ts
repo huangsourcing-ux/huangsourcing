@@ -54,6 +54,7 @@ import {
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   portableFuelContainerChecksChinaArticleHref,
+  portablePowerStationChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
@@ -242,6 +243,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: pressureWasherChecksChinaArticleHref,
         label: 'Pressure washer GFCI and shipment checklist',
+      },
+      {
+        href: portablePowerStationChecksChinaArticleHref,
+        label: 'Portable power station battery, firmware, and shipment checklist',
       },
       {
         href: treadmillChecksChinaArticleHref,

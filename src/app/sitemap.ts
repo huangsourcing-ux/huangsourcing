@@ -57,6 +57,7 @@ import {
   packagingLabelCheckBeforePaymentArticleHref,
   poolDrainCoverChecksChinaArticleHref,
   portableFuelContainerChecksChinaArticleHref,
+  portablePowerStationChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
@@ -307,6 +308,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: pressureWasherChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: portablePowerStationChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
