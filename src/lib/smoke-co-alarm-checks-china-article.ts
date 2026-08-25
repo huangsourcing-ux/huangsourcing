@@ -25,6 +25,10 @@ type DecisionRow = { buyerDecision: string; evidence: string; riskNode: string }
 type RelatedLink = { href: string; label: string; note: string }
 type SourceNote = SourceLink & { note: string }
 
+const cpscKh158Warning =
+  'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-4-in-1-Plug-In-Natural-Gas-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Failure-to-Alert-Consumers-to-Deadly-Carbon-Monoxide'
+const cpscTjtfjsWarning =
+  'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-TJTFJS-Combination-Smoke-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Smoke-and-Fire'
 const cpscJnhcdWarning =
   'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-JNHCD-Combination-Smoke-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Failure-to-Warn-of-Smoke-and-Fire-Hazards'
 const cpscTreatlifeRecall =
@@ -45,8 +49,8 @@ export const smokeCoAlarmChecksChinaArticle = {
     'Check smoke and CO alarm models, test evidence, sensors, firmware, labels, sampled functions, lots, cartons, and release decisions before China shipment.',
   publishedDate: 'August 14, 2026',
   publishedDateIso: '2026-08-14T03:30:36+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'August 26, 2026',
+  modifiedDateIso: '2026-08-26T03:26:19+08:00',
   h1: 'Smoke and CO Alarm Checks Before Shipping from China',
   eyebrow: 'Model evidence - lot controls - shipment release',
   image: {
@@ -94,7 +98,7 @@ Balance-payment or pickup deadline:
     { href: '#scope-limits', label: 'Scope limits' },
   ],
   quickChecks: [
-    'Freeze the destination, importer, alarm type, model, sensing architecture, power source, interconnection or wireless features, manufacturer, factory, production date, lot, package, and carton identity',
+    'Freeze the destination, importer, retail brand and seller aliases, alarm type, exact model, sensing architecture, power source, manufacturer, factory, production date, lot, package, and carton identity',
     'Have the importer and qualified advisers identify the current rules, standards, certification, listing, installation, language, eFiling, marketplace, and retailer requirements for the exact product and market',
     'Map complete reports and source-verifiable certification or listing records to the exact model, sensors, PCB, sounder, enclosure, power components, firmware, laboratory, dates, samples, methods, results, and limitations',
     'Compare approved sensor part numbers, chamber or inlet design, PCB revision, power and backup parts, sounder, buttons, indicators, enclosure, firmware, labels, manual, package, and bill of materials with current production',
@@ -107,8 +111,8 @@ Balance-payment or pickup deadline:
     {
       title: 'Identity and market scope',
       items: [
-        'Destination, importer, alarm function, model, sensing method, power source, communication features, manufacturer, factory, firmware, production date, lot, quantity, and approved changes are controlled',
-        'PO, approved sample, specification, bill of materials, reports, listing or certification records, certificate data, labels, manual, package, listing, packing list, and cartons describe one version',
+        'Destination, importer, retail brand and seller aliases, alarm function, exact model, sensing method, power source, manufacturer, factory, firmware, production date, lot, quantity, and approved changes are controlled',
+        'PO, approved sample, specification, bill of materials, reports, listing or certification records, certificate data, labels, manual, package, marketplace listing, packing list, and cartons describe one version',
       ],
     },
     {
@@ -138,17 +142,20 @@ Balance-payment or pickup deadline:
       id: 'why-current',
       title: 'Why alarm evidence and lot control matter now',
       paragraphs: [
-        'On July 9, 2026, the U.S. Consumer Product Safety Commission warned consumers to stop using JNHCD combination smoke and carbon monoxide detectors. CPSC said the China-made devices could fail to alert consumers to hazardous smoke and fire. The agency identified 14 Amazon, eBay, and Sears ASINs and said the Chinese seller had been unresponsive to its request for a recall.',
-        'The risk node appeared in another current record. On June 25, 2026, CPSC announced a recall of about 20 Treatlife combination detectors manufactured in China and sold on Amazon because the units could fail to alert consumers to a fire. That recall identifies a model-specific manufacture date and FCC ID, showing why a buyer needs exact identity and lot evidence rather than a generic product-family claim.',
+        'On August 20, 2026, the U.S. Consumer Product Safety Commission warned consumers to stop using KH158 plug-in natural-gas and carbon-monoxide detectors. CPSC said 376,974 units had been sold under 18 brand names, identified 91 reports of failure to alarm in the presence of gas and/or carbon-monoxide leaks, and stated that the China manufacturer had not agreed to a recall. This was a product safety warning, not an agreed voluntary recall.',
+        'CPSC issued a separate warning the same day for China-made TJTFJS model TJ00907 combination smoke and CO detectors that could fail to alert consumers to hazardous smoke and fire. The record says some units were sold without the model number on the package. That makes marketplace title, logo, package, and shell appearance insufficient identity controls for shipment release.',
+        'Earlier 2026 records show the same buyer-stage risk through different products. CPSC warned about JNHCD combination detectors on July 9 and recalled Treatlife combination detectors on June 25. Together, the records make exact manufacturer, model, revision, evidence, label, lot, and carton mapping more useful than a generic product-family or storefront claim.',
         'CPSC also announced on July 8, 2026 that mandatory eFiling was in effect for certificates covering regulated imported consumer products. The agency said eFiling changes how existing certificate data reaches CPSC, not the underlying testing, certification, or compliance duties. Importers should determine whether and how those duties apply to the exact alarm before shipment.',
       ],
       bullets: [
-        'A product listing, test button, supplier declaration, logo image, report cover, or old model certificate is not a complete evidence chain for the current lot',
+        'A brand name, storefront, product listing, test button, supplier declaration, logo image, report cover, or old model certificate is not a complete evidence chain for the current lot',
         'A change to a sensor, smoke chamber, PCB, power circuit, sounder, enclosure opening, firmware, manufacturer, factory, or model can change the evidence question',
         'A self-test or sampled sound reading checks only its defined function and does not prove smoke or CO sensitivity, response time, immunity, durability, or real-emergency performance',
         'Correction leverage is strongest before final payment and pickup, while affected models and cartons can still be held, reviewed, tested, reworked, relabeled, repacked, or rejected',
       ],
       citations: [
+        { href: cpscKh158Warning, label: 'CPSC KH158 gas and CO detector warning' },
+        { href: cpscTjtfjsWarning, label: 'CPSC TJTFJS combination detector warning' },
         { href: cpscJnhcdWarning, label: 'CPSC JNHCD combination detector warning' },
         { href: cpscTreatlifeRecall, label: 'CPSC Treatlife combination detector recall' },
         { href: cpscEfilingRelease, label: 'CPSC July 2026 eFiling implementation release' },
@@ -159,17 +166,18 @@ Balance-payment or pickup deadline:
       title: 'Freeze the exact alarm function, destination, model, and factory',
       paragraphs: [
         'Do not treat every round alarm as the same product. Record whether the unit detects smoke, carbon monoxide, or both; the sensing method; primary and backup power; battery type and access; standalone, interconnected, radio, app, hub, display, voice, accessibility, or other functions; intended location; destination market; and installation configuration.',
-        'Build one controlled model record connecting the sales SKU and listing to the manufacturer, factory, model, hardware and firmware revisions, sensor and chamber identity, PCB, power circuit, sounder, enclosure, labels, manual, accessories, package, production date, lot, and cartons. If one shell or listing covers several internal builds, split the versions before approval.',
-        'The importer and qualified product-safety advisers should identify the current rules, recognized standards, editions, deviations, certification or listing route, certificate duties, eFiling fields, installation code, local requirements, and market claims. CPSC currently directs consumers in its JNHCD warning to buy smoke and CO alarms meeting UL 217 and UL 2034; exact product obligations and evidence still require responsible review.',
+        'Build one controlled model record connecting every retail brand, seller alias, sales SKU, ASIN or other channel identifier to the manufacturer, factory, exact model, hardware and firmware revisions, sensor and chamber identity, PCB, power circuit, sounder, enclosure, labels, manual, accessories, package, production date, lot, and cartons. If one shell or listing covers several internal builds, split the versions before approval.',
+        'The importer and qualified product-safety advisers should identify the current rules, recognized standards, editions, deviations, certification or listing route, certificate duties, eFiling fields, installation code, local requirements, and market claims. CPSC currently directs consumers in the KH158, TJTFJS, and JNHCD warnings to buy alarms meeting UL 2034 and/or UL 217; exact product obligations and evidence still require responsible review.',
       ],
       bullets: [
-        'Control model suffixes, alternate names, hardware and firmware revisions, sensor part numbers, PCB markings, power options, labels, packages, listings, and carton identities',
+        'Control retail brands, seller aliases, model suffixes, alternate names, channel identifiers, hardware and firmware revisions, sensor part numbers, PCB markings, power options, labels, packages, listings, and carton identities',
         'Identify the first affected date, production line, lot, quantity, package, and carton range for every approved or suspected change',
         'Keep smoke-alarm evidence, CO-alarm evidence, radio evidence, electrical or battery evidence, and installation claims mapped to the relevant function',
         'Reject broad “same series” or “same housing” coverage without a documented rationale that matches the tested or listed design',
       ],
       citations: [
-        { href: cpscJnhcdWarning, label: 'CPSC JNHCD warning and consumer standard references' },
+        { href: cpscKh158Warning, label: 'CPSC KH158 warning and consumer standard reference' },
+        { href: cpscTjtfjsWarning, label: 'CPSC TJTFJS warning and product identity details' },
         { href: cpscVstarReport, label: 'CPSC FY2025 standards activity report' },
         { href: cpscCoAlarmStandards, label: 'CPSC carbon monoxide alarm standards page' },
       ],
@@ -256,8 +264,8 @@ Balance-payment or pickup deadline:
   decisionRows: [
     {
       riskNode: 'Product and market identity',
-      evidence: 'Destination, importer, alarm functions, exact model, hardware and firmware, sensing design, power source, manufacturer, factory, production dates, lots, packages, and approved changes align.',
-      buyerDecision: 'Hold aliases, mixed builds, unclear market scope, or unexplained revisions until qualified review and traceable correction.',
+      evidence: 'Destination, importer, retail brands and seller aliases, alarm functions, exact model, hardware and firmware, sensing design, power source, manufacturer, factory, production dates, lots, packages, and approved changes align.',
+      buyerDecision: 'Hold unmapped aliases, mixed builds, unclear market scope, missing model identity, or unexplained revisions until qualified review and traceable correction.',
     },
     {
       riskNode: 'Qualified performance evidence',
@@ -276,6 +284,8 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    'August 20, 2026 CPSC product safety warning for KH158 gas and CO detectors, including 18 brand names, 376,974 units, 91 reported failures to alarm, China manufacturer, sales channels, and lack of an agreed recall',
+    'Separate August 20, 2026 CPSC warning for TJTFJS model TJ00907 combination detectors, including the failure-to-alert risk, China manufacture, seller response, sales channels, and incomplete package model identification',
     'July 9, 2026 CPSC product safety warning for JNHCD combination smoke and CO detectors, including the stated failure-to-alert risk, China manufacture, seller response, channels, and ASIN scope',
     'Separate June 25, 2026 CPSC recall for Treatlife combination detectors, including the specific manufacture date, FCC ID, China manufacture, quantity, channel, risk, and remedy',
     'CPSC FY2025 Voluntary Standards Tracking and Access report published May 2026, including current smoke-alarm standards activity and the listed UL 217 and NFPA 72 versions',
@@ -291,7 +301,7 @@ Balance-payment or pickup deadline:
     'Balance-payment and pickup deadlines, hold authority, factory contacts, affected-lot isolation plan, rework or retest route, and exact conditions required for release',
   ],
   redFlags: [
-    'Reports or public records name a different model, applicant, manufacturer, factory, sensor, PCB, power source, sounder, enclosure, hardware, firmware, or alarm function',
+    'Retail brands, seller aliases, listings, reports, or public records cannot be mapped to the same exact model, applicant, manufacturer, factory, sensor, PCB, power source, sounder, enclosure, hardware, firmware, or alarm function',
     'The supplier provides only a logo, marketplace badge, certificate image, report cover, test-button video, or generic “UL” or “CPSC” statement',
     'Production changed a sensor, chamber, PCB, component, firmware, enclosure opening, supplier, factory, or assembly method without qualified disposition',
     'Goods mix models, hardware or firmware revisions, power options, manufacture dates, lots, labels, languages, packages, or internal builds inside one shipment',
@@ -350,6 +360,16 @@ Balance-payment or pickup deadline:
   ] satisfies RelatedLink[],
   sourceNotes: [
     {
+      href: cpscKh158Warning,
+      label: 'U.S. CPSC - KH158 gas and CO detector warning',
+      note: 'Primary public record dated August 20, 2026 describing one model sold under 18 brand names, 376,974 units, 91 reported failures to alarm, the China manufacturer, channels, product description, and lack of an agreed recall.',
+    },
+    {
+      href: cpscTjtfjsWarning,
+      label: 'U.S. CPSC - TJTFJS combination detector warning',
+      note: 'Separate primary record dated August 20, 2026 describing model TJ00907, the failure-to-alert hazard, China manufacture, unresponsive seller, channels, and units sold without a model number on the package.',
+    },
+    {
       href: cpscJnhcdWarning,
       label: 'U.S. CPSC - JNHCD combination detector warning',
       note: 'Primary public record dated July 9, 2026 describing the failure-to-alert hazard, China manufacture, seller response, marketplaces, product appearance, and ASINs.',
@@ -391,6 +411,7 @@ export function makeSmokeCoAlarmChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

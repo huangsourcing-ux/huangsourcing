@@ -286,7 +286,7 @@ export function SmokeCoAlarmChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines two separate 2026 CPSC alarm records, current CPSC standards activity and eFiling information, and buyer-side sourcing analysis. It keeps qualified performance testing, certification and importer duties, production controls, inspection observations, and release decisions in separate scopes."
+        intro="This guide combines multiple separate 2026 CPSC alarm warnings and recalls, current CPSC standards activity and eFiling information, and buyer-side sourcing analysis. It keeps qualified performance testing, certification and importer duties, production controls, inspection observations, and release decisions in separate scopes."
         items={article.evidenceBasis}
       />
 
@@ -295,16 +295,19 @@ export function SmokeCoAlarmChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              JNHCD detectors: a beep is not evidence of smoke response.
+              KH158 warning: one model appeared under 18 brand names.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                July 9, 2026, CPSC warned consumers to stop using JNHCD combination
-                smoke and carbon monoxide detectors because the devices could fail to
-                alert consumers to hazardous smoke and fire. The agency said the
-                products were manufactured in China and sold through Amazon, eBay, and
-                Sears.
+                August 20, 2026, CPSC warned consumers to stop using KH158 plug-in
+                natural-gas and carbon-monoxide detectors because they could fail to
+                alarm in the presence of carbon monoxide. CPSC said 376,974 units had
+                been sold under 18 brand names from June 2024 through July 2026 and that
+                it knew of 91 reports of failure to alarm in the presence of gas and/or
+                carbon-monoxide leaks. The agency said the China manufacturer had not
+                agreed to a recall, so this record is a product safety warning rather
+                than an agreed voluntary recall.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -313,24 +316,26 @@ export function SmokeCoAlarmChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-JNHCD-Combination-Smoke-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Failure-to-Warn-of-Smoke-and-Fire-Hazards"
+                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-4-in-1-Plug-In-Natural-Gas-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Failure-to-Alert-Consumers-to-Deadly-Carbon-Monoxide"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official CPSC warning
+                  official CPSC KH158 warning
                 </a>{' '}
-                identifies the product type, visible description, China manufacture,
-                seller response, channels, and 14 ASINs. It does not publish the
-                supplier&apos;s complete bill of materials, firmware, reports,
-                certification file, root-cause analysis, production records, or
+                names the model, all 18 retail brands, visible design, manufacturer,
+                China origin, affected-unit count, channels, sale period, incident-report
+                scope, consumer action, and manufacturer response. It does not publish a
+                complete bill of materials, firmware, qualified reports, certification
+                file, root-cause analysis, lot map, production records, or
                 corrective-action evidence.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">Buyer lesson:</strong>{' '}
-                Freeze the exact model and revisions, verify performance evidence at its
-                source, control sensors and electronics by lot, and define which safe
-                sampled checks support release. A powered display, test-button response,
-                or audible tone does not establish smoke or CO sensitivity.
+                Do not treat a new logo, store name, marketplace listing, or package as a
+                new technical design. Map every retail brand and seller alias to the exact
+                manufacturer, model, hardware, firmware, sensors, evidence, production
+                dates, lots, packages, and cartons. A powered display, self-test response,
+                or audible tone does not establish gas or CO detection performance.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -339,23 +344,25 @@ export function SmokeCoAlarmChecksChinaArticlePage() {
                 The separate{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Combination-Smoke-and-Carbon-Monoxide-CO-Detectors-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Failure-to-Alert-Consumers-to-Fire-Sold-Exclusively-on-Amazon-com-by-Treatlife-Technology"
+                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-TJTFJS-Combination-Smoke-and-Carbon-Monoxide-Detectors-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Smoke-and-Fire"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  Treatlife CPSC recall
+                  TJTFJS CPSC warning
                 </a>{' '}
-                dated June 25, 2026 identifies a different China-made combination
-                detector, a specific manufacture date and FCC ID, about 20 units, and
-                Amazon sales. It supports a current recurring risk node without treating
-                the products as one case.
+                issued the same day identifies a different China-made combination
+                detector, model TJ00907, that could fail to alert to hazardous smoke and
+                fire. CPSC said some units were sold without the model number on the
+                package. It supports a recurring identity-and-evidence risk node without
+                treating the two products as one case.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
                   Limits of comparison:
                 </strong>{' '}
-                These records do not prove every alarm, seller, supplier, factory, model,
-                or lot has the same failure. Huang Sourcing had no role in either case.
+                These warnings do not prove every alarm, brand, seller, supplier, factory,
+                model, or lot has the same failure. Huang Sourcing had no role in either
+                case.
                 A sampled buyer-side inspection cannot reproduce prescribed smoke or CO
                 response testing, certify an alarm, approve installation, or guarantee
                 warning in a real emergency.
@@ -506,7 +513,7 @@ export function SmokeCoAlarmChecksChinaArticlePage() {
               <h2 className="text-3xl font-extrabold text-[var(--hs-text)]">Sources</h2>
             </div>
             <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
-              Public records and current official guidance checked August 14, 2026
+              Public records and current official guidance checked August 26, 2026
               Beijing time. Links identify the exact products, findings, dates, standards
               activity, requirements, actions, and interpretation limits used in this
               guide.
