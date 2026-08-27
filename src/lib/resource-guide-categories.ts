@@ -55,6 +55,7 @@ import {
   poolDrainCoverChecksChinaArticleHref,
   portableFuelContainerChecksChinaArticleHref,
   portablePowerStationChecksChinaArticleHref,
+  youthAtvChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
@@ -247,6 +248,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: portablePowerStationChecksChinaArticleHref,
         label: 'Portable power station battery, firmware, and shipment checklist',
+      },
+      {
+        href: youthAtvChecksChinaArticleHref,
+        label: 'Youth ATV category, brake, speed limiter, and shipment checklist',
       },
       {
         href: treadmillChecksChinaArticleHref,
