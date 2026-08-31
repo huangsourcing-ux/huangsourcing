@@ -47,6 +47,7 @@ import {
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
+  grillBrushChecksChinaArticleHref,
   huangSourcingCheckScopeArticleHref,
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
@@ -244,6 +245,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: pressureWasherChecksChinaArticleHref,
         label: 'Pressure washer GFCI and shipment checklist',
+      },
+      {
+        href: grillBrushChecksChinaArticleHref,
+        label: 'Grill brush construction and shipment checklist',
       },
       {
         href: portablePowerStationChecksChinaArticleHref,

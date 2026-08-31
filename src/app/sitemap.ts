@@ -50,6 +50,7 @@ import {
   fnskuLabelMistakesArticleHref,
   forwarderPickupChinaRisksArticleHref,
   goldenSampleChinaManufacturingArticleHref,
+  grillBrushChecksChinaArticleHref,
   huangSourcingCheckScopeArticleHref,
   immersionWaterHeaterChecksChinaArticleHref,
   infantNeckFloatChecksChinaArticleHref,
@@ -309,6 +310,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: pressureWasherChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: grillBrushChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
