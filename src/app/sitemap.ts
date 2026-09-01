@@ -70,6 +70,7 @@ import {
   qcBeforeBalanceArticleHref,
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
+  rattleTeetherChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
   sampleConsolidationCompareSuppliersArticleHref,
@@ -315,6 +316,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: grillBrushChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: rattleTeetherChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

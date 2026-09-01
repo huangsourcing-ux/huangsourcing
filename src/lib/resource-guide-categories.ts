@@ -67,6 +67,7 @@ import {
   qcBeforeBalanceArticleHref,
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
+  rattleTeetherChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
   sampleConsolidationCompareSuppliersArticleHref,
@@ -249,6 +250,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: grillBrushChecksChinaArticleHref,
         label: 'Grill brush construction and shipment checklist',
+      },
+      {
+        href: rattleTeetherChecksChinaArticleHref,
+        label: 'Rattle and teether connection and shipment checklist',
       },
       {
         href: portablePowerStationChecksChinaArticleHref,
