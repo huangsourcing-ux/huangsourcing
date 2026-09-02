@@ -27,6 +27,10 @@ type SourceNote = SourceLink & { note: string }
 
 const cpscWorkblessRecall =
   'https://www.cpsc.gov/Recalls/2026/Workbless-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards'
+const cpscYeryorkRecall =
+  'https://www.cpsc.gov/Recalls/2026/Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-YERYORK'
+const cpscSteeliteRecall =
+  'https://www.cpsc.gov/Recalls/2026/Steelite-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-Longer-3D'
 const healthCanadaWorkblessRecall =
   'https://recalls-rappels.canada.ca/en/alert-recall/workbless-electric-pressure-washers-recalled-due-electric-shock-hazard'
 const cpscSugiftRecall =
@@ -51,8 +55,8 @@ export const pressureWasherChecksChinaArticle = {
     'Verify GFCI, cord, model, electrical evidence, accessories, labels, and cartons before releasing electric pressure washers from China.',
   publishedDate: 'August 21, 2026',
   publishedDateIso: '2026-08-21T03:32:03+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'September 3, 2026',
+  modifiedDateIso: '2026-09-03T03:25:00+08:00',
   h1: 'Pressure Washer Checks Before Shipping from China',
   eyebrow: 'GFCI - cord - electrical evidence - shipment release',
   image: {
@@ -151,9 +155,9 @@ Balance-payment or pickup deadline:
       id: 'why-current',
       title: 'Why pressure washer release evidence matters now',
       paragraphs: [
-        'On August 20, 2026, the U.S. Consumer Product Safety Commission announced the recall of about 2,200 Workbless electric pressure washers sold in the United States. CPSC said models WB0301 and WB0302 lacked an integral ground-fault circuit-interrupter and an adequate-length power cord, creating shock and electrocution hazards. The notice identified a China private labeler and China manufacture and reported no incidents or injuries.',
-        'Health Canada published the coordinated recall for another 657 units and identified the China distributor and manufacturer. Its notice states that the cord was too short and could encourage extension-cord use. The two records describe the same recalled models; they are useful for cross-checking product identity and public facts, not two independent defect events.',
-        'A broader current pattern supports the buyer decision. CPSC recalled SUGIFT and COMMOWNER pressure washers on August 13, 2026 for the same cited missing-GFCI and short-cord problem. Earlier April actions covered BAYOTAK pressure washers and a SEN-QII warning involving missing integral protection. These records do not prove every China-made pressure washer has the same defect, but they make GFCI, cord, exact-model, and evidence control a current pre-shipment release node.',
+        'On August 27, 2026, the U.S. Consumer Product Safety Commission announced two separate recalls of China-made electric pressure washers. CPSC said YERYORK model YE-006 and Steelite model AZ6041VC lacked an integral ground-fault circuit-interrupter and an adequate-length power cord, creating shock and electrocution hazards. The notices covered 300 YERYORK units and about 128 Steelite units sold on Amazon and reported no incidents or injuries.',
+        'Those actions followed the August 20 recall of about 2,200 Workbless models WB0301 and WB0302 in the United States. Health Canada published the coordinated recall for another 657 units and identified the China distributor and manufacturer. The U.S. and Canada records describe the same Workbless models, so they help cross-check public facts but do not count as separate defect events.',
+        'The same current pattern includes August 13 CPSC recalls for SUGIFT and COMMOWNER and April actions covering BAYOTAK and SEN-QII. These records involve different companies, models, quantities, sales periods, and remedies; they do not prove a shared factory, root cause, or defect in every China-made pressure washer. They do show why integral GFCI identity, cord construction, exact-model evidence, change control, and lot-level release remain current buyer decision points.',
       ],
       bullets: [
         'Treat the integral GFCI, supply cord, plug, strain relief, electrical rating, instructions, and exact model as controlled product features rather than loose accessories',
@@ -162,6 +166,8 @@ Balance-payment or pickup deadline:
         'Correction leverage is strongest before final payment and pickup, while component lots, finished batches, and cartons can still be isolated and rechecked',
       ],
       citations: [
+        { href: cpscYeryorkRecall, label: 'CPSC YERYORK pressure washer recall' },
+        { href: cpscSteeliteRecall, label: 'CPSC Steelite pressure washer recall' },
         { href: cpscWorkblessRecall, label: 'CPSC Workbless pressure washer recall' },
         { href: healthCanadaWorkblessRecall, label: 'Health Canada coordinated recall' },
         { href: cpscSugiftRecall, label: 'CPSC SUGIFT pressure washer recall' },
@@ -272,6 +278,7 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    'August 27, 2026 CPSC YERYORK and Steelite recall records covering two distinct China-made models, missing integral GFCI, inadequate cord length, Amazon sales periods, quantities, remedies, and incident status',
     'August 20, 2026 CPSC Workbless recall record covering China manufacture, two models, missing integral GFCI, inadequate cord length, sales channels and period, quantities, remedy, and incident status',
     'Coordinated August 20, 2026 Health Canada record used to cross-check model identity, the short-cord explanation, Canada quantity, manufacturer, distributor, origin, and incident status',
     'August 13 CPSC SUGIFT and COMMOWNER recalls plus April BAYOTAK recall and SEN-QII warning used as a current pattern signal without claiming a shared factory, product, defect cause, or buyer outcome',
@@ -342,6 +349,16 @@ Balance-payment or pickup deadline:
   ] satisfies RelatedLink[],
   sourceNotes: [
     {
+      href: cpscYeryorkRecall,
+      label: 'U.S. CPSC - YERYORK pressure washer recall',
+      note: 'Primary public record dated August 27, 2026 covering China-made model YE-006, the missing integral GFCI and inadequate cord, Amazon sales period, 300-unit quantity, refund remedy, and incident status.',
+    },
+    {
+      href: cpscSteeliteRecall,
+      label: 'U.S. CPSC - Steelite pressure washer recall',
+      note: 'Separate primary record dated August 27, 2026 covering China-made model AZ6041VC, the same cited missing-protection and cord concerns, Amazon sales period, approximately 128 units, remedy, and incident status.',
+    },
+    {
       href: cpscWorkblessRecall,
       label: 'U.S. CPSC - Workbless pressure washer recall',
       note: 'Primary public record dated August 20, 2026 describing two China-made models, missing integral GFCI, inadequate cord length, sales period, U.S. quantity, remedy, and incident status.',
@@ -398,6 +415,7 @@ export function makePressureWasherChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

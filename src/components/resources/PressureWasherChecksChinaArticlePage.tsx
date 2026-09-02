@@ -290,7 +290,7 @@ export function PressureWasherChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines the August 2026 Workbless U.S.-Canada recall, four separate 2026 CPSC pressure-washer actions, the UL 1776 scope page, current CPSC certification guidance, and buyer-side sourcing analysis. It keeps standards mapping, laboratory testing, certification, inspection observations, importer duties, and release decisions in separate scopes."
+        intro="This guide combines the August 27 YERYORK and Steelite recalls, the August Workbless U.S.-Canada recall, earlier 2026 CPSC pressure-washer actions, the UL 1776 scope page, current CPSC certification guidance, and buyer-side sourcing analysis. It keeps standards mapping, laboratory testing, certification, inspection observations, importer duties, and release decisions in separate scopes."
         items={article.evidenceBasis}
       />
 
@@ -299,16 +299,16 @@ export function PressureWasherChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Workbless: integral GFCI and cord evidence were missing.
+              YERYORK and Steelite: the same release gate failed twice in one day.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                August 20, 2026, CPSC announced the recall of about 2,200 Workbless
-                electric pressure washers in the United States. CPSC said models WB0301
-                and WB0302 lacked an integral GFCI and an adequate-length power cord,
-                creating shock and electrocution hazards. The notice reported no
-                incidents or injuries.
+                August 27, 2026, CPSC announced separate recalls of YERYORK model YE-006
+                and Steelite model AZ6041VC electric pressure washers. CPSC said both
+                lacked an integral GFCI and an adequate-length power cord, creating
+                shock and electrocution hazards. The records covered 300 YERYORK units
+                and about 128 Steelite units and reported no incidents or injuries.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -317,26 +317,28 @@ export function PressureWasherChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Workbless-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards"
+                  href="https://www.cpsc.gov/Recalls/2026/Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-YERYORK"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official CPSC recall
+                  official YERYORK recall
                 </a>{' '}
-                identifies the two models, visible label details, included accessories,
-                sales channels and period, U.S. quantity, China private labeler, country
-                of manufacture, incident status, and refund remedy. The coordinated{' '}
+                identifies model YE-006, its visible label location and accessory set,
+                the March 2025-to-June 2026 Amazon sales period, China manufacture,
+                quantity, incident status, and refund remedy. The separate{' '}
                 <a
                   className="hs-text-link"
-                  href="https://recalls-rappels.canada.ca/en/alert-recall/workbless-electric-pressure-washers-recalled-due-electric-shock-hazard"
+                  href="https://www.cpsc.gov/Recalls/2026/Steelite-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-Longer-3D"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  Health Canada recall
+                  Steelite recall
                 </a>{' '}
-                adds the Canada quantity and identifies the China manufacturer and
-                distributor. Neither notice publishes complete drawings, bills of
-                materials, test reports, critical-component files, or factory controls.
+                identifies model AZ6041VC, its 2.5 GPM description and 20-foot hose,
+                April-to-June 2026 Amazon sales period, China importer and manufacture,
+                quantity, incident status, and refund remedy. Neither notice publishes
+                complete drawings, bills of materials, test reports,
+                critical-component files, or factory controls.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">Buyer lesson:</strong>{' '}
@@ -354,13 +356,13 @@ export function PressureWasherChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/SUGIFT-Recalls-SUGIFT-Pressure-Washers-Due-to-Serious-Risk-of-Injury-or-Death-From-Shock-and-Electrocution-Hazards"
+                  href="https://www.cpsc.gov/Recalls/2026/Workbless-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  August 2026 CPSC SUGIFT recall
+                  August 20 Workbless recall
                 </a>{' '}
-                and the separate COMMOWNER, BAYOTAK, and SEN-QII records cite similar
+                and separate SUGIFT, COMMOWNER, BAYOTAK, and SEN-QII records cite similar
                 missing integral-protection concerns for different China-made pressure
                 washers. They do not establish a shared supplier, factory, root cause,
                 or defect in another lot. They show why GFCI identity, cord construction,
@@ -524,7 +526,7 @@ export function PressureWasherChecksChinaArticlePage() {
               <h2 className="text-3xl font-extrabold text-[var(--hs-text)]">Sources</h2>
             </div>
             <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
-              Public records and official guidance checked August 21, 2026 Beijing time.
+              Public records and official guidance checked September 3, 2026 Beijing time.
               Links identify the exact products, findings, dates, actions, requirements,
               and interpretation limits used in this guide.
             </p>
