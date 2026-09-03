@@ -68,6 +68,7 @@ import {
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
   rattleTeetherChecksChinaArticleHref,
+  smallBallToyChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
   sampleConsolidationCompareSuppliersArticleHref,
@@ -254,6 +255,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: rattleTeetherChecksChinaArticleHref,
         label: 'Rattle and teether connection and shipment checklist',
+      },
+      {
+        href: smallBallToyChecksChinaArticleHref,
+        label: 'Small-ball toy age-grade and shipment checklist',
       },
       {
         href: portablePowerStationChecksChinaArticleHref,

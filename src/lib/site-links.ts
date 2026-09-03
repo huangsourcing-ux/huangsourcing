@@ -24,6 +24,8 @@ export const grillBrushChecksChinaArticleHref =
   '/grill-brush-checks-china'
 export const rattleTeetherChecksChinaArticleHref =
   '/rattle-teether-checks-china'
+export const smallBallToyChecksChinaArticleHref =
+  '/small-ball-toy-checks-china'
 export const portablePowerStationChecksChinaArticleHref =
   '/portable-power-station-checks-china'
 export const youthAtvChecksChinaArticleHref =
