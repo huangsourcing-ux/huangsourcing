@@ -252,20 +252,20 @@ export function WaterBeadToyCpscChecklistArticlePage() {
                       Current basis:{' '}
                       <a
                         className="hs-text-link"
-                        href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC%E2%80%99s-New-Federal-Water-Beads-Safety-Standard-Takes-Effect-to-Protect-Children-from-Deadly-Hazard"
+                        href="https://www.cpsc.gov/Recalls/2026/GIHNJSI-Squeezy-Dumplings-Toys-Recalled-Due-to-Serious-Ingestion-Choking-and-Obstruction-Hazards-Sold-on-Amazon-by-Chenyuanhui"
                         rel="noreferrer"
                         target="_blank"
                       >
-                        CPSC March 2026 rule announcement
+                        CPSC September 2026 Squeezy Dumplings recall
                       </a>{' '}
-                      and the{' '}
+                      and the independent{' '}
                       <a
                         className="hs-text-link"
-                        href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-110000-pcs-clear-water-beads-sold-via-shein-2604-0218"
+                        href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-squishy-dumpling-d-9373-2609-0028"
                         rel="noreferrer"
                         target="_blank"
                       >
-                        UK OPSS May-June 2026 recall record
+                        UK OPSS September 2026 Squishy Dumpling report
                       </a>
                       .
                     </p>
@@ -353,7 +353,7 @@ export function WaterBeadToyCpscChecklistArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide is based on cited public CPSC, eCFR, UK OPSS, and Associated Press records, then narrowed to product, warning, lot, packaging, carton, supplier, and document evidence that can be compared before goods leave China."
+        intro="This guide is based on cited CPSC rule materials and September 2026 U.S. and UK public records for contained-bead squishy toys, then narrowed to product, enclosure, warning, identity, lot, packaging, carton, supplier, and document evidence that can be compared before goods leave China."
         items={article.evidenceBasis}
       />
 
@@ -362,40 +362,70 @@ export function WaterBeadToyCpscChecklistArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Buffalo Games recall: trace the exact bead kit, not a generic claim.
+              GIHNJSI Squeezy Dumplings: contained beads still need a traceable release gate.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
-                CPSC and Buffalo Games announced the September 14, 2023 recall of about
-                52,000 Chuckle &amp; Roar Ultimate Water Beads Activity Kits. The notice
-                said the beads could expand after ingestion and pose ingestion, choking,
-                and intestinal-obstruction hazards. It recorded one report of a
-                10-month-old child&apos;s death and one report of a 9-month-old child&apos;s
-                serious injury requiring surgery. The kits were manufactured in China.
-                Huang Sourcing was not involved in the product, import, incidents,
-                recall, testing, or remedy.
+                <strong className="text-[var(--hs-text)]">What happened:</strong> On
+                September 3, 2026, CPSC announced the recall of about 8,000 GIHNJSI
+                Squeezy Dumplings sold on Amazon. The official notice says the China-made
+                squishy toys contained water beads that could expand after ingestion and
+                create ingestion, choking, and intestinal-obstruction hazards. It reports
+                no incidents or injuries and describes a refund after documented disposal.
               </p>
               <p>
-                The case predates the 2026 standard but remains relevant to today&apos;s
-                release decision because it documents the specific hazard the later
-                expansion-size, acrylamide, warning, testing, and certification framework
-                addresses. It does not prove the new rule would have prevented those
-                incidents, and it does not show that another bead, supplier, or order has
-                the same risk. The buyer lesson is to connect the exact physical product
-                and lot to qualified test and warning evidence before release.
+                <strong className="text-[var(--hs-text)]">
+                  What evidence was public:
+                </strong>{' '}
+                The notice identifies the retailer, China origin, sale channel and period,
+                generic product construction, approximate quantity, and remedy. It also
+                says the product had no markings and that retail wording appeared on a
+                removable label. It does not publish the manufacture date, bead formula,
+                dry or expanded dimensions, shell and seam specification, full test file,
+                CPC, production lots, or carton map.
+              </p>
+              <p>
+                <strong className="text-[var(--hs-text)]">Buyer lesson:</strong> Treat a
+                squishy shell as part of the controlled product, not proof that the beads
+                can be ignored. Before release, connect the qualified scope and test plan,
+                contained beads, shell, seams, closures, product and pack warnings, SKU,
+                lot, report, CPC data, and physical cartons. Preserve identity after any
+                removable retail tag is separated from the toy.
+              </p>
+              <p>
+                <strong className="text-[var(--hs-text)]">
+                  Limits of comparison:
+                </strong>{' '}
+                CPSC&apos;s GIHNJSI recall page states the hazard but does not state that the
+                product violated 16 CFR 1250.4 or identify when it was manufactured. A
+                separate CPSC warning that day expressly describes another squishy bun as
+                violating the mandatory water bead standard, while the UK OPSS report on
+                September 4 applies different UK law. None of these records proves another
+                product, supplier, factory, formulation, or lot has the same issue. Huang
+                Sourcing had no role in any cited product, sale, test, enforcement action,
+                recall, border rejection, or remedy.
               </p>
               <p>
                 Read the{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2023/Buffalo-Games-Recalls-Chuckle-Roar-Ultimate-Water-Beads-Activity-Kits-Due-to-Serious-Ingestion-Choking-and-Obstruction-Hazards-One-Infant-Death-Reported-Sold-Exclusively-at-Target"
+                  href="https://www.cpsc.gov/Recalls/2026/GIHNJSI-Squeezy-Dumplings-Toys-Recalled-Due-to-Serious-Ingestion-Choking-and-Obstruction-Hazards-Sold-on-Amazon-by-Chenyuanhui"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official CPSC Buffalo Games recall notice
+                  official CPSC GIHNJSI recall
+                </a>{' '}
+                and the{' '}
+                <a
+                  className="hs-text-link"
+                  href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-squishy-dumpling-d-9373-2609-0028"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  UK OPSS Squishy Dumpling report
                 </a>
-                . Product classification, testing, certification, and release decisions
-                remain with the importer and qualified laboratory or adviser.
+                . Product classification, testing, certification, and release remain with
+                the importer and qualified laboratory or adviser.
               </p>
             </div>
           </Reveal>

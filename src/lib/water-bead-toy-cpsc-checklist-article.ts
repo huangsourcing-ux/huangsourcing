@@ -26,8 +26,8 @@ export const waterBeadToyCpscChecklistArticle = {
     'Check water bead toy size, acrylamide, warnings, CPC data, test identity, packaging, and cartons before paying or shipping China-sourced orders to the U.S.',
   publishedDate: 'July 18, 2026',
   publishedDateIso: '2026-07-18T09:00:00+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'September 5, 2026',
+  modifiedDateIso: '2026-09-05T03:25:04+08:00',
   h1: 'Water Bead Toy Imports from China: 2026 CPSC Checklist',
   eyebrow: '16 CFR 1250.4 - test evidence - pre-shipment release',
   image: {
@@ -73,10 +73,10 @@ Payment or pickup deadline:
   ],
   quickChecks: [
     'Confirm whether the exact product is a water bead toy or a toy containing water beads within 16 CFR 1250.4; do not infer scope from a supplier listing title',
-    'Record the dry bead dimensions, composition, color, format, quantity, intended use, age grade, SKU, lot, and whether beads are loose, contained, or supplied inside another toy',
+    'Record the dry bead dimensions, composition, color, format, quantity, intended use, age grade, SKU, lot, and whether beads are loose or contained inside a squishy toy or another enclosure',
     'Obtain CPSC-accepted third-party laboratory evidence for the applicable size-limit, acrylamide, and other children’s-product requirements',
     'Tie the test report and CPC data to the same manufacturer, product, bead formulation, dimensions, lot or production period, and packaging version',
-    'Compare the importer-approved warning with the final toy, retail package, bead container, hangtag, sticker, and multi-pack configuration as applicable',
+    'Compare the importer-approved warning and identity plan with the final toy, retail package, bead container, product marking, hangtag, sticker, and multi-pack configuration as applicable',
     'Open sampled cartons when scoped to detect mixed bead formats, old warnings, missing labels, unapproved packs, or substituted lots',
     'Separate visual measurements and document matching from laboratory conclusions; an inspector cannot reproduce or certify the mandatory tests',
     'Hold payment or pickup until affected stock is controlled, corrections follow approved instructions, and re-check evidence is complete',
@@ -85,7 +85,7 @@ Payment or pickup deadline:
     {
       title: 'Product and rule scope',
       items: [
-        'Toy type, intended use, age grade, dry-bead dimensions, material, loose or contained configuration, SKU, lot, and sales presentation',
+        'Toy type, intended use, age grade, dry-bead dimensions, material, loose or contained configuration, shell, seams, closures, SKU, lot, and sales presentation',
         'Qualified decision on whether 16 CFR 1250.4, other toy requirements, CPC certification, and CPSC eFiling apply',
       ],
     },
@@ -99,7 +99,7 @@ Payment or pickup deadline:
     {
       title: 'Warnings and packaging',
       items: [
-        'Approved warning content, location, contrast, legibility, durability, package or container placement, and individual-label needs',
+        'Approved warning content, location, contrast, legibility, durability, toy, package or container placement, and individual-label needs',
         'Physical retail pack, bead container, contained-bead toy, hangtag or sticker, instructions, barcode, and carton-version match',
       ],
     },
@@ -116,13 +116,14 @@ Payment or pickup deadline:
       id: 'why-current',
       title: 'Why water bead evidence is a current China sourcing issue',
       paragraphs: [
-        'CPSC’s mandatory water bead toy standard took effect on March 12, 2026 for products manufactured after that date. The agency’s business guidance identifies three rule categories: an expansion-size limit, an extractable-acrylamide limit, and warnings for covered toys, packaging, containers, or individual products in specified configurations.',
-        'The risk is not only historical. In May 2026, the UK Office for Product Safety and Standards published a recall for 110,000 clear water beads sold through Shein, identified China as the country of origin, and later updated the notice to record an end-user recall. U.S. and UK requirements differ, but the recent record shows why intended use, product identity, physical pack-out, and destination-specific evidence must stay connected.',
+        'CPSC’s mandatory water bead toy standard took effect on March 12, 2026 for products manufactured after that date. The agency’s business guidance identifies three rule categories: an expansion-size limit, an extractable-acrylamide limit, and warnings for covered toys, packaging, containers, or individual products in specified configurations. Its guidance expressly addresses toys with water beads sealed inside, whether those beads are accessible or not.',
+        'On September 3, 2026, CPSC announced the recall of about 8,000 China-made GIHNJSI Squeezy Dumplings sold on Amazon because the toys contained water beads that could create ingestion, choking, and intestinal-obstruction hazards. The public record says the product itself had no markings and the retail wording appeared on a removable label. The same day, CPSC separately warned consumers about another China-sold squishy bun toy and expressly said that product violated the mandatory standard for toys containing water beads.',
+        'On September 4, UK product-safety authorities published a separate report for a China-origin Squishy Dumpling D-9373 that could break apart and release water beads; the import was rejected at the border. U.S. and UK rules are different, and the records do not prove the products share a factory or formulation. Together they make the buyer decision current: identify the contained beads and enclosure, preserve exact-model traceability, obtain destination-specific qualified evidence, and verify that every physical toy and pack uses the approved warning and identity system before release.',
       ],
       bullets: [
         'A generic supplier statement such as non-toxic or safety tested does not establish compliance with the applicable CPSC tests',
         'A passing report for one bead formula or dimension may not cover a changed polymer, color, supplier, size, lot, or toy enclosure',
-        'Correct warning artwork in a PDF does not show that every required product, package, or container has the approved version',
+        'Correct warning artwork in a PDF does not show that every required product, package, container, hangtag, or sticker has the approved version',
         'Correction leverage is strongest while relabeling, segregation, testing, rework, or cancellation can still happen before pickup',
       ],
     },
@@ -135,9 +136,10 @@ Payment or pickup deadline:
       ],
       bullets: [
         'Record exact product name, SKU, age grade, intended use, sales listing, package copy, and whether a child can access the beads',
-        'Record dry-bead dimensions, formulation or material reference, color, count, supplier, production date, and lot code',
-        'Identify whether beads are loose, inside a container, sealed inside another toy, sold in a multi-pack, or supplied without packaging',
-        'Reconfirm scope after changes to the bead, supplier, enclosure, packaging, warning, instructions, or marketing claim',
+        'Record dry-bead dimensions, formulation or material reference, color, count, supplier, production date, lot code, and the enclosure material and construction',
+        'Identify whether beads are loose, inside a container, sealed inside a squishy shell or another toy, sold in a multi-pack, or supplied without packaging',
+        'Map product markings, removable tags, barcodes, model codes, packaging, listing copy, and production records so each physical toy remains traceable after a tag is removed',
+        'Reconfirm scope after changes to the bead, supplier, shell, seam, closure, enclosure, packaging, warning, instructions, or marketing claim',
       ],
     },
     {
@@ -145,12 +147,12 @@ Payment or pickup deadline:
       title: 'What should buyers verify in the test and certificate file?',
       paragraphs: [
         'CPSC guidance says covered dry beads that fit entirely within the small-parts cylinder must meet a specified fully expanded size test, and all covered water beads must stay within the extractable-acrylamide limit. These are controlled laboratory determinations, not visual inspection claims.',
-        'Ask the qualified laboratory or adviser to confirm the method, sample plan, results, and whether the evidence covers every variation. Then compare report identifiers with the order: manufacturer, applicant, product name, bead dimensions, formulation, color or family logic, test dates, production version, and CPC citation should not drift across files.',
+        'Ask the qualified laboratory or adviser to confirm the method, sample plan, results, enclosure-related test scope, and whether the evidence covers every variation. Then compare report identifiers with the order: manufacturer, applicant, product name, bead dimensions, formulation, shell, seams, closures, color or family logic, test dates, production version, and CPC citation should not drift across files.',
       ],
       bullets: [
         'Verify that the laboratory appears in CPSC’s accepted-laboratory system for the relevant scope when third-party testing is required',
-        'Keep the tested sample or documented reference tied to the final SKU, lot, artwork, and packaging version',
-        'Escalate supplier, polymer, colorant, dry-size, production-site, or enclosure changes before release',
+        'Keep the tested sample or documented reference tied to the final SKU, lot, shell construction, artwork, marking, and packaging version',
+        'Escalate supplier, polymer, colorant, dry-size, production-site, shell, seam, closure, or enclosure changes before release',
         'Do not use a caliper photo, soak demonstration, supplier certificate, or generic chemical report as a substitute for the required test evidence',
       ],
     },
@@ -158,12 +160,12 @@ Payment or pickup deadline:
       id: 'warnings-packout',
       title: 'How should warnings and physical pack-out be checked?',
       paragraphs: [
-        'Use the importer-approved warning files as the reference, then inspect the complete physical sales configuration. Depending on the covered product, CPSC guidance addresses warnings on the water bead toy, packaging, bead container, contained-bead toy, packaging for that toy, or an individual hangtag or sticker when packaging is absent.',
-        'Photograph each required surface in context, not only a detached label. Open cartons across the agreed sample to look for old artwork, mixed lots, missing containers, hidden warnings, unreadable print, changed bead formats, and rework that did not reach all affected units.',
+        'Use the importer-approved warning and identity files as the reference, then inspect the complete physical sales configuration. Depending on the covered product, CPSC guidance addresses warnings on the water bead toy, packaging, bead container, contained-bead toy, packaging for that toy, or an individual hangtag or sticker when packaging is absent.',
+        'Photograph each required surface in context, not only a detached or removable label. Open cartons across the agreed sample to look for unmarked products, old artwork, mixed lots, missing containers, hidden warnings, unreadable print, changed bead or enclosure formats, weak seams or closures, and rework that did not reach all affected units.',
       ],
       bullets: [
-        'Compare warning wording, layout, placement, visibility, contrast, and package or product coverage with the approved reference',
-        'Trace every inspected pack to SKU, lot, carton, packing-list line, production record, and test or CPC file',
+        'Compare warning wording, layout, placement, visibility, contrast, durability, and package or product coverage with the approved reference',
+        'Trace every inspected toy and pack to its SKU, model, lot, carton, packing-list line, production record, and test or CPC file even after removable retail tags are separated',
         'Segregate old and corrected stock and record the affected quantity before rework begins',
         'Repeat the agreed inspection after correction; a photo of one corrected unit does not establish that the bulk order was corrected',
       ],
@@ -192,12 +194,22 @@ Payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official CPSC 2026 water bead rule announcement, business guidance, 16 CFR 1250.4, certification guidance, and the 2023 Buffalo Games recall checked July 18, 2026 Beijing time.',
-    'The UK OPSS 2026 recall of 110,000 China-origin water beads and independent Associated Press coverage used as current incident and public-attention context, not as U.S. legal guidance.',
-    'Buyer-approved product specifications, intended-use decision, dry-bead details, packaging and warning artwork, test reports, CPC draft, specialist instructions, and change records.',
-    'Physical beads, contained-bead toy, retail packaging, container, warning placement, carton mix, lot records, and correction evidence observed in China.',
+    'Official CPSC water bead business guidance, rule announcement, and final rule used for 16 CFR 1250.4 scope, controlled test, warning, and certification context; checked September 5, 2026 Beijing time.',
+    'The September 3, 2026 CPSC GIHNJSI recall and Ivyapingdianpu warning used as separate current U.S. records for contained-bead squishy toys; the UK OPSS September 4 report used only as independent UK border and incident-pattern context.',
+    'Buyer-approved product specifications, intended-use decision, dry-bead and enclosure details, packaging and warning artwork, exact-model identity plan, test reports, CPC draft, specialist instructions, and change records.',
+    'Physical beads, contained-bead toy, shell, seams, closures, product markings, retail packaging, removable tags, warning placement, carton mix, lot records, and correction evidence observable in China.',
   ],
   sourceNotes: [
+    {
+      href: 'https://www.cpsc.gov/Recalls/2026/GIHNJSI-Squeezy-Dumplings-Toys-Recalled-Due-to-Serious-Ingestion-Choking-and-Obstruction-Hazards-Sold-on-Amazon-by-Chenyuanhui',
+      label: 'CPSC - GIHNJSI Squeezy Dumplings recall',
+      note: 'Primary September 3, 2026 public case covering about 8,000 China-made toys, contained water beads, the stated ingestion and obstruction hazards, Amazon sales, absent product markings, removable package labeling, and refund remedy.',
+    },
+    {
+      href: 'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-Ivyapingdianpus-Squishy-Bun-Toys-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Water-Beads%E2%80%AF',
+      label: 'CPSC - Ivyapingdianpu Squishy Bun warning',
+      note: 'Separate September 3 official action involving a China-sold contained-bead squishy toy that CPSC said violated the mandatory water bead standard; the retailer did not agree to a recall or remedy.',
+    },
     {
       href: 'https://www.cpsc.gov/Business--Manufacturing/Business-Education/Business-Guidance/Water-Bead-Toys-Business-Guidance',
       label: 'CPSC - Water Bead Toys Business Guidance',
@@ -214,25 +226,15 @@ Payment or pickup deadline:
       note: 'Official final rule adding 16 CFR 1250.4; laboratories and compliance advisers should interpret and apply the product-specific methods.',
     },
     {
-      href: 'https://www.cpsc.gov/Recalls/2023/Buffalo-Games-Recalls-Chuckle-Roar-Ultimate-Water-Beads-Activity-Kits-Due-to-Serious-Ingestion-Choking-and-Obstruction-Hazards-One-Infant-Death-Reported-Sold-Exclusively-at-Target',
-      label: 'CPSC - Buffalo Games water bead activity kit recall',
-      note: 'Primary public case documenting the 2023 recall, reported incidents, approximate units, importer, country of manufacture, and remedy.',
-    },
-    {
-      href: 'https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-110000-pcs-clear-water-beads-sold-via-shein-2604-0218',
-      label: 'UK OPSS - 2026 recall of 110,000 clear water beads',
-      note: 'Independent official incident record identifying a China-origin product and a May-June 2026 recall; UK law does not define U.S. compliance.',
-    },
-    {
-      href: 'https://apnews.com/article/dbee5655aa2602d9840334c5afce0c09',
-      label: 'Associated Press - retailer action on water beads',
-      note: 'Independent background on marketplace attention after safety concerns and the Buffalo Games recall; the CPSC sources remain the rule authority.',
+      href: 'https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-squishy-dumpling-d-9373-2609-0028',
+      label: 'UK OPSS - Squishy Dumpling D-9373 report',
+      note: 'Independent September 4, 2026 official record identifying a China-origin sensory toy, shell breakage that released water beads, a serious choking risk, and border rejection under UK requirements; it does not define U.S. compliance.',
     },
   ] satisfies SourceNote[],
   whatToSend: [
     'SKU list, intended use, age grade, sales listing, product photos, order quantity, carton count, production date, lot codes, and U.S. sales configuration',
-    'Dry-bead dimensions, material or formulation reference, color, count, supplier, and whether beads are loose, contained, or supplied inside another toy',
-    'Importer or adviser scope decision, approved warning files, package dielines, container labels, hangtags, stickers, manuals, and revision status',
+    'Dry-bead dimensions, material or formulation reference, color, count, supplier, and whether beads are loose or contained inside a named shell, seam, closure, enclosure, or another toy',
+    'Importer or adviser scope decision, approved warning and identity files, product markings, package dielines, container labels, hangtags, stickers, manuals, and revision status',
     'CPSC-accepted laboratory details, test request, sample identity, report, CPC draft, applicable-rule citations, and change assessment',
     'Packing list, carton marks, production records, approved reference sample, correction rules, affected-quantity control, and re-check instructions',
     'Payment deadline, pickup date, factory contact, importer release authority, and clear rules for which mismatches block release',
@@ -241,9 +243,10 @@ Payment or pickup deadline:
     'The supplier markets the same beads as a toy, craft, sensory aid, decoration, or agricultural product without a qualified U.S. scope decision',
     'The test report cannot be tied to the exact dry size, polymer or formulation, color logic, manufacturer, production version, SKU, or lot',
     'A supplier uses an in-house soak test, caliper photo, non-toxic claim, or generic chemical sheet as the main compliance evidence',
-    'Warnings exist in artwork but are missing, hidden, unreadable, or inconsistent across the toy, package, container, hangtag, sticker, or multi-pack',
-    'Cartons mix old and new warnings, different bead formats, substitute suppliers, unapproved enclosures, or lots without traceability',
-    'The factory changes formulation, colorant, size, supplier, production site, enclosure, package, or marketing after testing',
+    'Warnings exist in artwork but are missing, hidden, unreadable, removable without a durable identity trail, or inconsistent across the toy, package, container, hangtag, sticker, or multi-pack',
+    'The physical toy has no reliable link to its SKU, model, production lot, report, and CPC once a removable tag or outer pack is separated',
+    'Cartons mix old and new warnings, different bead formats, substitute suppliers, changed shells or closures, unapproved enclosures, or lots without traceability',
+    'The factory changes formulation, colorant, size, supplier, production site, shell, seam, closure, enclosure, package, or marketing after testing',
     'The correction plan has no affected quantity, segregation record, carton map, approved instruction, or repeat check',
   ],
   scopeLimits: [
@@ -287,6 +290,10 @@ Payment or pickup deadline:
       answer: 'No. CPSC states that some water bead products not marketed as children’s toys fall outside this rule. The exact intended use, presentation, product configuration, and other applicable rules need qualified review.',
     },
     {
+      question: 'Are water beads sealed inside a squishy toy automatically outside the rule?',
+      answer: 'No. CPSC guidance expressly addresses toys containing water beads, including warning requirements for contained-bead toys and their packaging. Qualified parties should determine the exact product scope and test plan; a sealed shell or supplier category name is not enough.',
+    },
+    {
       question: 'Can a factory soak test prove the size requirement?',
       answer: 'No. A factory demonstration or inspection measurement can support identity checks, but it does not replace the specified method, controlled conditions, sampling, CPSC-accepted laboratory work, or qualified compliance decision.',
     },
@@ -318,6 +325,7 @@ export function makeWaterBeadToyCpscChecklistArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {
