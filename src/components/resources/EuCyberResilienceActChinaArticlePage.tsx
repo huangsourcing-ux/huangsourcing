@@ -71,12 +71,19 @@ export function EuCyberResilienceActChinaArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline author={article.author} publishedDate={article.publishedDate} modifiedDate={article.modifiedDate} />
+            <p className="hs-muted mt-2 text-xs leading-5">
+              Originally published by Agent Huang. This substantive reporting-stage update was written by Huang Sourcing Editorial Team from the public sources below.
+            </p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {article.answerSummary}
+            </p>
+            <p className="hs-muted mt-3 text-sm leading-6">
+              Dates: <a className="underline underline-offset-4" href={article.sourceNotes[0].href}>Commission reporting guidance</a>
+              {' · '}<a className="underline underline-offset-4" href={article.sourceNotes[6].href}>CRA application timeline</a>
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
@@ -113,8 +120,9 @@ export function EuCyberResilienceActChinaArticlePage() {
                 />
               </div>
             </div>
+            <p className="hs-muted mt-2 text-xs leading-5">Original editorial diagram. It illustrates the evidence handoff and is not a record of the public case.</p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {['Device', 'Version', 'CE File', 'Reporting'].map((item) => (
+              {['Device', 'Version', 'Owner', 'Reporting'].map((item) => (
                 <a
                   className="min-h-24 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-3 text-sm font-extrabold text-[var(--hs-text)] shadow-[var(--hs-shadow-sm)] transition-colors hover:border-[var(--hs-accent)] hover:text-[var(--hs-accent-strong)]"
                   href="#cra-checklist"
@@ -166,10 +174,10 @@ export function EuCyberResilienceActChinaArticlePage() {
                 What should buyers check before connected products leave China?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check connected-product scope, exact device and software identity,
-                CE and technical-file handoff, support-period evidence, labels,
-                manuals, importer role, and vulnerability-reporting ownership before
-                final payment or pickup.
+                Confirm product scope, exact device and software identity, manufacturer
+                ownership and supplier escalation before final payment or pickup.
+                Keep the September 2026 reporting stage distinct from the main
+                CRA product requirements applying in December 2027.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {article.quickChecks.map((item, index) => (
@@ -238,7 +246,18 @@ export function EuCyberResilienceActChinaArticlePage() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.bullets.length ? <BulletList items={section.bullets} /> : null}
+                  {section.citations.length ? (
+                    <p className="hs-muted mt-4 text-sm leading-6">
+                      References:{' '}
+                      {section.citations.map((citation, citationIndex) => (
+                        <span key={citation.href}>
+                          {citationIndex > 0 ? ' · ' : ''}
+                          <a className="text-[var(--hs-accent)] underline underline-offset-4" href={citation.href}>{citation.label}</a>
+                        </span>
+                      ))}
+                    </p>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
@@ -267,12 +286,12 @@ export function EuCyberResilienceActChinaArticlePage() {
             </div>
             <p className="hs-eyebrow mt-5">Official source context</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Verify the CRA rule, then check the shipment evidence.
+              Sources: CRA rules and the public case.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
               These sources explain the EU CRA timeline, product scope, economic
               operator obligations, conformity assessment, vulnerability reporting,
-              and Single Reporting Platform. They do not replace product-specific
+              and Single Reporting Platform, alongside the FTC public case. They do not replace product-specific
               legal, cybersecurity, notified-body, or market-surveillance advice.
             </p>
           </Reveal>
@@ -430,8 +449,8 @@ export function EuCyberResilienceActChinaArticlePage() {
                 goods leave China
               </div>
               <h2 className="mt-3 text-3xl font-extrabold">
-                Check model, firmware, labels, CE files, manuals, and reporting
-                ownership while correction is still practical.
+                Connect the device version, shipment lot and responsible
+                technical owner before release.
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
                 Send the supplier files, product versions, label artwork, manuals,

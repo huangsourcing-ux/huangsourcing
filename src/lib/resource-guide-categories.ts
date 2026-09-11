@@ -693,7 +693,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: euCyberResilienceActChinaArticleHref,
-        label: 'EU Cyber Resilience Act connected-product checklist',
+        label: 'EU CRA reporting and connected-product checklist',
       },
       {
         href: euDeforestationRegulationChinaArticleHref,
