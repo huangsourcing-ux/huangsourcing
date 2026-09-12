@@ -1,3 +1,4 @@
+export const bicycleHelmetChecksChinaArticleHref = '/bicycle-helmet-checks-china'
 // [!code ++] Central contact URLs (mailto bodies address Agent Huang, not a former placeholder name)
 export const businessEmail = 'agent@huangsourcing.com' as const
 

@@ -68,6 +68,7 @@ import {
   qcVsPreShipmentInspectionArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
   rattleTeetherChecksChinaArticleHref,
+  bicycleHelmetChecksChinaArticleHref,
   smallBallToyChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
@@ -255,6 +256,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: rattleTeetherChecksChinaArticleHref,
         label: 'Rattle and teether connection and shipment checklist',
+      },
+      {
+        href: bicycleHelmetChecksChinaArticleHref,
+        label: 'Bicycle helmet model, size, and shipment checklist',
       },
       {
         href: smallBallToyChecksChinaArticleHref,
