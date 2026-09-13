@@ -355,7 +355,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: ukPlugCheckChinaSourcingArticleHref,
-        label: 'UK plug and electrical-goods release checklist',
+        label: 'UK plug checks: shipment coverage and rework release',
       },
       {
         href: sturdyDresserChecksChinaArticleHref,

@@ -99,6 +99,7 @@ import { trustPolicyPages, trustPolicySlugs } from '@/lib/trust-policy-pages'
 
 type SitemapEntry = {
   changeFrequency: NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>
+  lastModified?: string
   path: string
   priority: number
 }
@@ -448,6 +449,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: ukPlugCheckChinaSourcingArticleHref,
+    lastModified: '2026-09-14T03:25:52+08:00',
     changeFrequency: 'monthly',
     priority: 0.82,
   },
@@ -593,7 +595,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...stageRoutes, ...serviceRoutes, ...riskGuideRoutes, ...trustPolicyRoutes].map((route) => ({
     url: getAbsoluteUrl(route.path),
-    lastModified,
+    lastModified: route.lastModified ?? lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }))

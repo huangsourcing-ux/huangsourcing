@@ -253,11 +253,11 @@ export function UkPlugCheckChinaSourcingArticlePage() {
                       Current basis:{' '}
                       <a
                         className="hs-text-link"
-                        href="https://www.gov.uk/product-safety-alerts-reports-recalls?product_risk_level=high"
+                        href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-candle-warmer-lamp-sold-via-tiktok-2606-0188"
                         rel="noreferrer"
                         target="_blank"
                       >
-                        UK OPSS current high-risk product actions
+                        OPSS September 2026 candle warmer recall
                       </a>{' '}
                       and the{' '}
                       <a
@@ -273,14 +273,14 @@ export function UkPlugCheckChinaSourcingArticlePage() {
                   ) : null}
                   {section.id === 'product-scope' ? (
                     <p className="hs-muted mt-5 text-sm leading-6">
-                      Follow the market distinction and qualified-scope limits in the{' '}
+                      See the separate Great Britain and Northern Ireland documents in the{' '}
                       <a
                         className="hs-text-link"
-                        href="https://www.gov.uk/government/consultations/product-regulation-the-uks-new-product-safety-framework/the-uks-new-product-safety-framework"
+                        href="https://www.gov.uk/government/publications/electrical-equipment-safety-regulations-2016"
                         rel="noreferrer"
                         target="_blank"
                       >
-                        UK product-safety framework consultation
+                        OPSS electrical-equipment guidance
                       </a>
                       .
                     </p>
@@ -328,7 +328,7 @@ export function UkPlugCheckChinaSourcingArticlePage() {
               qualified parties.
             </p>
           </Reveal>
-          <div className="mt-8 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
+          <div aria-label="UK plug shipment release decisions" className="mt-8 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]" role="region" tabIndex={0}>
             <table className="w-full min-w-3xl border-collapse text-left text-sm leading-6">
               <thead className="bg-[var(--hs-navy)] text-white">
                 <tr>
@@ -355,7 +355,7 @@ export function UkPlugCheckChinaSourcingArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide is based on cited public UK OPSS actions, independent 2026 charger testing, electrical-safety research, and the UK product-safety consultation, then narrowed to plug, adapter, fuse, cable, model, technical-file, pack-out, carton, and correction evidence that can be compared before goods leave China."
+        intro="This guide is based on cited public UK OPSS actions, independent 2026 charger testing, electrical-safety research, and OPSS electrical-equipment guidance, then narrowed to plug, adapter, fuse, cable, model, technical-file, pack-out, carton, and correction evidence that can be compared before goods leave China."
         items={article.evidenceBasis}
       />
 
@@ -364,8 +364,32 @@ export function UkPlugCheckChinaSourcingArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              PD-65W border rejection: a familiar plug shape was not enough.
+              September 2026 candle warmer recall: check the actual plug revision.
             </h2>
+            <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
+              <p>
+                OPSS published recall notice 2606-0188 on September 4, 2026 for a
+                China-origin candle warmer lamp sold via TikTok. It found that the plug
+                dimensions prevented a secure socket connection, creating an overheating
+                and fire risk. The fulfilment centre recalled the product and TikTok
+                removed the listing. The notice describes a risk; it does not report a
+                fire or injury count. Read the{' '}
+                <a className="hs-text-link" href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-candle-warmer-lamp-sold-via-tiktok-2606-0188" rel="noreferrer" target="_blank">
+                  official candle warmer lamp recall
+                </a>.
+              </p>
+              <p>
+                Buyer lesson: trace the approved plug to the specific production lot
+                and cartons. The record does not establish whether a supplier changed
+                components after testing, so that must not be claimed as the cause.
+                Huang Sourcing was not involved in this case. The example supports
+                a check-and-hold decision; it does not show that every candle warmer
+                or China supplier has the same defect.
+              </p>
+            </div>
+            <h3 className="mt-10 text-2xl font-extrabold text-[var(--hs-text)]">
+              PD-65W border rejection: a familiar plug shape was not enough.
+            </h3>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 On May 15, 2026, the UK Office for Product Safety and Standards published

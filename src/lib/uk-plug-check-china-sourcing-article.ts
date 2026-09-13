@@ -21,13 +21,13 @@ export const ukPlugCheckChinaSourcingArticle = {
   author: 'editorial-team' as const,
   href: ukPlugCheckChinaSourcingArticleHref,
   title: 'UK Plug Checks Before Shipping Electrical Goods from China',
-  metaTitle: 'UK Plug Checks for China-Sourced Electrical Goods',
+  metaTitle: 'UK Plug Checks Before Shipping from China',
   metaDescription:
-    'Check UK plugs, fuses, adapter identity, markings, test files, packaging, and cartons before paying for or shipping electrical goods from China.',
+    'Use current UK recall evidence to match plugs, fuses, test files and carton lots before payment. Includes a shipment coverage record and rework hold points.',
   publishedDate: 'July 20, 2026',
   publishedDateIso: '2026-07-20T03:30:00+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'September 14, 2026',
+  modifiedDateIso: '2026-09-14T03:25:52+08:00',
   h1: 'UK Plug Checks Before Shipping Electrical Goods from China',
   eyebrow: 'UK plug evidence - physical checks - shipment release',
   image: {
@@ -66,6 +66,8 @@ Payment or pickup deadline:
     { href: '#product-scope', label: 'Product and model scope' },
     { href: '#test-files', label: 'Test and document match' },
     { href: '#physical-checks', label: 'Physical checks and pack-out' },
+    { href: '#release-record', label: 'Shipment coverage record' },
+    { href: '#after-rework', label: 'Release after rework' },
     { href: '#public-case', label: 'Public case example' },
     { href: '#decision-table', label: 'Buyer decisions' },
     { href: '#documents', label: 'What to send' },
@@ -116,8 +118,9 @@ Payment or pickup deadline:
       id: 'why-current',
       title: 'Why UK plug evidence is a current China sourcing issue',
       paragraphs: [
-        'UK enforcement records show a continuing pattern rather than one isolated adapter. On July 7, 2026, the Office for Product Safety and Standards listed high-risk actions involving a China-origin three-way power socket and a China-made 5W USB-C adapter. The same official high-risk results page also shows recent import rejections, destruction, listing removals, and recalls across electrical products.',
-        'Independent testing adds a different signal. In June 2026, Which? reported that nine of 15 USB phone chargers bought from seven online marketplaces posed electric-shock risks, while eight also posed fire and explosion risks. The UK government is separately consulting on a new product-safety framework, including online-marketplace duties and stronger enforcement powers. Current attention therefore covers physical safety, traceability, platform controls, and the release evidence behind imported goods.',
+        'The September 4, 2026 OPSS recall of a China-origin candle warmer lamp adds a recent example of plug dimensions preventing a secure socket connection. The identified risk was overheating and fire. This update turns that finding into a shipment coverage record and a clearer component-replacement hold point.',
+        'A separate evidence stream comes from Which?’s June 11, 2026 laboratory investigation of 15 marketplace USB chargers. It reported nine with electric-shock risks, eight with fire and explosion risks, and missing required information across all 15. These are results for the tested samples, not a defect rate for all imports or a measure of market demand.',
+        'The practical decision is whether the approved plug, fuse, lead or adapter is actually the version packed for this order. Keep an unresolved mismatch open even when the appliance switches on. This guide uses public records and buyer-side sourcing analysis; it does not report a Huang Sourcing inspection of the cited products.',
       ],
       bullets: [
         'A supplier photo of one correct UK plug does not prove that every carton contains that plug, fuse, adapter, cable, label, and manual revision',
@@ -168,6 +171,32 @@ Payment or pickup deadline:
         'Photograph each sampled configuration in context and link every hold, correction, and re-check result to the affected quantity and carton range',
       ],
     },
+    {
+      id: 'release-record',
+      title: 'Build one shipment coverage record per configuration',
+      paragraphs: [
+        'Use one row for each product SKU, destination, plug or adapter revision, and production lot. A single photograph of a UK plug should not close a multi-SKU order. The following is our recommended buyer worksheet, not a prescribed regulatory form.',
+        'For each row, record the approved component maker and model; drawing and sample revision; report pages identifying the tested configuration; fuse and cable references; production date and lot; retail-pack and manual revision; carton range and quantity; sampled carton numbers; findings; and the person authorized to close each finding.',
+        'Agree coverage before the inspection. If different lots use different component suppliers, make those differences visible in the sample plan. Record unopened or inaccessible stock explicitly. A sample can document the units checked; it cannot prove that every unobserved carton contains the same components.',
+      ],
+      bullets: [
+        'Missing report-to-model mapping: keep technical coverage open for the importer or laboratory to resolve.',
+        'Wrong plug, fuse, lead or adapter in a sampled carton: identify the affected range and segregate it before authorizing replacement.',
+        'Mixed old and new component revisions: retain separate lot and carton identities; do not merge them under one cleared SKU.',
+        'Complete records and acceptable agreed observations: submit the identified scope to the buyer for a documented release decision.',
+      ],
+    },
+    {
+      id: 'after-rework',
+      title: 'What evidence closes a plug replacement or rework hold?',
+      paragraphs: [
+        'A supplier message saying “all plugs replaced” is not a release record. Obtain the approved replacement specification, component source, affected quantity, first and last carton numbers, rework instruction, completion record, and the qualified decision on whether the change affects existing safety evidence.',
+        'Keep removed parts and uncleared stock segregated. Re-inspect the corrected carton range against the approved replacement, then check ratings, labels, manuals and the packing list again. Record any cartons that were sealed, moved or unavailable; those limitations must remain visible in the buyer’s decision.',
+        'Do not bend, file or otherwise improvise changes to plug pins, substitute a different fuse rating, or accept a loose converter as an automatic fix. A fit trial in one socket is not a conformity test. Controlled electrical, dimensional and other safety testing belongs in the qualified test plan, not an improvised factory demonstration.',
+        'If goods have already been supplied, pass the issue promptly to the responsible importer and product-safety team. A shipment checklist does not replace their assessment of reporting, corrective action or recall responsibilities.',
+      ],
+      bullets: [],
+    },
   ] satisfies ArticleSection[],
   decisionRows: [
     {
@@ -192,12 +221,17 @@ Payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official UK OPSS 2026 product-safety reports for the PD-65W AC adapter, WY-0601500360B adapter plug, July high-risk electrical alerts, and the broader public enforcement database checked July 20, 2026 Beijing time.',
+    'Public-source update: September 2026 candle warmer lamp recall, earlier OPSS adapter reports, and original Which? charger testing checked during this update. The new coverage and rework controls are Huang Sourcing editorial recommendations, not findings from inspecting those products.',
     'Independent Which? June 2026 marketplace charger testing and Electrical Safety First marketplace research used as public-attention and recurring-risk context.',
-    'The UK government 2026 product-safety framework consultation used as policy direction, not as enacted product-specific requirements.',
+    'Current OPSS electrical-equipment guidance distinguishes Great Britain and Northern Ireland; product-specific classification, conformity and corrective-action decisions remain with qualified parties.',
     'Buyer-approved specifications, market decision, test plan, technical files, drawings, labels, manuals, golden sample, change records, packed goods, carton map, and correction evidence.',
   ],
   sourceNotes: [
+    {
+      href: 'https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-candle-warmer-lamp-sold-via-tiktok-2606-0188',
+      label: 'UK OPSS — September 2026 candle warmer lamp recall',
+      note: 'Primary notice 2606-0188: plug dimensional findings, fire risk, end-user recall and marketplace listing removal.',
+    },
     {
       href: 'https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-ac-adaptor-pd-65w-2605-0030',
       label: 'UK OPSS - AC Adaptor PD-65W safety report',
@@ -219,9 +253,9 @@ Payment or pickup deadline:
       note: 'Independent testing context covering 15 marketplace chargers and reported electric-shock, fire, explosion, insulation, internal-spacing, and plug-pin failures.',
     },
     {
-      href: 'https://www.gov.uk/government/consultations/product-regulation-the-uks-new-product-safety-framework/the-uks-new-product-safety-framework',
-      label: 'UK government - new product safety framework consultation',
-      note: 'Official 2026 policy consultation on a future framework, online-marketplace obligations, enforcement powers, supply-chain duties, and current product recall checks.',
+      href: 'https://www.gov.uk/government/publications/electrical-equipment-safety-regulations-2016',
+      label: 'UK OPSS - electrical equipment guidance for GB and NI',
+      note: 'Official guidance collection with separate Great Britain and Northern Ireland documents on electrical equipment and economic-operator obligations.',
     },
     {
       href: 'https://www.electricalsafetyfirst.org.uk/policy-and-research/reports/online-marketplace-research/',
@@ -318,6 +352,7 @@ export function makeUkPlugCheckChinaSourcingArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {
