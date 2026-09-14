@@ -72,6 +72,7 @@ import {
   qualityControlChinaManufacturingPlanArticleHref,
   rattleTeetherChecksChinaArticleHref,
   bicycleHelmetChecksChinaArticleHref,
+  handbagChemicalChecksChinaArticleHref,
   smallBallToyChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
@@ -324,6 +325,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: rattleTeetherChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: handbagChemicalChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

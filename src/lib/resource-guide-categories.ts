@@ -69,6 +69,7 @@ import {
   qualityControlChinaManufacturingPlanArticleHref,
   rattleTeetherChecksChinaArticleHref,
   bicycleHelmetChecksChinaArticleHref,
+  handbagChemicalChecksChinaArticleHref,
   smallBallToyChecksChinaArticleHref,
   resourceGuideHref,
   sandFilledToyAsbestosChecksChinaArticleHref,
@@ -256,6 +257,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: rattleTeetherChecksChinaArticleHref,
         label: 'Rattle and teether connection and shipment checklist',
+      },
+      {
+        href: handbagChemicalChecksChinaArticleHref,
+        label: 'Handbag chemical evidence and shipment checklist',
       },
       {
         href: bicycleHelmetChecksChinaArticleHref,
