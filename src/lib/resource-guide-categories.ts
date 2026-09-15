@@ -499,7 +499,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: usPostalInformalEntryChinaMailShipmentsArticleHref,
-        label: 'U.S. postal informal entry for China mail shipments',
+        label: 'China mail: Entry Type 13 and CPSC checks',
       },
       { href: goldenSampleChinaManufacturingArticleHref, label: 'Golden sample approval and QC' },
       {

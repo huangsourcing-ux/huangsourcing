@@ -1,453 +1,447 @@
 import type { Metadata } from 'next'
 
-import {
-  getArticleOpenGraphImages,
-  makeArticleJsonLd,
-} from '@/lib/article-seo'
-import {
-  amazonFbaPrepArticleHref,
-  buyerSideInspectionReportArticleHref,
-  chinaSamplesUsCustomsArticleHref,
-  chinaSection301TariffCheckArticleHref,
-  cpscEfilingChinaImportsArticleHref,
-  fnskuLabelMistakesArticleHref,
-  forwarderPickupChinaRisksArticleHref,
-  packagingLabelCheckBeforePaymentArticleHref,
-  preShipmentBeforePickupArticleHref,
-  qualityControlChinaManufacturingPlanArticleHref,
-  usDeMinimisSuspensionChinaArticleHref,
-  usPostalInformalEntryChinaMailShipmentsArticleHref,
-  whatToSendBeforeChinaInspectionHref,
-} from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
-
-type ArticleSection = {
-  bullets?: string[]
-  id: string
-  paragraphs: string[]
-  title: string
-}
-
-type CheckGroup = {
-  items: string[]
-  title: string
-}
-
-type DecisionRow = {
-  buyerDecision: string
-  evidence: string
-  riskNode: string
-}
-
-type FaqItem = {
-  answer: string
-  question: string
-}
-
-type RelatedLink = {
-  href: string
-  label: string
-  note: string
-}
-
-type SourceNote = {
-  href: string
-  label: string
-  note: string
-}
+import { getArticleOpenGraphImages, makeArticleJsonLd } from '@/lib/article-seo'
 
 export const usPostalInformalEntryChinaMailShipmentsArticle = {
-  href: usPostalInformalEntryChinaMailShipmentsArticleHref,
-  title: 'U.S. Postal Informal Entry for China Mail Shipments: 2026 Checklist',
-  metaTitle: 'U.S. Postal Informal Entry China Mail Shipments 2026',
-  metaDescription:
-    'U.S. postal informal entry checklist for China mail shipments in 2026: CBP de minimis suspension, Entry Type 13, HTS, origin, value, labels, and broker handoff.',
-  publishedDate: 'July 6, 2026',
-  publishedDateIso: '2026-07-06T15:00:00-04:00',
-  h1: 'U.S. Postal Informal Entry for China Mail Shipments: What Sellers Should Check in 2026',
-  eyebrow: 'CBP postal rule - China mail shipments - dispatch evidence',
+  author: "editorial-team" as const,
+  href: "/us-postal-informal-entry-china-mail-shipments-2026",
+  title: "China Mail to the U.S.: Entry Type 13 and CPSC Checks",
+  h1: "China Mail to the U.S.: Entry Type 13 and CPSC Checks",
+  metaTitle: "China Mail: Entry Type 13 & CPSC Checks",
+  metaDescription: "Prepare China mail parcels for Entry Type 13 and CPSC eFiling: September and October 2026 dates, certificate-to-parcel checks, broker handoff and dispatch holds.",
+  publishedDate: "July 6, 2026",
+  publishedDateIso: "2026-07-06T15:00:00-04:00",
+  modifiedDate: "September 16, 2026",
+  modifiedDateIso: "2026-09-16T03:36:17+08:00",
+  eyebrow: "U.S. postal entry • Certificate evidence • Dispatch control",
   image: {
-    alt: 'China-side parcel, product label, invoice, and tracking evidence checked before U.S. postal shipment dispatch',
+    alt: "Original diagram linking a China mail parcel, product evidence and the U.S. filing owner to a dispatch decision; not a customs clearance record",
     height: 900,
-    src: '/images/china-samples-us-customs-2026.webp',
-    width: 1600,
+    src: "/images/china-mail-entry-type-13.webp",
+    width: 1600
   },
   imageVariants: [
-    { height: 900, src: '/images/china-samples-us-customs-2026.webp', width: 1600 },
-    { height: 1200, src: '/images/china-samples-us-customs-2026-4x3.webp', width: 1600 },
-    { height: 1200, src: '/images/china-samples-us-customs-2026-1x1.webp', width: 1200 },
+    {
+      height: 900,
+      src: "/images/china-mail-entry-type-13.webp",
+      width: 1600
+    },
+    {
+      height: 1200,
+      src: "/images/china-mail-entry-type-13-4x3.webp",
+      width: 1600
+    },
+    {
+      height: 1200,
+      src: "/images/china-mail-entry-type-13-1x1.webp",
+      width: 1200
+    }
   ],
-  intro:
-    'On June 24, 2026, CBP published an interim final rule for mail shipments that indefinitely suspends the Section 321 de minimis administrative exemption for goods valued at $800 or less arriving through the international postal network. Most of the rule is effective July 24, 2026, comments are due the same day, and CBP separately announced an Entry Type 13 electronic informal mail entry test starting September 22, 2026.',
-  answerSummary:
-    'For China sellers, sample shippers, and direct-to-consumer teams using China Post, ePacket-style routing, postal consolidators, or mail handoffs, the practical work starts before dispatch: product description, country of origin, value, 10-digit HTSUS notes, tracking number, carrier, broker or importer role, label evidence, and regulated-product files need to match the real parcel. Huang Sourcing can check China-side evidence before release, but customs entry, HTS classification, duties, taxes, fees, bonds, Entry Type 13 participation, and admissibility decisions remain with the importer, broker, carrier, postal operator, compliance adviser, or counsel.',
+  intro: "Before releasing a U.S.-bound mail parcel from China, connect the actual goods and foreign-post tracking number to a named entry owner and the required product evidence. Hold dispatch when the parcel, invoice, certificate file or filing instructions disagree.",
+  answerSummary: "Two dates need separate planning: CBP schedules its voluntary Entry Type 13 test for September 22, 2026; CPSC says required certificates for mail shipments must be eFiled from October 22, 2026. Confirm the applicable entry path with the broker. Neither a printed postal label nor an electronic filing establishes product compliance.",
   primaryCta: {
-    label: 'Check Mail Shipment Evidence Before Dispatch',
+    label: "Check Mail Shipment Evidence"
   },
   secondaryCta: {
-    href: '#postal-entry-checklist',
-    label: 'See Postal Checklist',
+    href: "#postal-entry-checklist",
+    label: "See Dispatch Checklist"
   },
-  whatsappMessage: `Hi Agent Huang,
-
-I need a China-side U.S. postal shipment evidence check before dispatch.
-
-Product / SKU count:
-Supplier or warehouse location:
-U.S. buyer / importer:
-Postal carrier or consolidator:
-Tracking / label files available:
-Invoice and declared value:
-Country of origin details:
-HTS or broker instructions:
-Regulated product concerns:
-Dispatch deadline:
-`,
-  tableOfContents: [
-    { href: '#quick-answer', label: 'Quick answer' },
-    { href: '#postal-entry-checklist', label: 'Postal checklist' },
-    { href: '#why-current', label: 'Why current' },
-    { href: '#entry-owner', label: 'Entry owner' },
-    { href: '#data-elements', label: 'Data elements' },
-    { href: '#regulated-goods', label: 'Regulated goods' },
-    { href: '#entry-type-13', label: 'Entry Type 13' },
-    { href: '#decision-table', label: 'Buyer decisions' },
-    { href: '#documents', label: 'What to send' },
-    { href: '#scope-limits', label: 'Scope limits' },
-    { href: '#faq', label: 'FAQ' },
-  ],
+  whatsappMessage: "Hi Agent Huang,\n\nI need a China-side U.S. mail shipment evidence check.\n\nProducts and versions:\nSupplier or warehouse:\nPostal route and tracking file:\nImporter and broker:\nCertificate evidence and open findings:\nPacking status and dispatch deadline:\n",
   quickChecks: [
-    'Do not treat U.S.-bound mail parcels from China as automatically duty-free just because the value is $800 or less',
-    'Confirm whether the shipment is postal mail, express courier, freight, marketplace logistics, or another mode before choosing the evidence path',
-    'Name the owner, purchaser, importer of record, licensed broker, postal operator, carrier, or consolidator responsible for entry facts',
-    'Prepare product description, country of origin, value, 10-digit HTSUS notes, carrier name, tracking number, and arrival-port instructions before dispatch',
-    'Check whether the item has PGA data, Chapter 98 or 99 duties, Section 301 duties, AD/CVD, quota, CPSC, FDA, battery, textile, or other regulated-product exposure',
-    'Match the parcel label, tracking number, invoice, packing file, product label, carton or mailer photos, and physical goods before the supplier releases the parcel',
-    'Keep postal informal entry evidence separate from ordinary sales listing, platform fulfillment, or supplier shipping promises',
-    'Hold dispatch when the entry owner, HTS notes, origin, value, tracking evidence, or regulated-product files cannot be reconciled',
+    "Confirm the actual postal route, planned arrival window, importer, broker and person authorized to release the parcels.",
+    "Use one parcel register linking tracking number, order line, SKU/version, quantity, invoice line and product photographs.",
+    "Ask the importer to identify required certificates and approve their connection to the actual finished products.",
+    "Confirm the filing method, data owner and correction channel with the broker before goods leave the warehouse.",
+    "Check packed goods and labels against the approved file; record substitutions, mixed versions and unresolved findings.",
+    "Release only the identified cleared parcels. Keep held tracking numbers and any replacement labels under control."
   ],
   checkGroups: [
     {
-      title: 'Mail route and entry owner',
+      title: "Route and dates",
       items: [
-        'Postal network, consolidator, carrier, foreign postal tracking number, U.S. recipient, owner or purchaser, importer, broker, and release approver identified before dispatch',
-        'Formal entry, postal informal process, Entry Type 13 test interest, or other carrier or broker path confirmed by the responsible U.S.-side party',
-      ],
+        "Record the postal operator and consolidator, expected arrival, entry path and contingency for delay.",
+        "Separate the September test start from the October mail certificate date; obtain current broker instructions for the shipment."
+      ]
     },
     {
-      title: 'Product and customs data',
+      title: "One parcel register",
       items: [
-        'Plain-language merchandise description, SKU, model, material, function, quantity, weight where duty depends on it, country of origin, declared value, and 10-digit HTSUS notes collected by line',
-        'Invoice, parcel label, product label, packing record, product photos, and tracking details checked against the same physical goods',
-      ],
+        "Link tracking number to SKU, product version, quantity, invoice line and an identified set of images.",
+        "When a label is replaced, retire the old tracking reference in every handoff file and obtain acknowledgment."
+      ]
     },
     {
-      title: 'Regulated-product screen',
+      title: "Product evidence",
       items: [
-        'CPSC certificate or eFiling data, FDA or other PGA notes, battery details, dangerous-goods files, warnings, manuals, textile labels, and test reports gathered where relevant',
-        'AD/CVD, quota, Chapter 98, Chapter 99, Section 301, and other trade-remedy exposure flagged for broker or counsel review before shipment release',
-      ],
+        "Match certificate and report identifiers to the finished product, including relevant batteries, age grading, labels and instructions.",
+        "Log component or factory changes for qualified review; do not reuse a similar-product file without a coverage decision."
+      ]
     },
     {
-      title: 'Dispatch control',
+      title: "Release and exceptions",
       items: [
-        'Supplier changes to invoice wording, origin, product title, shipper, label, routing, packaging, or parcel split reviewed before the mailer leaves China',
-        'Written hold-release rule used when postal entry facts, broker instructions, or product evidence remain incomplete',
-      ],
-    },
-  ] satisfies CheckGroup[],
+        "Give each unresolved mismatch an owner, deadline, affected parcel list and required correction evidence.",
+        "Record technical review separately from the buyer’s commercial dispatch decision."
+      ]
+    }
+  ],
   sections: [
     {
-      id: 'why-current',
-      title: 'Why postal informal entry is a current China sourcing issue',
+      id: "why-current",
+      title: "What changed since the July postal guidance?",
       paragraphs: [
-        'CBP published the postal interim final rule on June 24, 2026. It suspends the Section 321 de minimis administrative exemption for merchandise valued at $800 or less arriving through the international postal network, with most provisions effective July 24, 2026 and comments due July 24, 2026.',
-        'The rule also creates a new postal informal entry process for certain mail shipments valued at $2,500 or less. CBP says the process replaces the temporary postal process used after the 2025 executive-order suspension and requires more entry data so duties, taxes, fees, and admissibility controls can be applied more consistently.',
+        "CPSC announced its mail-specific eFiling guidance on September 1. Its document library also lists a refreshed HTS guidance document dated September 14. Expeditors reported on Entry Type 13 implementation support on September 11. These are current operational signals, not evidence of search volume or a rise in violations.",
+        "The July edition of this guide focused on the postal rule’s initial effective date. This update adds the mail certificate deadline, a parcel-to-certificate handoff and release controls for changed labels and mixed product versions."
       ],
-      bullets: [
-        'This is current because the effective date and comment deadline are in July 2026',
-        'Postal parcels need a different handoff than ordinary courier or freight shipments',
-        'China-side mistakes in origin, description, value, labels, and tracking data are harder to fix after mailing',
-        'The article complements the broader U.S. de minimis guide by focusing on international mail and postal entry evidence',
+      citations: [
+        {
+          href: "https://content.govdelivery.com/accounts/USCPSC/bulletins/427e935",
+          label: "CPSC: September 1 mail guidance announcement"
+        },
+        {
+          href: "https://www.cpsc.gov/eFiling-Document-Library",
+          label: "CPSC: current eFiling document library"
+        },
+        {
+          href: "https://info.expeditors.com/newsflash/cbp-reschedules-entry-type-13-test-support-calls",
+          label: "Expeditors: Entry Type 13 support-call update"
+        }
       ],
+      bullets: []
     },
     {
-      id: 'entry-owner',
-      title: 'Start by naming the postal entry owner',
+      id: "key-dates",
+      title: "Which dates should a China mail seller use?",
       paragraphs: [
-        'A seller should not release a U.S.-bound postal parcel until the entry owner is clear. CBP describes eligible filing parties as an owner or purchaser of the merchandise, or a licensed customs broker designated by the owner, purchaser, or consignee. A consignee that is not an owner or purchaser may need a licensed broker for the entry path.',
-        'For China-side operations, this means the supplier, warehouse, postal consolidator, platform logistics provider, carrier, importer, and broker cannot each assume someone else owns the customs facts. The release file should name who approved the shipping label, declared value, origin, description, and broker or postal instructions.',
+        "CBP’s postal interim final rule generally took effect July 24, 2026, with its de minimis suspension provision effective June 24. The rule gives October 22 as the compliance date for two specified formal-entry provisions, 19 CFR 145.12(a)(2)(v) and (vi). The former July comment deadline has passed.",
+        "CBP’s published schedule sets September 22 for the Entry Type 13 test in ACE production. CPSC separately identifies October 22 for eFiling required certificates for mail shipments, using a Full or Reference Message Set.",
+        "Plan against the applicable entry timing, not just the day a warehouse prints a label. If transit may cross the October date, ask the broker how the shipment will be handled and have the required evidence ready before dispatch."
       ],
-      bullets: [
-        'Identify the importer or buyer-side owner before supplier release',
-        'Record whether a licensed customs broker is involved and what data they requested',
-        'Keep the postal route separate from non-postal courier or freight guidance',
-        'Pause when the supplier can print a label but nobody owns entry data quality',
+      citations: [
+        {
+          href: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12669.pdf",
+          label: "Federal Register: postal interim final rule"
+        },
+        {
+          href: "https://content.govdelivery.com/accounts/USDHSCBP/bulletins/4214706",
+          label: "CBP CSMS 69289734: ACE deployment schedule"
+        },
+        {
+          href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-for-Mail-Shipments-6B-Cleared.pdf?VersionId=gj5nC3wM7dO6zEcXZJbQr2sYKCBX4zPi",
+          label: "CPSC: eFiling guidance for mail shipments"
+        }
       ],
+      bullets: []
     },
     {
-      id: 'data-elements',
-      title: 'The parcel data has to support classification, value, and origin',
+      id: "entry-type-13",
+      title: "Is Entry Type 13 available for every parcel?",
       paragraphs: [
-        'CBP says the postal informal entry process needs additional data, including filer code, bond number, applicable 10-digit HTSUS classifications, merchandise description, and quantity or weight when the applicable duty depends on it. The Entry Type 13 test notice lists related electronic filing data, including IOR number, country of origin, duty rate, value, total duty owed, carrier name, foreign-post tracking number, and arrival port.',
-        'A China-side check cannot decide the HTS code or duty. It can, however, catch the practical mismatches that make a broker or importer file weak: vague accessory descriptions, unsupported values, wrong origin, old product labels, mixed SKUs, missing tracking references, or photos that do not match the invoice line.',
+        "No. CBP describes a voluntary test for qualifying international mail valued at $2,500 or less. It includes a temporary path for certain PGA-data and additional-duty shipments; AD/CVD and quota shipments remain excluded. Participation does not remove other product or customs obligations.",
+        "Do not read the CPSC mail announcement as permission to put every shipment into Entry Type 13. Have the broker confirm eligibility, who may make entry, the required bond and any formal-entry alternative. Keep the certificate requirement and entry-type selection as separate decisions."
       ],
-      bullets: [
-        'Use a real product description instead of generic sample, gift, accessory, or parts wording when that does not describe the goods',
-        'Connect declared value to quote, payment, sample charge, replacement reason, or other support',
-        'Keep country-of-origin facts separate from the postal route or shipper address',
-        'Match tracking number, label, invoice, packing, product photo, and SKU record before handoff',
+      citations: [
+        {
+          href: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12668.pdf",
+          label: "CBP: Entry Type 13 test notice"
+        },
+        {
+          href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-for-Mail-Shipments-6B-Cleared.pdf?VersionId=gj5nC3wM7dO6zEcXZJbQr2sYKCBX4zPi",
+          label: "CPSC: eFiling guidance for mail shipments"
+        }
       ],
+      bullets: []
     },
     {
-      id: 'regulated-goods',
-      title: 'Some mail shipments may need formal entry or specialist review',
+      id: "entry-owner",
+      title: "Who owns the entry and certificate handoff?",
       paragraphs: [
-        'The postal rule limits the new informal process and describes ineligible categories. CBP flags shipments subject to quota, AD/CVD orders, certain Partner Government Agency requirements, Chapter 98 or 99 duties, Free Trade Agreement claims, or other exclusions as requiring attention. The Entry Type 13 test may temporarily create an informal path for some low-value mail with PGA data or duties outside Chapters 1-97, but AD/CVD and quota shipments remain outside the test.',
-        'For sellers shipping from China, the practical message is simple: low value and postal routing do not remove product-compliance risk. Toys, children products, electronics, batteries, textiles, cosmetics, food-contact goods, medical claims, chemicals, branded items, and products with Section 301 exposure should be screened before mailing.',
+        "Name the responsible importer and broker before instructing the supplier to dispatch. Record who supplies product facts, who approves certificate coverage, who transmits the filing and who handles rejection or correction messages.",
+        "CPSC assigns certificate responsibility to the importer under its applicable definition. CBP’s test notice separately sets out who has the right to make an Entry Type 13 filing. A consolidator’s promise to “handle customs” does not document these roles for the buyer.",
+        "Use a brief handoff record with the responsible parties, agreed entry path, shipment reference, approved data version and open issues. Ask for acknowledgment that the broker has the required data; do not describe this acknowledgment as customs clearance."
       ],
-      bullets: [
-        'Flag regulated-product evidence before the parcel is sealed',
-        'Collect certificates, eFiling data, SDS, battery data, labels, warnings, manuals, and test reports where relevant',
-        'Ask the broker or compliance owner about Chapter 99, Section 301, AD/CVD, quota, PGA, and formal-entry questions',
-        'Do not use postal shipment size as a substitute for admissibility review',
+      citations: [
+        {
+          href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-for-Mail-Shipments-6B-Cleared.pdf?VersionId=gj5nC3wM7dO6zEcXZJbQr2sYKCBX4zPi",
+          label: "CPSC: eFiling guidance for mail shipments"
+        },
+        {
+          href: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12668.pdf",
+          label: "CBP: Entry Type 13 test notice"
+        }
       ],
+      bullets: []
     },
     {
-      id: 'entry-type-13',
-      title: 'Entry Type 13 is a test, not a reason to skip evidence prep',
+      id: "data-elements",
+      title: "How should the parcel file connect to the filing?",
       paragraphs: [
-        'CBP announced a voluntary Entry Type 13 test for international mail in ACE that starts September 22, 2026 and continues until CBP ends it through a Federal Register announcement. The test is intended as an electronic alternative to the interim postal informal process and allows qualified international mail shipments to be filed electronically in ACE.',
-        'The test does not make supplier evidence optional. It makes clean data more important. If the foreign-post tracking number, carrier, IOR, product description, country of origin, HTSUS notes, value, duty, arrival port, and regulated-product data do not connect to the actual parcel, the electronic process can still surface errors after the goods have already left China.',
+        "Build the file around a stable parcel reference. Beside it, record the foreign-post tracking number, SKU and version, quantity, invoice line, actual product description, origin evidence and the broker-approved classification and value instructions.",
+        "Keep the importer’s Full Message Set data or Reference Message Set identifiers in the same controlled handoff. CPSC’s FAQ describes both methods. The product identifiers must resolve to the goods inside the parcel, not merely to a supplier’s catalogue image.",
+        "At the warehouse, compare the approved register with sampled goods, product markings, retail packaging, warnings and shipping labels. Record what was accessible and sampled. Keep the final file, photographs and corrections together so the entry owner can see which version was approved."
       ],
-      bullets: [
-        'Treat September 22, 2026 as a planning date for broker and carrier workflows',
-        'Confirm whether the importer, broker, carrier, or postal operator will participate in the test',
-        'Build SKU-level postal data before the test starts, not after parcels are already moving',
-        'Preserve correction photos and supplier-change records for each shipment lot',
+      citations: [
+        {
+          href: "https://www.cpsc.gov/FAQ/eFiling-Frequently-Asked-Questions-FAQ",
+          label: "CPSC: eFiling frequently asked questions"
+        }
       ],
+      bullets: []
     },
-  ] satisfies ArticleSection[],
+    {
+      id: "regulated-goods",
+      title: "Does an unflagged HTS code mean no certificate is needed?",
+      paragraphs: [
+        "No. CPSC’s September HTS guidance says its list does not cover every code where an electronic certificate may be required. Product-specific certification scope needs a separate decision; an absent flag is not evidence of an exemption.",
+        "Ask the qualified compliance owner to review the actual product’s function, intended users, materials and features. A light-up cup, for example, needs a description that preserves its battery feature. A generic “plastic cup” description can hide information the reviewer needs.",
+        "Record the guidance version checked and the reason for the scope decision. Do not alter descriptions, values, age labels or routing to avoid review. If supplier evidence changes, reopen the affected decision before release."
+      ],
+      citations: [
+        {
+          href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-and-HTS-List-for-Filing-of-Electronic-Certificates-09142026.pdf?VersionId=2v0dyISej8FfxAR7nBIHYV52e4L.776H",
+          label: "CPSC: September 2026 HTS and eFiling guidance"
+        }
+      ],
+      bullets: []
+    },
+    {
+      id: "label-changes",
+      title: "What should stop dispatch after the parcel file is approved?",
+      paragraphs: [
+        "A changed tracking label, mixed product versions, a substituted component or a certificate reference that no longer resolves to the goods should trigger a hold on the affected scope. These are buyer control triggers, not automatic legal findings.",
+        "For relabeling, preserve the old-to-new tracking map, photograph the replacement label and get the updated file acknowledged. For product changes, ask the importer and qualified technical reviewer what evidence must be replaced or supplemented.",
+        "If cleared and held parcels share a sack, pallet or pickup instruction, separate them before handoff. Give the forwarder or postal consolidator an explicit list of parcels authorized to move."
+      ],
+      citations: [],
+      bullets: []
+    }
+  ],
   decisionRows: [
     {
-      riskNode: 'Mail route is confirmed',
-      evidence:
-        'The shipment is confirmed as international postal mail, with postal operator, consolidator, carrier, tracking number, U.S. recipient, and dispatch deadline identified.',
-      buyerDecision:
-        'Use the postal evidence checklist, or switch to the correct courier, freight, or broker process when the route is not postal mail.',
+      riskNode: "No agreed entry owner or route",
+      evidence: "Importer, broker, route, expected arrival and written entry instructions.",
+      buyerDecision: "Hold dispatch until responsibility and the shipment path are confirmed."
     },
     {
-      riskNode: 'Entry owner is named',
-      evidence:
-        'Owner, purchaser, importer, licensed broker, carrier, postal operator, or consignee-side entry owner is responsible for filing facts and duties.',
-      buyerDecision:
-        'Release only after the responsible party approves the data path; hold when the supplier or warehouse is guessing.',
+      riskNode: "Certificate scope unresolved",
+      evidence: "Complete product identity, required certificate data and qualified coverage decision.",
+      buyerDecision: "Hold affected products; request the missing review or evidence."
     },
     {
-      riskNode: 'Product data matches',
-      evidence:
-        'Description, SKU, model, material, origin, value, quantity, weight where relevant, HTS notes, invoice, label, tracking, and photos describe the same parcel.',
-      buyerDecision:
-        'Correct the file before dispatch, split mixed facts into separate lines, or escalate classification and value questions to the broker.',
+      riskNode: "Tracking number changed",
+      evidence: "Old-to-new tracking map, replacement-label photographs and updated broker file.",
+      buyerDecision: "Correct the register and obtain acknowledgment before release."
     },
     {
-      riskNode: 'Regulated risk is screened',
-      evidence:
-        'PGA, CPSC, FDA, battery, textile, chemical, Section 301, Chapter 99, AD/CVD, quota, and formal-entry questions are listed for the U.S. owner.',
-      buyerDecision:
-        'Proceed only with written instructions from the importer, broker, compliance adviser, or counsel when regulated goods are involved.',
+      riskNode: "Mixed or substituted products",
+      evidence: "Actual SKU/version list, change record, technical review and revised parcel allocation.",
+      buyerDecision: "Segregate uncertain stock; do not release it under the old product file."
     },
-  ] satisfies DecisionRow[],
+    {
+      riskNode: "Product file and parcel agree",
+      evidence: "Closed findings, approved data version, sampled-goods record and named release scope.",
+      buyerDecision: "Buyer authorizes identified parcels with remaining conditions recorded; customs decisions remain external."
+    }
+  ],
+  publicCase: {
+    title: "BUILT LUUM tumblers: product features matter in the parcel file",
+    facts: "CPSC’s March 19, 2026 recall concerns China-made BUILT LUUM light-up tumblers. The tumblers could break and expose button-cell batteries. The notice identifies affected themes, item numbers and UPCs.",
+    evidence: "The recall provides product descriptions, identifiers, the battery hazard and a refund remedy. It does not publish an entry filing or a postal shipment history.",
+    lesson: "Preserve features such as an LED battery compartment in the product evidence reviewed before mailing. Match the precise item and version rather than relying on a generic description. The older case remains useful for the approaching mail-data handoff.",
+    limits: "This is a product-identity example, not an eFiling enforcement case. The record does not show that these goods entered by mail, that certificate data were missing, or that eFiling would have prevented the recall. Huang Sourcing did not participate.",
+    href: "https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards",
+    label: "CPSC: BUILT LUUM light-up tumbler recall"
+  },
   evidenceBasis: [
-    'Official Federal Register interim final rule 2026-12669, published June 24, 2026, for the postal de minimis suspension, effective dates, comment deadline, eligibility limits, and new postal informal entry process.',
-    'Official Federal Register notice 2026-12668, published June 24, 2026, for the voluntary Entry Type 13 test, September 22, 2026 start date, eligible participants, and ACE filing data elements.',
-    'Official CBP trade and e-commerce source context for low-value shipments, international mail, informal entries, and entry data expectations.',
-    'Buyer-provided SKU lists, invoices, packing files, postal labels, foreign-post tracking numbers, product photos, supplier files, broker instructions, and compliance references checked against visible China-side evidence.',
+    "Public sources checked September 16, 2026, Beijing time: CBP test and rule records, CPSC mail and September HTS guidance, and the cited recall.",
+    "Current relevance also checked against independent September 11 Expeditors coverage; no private analytics or search-volume estimate is used.",
+    "Original buyer-side analysis: parcel register, product-version matching, label-change control, responsible handoff and explicit dispatch holds.",
+    "The July edition’s historical credit to Agent Huang is preserved. Huang Sourcing Editorial Team substantially revised this edition from public sources; no personal review or first-hand case involvement is claimed."
   ],
   sourceNotes: [
     {
-      href: 'https://www.federalregister.gov/documents/2026/06/24/2026-12669/indefinite-suspension-of-the-de-minimis-exemption-for-mail-shipments-and-new-postal-informal-entry',
-      label: 'Federal Register - postal de minimis suspension and informal entry rule',
-      note: 'Official CBP interim final rule for international mail shipments, including July 24, 2026 effective date and comment deadline.',
+      href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-for-Mail-Shipments-6B-Cleared.pdf?VersionId=gj5nC3wM7dO6zEcXZJbQr2sYKCBX4zPi",
+      label: "CPSC: eFiling guidance for mail shipments",
+      note: "Mail-specific certificate transmission and importer responsibility; announced September 1, 2026."
     },
     {
-      href: 'https://www.federalregister.gov/documents/2026/06/24/2026-12668/test-of-the-new-electronic-informal-entry-process-for-mail',
-      label: 'Federal Register - Entry Type 13 mail-entry test',
-      note: 'Official CBP notice for the voluntary electronic informal mail entry test in ACE beginning September 22, 2026.',
+      href: "https://content.govdelivery.com/accounts/USCPSC/bulletins/427e935",
+      label: "CPSC: September 1 mail guidance announcement",
+      note: "Announcement identifying October 22, 2026 for required mail certificates."
     },
     {
-      href: 'https://www.cbp.gov/trade/rulings/cbp-trade-related-federal-register-notices-2026',
-      label: 'CBP - trade-related Federal Register notices 2026',
-      note: 'CBP index of trade-related notices, including the June 2026 international mail rule and Entry Type 13 test notice.',
+      href: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12668.pdf",
+      label: "CBP: Entry Type 13 test notice",
+      note: "June 24, 2026 notice; participation, eligibility, bond, data fields and exclusions."
     },
     {
-      href: 'https://www.cbp.gov/trade/basic-import-export/e-commerce/faqs',
-      label: 'CBP - E-Commerce frequently asked questions',
-      note: 'CBP FAQ context for low-value shipments, entry treatment, and current e-commerce import expectations.',
+      href: "https://www.govinfo.gov/content/pkg/FR-2026-06-24/pdf/2026-12669.pdf",
+      label: "Federal Register: postal interim final rule",
+      note: "Official electronic edition, 91 FR 37801; effective dates and October compliance provisions."
     },
-  ] satisfies SourceNote[],
+    {
+      href: "https://content.govdelivery.com/accounts/USDHSCBP/bulletins/4214706",
+      label: "CBP CSMS 69289734: ACE deployment schedule",
+      note: "July 20 notice schedules Entry Type 13 production deployment for September 22, 2026."
+    },
+    {
+      href: "https://www.cpsc.gov/s3fs-public/CPSC-Guidance-and-HTS-List-for-Filing-of-Electronic-Certificates-09142026.pdf?VersionId=2v0dyISej8FfxAR7nBIHYV52e4L.776H",
+      label: "CPSC: September 2026 HTS and eFiling guidance",
+      note: "Listed in the CPSC library on September 14; flagging guidance is not an exhaustive coverage list."
+    },
+    {
+      href: "https://www.cpsc.gov/eFiling-Document-Library",
+      label: "CPSC: current eFiling document library",
+      note: "Current document versions, including mail guidance and the September HTS list."
+    },
+    {
+      href: "https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards",
+      label: "CPSC: BUILT LUUM light-up tumbler recall",
+      note: "March 19, 2026; product identifiers, China origin and accessible button-cell battery hazard."
+    },
+    {
+      href: "https://info.expeditors.com/newsflash/cbp-reschedules-entry-type-13-test-support-calls",
+      label: "Expeditors: Entry Type 13 support-call update",
+      note: "September 11 industry coverage; independent operational attention, not an additional legal authority."
+    },
+    {
+      href: "https://www.cpsc.gov/FAQ/eFiling-Frequently-Asked-Questions-FAQ",
+      label: "CPSC: eFiling frequently asked questions",
+      note: "Certificate scope and Full and Reference message-set context."
+    }
+  ],
   whatToSend: [
-    'SKU list with product title, model, material, function, quantity, declared value, value support, country of origin, supplier, and U.S. recipient',
-    'Postal label, foreign-post tracking number, carrier or consolidator name, mail route notes, dispatch deadline, parcel count, weights, dimensions, and arrival-port or broker instructions if available',
-    'Commercial invoice draft, packing list, product photos, package photos, label photos, carton or mailer photos, barcode or FNSKU files where used, and correction photos',
-    'Importer, owner, purchaser, broker, carrier, postal operator, consignee, IOR, duty owner, record owner, and release approver notes',
-    'HTS, Chapter 99, Section 301, PGA, AD/CVD, quota, CPSC, FDA, battery, textile, dangerous-goods, or other regulated-product instructions from qualified U.S.-side owners',
-    'Supplier declarations, test reports, certificates, manuals, warnings, SDS files, battery data, IP authorization, product listing screenshots, and any written conditions that should block dispatch',
+    "Product file: SKU, version, features, intended users, quantity, supplier, factory and approved references.",
+    "Parcel file: postal operator, consolidator, tracking register, labels, invoice, packing details, origin support and photographs.",
+    "Compliance file: complete test reports, certificate data or identifiers, importer-approved scope decisions and change history.",
+    "Handoff file: broker instructions, expected arrival, data version, open issues, release owner and dispatch deadline."
   ],
   redFlags: [
-    'The supplier says postal mail is automatically duty-free because the parcel is under $800',
-    'The label, invoice, product photos, and tracking file describe different goods or different quantities',
-    'The invoice uses vague words such as sample, accessory, gift, part, or no commercial value without factual support',
-    'Country of origin follows the warehouse, postal route, or shipper address instead of the product facts',
-    'No one can name the owner, purchaser, importer, broker, IOR, carrier, postal operator, duty owner, or record owner',
-    'The shipment may involve CPSC, FDA, batteries, textiles, chemicals, Section 301, Chapter 99, AD/CVD, quota, or other regulated-product issues but no U.S.-side owner has reviewed it',
-    'The supplier changes invoice wording, origin, product title, shipper name, routing, label, or parcel split after the buyer approved the file',
-    'The carrier, broker, or buyer requests HTS, origin, value, or compliance data only after the parcel has already left China',
+    "A postal label is treated as proof that the entry and certificate files are complete.",
+    "The packing file uses a different product version or tracking number from the broker file.",
+    "The supplier omits a battery or other relevant feature from the description.",
+    "An unflagged HTS code or low value is used as the only justification for having no certificate data.",
+    "Cleared and held parcels are mixed under one collection instruction."
   ],
   scopeLimits: [
-    'Huang Sourcing can compare visible product, label, package, invoice, tracking, supplier-file, and correction evidence against buyer-provided references in China',
-    'Huang Sourcing does not decide HTS classification, postal informal entry eligibility, Entry Type 13 participation, customs valuation, origin legal treatment, bonds, duties, taxes, fees, PGA filings, or admissibility',
-    'A China-side evidence check cannot guarantee CBP release, USPS or carrier acceptance, broker filing success, marketplace approval, duty rate, product safety compliance, or delivery timing',
-    'The importer, owner, purchaser, broker, carrier, postal operator, compliance adviser, testing lab, tax adviser, or legal counsel remains responsible for regulated decisions',
-    'Sealed mailers, missing tracking data, weak supplier documents, mixed parcels, late label changes, unknown upstream suppliers, or unclear broker instructions can limit report confidence',
-    'CBP rules, Federal Register notices, executive actions, postal processes, carrier systems, ACE tests, and product-specific requirements can change, so shipment-specific instructions should be reconfirmed near release',
+    "Huang Sourcing can compare accessible China-side goods, labels, packaging, tracking and documents against buyer-approved references.",
+    "An inspection does not determine certificate sufficiency, testing coverage, HTS classification, legal origin, customs value, duty, bond, entry eligibility or admissibility.",
+    "The importer, broker and qualified specialists retain their filing and compliance responsibilities. Huang Sourcing does not file Entry Type 13 or CPSC certificates.",
+    "Sampled evidence and a completed handoff do not guarantee every unit, customs release, carrier acceptance or delivery timing. Reconfirm time-sensitive instructions before shipment."
   ],
   relatedLinks: [
     {
-      href: usDeMinimisSuspensionChinaArticleHref,
-      label: 'U.S. de minimis suspension for China shipments',
-      note: 'Use this broader guide when the shipment is not limited to postal mail or the entry path is still unclear.',
+      href: "/qc-inspection-china",
+      label: "China QC inspection service",
+      note: "Scope a check of packed goods against the approved evidence."
     },
     {
-      href: chinaSamplesUsCustomsArticleHref,
-      label: 'Shipping China samples to the U.S.',
-      note: 'Use this when samples need value, invoice, carrier, customs, and consolidation planning before dispatch.',
+      href: "/cpsc-efiling-china-imports-2026",
+      label: "CPSC eFiling for China imports",
+      note: "Read the broader certificate and broker-handoff guide."
     },
     {
-      href: chinaSection301TariffCheckArticleHref,
-      label: 'Section 301 tariff evidence check',
-      note: 'Use this when China-origin products may have Chapter 99 or trade-remedy exposure.',
+      href: "/pre-shipment-before-pickup",
+      label: "Inspection before forwarder pickup",
+      note: "Connect inspection findings to the physical release."
     },
     {
-      href: cpscEfilingChinaImportsArticleHref,
-      label: 'CPSC eFiling China imports 2026',
-      note: 'Use this when consumer products need certificate data and product-safety evidence before U.S. entry.',
+      href: "/packaging-label-check-before-payment",
+      label: "Packaging and label checks",
+      note: "Resolve product and carton mismatches before payment."
     },
     {
-      href: packagingLabelCheckBeforePaymentArticleHref,
-      label: 'Packaging and label checks before payment',
-      note: 'Use this when product labels, warnings, manuals, inserts, or package claims should block release.',
+      href: "/china-sourcing-risk-guides",
+      label: "China sourcing risk guides",
+      note: "Find related supplier and shipment decisions."
     },
     {
-      href: preShipmentBeforePickupArticleHref,
-      label: 'Pre-shipment inspection before pickup',
-      note: 'Use this when packed goods need a final evidence check before pickup or dispatch.',
-    },
-    {
-      href: forwarderPickupChinaRisksArticleHref,
-      label: 'Forwarder pickup China checklist',
-      note: 'Use this when release timing, labels, carton evidence, and handoff instructions need alignment.',
-    },
-    {
-      href: amazonFbaPrepArticleHref,
-      label: 'Amazon FBA prep checklist',
-      note: 'Use this when Amazon labels, SKU separation, FNSKU, carton labels, and prep evidence are involved.',
-    },
-    {
-      href: fnskuLabelMistakesArticleHref,
-      label: 'FNSKU label mistakes before shipment',
-      note: 'Use this when Amazon label mismatch could create receiving, customs, or correction problems.',
-    },
-    {
-      href: buyerSideInspectionReportArticleHref,
-      label: 'Buyer-side inspection report guide',
-      note: 'Use this when release decisions need photo-backed evidence and practical next steps.',
-    },
-    {
-      href: qualityControlChinaManufacturingPlanArticleHref,
-      label: 'Quality control China manufacturing plan',
-      note: 'Build customs and label evidence into production before dispatch pressure starts.',
-    },
-    {
-      href: whatToSendBeforeChinaInspectionHref,
-      label: 'What to send before China inspection',
-      note: 'Prepare product, label, packing, customs, and release-rule files before the China-side check.',
-    },
-  ] satisfies RelatedLink[],
+      href: "/free-china-sourcing-risk-check",
+      label: "Free sourcing risk check",
+      note: "Send the order stage and unresolved evidence for scope review."
+    }
+  ],
   faqs: [
     {
-      question: 'Is de minimis still available for U.S.-bound mail parcels from China in 2026?',
-      answer:
-        'Do not plan on the $800 Section 321 de minimis administrative exemption for U.S.-bound international mail parcels from China. CBP published a postal rule on June 24, 2026 that indefinitely suspends the exemption for goods arriving through the international postal network.',
+      question: "Does an October 22 mail deadline exempt ordinary freight until then?",
+      answer: "No. The October date discussed here concerns CPSC’s mail-specific guidance. Confirm other modes against their own applicable requirements; do not apply a postal date to a courier or freight shipment."
     },
     {
-      question: 'Does the new postal informal entry process apply to every low-value mail shipment?',
-      answer:
-        'No. CBP describes eligibility limits and exclusions. Some shipments may need formal entry or specialist review, especially where PGA data, AD/CVD, quota, Chapter 98 or 99 duties, trade remedies, or regulated-product requirements are involved.',
+      question: "Should I mail early to avoid preparing certificate data?",
+      answer: "Do not base release on that assumption. Transit and entry timing can change, and applicable product obligations still need review. Have the broker confirm the timing and prepare the necessary evidence before dispatch."
     },
     {
-      question: 'What is Entry Type 13?',
-      answer:
-        'Entry Type 13 is CBP\'s voluntary test for electronic informal entry of qualified international mail shipments in ACE. The test starts September 22, 2026 and is separate from ordinary supplier shipping promises or platform labels.',
+      question: "Can a supplier report for a similar SKU support this parcel?",
+      answer: "Similarity alone does not establish coverage. Send the actual product identity and any changes to the responsible importer and qualified reviewer, then record their decision before using the file."
+    }
+  ],
+  tableOfContents: [
+    {
+      href: "#quick-answer",
+      label: "Quick answer"
     },
     {
-      question: 'What should be checked before a China supplier mails the parcel?',
-      answer:
-        'Check the product description, SKU, model, origin, value support, HTS or broker notes, tracking number, carrier, label, invoice, packing evidence, product photos, and regulated-product files before dispatch.',
+      href: "#postal-entry-checklist",
+      label: "Dispatch checklist"
     },
     {
-      question: 'Can a supplier use gift, sample, or no commercial value wording to avoid duties?',
-      answer:
-        'No. Postal shipment data should describe the actual goods and support the declared value and origin. The importer, broker, or qualified compliance owner should decide customs treatment for samples, replacements, gifts, and commercial goods.',
+      href: "#key-dates",
+      label: "September and October dates"
     },
     {
-      question: 'Can Huang Sourcing file Entry Type 13 or decide HTS classification?',
-      answer:
-        'No. Huang Sourcing can check China-side product, label, invoice, tracking, package, and supplier evidence. Entry filing, classification, duties, taxes, bonds, PGA data, and legal compliance remain with the importer, broker, carrier, postal operator, compliance adviser, or counsel.',
+      href: "#entry-type-13",
+      label: "Entry eligibility"
     },
-  ] satisfies FaqItem[],
+    {
+      href: "#entry-owner",
+      label: "Responsible handoff"
+    },
+    {
+      href: "#data-elements",
+      label: "Parcel register"
+    },
+    {
+      href: "#regulated-goods",
+      label: "Certificate scope"
+    },
+    {
+      href: "#label-changes",
+      label: "Changes and holds"
+    },
+    {
+      href: "#public-case",
+      label: "Public case example"
+    },
+    {
+      href: "#decision-table",
+      label: "Release decisions"
+    },
+    {
+      href: "#source-notes",
+      label: "Sources"
+    },
+    {
+      href: "#scope-limits",
+      label: "Scope limits"
+    }
+  ]
 }
 
 export function makeUsPostalInformalEntryChinaMailShipmentsArticleMetadata(): Metadata {
   const article = usPostalInformalEntryChinaMailShipmentsArticle
-
   return {
     title: article.metaTitle,
     description: article.metaDescription,
     alternates: { canonical: article.href },
-    openGraph: {
-      title: article.metaTitle,
-      description: article.metaDescription,
-      url: article.href,
-      siteName: 'Huang Sourcing',
-      type: 'article',
-      publishedTime: article.publishedDateIso,
-      images: getArticleOpenGraphImages(article),
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article.metaTitle,
-      description: article.metaDescription,
-      images: [article.image.src],
-    },
+    openGraph: { title: article.metaTitle, description: article.metaDescription, url: article.href, siteName: 'Huang Sourcing', type: 'article', publishedTime: article.publishedDateIso, modifiedTime: article.modifiedDateIso, images: getArticleOpenGraphImages(article) },
+    twitter: { card: 'summary_large_image', title: article.metaTitle, description: article.metaDescription, images: [article.image.src] },
   }
 }
 
 export function makeUsPostalInformalEntryChinaMailShipmentsArticleJsonLd() {
-  return [
-    makeArticleJsonLd(usPostalInformalEntryChinaMailShipmentsArticle),
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'U.S. postal informal entry checklist for China mail shipments',
-      itemListElement: usPostalInformalEntryChinaMailShipmentsArticle.quickChecks.map(
-        (item, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: item,
-        }),
-      ),
-    },
-    makeFaqPageJsonLd(usPostalInformalEntryChinaMailShipmentsArticle.faqs),
-  ]
+  return [makeArticleJsonLd(usPostalInformalEntryChinaMailShipmentsArticle), {
+    '@context': 'https://schema.org', '@type': 'ItemList',
+    name: 'China mail parcel dispatch checklist',
+    itemListElement: usPostalInformalEntryChinaMailShipmentsArticle.quickChecks.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+  }]
 }

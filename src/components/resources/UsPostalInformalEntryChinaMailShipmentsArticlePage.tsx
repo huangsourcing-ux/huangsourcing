@@ -70,18 +70,20 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline author={article.author} modifiedDate={article.modifiedDate} publishedDate={article.publishedDate} />
+            <p className="hs-muted mt-2 text-xs leading-5">Original July edition credited to <Link className="hs-text-link" href="/about#agent-huang">Agent Huang</Link>; this substantial update is by the editorial team.</p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {article.answerSummary}
             </p>
+            <p className="hs-muted mt-3 text-sm leading-6"><a className="hs-text-link" href="https://content.govdelivery.com/accounts/USDHSCBP/bulletins/4214706">CBP deployment schedule</a> · <a className="hs-text-link" href="https://content.govdelivery.com/accounts/USCPSC/bulletins/427e935">CPSC mail announcement</a></p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={article.primaryCta.label}
                 analyticsLocation="us_postal_informal_entry_article_hero"
-                className="hs-btn-primary h-12 px-6 text-sm sm:px-8"
+                className="hs-btn-primary min-h-12 px-4 text-sm whitespace-normal text-center"
                 href={whatsappHref}
                 size="lg"
                 variant="default"
@@ -112,6 +114,7 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
                 />
               </div>
             </div>
+            <p className="hs-muted mt-3 text-xs leading-5">Original workflow illustration, not a customs record or photograph of recalled goods.</p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {['Postal Route', 'Origin', 'HTS Data', 'Tracking'].map((item) => (
                 <a
@@ -241,13 +244,24 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.bullets.length > 0 ? <BulletList items={section.bullets} /> : null}
+                  {section.citations.length > 0 ? <p className="hs-muted mt-4 text-sm leading-6">Evidence checked: {section.citations.map((citation, citationIndex) => <span key={citation.href}>{citationIndex > 0 ? '; ' : ''}<a className="hs-text-link" href={citation.href} rel="noreferrer" target="_blank">{citation.label}</a></span>)}.</p> : null}
                 </Reveal>
               ))}
             </div>
           </article>
         </div>
       </section>
+
+      <section className="hs-section-soft scroll-mt-24" id="public-case"><div className="hs-container hs-section max-w-4xl"><Reveal>
+        <p className="hs-eyebrow">Public case example</p><h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">{article.publicCase.title}</h2>
+        <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
+          <p><strong>What happened:</strong> {article.publicCase.facts} <a className="hs-text-link" href={article.publicCase.href} rel="noreferrer" target="_blank">{article.publicCase.label}</a>.</p>
+          <p><strong>Public evidence:</strong> {article.publicCase.evidence}</p>
+          <p><strong>Buyer lesson:</strong> {article.publicCase.lesson}</p>
+          <p><strong>Limits of comparison:</strong> {article.publicCase.limits}</p>
+        </div>
+      </Reveal></div></section>
 
       <EvidenceDecisionMatrix
         id="decision-table"
@@ -268,15 +282,12 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
             <div className="hs-icon-box size-12">
               <Globe2 aria-hidden className="size-6" />
             </div>
-            <p className="hs-eyebrow mt-5">Official source context</p>
+            <p className="hs-eyebrow mt-5">Sources</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
               Verify the postal rule, then check the parcel evidence.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              These sources explain the postal de minimis suspension, informal mail
-              process, and Entry Type 13 test. They do not replace
-              shipment-specific customs, broker, carrier, tax, product safety, or
-              legal advice.
+              Public sources checked {article.modifiedDate}, Beijing time. Official records support the dates and scope; industry coverage supports topic relevance. Shipment-specific decisions remain with the responsible parties.
             </p>
           </Reveal>
           <div className="grid gap-3 md:grid-cols-2 lg:col-span-8">
@@ -294,7 +305,7 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
                 </h3>
                 <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
-                  Open official source <ExternalLink aria-hidden className="size-4" />
+                  Open source <ExternalLink aria-hidden className="size-4" />
                 </span>
               </a>
             ))}
@@ -444,7 +455,7 @@ export function UsPostalInformalEntryChinaMailShipmentsArticlePage() {
             <ContactAgentButton
               analyticsLabel={article.primaryCta.label}
               analyticsLocation="us_postal_informal_entry_article_final"
-              className="relative mt-7 h-12 bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] lg:mt-0"
+              className="relative mt-7 min-h-12 whitespace-normal bg-[var(--hs-accent)] px-6 text-sm font-extrabold text-white shadow-[var(--hs-shadow-sm)] hover:bg-[var(--hs-accent-strong)] hover:shadow-[var(--hs-shadow-md)] lg:mt-0"
               href={whatsappHref}
               size="lg"
               variant="default"

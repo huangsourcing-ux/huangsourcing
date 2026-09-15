@@ -506,6 +506,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: usPostalInformalEntryChinaMailShipmentsArticleHref,
+    lastModified: "2026-09-16T03:36:17+08:00",
     changeFrequency: 'monthly',
     priority: 0.8,
   },
