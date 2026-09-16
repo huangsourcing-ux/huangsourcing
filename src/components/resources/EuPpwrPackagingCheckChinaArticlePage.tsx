@@ -71,7 +71,11 @@ export function EuPpwrPackagingCheckChinaArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline author={article.author} publishedDate={article.publishedDate} modifiedDate={article.modifiedDate} />
+            <p className="hs-muted mt-3 text-sm leading-6">
+              Original June 24 guide by <Link className="underline underline-offset-4" href="/about#agent-huang">Agent Huang</Link>.
+              This substantial update was researched and written by the editorial team.
+            </p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
@@ -166,10 +170,7 @@ export function EuPpwrPackagingCheckChinaArticlePage() {
                 What should an EU-bound buyer check before China shipment?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check whether the packaging actually packed in China matches the
-                buyer-approved PPWR evidence plan: materials, dimensions, labels,
-                recycling or sorting marks, substance-risk files, supplier declarations,
-                technical documentation, EPR notes, and importer handoff records.
+                {article.answerSummary}
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {article.quickChecks.map((item, index) => (
@@ -238,7 +239,16 @@ export function EuPpwrPackagingCheckChinaArticlePage() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.bullets.length ? <BulletList items={section.bullets} /> : null}
+                  {section.citations.length ? (
+                    <p className="hs-muted mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm leading-6">
+                      {section.citations.map((citation) => (
+                        <a className="text-[var(--hs-accent-strong)] underline underline-offset-4" href={citation.href} key={citation.href} rel="noreferrer" target="_blank">
+                          {citation.label}
+                        </a>
+                      ))}
+                    </p>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
@@ -270,8 +280,8 @@ export function EuPpwrPackagingCheckChinaArticlePage() {
               Verify the rule, then check the packed goods.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              These sources explain the PPWR timing, scope, documentation, guidance,
-              and FAQ context. They do not replace product-specific EU compliance,
+              These sources explain PPWR timing, scope and documentation, and
+              provide the public record for the historical ECM BioFilms case. They do not replace product-specific EU compliance,
               packaging, marketplace, customs, or legal advice.
             </p>
           </Reveal>

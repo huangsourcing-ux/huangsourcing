@@ -225,6 +225,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euPpwrPackagingCheckChinaArticleHref,
+    lastModified: '2026-09-16T19:27:59.551Z',
     changeFrequency: 'monthly',
     priority: 0.8,
   },

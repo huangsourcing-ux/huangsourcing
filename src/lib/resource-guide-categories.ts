@@ -380,7 +380,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: euPpwrPackagingCheckChinaArticleHref,
-        label: 'EU PPWR packaging check for China sourcing',
+        label: 'EU PPWR packaging checks after August 2026',
       },
       {
         href: euTextileDigitalProductPassportChinaArticleHref,
@@ -559,7 +559,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: euPpwrPackagingCheckChinaArticleHref,
-        label: 'EU PPWR packaging readiness before China shipment',
+        label: 'EU PPWR declaration and packaging evidence before shipment',
       },
       {
         href: euTextileDigitalProductPassportChinaArticleHref,
