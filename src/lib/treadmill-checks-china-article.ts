@@ -47,8 +47,8 @@ export const treadmillChecksChinaArticle = {
     'Check treadmill model, firmware, speed controls, stop system, power connection, evidence, labels, and cartons before China shipment release.',
   publishedDate: 'August 23, 2026',
   publishedDateIso: '2026-08-23T03:27:02+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: "September 18, 2026",
+  modifiedDateIso: "2026-09-18T03:25:29+08:00",
   h1: 'Treadmill Checks Before Shipping from China',
   eyebrow: 'Model identity - controls - change evidence - shipment release',
   image: {
@@ -92,6 +92,8 @@ Balance-payment or pickup deadline:
     { href: '#quick-answer', label: 'Quick answer' },
     { href: '#release-checklist', label: 'Release checklist' },
     { href: '#why-current', label: 'Why this matters now' },
+    { href: '#volta-public-case', label: 'September UK public case' },
+    { href: '#serial-release', label: 'Serial-to-carton worksheet' },
     { href: '#freeze-version', label: 'Freeze the version' },
     { href: '#document-chain', label: 'Evidence chain' },
     { href: '#physical-checks', label: 'Factory checks' },
@@ -143,6 +145,38 @@ Balance-payment or pickup deadline:
     },
   ] satisfies CheckGroup[],
   sections: [
+    {
+  "id": "volta-public-case",
+  "title": "Public case example: Volta overheating and affected-order scope",
+  "paragraphs": [
+    "On September 10, 2026, the UK Office for Product Safety and Standards published a recall for the China-made Volta VT40IT incline treadmill. Certain batches could overheat and present a fire risk. The notice lists orders placed between July and November 2025 and affected serial number 04-VT40IT-50133099; its consumer instructions say to check whether the frame serial contains 50133099.",
+    "The notice directs affected owners to stop using and unplug the treadmill, with collection and refund arranged through Fitness Superstore. It reports noncompliance with the Supply of Machinery (Safety) Regulations 2008. This is a UK case with its own affected population; it does not establish the cause of the separate U.S. cases below.",
+    "Buyer lesson: preserve both the full product identifier and the commercial order window when assessing a notice. Do not interpret a shortened code as a complete serial range or treat a purchase-order date as a manufacturing date. Huang Sourcing had no involvement in this public case."
+  ],
+  "citations": [
+    {
+      "href": "https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-volta-vt40it-incline-treadmill-2608-0247",
+      "label": "UK OPSS: Volta VT40IT recall and identification instructions"
+    }
+  ]
+},
+    {
+  "id": "serial-release",
+  "title": "How should buyers reconcile serials, orders, and cartons?",
+  "paragraphs": [
+    "Use the following buyer-side worksheet when a recall, warning, incident report, or unresolved thermal finding may overlap the order awaiting pickup. These are recommended purchasing controls, not a substitute for the responsible importer’s safety assessment or the recall issuer’s instructions.",
+    "Start with one row per identifiable unit, or a verified serial interval where the underlying unit list is available. Record the full frame serial, factory model, private-label SKU, purchase order, order date, manufacturing date, component and firmware revisions, carton number, warehouse location, and destination. Leave unknown fields explicitly unresolved instead of inferring them from nearby numbers.",
+    "Reconcile the worksheet with the packing list and physical labels. Record how many units are held, cleared, unavailable for inspection, or not yet matched, and make those counts add up to the order quantity. Where labels are only inside sealed cartons, agree access before the inspection visit. A photograph of one accessible unit cannot reconcile the rest of a mixed shipment.",
+    "Ask the responsible technical party to document why each potentially overlapping population is included or excluded. Keep the original notice, supplier explanation, technical disposition, and date of review with the worksheet. A supplier statement that the goods are a newer batch is incomplete without evidence tying the changed version to the actual units.",
+    "If scope remains uncertain, hold the potentially affected cartons and suspend their pickup authorization. A partial shipment should identify only the independently cleared serials and cartons, with revised quantities and a signed release record. Keep unresolved stock physically segregated so a warehouse substitution cannot undo the decision."
+  ],
+  "bullets": [
+    "Evidence field: full frame serial plus readable label photo. Hold trigger: missing, duplicate, altered, or conflicting identity.",
+    "Evidence field: order date and production date in separate columns. Hold trigger: date assumptions used to exclude stock without corroboration.",
+    "Evidence field: cleared serial list matched to carton numbers and quantity. Hold trigger: loose units or replacement cartons outside the approved list.",
+    "Evidence field: named technical decision owner and required correction or testing. Hold trigger: an unloaded demonstration offered as closure for an overheating concern."
+  ]
+},
     {
       id: 'why-current',
       title: 'Why treadmill release evidence matters now',
@@ -271,6 +305,7 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    "September 10, 2026 UK OPSS Volta recall and a new buyer-side serial-to-order-to-carton reconciliation worksheet; reviewed during this substantive update",
     'August 4, 2026 CPSC announcement and August 6 Federal Register agreement covering a provisionally accepted civil-penalty settlement, staff charges, company response, incident data, production changes, reporting controls, and settlement limits',
     'October 2022 CPSC Horizon T101-05 recall used for public model, serial-prefix, origin, quantity, hazard, remedy, sales-period, and injury details',
     'April 2026 CPSC Sperax warning and January 2026 Matrix and Vision recall used as separate current failure-pattern signals without claiming a shared factory, design, root cause, or supplier',
@@ -336,6 +371,7 @@ Balance-payment or pickup deadline:
     },
   ] satisfies RelatedLink[],
   sourceNotes: [
+    {"href": "https://www.gov.uk/product-safety-alerts-reports-recalls/product-recall-volta-vt40it-incline-treadmill-2608-0247", "label": "UK OPSS - Volta VT40IT incline treadmill recall", "note": "September 10, 2026 primary recall notice; overheating hazard, affected order window, serial identification, and remedy."},
     {
       href: cpscTreadmillSettlement,
       label: 'U.S. CPSC - Johnson Health Tech treadmill settlement announcement',
@@ -388,6 +424,7 @@ export function makeTreadmillChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {
