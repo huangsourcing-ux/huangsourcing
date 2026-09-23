@@ -59,6 +59,7 @@ import {
   youthAtvChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
+  heatedBlanketChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -281,6 +282,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: treadmillChecksChinaArticleHref,
         label: 'Treadmill controls, change evidence, and shipment checklist',
+      },
+      {
+        href: heatedBlanketChecksChinaArticleHref,
+        label: 'Heated blanket electrical evidence and shipment checklist',
       },
       {
         href: slidePlaysetChecksChinaArticleHref,

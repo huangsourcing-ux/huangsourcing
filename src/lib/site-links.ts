@@ -34,6 +34,8 @@ export const youthAtvChecksChinaArticleHref =
   '/youth-atv-checks-china'
 export const treadmillChecksChinaArticleHref =
   '/treadmill-checks-china'
+export const heatedBlanketChecksChinaArticleHref =
+  '/heated-blanket-checks-china'
 export const slidePlaysetChecksChinaArticleHref =
   '/slide-playset-checks-china'
 export const mattressFlammabilityChecksChinaArticleHref =

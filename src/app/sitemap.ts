@@ -62,6 +62,7 @@ import {
   youthAtvChecksChinaArticleHref,
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
+  heatedBlanketChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -357,6 +358,11 @@ const staticRoutes: SitemapEntry[] = [
   {
     path: treadmillChecksChinaArticleHref,
     lastModified: "2026-09-18T03:25:29+08:00",
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: heatedBlanketChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },
