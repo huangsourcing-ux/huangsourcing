@@ -63,6 +63,7 @@ import {
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
   heatedBlanketChecksChinaArticleHref,
+  retractableGateChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -363,6 +364,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: heatedBlanketChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: retractableGateChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

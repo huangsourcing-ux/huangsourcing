@@ -60,6 +60,7 @@ import {
   pressureWasherChecksChinaArticleHref,
   treadmillChecksChinaArticleHref,
   heatedBlanketChecksChinaArticleHref,
+  retractableGateChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -286,6 +287,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: heatedBlanketChecksChinaArticleHref,
         label: 'Heated blanket electrical evidence and shipment checklist',
+      },
+      {
+        href: retractableGateChecksChinaArticleHref,
+        label: 'Retractable safety gate standard and shipment checklist',
       },
       {
         href: slidePlaysetChecksChinaArticleHref,
