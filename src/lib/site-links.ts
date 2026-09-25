@@ -38,6 +38,8 @@ export const heatedBlanketChecksChinaArticleHref =
   '/heated-blanket-checks-china'
 export const retractableGateChecksChinaArticleHref =
   '/retractable-gate-checks-china'
+export const busyBoardToyChecksChinaArticleHref =
+  '/busy-board-toy-checks-china'
 export const slidePlaysetChecksChinaArticleHref =
   '/slide-playset-checks-china'
 export const mattressFlammabilityChecksChinaArticleHref =

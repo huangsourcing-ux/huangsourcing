@@ -64,6 +64,7 @@ import {
   treadmillChecksChinaArticleHref,
   heatedBlanketChecksChinaArticleHref,
   retractableGateChecksChinaArticleHref,
+  busyBoardToyChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -369,6 +370,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: retractableGateChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: busyBoardToyChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

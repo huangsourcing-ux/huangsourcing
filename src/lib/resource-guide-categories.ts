@@ -61,6 +61,7 @@ import {
   treadmillChecksChinaArticleHref,
   heatedBlanketChecksChinaArticleHref,
   retractableGateChecksChinaArticleHref,
+  busyBoardToyChecksChinaArticleHref,
   slidePlaysetChecksChinaArticleHref,
   powerBankChecksChinaArticleHref,
   rechargeableHandWarmerChecksChinaArticleHref,
@@ -291,6 +292,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: retractableGateChecksChinaArticleHref,
         label: 'Retractable safety gate standard and shipment checklist',
+      },
+      {
+        href: busyBoardToyChecksChinaArticleHref,
+        label: 'Busy board toy component and shipment checklist',
       },
       {
         href: slidePlaysetChecksChinaArticleHref,
