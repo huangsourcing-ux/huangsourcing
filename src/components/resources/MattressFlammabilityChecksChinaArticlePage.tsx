@@ -118,7 +118,7 @@ export function MattressFlammabilityChecksChinaArticlePage() {
             </div>
             <p className="hs-muted mt-3 text-xs leading-5">
               Neutral AI-generated illustration of a generic evidence-review setup; not
-              a product photograph, flammability test, or evidence from either cited
+              a product photograph, flammability test, or evidence from any cited
               public case.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -289,7 +289,7 @@ export function MattressFlammabilityChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines separate 2026 CPSC records, current federal guidance and regulations, independent China MOFCOM coverage, and buyer-side sourcing analysis. It keeps prescribed testing, prototype and certificate duties, inspection observations, and release decisions in separate scopes."
+        intro="This guide combines separate 2026 CPSC records, current federal guidance and regulations, independent China MOFCOM coverage, and buyer-side sourcing analysis. The September recalls include China-made and Indonesia-made products, identified separately below. Prescribed testing, prototype and certificate duties, inspection observations, and release decisions remain separate."
         items={article.evidenceBasis}
       />
 
@@ -298,14 +298,14 @@ export function MattressFlammabilityChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              TRWZINY mattresses: connect the qualified design to the shipped lot.
+              Kesyup mattresses: a prototype label is a starting point, not a release decision.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                July 23, 2026, CPSC warned consumers to stop using about 1,425 TRWZINY
-                12-inch queen mattresses sold on Amazon. CPSC said the mattresses
-                violated the mandatory flammability standard for mattress sets, posing
+                September 24, 2026, CPSC announced the recall of about 48,405
+                Kesyup mattresses made in China and sold on Amazon. The agency said
+                the mattresses violated the mandatory flammability standard and posed
                 a risk of serious injury or death from fire. No incidents or injuries
                 were reported in the notice.
               </p>
@@ -316,50 +316,60 @@ export function MattressFlammabilityChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-TRWZINY-12-inch-Mattresses-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Standard-for-Mattress-Sets"
+                  href="https://www.cpsc.gov/Recalls/2026/ZCK01-Recalls-Kesyup-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official CPSC warning
+                  official CPSC Kesyup recall
                 </a>{' '}
-                identifies the China retailer, marketplace and sales period, approximate
-                quantity, size, visible product description, and stacked label location.
-                It does not publish the seller&apos;s complete prototype records, full
-                bill of materials, test reports, root-cause analysis, or production
-                controls.
+                identifies four sizes, 12-inch thickness, compressed boxes, a
+                sewn-in label with a prototype ID, China manufacture, approximate
+                quantity, marketplace and sales period. It does not publish the
+                complete prototype records, bill of materials, test reports,
+                root-cause analysis, or production controls.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">Buyer lesson:</strong>{' '}
-                Freeze the exact model, manufacturer, factory, prototype IDs, ticking,
-                barrier, upholstery, core, tape edge, assembly, foundation
-                configuration, reports, records, permanent label, GCC data, production
-                lot, compressed package, and cartons. Keep qualified flammability
-                testing separate from sampled production comparison.
+                A visible prototype ID can anchor a traceability check, but cannot
+                establish that the shipped model and lot passed prescribed tests.
+                Freeze the exact model, factory, prototype, material build, reports,
+                GCC data, sewn label, manufacture date, production lot, compressed
+                package, and carton range. Have the importer and qualified specialists
+                resolve evidence gaps before authorizing payment or pickup.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
-                  Why the second record matters:
+                  What the comparison records show:
                 </strong>{' '}
                 The separate{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/EVLWZL-and-Gunugu-Mattresses-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violates-Mandatory-Standard-for-Mattress-Flammability"
+                  href="https://www.cpsc.gov/Recalls/2026/Xinan-Home-Recalls-WinxMatrs-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  EVLWZL and Gunugu CPSC recall
+                  WinxMatrs CPSC recall
                 </a>{' '}
-                describes different 10- and 12-inch compressed mattresses, several
-                sizes, three marketplaces, two China companies, and a repair cover
-                remedy. It supports a current recurring risk node without treating the
-                products as one case.
+                covers about 792 China-made compressed twin mattresses and a refund.
+                The same day, the{' '}
+                <a
+                  className="hs-text-link"
+                  href="https://www.cpsc.gov/Recalls/2026/Style-Homeware-Recalls-Emerspring-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Emerspring CPSC recall
+                </a>{' '}
+                covered about 263 Indonesia-made mattresses with a fitted-cover
+                remedy. These are distinct products and origins; the notices do not
+                establish a shared factory or cause.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
                   Limits of comparison:
                 </strong>{' '}
                 These records do not prove every mattress, seller, supplier, factory,
-                or lot has the same failure. Huang Sourcing had no role in either case.
+                or lot has the same failure. Huang Sourcing had no role in these cases.
                 A sampled buyer-side inspection cannot reproduce prescribed smoldering
                 or open-flame testing, qualify a prototype, issue a GCC, or guarantee
                 fire safety.
@@ -510,7 +520,7 @@ export function MattressFlammabilityChecksChinaArticlePage() {
             </div>
             <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
               Public records, current official guidance and regulations, and independent
-              coverage checked August 13, 2026 Beijing time. Links identify the exact
+              coverage reviewed September 27, 2026 Beijing time. Links identify the exact
               products, findings, dates, requirements, actions, and interpretation limits
               used in this guide.
             </p>

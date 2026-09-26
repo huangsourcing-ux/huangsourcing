@@ -27,6 +27,12 @@ const cpscTrwzinyCase =
   'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-TRWZINY-12-inch-Mattresses-Immediately-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Standard-for-Mattress-Sets'
 const cpscEvlwzlCase =
   'https://www.cpsc.gov/Recalls/2026/EVLWZL-and-Gunugu-Mattresses-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violates-Mandatory-Standard-for-Mattress-Flammability'
+const cpscKesyupCase =
+  'https://www.cpsc.gov/Recalls/2026/ZCK01-Recalls-Kesyup-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability'
+const cpscWinxMatrsCase =
+  'https://www.cpsc.gov/Recalls/2026/Xinan-Home-Recalls-WinxMatrs-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability'
+const cpscEmerspringCase =
+  'https://www.cpsc.gov/Recalls/2026/Style-Homeware-Recalls-Emerspring-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability'
 const cpscMattressGuidance =
   'https://www.cpsc.gov/FAQ/Mattresses-Mattress-Pads-Mattress-Sets'
 const ecfrPart1632 =
@@ -40,13 +46,13 @@ export const mattressFlammabilityChecksChinaArticle = {
   author: 'editorial-team' as const,
   href: mattressFlammabilityChecksChinaArticleHref,
   title: 'Mattress Flammability Checks Before Shipping from China',
-  metaTitle: 'Mattress Flammability Checks Before China Shipment',
+  metaTitle: 'Mattress Flammability Checks Before Shipment',
   metaDescription:
     'Check mattress prototypes, 16 CFR 1632 and 1633 evidence, materials, labels, production lots, compressed packs, and release decisions before China shipment.',
   publishedDate: 'August 13, 2026',
   publishedDateIso: '2026-08-13T03:25:45+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'September 27, 2026',
+  modifiedDateIso: '2026-09-27T03:24:00+08:00',
   h1: 'Mattress Flammability Checks Before Shipping from China',
   eyebrow: 'Prototype evidence - material control - shipment release',
   image: {
@@ -61,9 +67,9 @@ export const mattressFlammabilityChecksChinaArticle = {
     { height: 1000, src: '/images/mattress-flammability-checks-china-1x1.webp', width: 1000 },
   ],
   intro:
-    'Before releasing balance payment or pickup for mattresses made in China, connect each finished model and production lot to its qualified prototype, flammability records, current material build, permanent label, General Certificate of Conformity data, compressed package, and carton map. Hold the shipment when the evidence and physical goods do not describe the same controlled version.',
+    'Before releasing balance payment or pickup for mattresses made in China, connect each finished model and production lot to its qualified prototype, flammability records, current material build, permanent label, General Certificate of Conformity data, compressed package, and carton map. September 2026 U.S. recalls of Kesyup and WinxMatrs mattresses make the model-to-lot evidence question immediate. Hold the shipment when the records and physical goods do not describe the same controlled version.',
   answerSummary:
-    'Use three separate gates: importer-led scope and rule review, qualified 16 CFR parts 1632 and 1633 evidence for the relevant prototype, and buyer-side comparison of sampled production with approved references. A routine inspection can document identity, dimensions, visible materials, workmanship, labels, pack-out, and traceability. It cannot reproduce smoldering or open-flame tests, qualify a prototype, certify compliance, or guarantee fire safety.',
+    'Use three separate gates: importer-led scope and rule review, qualified 16 CFR parts 1632 and 1633 evidence for the relevant prototype, and buyer-side comparison of sampled production with approved references. Before release, list each SKU, prototype ID, manufacture date, production lot, compressed pack, and carton range in one reconciliation. A routine inspection can document visible identity and traceability; it cannot reproduce prescribed flammability tests or certify compliance.',
   primaryCta: { label: 'Check Mattresses Before Shipment' },
   secondaryCta: { href: '#release-checklist', label: 'See Release Checklist' },
   whatsappMessage: `Hi Agent Huang,
@@ -138,9 +144,9 @@ Balance-payment or pickup deadline:
       id: 'why-current',
       title: 'Why mattress flammability evidence matters now',
       paragraphs: [
-        'On July 23, 2026, the U.S. Consumer Product Safety Commission warned consumers to stop using about 1,425 TRWZINY 12-inch queen mattresses sold on Amazon. CPSC said the mattresses violated the mandatory flammability standard for mattress sets and posed a fire risk. The record identifies a China retailer, a January-to-April 2026 sales period, and stacked side-seam labels.',
-        'This was not an isolated 2026 record. On May 7, CPSC recalled about 670 EVLWZL and Gunugu 10- and 12-inch compressed mattresses sold on Amazon, Walmart, and Wayfair because they violated the mandatory mattress flammability standard. China’s Ministry of Commerce WTO/TBT portal separately reported that recall and the China origin of the products.',
-        'The records involve different companies, models, channels, quantities, remedies, and evidence. They do not prove every mattress, supplier, factory, or lot has the same problem. They show why a marketplace listing, generic “fireproof” claim, law label, supplier declaration, or report cover cannot replace exact-prototype evidence and controlled production before shipment.',
+        'On September 24, 2026, CPSC announced a recall of about 48,405 China-made Kesyup mattresses. The notice says the mattresses violate the mandatory flammability standard, identifies four sizes sold compressed in boxes, and shows a sewn-in prototype ID label. No incidents or injuries were reported. The notice does not publish a root cause or the full testing file.',
+        'CPSC announced a separate recall the same day of about 792 China-made WinxMatrs mattresses, also citing a mandatory flammability-standard violation. A third same-day notice covered about 263 Emerspring mattresses made in Indonesia. The different origin and different remedy in that case matter: these are separate product records, not one China factory failure.',
+        'Earlier 2026 CPSC records for TRWZINY and EVLWZL/Gunugu remain useful comparisons. Across these notices, the buyer-side lesson is to reconcile the exact tested prototype and controlled build with the finished model, label, manufacturing lot, pack, and carton map before release. A marketplace listing, generic “fireproof” claim, supplier declaration, or report cover is not a substitute.',
       ],
       bullets: [
         'A supplier statement that a mattress is “CPSC,” “16 CFR,” or “fire retardant” compliant needs complete source evidence and precise prototype scope',
@@ -149,6 +155,9 @@ Balance-payment or pickup deadline:
         'Correction leverage is strongest before final payment and pickup, while affected lots can still be held, reviewed, tested, reworked, relabeled, repacked, or rejected',
       ],
       citations: [
+        { href: cpscKesyupCase, label: 'CPSC Kesyup mattress recall' },
+        { href: cpscWinxMatrsCase, label: 'CPSC WinxMatrs mattress recall' },
+        { href: cpscEmerspringCase, label: 'CPSC Emerspring mattress recall (Indonesia)' },
         { href: cpscTrwzinyCase, label: 'CPSC TRWZINY mattress warning' },
         { href: cpscEvlwzlCase, label: 'CPSC EVLWZL and Gunugu mattress recall' },
         { href: mofcomEvlwzlCoverage, label: 'China MOFCOM WTO/TBT recall coverage' },
@@ -276,6 +285,8 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    'September 24, 2026 CPSC recalls of China-made Kesyup and WinxMatrs mattresses: product identity, approximate affected units, labels, manufacturing origin, mandatory flammability-standard finding, and stated remedies; neither notice publishes a complete root-cause or prototype-testing file',
+    'A separate September 24 CPSC Emerspring recall identifies Indonesia as manufacturing origin and a fitted-cover remedy; it is a different case and is not evidence about a China factory',
     'July 23, 2026 CPSC product safety warning for TRWZINY 12-inch queen mattresses, including the stated flammability violation, China retailer, sales period, quantity, label location, and consumer action',
     'Separate May 7, 2026 CPSC recall for EVLWZL and Gunugu compressed mattresses, including sizes, platforms, China retailers, manufacture, quantity, violation, and repair remedy',
     'Current CPSC mattress guidance and current eCFR text for the purpose, scope, prototypes, test programs, substitutions, records, labels, and limits under 16 CFR parts 1632 and 1633',
@@ -344,6 +355,21 @@ Balance-payment or pickup deadline:
     },
   ] satisfies RelatedLink[],
   sourceNotes: [
+    {
+      href: cpscKesyupCase,
+      label: 'U.S. CPSC - Kesyup mattress recall 26-788',
+      note: 'September 24, 2026 primary record: about 48,405 China-made compressed mattresses, four sizes, sewn prototype ID, flammability violation, refund, and no reported incidents.',
+    },
+    {
+      href: cpscWinxMatrsCase,
+      label: 'U.S. CPSC - WinxMatrs mattress recall 26-793',
+      note: 'Separate September 24 primary record: about 792 China-made compressed twin mattresses, sewn brand and size labels, flammability violation, refund, and no reported incidents.',
+    },
+    {
+      href: cpscEmerspringCase,
+      label: 'U.S. CPSC - Emerspring mattress recall 26-796',
+      note: 'Separate September 24 primary record: about 263 Indonesia-made compressed queen mattresses and a fitted-cover remedy; included to distinguish origin and remedy.',
+    },
     {
       href: cpscTrwzinyCase,
       label: 'U.S. CPSC - TRWZINY 12-inch mattress warning',
