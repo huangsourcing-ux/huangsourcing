@@ -41,6 +41,12 @@ const cpscBayotakRecall =
   'https://www.cpsc.gov/Recalls/2026/Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Imported-by-BAYOTAK-USA'
 const cpscSenQiiWarning =
   'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-SEN-QII-Pressure-Washers-Immediately-Due-to-Serious-Shock-and-Electrocution-Hazards-Risk-of-Serious-Injury-or-Death'
+const cpscFotingWarning =
+  'https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-FOTING-Pressure-Washers-Immediately-Due-to-Serious-Shock-and-Electrocution-Hazards-Risk-of-Serious-Injury-or-Death'
+const cpscLanchezRecall =
+  'https://www.cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards'
+const factfiledRecallCoverage =
+  'https://factfiled.com/recalls/trackers/live-recall-index'
 const ul1776Scope =
   'https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1776_3_I_20200923'
 const cpscGeneralUseGuidance =
@@ -52,11 +58,11 @@ export const pressureWasherChecksChinaArticle = {
   title: 'Pressure Washer Checks Before Shipping from China',
   metaTitle: 'Pressure Washer Checks Before China Shipment',
   metaDescription:
-    'Verify GFCI, cord, model, electrical evidence, accessories, labels, and cartons before releasing electric pressure washers from China.',
+    'Check GFCI, cord, exact model, recall or warning status, electrical evidence, and cartons before releasing pressure washers from China.',
   publishedDate: 'August 21, 2026',
   publishedDateIso: '2026-08-21T03:32:03+08:00',
-  modifiedDate: 'September 3, 2026',
-  modifiedDateIso: '2026-09-03T03:25:00+08:00',
+  modifiedDate: 'September 28, 2026',
+  modifiedDateIso: '2026-09-28T03:20:00+08:00',
   h1: 'Pressure Washer Checks Before Shipping from China',
   eyebrow: 'GFCI - cord - electrical evidence - shipment release',
   image: {
@@ -100,6 +106,7 @@ Balance-payment or pickup deadline:
     { href: '#quick-answer', label: 'Quick answer' },
     { href: '#release-checklist', label: 'Release checklist' },
     { href: '#why-current', label: 'Why this matters now' },
+    { href: '#september-response', label: 'September response gate' },
     { href: '#freeze-version', label: 'Freeze the version' },
     { href: '#document-chain', label: 'Evidence chain' },
     { href: '#physical-checks', label: 'Factory checks' },
@@ -117,6 +124,7 @@ Balance-payment or pickup deadline:
     'Control drawings, bill of materials, wire and cord specifications, GFCI part and supplier, plug mold, strain relief, switches, connectors, enclosure, motor, pump, hose, gun, nozzles, labels, instructions, and every approved change',
     'Compare sampled production for model and rating identity, integral GFCI presence and configuration, cord length, plug and strain relief, dry workmanship, accessory set, approved functional checks, labels, and pack-out',
     'Hold missing, bypassed, loose, substituted, damaged, mixed, or untraceable electrical parts; unsupported reports; improvised wet tests; incorrect labels; or cartons that cannot be mapped to a production lot',
+    'Screen the exact model and production lot against current regulator warnings and recalls; quarantine any potentially affected inventory while the importer verifies scope and official instructions',
     'Route GFCI trip values, leakage current, dielectric strength, insulation, water ingress, pressure endurance, hose burst, and other prescribed performance questions to qualified laboratories or engineers',
     'Release only named models, electrical versions, batches, quantities, accessories, and cartons after documented correction, qualified disposition, and repeat inspection or testing where required',
   ],
@@ -155,9 +163,11 @@ Balance-payment or pickup deadline:
       id: 'why-current',
       title: 'Why pressure washer release evidence matters now',
       paragraphs: [
-        'On August 27, 2026, the U.S. Consumer Product Safety Commission announced two separate recalls of China-made electric pressure washers. CPSC said YERYORK model YE-006 and Steelite model AZ6041VC lacked an integral ground-fault circuit-interrupter and an adequate-length power cord, creating shock and electrocution hazards. The notices covered 300 YERYORK units and about 128 Steelite units sold on Amazon and reported no incidents or injuries.',
+        'On September 24, 2026, the U.S. Consumer Product Safety Commission warned consumers to stop using FOTING pressure washers. CPSC reported missing integrated immersion protection, also called an integral GFCI, and an inadequate-length power cord. The agency said Success Way Ltd. of China had not agreed to an acceptable recall. This is a CPSC product safety warning, not a recall announcement.',
+        'On September 17, CPSC separately recalled 329 LANCHEZ electric pressure washers, model KLC-BULL135C. The notice limits the recall to washers without a GFCI or adequate-length power cord. CPSC reported one missing-GFCI report and no injuries. The warning and recall are different actions involving different products and parties; buyers must check the exact model and lot rather than treat one brand name or housing style as proof of scope.',
+        'On August 27, CPSC had announced separate recalls of China-made YERYORK model YE-006 and Steelite model AZ6041VC pressure washers for missing integral GFCI and inadequate cord length. A current independent recall roundup also lists the September LANCHEZ action, but the regulator records control the specific case facts.',
         'Those actions followed the August 20 recall of about 2,200 Workbless models WB0301 and WB0302 in the United States. Health Canada published the coordinated recall for another 657 units and identified the China distributor and manufacturer. The U.S. and Canada records describe the same Workbless models, so they help cross-check public facts but do not count as separate defect events.',
-        'The same current pattern includes August 13 CPSC recalls for SUGIFT and COMMOWNER and April actions covering BAYOTAK and SEN-QII. These records involve different companies, models, quantities, sales periods, and remedies; they do not prove a shared factory, root cause, or defect in every China-made pressure washer. They do show why integral GFCI identity, cord construction, exact-model evidence, change control, and lot-level release remain current buyer decision points.',
+        'The broader pattern includes August 13 CPSC recalls for SUGIFT and COMMOWNER and April actions covering BAYOTAK and SEN-QII. These records involve different companies, models, quantities, sales periods, and remedies; they do not prove a shared factory, root cause, or defect in every China-made pressure washer. They do show why integral GFCI identity, cord construction, exact-model evidence, change control, and lot-level release remain current buyer decision points.',
       ],
       bullets: [
         'Treat the integral GFCI, supply cord, plug, strain relief, electrical rating, instructions, and exact model as controlled product features rather than loose accessories',
@@ -166,6 +176,9 @@ Balance-payment or pickup deadline:
         'Correction leverage is strongest before final payment and pickup, while component lots, finished batches, and cartons can still be isolated and rechecked',
       ],
       citations: [
+        { href: cpscFotingWarning, label: 'CPSC FOTING product safety warning' },
+        { href: cpscLanchezRecall, label: 'CPSC LANCHEZ pressure washer recall' },
+        { href: factfiledRecallCoverage, label: 'Factfiled September recall roundup' },
         { href: cpscYeryorkRecall, label: 'CPSC YERYORK pressure washer recall' },
         { href: cpscSteeliteRecall, label: 'CPSC Steelite pressure washer recall' },
         { href: cpscWorkblessRecall, label: 'CPSC Workbless pressure washer recall' },
@@ -174,6 +187,24 @@ Balance-payment or pickup deadline:
         { href: cpscCommownerRecall, label: 'CPSC COMMOWNER pressure washer recall' },
         { href: cpscBayotakRecall, label: 'CPSC BAYOTAK pressure washer recall' },
         { href: cpscSenQiiWarning, label: 'CPSC SEN-QII pressure washer warning' },
+      ],
+    },
+    {
+      id: 'september-response',
+      title: 'How should a buyer respond to a warning or recall before release?',
+      paragraphs: [
+        'First search the current regulator record for the actual brand, model, product label, sales configuration, and any stated affected version. Match those details to the purchase order, finished units, production dates, component lots, packing list, and carton map. The September LANCHEZ recall expressly limits its scope to units lacking the specified GFCI or cord length; the FOTING warning identifies a product hazard but does not publish a complete factory bill of materials or lot-level clearance method.',
+        'If a shipment could fall within a warning or recall, stop payment and pickup for the affected inventory and ask the importer to follow the current official consumer and regulatory instructions. Segregate cartons and preserve product, label, component, purchase, and inspection records. A factory retrofit, different plug, outside GFCI outlet, new sticker, or supplier assurance is not an independent basis to call a publicly identified hazardous product cleared.',
+        'For a different or revised model, obtain a qualified assessment of the exact GFCI and cord construction, any applicable standard and destination requirement, and whether existing reports still cover that build. Then compare sampled production and pack-out with the approved version. Record who authorized release and which models, component lots, batches, quantities, and cartons were cleared; unresolved versions stay on hold.',
+      ],
+      bullets: [
+        'Known potentially affected goods: quarantine, confirm scope with the importer and authority, and follow the official remedy or warning instructions',
+        'Different or corrected goods: require controlled design records, qualified disposition, applicable retesting, finished-goods comparison, and carton-level traceability before release',
+        'Unknown identity or mixed stock: hold the full unresolved set until model, electrical version, component lot, and carton boundaries can be established',
+      ],
+      citations: [
+        { href: cpscFotingWarning, label: 'CPSC FOTING warning and consumer action' },
+        { href: cpscLanchezRecall, label: 'CPSC LANCHEZ recall scope and remedy' },
       ],
     },
     {
@@ -257,6 +288,11 @@ Balance-payment or pickup deadline:
   ] satisfies ArticleSection[],
   decisionRows: [
     {
+      riskNode: 'Public warning or recall screen',
+      evidence: 'Current CPSC notice, exact brand and model, affected electrical configuration, product label, component lot, batch, quantity, and carton map are compared before pickup.',
+      buyerDecision: 'Quarantine potentially affected goods, follow the authority and importer instructions, and withhold release until scope and qualified disposition are documented.',
+    },
+    {
       riskNode: 'Exact model and electrical version',
       evidence: 'Destination, importer, manufacturer, factory, model, rating, plug, integral GFCI, cord, strain relief, motor, pump, hose, gun, nozzles, batch, listing, and approved changes align.',
       buyerDecision: 'Hold ambiguous model families, missing integral protection, mixed market versions, unclear cord definitions, or unexplained component and process changes.',
@@ -278,6 +314,8 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    'September 24, 2026 CPSC FOTING product safety warning and September 17 LANCHEZ recall checked as distinct public actions covering missing integral protection and inadequate cord length',
+    'Independent Factfiled September recall roundup used only as a current-attention signal; all model, quantity, incident, and remedy facts are checked against primary regulator records',
     'August 27, 2026 CPSC YERYORK and Steelite recall records covering two distinct China-made models, missing integral GFCI, inadequate cord length, Amazon sales periods, quantities, remedies, and incident status',
     'August 20, 2026 CPSC Workbless recall record covering China manufacture, two models, missing integral GFCI, inadequate cord length, sales channels and period, quantities, remedy, and incident status',
     'Coordinated August 20, 2026 Health Canada record used to cross-check model identity, the short-cord explanation, Canada quantity, manufacturer, distributor, origin, and incident status',
@@ -295,6 +333,7 @@ Balance-payment or pickup deadline:
     'Balance-payment and pickup deadlines, hold authority, factory contacts, qualified retest plan, affected-component traceability, and exact conditions required for release',
   ],
   redFlags: [
+    'A current CPSC warning or recall could apply to the shipped brand, model, electrical version, or lot, yet the factory proposes to ship or relabel stock without importer-led scope review',
     'The report, listing, or certificate reference names a different manufacturer, factory, model, electrical rating, plug, GFCI, cord, motor, pump, enclosure, hose, or production version',
     'The supplier provides only a standard name, report cover, certification logo, marketplace badge, or generic declaration',
     'Production changed the GFCI, cord length or type, plug, conductor, strain relief, switch, connector, insulation, motor, pump, hose, enclosure, tooling, supplier, process, subcontractor, or factory without qualified disposition',
@@ -348,6 +387,21 @@ Balance-payment or pickup deadline:
     },
   ] satisfies RelatedLink[],
   sourceNotes: [
+    {
+      href: cpscFotingWarning,
+      label: 'U.S. CPSC - FOTING pressure washer safety warning 26-795',
+      note: 'Primary September 24, 2026 warning covering missing integrated immersion protection and inadequate cord length, China manufacture, reported observations, supplier response, and CPSC consumer action; it is not a recall notice.',
+    },
+    {
+      href: cpscLanchezRecall,
+      label: 'U.S. CPSC - LANCHEZ pressure washer recall 26-779',
+      note: 'Separate September 17, 2026 recall identifying model KLC-BULL135C, the affected electrical configuration, 329 units, one reported missing GFCI, no reported injuries, China manufacture, and refund remedy.',
+    },
+    {
+      href: factfiledRecallCoverage,
+      label: 'Factfiled - September 2026 recall roundup',
+      note: 'Independent current recall index listing the September LANCHEZ action; used as an attention signal rather than authority for case-specific facts.',
+    },
     {
       href: cpscYeryorkRecall,
       label: 'U.S. CPSC - YERYORK pressure washer recall',

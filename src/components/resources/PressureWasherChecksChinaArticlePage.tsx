@@ -290,7 +290,7 @@ export function PressureWasherChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines the August 27 YERYORK and Steelite recalls, the August Workbless U.S.-Canada recall, earlier 2026 CPSC pressure-washer actions, the UL 1776 scope page, current CPSC certification guidance, and buyer-side sourcing analysis. It keeps standards mapping, laboratory testing, certification, inspection observations, importer duties, and release decisions in separate scopes."
+        intro="This guide combines the September FOTING warning and LANCHEZ recall, August CPSC pressure-washer recalls, a current independent recall roundup, the UL 1776 scope page, current CPSC certification guidance, and buyer-side sourcing analysis. It keeps public warning or recall action, standards mapping, laboratory testing, inspection observations, importer duties, and release decisions in separate scopes."
         items={article.evidenceBasis}
       />
 
@@ -299,16 +299,18 @@ export function PressureWasherChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              YERYORK and Steelite: the same release gate failed twice in one day.
+              FOTING warning and LANCHEZ recall: identify the exact version before release.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
                 <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                August 27, 2026, CPSC announced separate recalls of YERYORK model YE-006
-                and Steelite model AZ6041VC electric pressure washers. CPSC said both
-                lacked an integral GFCI and an adequate-length power cord, creating
-                shock and electrocution hazards. The records covered 300 YERYORK units
-                and about 128 Steelite units and reported no incidents or injuries.
+                September 24, 2026, CPSC issued a product safety warning for FOTING
+                pressure washers lacking integrated immersion protection, also called
+                an integral GFCI, and adequate cord length. CPSC said Success Way Ltd.
+                of China had not agreed to an acceptable recall. On September 17,
+                CPSC separately recalled 329 LANCHEZ model KLC-BULL135C pressure
+                washers for the same cited protection and cord concerns. These are
+                separate actions for separate products, not two notices about one lot.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -317,43 +319,43 @@ export function PressureWasherChecksChinaArticlePage() {
                 The{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-YERYORK"
+                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Warns-Consumers-to-Stop-Using-FOTING-Pressure-Washers-Immediately-Due-to-Serious-Shock-and-Electrocution-Hazards-Risk-of-Serious-Injury-or-Death"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official YERYORK recall
+                  official FOTING warning
                 </a>{' '}
-                identifies model YE-006, its visible label location and accessory set,
-                the March 2025-to-June 2026 Amazon sales period, China manufacture,
-                quantity, incident status, and refund remedy. The separate{' '}
+                records one report of a missing GFCI and six reports of a short cord,
+                with no injuries reported. CPSC urges consumers to stop use and
+                destroy the products; the notice says the China supplier has not
+                agreed to an acceptable recall. The separate{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Steelite-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-Longer-3D"
+                  href="https://www.cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  Steelite recall
+                  LANCHEZ recall
                 </a>{' '}
-                identifies model AZ6041VC, its 2.5 GPM description and 20-foot hose,
-                April-to-June 2026 Amazon sales period, China importer and manufacture,
-                quantity, incident status, and refund remedy. Neither notice publishes
-                complete drawings, bills of materials, test reports,
-                critical-component files, or factory controls.
+                identifies the labeled model, affected configuration, importer,
+                manufacture in China, refund remedy, one missing-GFCI report, and no
+                injuries. Neither public notice supplies a complete bill of materials,
+                test report, or factory-level clearance method for a different lot.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">Buyer lesson:</strong>{' '}
-                Freeze the market, exact model, rating, plug, integral GFCI, cord and
-                strain relief, electrical diagram, critical-component list, motor,
-                pump, hose, gun, nozzles, factory, batch, test sample, reports, labels,
-                instructions, retail packs, and cartons. Keep sampled construction and
-                functional observations separate from prescribed electrical and
-                pressure testing.
+                Screen current authority notices before payment or pickup. Quarantine
+                potentially affected goods while the importer confirms exact scope and
+                follows the official instructions. For other or revised stock, freeze
+                the market, model, rating, integral GFCI, cord, factory, component
+                version, batch, qualified evidence, labels, and cartons; require
+                qualified disposition before a China-side comparison supports release.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
                   Why the current pattern matters:
                 </strong>{' '}
-                The{' '}
+                The earlier{' '}
                 <a
                   className="hs-text-link"
                   href="https://www.cpsc.gov/Recalls/2026/Workbless-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards"
@@ -362,11 +364,19 @@ export function PressureWasherChecksChinaArticlePage() {
                 >
                   August 20 Workbless recall
                 </a>{' '}
-                and separate SUGIFT, COMMOWNER, BAYOTAK, and SEN-QII records cite similar
-                missing integral-protection concerns for different China-made pressure
-                washers. They do not establish a shared supplier, factory, root cause,
-                or defect in another lot. They show why GFCI identity, cord construction,
-                exact-model evidence, and change control deserve a specific release gate.
+                and separate YERYORK, Steelite, SUGIFT, COMMOWNER, BAYOTAK, and SEN-QII
+                records cite similar protection concerns for different China-made
+                pressure washers. A current independent{' '}
+                <a
+                  className="hs-text-link"
+                  href="https://factfiled.com/recalls/trackers/live-recall-index"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  September recall roundup
+                </a>{' '}
+                lists LANCHEZ and supports the current-attention signal; official records control each
+                model, quantity, remedy, and incident claim.
               </p>
               <p>
                 <strong className="text-[var(--hs-text)]">
@@ -526,7 +536,7 @@ export function PressureWasherChecksChinaArticlePage() {
               <h2 className="text-3xl font-extrabold text-[var(--hs-text)]">Sources</h2>
             </div>
             <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
-              Public records and official guidance checked September 3, 2026 Beijing time.
+              Public records, independent coverage, and official guidance checked September 28, 2026 Beijing time.
               Links identify the exact products, findings, dates, actions, requirements,
               and interpretation limits used in this guide.
             </p>
