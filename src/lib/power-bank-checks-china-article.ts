@@ -47,11 +47,11 @@ export const powerBankChecksChinaArticle = {
   title: 'Power Bank Quality Checks Before Shipping from China',
   metaTitle: 'Power Bank Quality Checks Before China Shipment',
   metaDescription:
-    'Check power bank batch identity, casing, ports, labels, traceability, test evidence, packaging, cartons, and release decisions before shipping from China.',
+    'Use recent CPSC power bank cases to check model, serial, lot, battery evidence, visible condition, and carton scope before payment or pickup in China.',
   publishedDate: 'July 27, 2026',
   publishedDateIso: '2026-07-27T03:45:00+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'September 29, 2026',
+  modifiedDateIso: '2026-09-29T03:23:47+08:00',
   h1: 'Power Bank Quality Checks Before Shipping from China',
   eyebrow: 'Batch identity - product evidence - payment and shipment release',
   image: {
@@ -78,7 +78,7 @@ export const powerBankChecksChinaArticle = {
     },
   ],
   intro:
-    'Before releasing balance payment or pickup for power banks in China, verify that the physical batch, model and serial system, approved construction, supplier evidence, visible condition, labels, retail packs, and cartons describe the same product. Hold the order when identity is unclear, units show swelling or heat damage, files do not match production, or corrective action cannot be traced.',
+    'Before releasing balance payment or pickup for power banks in China, screen the exact model against current recalls and warnings. Then verify that each production lot, serial system, approved construction, technical file, visible condition, retail pack, and carton describes the same product. Hold affected or unidentified stock, any unit with a heat or swelling signal, and batches whose changes or corrections cannot be traced.',
   answerSummary:
     'Use three separate gates: qualified product-safety and laboratory review, buyer-side physical and document inspection, and dangerous-goods transport approval. A pre-shipment inspection can find visible and traceability problems, but it cannot prove lithium-cell safety, predict latent failure, issue a test report, or guarantee carrier or marketplace acceptance.',
   primaryCta: {
@@ -113,6 +113,7 @@ Balance payment or pickup deadline:
     { href: '#scope-limits', label: 'Scope limits' },
   ],
   quickChecks: [
+    'Search current CPSC recalls and warnings for the exact brand, model, aliases, factory, and known battery configuration; isolate any matching stock and follow the official notice rather than relying on a sample inspection',
     'Freeze the approved model, capacity, cell and pack construction, ports, firmware or protection-board version, enclosure, supplier, factory, lot, and sales claims before inspection',
     'Tie the purchase order, bill of materials, approved sample, drawings, label files, laboratory reports, UN 38.3 evidence, Safety Data Sheet, and transport documents to the same production version',
     'Trace sampled units by model, serial or date code, production lot, retail pack, master carton, and packing-list line',
@@ -157,11 +158,12 @@ Balance payment or pickup deadline:
       id: 'why-current',
       title: 'Why power bank release evidence deserves attention now',
       paragraphs: [
-        'Recent official records show a continuing pattern rather than one isolated brand story. In April 2026, CPSC reannounced a recall covering about 429,200 Casely wireless power banks after additional overheating, expansion, and fire reports included one fatality and a February 2026 incident on an airplane. In June 2026, CPSC announced another recall for China-made solar wireless power banks after two reports of battery swelling.',
-        'The pattern also includes traceability-sensitive cases. CPSC’s INIU BI-B41 recall covered only named model and serial groups and recorded 15 overheating reports, including 11 fires, three minor burn injuries, and more than $380,000 in property damage. That record makes model, serial, lot, and carton mapping operational evidence, not administrative decoration.',
+        'Two September 2026 CPSC actions renew the release question. On September 24, CPSC announced a recall of about 21,380 China-made NEWDERY ZHX-PB22 power banks. The notice records nine reports of explosion or ignition, including one reported serious fire causing $2 million in property damage and one reported burn injury. On September 17, CPSC warned consumers to stop using Hererod PW40 and EW40 jump-starter/power banks after 16 fire reports, including seven reports of property damage. A warning is not the same action as a recall; both require a buyer to check exact product identity before release.',
+        'Earlier official records show this is broader than one brand. In April 2026, CPSC reannounced a Casely wireless power bank recall after additional reports. The INIU BI-B41 recall covered named model and serial groups. Together, these records make model, serial, lot, and carton mapping operational evidence, not administrative decoration. They do not identify the root cause of any unrelated production batch.',
         'These public records do not prove that every China-made power bank, supplier, or order is unsafe. They show why a buyer should not release an untraceable or visibly abnormal batch and why absence of visible defects cannot replace qualified engineering, laboratory, certification, and transport review.',
       ],
       bullets: [
+        'Before payment or pickup, record the date, official notice URL, exact model and serial scope checked, matching stock, and person responsible for the disposition',
         'A supplier statement that the same cell or same report was used is not enough when the model, factory, bill of materials, rating, report photo, or production date differs',
         'A clean-looking sample does not prove the internal cells, protection circuit, welds, insulation, capacity, or bulk lot meet requirements',
         'A report file does not prove that production matches the tested sample or that the report is authentic, current, complete, and applicable to the destination',
@@ -213,6 +215,13 @@ Balance payment or pickup deadline:
   ] satisfies ArticleSection[],
   decisionRows: [
     {
+      riskNode: 'Recall or warning scope may match the order',
+      whatToConfirm:
+        'Official notice, model aliases, unit and carton identifiers, production dates, supplier explanation, affected quantity, and stock segregation',
+      buyerDecision:
+        'Stop release of matching or unidentified stock; follow the official action and obtain qualified disposition before any further shipment decision.',
+    },
+    {
       riskNode: 'Identity and traceability align',
       whatToConfirm:
         'PO, model, rating, cell and pack references, factory, lot, serial system, approved sample, reports, labels, packs, cartons, and packing list identify the same version',
@@ -242,12 +251,32 @@ Balance payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'Official CPSC Casely, Super Off-Road, and INIU recall records checked July 27, 2026 Beijing time, plus independent technology coverage used to confirm continuing public attention.',
+    'Official CPSC NEWDERY and Hererod September 2026 records, the earlier Casely, Super Off-Road, and INIU cases, and CPSC battery guidance checked September 29, 2026 Beijing time; independent 2026 portable-charger coverage supports continuing public attention.',
     'Buyer-approved purchase order, product specification, drawings, bill of materials, approved sample, change records, test plan, report set, label and packaging files, packing list, and release rules.',
     'Physical model and lot identifiers, enclosure, ports, buttons, indicators, unit labels, accessories, retail packs, cartons, quantities, visible condition, and safe buyer-approved functional observations.',
     'Separate qualified decisions from laboratories, compliance advisers, importers, marketplaces, forwarders, dangerous-goods specialists, and carriers where their responsibility begins.',
   ],
   sourceNotes: [
+    {
+      href: 'https://www.cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon',
+      label: 'CPSC - NEWDERY ZHX-PB22 power bank recall',
+      note: 'Primary September 24, 2026 record for the named model, China origin, affected quantity, fire reports, injury report, and remedy.',
+    },
+    {
+      href: 'https://www.cpsc.gov/Warnings/2026/CPSC-Urges-Consumers-to-Stop-Using-Hererod-Jump-Starters-Power-Banks-Immediately-Due-to-Risk-of-Serious-Injury-and-Death-from-Fire-Hazard',
+      label: 'CPSC - Hererod PW40 and EW40 safety warning',
+      note: 'Primary September 17, 2026 warning for two China-made jump-starter/power bank models and 16 reported fires.',
+    },
+    {
+      href: 'https://www.cpsc.gov/Regulations-Laws--Standards/Voluntary-Standards/Topics/Batteries',
+      label: 'CPSC - battery safety and voluntary standards',
+      note: 'Official background on battery hazards, system-level testing, and UL 2056 as a voluntary power-bank standard.',
+    },
+    {
+      href: 'https://www.whec.com/wp-content/uploads/2026/04/SAFE-AT-HOME-FULL-REPORT-2026.pdf',
+      label: 'WHEC - 2026 Safe at Home portable charger report',
+      note: 'Independent 2026 consumer coverage of portable-charger recalls and fire concerns; not a source for the September case counts.',
+    },
     {
       href: 'https://www.cpsc.gov/Recalls/2026/Super-Off-Road-Solar-Power-Banks-Recalled-Due-to-Overheating-Imported-by-Spector-Co',
       label: 'CPSC - Super Off-Road solar power bank recall',
@@ -345,6 +374,7 @@ export function makePowerBankChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

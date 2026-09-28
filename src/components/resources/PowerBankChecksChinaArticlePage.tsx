@@ -251,6 +251,24 @@ export function PowerBankChecksChinaArticlePage() {
                       Current primary records:{' '}
                       <a
                         className="hs-text-link"
+                        href="https://www.cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        CPSC NEWDERY recall
+                      </a>
+                      ,{' '}
+                      <a
+                        className="hs-text-link"
+                        href="https://www.cpsc.gov/Warnings/2026/CPSC-Urges-Consumers-to-Stop-Using-Hererod-Jump-Starters-Power-Banks-Immediately-Due-to-Risk-of-Serious-Injury-and-Death-from-Fire-Hazard"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        CPSC Hererod warning
+                      </a>
+                      ,{' '}
+                      <a
+                        className="hs-text-link"
                         href="https://www.cpsc.gov/Recalls/2026/Casely-Reannounces-Recall-of-Wireless-Portable-Power-Banks-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Fatality-Reported-After-2025-Recall"
                         rel="noreferrer"
                         target="_blank"
@@ -378,41 +396,49 @@ export function PowerBankChecksChinaArticlePage() {
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              Super Off-Road recall: a current China-made batch case.
+              NEWDERY ZHX-PB22: an exact-model release case.
             </h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
               <p>
-                On June 25, 2026, CPSC announced a recall of about 7,400 Super
-                Off-Road 12,000 mAh solar wireless power banks in the United States,
-                plus about 4,964 sold in Canada. The official record says the
-                lithium-ion battery could swell and overheat, the firm had received two
-                reports of swelling, no injuries were reported, and the product was
-                manufactured in China.
+                On September 24, 2026, CPSC announced a recall of about 21,380
+                China-made NEWDERY power banks, model ZHX-PB22. The notice says
+                NEWDERY received nine reports of the recalled units exploding or
+                igniting, including one reported serious fire with $2 million in
+                property damage and one reported burn injury. CPSC identifies the
+                model on the unit and gives a refund remedy; consumers should stop
+                using recalled products and follow the notice&apos;s disposal guidance.
               </p>
               <p>
-                Public evidence identified the product configuration, importer, origin,
-                affected quantity, hazard, incidents, and remedy. The notice did not
-                publish a factory root-cause analysis or state that a routine
-                pre-shipment inspection would have predicted the later problem. That
-                limit matters: visible swelling is a stop-and-isolate signal, while a
-                flat enclosure is not proof that internal cells, protection, or future
-                performance are safe.
+                The public record gives the affected model, importer, origin, reported
+                incidents, and remedy. It does not establish a factory root cause or
+                say that a routine pre-shipment inspection could have predicted the
+                incidents. A buyer should compare every order line and carton with
+                the official model scope, isolate matches and unknowns, and refer any
+                technical explanation or proposed replacement to qualified reviewers.
+                A clean-looking unit does not prove internal battery safety.
               </p>
               <p>
                 Read the{' '}
                 <a
                   className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/Super-Off-Road-Solar-Power-Banks-Recalled-Due-to-Overheating-Imported-by-Spector-Co"
+                  href="https://www.cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  official CPSC Super Off-Road recall
+                  official CPSC NEWDERY recall
                 </a>
-                . Huang Sourcing was not involved in the product, factory, testing,
-                reported incidents, recall, or remedy. The buyer lesson is narrower:
-                identify the exact model and lot, escalate any visible abnormality,
-                preserve carton-level traceability, and keep qualified technical review
-                separate from physical inspection before release.
+                {' '}and the separate{' '}
+                <a
+                  className="hs-text-link"
+                  href="https://www.cpsc.gov/Warnings/2026/CPSC-Urges-Consumers-to-Stop-Using-Hererod-Jump-Starters-Power-Banks-Immediately-Due-to-Risk-of-Serious-Injury-and-Death-from-Fire-Hazard"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  CPSC Hererod warning
+                </a>
+                . Huang Sourcing was not involved in either product, factory,
+                testing, incident, recall, warning, or remedy. These examples do not
+                prove that another supplier or order has the same risk.
               </p>
             </div>
           </Reveal>
