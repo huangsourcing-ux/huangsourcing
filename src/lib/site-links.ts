@@ -12,6 +12,8 @@ export const adultBedRailChecksChinaArticleHref =
   '/adult-bed-rail-checks-china'
 export const babyLoungerChecksChinaArticleHref =
   '/baby-lounger-checks-china'
+export const cribMattressChecksChinaArticleHref =
+  '/crib-mattress-checks-china'
 export const babyWalkerChecksChinaArticleHref =
   '/baby-walker-checks-china'
 export const babySwingChecksChinaArticleHref =
