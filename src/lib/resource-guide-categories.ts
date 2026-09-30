@@ -7,6 +7,7 @@ import {
   amazonSellersFbaPrepChinaArticleHref,
   babyLoungerChecksChinaArticleHref,
   cribMattressChecksChinaArticleHref,
+  infantBouncerChecksChinaArticleHref,
   babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
   ceilingFanChecksChinaArticleHref,
@@ -305,6 +306,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: mattressFlammabilityChecksChinaArticleHref,
         label: 'Mattress flammability evidence and shipment checklist',
+      },
+      {
+        href: infantBouncerChecksChinaArticleHref,
+        label: 'Infant bouncer locks, configuration and shipment checklist',
       },
       {
         href: cribMattressChecksChinaArticleHref,

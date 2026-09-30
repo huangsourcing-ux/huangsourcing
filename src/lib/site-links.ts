@@ -225,3 +225,5 @@ I need a quote for:
 `
 export const bookingMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Book a Free Sourcing Call - Huang Sourcing')}&body=${encodeURIComponent(bookingBody)}`
 export const customQuoteMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Custom Quote — FBA & Logistics')}&body=${encodeURIComponent(customQuoteBody)}`
+
+export const infantBouncerChecksChinaArticleHref = '/infant-bouncer-checks-china'
