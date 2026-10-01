@@ -12,6 +12,7 @@ import {
   babyLoungerChecksChinaArticleHref,
   cribMattressChecksChinaArticleHref,
   infantBouncerChecksChinaArticleHref,
+  smartGlassesChecksChinaArticleHref,
   babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
   ceilingFanChecksChinaArticleHref,
@@ -387,6 +388,11 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: mattressFlammabilityChecksChinaArticleHref,
+    changeFrequency: 'monthly',
+    priority: 0.82,
+  },
+  {
+    path: smartGlassesChecksChinaArticleHref,
     changeFrequency: 'monthly',
     priority: 0.82,
   },

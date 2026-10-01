@@ -8,6 +8,7 @@ import {
   babyLoungerChecksChinaArticleHref,
   cribMattressChecksChinaArticleHref,
   infantBouncerChecksChinaArticleHref,
+  smartGlassesChecksChinaArticleHref,
   babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
   ceilingFanChecksChinaArticleHref,
@@ -306,6 +307,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: mattressFlammabilityChecksChinaArticleHref,
         label: 'Mattress flammability evidence and shipment checklist',
+      },
+      {
+        href: smartGlassesChecksChinaArticleHref,
+        label: 'Smart glasses hardware, firmware and shipment checklist',
       },
       {
         href: infantBouncerChecksChinaArticleHref,

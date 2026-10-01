@@ -227,3 +227,5 @@ export const bookingMailto = `mailto:${businessEmail}?subject=${encodeURICompone
 export const customQuoteMailto = `mailto:${businessEmail}?subject=${encodeURIComponent('Custom Quote — FBA & Logistics')}&body=${encodeURIComponent(customQuoteBody)}`
 
 export const infantBouncerChecksChinaArticleHref = '/infant-bouncer-checks-china'
+
+export const smartGlassesChecksChinaArticleHref = '/smart-glasses-checks-china'
