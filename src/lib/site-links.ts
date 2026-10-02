@@ -229,3 +229,5 @@ export const customQuoteMailto = `mailto:${businessEmail}?subject=${encodeURICom
 export const infantBouncerChecksChinaArticleHref = '/infant-bouncer-checks-china'
 
 export const smartGlassesChecksChinaArticleHref = '/smart-glasses-checks-china'
+
+export const sleepMachineChecksChinaArticleHref = '/sleep-machine-checks-china'
