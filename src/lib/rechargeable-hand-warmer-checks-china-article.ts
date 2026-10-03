@@ -24,17 +24,21 @@ type DecisionRow = { buyerDecision: string; riskNode: string; whatToConfirm: str
 type RelatedLink = { href: string; label: string; note: string }
 type SourceNote = { href: string; label: string; note: string }
 
+export const hotHandsRecall = 'https://www.cpsc.gov/Recalls/2027/Kobayashi-Recalls-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-from-Fire-and-Burn-Hazards'
+export const gobiHeatRecall = 'https://www.cpsc.gov/Recalls/2027/Gobi-Heat-Recalls-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-from-Fire-and-Burn-Hazards'
+export const hotHandsManufacturerNotice = 'https://hothands.com/recall-notice-rechargeable'
+
 export const rechargeableHandWarmerChecksChinaArticle = {
   author: 'editorial-team' as const,
   href: rechargeableHandWarmerChecksChinaArticleHref,
   title: 'Rechargeable Hand Warmer Checks Before China Shipment',
   metaTitle: 'Rechargeable Hand Warmer Checks Before Shipment',
   metaDescription:
-    'Check hand warmer models, batteries, heater controls, labels, cartons, test evidence, and release decisions before shipping rechargeable units from China.',
+    'Screen hand warmer recalls across brands, match battery and electrical parts to lots, and document hold or release decisions before shipping from China.',
   publishedDate: 'August 9, 2026',
   publishedDateIso: '2026-08-09T15:26:43-04:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'October 4, 2026',
+  modifiedDateIso: '2026-10-04T03:29:33+08:00',
   h1: 'Rechargeable Hand Warmer Checks Before China Shipment',
   eyebrow: 'Battery and heater evidence - finished-lot checks - payment and pickup release',
   image: {
@@ -49,7 +53,7 @@ export const rechargeableHandWarmerChecksChinaArticle = {
     { height: 1000, src: '/images/rechargeable-hand-warmer-checks-china-1x1.webp', width: 1000 },
   ],
   intro:
-    'Before releasing balance payment or forwarder pickup for rechargeable hand warmers made in China, freeze the exact model, cell and pack identity, heater and protection controls, charging input, housing, claimed temperatures, labels, instructions, production lot, retail packs, and cartons. Hold shipment whenever the finished goods or evidence differ from the buyer-approved version.',
+    'Before releasing balance payment or pickup for rechargeable hand warmers from China, screen the branded model and the underlying battery and electrical components. The October 1, 2026 recalls add HotHands and Gobi Heat to the identity check. Hold recalled stock and unresolved component matches; a different logo or a working sample does not clear a lot for shipment.',
   answerSummary:
     'Use four separate gates: qualified product-safety and battery review, buyer-side comparison of sampled finished goods with approved references, importer or marketplace compliance review, and dangerous-goods transport approval. A China-side inspection can document identity, visible construction, controls, basic buyer-approved observations, labels, quantities, and pack-out. It cannot safely improvise abuse, short-circuit, overcharge, thermal-runaway, endurance, fire, or transport testing, certify the product, or guarantee future battery performance.',
   primaryCta: { label: 'Check Hand Warmers Before Shipment' },
@@ -59,6 +63,7 @@ export const rechargeableHandWarmerChecksChinaArticle = {
 I need a China-side rechargeable hand warmer evidence and quality check before shipment.
 
 Destination, model/SKU, ratings, capacity, and claimed temperatures:
+Brand aliases, factory model, component part IDs and BOM revision:
 Factory, production dates, lots, quantity, and carton map:
 Approved sample, drawings, bill of materials, and tolerances:
 Cell, pack, heater, control board, sensors, protection, and change records:
@@ -68,6 +73,7 @@ Balance payment or pickup deadline:
 `,
   tableOfContents: [
     { href: '#quick-answer', label: 'Quick answer' },
+    { href: '#cross-brand-screening', label: 'Cross-brand recall screening' },
     { href: '#release-checklist', label: 'Release checklist' },
     { href: '#why-current', label: 'Why this matters now' },
     { href: '#model-control', label: 'Exact model and change control' },
@@ -80,6 +86,7 @@ Balance payment or pickup deadline:
     { href: '#scope-limits', label: 'Scope limits' },
   ],
   quickChecks: [
+    'Screen the brand, model and batch against current destination recall notices, then reconcile the battery and electrical component identities across any supplier model aliases before operating samples',
     'Freeze the exact model, SKU, cell and pack identity, capacity and watt-hour rating, heater, control board, temperature sensor, protection, input, housing, magnet or connector arrangement, factory, production date, lot, labels, instructions, and package version',
     'Require qualified product-safety, laboratory, importer, marketplace, and dangerous-goods parties to identify current destination requirements, test methods, report scope, certification or filing duties, and carrier conditions',
     'Map complete reports and the UN 38.3 test summary to the manufacturer, factory, exact model, cell or battery description, ratings, sample photos, test report ID, dates, results, limitations, and authorized changes',
@@ -124,9 +131,9 @@ Balance payment or pickup deadline:
       id: 'why-current',
       title: 'Why rechargeable hand warmer release evidence matters now',
       paragraphs: [
-        'On July 30, 2026, the U.S. Consumer Product Safety Commission announced a recall of about 1.5 million OCOOPA rechargeable lithium-ion hand warmers imported by Shenzhen Street Cat Technology. CPSC said the batteries could overheat and ignite. The company had received 1,480 overheating reports associated with 15 fires, 350 burn injuries, and one death.',
-        'The official notice names seven models, explains that the products were sold in paired packs, and says the model and three-digit batch number appear on the underside. Independent same-day coverage focused on the recall scale and repeated those model and batch boundaries. That makes identity and traceability central to a buyer-side release decision, not a paperwork afterthought.',
-        'A separate UK Office for Product Safety and Standards report for another rechargeable hand warmer documented poor electrical connections, wires without secondary mechanical restraint, no thermal protection on the cells, and missing documents or markings. The records involve different products, countries, rules, sellers, and evidence. They do not prove every hand warmer, supplier, or China-made lot has the same defect.',
+        'CPSC issued separate HotHands and Gobi Heat rechargeable hand warmer recalls on October 1, 2026. Both notices describe battery and electrical-component overheating hazards and identify China manufacture. They add distinct branded models to the screening file; they do not establish a defect in every similar-looking product.',
+        'The HotHands manufacturer notice says its recalled model shares identical lithium-ion battery and electrical components with the earlier OCOOPA recalled product. That is a documented reason to trace components across brand names, rather than screening only the logo on a purchase order.',
+        'For buyers, the new decision is whether stock can be separated by brand, factory model, bill-of-materials revision and component lot. Hold uncertain matches for written manufacturer and qualified technical review. Do not assume that a visual inspection, supplier assurance or changed retail label resolves the recall question.',
       ],
       bullets: [
         'A supplier claim such as “UL,” “CE,” “UKCA,” “UN 38.3,” “overheat protection,” or a temperature range needs exact-model evidence and is not proof by itself',
@@ -184,7 +191,7 @@ Balance payment or pickup deadline:
       id: 'transport-boundary',
       title: 'Keep product release separate from lithium-battery transport approval',
       paragraphs: [
-        'The official text of 49 CFR 173.185 requires lithium cells and batteries to meet the applicable UN Manual of Tests and Criteria subsection 38.3 design tests. For covered cells and batteries, the rule also requires manufacturers and subsequent distributors to make a test summary available with identity, contact, model, physical-description, watt-hour, report, test-result, edition, and responsible-person information.',
+        'The current eCFR text of 49 CFR 173.185 requires lithium cells and batteries to meet the applicable UN Manual of Tests and Criteria subsection 38.3 design tests. For covered cells and batteries, the rule also requires manufacturers and subsequent distributors to make a test summary available with identity, contact, model, physical-description, watt-hour, report, test-result, edition, and responsible-person information.',
         'A matching UN 38.3 test summary addresses a transport evidence requirement; it is not a product-safety certificate, marketplace approval, capacity guarantee, or proof that the mass-produced hand warmer matches the tested battery. The shipper, forwarder, carrier, dangerous-goods specialist, and destination authorities decide classification, state of charge, packing, marks, labels, documents, quantity limits, acceptance, and routing.',
         'Keep product release, importer compliance, marketplace review, customs, and dangerous-goods decisions separately approved and version controlled. Reconfirm current carrier instructions before production, labeling, booking, pickup, and shipment because acceptance rules can change.',
       ],
@@ -197,6 +204,11 @@ Balance payment or pickup deadline:
     },
   ] satisfies ArticleSection[],
   decisionRows: [
+    {
+      riskNode: 'Recall match or unresolved cross-brand component identity',
+      whatToConfirm: 'Destination notice, brand, factory and retail model aliases, unit batch, cell and electrical part IDs, BOM revision, production records, and affected carton range.',
+      buyerDecision: 'Segregate recalled stock and follow the applicable recall process. Hold uncertain matches for written scope assessment; a passed spot check or relabeling cannot clear a recalled product.',
+    },
     {
       riskNode: 'Exact model and controlled design',
       whatToConfirm: 'PO, cell, pack, heater, sensor, protection and control board, input, housing, ratings, factory, lot, approved sample, files, package, and packing list identify one version.',
@@ -219,12 +231,16 @@ Balance payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
-    'The July 30, 2026 CPSC OCOOPA recall, independent same-day coverage, and the separate UK OPSS rechargeable hand warmer report were checked on August 10, 2026 Beijing time.',
-    'Current CPSC high-energy-density battery standards information and the official 49 CFR 173.185 UN 38.3 test-summary requirements are used only for scope boundaries; no record is treated as blanket approval or a guarantee.',
+    'Public sources rechecked October 4, 2026 Beijing time: July OCOOPA and October 1 HotHands/Gobi Heat CPSC notices, the HotHands manufacturer statement, CJWW coverage, and the separate older UK OPSS report. The new cross-brand screening process is Huang Sourcing editorial analysis, not a regulator-prescribed inspection procedure.',
+    'Current CPSC high-energy-density battery standards information and the current eCFR text of the 49 CFR 173.185 UN 38.3 test-summary requirements are used only for scope boundaries; no record is treated as blanket approval or a guarantee.',
     'Buyer-controlled specification, approved sample, drawings, bill of materials, change log, test and certification file, labels, instructions, packing list, carton map, inspection criteria, transport files, and release rules.',
     'Physical model and lot identifiers, housing, controls, ports, indicators, unit labels, accessories, retail packs, cartons, quantities, visible condition, and safe buyer-approved observations.',
   ],
   sourceNotes: [
+    { href: hotHandsRecall, label: 'CPSC - HotHands recall 27-011', note: 'October 1, 2026: H163650 rechargeable units, China manufacture, overheating hazard and stop-use/refund action. The notice reports no incidents.' },
+    { href: gobiHeatRecall, label: 'CPSC - Gobi Heat recall 27-009', note: 'October 1, 2026: UT3053 rechargeable units, China manufacture, overheating hazard and recall action. No incidents or injuries reported.' },
+    { href: hotHandsManufacturerNotice, label: 'HotHands - manufacturer recall notice', note: 'Identifies the shared battery and electrical components, H163650 scope, and exclusion of air-activated hand warmers.' },
+    { href: 'https://www.cjwwradio.com/2026/10/01/hothands-recall/', label: 'CJWW - October 1 HotHands recall coverage', note: 'Separate current coverage signal. Official notices and the manufacturer statement control the product and component facts.' },
     {
       href: 'https://www.cpsc.gov/Recalls/2026/OCOOPA-Direct-Recalls-1-5-Million-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-Shenzhen-Street-Cat-Technology',
       label: 'CPSC - OCOOPA rechargeable hand warmer recall 26-659',
@@ -236,19 +252,14 @@ Balance payment or pickup deadline:
       note: 'Independent primary record for another rechargeable hand warmer, documenting poor electrical connections, absent secondary restraint, no cell thermal protection, missing documents or markings, and marketplace removal.',
     },
     {
-      href: 'https://www.whio.com/news/trending/recall-alert-15m-rechargeable-hand-warmers-recalled-due-burn-fire-injuries/XSGMU44KK5A53CWKBFM5U52HLI/',
-      label: 'WHIO - independent OCOOPA recall coverage',
-      note: 'Independent July 30, 2026 coverage highlighting the recall scale, reported outcomes, affected models, paired-pack format, model and batch placement, sales channels, and stop-use action.',
-    },
-    {
       href: 'https://www.cpsc.gov/Regulations-Laws--Standards/Voluntary-Standards/Batteries-Fire-High-Energy-Density',
       label: 'CPSC - high-energy-density battery fire standards work',
       note: 'Current official page identifying the purpose and voluntary standards associated with overheating, thermal burns, fire, and explosion hazards; used to define qualified-review boundaries, not to select a standard for a specific product.',
     },
     {
-      href: 'https://www.govinfo.gov/app/details/CFR-2024-title49-vol2/CFR-2024-title49-vol2-sec173-185',
-      label: 'GovInfo - 49 CFR 173.185 lithium cells and batteries',
-      note: 'Official U.S. Government Publishing Office text covering UN 38.3 design testing and test-summary availability, identity fields, report references, completed tests, applicable edition, and responsible-person validation.',
+      href: 'https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-E/section-173.185',
+      label: 'eCFR - current 49 CFR 173.185 lithium cells and batteries',
+      note: 'Current eCFR text, checked for this update, covering UN 38.3 design testing and test-summary availability, identity fields, report references, completed tests, applicable edition, and responsible-person validation.',
     },
   ] satisfies SourceNote[],
   whatToSend: [
@@ -278,6 +289,7 @@ Balance payment or pickup deadline:
     'A passed pre-shipment inspection does not guarantee certification validity, importer filing acceptance, customs release, marketplace approval, carrier acceptance, recall avoidance, or safe use after shipment',
   ],
   relatedLinks: [
+    { href: '/qc-before-balance', label: 'QC before balance payment', note: 'Keep the payment hold, evidence gaps and release scope explicit while goods remain accessible.' },
     {
       href: powerBankChecksChinaArticleHref,
       label: 'Power bank quality checks in China',
@@ -334,6 +346,7 @@ export function makeRechargeableHandWarmerChecksChinaArticleMetadata(): Metadata
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

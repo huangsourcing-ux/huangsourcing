@@ -26,6 +26,9 @@ import { SiteFooter } from '@/components/site/SiteFooter'
 import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import {
+  hotHandsRecall,
+  gobiHeatRecall,
+  hotHandsManufacturerNotice,
   makeRechargeableHandWarmerChecksChinaArticleJsonLd,
   rechargeableHandWarmerChecksChinaArticle,
 } from '@/lib/rechargeable-hand-warmer-checks-china-article'
@@ -193,6 +196,22 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
               </div>
             </Reveal>
 
+            <Reveal as="section" className="mt-12 scroll-mt-24" id="cross-brand-screening">
+              <p className="hs-eyebrow">October 2026 update</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">Can a different brand share the recalled components?</h2>
+              <p className="hs-muted mt-4 text-base leading-7">Yes. The <a className="hs-text-link" href={hotHandsManufacturerNotice}>HotHands manufacturer notice</a> states that its recalled H163650 warmers share identical lithium-ion battery and electrical components with the earlier OCOOPA recalled product. This statement concerns those products; it is not proof that every private-label hand warmer shares their construction.</p>
+              <p className="hs-muted mt-4 text-base leading-7">Ask the supplier for a written cross-reference connecting each retail brand and SKU to the factory model, cell and pack part IDs, electrical assembly revision, bill of materials, production dates and carton ranges. Compare that file with complete reports and production records. If the supplier cannot bound a possible match, keep the uncertain lots on hold.</p>
+              <ol className="mt-6 grid gap-4 text-sm leading-6 text-[var(--hs-muted)]">
+                {[
+                  ['Screen identity before operation', 'Record the destination notice, brand, unit model and batch with photographs of both units in a pair and their retail box. A missing or unreadable identifier leaves the scope unresolved.'],
+                  ['Trace the component version', 'Request source part numbers and revision records for the cell, pack and electrical assembly. Ask qualified parties to assess substitutions; a shared shell or a different logo is not component evidence.'],
+                  ['Bound the held stock', 'Connect each affected or uncertain version to production dates, quantities and carton IDs. Keep clearly identified stock and unresolved stock separated; record who owns the disposition.'],
+                  ['Close the scope before payment or pickup', 'For non-recalled stock, obtain written manufacturer and qualified-party assessment, applicable evaluation and correction evidence, then re-inspect the agreed scope. Recalled products remain subject to their recall process.'],
+                ].map(([title, detail], index) => <li className="rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-[var(--hs-bg-soft)] p-5" key={title}><h3 className="font-extrabold text-[var(--hs-text)]">{index + 1}. {title}</h3><p className="mt-2">{detail}</p></li>)}
+              </ol>
+              <p className="hs-muted mt-5 text-sm leading-6">Do not charge or heat recalled units to see whether they fail. A passed spot check, fresh label or replacement carton cannot override a recall. Obtain the applicable authorized handling and disposition instructions before moving held battery products.</p>
+            </Reveal>
+
             <Reveal as="section" className="mt-12 scroll-mt-24" id="release-checklist">
               <div className="flex items-center gap-3">
                 <div className="hs-icon-box size-12">
@@ -248,36 +267,7 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
                   </div>
                   {section.bullets ? <BulletList items={section.bullets} /> : null}
                   {section.id === 'why-current' ? (
-                    <p className="hs-muted mt-5 text-sm leading-6">
-                      Current records:{' '}
-                      <a
-                        className="hs-text-link"
-                        href="https://www.cpsc.gov/Recalls/2026/OCOOPA-Direct-Recalls-1-5-Million-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-Shenzhen-Street-Cat-Technology"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        CPSC OCOOPA recall 26-659
-                      </a>
-                      ,{' '}
-                      <a
-                        className="hs-text-link"
-                        href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-electric-rechargeable-hand-warmer-sold-via-amazon-and-ebay-2412-0114"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        UK OPSS report 2412-0114
-                      </a>
-                      , and independent{' '}
-                      <a
-                        className="hs-text-link"
-                        href="https://www.whio.com/news/trending/recall-alert-15m-rechargeable-hand-warmers-recalled-due-burn-fire-injuries/XSGMU44KK5A53CWKBFM5U52HLI/"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        WHIO recall coverage
-                      </a>
-                      .
-                    </p>
+                    <p className="hs-muted mt-5 text-sm leading-6">Current evidence: <a className="hs-text-link" href={hotHandsRecall}>CPSC HotHands recall</a>, <a className="hs-text-link" href={gobiHeatRecall}>CPSC Gobi Heat recall</a>, and <a className="hs-text-link" href={hotHandsManufacturerNotice}>HotHands component statement</a>. <a className="hs-text-link" href="https://www.cjwwradio.com/2026/10/01/hothands-recall/">CJWW coverage on October 1</a> is a separate attention signal, not an additional incident count.</p>
                   ) : null}
                   {section.id === 'model-control' ? (
                     <p className="hs-muted mt-5 text-sm leading-6">
@@ -309,10 +299,10 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
                   ) : null}
                   {section.id === 'transport-boundary' ? (
                     <p className="hs-muted mt-5 text-sm leading-6">
-                      Check the official{' '}
+                      Check the current eCFR text of{' '}
                       <a
                         className="hs-text-link"
-                        href="https://www.govinfo.gov/app/details/CFR-2024-title49-vol2/CFR-2024-title49-vol2-sec173-185"
+                        href="https://www.ecfr.gov/current/title-49/subtitle-B/chapter-I/subchapter-C/part-173/subpart-E/section-173.185"
                         rel="noreferrer"
                         target="_blank"
                       >
@@ -343,9 +333,7 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
               Turn rechargeable hand warmer evidence into a payment or pickup decision.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Record the cleared scope and the unresolved scope. A pass should never
-              conceal unverified lots, inaccessible evidence, unsafe checks, or
-              specialist decisions that remain open.
+              Recall holds take priority over every ordinary release option below. Rework, relabeling and routine release apply only to non-recalled stock after the identity and component scope is resolved. Record the cleared and held cartons separately.
             </p>
           </Reveal>
           <div className="mt-8 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
@@ -394,76 +382,34 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines the current CPSC OCOOPA recall, independent same-day coverage, a separate UK OPSS hand-warmer report, current CPSC battery-standards information, and the official 49 CFR lithium-battery requirements with the exact-model, technical-file, physical-product, packaging, correction, and release evidence a buyer can organize before goods leave China."
+        intro="This guide combines cited CPSC recalls, the HotHands component statement, current independent coverage and technical-scope references with buyer-side sourcing analysis. The update adds a component-to-brand screening process and explicit recall holds before payment or pickup."
         items={article.evidenceBasis}
       />
 
       <section className="hs-section-white scroll-mt-24" id="public-case">
-        <div className="hs-container hs-section max-w-4xl">
+        <div className="hs-container hs-section max-w-5xl">
           <Reveal>
             <p className="hs-eyebrow">Public case example</p>
-            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              OCOOPA recall 26-659: model and batch identity are release evidence.
-            </h2>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">OCOOPA, HotHands and Gobi Heat: screen each notice separately</h2>
             <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
-              <p>
-                <strong className="text-[var(--hs-text)]">What happened:</strong> On
-                July 30, 2026, CPSC and Shenzhen Street Cat Technology announced the
-                recall of about 1.5 million OCOOPA rechargeable lithium-ion hand
-                warmers. CPSC said the batteries could overheat and ignite. The company
-                had received 1,480 overheating reports associated with 15 fires, 350
-                burn injuries, and one death.
-              </p>
-              <p>
-                <strong className="text-[var(--hs-text)]">What evidence was public:</strong>{' '}
-                The{' '}
-                <a
-                  className="hs-text-link"
-                  href="https://www.cpsc.gov/Recalls/2026/OCOOPA-Direct-Recalls-1-5-Million-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-Shenzhen-Street-Cat-Technology"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  official CPSC recall
-                </a>{' '}
-                identifies seven models, paired-unit format, USB-C charging, the
-                underside location of model and three-digit batch numbers, China
-                manufacture, sales period and channels, reported outcomes, and refund
-                process. It does not publish the full factory root-cause analysis,
-                complete design file, or production record for every unit.
-              </p>
-              <p>
-                <strong className="text-[var(--hs-text)]">Buyer lesson:</strong> Freeze
-                the exact cell, pack, heater, sensor, protection and control board,
-                housing, ratings, model, batch, labels, and pack-out before release.
-                Trace every sampled unit and carton to that version. A model or batch
-                mismatch is a hold condition, not a cosmetic defect.
-              </p>
-              <p>
-                <strong className="text-[var(--hs-text)]">Why the UK record matters:</strong>{' '}
-                The separate{' '}
-                <a
-                  className="hs-text-link"
-                  href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-electric-rechargeable-hand-warmer-sold-via-amazon-and-ebay-2412-0114"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  UK OPSS report 2412-0114
-                </a>{' '}
-                documented poor connections, missing mechanical restraint, no cell
-                thermal protection, and missing documentation or markings in another
-                rechargeable hand warmer. Different products and rules lead to the same
-                sourcing discipline: control the exact production version and keep
-                qualified technical review separate from physical inspection.
-              </p>
-              <p>
-                <strong className="text-[var(--hs-text)]">Limits of comparison:</strong>{' '}
-                Neither record proves every China-made hand warmer, supplier, factory,
-                or lot has the same defect. A flat enclosure or short function check is
-                not proof of internal cell quality or future safety. Huang Sourcing had
-                no role in either product, factory, test, reported event, recall, or
-                remedy and cannot reproduce qualified battery, heater, abuse, endurance,
-                fire, or transport testing during an ordinary inspection.
-              </p>
+              <p><strong className="text-[var(--hs-text)]">What happened:</strong> The <a className="hs-text-link" href="https://www.cpsc.gov/Recalls/2026/OCOOPA-Direct-Recalls-1-5-Million-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-Shenzhen-Street-Cat-Technology">July 30 OCOOPA recall</a> covered about 1.5 million warmers and reported overheating, fires, burn injuries and one death. On October 1, 2026, CPSC announced separate <a className="hs-text-link" href={hotHandsRecall}>HotHands</a> and <a className="hs-text-link" href={gobiHeatRecall}>Gobi Heat recalls</a> for overheating and ignition hazards. Both newer notices identify China manufacture and report no incidents. Do not transfer the OCOOPA incident counts to those brands.</p>
+              <p><strong className="text-[var(--hs-text)]">What evidence was public:</strong> The notices provide product identifiers and recall actions. The HotHands manufacturer separately confirms shared components with the earlier OCOOPA product. None of these notices supplies a complete bill of materials for every private-label version.</p>
+            </div>
+            <div className="mt-6 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)]">
+              <table className="w-full min-w-[640px] text-left text-sm leading-6">
+                <caption className="bg-[var(--hs-bg-soft)] p-4 text-left font-bold">U.S. recall identity references — not a list of cleared stock</caption>
+                <thead className="bg-[var(--hs-navy)] text-white"><tr><th scope="col" className="p-4">Record</th><th scope="col" className="p-4">Identity to compare</th><th scope="col" className="p-4">Scope boundary</th></tr></thead>
+                <tbody className="hs-muted bg-white">
+                  <tr><th scope="row" className="p-4"><a className="hs-text-link" href={hotHandsRecall}>HotHands 27-011</a></th><td className="p-4">H163650; model and four-digit batch on underside; white HotHands logo</td><td className="p-4">Rechargeable units. The manufacturer excludes air-activated warmers.</td></tr>
+                  <tr className="border-t border-[var(--hs-border)]"><th scope="row" className="p-4"><a className="hs-text-link" href={gobiHeatRecall}>Gobi Heat 27-009</a></th><td className="p-4">UT3053 on underside; Gobi Heat branding; black and gray paired units</td><td className="p-4">Use the Gobi Heat notice and process. Do not infer identical components from appearance alone.</td></tr>
+                  <tr className="border-t border-[var(--hs-border)]"><th scope="row" className="p-4">OCOOPA 26-659</th><td className="p-4">UT3053, UT3056, ZLS-118, ZLS-118S, ZLS-118D, H01, H01(PD); underside model and three-digit batch</td><td className="p-4">Check the linked July record. Its identifiers and incident history belong to that recall.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="hs-muted mt-5 grid gap-4 text-base leading-7">
+              <p><strong className="text-[var(--hs-text)]">Buyer lesson:</strong> The older OCOOPA case remains relevant because the October HotHands notice explicitly links components across brands. Build a brand-to-component-to-carton map, obtain a written scope assessment for uncertain matches, and keep recalled stock out of an ordinary inspection-and-release path.</p>
+              <p><strong className="text-[var(--hs-text)]">Separate technical context:</strong> The <a className="hs-text-link" href="https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-electric-rechargeable-hand-warmer-sold-via-amazon-and-ebay-2412-0114">February 2025 UK OPSS report</a> concerned another model with connection and cell thermal-protection problems. It explains why internal technical evidence matters; it does not establish a component link to these U.S. recalls.</p>
+              <p><strong className="text-[var(--hs-text)]">Limits of comparison:</strong> A matching model string alone does not identify an unrelated product, and an unlisted brand is not evidence of safety. The proposed sourcing workflow is our analysis. Huang Sourcing did not supply, inspect or participate in these cases. Use the appropriate destination notice and qualified parties for the specific stock and any recall disposition.</p>
             </div>
           </Reveal>
         </div>
@@ -480,7 +426,7 @@ export function RechargeableHandWarmerChecksChinaArticlePage() {
               Public records used for this guide.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              These links support the current incident pattern and public case. They do
+              These links support the recall notices and case evidence. They do
               not establish that another supplier, model, or order has the same risk.
             </p>
           </Reveal>

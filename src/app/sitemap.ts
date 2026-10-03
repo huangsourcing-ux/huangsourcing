@@ -459,6 +459,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: rechargeableHandWarmerChecksChinaArticleHref,
+    lastModified: '2026-10-04T03:29:33+08:00',
     changeFrequency: 'monthly',
     priority: 0.82,
   },

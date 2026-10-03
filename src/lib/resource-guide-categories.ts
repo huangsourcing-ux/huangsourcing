@@ -363,7 +363,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: rechargeableHandWarmerChecksChinaArticleHref,
-        label: 'Rechargeable hand warmer evidence and shipment checklist',
+        label: 'Rechargeable hand warmer recall, component and shipment checks',
       },
       {
         href: adultBedRailChecksChinaArticleHref,
