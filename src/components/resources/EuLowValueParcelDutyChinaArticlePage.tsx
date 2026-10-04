@@ -28,6 +28,7 @@ import { Button } from '@/components/ui/button'
 import {
   euLowValueParcelDutyChinaArticle,
   makeEuLowValueParcelDutyChinaArticleJsonLd,
+  parcelSources,
 } from '@/lib/eu-low-value-parcel-duty-china-2026-article'
 import { buildWhatsAppHref } from '@/lib/site-links'
 
@@ -70,9 +71,30 @@ export function EuLowValueParcelDutyChinaArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline
+              modifiedDate={article.modifiedDate}
+              publishedDate={article.publishedDate}
+            />
+            <p className="hs-muted mt-3 text-sm leading-6">
+              Updated by{' '}
+              <Link className="font-bold text-[var(--hs-accent)] underline underline-offset-4" href="/about">
+                Huang Sourcing Editorial Team
+              </Link>
+              . This update is based on cited public records, carrier and shipping-software
+              guidance, and buyer-side sourcing analysis.
+            </p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
+            </p>
+            <p className="hs-muted mt-2 text-sm leading-6">
+              See the{' '}
+              <a className="hs-text-link" href={parcelSources.commissionGuidance}>
+                Commission guidance on product identifiers
+              </a>{' '}
+              and{' '}
+              <a className="hs-text-link" href={parcelSources.dhl}>
+                DHL&apos;s scope and shipment instructions
+              </a>.
             </p>
             <p className="hs-muted mt-4 max-w-3xl text-base leading-7">
               {article.answerSummary}
@@ -112,6 +134,9 @@ export function EuLowValueParcelDutyChinaArticlePage() {
                 />
               </div>
             </div>
+            <p className="hs-muted mt-2 text-xs leading-5">
+              Illustrative packaging check; not a photograph of the cited EU control operation.
+            </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {['Item Type', 'Product ID', 'Labels', 'Handoff'].map((item) => (
                 <a
@@ -165,10 +190,12 @@ export function EuLowValueParcelDutyChinaArticlePage() {
                 What should EU sellers check before China parcels ship?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Check whether the parcel is a low-value distance sale, group products
-                by item type, prepare product identifiers, and make sure labels,
-                invoice descriptions, SKU records, safety files, and seller/declarant
-                responsibility match before dispatch.
+                Treat customs duty and product identifiers as separate checks. Confirm
+                the applicable duty route with the EU declarant, then agree how each
+                product identifier (PID) will be sent in the customs data. Before
+                dispatch, match the identifier to the actual goods, listing, labels,
+                invoice and safety file. Hold release if the carrier cannot accept
+                the data or the identifier points to a different product.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {article.quickChecks.map((item, index) => (
@@ -237,11 +264,137 @@ export function EuLowValueParcelDutyChinaArticlePage() {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  {section.sources ? (
+                    <p className="hs-muted mt-3 text-sm leading-6">
+                      Sources:{' '}
+                      {section.sources.map((source, sourceIndex) => (
+                        <span key={source.href}>
+                          {sourceIndex > 0 ? '; ' : null}
+                          <a
+                            className="text-[var(--hs-accent)] underline underline-offset-4"
+                            href={source.href}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            {source.label}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  ) : null}
                   {section.bullets ? <BulletList items={section.bullets} /> : null}
                 </Reveal>
               ))}
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="hs-section-soft scroll-mt-24" id="pid-handoff">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">PID evidence handoff</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Match the identifier to the goods before the data handoff.
+            </h2>
+            <p className="hs-muted mt-4 text-base leading-7">
+              Use this working file to reconcile product identity while corrections
+              are still possible in China. Have the carrier or EU declarant confirm
+              the accepted identifier, field and transmission format; a supplier
+              spreadsheet alone does not establish that customs received the PID.
+            </p>
+            <p className="hs-muted mt-3 text-sm leading-6">
+              Source:{' '}
+              <a className="text-[var(--hs-accent)] underline underline-offset-4" href={parcelSources.commissionGuidance} rel="noreferrer" target="_blank">
+                European Commission low-value parcel guidance, product identifiers
+              </a>
+              . The checks and hold reasons below are Huang Sourcing editorial analysis.
+            </p>
+          </Reveal>
+          <div className="mt-8 overflow-hidden rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
+            <table className="block w-full text-left text-sm leading-6 md:table md:table-fixed">
+              <caption className="sr-only">PID evidence and reasons to hold China-side shipment release</caption>
+              <thead className="hidden bg-[var(--hs-navy)] text-white md:table-header-group">
+                <tr>
+                  <th className="p-4 md:w-1/4" scope="col">ID</th>
+                  <th className="p-4" scope="col">China-side evidence</th>
+                  <th className="p-4" scope="col">Hold reason</th>
+                </tr>
+              </thead>
+              <tbody className="block md:table-row-group">
+                {article.pidRows.map((row) => (
+                  <tr className="block border-t border-[var(--hs-border)] first:border-t-0 md:table-row" key={row.identifier}>
+                    <th className="block bg-[var(--hs-bg-soft)] p-4 align-top font-extrabold text-[var(--hs-text)] md:table-cell" scope="row">
+                      {row.identifier}
+                    </th>
+                    <td className="block p-4 align-top text-[var(--hs-muted)] md:table-cell">
+                      <span className="mb-1 block font-bold text-[var(--hs-text)] md:hidden">China-side evidence</span>
+                      {row.evidence}
+                    </td>
+                    <td className="block p-4 pt-0 align-top text-[var(--hs-muted)] md:table-cell md:pt-4">
+                      <span className="mb-1 block font-bold text-[var(--hs-text)] md:hidden">Hold reason</span>
+                      {row.hold}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="hs-section-white scroll-mt-24" id="public-case">
+        <div className="hs-container hs-section max-w-4xl">
+          <Reveal>
+            <p className="hs-eyebrow">Public case example</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              EU controls of toys and small electronics: keep product identity traceable.
+            </h2>
+            <p className="hs-muted mt-4 text-base leading-7">
+              On January 7, 2026, the European Commission reported results from a
+              Priority Control Area operation covering 20,000 toys and small electronic
+              devices. More than half of the checked products were non-compliant.
+              Of a selected subset sent for laboratory testing, 84% were found dangerous.
+              That 84% is not a rate for all inspected products, all imports or goods
+              from China. Huang Sourcing did not participate in this operation.{' '}
+              <a className="text-[var(--hs-accent)] underline underline-offset-4" href={parcelSources.publicCase} rel="noreferrer" target="_blank">
+                Read the Commission&apos;s public control-operation findings
+              </a>
+              .
+            </p>
+            <p className="hs-muted mt-4 text-base leading-7">
+              <strong className="text-[var(--hs-text)]">Buyer lesson:</strong> when a
+              seller file, barcode or online listing identifies a different model
+              from the one packed in China, the evidence trail breaks. Photograph the
+              actual product and its label, connect those images to the declared
+              identifier, and keep the matching product-safety records together.
+              Ask for correction before release when those references disagree.
+            </p>
+            <p className="hs-muted mt-4 text-base leading-7">
+              The older operation remains relevant to the upcoming PID handoff because{' '}
+              <a className="text-[var(--hs-accent)] underline underline-offset-4" href={parcelSources.commissionGuidance} rel="noreferrer" target="_blank">
+                section 3.5 of the Commission&apos;s parcel guidance
+              </a>{' '}
+              connects product identifiers and traceability with the safety-control
+              problem illustrated by that operation. An identifier helps connect
+              records; it does not prove that a product is safe or compliant.
+            </p>
+            <p className="hs-muted mt-4 text-base leading-7">
+              Arrange a{' '}
+              <Link className="text-[var(--hs-accent)] underline underline-offset-4" href="/qc-inspection-china">
+                China-side quality-control inspection
+              </Link>{' '}
+              while corrections are possible, set the{' '}
+              <Link className="text-[var(--hs-accent)] underline underline-offset-4" href="/before-forwarder-pickup-inspection-china">
+                before-pickup release decision
+              </Link>
+              , and use the{' '}
+              <Link className="text-[var(--hs-accent)] underline underline-offset-4" href="/china-sourcing-risk-guides">
+                China sourcing risk guides
+              </Link>{' '}
+              for related buyer checks.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -254,7 +407,7 @@ export function EuLowValueParcelDutyChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide is based on official EU customs and product-compliance source context, then narrowed to the product, label, parcel, seller, and document evidence that can be checked while goods are still in China."
+        intro="This guide uses cited public EU records, carrier guidance and shipping-software implementation material, with buyer-side sourcing analysis of the product, label, parcel and document evidence that can be checked while goods are still in China."
         items={article.evidenceBasis}
       />
 
@@ -264,7 +417,7 @@ export function EuLowValueParcelDutyChinaArticlePage() {
             <div className="hs-icon-box size-12">
               <Globe2 aria-hidden className="size-6" />
             </div>
-            <p className="hs-eyebrow mt-5">Official source context</p>
+            <p className="hs-eyebrow mt-5">Public sources and evidence</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
               Verify the customs rule, then check the parcel evidence.
             </h2>
@@ -290,7 +443,7 @@ export function EuLowValueParcelDutyChinaArticlePage() {
                 </h3>
                 <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
-                  Open official source <ExternalLink aria-hidden className="size-4" />
+                  Open public source <ExternalLink aria-hidden className="size-4" />
                 </span>
               </a>
             ))}

@@ -443,7 +443,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: euLowValueParcelDutyChinaArticleHref,
-        label: 'EU EUR 3 customs duty China parcel checklist',
+        label: 'EU parcel duty and product ID checks',
       },
       {
         href: usDeMinimisSuspensionChinaArticleHref,
@@ -754,7 +754,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: euLowValueParcelDutyChinaArticleHref,
-        label: 'EU low-value parcel duty checklist',
+        label: 'EU parcel duty and product ID checklist',
       },
       { href: '/compare-china-supplier-samples', label: 'Before supplier selection checklist' },
       { href: qcBeforeBalanceArticleHref, label: 'QC before balance payment checklist' },

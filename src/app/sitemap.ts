@@ -273,6 +273,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: euLowValueParcelDutyChinaArticleHref,
+    lastModified: '2026-10-05T03:27:00+08:00',
     changeFrequency: 'monthly',
     priority: 0.8,
   },
