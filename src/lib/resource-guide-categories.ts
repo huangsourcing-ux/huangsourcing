@@ -11,6 +11,7 @@ import {
   smartGlassesChecksChinaArticleHref,
   sleepMachineChecksChinaArticleHref,
   electricGrillChecksChinaArticleHref,
+  reclinerBatteryPackChecksChinaArticleHref,
   babySwingChecksChinaArticleHref,
   babyWalkerChecksChinaArticleHref,
   ceilingFanChecksChinaArticleHref,
@@ -309,6 +310,10 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       {
         href: mattressFlammabilityChecksChinaArticleHref,
         label: 'Mattress flammability evidence and shipment checklist',
+      },
+      {
+        href: reclinerBatteryPackChecksChinaArticleHref,
+        label: 'Recliner battery pack, furniture application and kit release checks',
       },
       {
         href: electricGrillChecksChinaArticleHref,

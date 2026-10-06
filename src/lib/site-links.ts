@@ -233,3 +233,4 @@ export const smartGlassesChecksChinaArticleHref = '/smart-glasses-checks-china'
 export const sleepMachineChecksChinaArticleHref = '/sleep-machine-checks-china'
 
 export const electricGrillChecksChinaArticleHref = '/electric-grill-checks-china'
+export const reclinerBatteryPackChecksChinaArticleHref = '/recliner-battery-pack-checks-china'
