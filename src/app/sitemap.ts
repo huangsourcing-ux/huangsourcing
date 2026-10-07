@@ -331,6 +331,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: grillBrushChecksChinaArticleHref,
+    lastModified: '2026-10-08T03:24:36+08:00',
     changeFrequency: 'monthly',
     priority: 0.82,
   },

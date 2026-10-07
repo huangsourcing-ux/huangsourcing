@@ -28,6 +28,7 @@ import { SiteHeader } from '@/components/site/SiteHeader'
 import { Button } from '@/components/ui/button'
 import {
   cpscCuisinartGrillBrushRecall,
+  cpscWalmartGrillBrushRecall,
   grillBrushChecksChinaArticle,
   makeGrillBrushChecksChinaArticleJsonLd,
 } from '@/lib/grill-brush-checks-china-article'
@@ -290,9 +291,40 @@ export function GrillBrushChecksChinaArticlePage() {
 
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide combines a new August 2026 CPSC recall expansion, separate 2026 category actions, current official safety guidance, a public-health case series, independent recent coverage, and buyer-side sourcing analysis. It keeps case facts, product design, qualified testing, routine inspection, and release authority in separate scopes."
+        intro="This guide combines the October 2026 Walmart recall, the August Cuisinart recall expansion, separate category actions, current official safety guidance, a public-health case series, independent recent coverage, and buyer-side sourcing analysis. It keeps case facts, product design, qualified testing, routine inspection, and release authority in separate scopes."
         items={article.evidenceBasis}
       />
+
+      <section className="hs-section-white scroll-mt-24" id="walmart-case">
+        <div className="hs-container hs-section max-w-4xl">
+          <p className="hs-eyebrow">Public case example · October update</p>
+          <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+            Walmart recall: the brush inside a tool set matters too.
+          </h2>
+          <div className="hs-muted mt-4 grid gap-4 text-base leading-7">
+            <p><strong className="text-[var(--hs-text)]">What happened:</strong> On October 1, 2026, CPSC announced a recall of about 4,477,655 China-made Expert Grill brushes, including a ten-piece grilling set. Detached wire bristles could reach food and cause internal injury. No incidents or injuries were reported in this notice. Consumers were instructed to stop use and seek a refund or credit.</p>
+            <p><strong className="text-[var(--hs-text)]">Public evidence:</strong> The <a className="hs-text-link font-semibold" href={cpscWalmartGrillBrushRecall}>CPSC Walmart recall 27-010 and affected-model table</a> identifies five products using packaging or brush tags. It does not establish a manufacturing root cause or publish lot-level test results.</p>
+            <p><strong className="text-[var(--hs-text)]">Buyer lesson:</strong> Treat the brush as a controlled component of every retail format. Request a contents list and a traceable connection between the actual brush, set SKU, production lot, packing lot and cartons. If the identity is missing, hold the uncertain set while the responsible party resolves it. Record this as a buyer-side recommendation, not a finding that missing traceability caused this recall.</p>
+            <p><strong className="text-[var(--hs-text)]">Limits of comparison:</strong> A zero-complaint statement cannot settle a product-specific hazard. The record concerns the named products; it does not establish the status of another supplier’s order. Huang Sourcing did not participate in either cited recall.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="hs-section-soft scroll-mt-24" id="set-traceability">
+        <div className="hs-container hs-section">
+          <p className="hs-eyebrow">Buyer-side traceability module</p>
+          <h2 className="mt-3 max-w-4xl text-3xl font-extrabold text-[var(--hs-text)]">Can you identify every brush inside the shipment?</h2>
+          <p className="hs-muted mt-4 max-w-4xl text-base leading-7">An outer SKU identifies a retail offer. Ask which brush version that offer contains and which cartons share it. Keep single brushes, sets, replacement heads and corrected stock distinct in the evidence file.</p>
+          <div className="mt-7 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white">
+            <table className="w-full text-left text-sm leading-6">
+              <caption className="px-5 py-4 text-left font-bold text-[var(--hs-text)]">Retail format to brush and carton evidence — proposed buyer controls</caption>
+              <thead className="bg-[var(--hs-navy)] text-white"><tr>{['Retail format', 'Evidence chain to request', 'Hold condition'].map(label => <th className="min-w-44 p-4 align-top" scope="col" key={label}>{label}</th>)}</tr></thead>
+              <tbody>{article.setTraceabilityRows.map(row => <tr className="border-t border-[var(--hs-border)]" key={row.format}><th className="p-4 align-top font-bold text-[var(--hs-text)]" scope="row">{row.format}</th><td className="hs-muted p-4 align-top">{row.evidence}</td><td className="hs-muted p-4 align-top">{row.hold}</td></tr>)}</tbody>
+            </table>
+          </div>
+          <p className="hs-muted mt-5 max-w-4xl text-base leading-7">Before releasing corrected sets, reconcile held quantities, removed components, accepted replacements, recheck findings and carton ranges. A supplier’s new barcode or alternative brush does not itself resolve the original hazard. Obtain qualified acceptance for a changed construction and repeat the relevant inspection or testing before authorizing the named stock.</p>
+        </div>
+      </section>
 
       <section className="hs-section-soft scroll-mt-24" id="public-case">
         <div className="hs-container hs-section max-w-4xl">
@@ -495,7 +527,7 @@ export function GrillBrushChecksChinaArticlePage() {
             </div>
             <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
               Public regulator and public-health records, current safety guidance, and
-              independent coverage checked September 1, 2026 Beijing time. Links
+              independent coverage checked October 8, 2026 Beijing time. Links
               identify the exact cases, dates, evidence basis, and limits used here.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">

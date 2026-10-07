@@ -25,6 +25,11 @@ type DecisionRow = { buyerDecision: string; evidence: string; riskNode: string }
 type RelatedLink = { href: string; label: string; note: string }
 type SourceNote = SourceLink & { note: string }
 
+export const cpscWalmartGrillBrushRecall =
+  'https://www.cpsc.gov/Recalls/2027/Walmart-Recalls-Over-4-4-Million-Expert-Grill-Brushes-Due-to-Ingestion-Hazard'
+export const cookoutWalmartRecallCoverage =
+  'https://www.cookoutnews.com/walmart-joins-growing-list-of-companies-recalling-metal-grill-brushes/'
+
 export const cpscCuisinartGrillBrushRecall =
   'https://www.cpsc.gov/Recalls/2026/Conair-Expands-Recall-of-Cuisinart-Grill-Brushes-Due-to-Ingestion-Hazard-Over-3-6-Million-Brushes-Now-Recalled'
 const cpscNexgrillBrushRecall =
@@ -46,11 +51,11 @@ export const grillBrushChecksChinaArticle = {
   title: 'Grill Brush Checks Before Shipping from China',
   metaTitle: 'Grill Brush Checks Before Shipping from China',
   metaDescription:
-    'Check grill brush design, bristle retention evidence, exact models, production changes, labels, lots, and cartons before balance payment or shipment.',
+    'Check grill brushes and tool sets from China: recall identity, bristle retention evidence, changed components, lot segregation and release before payment.',
   publishedDate: 'September 1, 2026',
   publishedDateIso: '2026-09-01T03:25:32+08:00',
-  modifiedDate: undefined,
-  modifiedDateIso: undefined,
+  modifiedDate: 'October 8, 2026',
+  modifiedDateIso: '2026-10-08T03:24:36+08:00',
   h1: 'Grill Brush Checks Before Shipping from China',
   eyebrow: 'Design choice - bristle evidence - production lot - release',
   image: {
@@ -93,11 +98,14 @@ Balance-payment or pickup deadline:
     { href: '#test-boundary', label: 'Test boundary' },
     { href: '#change-control', label: 'Change control' },
     { href: '#decision-table', label: 'Buyer decisions' },
-    { href: '#public-case', label: 'Public case example' },
+    { href: '#walmart-case', label: 'Walmart public case' },
+    { href: '#set-traceability', label: 'Brushes inside tool sets' },
+    { href: '#public-case', label: 'Cuisinart public case' },
     { href: '#documents', label: 'What to send' },
     { href: '#scope-limits', label: 'Scope limits' },
   ],
   quickChecks: [
+    'Screen individual brushes, tool sets and replacement heads against current official recall identities; hold affected or uncertain stock even when the supplier reports no customer complaints',
     'Freeze destination, responsible party, exact model, cleaning architecture, materials, dimensions, bristle or coil geometry, handle and head attachment, scraper, production factory, lot, retail set, and carton map',
     'Have qualified parties identify current product-safety, chemical, food-contact adjacency, labeling, reporting, marketplace, and destination requirements; a generic supplier checklist is not a legal determination',
     'Prefer a bristle-free design when the buyer’s risk assessment supports it; changing from wire bristles to a coil, scraper, pad, stone, nylon, or another architecture requires its own hazard review and validation',
@@ -142,6 +150,7 @@ Balance-payment or pickup deadline:
       id: 'why-current',
       title: 'Why grill brush release evidence matters now',
       paragraphs: [
+        'The October 1, 2026 Walmart action adds another documented tool-set example to the category record. Buyers should screen set contents as well as outer SKUs before authorizing cartons; a quiet complaint history is not a release criterion.',
         'On August 27, 2026, the U.S. Consumer Product Safety Commission expanded Conair’s recall of China-made Cuisinart metal wire-bristle grill brushes by about 1,905,805 units, bringing the stated total to 3,625,800. CPSC said small metal bristles could detach, remain on a grill or food, and be swallowed. The notice reports at least 54 detachment reports or reviews, including three people who sought medical treatment to remove bristles from the digestive tract or throat.',
         'That action was not an isolated model notice. CPSC had separately announced 2026 recalls covering more than 10.2 million Nexgrill wire-bristle brushes and more than 3.2 million Weber brushes. A CPSC chairman’s March statement described expanded enforcement attention to hazardous wire grill brushes made overseas. These are separate records with different firms and facts; they show a recurring risk node, not proof that every brush, supplier, factory, or design will fail.',
         'Health Canada’s current barbecue safety page also advises consumers to inspect a brush and grill before every use, replace a brush when bristles loosen, and consider non-metal alternatives. That end-user advice cannot substitute for a buyer’s design review or production validation, but it reinforces why the release decision must address both initial construction and wear over time.',
@@ -153,6 +162,8 @@ Balance-payment or pickup deadline:
         'Use balance-payment and pickup leverage while affected lots, retail sets, test samples, packaging, and records can still be isolated and corrected',
       ],
       citations: [
+        { href: cpscWalmartGrillBrushRecall, label: 'CPSC Walmart Expert Grill recall' },
+        { href: cookoutWalmartRecallCoverage, label: 'CookOut News October 1 industry coverage' },
         { href: cpscCuisinartGrillBrushRecall, label: 'CPSC Cuisinart recall expansion' },
         { href: cpscNexgrillBrushRecall, label: 'CPSC Nexgrill grill brush recall' },
         { href: cpscWeberBrushRecall, label: 'CPSC Weber grill brush recall' },
@@ -246,6 +257,11 @@ Balance-payment or pickup deadline:
   ] satisfies ArticleSection[],
   decisionRows: [
     {
+      riskNode: 'Recalled or uncertain brush hidden inside a tool set',
+      evidence: 'Reconcile the brush identity and construction, outer set SKU, contents list, production lot and carton map with current official records and accepted references.',
+      buyerDecision: 'Hold the affected or uncertain brush and every set containing it. Do not clear stock by relabeling, citing no complaints or substituting a similar head without accepted evidence.',
+    },
+    {
       riskNode: 'Bristle or cleaning architecture is still undecided',
       evidence: 'Risk assessment, intended-use definition, approved design, drawings, bill of materials, and specialist review are incomplete or conflict.',
       buyerDecision: 'Hold specification and production approval. Choose and validate the product architecture before treating factory inspection as a release gate.',
@@ -272,6 +288,7 @@ Balance-payment or pickup deadline:
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
+    'Update basis: the October 1, 2026 Walmart record and separate CookOut News industry coverage; the new kit-traceability module is buyer-side analysis, not a finding about the cause of the recall',
     'Primary case record: CPSC recall 26-717, announced August 27, 2026, for the expanded Cuisinart metal wire-bristle grill brush population made in China',
     'Pattern check: separate 2026 CPSC Nexgrill and Weber recall records, kept distinct and not treated as proof of one shared root cause',
     'Current public guidance: Health Canada’s barbecue safety page on inspecting brushes, loose bristles, replacement, and non-metal alternatives',
@@ -339,7 +356,15 @@ Balance-payment or pickup deadline:
       note: 'Compare related inspection, packaging, payment, pickup, and shipment decisions.',
     },
   ] satisfies RelatedLink[],
+  setTraceabilityRows: [
+    { format: 'Individually packed brush', evidence: 'Brush model and construction revision → approved reference → production lot → retail pack → carton range', hold: 'Model or construction cannot be reconciled, or the stock matches an unresolved official action.' },
+    { format: 'Grilling tool set containing a brush', evidence: 'Outer set SKU → contents list → actual brush identity → brush production lot → set packing lot → carton range', hold: 'The outer set has a barcode, but the enclosed brush has no accepted identity or traceable origin.' },
+    { format: 'Replacement cleaning head', evidence: 'Head version → intended handle and attachment → accepted compatibility evidence → head lot → retail claim', hold: 'A replacement is described as equivalent while its wire, anchor or attachment differs from accepted evidence.' },
+    { format: 'Repacked or corrected stock', evidence: 'Original lot → containment quantity → approved correction → sacrificed test samples where needed → recheck → new pack and carton map', hold: 'Removed brushes, substituted units and cleared cartons are not separately recorded.' },
+  ],
   sourceNotes: [
+    { href: cpscWalmartGrillBrushRecall, label: 'U.S. CPSC — Walmart Expert Grill recall 27-010', note: 'October 1, 2026 primary record: affected brush and set identities, China origin, hazard and remedy.' },
+    { href: cookoutWalmartRecallCoverage, label: 'CookOut News — October 1 grill brush industry reporting', note: 'Independent editorial attention signal by Wes Wright; regulator records govern case facts.' },
     {
       href: cpscCuisinartGrillBrushRecall,
       label: 'U.S. CPSC - Cuisinart grill brush recall expansion',
@@ -368,7 +393,7 @@ Balance-payment or pickup deadline:
     {
       href: cdcWireBrushCaseSeries,
       label: 'U.S. CDC - wire grill-cleaning brush injury case series',
-      note: 'Independent public-health record explaining documented ingestion pathways and the limits of relying on visible food or grill condition alone.',
+      note: 'The 2012 clinical case series remains useful for the bristle-to-food injury pathway seen in current recalls; it does not measure today’s incidence or a particular shipment’s risk.',
     },
     {
       href: ntdCuisinartRecallCoverage,
@@ -392,6 +417,7 @@ export function makeGrillBrushChecksChinaArticleMetadata(): Metadata {
       siteName: 'Huang Sourcing',
       type: 'article',
       publishedTime: article.publishedDateIso,
+      modifiedTime: article.modifiedDateIso,
       images: getArticleOpenGraphImages(article),
     },
     twitter: {

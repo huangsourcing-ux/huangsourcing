@@ -261,7 +261,7 @@ export const resourceGuideCategories: ResourceGuideCategory[] = [
       },
       {
         href: grillBrushChecksChinaArticleHref,
-        label: 'Grill brush construction and shipment checklist',
+        label: 'Grill brush and tool-set shipment checklist',
       },
       {
         href: rattleTeetherChecksChinaArticleHref,
