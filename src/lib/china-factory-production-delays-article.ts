@@ -13,7 +13,6 @@ import {
   productionVsPreShipmentInspectionArticleHref,
   supplierVerificationVsFactoryAuditArticleHref,
 } from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   id: string
@@ -28,6 +27,14 @@ type DecisionRow = {
   buyerDecision: string
 }
 
+type ExceptionRow = {
+  milestone: string
+  supplierEvidence: string
+  scopedCheck: string
+  buyerDecision: string
+  handoff: string
+}
+
 type FaqItem = {
   question: string
   answer: string
@@ -39,16 +46,24 @@ type RelatedLink = {
   note: string
 }
 
+type SourceNote = {
+  href: string
+  label: string
+  note: string
+}
+
 export const chinaFactoryProductionDelaysArticle = {
   href: chinaFactoryProductionDelaysArticleHref,
   title: 'China Factory Production Delays: Timeline Management for Importers',
   metaTitle: 'China Factory Production Delays Guide',
   metaDescription:
-    'Practical guide for importers to manage China factory production delays: set realistic lead times, communicate during delays, and decide when to accept, split, or cancel.',
+    'Use a missed-milestone record to verify factory progress, assign recovery owners, protect QC and pickup, and decide what a buyer should approve or escalate.',
   publishedDate: 'June 19, 2026',
   publishedDateIso: '2026-06-19T14:00:00-04:00',
+  modifiedDate: 'October 20, 2026',
+  modifiedDateIso: '2026-10-20T03:24:25+08:00',
   h1: 'China Factory Production Delays: Timeline Management for Importers',
-  eyebrow: 'Production monitoring · delay response · timeline planning',
+  eyebrow: 'Missed milestones · buyer decisions · shipment handoffs',
   image: {
     alt: 'Illustrative production timeline and milestone review inside a China factory',
     height: 900,
@@ -61,19 +76,19 @@ export const chinaFactoryProductionDelaysArticle = {
     { height: 1200, src: '/images/china-factory-production-delays-timeline-management-1x1.webp', width: 1200 },
   ],
   intro:
-    'Production delay is one of the most common China sourcing problems because a quoted lead time often hides material purchasing, queue time, rework, and final inspection. A late order becomes expensive when the buyer discovers the slip only after the promised completion date and has no verified recovery plan.',
+    'When a China order misses a production milestone, the buyer needs to know which quantity and version are affected, what the factory can prove, and which decision must change before payment or pickup. A revised finish date alone does not answer whether materials, production, inspection, and shipping can still meet the business deadline.',
   answerSummary:
-    'Manage delay risk by converting the supplier promise into dated production milestones, checking evidence against each milestone, and requiring one written recovery plan when a date slips. Decide whether to accept, split, switch, or cancel by comparing verified completion status, quality risk, logistics cost, sales impact, and the contract or payment leverage still available.',
+    'Keep one missed-milestone record with the original and revised dates, supplier owner, affected SKU and quantity, evidence received, evidence still unverified, buyer decision owner, and next QC or forwarder handoff. Use it to decide whether to accept a revised plan, inspect a separate finished lot, escalate a missing proof point, or seek specialist advice before changing contractual terms.',
   primaryCta: {
-    label: 'Monitor Production Timeline',
+    label: 'Scope a QC or Shipment Check',
   },
   secondaryCta: {
-    href: '#decision-framework',
+    href: '#exception-handoff',
     label: 'See Delay Decisions',
   },
   whatsappMessage: `Hi Agent Huang,
 
-I need help monitoring a delayed production order in China.
+I need help scoping a QC or pre-shipment check for a delayed China order.
 
 Supplier and factory:
 Product and quantity:
@@ -85,14 +100,16 @@ Deposit / balance status:
 Main delay concern:
 `,
   tableOfContents: [
-    { href: '#quick-checks', label: 'Quick checks' },
+    { href: '#quick-answer', label: 'Quick checks' },
     { href: '#common-causes', label: 'Common causes' },
     { href: '#realistic-lead-times', label: 'Realistic lead times' },
     { href: '#delay-communication', label: 'Delay communication' },
-    { href: '#decision-framework', label: 'Decision framework' },
+    { href: '#exception-handoff', label: 'Missed-milestone record' },
+    { href: '#decision-table', label: 'Decision framework' },
     { href: '#chronic-delay-risk', label: 'Chronic delay red flags' },
     { href: '#timeline-buffers', label: 'Timeline buffers' },
-    { href: '#what-to-send', label: 'What to send' },
+    { href: '#documents', label: 'What to send' },
+    { href: '#sources', label: 'Sources and limits' },
     { href: '#faq', label: 'FAQ' },
   ],
   quickChecks: [
@@ -102,7 +119,7 @@ Main delay concern:
     'Request dated evidence for material arrival, line start, completed quantity, packing progress, and rework',
     'Check factory holidays, worker-return periods, and supplier shutdown dates before placing the order',
     'Keep final inspection, correction, re-inspection, and forwarder booking outside the factory production promise',
-    'Set a written escalation rule for any missed milestone or forecast slip longer than two working days',
+    'Agree on a risk-based escalation deadline before a missed milestone threatens inspection, payment, or pickup',
     'Know the commercial trigger for accepting delay, splitting shipment, switching factories, or cancelling',
   ],
   sections: [
@@ -140,8 +157,8 @@ Main delay concern:
       id: 'delay-communication',
       title: 'Communication protocol when a production milestone slips',
       paragraphs: [
-        'When a delay appears, move the discussion from reassurance to a written exception report. One supplier contact should own the update, one buyer contact should approve tradeoffs, and every revised date should be supported by current production evidence.',
-        'Set a fixed update cadence until the order is stable. Daily updates are appropriate for a critical shipment near completion; twice-weekly updates may be enough during material procurement. Keep decisions in email, the purchase order record, or another durable channel even if the discussion starts on WeChat or WhatsApp.',
+        'When a delay appears, move the discussion from reassurance to a written exception record. Name the supplier owner of each recovery action and the buyer who can approve a change. Separate what the supplier reports from what documents or a scoped onsite check actually verify.',
+        'Set an update cadence against the risk and next decision deadline. A near-term inspection or pickup may need more frequent reporting than early material procurement. Record decisions in email, the purchase order record, or another durable channel even if the discussion starts on WeChat or WhatsApp.',
       ],
       bullets: [
         'State the missed milestone, original date, verified current status, affected quantity, and root cause',
@@ -182,6 +199,52 @@ Main delay concern:
       ],
     },
   ] satisfies ArticleSection[],
+  exceptionRows: [
+    {
+      milestone: 'Materials due; line start at risk',
+      supplierEvidence:
+        'Named purchasing or production owner reports the affected SKU, approved material revision, required and received quantity, receipt record, missing balance, and realistic arrival date.',
+      scopedCheck:
+        'If access is agreed, compare visible received materials and identifiers with buyer-approved files. A photo or receipt alone does not prove all required material is onsite.',
+      buyerDecision:
+        'The buyer names a deadline to accept the revised line start or asks the qualified product owner to review any proposed substitution. No one silently changes the approved specification.',
+      handoff:
+        'Factory issues a revised line-start and pilot date; buyer updates the inspection window and flags downstream freight risk.',
+    },
+    {
+      milestone: 'Pilot or production output below plan',
+      supplierEvidence:
+        'Named production manager separates started, completed, accepted, and rework quantities by SKU and lot, with dated records and the process blocking the remaining output.',
+      scopedCheck:
+        'A scoped during-production QC visit can compare accessible work in progress with the approved sample and specification; it cannot certify the uninspected remainder.',
+      buyerDecision:
+        'Buyer decides whether to request correction, another pilot, or an updated capacity plan. Product or test changes go to the qualified owner before approval.',
+      handoff:
+        'Supplier sets the next evidence checkpoint and affected-lot list; QC revises its check timing before the factory continues or packs the lot.',
+    },
+    {
+      milestone: 'Packing or final inspection booking slips',
+      supplierEvidence:
+        'Named packing lead reports finished and packed quantity by SKU, carton identifiers, open corrections, packing list revision, and when goods will be accessible.',
+      scopedCheck:
+        'A scoped pre-shipment inspection can check accessible finished goods, quantities, labels, cartons, and documented corrections against the buyer file.',
+      buyerDecision:
+        'Buyer decides whether to keep or move the inspection booking and whether the available lot supports a separate release decision. Payment follows the agreed contract terms and qualified advice if disputed.',
+      handoff:
+        'Inspection owner sends findings and correction status to the buyer; supplier and forwarder receive only the revised pickup forecast, not an assumed release.',
+    },
+    {
+      milestone: 'Pickup requested before release evidence is complete',
+      supplierEvidence:
+        'Named logistics contact supplies the final packing list, carton count, pickup address, ready time, and proof that agreed corrections were completed.',
+      scopedCheck:
+        'Compare the released lot and carton evidence with the inspection findings and buyer-approved shipping file; unresolved items remain marked open.',
+      buyerDecision:
+        'Only the buyer or its designated release owner decides whether to authorize pickup, hold, re-check, or seek broker or legal advice for disputed obligations.',
+      handoff:
+        'Send the written release or hold decision, lot and carton IDs, and confirmed pickup instructions to the supplier and forwarder.',
+    },
+  ] satisfies ExceptionRow[],
   decisionRows: [
     {
       riskNode: 'Accept the delay',
@@ -209,14 +272,14 @@ Main delay concern:
       whatWasChecked:
         'Contract rights, deposit exposure, recoverable materials and tooling, evidence of non-performance, compliance or quality risk, and the last commercially useful delivery date',
       buyerDecision:
-        'Cancel through documented commercial or legal advice when late delivery has no remaining value or the supplier cannot present a credible, verifiable recovery plan.',
+        'Ask qualified counsel to assess cancellation and deposit remedies under the signed agreement; separately compare recovery and replacement timelines.',
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
     'Purchase order dates, supplier production schedules, approval records, material status, production counts, packing progress, and inspection readiness compared against the required ship date.',
     'Timestamped supplier evidence, onsite observations where scoped, QC findings, rework status, and forwarder cutoff information used to test revised completion claims.',
     'Inventory, launch, customer, freight, payment, tooling, and cancellation constraints used to frame the buyer decision rather than treating lateness as a schedule issue alone.',
-    'China-side production monitoring judgment applied within the agreed product, supplier access, reporting cadence, and inspection scope.',
+    'This is an editorial decision worksheet adapted from public procurement guidance, not a report of a Huang Sourcing client project or a standing production-management service.',
   ],
   whatToSend: [
     'Purchase order, proforma invoice, order quantity, deposit date, and current payment status',
@@ -236,7 +299,7 @@ Main delay concern:
     'The factory misses sample, material, pilot, bulk, and packing dates in the same order',
   ],
   scopeLimits: [
-    'Production monitoring improves visibility and escalation but cannot guarantee that a factory will meet a revised date',
+    'A missed-milestone record improves visibility and escalation but cannot guarantee that a factory will meet a revised date',
     'Remote photos, videos, and production counts may be incomplete and do not replace onsite verification when site-level evidence is required',
     'A split shipment reduces timing risk only for quantities that are complete, inspected, packed, and commercially useful',
     'Switching factories can create new tooling, sample, material, compliance, quality, and intellectual-property risks',
@@ -244,6 +307,11 @@ Main delay concern:
     'Timeline guidance does not replace product testing, regulatory compliance, final inspection, freight planning, or inventory forecasting',
   ],
   relatedLinks: [
+    {
+      href: '/qc-inspection-china',
+      label: 'Scope a China QC inspection',
+      note: 'Use the offered onsite QC service when an agreed production-stage check can resolve a specific evidence gap.',
+    },
     {
       href: chinaFactorySubcontractingRiskArticleHref,
       label: 'China factory subcontracting risk',
@@ -289,7 +357,7 @@ Main delay concern:
     {
       question: 'Should I pay the balance if production is delayed?',
       answer:
-        'Do not treat a revised promise as completion evidence. Compare the payment terms with verified production status, packing readiness, inspection results, correction needs, and pickup conditions before authorizing payment; seek legal advice if withholding payment may create a dispute.',
+        'Do not treat a revised promise as completion evidence. Compare it with the contract terms, verified status, inspection results, and pickup conditions. If payment rights or withholding are disputed, ask qualified counsel before changing the agreed terms.',
     },
     {
       question: 'When does splitting a shipment make sense?',
@@ -302,6 +370,23 @@ Main delay concern:
         'Consider switching when delays are chronic, evidence is unreliable, and an alternate verified factory can control tooling, materials, samples, quality, and restart timing. Compare the full restart risk with recovery at the current factory before moving unfinished quantity.',
     },
   ] satisfies FaqItem[],
+  sources: [
+    {
+      href: 'https://documents1.worldbank.org/curated/en/099629208202516861/pdf/IDU-e2e57ebf-34aa-4499-9ed1-99d1b06fe315.pdf',
+      label: 'World Bank: Project Procurement Strategy for Development (March 2025)',
+      note: 'Pages 90–91 describe named roles, milestones, progress reports, risk logs, change control, and issue escalation for World Bank-financed contracts.',
+    },
+    {
+      href: 'https://www.procurement.govt.nz/guides/guide-to-procurement/manage-the-contract/managing-performance-during-delivery/',
+      label: 'New Zealand Government Procurement: Managing performance during delivery',
+      note: 'Explains monitoring cadence proportionate to risk, delivery measures, written issue records, and remedy follow-up for New Zealand public contracts.',
+    },
+    {
+      href: 'https://www.buyingfor.vic.gov.au/contract-management-goods-and-services-guide',
+      label: 'Victoria Department of Government Services: Contract management guide',
+      note: 'Describes measurable supplier performance checks, milestone-based reporting, issue logs, and change records for Victorian public procurement.',
+    },
+  ] satisfies SourceNote[],
 }
 
 export function makeChinaFactoryProductionDelaysArticleMetadata(): Metadata {
@@ -345,6 +430,5 @@ export function makeChinaFactoryProductionDelaysArticleJsonLd() {
         name: item,
       })),
     },
-    makeFaqPageJsonLd(chinaFactoryProductionDelaysArticle.faqs),
   ]
 }

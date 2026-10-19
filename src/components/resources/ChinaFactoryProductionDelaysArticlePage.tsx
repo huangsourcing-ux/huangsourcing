@@ -62,7 +62,15 @@ export function ChinaFactoryProductionDelaysArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline
+              modifiedDate={article.modifiedDate}
+              publishedDate={article.publishedDate}
+            />
+            <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
+              The October 20 update was researched and drafted by the Huang Sourcing Editorial
+              Team with AI assistance using the public sources below. Agent Huang remains the
+              original byline; this update does not claim his personal or specialist review.
+            </p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
@@ -157,9 +165,9 @@ export function ChinaFactoryProductionDelaysArticlePage() {
                 How should importers manage China factory production delays?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Replace the moving completion promise with dated milestones, order-specific
-                evidence, a recovery plan, and clear decisions for inspection, payment, freight,
-                and partial shipment.
+                Record the missed milestone, supplier owner, affected quantity, evidence still
+                missing, buyer approval, and next inspection or forwarder handoff. Keep reported
+                status separate from what an agreed China-side check actually verifies.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {article.quickChecks.map((item, index) => (
@@ -201,7 +209,66 @@ export function ChinaFactoryProductionDelaysArticlePage() {
         </div>
       </section>
 
-      <section className="hs-section-soft" id="decision-table">
+      <section className="hs-section-soft" id="exception-handoff">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-4xl">
+            <p className="hs-eyebrow">A buyer-ready exception record</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              What changes hands when a production milestone slips?
+            </h2>
+            <p className="hs-muted mt-3 text-base leading-7">
+              Keep the original date, revised date, order and SKU, named supplier contact,
+              evidence received, unresolved proof, buyer decision owner, and next update time
+              in one record. The{' '}
+              <a className="font-semibold text-[var(--hs-accent)] underline underline-offset-4 hover:text-[var(--hs-accent-strong)]" href={article.sources[0].href} rel="noreferrer" target="_blank">
+                World Bank procurement guide
+              </a>{' '}
+              identifies roles, milestones, progress reports, change control, and escalation.{' '}
+              <a className="font-semibold text-[var(--hs-accent)] underline underline-offset-4 hover:text-[var(--hs-accent-strong)]" href={article.sources[1].href} rel="noreferrer" target="_blank">
+                New Zealand procurement guidance
+              </a>{' '}
+              recommends monitoring frequency that matches risk and written records of problems.
+              This table adapts those public-sector practices to a private buying decision. It
+              does not state a rule for Chinese factories or describe a completed client order.
+            </p>
+            <p className="hs-muted mt-3 text-sm leading-6">
+              Example workflow: agree access and scope before asking for an onsite check. The
+              buyer owns commercial approval; Huang Sourcing offers scoped QC and pre-shipment
+              inspection, not an automatic standing production-management service.
+            </p>
+          </Reveal>
+          <div className="mt-8 overflow-x-auto rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white shadow-[var(--hs-shadow-sm)]">
+            <table className="w-full min-w-[1180px] border-collapse text-left text-sm leading-6">
+              <thead className="bg-[var(--hs-navy)] text-white">
+                <tr>
+                  <th className="w-[15%] p-4 font-extrabold" scope="col">Missed gate</th>
+                  <th className="w-[22%] border-l border-white/10 p-4 font-extrabold" scope="col">Supplier owner and evidence</th>
+                  <th className="w-[21%] border-l border-white/10 p-4 font-extrabold" scope="col">Scoped China-side check</th>
+                  <th className="w-[22%] border-l border-white/10 p-4 font-extrabold" scope="col">Buyer approval or escalation</th>
+                  <th className="w-[20%] border-l border-white/10 p-4 font-extrabold" scope="col">QC and forwarder handoff</th>
+                </tr>
+              </thead>
+              <tbody>
+                {article.exceptionRows.map((row) => (
+                  <tr className="border-t border-[var(--hs-border)]" key={row.milestone}>
+                    <th className="bg-[var(--hs-bg-soft)] p-4 align-top font-extrabold text-[var(--hs-text)]" scope="row">{row.milestone}</th>
+                    <td className="border-l border-[var(--hs-border)] p-4 align-top text-[var(--hs-muted)]">{row.supplierEvidence}</td>
+                    <td className="border-l border-[var(--hs-border)] p-4 align-top text-[var(--hs-muted)]">{row.scopedCheck}</td>
+                    <td className="border-l border-[var(--hs-border)] p-4 align-top text-[var(--hs-muted)]">{row.buyerDecision}</td>
+                    <td className="border-l border-[var(--hs-border)] p-4 align-top text-[var(--hs-muted)]">{row.handoff}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="hs-muted mt-3 text-sm leading-6">
+            For a change to product, payment, or contract rights, use the buyer’s qualified
+            technical or legal adviser and the signed agreement before instructing the supplier.
+          </p>
+        </div>
+      </section>
+
+      <section className="hs-section-white" id="decision-table">
         <div className="hs-container hs-section">
           <Reveal className="max-w-3xl">
             <p className="hs-eyebrow">Timeline decision table</p>
@@ -252,12 +319,12 @@ export function ChinaFactoryProductionDelaysArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        className="hs-section-white"
-        intro="This guidance connects purchase-order dates, production evidence, factory constraints, quality-control windows, and logistics deadlines to decisions importers can make before money or goods move."
+        className="hs-section-soft"
+        intro="The October 20 editorial update adapts cited public procurement process guidance to an order-specific buyer worksheet. Check the real purchase order, factory access, and available inspection scope before using it."
         items={article.evidenceBasis}
       />
 
-      <section className="hs-section-soft" id="documents">
+      <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <div className="hs-icon-box size-12">
@@ -305,13 +372,45 @@ export function ChinaFactoryProductionDelaysArticlePage() {
             </div>
             <p className="hs-eyebrow mt-5">Scope limits</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
-              What timeline management cannot guarantee.
+              What an exception record cannot guarantee.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
               Better tracking supports earlier decisions. It does not control every factory,
               supplier, quality, logistics, or external event.
             </p>
             <BulletList items={article.scopeLimits} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="hs-section-white" id="sources">
+        <div className="hs-container hs-section max-w-5xl">
+          <Reveal>
+            <p className="hs-eyebrow">Research basis · checked October 19, 2026</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Sources and transfer limits.
+            </h2>
+            <p className="hs-muted mt-3 text-base leading-7">
+              These official sources describe public procurement contract management. The
+              milestone record above is an editorial adaptation for overseas private buyers,
+              not a legal requirement, inspection result, or claim that Huang Sourcing worked
+              on the cited contracts. The{' '}
+              <a className="font-semibold text-[var(--hs-accent)] underline underline-offset-4 hover:text-[var(--hs-accent-strong)]" href={article.sources[2].href} rel="noreferrer" target="_blank">
+                Victoria government guide
+              </a>{' '}
+              also supports measurable checkpoints and written issue logs; it does not decide
+              payment or cancellation rights under a buyer’s agreement.
+            </p>
+            <ul className="mt-6 grid gap-3">
+              {article.sources.map((source) => (
+                <li className="hs-card bg-[var(--hs-bg-soft)] p-5" key={source.href}>
+                  <a className="font-extrabold text-[var(--hs-accent)] underline-offset-4 hover:underline" href={source.href} rel="noreferrer" target="_blank">
+                    {source.label}
+                  </a>
+                  <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
+                </li>
+              ))}
+            </ul>
           </Reveal>
         </div>
       </section>
@@ -382,11 +481,13 @@ export function ChinaFactoryProductionDelaysArticlePage() {
             <div className="relative">
               <p className="text-sm font-extrabold text-red-200">Before the next milestone slips</p>
               <h2 className="mt-3 text-3xl font-extrabold">
-                Verify actual production status and rebuild the decision timeline.
+                Scope the check needed before the next payment or pickup decision.
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
-                Send the order, original promise, factory updates, production evidence, payment
-                stage, and shipment deadline for a China-side review.
+                Send the order, factory updates, buyer-approved requirements, payment stage,
+                and shipment deadline. We can discuss a scoped{' '}
+                <Link className="underline underline-offset-4" href="/qc-inspection-china">QC inspection</Link>{' '}
+                or pre-shipment check where goods and access allow.
               </p>
             </div>
             <ContactAgentButton

@@ -546,6 +546,7 @@ const staticRoutes: SitemapEntry[] = [
   },
   {
     path: chinaFactoryProductionDelaysArticleHref,
+    lastModified: '2026-10-20T03:24:25+08:00',
     changeFrequency: 'monthly',
     priority: 0.78,
   },
