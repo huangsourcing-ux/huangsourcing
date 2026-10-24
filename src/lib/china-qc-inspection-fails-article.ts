@@ -5,7 +5,6 @@ import {
   makeArticleJsonLd,
 } from '@/lib/article-seo'
 import { chinaQcInspectionFailsArticleHref } from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
 
 type ArticleSection = {
   bullets?: string[]
@@ -25,6 +24,12 @@ type DecisionRow = {
   whatWasChecked: string
 }
 
+type CloseoutRow = {
+  record: string
+  supplierOrChecker: string
+  buyerGate: string
+}
+
 type FaqItem = {
   answer: string
   question: string
@@ -36,18 +41,27 @@ type RelatedLink = {
   note: string
 }
 
+export const qcCloseoutSources = {
+  isoIaf:
+    'https://committee.iso.org/files/live/sites/tc176sc2/files/documents/ISO%209001%20Auditing%20Practices%20Group%20docs/Auditing%20General/APG-ReviewNonconformity2015.pdf',
+  asq8d: 'https://asq.org/quality-resources/eight-disciplines-8d',
+  nistSampling: 'https://www.itl.nist.gov/div898/handbook/pmc/section2/pmc21.htm',
+} as const
+
 export const chinaQcInspectionFailsArticle = {
   href: chinaQcInspectionFailsArticleHref,
   title: 'What Happens If a China QC Inspection Fails?',
   metaTitle: 'China QC Inspection Failed: Next Steps',
   metaDescription:
-    'Learn what to do after a China QC inspection fails: hold payment, confirm defects, request rework or sorting, collect evidence, and decide when to re-inspect.',
+    'Use a failed-inspection closeout packet to trace affected SKUs and cartons, supplier correction, verification, buyer disposition, and pickup instructions.',
   publishedDate: 'June 11, 2026',
-  publishedDateIso: '2026-06-11T00:00:08-04:00',
+  publishedDateIso: '2026-06-11',
+  modifiedDate: 'October 25, 2026 (Beijing time)',
+  modifiedDateIso: '2026-10-24T19:26:28Z',
   h1: 'What Happens If a China QC Inspection Fails?',
   eyebrow: 'What happens if a China QC inspection fails?',
   image: {
-    alt: 'China-side QC inspector separating failed product samples with red defect tags before a rework decision',
+    alt: 'Illustration of product samples separated with defect tags for a failed-inspection review',
     height: 900,
     src: '/images/china-qc-inspection-fails.webp',
     width: 1600,
@@ -58,16 +72,16 @@ export const chinaQcInspectionFailsArticle = {
     { height: 1200, src: '/images/china-qc-inspection-fails-1x1.webp', width: 1200 },
   ],
   intro:
-    'A failed China QC inspection does not automatically mean the entire order must be rejected. It means the report found one or more results outside the agreed inspection criteria, and the buyer needs to stop automatic payment or shipment release long enough to confirm the defect pattern, correction path, and evidence required before the goods move.',
+    'A failed China QC inspection leaves the buyer with a release decision, not a verdict on every unit. Before instructing payment or pickup, trace each failed criterion to the affected goods, record what the supplier changed, and decide what independent evidence is needed to close the finding.',
   answerSummary:
-    'After a China QC inspection fails, hold balance payment and pickup unless the commercial decision is already clear. Confirm which SKU, defect class, sample result, packaging point, or label requirement failed. Then choose acceptance, rework, sorting, replacement, relabeling, repacking, or re-inspection based on the evidence and buyer risk.',
+    'Build one closeout packet: original report ID and failed criterion; SKU, lot and carton containment; named supplier action and corrected quantity; scoped verification and its limits; written buyer disposition; then a separate payment and forwarder instruction under the agreed terms.',
   primaryCta: {
     href: '/qc-inspection-china',
     label: 'Review failed inspection',
   },
   secondaryCta: {
-    href: '#decision-table',
-    label: 'See next-step matrix',
+    href: '#closeout-packet',
+    label: 'Use closeout packet',
   },
   whatsappMessage: `Hi Agent Huang,
 
@@ -86,45 +100,46 @@ Main decision needed:
     { href: '#meaning', label: 'What failure means' },
     { href: '#immediate-actions', label: 'Immediate actions' },
     { href: '#rework-reinspection', label: 'Rework and re-inspection' },
+    { href: '#closeout-packet', label: 'Closeout packet' },
     { href: '#decision-table', label: 'Decision matrix' },
-    { href: '#field-notes', label: 'Field notes' },
     { href: '#evidence-basis', label: 'Evidence basis' },
+    { href: '#sources', label: 'Sources' },
     { href: '#documents', label: 'What to send' },
     { href: '#red-flags', label: 'Red flags' },
     { href: '#limits', label: 'Scope limits' },
     { href: '#faq', label: 'FAQ' },
   ],
   quickChecks: [
-    'Pause automatic balance payment, pickup approval, or shipment release until the failed points and buyer decision are clear',
-    'Confirm the failure against the approved sample, product specification, defect classification, packaging files, label files, and any agreed sampling or AQL rule',
-    'Identify the affected SKU, color, size, lot, carton range, defect type, and whether the finding appears isolated or repeated',
-    'Request a written correction plan naming rework, sorting, replacement, relabeling, repacking, responsibility, timing, and proof',
-    'Use supplier photos or video only for narrow, visible corrections that can be traced back to the failed checkpoints',
-    'Schedule a re-inspection when correction affects a meaningful part of the order or cannot be confirmed reliably from supplier evidence alone',
+    'Keep the original report ID, failed criterion, photos and agreed specification together',
+    'Map potentially affected SKUs, lots, units and cartons; identify goods held apart from ready stock',
+    'Get a named supplier action owner, due date, method, corrected count and evidence references',
+    'Choose a follow-up check that can test the original finding and any risk introduced by rework',
+    'Record the buyer’s written acceptance, further correction, rejection or unresolved status',
+    'Issue payment, pickup and forwarder instructions separately under the agreed terms and actual disposition',
   ],
   checkGroups: [
     {
-      title: 'Hold release when',
+      title: 'Keep the disposition open when',
       checks: [
-        'The failure affects critical buyer requirements, repeated major defects, product function, missing parts, mixed SKUs, labels, or shipment readiness',
-        'The supplier disputes the report without matching each failed checkpoint to evidence',
-        'Balance payment or pickup would remove practical leverage before correction is verified',
+        'The failed criterion, affected goods or applicable acceptance rule is disputed or unclear',
+        'The supplier cannot separate affected and unaffected units or cartons',
+        'Verification has not covered the original finding or rework-created packing risks',
       ],
     },
     {
-      title: 'Correct and verify when',
+      title: 'Correct and verify',
       checks: [
-        'Rework, sorting, replacement, relabeling, or repacking is practical while goods remain accessible in China',
-        'The supplier can identify affected goods and provide a written correction method, responsible person, and completion timing',
-        'A follow-up evidence set or re-inspection can verify the same failed checkpoints after correction',
+        'Record the supplier owner, date, method, completed count and location of corrected goods',
+        'Retain before-and-after records that point to the original report and specific SKUs or cartons',
+        'Scope the follow-up check to the corrected population and any goods still on hold',
       ],
     },
     {
-      title: 'Release only when',
+      title: 'Issue a written disposition',
       checks: [
-        'The buyer formally accepts the deviation, or correction evidence closes the failed points within the agreed scope',
-        'Remaining defects and limits are understood rather than hidden behind a general supplier promise',
-        'Payment, pickup, and shipment decisions match the residual commercial risk',
+        'Identify accepted goods, remaining exceptions and who approved any deviation',
+        'Tell the supplier and forwarder exactly which cartons may move and which remain held',
+        'Check payment and delivery terms before sending a separate commercial instruction',
       ],
     },
   ] satisfies CheckGroup[],
@@ -133,71 +148,98 @@ Main decision needed:
       id: 'meaning',
       title: 'Does a failed China QC inspection mean rejecting the whole order?',
       paragraphs: [
-        'A failed China QC inspection means the sampled goods or checked shipment evidence did not meet the agreed acceptance criteria. It does not automatically prove every unit is defective or require full rejection. The buyer should identify what failed, how broadly it may apply, and whether correction can be verified before payment or pickup.',
-        'Failure may come from product defects, dimensions, workmanship, missing accessories, simple function checks, packaging, labels, carton marks, quantity signals, or a sampling result above an agreed limit. The report should make the failed checkpoint traceable to photos, sample records, SKU details, and the requirement used for comparison.',
+        'The report records a finding against its agreed scope and acceptance criteria. If it used lot acceptance sampling, the result supports a lot-disposition decision; it does not measure the quality of every unit. The buyer still needs to identify the affected population and what remains uncertain.',
+        'Start with the report ID, inspection date, failed checkpoint and criterion. Attach the relevant specification revision, photo or measurement IDs, sample result, and SKU or carton references. If these identifiers are absent, request clarification before agreeing to a correction scope.',
       ],
       bullets: [
-        'Separate critical, major, and minor findings when the inspection scope uses defect classifications',
-        'Separate product-quality failure from packaging, label, carton, quantity, or document failure',
-        'Check whether the failure affects one sampled unit, one SKU, one lot, or a repeated pattern across the inspected sample',
-        'Do not treat a supplier promise to fix everything as proof that correction is complete',
+        'Keep the original sampled result separate from the supplier’s later claim that the lot has been fixed',
+        'Separate product, packaging, label, carton and quantity findings so each receives an appropriate follow-up check',
+        'Identify whether a finding is confined to a unit, SKU, lot, shift or carton range as far as records allow',
       ],
     },
     {
       id: 'immediate-actions',
       title: 'What should the buyer do immediately after inspection fails?',
       paragraphs: [
-        'The buyer should first pause any automatic release decision, read the failed checkpoints against the purchase order and approved files, and ask the supplier for a written response. The next action should name the affected goods, correction method, deadline, evidence, and whether balance payment or pickup remains on hold.',
-        'Do not negotiate from the word “failed” alone. Use the actual evidence: defect photos, sampled quantity, SKU or carton references, measurements, function results, packaging findings, and inspector notes. This keeps the supplier discussion tied to observable issues instead of turning into a general argument about whether the order is “good enough.”',
+        'Ask the supplier to identify and segregate potentially affected goods while the finding is reviewed. Reconcile the order quantity, inspected lot, affected SKU and carton map so unreviewed stock is not silently treated as corrected stock.',
+        'Send a written request tied to each report finding: what will be sorted, reworked, replaced, relabeled or repacked; who owns it; when it will be complete; and how many units and cartons are involved. Whether payment or pickup can be deferred depends on the purchase terms and the buyer’s own commercial decision.',
       ],
       bullets: [
-        'Download and preserve the original report, photos, measurements, and defect list',
-        'Mark which failed points are commercial deal-breakers and which may be accepted by the buyer',
-        'Ask whether affected goods can be isolated, sorted, repaired, replaced, relabeled, or repacked',
-        'Set the evidence required before payment, pickup, or shipment release can resume',
+        'Preserve the report and attachments before a revised supplier file obscures the original result',
+        'Record the supplier’s count of held, corrected, replaced and still-unreviewed goods',
+        'Tell the forwarder when a booked pickup is pending a buyer disposition',
       ],
     },
     {
       id: 'rework-reinspection',
       title: 'Should the supplier rework the goods and should I re-inspect?',
       paragraphs: [
-        'Request supplier rework when the failed point is correctable and responsibility is commercially clear. Re-inspect when correction changes a meaningful portion of the order, cartons must be reopened, defects were repeated, or supplier photos cannot prove the same checkpoints across the affected goods. Narrow corrections may sometimes be verified with traceable evidence.',
-        'The follow-up check should not become a vague second inspection. It should reference the original failed items, the supplier correction list, affected SKU or carton range, and any new risk created by rework. Repacking, replacement, sorting, or relabeling can introduce quantity, mix-up, packaging, and shipment-readiness errors that also need confirmation.',
+        'A correction fixes the detected goods or records; cause analysis asks why the finding occurred; a recurrence action addresses that cause. The ISO/IAF Auditing Practices Group explains this distinction in educational auditor guidance. For a localized, traceable packing error, a proportionate correction and verification may be enough; a repeated or unexplained failure may justify a separate cause-and-recurrence plan.',
+        'Agree the follow-up scope before correction closes: the original failed checkpoint, the corrected units or cartons, and any new mix-up or packing risk. A traceable remote record may establish a narrow visible change; broader sorting, function or repeated defects may need an onsite re-check. State which population was checked and what was outside scope.',
       ],
       bullets: [
-        'Use re-inspection for repeated workmanship, function, dimension, assortment, quantity, or packaging failures',
-        'Use traceable supplier evidence only when the correction is narrow, visible, and tied to the original defect references',
-        'Recheck carton count, SKU separation, labels, and packing condition after cartons are reopened for correction',
-        'Keep balance payment and pickup timing aligned with verified correction, not only promised completion',
-      ],
-    },
-    {
-      id: 'field-notes',
-      title: 'What does Agent Huang see after a failed inspection?',
-      paragraphs: [
-        'A recurring China-side pattern is that a supplier answers a failed report with a few close-up photos and says the issue is fixed. The buyer should match each failed checkpoint, affected SKU or carton group, correction method, and corrected quantity to the report. If that traceability is missing, hold release or re-inspect instead of treating a photo folder as proof.',
-        'Another common pattern is pressure to accept a discount before the buyer understands the defect spread. A price adjustment may be a commercial option, but it does not repair function, labeling, packaging, or customer-return risk. First define the residual defect and affected goods; then decide whether acceptance, correction, replacement, or shipment delay fits the order.',
-      ],
-      bullets: [
-        'Match every correction claim to an original failed checkpoint',
-        'Ask how corrected and uncorrected goods were separated',
-        'Confirm whether cartons were reopened and whether packing or labels need another check',
-        'Do not release because the pickup date is close if the evidence is still incomplete',
+        'For a recurring problem, request evidence that the proposed cause and recurrence action were tested, not a generic “staff retrained” statement',
+        'After cartons are reopened, reconcile corrected counts, labels, carton marks and packing list revisions',
+        'Do not call a re-inspection “100% verified” if it examined only a sample',
       ],
     },
   ] satisfies ArticleSection[],
+  closeoutRows: [
+    {
+      record: '1. Failed finding and rule',
+      supplierOrChecker:
+        'Original report ID, inspection date, failed checkpoint or defect code, applicable specification revision, sample result, and photo or measurement IDs.',
+      buyerGate:
+        'Can the buyer and supplier point to the same requirement and observed failure? Keep disputed or missing references open.',
+    },
+    {
+      record: '2. Affected goods and containment',
+      supplierOrChecker:
+        'SKU or variant, lot or shift if known, unit count, carton range, location, and a map of held, unaffected, and unreviewed stock.',
+      buyerGate:
+        'Do the counts reconcile with the order and packing list? Do not infer that unchecked goods were corrected.',
+    },
+    {
+      record: '3. Supplier correction',
+      supplierOrChecker:
+        'Named action owner, target and actual completion dates, correction method, corrected or replaced count, and before-and-after evidence tied to report IDs.',
+      buyerGate:
+        'Is the action complete for the stated population? A planned date or a few unlinked photos are not closeout evidence.',
+    },
+    {
+      record: '4. Cause and recurrence action, when warranted',
+      supplierOrChecker:
+        'For repeated or unexplained findings, a separate cause record, responsible owner, recurrence action, completion evidence, and follow-up date.',
+      buyerGate:
+        'Keep immediate goods correction separate from a longer-running process fix. Ask whether the proposed cause was tested.',
+    },
+    {
+      record: '5. Scoped verification',
+      supplierOrChecker:
+        'Checker, date, corrected population, original checkpoints retested, sample or full-check method, new packing risks checked, result, and explicit exclusions.',
+      buyerGate:
+        'Does the evidence support only the stated population and checks? Commission a wider check when the unverified exposure matters.',
+    },
+    {
+      record: '6. Buyer disposition and handoff',
+      supplierOrChecker:
+        'Buyer’s written accepted, further-correction, rejected, or still-held status by SKU and carton; any approved deviation and remaining exceptions.',
+      buyerGate:
+        'Only after that decision, send distinct payment, supplier release, pickup and forwarder instructions consistent with the agreement and final carton map.',
+    },
+  ] satisfies CloseoutRow[],
   decisionRows: [
     {
-      riskNode: 'Critical or safety-related visible finding',
+      riskNode: 'Possible safety or regulated-product issue',
       whatWasChecked:
-        'Failed checkpoint, affected product or SKU, visible evidence, agreed critical criteria, immediate isolation, and whether specialist testing or review is required',
-      buyerDecision: 'Stop payment and release, isolate affected goods, escalate beyond ordinary QC where needed, and do not rely on a discount alone',
+        'Report reference, affected SKU or lot, observed evidence and whether the question exceeds visual inspection scope',
+      buyerDecision: 'Keep the disposition open and obtain qualified product-specific review; this guide cannot clear safety or compliance',
     },
     {
       riskNode: 'Repeated major product defect',
       whatWasChecked:
         'Defect type, sampled quantity, frequency, SKU or lot pattern, approved sample or specification comparison, and realistic correction method',
-      buyerDecision: 'Request rework, sorting, replacement, or rejection discussion; keep balance and pickup on hold; schedule re-inspection',
+      buyerDecision: 'Ask for containment, correction and a scoped re-check; decide payment and pickup under the agreed terms',
     },
     {
       riskNode: 'Localized or repairable defect',
@@ -221,7 +263,7 @@ Main decision needed:
       riskNode: 'Supplier says correction is complete',
       whatWasChecked:
         'Correction list, before-and-after evidence, affected SKU or cartons, corrected quantity, reopened packing, and original failed checkpoints',
-      buyerDecision: 'Release only after evidence closes the failed points; use re-inspection when the correction scope or traceability remains uncertain',
+      buyerDecision: 'Record which findings the evidence closes and which remain open; use a broader check when the population or traceability remains uncertain',
     },
   ] satisfies DecisionRow[],
   evidenceBasis: [
@@ -229,7 +271,7 @@ Main decision needed:
     'Order requirements: purchase order, product specification, approved sample notes, packaging rules, label files, defect classification, and any agreed sampling or AQL criteria.',
     'Correction evidence: supplier response, rework or sorting plan, affected quantity, responsible person, completion timing, before-and-after photos, and reopened carton details.',
     'Buyer-stage facts: unpaid balance, pickup booking, shipment deadline, goods accessibility, correction leverage, and the commercial consequence of accepting residual defects.',
-    'China-side workflow judgment connecting failed findings to a practical hold, correction, re-inspection, acceptance, pickup, or shipment-release decision.',
+    'Editorial synthesis of public quality guidance into a buyer-side document and handoff workflow; this is not an account of a Huang Sourcing client case.',
   ],
   whatToSend: [
     'The complete inspection report, original photo set, defect summary, measurements, sampled quantity, and any inspector comments',
@@ -252,7 +294,7 @@ Main decision needed:
     'A failed sampled inspection does not prove every unit in the order is defective, and a passed re-inspection does not prove every unit is defect-free',
     'QC can verify visible, measurable, and agreed checks within scope, but it cannot guarantee hidden quality, long-term durability, or future field performance',
     'Ordinary QC does not replace laboratory testing, certification review, regulated product compliance, engineering validation, legal advice, or customs advice',
-    'A report and re-inspection support the buyer decision but do not force supplier rework, replacement, refund, or contract enforcement',
+    'A report and re-inspection support a buyer decision but do not establish rights to withhold payment, force rework or obtain a refund; the agreement and relevant advice control those questions',
     'Supplier photos may support narrow correction checks, but they are weaker when affected quantity, traceability, or repeated defects remain unclear',
     'Accepting a discount or deviation is a buyer commercial decision and does not convert failed goods into compliant or defect-free goods',
   ],
@@ -292,7 +334,7 @@ Main decision needed:
     {
       question: 'Should I pay the balance if a China QC inspection fails?',
       answer:
-        'Normally, do not release the balance automatically. First confirm the failed checkpoints, supplier correction plan, evidence required, and whether the payment terms give you a practical right to hold. Payment decisions also depend on the contract and commercial relationship.',
+        'Do not treat a failed report as an automatic payment rule. Confirm the finding and supplier response, then follow the purchase terms and your written commercial disposition. Ask qualified advisers about disputed rights or obligations.',
     },
     {
       question: 'Does a failed QC inspection mean all goods are defective?',
@@ -332,6 +374,7 @@ export function makeChinaQcInspectionFailsArticleMetadata(): Metadata {
       url: canonicalPath,
       siteName: 'Huang Sourcing',
       type: 'article',
+      modifiedTime: chinaQcInspectionFailsArticle.modifiedDateIso,
       images: [...getArticleOpenGraphImages(chinaQcInspectionFailsArticle)],
     },
     twitter: {
@@ -356,6 +399,5 @@ export function makeChinaQcInspectionFailsArticleJsonLd() {
         name: item,
       })),
     },
-    makeFaqPageJsonLd(chinaQcInspectionFailsArticle.faqs),
   ]
 }

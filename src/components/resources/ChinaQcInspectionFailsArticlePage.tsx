@@ -3,6 +3,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
+  ExternalLink,
   FileText,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -22,6 +23,7 @@ import { Button } from '@/components/ui/button'
 import {
   makeChinaQcInspectionFailsArticleJsonLd,
   chinaQcInspectionFailsArticle,
+  qcCloseoutSources,
 } from '@/lib/china-qc-inspection-fails-article'
 import { buildWhatsAppHref } from '@/lib/site-links'
 
@@ -69,8 +71,16 @@ export function ChinaQcInspectionFailsArticlePage() {
               {chinaQcInspectionFailsArticle.answerSummary}
             </p>
             <ArticleByline
+              modifiedDate={chinaQcInspectionFailsArticle.modifiedDate}
               publishedDate={chinaQcInspectionFailsArticle.publishedDate}
             />
+            <p className="hs-muted mt-2 text-sm leading-6">
+              Substantially revised by{' '}
+              <Link className="hs-text-link" href="/about">Huang Sourcing Editorial Team</Link>{' '}
+              with AI assistance from cited public quality guidance and an editorial
+              buyer-side framework. No personal or specialist review of this revision,
+              or client inspection, is claimed.
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ContactAgentButton
                 analyticsLabel={chinaQcInspectionFailsArticle.primaryCta.label}
@@ -108,6 +118,9 @@ export function ChinaQcInspectionFailsArticlePage() {
                 />
               </div>
             </div>
+            <p className="hs-muted mt-2 text-xs leading-5">
+              Illustrative image; not a documented inspection.
+            </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {['Hold', 'Correct', 'Re-check', 'Release'].map((item) => (
                 <a
@@ -156,10 +169,10 @@ export function ChinaQcInspectionFailsArticlePage() {
                 What should a buyer do after a China QC inspection fails?
               </h2>
               <p className="hs-muted mt-4 text-base leading-7">
-                Hold automatic payment and pickup, confirm the failed checkpoints against
-                the agreed files, and require a traceable supplier correction plan. Release
-                only after the buyer accepts the remaining deviation or evidence verifies
-                rework, sorting, replacement, relabeling, repacking, or re-inspection.
+                Preserve the failed report, map affected goods, get a dated supplier
+                correction record, and verify the original finding within a stated scope.
+                Then document the buyer disposition and issue separate commercial and
+                forwarder instructions under the agreed terms.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {chinaQcInspectionFailsArticle.quickChecks.map((item, index) => (
@@ -217,10 +230,78 @@ export function ChinaQcInspectionFailsArticlePage() {
                     ))}
                   </div>
                   {section.bullets ? <BulletList items={section.bullets} /> : null}
+                  {section.id === 'meaning' ? (
+                    <p className="hs-muted mt-4 text-sm leading-6">
+                      Sampling limit:{' '}
+                      <a className="hs-text-link" href={qcCloseoutSources.nistSampling}>
+                        NIST explains that lot acceptance sampling supports a lot decision,
+                        not an estimate of every unit&apos;s quality
+                      </a>.
+                    </p>
+                  ) : null}
+                  {section.id === 'rework-reinspection' ? (
+                    <p className="hs-muted mt-4 text-sm leading-6">
+                      The distinction between correction, cause analysis and recurrence action
+                      comes from the{' '}
+                      <a className="hs-text-link" href={qcCloseoutSources.isoIaf}>
+                        ISO/IAF Auditing Practices Group guidance
+                      </a>
+                      . The guidance is educational and was not formally endorsed by ISO or
+                      IAF. For complex repeated findings,{' '}
+                      <a className="hs-text-link" href={qcCloseoutSources.asq8d}>
+                        ASQ&apos;s 8D overview
+                      </a>{' '}
+                      shows how containment, root cause and corrective action form a
+                      structured response; it does not make 8D necessary for every defect.
+                    </p>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="hs-section-soft" id="closeout-packet">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-3xl">
+            <p className="hs-eyebrow">Reusable closeout packet</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Close the report finding against specific goods and decisions.
+            </h2>
+            <p className="hs-muted mt-3 text-base leading-7">
+              Keep these six records in one thread or file. Each row connects the
+              inspection finding to a supplier deliverable and a buyer gate. A blank
+              gate means the finding is still open; the packet is a decision aid,
+              not a certification or an automatic payment rule.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-3">
+            {chinaQcInspectionFailsArticle.closeoutRows.map((row) => (
+              <article
+                className="grid gap-3 rounded-[var(--hs-radius)] border border-[var(--hs-border)] bg-white p-5 shadow-[var(--hs-shadow-sm)] lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.5fr)_minmax(0,1fr)]"
+                key={row.record}
+              >
+                <h3 className="font-extrabold text-[var(--hs-text)]">{row.record}</h3>
+                <div>
+                  <p className="text-xs font-extrabold uppercase tracking-wide text-[var(--hs-accent)]">Supplier or checker record</p>
+                  <p className="hs-muted mt-1 text-sm leading-6">{row.supplierOrChecker}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold uppercase tracking-wide text-[var(--hs-accent)]">Buyer gate</p>
+                  <p className="hs-muted mt-1 text-sm leading-6">{row.buyerGate}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="hs-muted mt-5 max-w-4xl text-sm leading-6">
+            This packet adapts the{' '}
+            <a className="hs-text-link" href={qcCloseoutSources.isoIaf}>ISO/IAF APG closeout concepts</a>{' '}
+            for a procurement handoff. It is an editorial workflow, not an ISO requirement.
+            Scope a deeper cause and recurrence record to repeated or unexplained findings;
+            ASQ describes that fuller approach in its{' '}
+            <a className="hs-text-link" href={qcCloseoutSources.asq8d}>8D overview</a>.
+          </p>
         </div>
       </section>
 
@@ -260,9 +341,44 @@ export function ChinaQcInspectionFailsArticlePage() {
       </section>
 
       <EvidenceBasisSection
-        intro="This failed-inspection guidance is based on the original report, agreed product and packing files, defect traceability, supplier correction evidence, payment or pickup timing, and China-side judgment about what must be verified before goods move."
+        intro="Use the actual inspection and order records for the buyer decision. The public sources below explain sampling and corrective-action concepts; they do not verify any particular supplier or shipment."
         items={chinaQcInspectionFailsArticle.evidenceBasis}
       />
+
+      <section className="hs-section-white" id="sources">
+        <div className="hs-container hs-section max-w-4xl">
+          <Reveal>
+            <p className="hs-eyebrow">Research basis</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">Sources and limits</h2>
+            <ul className="hs-muted mt-5 grid gap-4 text-sm leading-6">
+              <li>
+                <a className="hs-text-link inline-flex items-center gap-1" href={qcCloseoutSources.isoIaf}>
+                  ISO/IAF Auditing Practices Group, “Nonconformity – review and closing” (2016)
+                  <ExternalLink className="size-3.5" aria-hidden />
+                </a>
+                {' '}distinguishes correction, cause analysis and corrective action, and discusses
+                evidence for closeout. It is educational guidance, not formally endorsed by ISO or IAF.
+              </li>
+              <li>
+                <a className="hs-text-link inline-flex items-center gap-1" href={qcCloseoutSources.asq8d}>
+                  ASQ, “Eight Disciplines 8D”
+                  <ExternalLink className="size-3.5" aria-hidden />
+                </a>
+                {' '}describes containment, verified root cause, correction and recurrence prevention
+                for a fuller problem-solving process. We do not prescribe 8D for every order.
+              </li>
+              <li>
+                <a className="hs-text-link inline-flex items-center gap-1" href={qcCloseoutSources.nistSampling}>
+                  NIST/SEMATECH e-Handbook, “What is Acceptance Sampling?”
+                  <ExternalLink className="size-3.5" aria-hidden />
+                </a>
+                {' '}explains why a sample supports lot acceptance or rejection within a plan;
+                it does not establish the condition of every unit.
+              </li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="hs-section-white" id="documents">
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
@@ -276,8 +392,8 @@ export function ChinaQcInspectionFailsArticlePage() {
             <p className="hs-muted mt-3 text-base leading-7">
               Send the original report, approved requirements, supplier response,
               correction evidence, order stage, and release deadlines. Clear inputs
-              let Agent Huang separate an acceptable deviation from a rework,
-              sorting, replacement, repacking, or re-inspection decision.
+              let Huang Sourcing discuss the China-side inspection and supplier
+              follow-up scope. The buyer retains the commercial disposition.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -296,10 +412,9 @@ export function ChinaQcInspectionFailsArticlePage() {
               Red flags after a failed QC result.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              Slow down when the supplier cannot trace correction to the original
-              failed checkpoints, wants payment before verification, or treats a few
-              photos as proof of broad rework. Release pressure should not replace
-              evidence about affected goods and remaining risk.
+              Reconcile the supplier&apos;s claim with the original report, affected
+              inventory and agreed verification. Escalate an unresolved mismatch
+              before sending the final disposition or forwarder instruction.
             </p>
           </Reveal>
           <Reveal className="lg:col-span-8">
@@ -389,8 +504,8 @@ export function ChinaQcInspectionFailsArticlePage() {
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300">
                 Send the failed report, supplier response, product files, correction
-                evidence, balance status, and pickup deadline. Agent Huang will help
-                map the findings to a hold, correction, re-inspection, or release decision.
+                evidence, balance status, and pickup deadline. Huang Sourcing can help
+                scope the China-side follow-up; you decide the final commercial release.
               </p>
             </div>
             <ContactAgentButton
