@@ -12,7 +12,7 @@ import {
   qcBeforeBalanceArticleHref,
   qualityControlChinaManufacturingPlanArticleHref,
 } from '@/lib/site-links'
-import { makeFaqPageJsonLd } from '@/lib/structured-data'
+import { getAbsoluteUrl } from '@/lib/site-url'
 
 type ArticleSection = {
   id: string
@@ -24,6 +24,12 @@ type ArticleSection = {
 type DecisionRow = {
   riskNode: string
   whatWasChecked: string
+  buyerDecision: string
+}
+
+type ControlHandoffRow = {
+  field: string
+  ownerAndEvidence: string
   buyerDecision: string
 }
 
@@ -49,13 +55,15 @@ export const qualityControlChinaManufacturingPlanArticle = {
   title: 'Quality Control in China Manufacturing: A Buyer\'s 5-Stage Plan',
   metaTitle: 'Quality Control in China Manufacturing Plan',
   metaDescription:
-    'Build a China manufacturing quality-control plan across supplier selection, specifications, production, inspection, and shipment release.',
+    'Use a five-stage China manufacturing QC plan and a buyer-to-factory control record to link specifications, checks, evidence, corrections, and shipment release.',
   publishedDate: 'June 20, 2026',
   publishedDateIso: '2026-06-20T23:55:00-04:00',
-  h1: 'Quality Control in China Manufacturing: A Practical 5-Stage Plan for Importers',
+  modifiedDate: 'October 31, 2026',
+  modifiedDateIso: '2026-10-31T03:28:00+08:00',
+  h1: 'Quality Control in China Manufacturing: A Buyer\'s 5-Stage Plan',
   eyebrow: 'Supplier control · production evidence · shipment release',
   image: {
-    alt: 'Quality inspector measuring a finished product during China manufacturing quality control',
+    alt: 'Illustrative quality inspector measuring a finished product during China manufacturing',
     height: 900,
     src: '/images/quality-control-china-manufacturing-plan.webp',
     width: 1600,
@@ -66,9 +74,9 @@ export const qualityControlChinaManufacturingPlanArticle = {
     { height: 1200, src: '/images/quality-control-china-manufacturing-plan-1x1.webp', width: 1200 },
   ],
   intro:
-    'Quality control in China manufacturing should begin before the factory starts bulk production, not when sealed cartons are waiting for pickup. A workable plan connects the approved supplier, product specification, reference sample, production checkpoints, inspection method, defect rules, and buyer release decision. Each stage should create evidence for the next one.',
+    'Quality control in China manufacturing should begin before the factory starts bulk production, not when sealed cartons are waiting for pickup. A workable plan connects the approved supplier, controlled product requirement, reference sample, production checkpoint, inspection scope, and buyer release decision. Each stage should leave a named owner and an evidence handoff for the next one.',
   answerSummary:
-    'Use five connected stages: qualify the supplier and production site; freeze the product specification and approved sample; confirm materials and production readiness; inspect at the stage where defects can still be corrected; and release payment or shipment only against defined finished-goods evidence. Match the depth to product risk, order value, supplier history, and the cost of a late failure.',
+    'Use five connected stages: qualify the supplier and production site; freeze the specification and approved sample; confirm production readiness; inspect where defects can still be corrected; and make the payment or shipment decision against defined evidence. For each important requirement, keep one handoff row with its current revision, supplier acknowledgment, check owner, evidence, open exception, and buyer disposition.',
   primaryCta: {
     label: 'Plan Your China Quality Check',
   },
@@ -96,6 +104,7 @@ Required inspection or ship date:
     { href: '#stage-four', label: '4. Inspection timing' },
     { href: '#stage-five', label: '5. Release decision' },
     { href: '#records', label: 'Records and ownership' },
+    { href: '#control-handoff', label: 'Control handoff record' },
     { href: '#documents', label: 'What to send' },
     { href: '#faq', label: 'FAQ' },
   ],
@@ -230,32 +239,78 @@ Required inspection or ship date:
         'Hold the next release step until the buyer accepts a documented deviation or correction and re-inspection support release.',
     },
   ] satisfies DecisionRow[],
+  controlHandoffRows: [
+    {
+      field: 'Requirement and revision',
+      ownerAndEvidence:
+        'Buyer or qualified product owner identifies the PO, SKU, requirement ID, approved drawing or file revision, reference sample, and any accepted exception. Supplier acknowledges the same version before the affected run.',
+      buyerDecision:
+        'Resolve a file or sample conflict before the factory or inspector chooses which version to use.',
+    },
+    {
+      field: 'Stage, method and acceptance basis',
+      ownerAndEvidence:
+        'Qualified product owner names the check stage, method or specialist test, presented lot, sample basis, and acceptance rule. Supplier confirms access; the scoped inspector confirms what can actually be observed.',
+      buyerDecision:
+        'Book the appropriate check only when the method, lot and decision threshold are agreed; route safety or compliance questions to a qualified specialist.',
+    },
+    {
+      field: 'Observed result and traceable evidence',
+      ownerAndEvidence:
+        'Supplier provides batch and production records; inspector records the checked quantity, date, finding, photo or measurement file ID, and any access or sample limitation within the agreed scope.',
+      buyerDecision:
+        'Treat missing evidence or an inaccessible lot as unresolved rather than as an automatic pass.',
+    },
+    {
+      field: 'Exception, correction and release',
+      ownerAndEvidence:
+        'Supplier names affected SKU or lot, containment and correction owner, new evidence deadline, and re-check access. Buyer-designated release owner records approve, hold, rework, re-inspect, or specialist escalation.',
+      buyerDecision:
+        'Send the written disposition to the supplier, QC contact and pickup owner before payment or shipment instructions change.',
+    },
+  ] satisfies ControlHandoffRow[],
+  controlHandoffExample: {
+    label: 'Hypothetical, product-neutral example',
+    text:
+      'For a pilot carton using packaging-artwork revision R3, the buyer provides the approved file and states which visible marks must match. The supplier confirms R3 is at the packing line and sends identified pilot-carton photos. A scoped checker records the carton IDs and any mismatch. If the photos show the earlier revision, the buyer holds print approval for affected cartons, asks the supplier for a correction record, and decides whether a re-check is needed. This example does not establish a product-safety or labeling-compliance verdict.',
+  },
   evidenceBasis: [
     'Supplier, legal seller, payment beneficiary, factory, process map, sub-supplier, capability, access, and order-specific production evidence.',
     'Purchase order, controlled specification, drawing, bill of materials, approved sample, defect definitions, packaging files, labels, and test requirements.',
     'Material and production readiness, change approvals, first-article results, batch records, in-process evidence, finished quantities, and inspection access.',
     'Sampling and inspection records, photos, measurements, test results, defect counts, corrective action, re-inspection, and final buyer disposition.',
+    'The October 31 editorial update adapts public external-provider guidance into a recommended handoff record. It is not an ISO-required form or a Huang Sourcing client case; AI assisted the public-source research and drafting, with no claimed expert review.',
   ],
   sourceNotes: [
     {
-      href: 'https://www.iso.org/standard/62085.html',
-      label: 'ISO 9001:2015 — Quality management systems',
-      note: 'Primary standard context for controlled processes, documented information, supplier control, performance evaluation, and improvement.',
+      href: 'https://committee.iso.org/files/live/sites/tc176/files/PDF%20APG%20New%20Disclaimer%2012-2023/ISO-TC%20176-TF_APG-ExternalProviders.pdf',
+      label: 'ISO 9001 Auditing Practices Group — External Providers',
+      note: 'Educational guidance on correct purchase requirements, risk-based supplier controls, monitoring, and verification. It is not endorsed ISO/IAF standard text and does not mandate the handoff record on this page.',
     },
     {
-      href: 'https://www.iso.org/standard/85464.html',
+      href: 'https://www.iso.org/standard/9001',
+      label: 'ISO 9001:2026 — Quality management systems',
+      note: 'Current sixth-edition ISO record, published September 16, 2026. The public summary supplies quality-system context; the withdrawn 2015 edition is no longer cited as current.',
+    },
+    {
+      href: 'https://www.iso.org/standard/2859-1',
       label: 'ISO 2859-1:2026 — Sampling procedures for inspection by attributes',
-      note: 'Current ISO standard for AQL-indexed lot-by-lot acceptance sampling; a sampling plan still requires a defined lot and execution method.',
+      note: 'Public summary of AQL-indexed lot-by-lot acceptance sampling. It does not choose a product-specific method or prove every unit conforms.',
     },
     {
-      href: 'https://www.cpsc.gov/Business--Manufacturing/Import-Safety',
-      label: 'U.S. Consumer Product Safety Commission — Import Safety',
-      note: 'Official U.S. importer resources showing why buyer-side quality checks do not replace product-safety responsibilities.',
+      href: 'https://asq.org/quality-resources/supplier-quality',
+      label: 'ASQ — Supplier quality management',
+      note: 'Professional guidance that supplier quality begins during design and selection and needs cross-functional requirements and ongoing evidence; not a China-specific rule.',
     },
     {
-      href: 'https://commission.europa.eu/business-economy-euro/product-safety-and-requirements/product-safety/general-product-safety-regulation_en',
-      label: 'European Commission — General Product Safety Regulation',
-      note: 'Official EU product-safety and traceability context for businesses placing consumer products on the EU market.',
+      href: 'https://www.cpsc.gov/Imports',
+      label: 'U.S. Consumer Product Safety Commission — Import Resources',
+      note: 'Official U.S. importer resources. A buyer-side QC record does not decide which product-safety requirements apply.',
+    },
+    {
+      href: 'https://commission.europa.eu/topics/business-and-industry/product-safety_en',
+      label: 'European Commission — Product safety',
+      note: 'Official EU product-safety overview and business-obligation links; no product-specific compliance conclusion is drawn here.',
     },
   ] satisfies SourceNote[],
   whatToSend: [
@@ -265,6 +320,7 @@ Required inspection or ship date:
     'Critical, major, and minor defect definitions plus named sampling plan, sample size, tests, and acceptance rules',
     'Material status, first-article or pilot evidence, production percentage, finished quantity, packing status, and known changes or defects',
     'Deposit and balance status, inspection window, correction time, pickup date, shipment deadline, and the decision the report must support',
+    'Buyer-designated release owner and a list of unresolved requirement, evidence, or correction decisions',
   ],
   redFlags: [
     'The supplier begins bulk production while sample, specification, material, packaging, or label decisions are still changing',
@@ -282,8 +338,14 @@ Required inspection or ship date:
     'AQL is an acceptance-sampling framework, not a promise that the shipment contains exactly the stated percentage of defects',
     'Supplier verification and factory visits reduce uncertainty but cannot expose every undisclosed sub-supplier, future substitution, or process change',
     'Contract remedies, payment rights, customs, certification, and destination-market obligations require qualified legal, technical, or regulatory advice',
+    'The suggested handoff record is a planning aid, not an ISO-mandated form, a product-specific test plan, or proof that an entire lot conforms',
   ],
   relatedLinks: [
+    {
+      href: '/qc-inspection-china',
+      label: 'Scope a China QC inspection',
+      note: 'Use the controlled requirement and evidence handoff to discuss an inspection scope before booking.',
+    },
     {
       href: goldenSampleChinaManufacturingArticleHref,
       label: 'Golden sample manufacturing quality control',
@@ -365,7 +427,14 @@ export function makeQualityControlChinaManufacturingPlanArticleMetadata(): Metad
 
 export function makeQualityControlChinaManufacturingPlanArticleJsonLd() {
   return [
-    makeArticleJsonLd(qualityControlChinaManufacturingPlanArticle),
+    {
+      ...makeArticleJsonLd(qualityControlChinaManufacturingPlanArticle),
+      editor: {
+        '@type': 'Organization',
+        name: 'Huang Sourcing Editorial Team',
+        url: getAbsoluteUrl('/about'),
+      },
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
@@ -376,6 +445,5 @@ export function makeQualityControlChinaManufacturingPlanArticleJsonLd() {
         name: item,
       })),
     },
-    makeFaqPageJsonLd(qualityControlChinaManufacturingPlanArticle.faqs),
   ]
 }

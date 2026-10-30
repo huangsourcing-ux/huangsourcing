@@ -64,7 +64,18 @@ export function QualityControlChinaManufacturingPlanArticlePage() {
             <h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold text-[var(--hs-text)] sm:text-5xl">
               {article.h1}
             </h1>
-            <ArticleByline publishedDate={article.publishedDate} />
+            <ArticleByline
+              modifiedDate={article.modifiedDate}
+              publishedDate={article.publishedDate}
+            />
+            <p className="hs-muted mt-3 max-w-3xl text-sm leading-6">
+              October 31 update by the{' '}
+              <Link className="font-semibold text-[var(--hs-accent)] underline underline-offset-4" href="/about">
+                Huang Sourcing Editorial Team
+              </Link>
+              , using AI-assisted public-source research and an original buyer handoff framework.
+              No client case or expert review is claimed.
+            </p>
             <p className="hs-muted mt-5 max-w-3xl text-base leading-7 sm:text-lg sm:leading-8">
               {article.intro}
             </p>
@@ -243,9 +254,82 @@ export function QualityControlChinaManufacturingPlanArticlePage() {
         </div>
       </section>
 
+      <section className="hs-section-white" id="control-handoff">
+        <div className="hs-container hs-section">
+          <Reveal className="max-w-4xl">
+            <p className="hs-eyebrow">Buyer to factory to inspector</p>
+            <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
+              Put each important requirement in one control handoff record.
+            </h2>
+            <p className="hs-muted mt-4 text-base leading-7">
+              The five stages work only when the factory, checker, and buyer use the same
+              approved version and know who closes an exception. For each requirement that
+              could change an order decision, copy these four fields into the order file.
+              The{' '}
+              <a
+                className="font-semibold text-[var(--hs-accent)] underline underline-offset-4"
+                href={article.sourceNotes[0].href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                ISO 9001 Auditing Practices Group guidance
+              </a>{' '}
+              supports correct purchase requirements, monitoring, and risk-based checks of
+              external providers. This record is our recommended private-buyer adaptation,
+              not an ISO-required form.{' '}
+              <a
+                className="font-semibold text-[var(--hs-accent)] underline underline-offset-4"
+                href={article.sourceNotes[3].href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                ASQ supplier-quality guidance
+              </a>{' '}
+              also points to cross-functional selection and ongoing supplier monitoring.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {article.controlHandoffRows.map((row, index) => (
+              <div className="hs-card bg-white p-6" key={row.field}>
+                <p className="text-xs font-extrabold uppercase tracking-wide text-[var(--hs-accent)]">
+                  Field {index + 1}
+                </p>
+                <h3 className="mt-2 text-xl font-extrabold text-[var(--hs-text)]">
+                  {row.field}
+                </h3>
+                <p className="hs-muted mt-3 text-sm leading-6">
+                  <span className="font-extrabold text-[var(--hs-text)]">Owner and evidence: </span>
+                  {row.ownerAndEvidence}
+                </p>
+                <p className="hs-muted mt-3 border-t border-[var(--hs-border)] pt-3 text-sm leading-6">
+                  <span className="font-extrabold text-[var(--hs-text)]">Buyer decision: </span>
+                  {row.buyerDecision}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <Reveal className="hs-card mt-6 max-w-4xl bg-[var(--hs-bg-soft)] p-6">
+            <h3 className="text-lg font-extrabold text-[var(--hs-text)]">
+              {article.controlHandoffExample.label}
+            </h3>
+            <p className="hs-muted mt-3 text-sm leading-7">
+              {article.controlHandoffExample.text}
+            </p>
+          </Reveal>
+          <p className="hs-muted mt-5 max-w-4xl text-sm leading-6">
+            The buyer or a qualified product owner sets the actual method, sample basis,
+            acceptance rule, and specialist review. A scoped inspection records what it
+            observed; it does not certify uninspected units or settle legal, safety, or
+            destination-market requirements.
+          </p>
+        </div>
+      </section>
+
       <EvidenceBasisSection
         className="hs-section-white"
-        intro="This guide connects supplier capability, controlled product requirements, production evidence, inspection results, and correction records to decisions importers make before payment or shipment release."
+        intro="This October 31 editorial update connects controlled buyer requirements, supplier acknowledgment, scoped inspection evidence, and written release decisions. Public guidance informs the framework; the example is hypothetical."
         items={article.evidenceBasis}
       />
 
@@ -253,13 +337,14 @@ export function QualityControlChinaManufacturingPlanArticlePage() {
         <div className="hs-container hs-section grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <div className="hs-icon-box size-12"><ShieldCheck aria-hidden className="size-6" /></div>
-            <p className="hs-eyebrow mt-5">Primary-source context</p>
+            <p className="hs-eyebrow mt-5">Research basis · checked October 30, 2026</p>
             <h2 className="mt-3 text-3xl font-extrabold text-[var(--hs-text)]">
               Standards and importer responsibilities vary by product and market.
             </h2>
             <p className="hs-muted mt-3 text-base leading-7">
-              These official sources frame quality systems, acceptance sampling, product safety,
-              and traceability. They do not replace product-specific technical or legal advice.
+              These official and professional sources frame external-provider controls,
+              acceptance sampling, and product-safety limits. They do not replace
+              product-specific technical or legal advice.
             </p>
           </Reveal>
           <div className="grid gap-3 md:grid-cols-2 lg:col-span-8">
@@ -277,7 +362,7 @@ export function QualityControlChinaManufacturingPlanArticlePage() {
                 </h3>
                 <p className="hs-muted mt-2 text-sm leading-6">{source.note}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-[var(--hs-accent)]">
-                  Open official source <ExternalLink aria-hidden className="size-4" />
+                  Open source <ExternalLink aria-hidden className="size-4" />
                 </span>
               </a>
             ))}
